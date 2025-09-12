@@ -1,0 +1,143 @@
+{
+  "frames": {
+    "jiaji_wei_00000.png": {
+      "frame": {
+        "idx": 0,
+        "x": 150,
+        "y": 172,
+        "w": 147,
+        "h": 170
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 5
+      }
+    },
+    "jiaji_wei_00001.png": {
+      "frame": {
+        "idx": 0,
+        "x": 299,
+        "y": 172,
+        "w": 147,
+        "h": 170
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 5
+      }
+    },
+    "jiaji_wei_00002.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 0,
+        "w": 148,
+        "h": 170
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 5
+      }
+    },
+    "jiaji_wei_00003.png": {
+      "frame": {
+        "idx": 0,
+        "x": 300,
+        "y": 0,
+        "w": 147,
+        "h": 170
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 5
+      }
+    },
+    "jiaji_wei_00004.png": {
+      "frame": {
+        "idx": 0,
+        "x": 150,
+        "y": 0,
+        "w": 148,
+        "h": 170
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 5
+      }
+    },
+    "jiaji_wei_00005.png": {
+      "frame": {
+        "idx": 0,
+        "x": 149,
+        "y": 344,
+        "w": 145,
+        "h": 169
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 6
+      }
+    },
+    "jiaji_wei_00006.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 344,
+        "w": 147,
+        "h": 170
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 5
+      }
+    },
+    "jiaji_wei_00007.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 172,
+        "w": 148,
+        "h": 170
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 5
+      }
+    }
+  },
+  "meta": {
+    "scale": 1
+  }
+}

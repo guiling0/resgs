@@ -1,0 +1,25 @@
+{
+  "_$ver": 1,
+  "_$id": "0eb8lj6f",
+  "_$runtime": "res://e02f1660-f87f-4793-94d0-d2d6467c53c9",
+  "_$type": "Sprite",
+  "name": "shitaishici_skill",
+  "x": 960,
+  "y": 540,
+  "width": 445,
+  "height": 527,
+  "anchorX": 0.5,
+  "anchorY": 0.5,
+  "_$comp": [
+    {
+      "_$type": "Spine2DRenderNode",
+      "layer": 0,
+      "useFastRender": false,
+      "source": "res://ddac4fe2-392b-4a31-a79e-df0cb4a717cc",
+      "animationName": "play2",
+      "preview": true,
+      "physicsUpdate": 2,
+      "externalSkins": []
+    }
+  ]
+}

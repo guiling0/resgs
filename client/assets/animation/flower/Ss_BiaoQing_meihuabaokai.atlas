@@ -1,0 +1,146 @@
+
+Ss_BiaoQing_meihuabaokai.png
+size: 2028,591
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+h_00
+  rotate: true
+  xy: 1896, 421
+  size: 168, 130
+  orig: 170, 132
+  offset: 1, 1
+  index: -1
+hb_00
+  rotate: true
+  xy: 2, 270
+  size: 319, 315
+  orig: 400, 400
+  offset: 41, 49
+  index: -1
+hb_01
+  rotate: true
+  xy: 319, 277
+  size: 312, 302
+  orig: 400, 400
+  offset: 44, 55
+  index: -1
+hb_02
+  rotate: true
+  xy: 623, 277
+  size: 312, 302
+  orig: 400, 400
+  offset: 44, 55
+  index: -1
+hb_03
+  rotate: true
+  xy: 927, 277
+  size: 312, 302
+  orig: 400, 400
+  offset: 44, 55
+  index: -1
+hb_04
+  rotate: true
+  xy: 1231, 286
+  size: 303, 290
+  orig: 400, 400
+  offset: 49, 61
+  index: -1
+hb_05
+  rotate: false
+  xy: 1248, 2
+  size: 297, 282
+  orig: 400, 400
+  offset: 52, 65
+  index: -1
+hb_06
+  rotate: false
+  xy: 2, 3
+  size: 279, 265
+  orig: 400, 400
+  offset: 61, 74
+  index: -1
+hb_07
+  rotate: false
+  xy: 1523, 367
+  size: 178, 222
+  orig: 400, 400
+  offset: 113, 100
+  index: -1
+hb_08
+  rotate: false
+  xy: 870, 49
+  size: 183, 226
+  orig: 400, 400
+  offset: 110, 97
+  index: -1
+hb_09
+  rotate: false
+  xy: 1547, 157
+  size: 187, 208
+  orig: 400, 400
+  offset: 108, 105
+  index: -1
+hb_10
+  rotate: false
+  xy: 1055, 60
+  size: 191, 215
+  orig: 400, 400
+  offset: 106, 100
+  index: -1
+hb_11
+  rotate: false
+  xy: 673, 54
+  size: 195, 221
+  orig: 400, 400
+  offset: 104, 96
+  index: -1
+hb_12
+  rotate: false
+  xy: 283, 40
+  size: 198, 228
+  orig: 400, 400
+  offset: 102, 91
+  index: -1
+hb_13
+  rotate: false
+  xy: 483, 41
+  size: 188, 234
+  orig: 400, 400
+  offset: 114, 87
+  index: -1
+hb_14
+  rotate: false
+  xy: 1703, 388
+  size: 191, 201
+  orig: 400, 400
+  offset: 112, 83
+  index: -1
+hb_15
+  rotate: false
+  xy: 1736, 180
+  size: 178, 206
+  orig: 400, 400
+  offset: 110, 79
+  index: -1
+hb_16
+  rotate: true
+  xy: 1765, 16
+  size: 162, 211
+  orig: 400, 400
+  offset: 108, 76
+  index: -1
+hb_17
+  rotate: true
+  xy: 1547, 40
+  size: 115, 216
+  orig: 400, 400
+  offset: 106, 72
+  index: -1
+hb_18
+  rotate: true
+  xy: 1916, 302
+  size: 117, 109
+  orig: 400, 400
+  offset: 104, 180
+  index: -1

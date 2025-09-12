@@ -1,0 +1,346 @@
+{
+  "_$ver": 1,
+  "_$id": "xlzc16k8",
+  "_$runtime": "res://d765dd6c-d4c4-4dbd-b600-3ce1c6e136e8",
+  "_$type": "GWidget",
+  "name": "selfseat_general",
+  "width": 188,
+  "height": 221,
+  "drawCallOptimize": true,
+  "_$child": [
+    {
+      "_$id": "glnc7ika",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "img",
+      "x": -6,
+      "y": -5,
+      "width": 250,
+      "height": 292,
+      "scaleX": 0.8,
+      "scaleY": 0.8,
+      "mask": {
+        "_$ref": "5vs7hgvw"
+      },
+      "src": "res://85f0de5f-2c1d-4969-8ff8-f5bc3d2602b4",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "5vs7hgvw",
+          "_$type": "GWidget",
+          "name": "mask",
+          "x": 7,
+          "y": 7,
+          "width": 235,
+          "height": 276,
+          "cacheAs": "bitmap",
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#ffffff"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "oov48q2u",
+      "_$prefab": "197024ce-52c8-438f-b6b2-43520c7157d3",
+      "_$var": true,
+      "name": "skin_animation",
+      "active": true,
+      "x": 94,
+      "y": 110,
+      "scaleX": 1.18,
+      "scaleY": 1.18,
+      "visible": false,
+      "_$child": [
+        {
+          "_$override": "3h27nxvv",
+          "_$comp": [
+            {
+              "_$override": "Spine2DRenderNode",
+              "preview": true
+            }
+          ]
+        },
+        {
+          "_$override": "enb7jxug",
+          "_$comp": [
+            {
+              "_$override": "Spine2DRenderNode",
+              "preview": true,
+              "animationName": "DaiJi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "k6onea1y",
+      "_$type": "GImage",
+      "name": "border",
+      "width": 188,
+      "height": 221,
+      "src": "res://1c17ada0-4343-485f-bb62-5d4cdfe88821",
+      "autoSize": false
+    },
+    {
+      "_$id": "7fhtde53",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "namebg",
+      "x": 3,
+      "y": 3,
+      "width": 125,
+      "height": 25,
+      "src": "res://1c42ab98-a9ca-471f-9e0c-1ef9d30e04e0",
+      "autoSize": false
+    },
+    {
+      "_$id": "82k4s26f",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "gname",
+      "x": 26,
+      "y": 1,
+      "width": 97,
+      "height": 27,
+      "text": "蒋琬翻译",
+      "_isDemo": true,
+      "font": "res://f69bd55c-f37d-4938-a7ea-559c8976cc6b",
+      "fontSize": 25,
+      "color": "#ffffff",
+      "align": "center",
+      "valign": "middle",
+      "leading": 0,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stroke": 2
+    },
+    {
+      "_$id": "tilq8eg6",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "name_icon",
+      "x": -2,
+      "y": 1,
+      "width": 29,
+      "height": 24,
+      "scaleX": 1.2,
+      "scaleY": 1.2,
+      "src": "res://2ffc2719-f024-4894-aa0d-f38e234983f2"
+    },
+    {
+      "_$id": "pcll78lr",
+      "_$type": "GWidget",
+      "name": "frames",
+      "width": 188,
+      "height": 221,
+      "_$child": [
+        {
+          "_$id": "69q6bj47",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "lock",
+          "x": 44,
+          "y": 49,
+          "width": 100,
+          "height": 122,
+          "visible": false,
+          "src": "res://98c243af-1f76-436a-b1bd-f4e854133907"
+        },
+        {
+          "_$id": "bjoctgej",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "qianfu",
+          "width": 188,
+          "height": 221,
+          "visible": false,
+          "src": "res://e7c62393-471c-4c63-a066-6376825e78ef",
+          "autoSize": false,
+          "_$child": [
+            {
+              "_$id": "v8zlaa47",
+              "_$var": true,
+              "_$type": "GImage",
+              "name": "qianfu_icon",
+              "x": 67,
+              "y": 94,
+              "width": 35,
+              "height": 21,
+              "scaleX": 1.5,
+              "scaleY": 1.5,
+              "src": "res://49526630-f731-4d41-9e5e-41632576ec16",
+              "autoSize": false
+            }
+          ]
+        },
+        {
+          "_$id": "aul62h62",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "fanmian",
+          "x": 4,
+          "y": 4,
+          "width": 180,
+          "height": 213,
+          "visible": false,
+          "src": "res://f65eb690-7e92-4272-93d6-6f342aaafefb",
+          "autoSize": false
+        },
+        {
+          "_$id": "0x6agc9w",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "diezhi",
+          "width": 188,
+          "height": 221,
+          "visible": false,
+          "src": "res://a45cd8b6-8cac-4593-bb4f-b728b3a35f81",
+          "autoSize": false
+        },
+        {
+          "_$id": "h0mfgoje",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "inplayphase",
+          "x": -6,
+          "y": -6,
+          "width": 200,
+          "height": 233,
+          "visible": false,
+          "src": "res://595494ce-1f1f-4746-833c-82f07957d5bd",
+          "autoSize": false
+        },
+        {
+          "_$id": "eklfm638",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "inresponse",
+          "x": -6,
+          "y": -6,
+          "width": 200,
+          "height": 233,
+          "visible": false,
+          "src": "res://c49a03b1-5e41-43e1-a061-fffc8e70c97c",
+          "autoSize": false
+        },
+        {
+          "_$id": "6qp3nja8",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "jiuState",
+          "width": 188,
+          "height": 221,
+          "visible": false,
+          "src": "res://0e5de363-844b-47a3-a05e-c8edc5dc95ec",
+          "autoSize": false
+        },
+        {
+          "_$id": "fhgsvahk",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "indying",
+          "x": -6,
+          "y": -6,
+          "width": 200,
+          "height": 233,
+          "visible": false,
+          "src": "res://3e9528aa-4702-4bbc-8390-c35a703ad377",
+          "autoSize": false,
+          "_$child": [
+            {
+              "_$id": "qyzb9zds",
+              "_$type": "Sprite",
+              "name": "saveme",
+              "x": 100,
+              "y": 116,
+              "width": 86,
+              "height": 35,
+              "anchorX": 0.5,
+              "anchorY": 0.514,
+              "_$comp": [
+                {
+                  "_$type": "Spine2DRenderNode",
+                  "layer": 0,
+                  "source": "res://ce9d90a3-9ff2-4de5-9c1a-a0a86f6dec46",
+                  "animationName": "play",
+                  "preview": true,
+                  "physicsUpdate": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "gmeiqg05",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "isSelected",
+          "width": 188,
+          "height": 221,
+          "visible": false,
+          "src": "res://994d3952-7a55-430c-b0bd-7f99dc626c6e",
+          "autoSize": false
+        },
+        {
+          "_$id": "130okxmj",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "diaohulishan",
+          "x": 47,
+          "y": 8,
+          "width": 93,
+          "height": 205,
+          "visible": false,
+          "src": "res://092e6084-07c6-4ca8-ad85-485338a3130d"
+        },
+        {
+          "_$id": "2lavmg30",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "tip_prompt",
+          "width": 188,
+          "height": 221,
+          "mouseThrough": true,
+          "text": "",
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 50,
+          "color": "#ffffff",
+          "bold": true,
+          "align": "center",
+          "valign": "middle",
+          "overflow": "shrink",
+          "stroke": 3
+        }
+      ]
+    },
+    {
+      "_$id": "hgg4is3j",
+      "_$var": true,
+      "_$type": "GBox",
+      "name": "skills",
+      "x": 7,
+      "y": -3,
+      "width": 173,
+      "height": 221,
+      "layout": {
+        "type": 3,
+        "rowGap": 1,
+        "columnGap": 3,
+        "padding": [
+          0,
+          0,
+          3,
+          0
+        ],
+        "valign": 2,
+        "foldInvisibles": true
+      }
+    }
+  ]
+}

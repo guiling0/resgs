@@ -1,0 +1,356 @@
+
+SS_cmmask.png
+size: 4016,1852
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+texture/mask/mask_00000
+  rotate: false
+  xy: 2509, 3
+  size: 219, 203
+  orig: 667, 375
+  offset: 448, 88
+  index: -1
+texture/mask/mask_00001
+  rotate: false
+  xy: 2223, 3
+  size: 284, 203
+  orig: 667, 375
+  offset: 383, 88
+  index: -1
+texture/mask/mask_00002
+  rotate: false
+  xy: 1775, 2
+  size: 446, 204
+  orig: 667, 375
+  offset: 221, 88
+  index: -1
+texture/mask/mask_00003
+  rotate: false
+  xy: 1269, 3
+  size: 504, 203
+  orig: 667, 375
+  offset: 163, 88
+  index: -1
+texture/mask/mask_00004
+  rotate: false
+  xy: 671, 206
+  size: 596, 204
+  orig: 667, 375
+  offset: 71, 88
+  index: -1
+texture/mask/mask_00005
+  rotate: false
+  xy: 2, 1646
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00006
+  rotate: false
+  xy: 671, 1646
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00007
+  rotate: false
+  xy: 2678, 823
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00008
+  rotate: false
+  xy: 1340, 1646
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00009
+  rotate: false
+  xy: 2009, 1646
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00010
+  rotate: false
+  xy: 2678, 1646
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00011
+  rotate: false
+  xy: 3347, 823
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00012
+  rotate: false
+  xy: 3347, 1646
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00013
+  rotate: false
+  xy: 2678, 618
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00014
+  rotate: false
+  xy: 2, 1440
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00015
+  rotate: false
+  xy: 3347, 618
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00016
+  rotate: false
+  xy: 671, 1440
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00017
+  rotate: false
+  xy: 1340, 1440
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00018
+  rotate: false
+  xy: 2009, 1440
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00019
+  rotate: false
+  xy: 2, 617
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00020
+  rotate: false
+  xy: 2678, 1440
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00021
+  rotate: false
+  xy: 3347, 1440
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00022
+  rotate: false
+  xy: 2, 1234
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00023
+  rotate: false
+  xy: 671, 617
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00024
+  rotate: false
+  xy: 1340, 617
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00025
+  rotate: false
+  xy: 2009, 413
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00026
+  rotate: false
+  xy: 671, 1234
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00027
+  rotate: false
+  xy: 2678, 413
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00028
+  rotate: false
+  xy: 3347, 413
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00029
+  rotate: false
+  xy: 1340, 1234
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00030
+  rotate: false
+  xy: 2, 412
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00031
+  rotate: false
+  xy: 671, 412
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00032
+  rotate: false
+  xy: 2009, 1234
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00033
+  rotate: false
+  xy: 2678, 1234
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00034
+  rotate: false
+  xy: 3347, 1234
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00035
+  rotate: false
+  xy: 2, 1028
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00036
+  rotate: false
+  xy: 1340, 208
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00037
+  rotate: false
+  xy: 671, 1028
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00038
+  rotate: false
+  xy: 1340, 1028
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00039
+  rotate: false
+  xy: 2009, 1028
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00040
+  rotate: false
+  xy: 2009, 208
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00041
+  rotate: false
+  xy: 2678, 1028
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00042
+  rotate: false
+  xy: 3347, 1028
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00043
+  rotate: false
+  xy: 2, 822
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00044
+  rotate: false
+  xy: 2678, 208
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00045
+  rotate: false
+  xy: 671, 822
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00046
+  rotate: false
+  xy: 3347, 208
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00047
+  rotate: false
+  xy: 1340, 822
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00048
+  rotate: false
+  xy: 2009, 822
+  size: 667, 204
+  orig: 667, 375
+  offset: 0, 88
+  index: -1
+texture/mask/mask_00049
+  rotate: false
+  xy: 2, 207
+  size: 667, 203
+  orig: 667, 375
+  offset: 0, 88
+  index: -1

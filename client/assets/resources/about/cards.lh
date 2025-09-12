@@ -1,0 +1,261 @@
+{
+  "_$ver": 1,
+  "_$id": "xcxihyhd",
+  "_$runtime": "res://f91a8f82-9d39-41f8-a209-a2fb5333e20d",
+  "_$type": "GWidget",
+  "name": "about_cards",
+  "width": 1920,
+  "height": 1080,
+  "_$child": [
+    {
+      "_$id": "mopfa6xp",
+      "_$type": "GImage",
+      "name": "bg",
+      "width": 1920,
+      "height": 1080,
+      "src": "res://bb7bad82-2c76-40f3-84ed-340b8828b2df",
+      "autoSize": false
+    },
+    {
+      "_$id": "60z98yvf",
+      "_$type": "GImage",
+      "name": "img",
+      "x": 28,
+      "y": 26,
+      "width": 1864,
+      "height": 1028,
+      "src": "res://9472d222-468f-4057-ba2a-42869f1d04ff",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "nfkd94mt",
+          "_$type": "GTextField",
+          "name": "title",
+          "x": 112,
+          "y": 18,
+          "width": 174,
+          "height": 53,
+          "text": "卡牌一览",
+          "fontSize": 40,
+          "color": "#ffffff",
+          "ubb": true,
+          "valign": "middle"
+        },
+        {
+          "_$id": "dxeh9uko",
+          "_$type": "GTextField",
+          "name": "packs",
+          "x": 318,
+          "y": 18,
+          "width": 135,
+          "height": 53,
+          "text": "卡牌包",
+          "fontSize": 40,
+          "color": "#ffffff",
+          "ubb": true,
+          "valign": "middle"
+        },
+        {
+          "_$id": "zcqg7vli",
+          "_$prefab": "1dd1b68b-7014-4f25-b642-e20a3cbb4713",
+          "_$var": true,
+          "name": "back",
+          "active": true,
+          "x": 1696,
+          "y": 13,
+          "visible": true,
+          "width": 151,
+          "height": 64,
+          "title": " 退出 ",
+          "titleFontSize": 40
+        },
+        {
+          "_$id": "s9u2ynkx",
+          "_$prefab": "9c8c082d-8045-44b5-ae0b-a8772c1259c9",
+          "_$var": true,
+          "name": "pkgs",
+          "active": true,
+          "x": 452,
+          "y": 22,
+          "width": 338,
+          "height": 46,
+          "visible": true,
+          "titleColor": "#ffffff",
+          "titleFontSize": 40,
+          "_$child": [
+            {
+              "_$override": "8vomfh1q",
+              "fontSize": 40,
+              "text": "",
+              "padding": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "yxcye4h9",
+      "_$var": true,
+      "_$type": "GList",
+      "name": "cards",
+      "x": 48,
+      "y": 124,
+      "width": 1324,
+      "height": 854,
+      "layout": {
+        "type": 3,
+        "rowGap": 5,
+        "columnGap": 5
+      },
+      "scroller": {
+        "_$type": "Scroller",
+        "vScrollBarRes": {
+          "_$uuid": "f109ab10-7012-4000-80bc-5fdff3eae172",
+          "_$type": "Prefab"
+        }
+      },
+      "_initItemNum": null,
+      "_itemData": []
+    },
+    {
+      "_$id": "yp19fc8d",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "info",
+      "x": 1381,
+      "y": 124,
+      "width": 500,
+      "height": 854,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "rgba(0,0,0,0.6274509803921569)"
+      },
+      "_$child": [
+        {
+          "_$id": "3kmjo5ax",
+          "_$prefab": "6b1993b1-68d8-448a-a34c-fc756b52f4c5",
+          "_$var": true,
+          "name": "card",
+          "active": true,
+          "x": 250,
+          "y": 156,
+          "scaleX": 1.5,
+          "scaleY": 1.5,
+          "visible": true,
+          "_startPages": {
+            "_$type": "Record"
+          }
+        },
+        {
+          "_$id": "k7mg4pcc",
+          "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+          "_$var": true,
+          "name": "ttype",
+          "active": true,
+          "x": 375,
+          "y": 5,
+          "visible": true,
+          "width": 128,
+          "height": 55,
+          "relations": [
+            {
+              "_$type": "Relation",
+              "data": [
+                9,
+                0
+              ]
+            }
+          ],
+          "title": "标准描述",
+          "titleFontSize": 25
+        },
+        {
+          "_$id": "lz3boswa",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "skill_t",
+          "x": 1,
+          "y": 306,
+          "width": 500,
+          "height": 474,
+          "mouseThrough": true,
+          "text": "",
+          "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+          "fontSize": 25,
+          "color": "#ffffff",
+          "ubb": true,
+          "templateVars": true,
+          "wordWrap": true
+        },
+        {
+          "_$id": "z35tyg84",
+          "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+          "_$var": true,
+          "name": "audio_male",
+          "active": true,
+          "x": 55,
+          "y": 784,
+          "visible": false,
+          "width": 188,
+          "height": 70,
+          "title": "男性音效",
+          "titleFontSize": 40
+        },
+        {
+          "_$id": "afqir219",
+          "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+          "_$var": true,
+          "name": "audio_female",
+          "active": true,
+          "x": 263,
+          "y": 784,
+          "visible": false,
+          "width": 188,
+          "height": 70,
+          "title": "女性音效",
+          "titleFontSize": 40
+        },
+        {
+          "_$id": "atp6cs3o",
+          "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+          "_$var": true,
+          "name": "audio_effect",
+          "active": true,
+          "x": 156,
+          "y": 784,
+          "visible": false,
+          "width": 188,
+          "height": 70,
+          "title": "技能音效",
+          "titleFontSize": 40
+        }
+      ]
+    },
+    {
+      "_$id": "b449rswa",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "concept",
+      "x": 719,
+      "y": 531,
+      "width": 498,
+      "height": 35,
+      "visible": false,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "rgba(0,0,0,0.9019607843137255)"
+      },
+      "text": "",
+      "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+      "fontSize": 25,
+      "color": "#ffff00",
+      "fitContent": 2,
+      "wordWrap": true
+    }
+  ]
+}

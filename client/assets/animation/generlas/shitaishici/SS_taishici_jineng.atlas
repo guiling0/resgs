@@ -1,0 +1,1156 @@
+
+SS_taishici_jineng.png
+size: 2004,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+tai/2/2_03
+  rotate: false
+  xy: 1490, 115
+  size: 422, 171
+  orig: 667, 200
+  offset: 245, 10
+  index: -1
+tai/2/2_04
+  rotate: false
+  xy: 1493, 288
+  size: 450, 171
+  orig: 667, 200
+  offset: 217, 10
+  index: -1
+tai/2/2_05
+  rotate: false
+  xy: 1493, 461
+  size: 509, 171
+  orig: 667, 200
+  offset: 158, 10
+  index: -1
+tai/2/2_07
+  rotate: true
+  xy: 2, 2
+  size: 630, 171
+  orig: 667, 200
+  offset: 37, 10
+  index: -1
+tai/2/2_33
+  rotate: false
+  xy: 2, 1442
+  size: 660, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_34
+  rotate: false
+  xy: 665, 1644
+  size: 660, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_35
+  rotate: false
+  xy: 1327, 1644
+  size: 659, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_36
+  rotate: false
+  xy: 2, 1038
+  size: 659, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_37
+  rotate: false
+  xy: 1325, 1240
+  size: 658, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_38
+  rotate: false
+  xy: 664, 1240
+  size: 659, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_39
+  rotate: false
+  xy: 175, 28
+  size: 655, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_40
+  rotate: false
+  xy: 833, 230
+  size: 655, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_33
+  rotate: false
+  xy: 1328, 1846
+  size: 660, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_34
+  rotate: false
+  xy: 2, 1240
+  size: 660, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_35
+  rotate: false
+  xy: 2, 634
+  size: 658, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_36
+  rotate: false
+  xy: 663, 836
+  size: 658, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_37
+  rotate: false
+  xy: 1324, 1038
+  size: 658, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_38
+  rotate: false
+  xy: 664, 1442
+  size: 660, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_39
+  rotate: false
+  xy: 175, 230
+  size: 656, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_33
+  rotate: false
+  xy: 1326, 1442
+  size: 659, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_34
+  rotate: false
+  xy: 2, 1846
+  size: 661, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_35
+  rotate: false
+  xy: 1323, 836
+  size: 657, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_36
+  rotate: false
+  xy: 1322, 634
+  size: 657, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_37
+  rotate: false
+  xy: 2, 836
+  size: 659, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_39
+  rotate: false
+  xy: 832, 28
+  size: 655, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_33
+  rotate: false
+  xy: 2, 1644
+  size: 661, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_34
+  rotate: false
+  xy: 665, 1846
+  size: 661, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_35
+  rotate: false
+  xy: 662, 634
+  size: 658, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_36
+  rotate: false
+  xy: 175, 432
+  size: 658, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_37
+  rotate: false
+  xy: 663, 1038
+  size: 659, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_40
+  rotate: false
+  xy: 835, 432
+  size: 656, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+
+SS_taishici_jineng2.png
+size: 1965,2022
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+tai/2/2_41
+  rotate: false
+  xy: 2, 1214
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_42
+  rotate: false
+  xy: 658, 1416
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_43
+  rotate: false
+  xy: 1312, 1618
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_44
+  rotate: false
+  xy: 2, 1012
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_45
+  rotate: false
+  xy: 651, 1214
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_46
+  rotate: false
+  xy: 1307, 1416
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_47
+  rotate: false
+  xy: 2, 810
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_48
+  rotate: false
+  xy: 651, 1012
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_49
+  rotate: false
+  xy: 1300, 1214
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_51
+  rotate: false
+  xy: 2, 608
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_54
+  rotate: false
+  xy: 651, 810
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_55
+  rotate: false
+  xy: 1300, 1012
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_57
+  rotate: false
+  xy: 2, 406
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_61
+  rotate: false
+  xy: 651, 608
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_40
+  rotate: false
+  xy: 659, 1618
+  size: 651, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_41
+  rotate: false
+  xy: 1300, 810
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_42
+  rotate: false
+  xy: 2, 204
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_43
+  rotate: false
+  xy: 651, 406
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_44
+  rotate: false
+  xy: 1300, 608
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_45
+  rotate: false
+  xy: 2, 2
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_46
+  rotate: false
+  xy: 651, 204
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_48
+  rotate: false
+  xy: 1300, 406
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_52
+  rotate: false
+  xy: 651, 2
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_55
+  rotate: false
+  xy: 1300, 204
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_56
+  rotate: false
+  xy: 1300, 2
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_38
+  rotate: false
+  xy: 2, 1416
+  size: 654, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_40
+  rotate: false
+  xy: 2, 1820
+  size: 655, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_38
+  rotate: false
+  xy: 2, 1618
+  size: 655, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_39
+  rotate: false
+  xy: 659, 1820
+  size: 655, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_64
+  rotate: false
+  xy: 1316, 1820
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+
+SS_taishici_jineng3.png
+size: 1949,2022
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+tai/3/3_57
+  rotate: false
+  xy: 2, 1820
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_58
+  rotate: false
+  xy: 2, 1618
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_61
+  rotate: false
+  xy: 651, 1820
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_63
+  rotate: false
+  xy: 2, 1416
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_41
+  rotate: false
+  xy: 651, 1618
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_42
+  rotate: false
+  xy: 1300, 1820
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_43
+  rotate: false
+  xy: 2, 1214
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_44
+  rotate: false
+  xy: 651, 1416
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_45
+  rotate: false
+  xy: 1300, 1618
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_46
+  rotate: false
+  xy: 2, 1012
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_47
+  rotate: false
+  xy: 651, 1214
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_50
+  rotate: false
+  xy: 1300, 1416
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_53
+  rotate: false
+  xy: 2, 810
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_55
+  rotate: false
+  xy: 651, 1012
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_57
+  rotate: false
+  xy: 1300, 1214
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_59
+  rotate: false
+  xy: 2, 608
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_61
+  rotate: false
+  xy: 651, 810
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_62
+  rotate: false
+  xy: 1300, 1012
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_63
+  rotate: false
+  xy: 2, 406
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_41
+  rotate: false
+  xy: 651, 608
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_42
+  rotate: false
+  xy: 1300, 810
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_43
+  rotate: false
+  xy: 2, 204
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_44
+  rotate: false
+  xy: 651, 406
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_45
+  rotate: false
+  xy: 1300, 608
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_47
+  rotate: false
+  xy: 2, 2
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_51
+  rotate: false
+  xy: 651, 204
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_52
+  rotate: false
+  xy: 1300, 406
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_53
+  rotate: false
+  xy: 651, 2
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_54
+  rotate: false
+  xy: 1300, 204
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_55
+  rotate: false
+  xy: 1300, 2
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+
+SS_taishici_jineng4.png
+size: 1949,2015
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+tai/2/2_50
+  rotate: false
+  xy: 651, 1612
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_52
+  rotate: false
+  xy: 1300, 1814
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_56
+  rotate: false
+  xy: 2, 1208
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_58
+  rotate: false
+  xy: 651, 1411
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_59
+  rotate: false
+  xy: 1300, 1613
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_60
+  rotate: false
+  xy: 2, 1007
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_62
+  rotate: false
+  xy: 651, 1210
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_63
+  rotate: false
+  xy: 1300, 1412
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/2/2_64
+  rotate: false
+  xy: 2, 806
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_47
+  rotate: false
+  xy: 651, 1009
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_49
+  rotate: false
+  xy: 1300, 1211
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_50
+  rotate: false
+  xy: 2, 605
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_51
+  rotate: false
+  xy: 651, 808
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_54
+  rotate: false
+  xy: 1300, 1010
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_59
+  rotate: false
+  xy: 2, 404
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_60
+  rotate: false
+  xy: 651, 607
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_62
+  rotate: false
+  xy: 1300, 809
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_64
+  rotate: false
+  xy: 2, 203
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_48
+  rotate: false
+  xy: 651, 406
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_49
+  rotate: false
+  xy: 1300, 608
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_51
+  rotate: false
+  xy: 2, 2
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_52
+  rotate: false
+  xy: 651, 205
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_54
+  rotate: false
+  xy: 1300, 407
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_56
+  rotate: false
+  xy: 651, 4
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_58
+  rotate: false
+  xy: 1300, 206
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_64
+  rotate: false
+  xy: 1300, 5
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_56
+  rotate: false
+  xy: 2, 1813
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_58
+  rotate: false
+  xy: 2, 1611
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_60
+  rotate: false
+  xy: 651, 1813
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_62
+  rotate: false
+  xy: 2, 1409
+  size: 647, 200
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+
+SS_taishici_jineng5.png
+size: 2009,1968
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+tai/2/2_01
+  rotate: false
+  xy: 2, 1799
+  size: 352, 167
+  orig: 667, 200
+  offset: 315, 14
+  index: -1
+tai/2/2_02
+  rotate: false
+  xy: 356, 1799
+  size: 397, 167
+  orig: 667, 200
+  offset: 270, 14
+  index: -1
+tai/2/2_06
+  rotate: false
+  xy: 755, 1795
+  size: 568, 171
+  orig: 667, 200
+  offset: 99, 10
+  index: -1
+tai/2/2_08
+  rotate: false
+  xy: 1325, 1795
+  size: 659, 171
+  orig: 667, 200
+  offset: 8, 10
+  index: -1
+tai/2/2_09
+  rotate: false
+  xy: 2, 1626
+  size: 665, 171
+  orig: 667, 200
+  offset: 2, 10
+  index: -1
+tai/2/2_10
+  rotate: false
+  xy: 669, 1622
+  size: 667, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_11
+  rotate: false
+  xy: 1338, 1622
+  size: 667, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_12
+  rotate: false
+  xy: 665, 1449
+  size: 667, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_13
+  rotate: false
+  xy: 1334, 1449
+  size: 667, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_14
+  rotate: false
+  xy: 658, 1276
+  size: 667, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_15
+  rotate: false
+  xy: 1327, 1276
+  size: 667, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_16
+  rotate: false
+  xy: 651, 1103
+  size: 667, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_17
+  rotate: false
+  xy: 1320, 1103
+  size: 667, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_18
+  rotate: false
+  xy: 651, 930
+  size: 667, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_19
+  rotate: false
+  xy: 1320, 930
+  size: 667, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_20
+  rotate: false
+  xy: 2, 757
+  size: 667, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_21
+  rotate: false
+  xy: 671, 757
+  size: 667, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_22
+  rotate: false
+  xy: 1340, 757
+  size: 667, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_23
+  rotate: false
+  xy: 2, 584
+  size: 666, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_24
+  rotate: false
+  xy: 670, 584
+  size: 667, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_25
+  rotate: false
+  xy: 2, 1453
+  size: 661, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_26
+  rotate: false
+  xy: 2, 1280
+  size: 654, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_27
+  rotate: false
+  xy: 1339, 582
+  size: 651, 173
+  orig: 667, 200
+  offset: 0, 8
+  index: -1
+tai/2/2_28
+  rotate: false
+  xy: 2, 1107
+  size: 647, 171
+  orig: 667, 200
+  offset: 0, 10
+  index: -1
+tai/2/2_29
+  rotate: false
+  xy: 2, 932
+  size: 647, 173
+  orig: 667, 200
+  offset: 0, 8
+  index: -1
+tai/2/2_30
+  rotate: false
+  xy: 2, 407
+  size: 647, 175
+  orig: 667, 200
+  offset: 0, 6
+  index: -1
+tai/2/2_31
+  rotate: false
+  xy: 651, 405
+  size: 647, 177
+  orig: 667, 200
+  offset: 0, 7
+  index: -1
+tai/2/2_32
+  rotate: false
+  xy: 1300, 402
+  size: 647, 178
+  orig: 667, 200
+  offset: 0, 8
+  index: -1
+tai/2/2_53
+  rotate: false
+  xy: 2, 207
+  size: 647, 198
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/3/3_53
+  rotate: false
+  xy: 651, 205
+  size: 647, 198
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/4/4_60
+  rotate: false
+  xy: 1300, 202
+  size: 647, 198
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_46
+  rotate: false
+  xy: 651, 4
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_50
+  rotate: false
+  xy: 2, 7
+  size: 647, 198
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_63
+  rotate: false
+  xy: 1300, 2
+  size: 648, 198
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+
+SS_taishici_jineng6.png
+size: 1007,651
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+tai/5/5_48
+  rotate: true
+  xy: 2, 2
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_49
+  rotate: true
+  xy: 203, 2
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_57
+  rotate: true
+  xy: 404, 2
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_59
+  rotate: true
+  xy: 605, 2
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1
+tai/5/5_61
+  rotate: true
+  xy: 806, 2
+  size: 647, 199
+  orig: 667, 200
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,111 @@
+{
+  "_$ver": 1,
+  "_$id": "g0okz4x4",
+  "_$runtime": "res://5b1c4c0c-77b3-4cdd-8359-798075f8bdbd",
+  "_$type": "GBox",
+  "name": "general_single",
+  "width": 285,
+  "height": 436,
+  "relations": [
+    {
+      "_$type": "Relation",
+      "target": {
+        "_$ref": "vpd6wkig"
+      },
+      "data": [
+        20,
+        0,
+        24,
+        0
+      ]
+    }
+  ],
+  "layout": {
+    "type": 1,
+    "rowGap": 20,
+    "align": 3,
+    "stretchX": 2,
+    "stretchY": 2
+  },
+  "_$child": [
+    {
+      "_$id": "vpd6wkig",
+      "_$var": true,
+      "_$type": "GBox",
+      "name": "generals",
+      "width": 285,
+      "height": 195,
+      "layout": {
+        "type": 3,
+        "columns": 6,
+        "rowGap": 5,
+        "columnGap": 5,
+        "stretchX": 2,
+        "stretchY": 2
+      }
+    },
+    {
+      "_$id": "3tay6646",
+      "_$type": "GImage",
+      "name": "line",
+      "y": 215,
+      "width": 285,
+      "height": 6,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "g0okz4x4"
+          },
+          "data": [
+            1,
+            0
+          ]
+        }
+      ],
+      "src": "res://fbc7c04c-db40-43c4-a03e-c41faa8287f9",
+      "autoSize": false
+    },
+    {
+      "_$id": "36wnp0ox",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "head",
+      "x": 73,
+      "y": 241,
+      "width": 140,
+      "height": 195,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "g0okz4x4"
+          },
+          "data": [
+            6,
+            0
+          ]
+        }
+      ],
+      "src": "res://b130fb4e-7392-4afe-91d0-21a902d58eec",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "8xn18qob",
+          "_$type": "GTextField",
+          "name": "headLabel",
+          "x": 40,
+          "y": 82,
+          "width": 60,
+          "height": 31,
+          "text": "武将",
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 30,
+          "color": "#FFFFFF",
+          "align": "center",
+          "valign": "middle"
+        }
+      ]
+    }
+  ]
+}

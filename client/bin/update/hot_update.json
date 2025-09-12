@@ -1,0 +1,4 @@
+{
+    "core": "1.0",
+    "extensions": ["standard@1.0", "wars@1.0", "lang@1.0"]
+}

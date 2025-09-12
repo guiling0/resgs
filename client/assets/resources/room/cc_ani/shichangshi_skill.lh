@@ -1,0 +1,329 @@
+{
+  "_$ver": 1,
+  "_$id": "53sfdunp",
+  "_$runtime": "res://9f8443ea-597c-40b5-b6da-62415142f477",
+  "_$preloads": [
+    "res://3c3968e9-43c7-45dd-958c-4b47e8555fdf",
+    "res://1f663fa0-0c99-4847-b7b9-49e701ffaee5",
+    "res://eb7edbd9-d9b6-4f29-ae5d-fa9a0b5d6f45",
+    "res://211c5d7c-a2cc-40b1-a002-30e67573a0a8"
+  ],
+  "_$preloadTypes": {
+    "0": "Spine",
+    "1": "Spine",
+    "2": "Spine",
+    "3": "Spine"
+  },
+  "_$type": "Sprite",
+  "name": "shichangshi_skill",
+  "x": 958,
+  "y": 538,
+  "width": 100,
+  "height": 100,
+  "anchorX": 0.5,
+  "anchorY": 0.5,
+  "scaleX": 1.25,
+  "scaleY": 1.25,
+  "_$comp": [
+    {
+      "_$type": "Spine2DRenderNode",
+      "layer": 0,
+      "source": "res://1f663fa0-0c99-4847-b7b9-49e701ffaee5",
+      "animationName": "play",
+      "preview": true,
+      "physicsUpdate": 2
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "n7jaxlh7",
+      "_$var": true,
+      "_$type": "Sprite",
+      "name": "shichangshi_bagua",
+      "x": 51,
+      "y": 51,
+      "width": 445,
+      "height": 527,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "_$comp": [
+        {
+          "_$type": "Spine2DRenderNode",
+          "layer": 0,
+          "useFastRender": false,
+          "source": "res://3c3968e9-43c7-45dd-958c-4b47e8555fdf",
+          "animationName": "play1",
+          "loop": false,
+          "preview": true,
+          "physicsUpdate": 2,
+          "externalSkins": []
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "zlqlenll",
+          "_$var": true,
+          "_$type": "Sprite",
+          "name": "scs_effect_0",
+          "x": 223,
+          "y": -18,
+          "width": 100,
+          "height": 100,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "visible": false,
+          "_$comp": [
+            {
+              "_$type": "Spine2DRenderNode",
+              "layer": 0,
+              "source": "res://211c5d7c-a2cc-40b1-a002-30e67573a0a8",
+              "animationName": "play1",
+              "loop": false,
+              "preview": true,
+              "physicsUpdate": 2
+            }
+          ]
+        },
+        {
+          "_$id": "twvt9lnv",
+          "_$var": true,
+          "_$type": "Sprite",
+          "name": "scs_effect_1",
+          "x": 421,
+          "y": 67,
+          "width": 100,
+          "height": 100,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "visible": false,
+          "_$comp": [
+            {
+              "_$type": "Spine2DRenderNode",
+              "layer": 0,
+              "source": "res://211c5d7c-a2cc-40b1-a002-30e67573a0a8",
+              "animationName": "play1",
+              "loop": false,
+              "preview": true,
+              "physicsUpdate": 2
+            }
+          ]
+        },
+        {
+          "_$id": "zv4jppii",
+          "_$var": true,
+          "_$type": "Sprite",
+          "name": "scs_effect_2",
+          "x": 504,
+          "y": 263,
+          "width": 100,
+          "height": 100,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "visible": false,
+          "_$comp": [
+            {
+              "_$type": "Spine2DRenderNode",
+              "layer": 0,
+              "source": "res://211c5d7c-a2cc-40b1-a002-30e67573a0a8",
+              "animationName": "play1",
+              "loop": false,
+              "preview": true,
+              "physicsUpdate": 2
+            }
+          ]
+        },
+        {
+          "_$id": "wuhlosk9",
+          "_$var": true,
+          "_$type": "Sprite",
+          "name": "scs_effect_3",
+          "x": 423,
+          "y": 458,
+          "width": 100,
+          "height": 100,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "visible": false,
+          "_$comp": [
+            {
+              "_$type": "Spine2DRenderNode",
+              "layer": 0,
+              "source": "res://211c5d7c-a2cc-40b1-a002-30e67573a0a8",
+              "animationName": "play1",
+              "loop": false,
+              "preview": true,
+              "physicsUpdate": 2
+            }
+          ]
+        },
+        {
+          "_$id": "9o6z2fwq",
+          "_$var": true,
+          "_$type": "Sprite",
+          "name": "scs_effect_4",
+          "x": 220,
+          "y": 546,
+          "width": 100,
+          "height": 100,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "visible": false,
+          "_$comp": [
+            {
+              "_$type": "Spine2DRenderNode",
+              "layer": 0,
+              "source": "res://211c5d7c-a2cc-40b1-a002-30e67573a0a8",
+              "animationName": "play1",
+              "loop": false,
+              "preview": true,
+              "physicsUpdate": 2
+            }
+          ]
+        },
+        {
+          "_$id": "ashz876h",
+          "_$var": true,
+          "_$type": "Sprite",
+          "name": "scs_effect_5",
+          "x": 22,
+          "y": 466,
+          "width": 100,
+          "height": 100,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "visible": false,
+          "_$comp": [
+            {
+              "_$type": "Spine2DRenderNode",
+              "layer": 0,
+              "source": "res://211c5d7c-a2cc-40b1-a002-30e67573a0a8",
+              "animationName": "play1",
+              "loop": false,
+              "preview": true,
+              "physicsUpdate": 2
+            }
+          ]
+        },
+        {
+          "_$id": "d9ltz80y",
+          "_$var": true,
+          "_$type": "Sprite",
+          "name": "scs_effect_6",
+          "x": -53,
+          "y": 257,
+          "width": 100,
+          "height": 100,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "visible": false,
+          "_$comp": [
+            {
+              "_$type": "Spine2DRenderNode",
+              "layer": 0,
+              "source": "res://211c5d7c-a2cc-40b1-a002-30e67573a0a8",
+              "animationName": "play1",
+              "loop": false,
+              "preview": true,
+              "physicsUpdate": 2
+            }
+          ]
+        },
+        {
+          "_$id": "avm8tjie",
+          "_$var": true,
+          "_$type": "Sprite",
+          "name": "scs_effect_7",
+          "x": 22,
+          "y": 70,
+          "width": 100,
+          "height": 100,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "visible": false,
+          "_$comp": [
+            {
+              "_$type": "Spine2DRenderNode",
+              "layer": 0,
+              "source": "res://211c5d7c-a2cc-40b1-a002-30e67573a0a8",
+              "animationName": "play1",
+              "loop": false,
+              "preview": true,
+              "physicsUpdate": 2
+            }
+          ]
+        },
+        {
+          "_$id": "k5sgifr2",
+          "_$var": true,
+          "_$type": "Sprite",
+          "name": "scs_effect_8",
+          "x": 198,
+          "y": 190,
+          "width": 100,
+          "height": 100,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "visible": false,
+          "_$comp": [
+            {
+              "_$type": "Spine2DRenderNode",
+              "layer": 0,
+              "source": "res://211c5d7c-a2cc-40b1-a002-30e67573a0a8",
+              "animationName": "play1",
+              "loop": false,
+              "preview": true,
+              "physicsUpdate": 2
+            }
+          ]
+        },
+        {
+          "_$id": "kguweq81",
+          "_$var": true,
+          "_$type": "Sprite",
+          "name": "scs_effect_9",
+          "x": 247,
+          "y": 319,
+          "width": 100,
+          "height": 100,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "visible": false,
+          "_$comp": [
+            {
+              "_$type": "Spine2DRenderNode",
+              "layer": 0,
+              "source": "res://211c5d7c-a2cc-40b1-a002-30e67573a0a8",
+              "animationName": "play1",
+              "loop": false,
+              "preview": true,
+              "physicsUpdate": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "x46qlz2g",
+      "_$var": true,
+      "_$type": "Sprite",
+      "name": "shichangshi_body",
+      "x": 50,
+      "y": 51,
+      "width": 1081,
+      "height": 764,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "visible": false,
+      "_$comp": [
+        {
+          "_$type": "Spine2DRenderNode",
+          "layer": 0,
+          "source": "res://eb7edbd9-d9b6-4f29-ae5d-fa9a0b5d6f45",
+          "animationName": "play1",
+          "preview": true,
+          "physicsUpdate": 2
+        }
+      ]
+    }
+  ]
+}

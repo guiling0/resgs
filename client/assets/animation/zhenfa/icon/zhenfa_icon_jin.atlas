@@ -1,0 +1,143 @@
+{
+  "frames": {
+    "zf_g_jin_00000.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 0,
+        "w": 158,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 90
+      },
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 5
+      }
+    },
+    "zf_g_jin_00001.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 83,
+        "w": 158,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 90
+      },
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 5
+      }
+    },
+    "zf_g_jin_00002.png": {
+      "frame": {
+        "idx": 0,
+        "x": 160,
+        "y": 0,
+        "w": 158,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 90
+      },
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 5
+      }
+    },
+    "zf_g_jin_00003.png": {
+      "frame": {
+        "idx": 0,
+        "x": 160,
+        "y": 83,
+        "w": 158,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 90
+      },
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 5
+      }
+    },
+    "zf_g_jin_00004.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 166,
+        "w": 158,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 90
+      },
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 5
+      }
+    },
+    "zf_g_jin_00005.png": {
+      "frame": {
+        "idx": 0,
+        "x": 160,
+        "y": 166,
+        "w": 158,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 90
+      },
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 5
+      }
+    },
+    "zf_g_jin_00006.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 249,
+        "w": 158,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 90
+      },
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 5
+      }
+    },
+    "zf_g_jin_00007.png": {
+      "frame": {
+        "idx": 0,
+        "x": 160,
+        "y": 249,
+        "w": 158,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 90
+      },
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 5
+      }
+    }
+  },
+  "meta": {
+    "scale": 1
+  }
+}

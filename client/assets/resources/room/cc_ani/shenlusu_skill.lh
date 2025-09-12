@@ -1,0 +1,27 @@
+{
+  "_$ver": 1,
+  "_$id": "kvb1baxl",
+  "_$runtime": "res://aad591de-b983-4f07-aa09-1e97baf806e0",
+  "_$type": "Sprite",
+  "name": "shenlusu_skill",
+  "x": 959,
+  "y": 539,
+  "width": 445,
+  "height": 527,
+  "anchorX": 0.5,
+  "anchorY": 0.5,
+  "scaleX": 1.43,
+  "scaleY": 1.43,
+  "_$comp": [
+    {
+      "_$type": "Spine2DRenderNode",
+      "layer": 0,
+      "useFastRender": false,
+      "source": "res://e35763c5-724f-44fa-80f6-2172eb489910",
+      "animationName": "play",
+      "preview": true,
+      "physicsUpdate": 2,
+      "externalSkins": []
+    }
+  ]
+}

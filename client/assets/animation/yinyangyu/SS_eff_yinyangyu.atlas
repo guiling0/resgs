@@ -1,0 +1,83 @@
+
+SS_eff_yinyangyu.png
+size: 1010,1010
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+baguatuyang/baguatuyang_00000
+  rotate: false
+  xy: 506, 246
+  size: 245, 250
+  orig: 364, 364
+  offset: 59, 57
+  index: -1
+baguatuyang/baguatuyang_00001
+  rotate: false
+  xy: 2, 754
+  size: 250, 254
+  orig: 364, 364
+  offset: 57, 55
+  index: -1
+baguatuyang/baguatuyang_00002
+  rotate: false
+  xy: 2, 498
+  size: 250, 254
+  orig: 364, 364
+  offset: 57, 55
+  index: -1
+baguatuyang/baguatuyang_00003
+  rotate: false
+  xy: 254, 754
+  size: 250, 254
+  orig: 364, 364
+  offset: 57, 55
+  index: -1
+baguatuyang/baguatuyang_00004
+  rotate: false
+  xy: 2, 242
+  size: 250, 254
+  orig: 364, 364
+  offset: 57, 55
+  index: -1
+baguatuyang/baguatuyang_00005
+  rotate: false
+  xy: 254, 498
+  size: 250, 254
+  orig: 364, 364
+  offset: 57, 55
+  index: -1
+baguatuyang/baguatuyang_00006
+  rotate: false
+  xy: 506, 754
+  size: 250, 254
+  orig: 364, 364
+  offset: 57, 55
+  index: -1
+baguatuyang/baguatuyang_00007
+  rotate: false
+  xy: 254, 242
+  size: 250, 254
+  orig: 364, 364
+  offset: 57, 55
+  index: -1
+baguatuyang/baguatuyang_00008
+  rotate: false
+  xy: 506, 498
+  size: 250, 254
+  orig: 364, 364
+  offset: 57, 55
+  index: -1
+baguatuyang/baguatuyang_00009
+  rotate: false
+  xy: 758, 754
+  size: 250, 254
+  orig: 364, 364
+  offset: 57, 55
+  index: -1
+yinyangyuwenzi
+  rotate: false
+  xy: 2, 164
+  size: 211, 76
+  orig: 211, 76
+  offset: 0, 0
+  index: -1

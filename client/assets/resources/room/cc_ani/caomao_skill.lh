@@ -1,0 +1,56 @@
+{
+  "_$ver": 1,
+  "_$id": "b980fds0",
+  "_$runtime": "res://b54568c0-03d6-43e9-a0b3-8f029e95f0b2",
+  "_$preloads": [
+    "res://0a242461-73ea-4d33-b974-1f5d78fe1c23",
+    "res://1cbde1aa-e74e-460a-b35c-1afe64e2decf"
+  ],
+  "_$type": "Sprite",
+  "name": "caomao_skill",
+  "x": 960,
+  "y": 540,
+  "width": 445,
+  "height": 527,
+  "anchorX": 0.5,
+  "anchorY": 0.5,
+  "scaleX": 4,
+  "scaleY": 4,
+  "_$comp": [
+    {
+      "_$type": "Spine2DRenderNode",
+      "layer": 0,
+      "source": "res://0a242461-73ea-4d33-b974-1f5d78fe1c23",
+      "animationName": "play",
+      "preview": true,
+      "physicsUpdate": 2,
+      "externalSkins": []
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "eapwl9yf",
+      "_$type": "Sprite",
+      "name": "SS_cmmask",
+      "x": 224,
+      "y": 265,
+      "width": 400,
+      "height": 400,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "scaleX": 1.01,
+      "scaleY": 0.95,
+      "_$comp": [
+        {
+          "_$type": "Spine2DRenderNode",
+          "layer": 0,
+          "useFastRender": false,
+          "source": "res://1cbde1aa-e74e-460a-b35c-1afe64e2decf",
+          "animationName": "play1",
+          "preview": true,
+          "physicsUpdate": 2
+        }
+      ]
+    }
+  ]
+}

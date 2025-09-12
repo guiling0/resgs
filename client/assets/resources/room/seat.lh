@@ -1,0 +1,1330 @@
+{
+  "_$ver": 1,
+  "_$id": "obkklg1l",
+  "_$runtime": "res://4dda9958-8bfc-4bd6-99ad-71e7f2aa34cd",
+  "_$type": "GWidget",
+  "name": "seat",
+  "width": 157,
+  "height": 181,
+  "anchorX": 0.5,
+  "anchorY": 0.5,
+  "drawCallOptimize": true,
+  "controllers": {
+    "_$type": "Record",
+    "gmode": {
+      "_$type": "Controller",
+      "pages": [
+        "single",
+        "dual"
+      ],
+      "_editingIndex": 1
+    }
+  },
+  "_$comp": [
+    {
+      "_$type": "09fc37c5-b56e-42d1-bee6-7d65e74a103c",
+      "scriptPath": "../src/comps/player/SeatComp.ts"
+    },
+    {
+      "_$type": "9865351d-f61b-4be8-88df-c727c305fc27",
+      "scriptPath": "../src/comps/ChooseItemComp.ts",
+      "clickNode": {
+        "_$ref": "obkklg1l"
+      },
+      "selectedImage": [
+        {
+          "_$ref": "ir69omsw"
+        }
+      ],
+      "canClickMask": {
+        "_$ref": "wu8fe3eq"
+      },
+      "isButton": null
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "tbzyn5qr",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "main",
+      "width": 157,
+      "height": 181,
+      "_$child": [
+        {
+          "_$id": "achmhoxk",
+          "_$prefab": "4ade3dd9-2e6a-4637-922f-1192a9fa1cce",
+          "_$var": true,
+          "name": "general_single",
+          "active": true,
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "obkklg1l",
+                "_$ctrl": "gmode"
+              },
+              "pages": [
+                0
+              ]
+            }
+          ],
+          "_$child": [
+            {
+              "_$override": "c0zek2ir",
+              "src": "res://93b3dbdf-3904-4522-b739-0335b09d7b87"
+            },
+            {
+              "_$override": "05tonnsp",
+              "visible": false
+            }
+          ]
+        },
+        {
+          "_$id": "j6gqcmt8",
+          "_$type": "GWidget",
+          "name": "general_dual",
+          "width": 157,
+          "height": 181,
+          "mouseThrough": true,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "obkklg1l",
+                "_$ctrl": "gmode"
+              },
+              "pages": [
+                1
+              ]
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "8f5idtc5",
+              "_$prefab": "11555f87-82bf-4a48-992e-21d2add7f2c3",
+              "_$var": true,
+              "name": "general_head",
+              "active": true,
+              "x": 0,
+              "y": 0,
+              "visible": true,
+              "_$child": [
+                {
+                  "_$override": "c0zek2ir",
+                  "src": "res://93b3dbdf-3904-4522-b739-0335b09d7b87"
+                },
+                {
+                  "_$override": "nuhnkjyy",
+                  "src": ""
+                },
+                {
+                  "_$override": "zqcjrbp2",
+                  "text": ""
+                }
+              ]
+            },
+            {
+              "_$id": "ay8l27ub",
+              "_$prefab": "11555f87-82bf-4a48-992e-21d2add7f2c3",
+              "_$var": true,
+              "name": "general_deputy",
+              "active": true,
+              "x": 79,
+              "y": 0,
+              "visible": true,
+              "_$child": [
+                {
+                  "_$override": "c0zek2ir",
+                  "src": "res://93b3dbdf-3904-4522-b739-0335b09d7b87"
+                },
+                {
+                  "_$override": "nuhnkjyy",
+                  "src": ""
+                },
+                {
+                  "_$override": "zqcjrbp2",
+                  "text": ""
+                }
+              ]
+            },
+            {
+              "_$id": "xsaeeskh",
+              "_$type": "GImage",
+              "name": "line",
+              "width": 155,
+              "height": 179,
+              "src": "res://c30b1d85-cfec-4430-be81-269230fdf263"
+            }
+          ]
+        },
+        {
+          "_$id": "duox8vu4",
+          "_$type": "GImage",
+          "name": "border",
+          "width": 157,
+          "height": 181,
+          "src": "res://7badcd46-85a9-4236-bc81-48cdf53a844c"
+        },
+        {
+          "_$id": "6ed3d2xn",
+          "_$type": "GWidget",
+          "name": "frames",
+          "width": 157,
+          "height": 181,
+          "_$child": [
+            {
+              "_$id": "dzk182hi",
+              "_$var": true,
+              "_$type": "GImage",
+              "name": "fanmian",
+              "width": 157,
+              "height": 181,
+              "visible": false,
+              "src": "res://f65eb690-7e92-4272-93d6-6f342aaafefb",
+              "autoSize": false
+            },
+            {
+              "_$id": "n2m3pc7e",
+              "_$var": true,
+              "_$type": "GImage",
+              "name": "diezhi",
+              "width": 157,
+              "height": 181,
+              "visible": false,
+              "src": "res://a45cd8b6-8cac-4593-bb4f-b728b3a35f81",
+              "autoSize": false
+            },
+            {
+              "_$id": "4q3jmxp2",
+              "_$var": true,
+              "_$type": "GImage",
+              "name": "inplayphase",
+              "x": -11,
+              "y": -10,
+              "width": 179,
+              "height": 203,
+              "visible": false,
+              "src": "res://595494ce-1f1f-4746-833c-82f07957d5bd",
+              "autoSize": false
+            },
+            {
+              "_$id": "f06dk3bz",
+              "_$var": true,
+              "_$type": "GImage",
+              "name": "inresponse",
+              "x": -11,
+              "y": -10,
+              "width": 179,
+              "height": 203,
+              "visible": false,
+              "src": "res://c49a03b1-5e41-43e1-a061-fffc8e70c97c",
+              "autoSize": false
+            },
+            {
+              "_$id": "3b8o6p53",
+              "_$var": true,
+              "_$type": "GImage",
+              "name": "jiuState",
+              "width": 157,
+              "height": 181,
+              "visible": false,
+              "src": "res://0e5de363-844b-47a3-a05e-c8edc5dc95ec",
+              "autoSize": false
+            },
+            {
+              "_$id": "zav915fe",
+              "_$var": true,
+              "_$type": "GImage",
+              "name": "indying",
+              "x": -11,
+              "y": -10,
+              "width": 179,
+              "height": 203,
+              "visible": false,
+              "src": "res://3e9528aa-4702-4bbc-8390-c35a703ad377",
+              "autoSize": false,
+              "_$child": [
+                {
+                  "_$id": "igzjfwsg",
+                  "_$type": "Sprite",
+                  "name": "saveme",
+                  "x": 89,
+                  "y": 101,
+                  "width": 86,
+                  "height": 35,
+                  "anchorX": 0.5,
+                  "anchorY": 0.514,
+                  "_$comp": [
+                    {
+                      "_$type": "Spine2DRenderNode",
+                      "layer": 0,
+                      "source": "res://ce9d90a3-9ff2-4de5-9c1a-a0a86f6dec46",
+                      "animationName": "play",
+                      "preview": true,
+                      "physicsUpdate": 2
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "ir69omsw",
+              "_$var": true,
+              "_$type": "GImage",
+              "name": "isSelected",
+              "x": -11,
+              "y": -10,
+              "width": 179,
+              "height": 203,
+              "visible": false,
+              "src": "res://930a5783-6051-4cec-bf80-3a158514877c",
+              "autoSize": false
+            },
+            {
+              "_$id": "j9ukvzmc",
+              "_$var": true,
+              "_$type": "GImage",
+              "name": "diaohulishan",
+              "x": 32,
+              "y": -12,
+              "width": 93,
+              "height": 205,
+              "visible": false,
+              "src": "res://092e6084-07c6-4ca8-ad85-485338a3130d"
+            },
+            {
+              "_$id": "zldssyn4",
+              "_$var": true,
+              "_$type": "GTextField",
+              "name": "tip_prompt",
+              "width": 157,
+              "height": 181,
+              "mouseThrough": true,
+              "text": "",
+              "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+              "fontSize": 50,
+              "color": "#ffffff",
+              "bold": true,
+              "align": "center",
+              "valign": "middle",
+              "overflow": "shrink",
+              "stroke": 3
+            }
+          ]
+        },
+        {
+          "_$id": "gi6rcci8",
+          "_$var": true,
+          "_$type": "GWidget",
+          "name": "name_info",
+          "width": 157,
+          "height": 181,
+          "mouseThrough": true,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "obkklg1l",
+                "_$ctrl": "gmode"
+              },
+              "pages": [
+                0
+              ]
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "j3j1dqlv",
+              "_$var": true,
+              "_$type": "GImage",
+              "name": "name_bg",
+              "x": 21,
+              "y": 1,
+              "width": 108,
+              "height": 20,
+              "rotation": 90,
+              "src": "res://1c42ab98-a9ca-471f-9e0c-1ef9d30e04e0",
+              "autoSize": false
+            },
+            {
+              "_$id": "ur2ytn1o",
+              "_$var": true,
+              "_$type": "GTextField",
+              "name": "gname",
+              "x": -1,
+              "y": 17,
+              "width": 23,
+              "height": 91,
+              "text": "武将名字",
+              "font": "res://f69bd55c-f37d-4938-a7ea-559c8976cc6b",
+              "fontSize": 18,
+              "color": "#FFFFFF",
+              "align": "center",
+              "valign": "middle",
+              "overflow": "shrink",
+              "wordWrap": true,
+              "leading": 0,
+              "stroke": 2
+            },
+            {
+              "_$id": "zql9w63h",
+              "_$var": true,
+              "_$type": "GImage",
+              "name": "name_icon",
+              "x": -7,
+              "y": -8,
+              "width": 78,
+              "height": 82,
+              "scaleX": 0.5,
+              "scaleY": 0.5,
+              "src": "res://98eba5af-f1f2-4ead-9533-09d2355b10f5",
+              "autoSize": false
+            }
+          ]
+        },
+        {
+          "_$id": "lpugwaug",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "playername",
+          "y": 1,
+          "width": 157,
+          "height": 16,
+          "mouseThrough": true,
+          "cacheAs": "bitmap",
+          "text": "玩家名字七个字",
+          "_isDemo": true,
+          "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+          "fontSize": 14,
+          "color": "rgba(255, 255, 255, 1)",
+          "ubb": true,
+          "templateVars": true,
+          "align": "center",
+          "valign": "middle",
+          "overflow": "ellipsis"
+        },
+        {
+          "_$id": "jbfnf5pk",
+          "_$var": true,
+          "_$type": "GBox",
+          "name": "hps",
+          "x": 141,
+          "y": 164,
+          "width": 15,
+          "height": 16,
+          "background": {
+            "_$type": "Draw9GridTextureCmd",
+            "texture": {
+              "_$uuid": "50ee20df-286c-4c8f-9659-71961ac301b8",
+              "_$type": "Texture"
+            }
+          },
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "obkklg1l"
+              },
+              "data": [
+                9,
+                0,
+                16,
+                0
+              ]
+            }
+          ],
+          "layout": {
+            "type": 1,
+            "rows": 1,
+            "columns": 4,
+            "rowGap": 1,
+            "padding": [
+              2,
+              0,
+              1,
+              0
+            ],
+            "align": 1,
+            "valign": 2,
+            "foldInvisibles": true,
+            "stretchY": 2
+          },
+          "_$child": [
+            {
+              "_$id": "cac5r8yy",
+              "_$var": true,
+              "_$type": "GImage",
+              "name": "shield",
+              "y": 2,
+              "width": 18,
+              "height": 19,
+              "visible": false,
+              "src": "res://eee3939d-8532-4774-8b80-b35ac47c4bc2",
+              "autoSize": false,
+              "_$child": [
+                {
+                  "_$id": "jwz5clyr",
+                  "_$var": true,
+                  "_$type": "GTextField",
+                  "name": "shield_label",
+                  "y": -2,
+                  "width": 18,
+                  "height": 19,
+                  "text": "0",
+                  "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+                  "fontSize": 14,
+                  "color": "#FFFFFF",
+                  "bold": true,
+                  "align": "center",
+                  "valign": "middle",
+                  "stroke": 3
+                }
+              ]
+            },
+            {
+              "_$id": "6tfp2k35",
+              "_$var": true,
+              "_$type": "GTextField",
+              "name": "hplabel",
+              "y": 2,
+              "width": 20,
+              "height": 87,
+              "visible": false,
+              "text": "{inthp=0}\n/\n{maxhp=0}",
+              "fontSize": 14,
+              "color": "rgba(0, 255, 14, 1)",
+              "bold": true,
+              "templateVars": true,
+              "align": "center",
+              "wordWrap": true,
+              "underlineColor": "rgba(255, 255, 255, 1)",
+              "stroke": 2,
+              "strokeColor": "rgba(87, 87, 87, 0.5882352941176471)"
+            }
+          ]
+        },
+        {
+          "_$id": "oe7a4129",
+          "_$type": "GWidget",
+          "name": "equips",
+          "y": 105,
+          "width": 141,
+          "height": 76,
+          "mouseThrough": true,
+          "_$child": [
+            {
+              "_$id": "wgi2hjgv",
+              "_$prefab": "61be9b89-cadb-49c2-8706-d545d3a2033d",
+              "_$var": true,
+              "name": "equip31",
+              "active": true,
+              "x": 70,
+              "y": 9,
+              "visible": false
+            },
+            {
+              "_$id": "atqxmecm",
+              "_$prefab": "61be9b89-cadb-49c2-8706-d545d3a2033d",
+              "_$var": true,
+              "name": "equip32",
+              "active": true,
+              "x": 70,
+              "y": 28,
+              "visible": false
+            },
+            {
+              "_$id": "5u9wibfc",
+              "_$prefab": "61be9b89-cadb-49c2-8706-d545d3a2033d",
+              "_$var": true,
+              "name": "equip35",
+              "active": true,
+              "x": 70,
+              "y": 47,
+              "visible": false
+            },
+            {
+              "_$id": "7zl297dx",
+              "_$prefab": "61be9b89-cadb-49c2-8706-d545d3a2033d",
+              "_$var": true,
+              "name": "equip36",
+              "active": true,
+              "x": 70,
+              "y": 66,
+              "visible": false
+            },
+            {
+              "_$id": "yuw5btyr",
+              "_$prefab": "d4ba65b4-57cf-49ee-bcb6-b2152ee10b46",
+              "_$var": true,
+              "name": "equip33",
+              "active": true,
+              "x": 35,
+              "y": 47,
+              "visible": false
+            },
+            {
+              "_$id": "8ddhmp3c",
+              "_$prefab": "d4ba65b4-57cf-49ee-bcb6-b2152ee10b46",
+              "_$var": true,
+              "name": "equip34",
+              "active": true,
+              "x": 105,
+              "y": 47,
+              "visible": false,
+              "_$child": [
+                {
+                  "_$override": "lrp736bh",
+                  "src": "res://1bb1c6a2-2227-41b7-a990-f0ddc77a548a"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "06p0hw18",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "handcard",
+          "x": -7,
+          "y": 97,
+          "width": 30,
+          "height": 18,
+          "mouseThrough": true,
+          "src": "res://a781e3af-89cb-44d2-a84c-ad1fb8aec578",
+          "autoSize": false,
+          "_$child": [
+            {
+              "_$id": "aiob8jx8",
+              "_$var": true,
+              "_$type": "GTextField",
+              "name": "handlabel",
+              "x": 7,
+              "y": 2,
+              "width": 20,
+              "height": 14,
+              "text": "0",
+              "fontSize": 13,
+              "color": "#FFFFFF",
+              "align": "center",
+              "valign": "middle",
+              "padding": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "stroke": 3
+            }
+          ]
+        },
+        {
+          "_$id": "q37tsiu9",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "seat",
+          "x": 67,
+          "y": 181,
+          "width": 23,
+          "height": 16,
+          "mouseThrough": true,
+          "src": "",
+          "autoSize": false
+        },
+        {
+          "_$id": "bt2caa2r",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "turnstate",
+          "x": 18,
+          "y": 174,
+          "width": 120,
+          "height": 12,
+          "src": ""
+        },
+        {
+          "_$id": "esai1ryn",
+          "_$var": true,
+          "_$type": "GWidget",
+          "name": "camp",
+          "x": 52,
+          "width": 105,
+          "height": 121,
+          "mouseThrough": true,
+          "_$child": [
+            {
+              "_$id": "3w11lr92",
+              "_$var": true,
+              "_$type": "GWidget",
+              "name": "guozhan_k_mark",
+              "x": 46,
+              "width": 59,
+              "height": 41,
+              "_$child": [
+                {
+                  "_$id": "0rh656nk",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "kingdom",
+                  "x": 29,
+                  "width": 30,
+                  "height": 30,
+                  "src": "",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "a4pui1mu",
+                  "_$var": true,
+                  "_$type": "Animation",
+                  "name": "ani_dashili",
+                  "x": 25,
+                  "y": -6,
+                  "width": 0,
+                  "height": 0,
+                  "visible": false,
+                  "source": "res://5874272b-2373-4af0-8a4d-50dad5fb562b",
+                  "autoPlay": true,
+                  "index": 2,
+                  "interval": 50
+                },
+                {
+                  "_$id": "s1mh88rr",
+                  "_$var": true,
+                  "_$type": "Animation",
+                  "name": "zhenfa_jiaji",
+                  "x": -117,
+                  "y": -18,
+                  "width": 100,
+                  "height": 100,
+                  "scaleX": 1.3,
+                  "scaleY": 1.21,
+                  "visible": false,
+                  "source": "",
+                  "autoPlay": true,
+                  "index": 2,
+                  "interval": 50
+                },
+                {
+                  "_$id": "ml04dj1p",
+                  "_$var": true,
+                  "_$type": "Animation",
+                  "name": "zhenfa_icon",
+                  "x": -39,
+                  "y": -32,
+                  "width": 100,
+                  "height": 100,
+                  "visible": false,
+                  "source": "",
+                  "autoPlay": true,
+                  "index": 2,
+                  "interval": 50
+                },
+                {
+                  "_$id": "tf1iib6i",
+                  "_$var": true,
+                  "_$type": "Animation",
+                  "name": "zhenfa_zi",
+                  "y": -31,
+                  "width": 100,
+                  "height": 100,
+                  "visible": false,
+                  "source": "",
+                  "autoPlay": true,
+                  "index": 2,
+                  "interval": 50
+                },
+                {
+                  "_$id": "6pqlhm8v",
+                  "_$var": true,
+                  "_$type": "GWidget",
+                  "name": "guozhan_marks",
+                  "width": 59,
+                  "height": 41,
+                  "visible": false,
+                  "_$child": [
+                    {
+                      "_$id": "je9dcyar",
+                      "_$var": true,
+                      "_$type": "GWidget",
+                      "name": "guozhan_mark_small",
+                      "x": 26,
+                      "width": 33,
+                      "height": 23,
+                      "_$child": [
+                        {
+                          "_$id": "rjmdor63",
+                          "_$type": "GImage",
+                          "name": "image",
+                          "x": -2,
+                          "y": -2,
+                          "width": 37,
+                          "height": 27,
+                          "src": "res://343e4df5-b33a-4b90-973e-a12382078d5d",
+                          "autoSize": false
+                        },
+                        {
+                          "_$id": "ugwqmow0",
+                          "_$var": true,
+                          "_$type": "GImage",
+                          "name": "s_wei",
+                          "width": 13,
+                          "height": 13,
+                          "src": "res://807a0535-1074-4c94-8ec5-be423d8d0366",
+                          "autoSize": false
+                        },
+                        {
+                          "_$id": "bcxt7qz9",
+                          "_$var": true,
+                          "_$type": "GImage",
+                          "name": "s_shu",
+                          "x": 10,
+                          "width": 13,
+                          "height": 13,
+                          "src": "res://244d2904-385b-4f39-a8c9-627c8e60b442",
+                          "autoSize": false
+                        },
+                        {
+                          "_$id": "r45vm8rz",
+                          "_$var": true,
+                          "_$type": "GImage",
+                          "name": "s_wu",
+                          "x": 20,
+                          "width": 13,
+                          "height": 13,
+                          "src": "res://05dcc371-c571-45fe-8f5f-5b4f1539ffa8",
+                          "autoSize": false
+                        },
+                        {
+                          "_$id": "lvf28e8s",
+                          "_$var": true,
+                          "_$type": "GImage",
+                          "name": "s_qun",
+                          "y": 10,
+                          "width": 13,
+                          "height": 13,
+                          "src": "res://17e62765-2315-4c92-8a80-965726a46df0",
+                          "autoSize": false
+                        },
+                        {
+                          "_$id": "xwp53ovr",
+                          "_$var": true,
+                          "_$type": "GImage",
+                          "name": "s_jin",
+                          "x": 10,
+                          "y": 10,
+                          "width": 13,
+                          "height": 13,
+                          "src": "res://42444973-bf8a-4583-9c78-83a98c90f364",
+                          "autoSize": false
+                        },
+                        {
+                          "_$id": "4c9xk8ic",
+                          "_$var": true,
+                          "_$type": "GImage",
+                          "name": "s_ye",
+                          "x": 20,
+                          "y": 10,
+                          "width": 13,
+                          "height": 13,
+                          "grayed": true,
+                          "src": "res://81287634-a240-4f0f-b237-d585b8d87217",
+                          "autoSize": false
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "rmno56nd",
+                      "_$var": true,
+                      "_$type": "GWidget",
+                      "name": "guozhan_mark_big",
+                      "width": 59,
+                      "height": 41,
+                      "visible": false,
+                      "_$child": [
+                        {
+                          "_$id": "8vvhtbdm",
+                          "_$var": true,
+                          "_$type": "GImage",
+                          "name": "b_wei",
+                          "width": 21,
+                          "height": 21,
+                          "src": "res://73b51531-ddf4-4030-bd80-88e32e3918f8",
+                          "autoSize": false
+                        },
+                        {
+                          "_$id": "bbr1b3kg",
+                          "_$var": true,
+                          "_$type": "GImage",
+                          "name": "b_shu",
+                          "x": 19,
+                          "width": 21,
+                          "height": 21,
+                          "src": "res://f209d046-c3d3-4e1b-9017-ce23fb35bfa9",
+                          "autoSize": false
+                        },
+                        {
+                          "_$id": "fgznwx6f",
+                          "_$var": true,
+                          "_$type": "GImage",
+                          "name": "b_wu",
+                          "x": 37,
+                          "width": 21,
+                          "height": 21,
+                          "src": "res://c650fc74-8b48-41ee-8853-e6c558aed200",
+                          "autoSize": false
+                        },
+                        {
+                          "_$id": "0iy19u0l",
+                          "_$var": true,
+                          "_$type": "GImage",
+                          "name": "b_qun",
+                          "y": 19,
+                          "width": 21,
+                          "height": 21,
+                          "src": "res://0a497922-c057-473b-84fc-98a97561d0b3",
+                          "autoSize": false
+                        },
+                        {
+                          "_$id": "8a8yfr30",
+                          "_$var": true,
+                          "_$type": "GImage",
+                          "name": "b_jin",
+                          "x": 18,
+                          "y": 19,
+                          "width": 21,
+                          "height": 21,
+                          "src": "res://3457f038-2cb4-438d-a491-e3f2db3c0f1a",
+                          "autoSize": false
+                        },
+                        {
+                          "_$id": "3qudebd8",
+                          "_$var": true,
+                          "_$type": "GImage",
+                          "name": "b_ye",
+                          "x": 37,
+                          "y": 19,
+                          "width": 21,
+                          "height": 21,
+                          "grayed": true,
+                          "src": "res://c2190577-9d6f-4f50-bd31-d5a92b17dd96",
+                          "autoSize": false
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "ja2mjrlr",
+              "_$var": true,
+              "_$type": "GWidget",
+              "name": "k_mark",
+              "x": 79,
+              "y": 2,
+              "width": 26,
+              "height": 121,
+              "visible": false,
+              "_$child": [
+                {
+                  "_$id": "xwuwl6w4",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "figure",
+                  "width": 25,
+                  "height": 26,
+                  "src": "res://c7dc16e8-60f1-41cc-91bb-d4289470df7e",
+                  "autoSize": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "wu8fe3eq",
+          "_$var": true,
+          "_$type": "GWidget",
+          "name": "canClick",
+          "width": 157,
+          "height": 181,
+          "visible": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "rgba(0,0,0,0.49019607843137253)"
+          }
+        },
+        {
+          "_$id": "znp6vfc3",
+          "_$var": true,
+          "_$type": "Skeleton",
+          "name": "tiesuo",
+          "x": 78,
+          "y": 83,
+          "width": 100,
+          "height": 100,
+          "visible": false,
+          "mouseThrough": true,
+          "source": "res://6308196f-ccef-4339-b337-d83591bb4190",
+          "animationName": "play6",
+          "loop": false,
+          "preview": true
+        },
+        {
+          "_$id": "ufdqhxrm",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "rest",
+          "x": 78,
+          "y": 90,
+          "width": 157,
+          "height": 181,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "visible": false,
+          "mouseThrough": true,
+          "text": "休整\n剩余{count=10}回合",
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 30,
+          "color": "#ffffff",
+          "bold": true,
+          "templateVars": true,
+          "align": "center",
+          "valign": "middle",
+          "wordWrap": true,
+          "stroke": 3
+        },
+        {
+          "_$id": "0hyqm1ss",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "skill_name",
+          "x": 80,
+          "y": 95,
+          "width": 24,
+          "height": 25,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "text": "",
+          "font": "res://3d1c161a-47db-4877-8042-750bcea29919",
+          "fontSize": 20,
+          "color": "#ffffff",
+          "fitContent": 1,
+          "bold": true,
+          "align": "center",
+          "valign": "middle",
+          "stroke": 3
+        },
+        {
+          "_$id": "1bp2bi2y",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "bprompt",
+          "x": 78,
+          "y": 90,
+          "width": 157,
+          "height": 181,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "text": "",
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 40,
+          "color": "#ffffff",
+          "bold": true,
+          "align": "center",
+          "valign": "middle",
+          "wordWrap": true,
+          "stroke": 3
+        },
+        {
+          "_$id": "gvujsfhk",
+          "_$var": true,
+          "_$type": "GWidget",
+          "name": "handbg",
+          "x": 23,
+          "y": 88,
+          "width": 134,
+          "height": 18,
+          "visible": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "rgba(0,0,0,0.7058823529411765)"
+          },
+          "_$child": [
+            {
+              "_$id": "7lrq78fa",
+              "_$var": true,
+              "_$type": "GTextField",
+              "name": "hand_label",
+              "width": 157,
+              "height": 20,
+              "text": "",
+              "font": "res://f69bd55c-f37d-4938-a7ea-559c8976cc6b",
+              "fontSize": 15,
+              "color": "#ffffff",
+              "overflow": "ellipsis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "eftciyqm",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "death",
+      "x": 20,
+      "y": 43,
+      "width": 116,
+      "height": 93,
+      "visible": false,
+      "mouseThrough": true,
+      "src": "",
+      "autoSize": false
+    },
+    {
+      "_$id": "8p6rucd2",
+      "_$var": true,
+      "_$type": "GProgressBar",
+      "name": "timebar",
+      "y": 183,
+      "width": 157,
+      "height": 12,
+      "visible": false,
+      "value": 1,
+      "max": 1,
+      "_hBar": {
+        "_$ref": "02enckga"
+      },
+      "_$child": [
+        {
+          "_$id": "7ditgq8q",
+          "_$type": "GImage",
+          "name": "bg",
+          "width": 157,
+          "height": 12,
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "8p6rucd2"
+              },
+              "data": [
+                1,
+                0,
+                2,
+                0
+              ]
+            }
+          ],
+          "src": "res://eca6b4a6-e3c1-4053-8875-f2579d07000b",
+          "autoSize": false
+        },
+        {
+          "_$id": "02enckga",
+          "_$type": "GImage",
+          "name": "bar",
+          "width": 157,
+          "height": 12,
+          "src": "res://a903e8d4-a82a-4d21-9096-596c8c438154",
+          "autoSize": false
+        },
+        {
+          "_$id": "6qqqprnn",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "think_prompt",
+          "y": -2,
+          "width": 157,
+          "height": 12,
+          "text": "[color=#f7f700]{prompt=思考内容}[/color]思考中",
+          "font": "res://f69bd55c-f37d-4938-a7ea-559c8976cc6b",
+          "fontSize": 14,
+          "color": "#ffffff",
+          "ubb": true,
+          "templateVars": true,
+          "align": "right",
+          "valign": "middle",
+          "leading": 0,
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "strokeColor": "#001fff"
+        }
+      ]
+    },
+    {
+      "_$id": "zysfy2mf",
+      "_$var": true,
+      "_$type": "GBox",
+      "name": "judges",
+      "y": 167,
+      "width": 157,
+      "height": 28,
+      "mouseThrough": true,
+      "layout": {
+        "type": 2
+      }
+    },
+    {
+      "_$id": "54i1moqn",
+      "_$var": true,
+      "_$type": "GBox",
+      "name": "marks",
+      "x": 19,
+      "y": 17,
+      "width": 136,
+      "height": 163,
+      "mouseThrough": true,
+      "layout": {
+        "type": 3,
+        "rowGap": 1,
+        "columnGap": 1,
+        "foldInvisibles": true
+      }
+    },
+    {
+      "_$id": "bf2z8lqd",
+      "_$var": true,
+      "_$type": "GBox",
+      "name": "images",
+      "x": 158,
+      "width": 21,
+      "height": 179,
+      "mouseThrough": true,
+      "layout": {
+        "type": 4,
+        "rowGap": 1,
+        "columnGap": 1
+      }
+    },
+    {
+      "_$id": "5a4tf8jx",
+      "_$prefab": "0e40eb30-b9ab-46dc-b1ca-5a989a2ef78f",
+      "_$var": true,
+      "name": "paopao",
+      "active": true,
+      "x": -7,
+      "y": -9,
+      "scaleX": 0.5,
+      "scaleY": 0.5,
+      "visible": false
+    },
+    {
+      "_$id": "y6ui89c5",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "menu",
+      "width": 157,
+      "height": 181,
+      "visible": false,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "rgba(0,0,0,0.5882352941176471)"
+      },
+      "_$child": [
+        {
+          "_$id": "4yrilvry",
+          "_$prefab": "0ba69d40-ac95-4706-bea8-cc25f9f0d051",
+          "_$var": true,
+          "name": "player_info",
+          "active": true,
+          "x": 18,
+          "y": 30,
+          "visible": true,
+          "width": 121,
+          "height": 39,
+          "title": "  查看信息  ",
+          "titleFontSize": 15
+        },
+        {
+          "_$id": "hf7kimhq",
+          "_$prefab": "0ba69d40-ac95-4706-bea8-cc25f9f0d051",
+          "_$var": true,
+          "name": "menu_jubao",
+          "active": true,
+          "x": 19,
+          "y": 68,
+          "visible": true,
+          "width": 61,
+          "height": 39,
+          "title": "举报",
+          "titleFontSize": 15
+        },
+        {
+          "_$id": "lf1jak2a",
+          "_$prefab": "0ba69d40-ac95-4706-bea8-cc25f9f0d051",
+          "_$var": true,
+          "name": "menu_pingbi",
+          "active": true,
+          "x": 78,
+          "y": 68,
+          "visible": true,
+          "width": 61,
+          "height": 39,
+          "title": "屏蔽",
+          "titleFontSize": 15
+        },
+        {
+          "_$id": "47owmo2g",
+          "_$prefab": "0ba69d40-ac95-4706-bea8-cc25f9f0d051",
+          "_$var": true,
+          "name": "menu_close",
+          "active": true,
+          "x": 18,
+          "y": 105,
+          "visible": true,
+          "width": 121,
+          "height": 39,
+          "title": "    关闭    ",
+          "titleFontSize": 15
+        },
+        {
+          "_$id": "42804s6u",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "egg",
+          "y": 142,
+          "width": 65,
+          "height": 78,
+          "scaleX": 0.5,
+          "scaleY": 0.5,
+          "src": "res://987005ff-7c5d-41ca-b74d-7fd0bf1c1c51",
+          "autoSize": false
+        },
+        {
+          "_$id": "hhg2oxbq",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "flower",
+          "x": 32,
+          "y": 137,
+          "width": 88,
+          "height": 88,
+          "scaleX": 0.5,
+          "scaleY": 0.5,
+          "src": "res://44d5c44e-e21e-4eb4-90d7-77cc20fb6cd4",
+          "autoSize": false
+        }
+      ]
+    },
+    {
+      "_$id": "hz13tcl9",
+      "_$var": true,
+      "_$type": "Animation",
+      "name": "aa",
+      "x": 33,
+      "y": 7,
+      "width": 100,
+      "height": 100,
+      "source": "",
+      "index": 0,
+      "interval": 50
+    }
+  ]
+}

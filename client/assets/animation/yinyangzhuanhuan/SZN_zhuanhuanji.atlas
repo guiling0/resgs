@@ -1,0 +1,167 @@
+
+SZN_zhuanhuanji.png
+size: 411,411
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+glow1_00
+  rotate: false
+  xy: 258, 67
+  size: 73, 72
+  orig: 100, 100
+  offset: 15, 14
+  index: -1
+glow2_00
+  rotate: false
+  xy: 333, 67
+  size: 73, 72
+  orig: 100, 100
+  offset: 15, 14
+  index: -1
+yan2_00_00
+  rotate: false
+  xy: 88, 324
+  size: 88, 85
+  orig: 100, 100
+  offset: 6, 8
+  index: -1
+yan_00
+  rotate: true
+  xy: 178, 243
+  size: 78, 85
+  orig: 100, 100
+  offset: 11, 10
+  index: -1
+yang
+  rotate: false
+  xy: 90, 7
+  size: 82, 82
+  orig: 84, 90
+  offset: 0, 4
+  index: -1
+ying
+  rotate: false
+  xy: 174, 7
+  size: 82, 82
+  orig: 84, 90
+  offset: 0, 4
+  index: -1
+ying_glow00
+  rotate: false
+  xy: 2, 319
+  size: 84, 90
+  orig: 84, 90
+  offset: 0, 0
+  index: -1
+yingyan_00
+  rotate: false
+  xy: 2, 231
+  size: 86, 86
+  orig: 100, 100
+  offset: 8, 8
+  index: -1
+yingyan_01
+  rotate: false
+  xy: 2, 55
+  size: 84, 86
+  orig: 100, 100
+  offset: 9, 8
+  index: -1
+yingyan_02
+  rotate: true
+  xy: 265, 173
+  size: 70, 86
+  orig: 100, 100
+  offset: 16, 8
+  index: -1
+yingyan_03
+  rotate: true
+  xy: 2, 7
+  size: 46, 86
+  orig: 100, 100
+  offset: 26, 8
+  index: -1
+yingyan_04
+  rotate: false
+  xy: 171, 153
+  size: 21, 86
+  orig: 100, 100
+  offset: 40, 8
+  index: -1
+yingyan_05
+  rotate: false
+  xy: 356, 323
+  size: 53, 86
+  orig: 100, 100
+  offset: 25, 8
+  index: -1
+yingyan_06
+  rotate: true
+  xy: 265, 245
+  size: 76, 86
+  orig: 100, 100
+  offset: 13, 8
+  index: -1
+yingyan_07
+  rotate: false
+  xy: 2, 143
+  size: 86, 86
+  orig: 100, 100
+  offset: 8, 8
+  index: -1
+yingyan_08
+  rotate: false
+  xy: 178, 323
+  size: 87, 86
+  orig: 100, 100
+  offset: 7, 8
+  index: -1
+yingyan_09
+  rotate: true
+  xy: 90, 241
+  size: 81, 86
+  orig: 100, 100
+  offset: 10, 8
+  index: -1
+yingyan_10
+  rotate: false
+  xy: 194, 155
+  size: 63, 86
+  orig: 100, 100
+  offset: 19, 8
+  index: -1
+yingyan_11
+  rotate: false
+  xy: 353, 235
+  size: 35, 86
+  orig: 100, 100
+  offset: 33, 8
+  index: -1
+yingyan_12
+  rotate: true
+  xy: 259, 141
+  size: 30, 86
+  orig: 100, 100
+  offset: 36, 8
+  index: -1
+yingyan_13
+  rotate: true
+  xy: 90, 91
+  size: 60, 86
+  orig: 100, 100
+  offset: 21, 8
+  index: -1
+yingyan_14
+  rotate: false
+  xy: 90, 153
+  size: 79, 86
+  orig: 100, 100
+  offset: 11, 8
+  index: -1
+yingyan_15
+  rotate: false
+  xy: 267, 323
+  size: 87, 86
+  orig: 100, 100
+  offset: 7, 8
+  index: -1

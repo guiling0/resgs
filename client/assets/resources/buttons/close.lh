@@ -1,0 +1,133 @@
+{
+  "_$ver": 1,
+  "_$id": "5q4lz1qh",
+  "_$preloads": [
+    "res://d8a78b61-f189-4072-a9bc-0d7fa336cd4f",
+    "res://28897c64-61f6-44ed-b536-f1e1e39db356",
+    "res://a49d6a96-8132-46bf-9522-c41b01c4b160"
+  ],
+  "_$type": "GButton",
+  "name": "close",
+  "width": 38,
+  "height": 40,
+  "controllers": {
+    "_$type": "Record",
+    "button": {
+      "_$type": "Controller",
+      "pages": [
+        "up",
+        "down",
+        "over",
+        "selectedOver"
+      ]
+    }
+  },
+  "_$child": [
+    {
+      "_$id": "pq2hvf6e",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 38,
+      "height": 40,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "5q4lz1qh",
+            "_$ctrl": "button"
+          },
+          "pages": [
+            0
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "5q4lz1qh"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://28897c64-61f6-44ed-b536-f1e1e39db356",
+      "autoSize": false
+    },
+    {
+      "_$id": "7v2en7jq",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 38,
+      "height": 40,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "5q4lz1qh",
+            "_$ctrl": "button"
+          },
+          "pages": [
+            1,
+            3
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "5q4lz1qh"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://d8a78b61-f189-4072-a9bc-0d7fa336cd4f",
+      "autoSize": false
+    },
+    {
+      "_$id": "mbiojug6",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 38,
+      "height": 40,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "5q4lz1qh",
+            "_$ctrl": "button"
+          },
+          "pages": [
+            2
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "5q4lz1qh"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://a49d6a96-8132-46bf-9522-c41b01c4b160",
+      "autoSize": false
+    }
+  ]
+}

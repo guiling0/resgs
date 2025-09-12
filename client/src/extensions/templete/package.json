@@ -1,0 +1,10 @@
+{
+    "name": "templete",
+    "version": "1.0.0",
+    "description": "extensions templete project",
+    "type": "module",
+    "author": "",
+    "scripts": {
+        "build": "tsc && rollup --config extension.config.js && rmdir /s /q dist"
+    }
+}

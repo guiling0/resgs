@@ -1,0 +1,59 @@
+{
+  "_$ver": 1,
+  "_$id": "xn0achj5",
+  "_$var": true,
+  "_$runtime": "res://47779646-7516-4e6b-8c6a-b13c4fcbf2f9",
+  "_$type": "GImage",
+  "name": "viewas",
+  "x": 8,
+  "y": 79.99999999999999,
+  "width": 124,
+  "height": 30,
+  "src": "res://5e7b505d-3061-4185-8d9e-e42106b1aa69",
+  "autoSize": false,
+  "_$child": [
+    {
+      "_$id": "nbv7gumm",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "viewas_name",
+      "x": -1,
+      "y": 2,
+      "width": 124,
+      "height": 27,
+      "text": "",
+      "_isDemo": true,
+      "font": "res://36a54572-1e5e-4b85-a5b5-3bbc7456494b",
+      "fontSize": 18,
+      "bold": true,
+      "valign": "middle",
+      "overflow": "ellipsis",
+      "stroke": 2,
+      "strokeColor": "#ffffff"
+    },
+    {
+      "_$id": "zre9qff0",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "viewas_number",
+      "x": 86,
+      "y": -4,
+      "width": 33,
+      "height": 33,
+      "src": "",
+      "autoSize": false
+    },
+    {
+      "_$id": "s28r0zdu",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "viewas_suit",
+      "x": 103,
+      "y": 3,
+      "width": 26,
+      "height": 21,
+      "src": "",
+      "autoSize": false
+    }
+  ]
+}

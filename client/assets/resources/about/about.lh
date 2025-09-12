@@ -1,0 +1,79 @@
+{
+  "_$ver": 1,
+  "_$id": "xcxihyhd",
+  "_$runtime": "res://adf562cb-0ce8-48bb-81e8-44e0235eec41",
+  "_$type": "GWidget",
+  "name": "about_generals",
+  "width": 1920,
+  "height": 1080,
+  "_$child": [
+    {
+      "_$id": "mopfa6xp",
+      "_$type": "GImage",
+      "name": "bg",
+      "width": 1920,
+      "height": 1080,
+      "src": "res://bb7bad82-2c76-40f3-84ed-340b8828b2df",
+      "autoSize": false
+    },
+    {
+      "_$id": "60z98yvf",
+      "_$type": "GImage",
+      "name": "img",
+      "x": 28,
+      "y": 26,
+      "width": 1864,
+      "height": 1028,
+      "src": "res://9472d222-468f-4057-ba2a-42869f1d04ff",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "nfkd94mt",
+          "_$type": "GTextField",
+          "name": "title",
+          "x": 112,
+          "y": 19,
+          "width": 287,
+          "height": 53,
+          "text": "关于RESGS",
+          "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+          "fontSize": 40,
+          "color": "#ffffff",
+          "bold": true,
+          "ubb": true,
+          "valign": "middle"
+        },
+        {
+          "_$id": "zcqg7vli",
+          "_$prefab": "1dd1b68b-7014-4f25-b642-e20a3cbb4713",
+          "_$var": true,
+          "name": "back",
+          "active": true,
+          "x": 1696,
+          "y": 13,
+          "visible": true,
+          "width": 151,
+          "height": 64,
+          "title": " 返回 ",
+          "titleFontSize": 40
+        }
+      ]
+    },
+    {
+      "_$id": "2eyj200x",
+      "_$type": "GTextField",
+      "name": "title",
+      "x": 79,
+      "y": 151,
+      "width": 1776,
+      "height": 810,
+      "text": "本项目基于《三国杀官方规则集》开发，所有结算以规则集为准。\n\n项目统筹：偷糖的贼\n开发：归零\n代码贡献：(招募中...)\n\n配音支持：寂镜\n结算支持：小毒\n\n特别鸣谢：Ben、xxyheaven、notify、凌天翼\n\n测试人员（排名不分先后）：\n哈哈哈、斜阳逐流、空城孔明、何时暝、鲁肃宝宝、松延、Yaharo.清水、九方蠡、独孤蒜、逆风、当浮一大白熊、恃才、雪人学长、阿彬、贾诩、zoter、狗、三上悟、拓跋宏、子亥申、冷月、想起、m、明杰、呆萌、阿殳、晋、生气的探险家、农农农、Jeff Holmes、madman、月印万川、",
+      "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+      "fontSize": 40,
+      "color": "#ffffff",
+      "ubb": true,
+      "wordWrap": true,
+      "leading": 10
+    }
+  ]
+}

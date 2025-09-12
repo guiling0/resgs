@@ -1,0 +1,134 @@
+{
+  "_$ver": 1,
+  "_$id": "x28a9kao",
+  "_$preloads": [
+    "res://09fa41e9-c466-4bb2-882f-fa916ef0baba",
+    "res://d8570f9b-2c27-4546-bdf5-24ae866daa33"
+  ],
+  "_$type": "GButton",
+  "name": "Root",
+  "width": 100,
+  "height": 20,
+  "controllers": {
+    "_$type": "Record",
+    "button": {
+      "_$type": "Controller",
+      "pages": [
+        "up",
+        "down",
+        "over",
+        "selectedOver"
+      ]
+    }
+  },
+  "titleWidget": {
+    "_$ref": "xt2idybo"
+  },
+  "mode": 1,
+  "_$child": [
+    {
+      "_$id": "am9vx0py",
+      "_$type": "GImage",
+      "name": "img",
+      "y": -3,
+      "width": 17,
+      "height": 17,
+      "scaleX": 2,
+      "scaleY": 2,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "x28a9kao",
+            "_$ctrl": "button"
+          },
+          "pages": [
+            0,
+            2
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "x28a9kao"
+          },
+          "data": [
+            3,
+            0,
+            10,
+            0
+          ]
+        }
+      ],
+      "src": "res://09fa41e9-c466-4bb2-882f-fa916ef0baba",
+      "autoSize": false
+    },
+    {
+      "_$id": "aqqe9mq6",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 17,
+      "height": 17,
+      "scaleX": 2,
+      "scaleY": 2,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "x28a9kao",
+            "_$ctrl": "button"
+          },
+          "pages": [
+            1,
+            3
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "x28a9kao"
+          },
+          "data": [
+            3,
+            0,
+            10,
+            0
+          ]
+        }
+      ],
+      "src": "res://d8570f9b-2c27-4546-bdf5-24ae866daa33",
+      "autoSize": false
+    },
+    {
+      "_$id": "xt2idybo",
+      "_$type": "GTextField",
+      "name": "title",
+      "x": 30,
+      "width": 70,
+      "height": 27,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "x28a9kao"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "text": "Title",
+      "fontSize": 20,
+      "color": "#ffffff",
+      "valign": "middle",
+      "overflow": "hidden"
+    }
+  ]
+}

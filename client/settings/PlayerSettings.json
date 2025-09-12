@@ -1,0 +1,33 @@
+{
+  "resolution": {
+    "designWidth": 1920,
+    "designHeight": 1080,
+    "scaleMode": "showall",
+    "alignV": "middle",
+    "alignH": "center",
+    "screenMode": "horizontal"
+  },
+  "2D": {
+    "useRetinalCanvas": true
+  },
+  "UI": {
+    "alwaysIncludeDefaultSkin": false,
+    "horizontalScrollBar": "",
+    "verticalScrollBar": "",
+    "popupMenu": "",
+    "tooltipsWidget": ""
+  },
+  "modules": {
+    "laya.ui": true,
+    "laya.spine": true,
+    "laya.ani": true,
+    "laya.physics2D": true
+  },
+  "addons": {
+    "laya.ui": "ui2"
+  },
+  "splash": {
+    "image": "resources/logo.png",
+    "fit": "center"
+  }
+}

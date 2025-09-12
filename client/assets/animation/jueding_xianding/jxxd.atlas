@@ -1,0 +1,152 @@
+
+jxxd.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+baise_00000
+  rotate: false
+  xy: 274, 547
+  size: 80, 116
+  orig: 80, 116
+  offset: 0, 0
+  index: -1
+hei
+  rotate: false
+  xy: 635, 640
+  size: 22, 23
+  orig: 22, 23
+  offset: 0, 0
+  index: -1
+juexing_00000
+  rotate: false
+  xy: 2, 665
+  size: 359, 270
+  orig: 359, 270
+  offset: 0, 0
+  index: -1
+juexing_00001
+  rotate: true
+  xy: 363, 576
+  size: 359, 270
+  orig: 359, 270
+  offset: 0, 0
+  index: -1
+juexing_00002
+  rotate: true
+  xy: 2, 304
+  size: 359, 270
+  orig: 359, 270
+  offset: 0, 0
+  index: -1
+juexing_00003
+  rotate: false
+  xy: 356, 304
+  size: 359, 270
+  orig: 359, 270
+  offset: 0, 0
+  index: -1
+juexing_00004
+  rotate: false
+  xy: 635, 665
+  size: 359, 270
+  orig: 359, 270
+  offset: 0, 0
+  index: -1
+juexing_00005
+  rotate: true
+  xy: 717, 304
+  size: 359, 270
+  orig: 359, 270
+  offset: 0, 0
+  index: -1
+juexing_00006
+  rotate: false
+  xy: 2, 32
+  size: 359, 270
+  orig: 359, 270
+  offset: 0, 0
+  index: -1
+juexing_00007
+  rotate: false
+  xy: 363, 32
+  size: 359, 270
+  orig: 359, 270
+  offset: 0, 0
+  index: -1
+xianding_00007
+  rotate: true
+  xy: 724, 2
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: -1
+
+jxxd2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+jieyin
+  rotate: false
+  xy: 606, 586
+  size: 248, 140
+  orig: 248, 140
+  offset: 0, 0
+  index: -1
+sb_diaochan
+  rotate: false
+  xy: 304, 231
+  size: 138, 253
+  orig: 138, 253
+  offset: 0, 0
+  index: -1
+xianding_00000
+  rotate: false
+  xy: 2, 728
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: -1
+xianding_00001
+  rotate: false
+  xy: 2, 486
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: -1
+xianding_00002
+  rotate: false
+  xy: 304, 728
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: -1
+xianding_00003
+  rotate: false
+  xy: 2, 244
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: -1
+xianding_00004
+  rotate: false
+  xy: 304, 486
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: -1
+xianding_00005
+  rotate: false
+  xy: 606, 728
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: -1
+xianding_00006
+  rotate: false
+  xy: 2, 2
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: -1

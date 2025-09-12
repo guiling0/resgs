@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "target": "es6",
+        "lib": ["ESNext", "DOM"],
+        "strict": true,
+        "strictNullChecks": false,
+        "strictFunctionTypes": false,
+        "noEmitHelpers": true,
+        "sourceMap": false,
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "paths": {
+            "~/packages/*": ["./library/packages/*"]
+        }
+    },
+    "include": ["./assets", "./src", "./engine"],
+    "exclude": ["./src/extensions"]
+}

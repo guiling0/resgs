@@ -1,0 +1,83 @@
+
+Ss_Slusu_wujiang.png
+size: 933,933
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BJ 2_00
+  rotate: true
+  xy: 293, 2
+  size: 244, 298
+  orig: 260, 300
+  offset: 10, 1
+  index: -1
+pai_00
+  rotate: true
+  xy: 2, 705
+  size: 226, 295
+  orig: 230, 300
+  offset: 2, 4
+  index: -1
+pai_01
+  rotate: true
+  xy: 602, 476
+  size: 227, 295
+  orig: 230, 300
+  offset: 1, 4
+  index: -1
+pai_02
+  rotate: true
+  xy: 2, 248
+  size: 227, 293
+  orig: 230, 300
+  offset: 1, 5
+  index: -1
+pai_03
+  rotate: true
+  xy: 594, 245
+  size: 229, 289
+  orig: 230, 300
+  offset: 0, 7
+  index: -1
+pai_04
+  rotate: true
+  xy: 2, 17
+  size: 229, 289
+  orig: 230, 300
+  offset: 0, 7
+  index: -1
+pai_05
+  rotate: true
+  xy: 297, 248
+  size: 227, 295
+  orig: 230, 300
+  offset: 1, 4
+  index: -1
+pai_06
+  rotate: true
+  xy: 299, 705
+  size: 226, 300
+  orig: 230, 300
+  offset: 2, 0
+  index: -1
+pai_07
+  rotate: true
+  xy: 601, 705
+  size: 226, 300
+  orig: 230, 300
+  offset: 2, 0
+  index: -1
+pai_08
+  rotate: true
+  xy: 2, 477
+  size: 226, 298
+  orig: 230, 300
+  offset: 2, 2
+  index: -1
+pai_09
+  rotate: true
+  xy: 302, 477
+  size: 226, 298
+  orig: 230, 300
+  offset: 2, 2
+  index: -1

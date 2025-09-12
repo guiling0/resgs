@@ -1,0 +1,847 @@
+
+SS_jn_shenlusu.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+SLS_10
+  rotate: true
+  xy: 2022, 1247
+  size: 41, 24
+  orig: 41, 24
+  offset: 0, 0
+  index: -1
+SLS_11
+  rotate: true
+  xy: 2032, 2004
+  size: 42, 14
+  orig: 42, 14
+  offset: 0, 0
+  index: -1
+SLS_12
+  rotate: true
+  xy: 2024, 1678
+  size: 37, 22
+  orig: 37, 22
+  offset: 0, 0
+  index: -1
+SLS_13
+  rotate: false
+  xy: 1834, 1717
+  size: 196, 329
+  orig: 196, 329
+  offset: 0, 0
+  index: -1
+SLS_141
+  rotate: false
+  xy: 671, 30
+  size: 409, 541
+  orig: 409, 541
+  offset: 0, 0
+  index: -1
+SLS_143
+  rotate: false
+  xy: 1802, 988
+  size: 218, 300
+  orig: 218, 300
+  offset: 0, 0
+  index: -1
+SLS_15
+  rotate: false
+  xy: 1834, 1290
+  size: 212, 93
+  orig: 212, 93
+  offset: 0, 0
+  index: -1
+SLS_16
+  rotate: false
+  xy: 1834, 1385
+  size: 188, 330
+  orig: 189, 330
+  offset: 1, 0
+  index: -1
+SLS_18
+  rotate: true
+  xy: 1836, 432
+  size: 286, 114
+  orig: 286, 114
+  offset: 0, 0
+  index: -1
+SLS_19
+  rotate: false
+  xy: 278, 13
+  size: 234, 96
+  orig: 234, 96
+  offset: 0, 0
+  index: -1
+SLS_20
+  rotate: false
+  xy: 2, 22
+  size: 274, 87
+  orig: 274, 87
+  offset: 0, 0
+  index: -1
+SLS_23
+  rotate: true
+  xy: 1941, 745
+  size: 241, 80
+  orig: 243, 80
+  offset: 0, 0
+  index: -1
+SLS_24
+  rotate: true
+  xy: 1836, 214
+  size: 216, 101
+  orig: 216, 106
+  offset: 0, 0
+  index: -1
+SLS_3
+  rotate: false
+  xy: 1836, 54
+  size: 127, 158
+  orig: 127, 158
+  offset: 0, 0
+  index: -1
+SLS_5
+  rotate: false
+  xy: 1323, 1248
+  size: 69, 44
+  orig: 69, 44
+  offset: 0, 0
+  index: -1
+SLS_6
+  rotate: false
+  xy: 514, 55
+  size: 29, 54
+  orig: 29, 54
+  offset: 0, 0
+  index: -1
+SLS_7
+  rotate: true
+  xy: 1165, 1242
+  size: 50, 156
+  orig: 50, 156
+  offset: 0, 0
+  index: -1
+SLS_8
+  rotate: true
+  xy: 1802, 720
+  size: 266, 137
+  orig: 266, 138
+  offset: 0, 1
+  index: -1
+SLS_9
+  rotate: true
+  xy: 1425, 577
+  size: 46, 21
+  orig: 46, 21
+  offset: 0, 0
+  index: -1
+vfx/ditu/di_00
+  rotate: false
+  xy: 2, 1242
+  size: 1161, 804
+  orig: 1161, 804
+  offset: 0, 0
+  index: -1
+vfx/ditu/ditu_00
+  rotate: true
+  xy: 1082, 4
+  size: 567, 375
+  orig: 667, 375
+  offset: 57, 0
+  index: -1
+vfx/ditu/ditu_37
+  rotate: true
+  xy: 1459, 10
+  size: 613, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_56
+  rotate: false
+  xy: 2, 865
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/ditu_57
+  rotate: false
+  xy: 1165, 1671
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_00
+  rotate: false
+  xy: 2, 488
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_01
+  rotate: true
+  xy: 671, 573
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_02
+  rotate: false
+  xy: 1165, 1294
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_03
+  rotate: false
+  xy: 2, 111
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_04
+  rotate: true
+  xy: 1048, 573
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_05
+  rotate: true
+  xy: 1425, 625
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+
+SS_jn_shenlusu2.png
+size: 2021,2021
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+SLS_25
+  rotate: false
+  xy: 2, 2
+  size: 134, 132
+  orig: 135, 132
+  offset: 0, 0
+  index: -1
+vfx/ditu/bai_00
+  rotate: false
+  xy: 138, 6
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_06
+  rotate: false
+  xy: 2, 1644
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_07
+  rotate: false
+  xy: 2, 1267
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_08
+  rotate: false
+  xy: 671, 1644
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_09
+  rotate: false
+  xy: 2, 890
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_10
+  rotate: false
+  xy: 671, 1267
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_11
+  rotate: false
+  xy: 1340, 1644
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_12
+  rotate: false
+  xy: 2, 513
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_13
+  rotate: false
+  xy: 671, 890
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_14
+  rotate: false
+  xy: 1340, 1267
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_15
+  rotate: false
+  xy: 2, 136
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_17
+  rotate: false
+  xy: 671, 513
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_18
+  rotate: false
+  xy: 1340, 890
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_19
+  rotate: false
+  xy: 671, 136
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_20
+  rotate: false
+  xy: 1340, 513
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_21
+  rotate: false
+  xy: 1340, 136
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+
+SS_jn_shenlusu3.png
+size: 2041,2041
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+SLS_142
+  rotate: false
+  xy: 1133, 17
+  size: 468, 514
+  orig: 468, 515
+  offset: 0, 1
+  index: -1
+SLS_17
+  rotate: false
+  xy: 1603, 199
+  size: 350, 332
+  orig: 352, 332
+  offset: 2, 0
+  index: -1
+SLS_21
+  rotate: false
+  xy: 2, 2
+  size: 398, 322
+  orig: 398, 322
+  offset: 0, 0
+  index: -1
+SLS_22
+  rotate: false
+  xy: 402, 61
+  size: 334, 263
+  orig: 334, 263
+  offset: 0, 0
+  index: -1
+vfx/ditu/ditu_38
+  rotate: false
+  xy: 1425, 1287
+  size: 613, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_39
+  rotate: false
+  xy: 1424, 910
+  size: 613, 375
+  orig: 667, 375
+  offset: 37, 0
+  index: -1
+vfx/ditu/ditu_53
+  rotate: false
+  xy: 756, 910
+  size: 666, 375
+  orig: 667, 375
+  offset: 1, 0
+  index: -1
+vfx/ditu/ditu_54
+  rotate: true
+  xy: 756, 242
+  size: 666, 375
+  orig: 667, 375
+  offset: 1, 0
+  index: -1
+vfx/ditu/ditu_55
+  rotate: false
+  xy: 1133, 533
+  size: 666, 375
+  orig: 667, 375
+  offset: 1, 0
+  index: -1
+vfx/ditu/dituchu_22
+  rotate: false
+  xy: 2, 1664
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_23
+  rotate: false
+  xy: 671, 1664
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_24
+  rotate: false
+  xy: 1340, 1664
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_25
+  rotate: true
+  xy: 2, 995
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_26
+  rotate: true
+  xy: 2, 326
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_27
+  rotate: true
+  xy: 379, 995
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_28
+  rotate: true
+  xy: 379, 326
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+vfx/ditu/dituchu_29
+  rotate: false
+  xy: 756, 1287
+  size: 667, 375
+  orig: 667, 375
+  offset: 0, 0
+  index: -1
+
+SS_jn_shenlusu4.png
+size: 1998,1998
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+vfx/ditu/ditu_40
+  rotate: false
+  xy: 1281, 113
+  size: 612, 375
+  orig: 667, 375
+  offset: 40, 0
+  index: -1
+vfx/ditu/ditu_41
+  rotate: false
+  xy: 1300, 490
+  size: 627, 375
+  orig: 667, 375
+  offset: 30, 0
+  index: -1
+vfx/ditu/ditu_42
+  rotate: false
+  xy: 646, 113
+  size: 633, 375
+  orig: 667, 375
+  offset: 27, 0
+  index: -1
+vfx/ditu/ditu_43
+  rotate: false
+  xy: 1313, 867
+  size: 640, 375
+  orig: 667, 375
+  offset: 25, 0
+  index: -1
+vfx/ditu/ditu_44
+  rotate: false
+  xy: 669, 867
+  size: 642, 375
+  orig: 667, 375
+  offset: 25, 0
+  index: -1
+vfx/ditu/ditu_45
+  rotate: false
+  xy: 1335, 1244
+  size: 642, 375
+  orig: 667, 375
+  offset: 25, 0
+  index: -1
+vfx/ditu/ditu_46
+  rotate: false
+  xy: 2, 113
+  size: 642, 375
+  orig: 667, 375
+  offset: 25, 0
+  index: -1
+vfx/ditu/ditu_47
+  rotate: false
+  xy: 656, 490
+  size: 642, 375
+  orig: 667, 375
+  offset: 25, 0
+  index: -1
+vfx/ditu/ditu_48
+  rotate: false
+  xy: 2, 490
+  size: 652, 375
+  orig: 667, 375
+  offset: 15, 0
+  index: -1
+vfx/ditu/ditu_49
+  rotate: false
+  xy: 1337, 1621
+  size: 659, 375
+  orig: 667, 375
+  offset: 8, 0
+  index: -1
+vfx/ditu/ditu_50
+  rotate: false
+  xy: 670, 1244
+  size: 663, 375
+  orig: 667, 375
+  offset: 4, 0
+  index: -1
+vfx/ditu/ditu_51
+  rotate: false
+  xy: 670, 1621
+  size: 665, 375
+  orig: 667, 375
+  offset: 2, 0
+  index: -1
+vfx/ditu/ditu_52
+  rotate: false
+  xy: 2, 867
+  size: 665, 375
+  orig: 667, 375
+  offset: 2, 0
+  index: -1
+vfx/ditu/ditu_58
+  rotate: false
+  xy: 2, 1621
+  size: 666, 375
+  orig: 667, 375
+  offset: 1, 0
+  index: -1
+vfx/ditu/ditu_59
+  rotate: false
+  xy: 2, 1244
+  size: 666, 375
+  orig: 667, 375
+  offset: 1, 0
+  index: -1
+
+SS_jn_shenlusu5.png
+size: 1962,1962
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+vfx/ditu/ditu_18
+  rotate: false
+  xy: 2, 1585
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_19
+  rotate: false
+  xy: 605, 1585
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_20
+  rotate: false
+  xy: 1208, 1585
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_21
+  rotate: true
+  xy: 2, 982
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_22
+  rotate: true
+  xy: 2, 379
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_23
+  rotate: false
+  xy: 2, 2
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_24
+  rotate: true
+  xy: 379, 982
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_25
+  rotate: true
+  xy: 379, 379
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_26
+  rotate: false
+  xy: 605, 2
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_27
+  rotate: false
+  xy: 1208, 1208
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_28
+  rotate: true
+  xy: 756, 982
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_29
+  rotate: true
+  xy: 1133, 605
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_30
+  rotate: true
+  xy: 756, 379
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_31
+  rotate: true
+  xy: 1208, 2
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_32
+  rotate: true
+  xy: 1510, 605
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_33
+  rotate: true
+  xy: 1585, 2
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+
+SS_jn_shenlusu6.png
+size: 1955,1955
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+vfx/ditu/ditu_01
+  rotate: true
+  xy: 756, 437
+  size: 561, 375
+  orig: 667, 375
+  offset: 57, 0
+  index: -1
+vfx/ditu/ditu_02
+  rotate: true
+  xy: 1185, 73
+  size: 561, 375
+  orig: 667, 375
+  offset: 57, 0
+  index: -1
+vfx/ditu/ditu_03
+  rotate: true
+  xy: 1510, 646
+  size: 553, 375
+  orig: 667, 375
+  offset: 65, 0
+  index: -1
+vfx/ditu/ditu_04
+  rotate: true
+  xy: 1562, 91
+  size: 553, 375
+  orig: 667, 375
+  offset: 65, 0
+  index: -1
+vfx/ditu/ditu_09
+  rotate: true
+  xy: 1133, 636
+  size: 563, 375
+  orig: 667, 375
+  offset: 50, 0
+  index: -1
+vfx/ditu/ditu_10
+  rotate: true
+  xy: 756, 1000
+  size: 576, 375
+  orig: 667, 375
+  offset: 37, 0
+  index: -1
+vfx/ditu/ditu_11
+  rotate: false
+  xy: 1185, 1201
+  size: 584, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_12
+  rotate: false
+  xy: 597, 19
+  size: 586, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_13
+  rotate: true
+  xy: 379, 396
+  size: 588, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_14
+  rotate: true
+  xy: 379, 986
+  size: 590, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_15
+  rotate: false
+  xy: 2, 2
+  size: 593, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_16
+  rotate: true
+  xy: 2, 379
+  size: 596, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_17
+  rotate: true
+  xy: 2, 977
+  size: 599, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_34
+  rotate: false
+  xy: 2, 1578
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_35
+  rotate: false
+  xy: 605, 1578
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+vfx/ditu/ditu_36
+  rotate: false
+  xy: 1208, 1578
+  size: 601, 375
+  orig: 667, 375
+  offset: 33, 0
+  index: -1
+
+SS_jn_shenlusu7.png
+size: 927,927
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+vfx/ditu/ditu_05
+  rotate: true
+  xy: 550, 380
+  size: 545, 375
+  orig: 667, 375
+  offset: 69, 0
+  index: -1
+vfx/ditu/ditu_06
+  rotate: true
+  xy: 2, 4
+  size: 544, 375
+  orig: 667, 375
+  offset: 70, 0
+  index: -1
+vfx/ditu/ditu_07
+  rotate: false
+  xy: 379, 3
+  size: 544, 375
+  orig: 667, 375
+  offset: 70, 0
+  index: -1
+vfx/ditu/ditu_08
+  rotate: false
+  xy: 2, 550
+  size: 546, 375
+  orig: 667, 375
+  offset: 67, 0
+  index: -1

@@ -1,0 +1,63 @@
+{
+  "_$ver": 1,
+  "_$id": "xcwz9jay",
+  "_$runtime": "res://1ff0b059-ce87-4d5b-b623-5b6772911eaf",
+  "_$type": "GWidget",
+  "name": "item",
+  "width": 1827,
+  "height": 64,
+  "_$child": [
+    {
+      "_$id": "gzn3y9p2",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "roomname",
+      "y": 3,
+      "width": 1708,
+      "height": 59,
+      "text": "录像名字",
+      "fontSize": 35,
+      "color": "#ffffff",
+      "ubb": true,
+      "valign": "middle"
+    },
+    {
+      "_$id": "lkj3ewmp",
+      "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+      "_$var": true,
+      "name": "btn_watch",
+      "active": true,
+      "x": 1683,
+      "y": 8,
+      "visible": true,
+      "width": 103,
+      "height": 55,
+      "title": " 观看 ",
+      "_$child": [
+        {
+          "_$override": "x9lkyehy",
+          "fontSize": 25
+        }
+      ]
+    },
+    {
+      "_$id": "lcy7yob2",
+      "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+      "_$var": true,
+      "name": "btn_save",
+      "active": true,
+      "x": 1576,
+      "y": 8,
+      "visible": true,
+      "width": 103,
+      "height": 55,
+      "title": " 保存 ",
+      "_$child": [
+        {
+          "_$override": "x9lkyehy",
+          "fontSize": 25
+        }
+      ]
+    }
+  ]
+}

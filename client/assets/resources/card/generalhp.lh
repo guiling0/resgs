@@ -1,0 +1,33 @@
+{
+  "_$ver": 1,
+  "_$id": "f9iwlhf2",
+  "_$runtime": "res://c0ef9d10-1f55-4ce7-bd8d-9161a5c3e374",
+  "_$type": "GWidget",
+  "name": "generalhp",
+  "width": 23,
+  "height": 20,
+  "_$child": [
+    {
+      "_$id": "td1cal1y",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "hp_left",
+      "width": 14,
+      "height": 20,
+      "src": "res://3e2c83c7-352d-47b4-a775-af90d2a1f567",
+      "autoSize": false
+    },
+    {
+      "_$id": "5y1vs2o5",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "hp_right",
+      "x": 7.499999999999986,
+      "y": 0.2963210126364296,
+      "width": 15,
+      "height": 20,
+      "src": "res://7190fa41-9efc-4010-8dde-a4f6457f3977",
+      "autoSize": false
+    }
+  ]
+}

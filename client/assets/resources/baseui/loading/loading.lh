@@ -1,0 +1,54 @@
+{
+  "_$ver": 1,
+  "_$id": "okjcxrn6",
+  "_$preloads": [
+    "res://d40055f3-7f12-4b75-bc94-92c2fc60b360"
+  ],
+  "_$type": "Sprite",
+  "name": "Sprite",
+  "width": 1920,
+  "height": 1080,
+  "hitTestPrior": true,
+  "_$child": [
+    {
+      "_$id": "8jaq57xe",
+      "_$type": "GImage",
+      "name": "icon",
+      "x": 960,
+      "y": 540,
+      "width": 138,
+      "height": 138,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "src": "res://d40055f3-7f12-4b75-bc94-92c2fc60b360",
+      "_$comp": [
+        {
+          "_$type": "Animator2D",
+          "controller": {
+            "_$uuid": "76ab4bbb-2006-49f5-a523-b4edd1051dd8",
+            "_$type": "AnimationController2D"
+          },
+          "controllerLayers": [
+            {
+              "_$type": "AnimatorControllerLayer2D",
+              "name": "Base Layer",
+              "states": [
+                {
+                  "_$type": "AnimatorState2D",
+                  "name": "loading",
+                  "clipStart": 0,
+                  "clip": {
+                    "_$uuid": "0e13895c-ce45-44eb-a334-3d0a38168e2e",
+                    "_$type": "AnimationClip2D"
+                  },
+                  "soloTransitions": []
+                }
+              ],
+              "defaultStateName": "loading"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

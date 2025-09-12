@@ -1,0 +1,63 @@
+{
+  "_$ver": 1,
+  "_$id": "dl0obljd",
+  "_$runtime": "res://285dd324-e90c-4c3e-9aa8-f0512944cdf8",
+  "_$type": "GBox",
+  "name": "general_info_item",
+  "width": 500,
+  "height": 108,
+  "layout": {
+    "type": 1,
+    "rowGap": 5,
+    "columnGap": 5,
+    "stretchY": 2
+  },
+  "_$child": [
+    {
+      "_$id": "u1mbjfmi",
+      "_$prefab": "497bbdc6-eb65-4b5b-9e5a-400dbd67be40",
+      "_$var": true,
+      "name": "skill",
+      "active": true,
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "visible": true
+    },
+    {
+      "_$id": "pn3c4dco",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "skill_t",
+      "y": 42,
+      "width": 500,
+      "height": 30,
+      "mouseThrough": true,
+      "text": "技能描述",
+      "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+      "fontSize": 25,
+      "color": "#ffffff",
+      "fitContent": 2,
+      "ubb": true,
+      "html": true,
+      "templateVars": true,
+      "wordWrap": true
+    },
+    {
+      "_$id": "w71a4eav",
+      "_$var": true,
+      "_$type": "GList",
+      "name": "list",
+      "y": 77,
+      "width": 500,
+      "height": 31,
+      "layout": {
+        "type": 1,
+        "rowGap": 3,
+        "stretchY": 2
+      },
+      "_initItemNum": null
+    }
+  ]
+}

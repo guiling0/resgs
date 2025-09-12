@@ -1,0 +1,34 @@
+
+SS_eff_xianqu.png
+size: 252,252
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+xianqujuese
+  rotate: false
+  xy: 2, 108
+  size: 152, 142
+  orig: 152, 142
+  offset: 0, 0
+  index: -1
+xianqujuese2_00000
+  rotate: false
+  xy: 2, 2
+  size: 110, 104
+  orig: 152, 142
+  offset: 19, 19
+  index: -1
+xianquwenzi
+  rotate: false
+  xy: 156, 223
+  size: 53, 27
+  orig: 53, 27
+  offset: 0, 0
+  index: -1
+xuhualizi1
+  rotate: false
+  xy: 114, 98
+  size: 10, 8
+  orig: 23, 22
+  offset: 7, 7
+  index: -1

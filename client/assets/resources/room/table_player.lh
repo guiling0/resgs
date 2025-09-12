@@ -1,0 +1,147 @@
+{
+  "_$ver": 1,
+  "_$id": "rff77tf8",
+  "_$runtime": "res://e276d15c-9ce2-42d0-be43-25787082a0f9",
+  "_$type": "GWidget",
+  "name": "table_player",
+  "width": 298,
+  "height": 416,
+  "_$comp": [
+    {
+      "_$type": "bd0ec8c2-a87a-4929-9819-28b8d2c985ae",
+      "scriptPath": "../src/comps/player/TablePlayerComp.ts"
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "ibdw7n06",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "img",
+      "width": 298,
+      "height": 416,
+      "src": "res://2e2c0794-b233-4b2b-86f8-8a01b354fef1"
+    },
+    {
+      "_$id": "0wfx5jki",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "avatar",
+      "x": -26,
+      "y": 3,
+      "width": 250,
+      "height": 292,
+      "scaleX": 1.4,
+      "scaleY": 1.4,
+      "mask": {
+        "_$ref": "h6ccr680"
+      },
+      "src": "",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "h6ccr680",
+          "_$type": "GWidget",
+          "name": "mask",
+          "x": 34,
+          "y": 11,
+          "width": 183,
+          "height": 269,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#ffffff"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "dszq2c7p",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "info",
+      "x": 21,
+      "y": 296,
+      "width": 257,
+      "height": 99,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "rgba(0,0,0,0.5882352941176471)"
+      },
+      "_$child": [
+        {
+          "_$id": "35d42315",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "infotxt",
+          "width": 183,
+          "height": 99,
+          "text": "场次：{total=1000}\n胜率：{win=0}%\n逃跑：{escape=0}",
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 30,
+          "color": "#ffffff",
+          "ubb": true,
+          "templateVars": true
+        }
+      ]
+    },
+    {
+      "_$id": "1zd5sh0t",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "playername",
+      "x": 6,
+      "y": 6,
+      "width": 286,
+      "height": 31,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "rgba(0,0,0,0.5882352941176471)"
+      },
+      "text": "玩家名字",
+      "_isDemo": true,
+      "fontSize": 30,
+      "color": "rgba(255, 255, 255, 1)",
+      "align": "center",
+      "valign": "middle",
+      "overflow": "ellipsis"
+    },
+    {
+      "_$id": "wmh2030c",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "state",
+      "x": 206,
+      "y": 302,
+      "width": 44,
+      "height": 53,
+      "scaleX": 2,
+      "scaleY": 2,
+      "src": "res://ff0dd429-5cbd-430a-ad67-2e8bfecf47a3",
+      "autoSize": false
+    },
+    {
+      "_$id": "k278ldba",
+      "_$prefab": "0e40eb30-b9ab-46dc-b1ca-5a989a2ef78f",
+      "_$var": true,
+      "name": "paopao",
+      "active": true,
+      "x": -19,
+      "y": 20,
+      "visible": false
+    },
+    {
+      "_$id": "sl0qz2vp",
+      "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+      "_$var": true,
+      "name": "btn_tick",
+      "active": true,
+      "x": 75,
+      "y": 230,
+      "visible": false,
+      "width": 148,
+      "height": 60,
+      "title": "踢出房间",
+      "titleFontSize": 30
+    }
+  ]
+}

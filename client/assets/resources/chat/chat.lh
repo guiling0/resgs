@@ -1,0 +1,1350 @@
+{
+  "_$ver": 1,
+  "_$id": "arha90nu",
+  "_$runtime": "res://ca45c054-2e50-4fc1-8be1-3300bb7f8767",
+  "_$preloads": [
+    "res://a67a8573-7d7e-409a-9716-1ff0beb9580d",
+    "res://b5db8392-e88f-4474-93aa-4b23a8c24323",
+    "res://f32d5473-8c8c-4a48-8841-43490b8651d7",
+    "res://63e2ec5a-6d83-40e0-aaa6-03aedcc467c0",
+    "res://6e2f7490-f0bd-4dd6-a788-a0f98051c4e2",
+    "res://afaf2f23-13f4-429b-b1ba-86e70473900a",
+    "res://5a3f4fbf-fa83-4a8d-9bbe-a58262bf74b0",
+    "res://e860efd8-a61b-4b24-abad-426afaa68348",
+    "res://f33a5809-216f-419a-907b-b3580f94222f",
+    "res://7f9fc67f-6431-4158-989f-f8259f7c026e",
+    "res://3cd9942c-98b3-4da8-9e6e-5082936f1205",
+    "res://01a3f04f-3446-4e81-a711-78774c95a488",
+    "res://764bc8ea-0968-4efc-b536-893111ef07e8",
+    "res://b009e526-a886-4364-928b-5e45847ca44b",
+    "res://e2a52d01-b056-4648-93e2-9441c22a72c2",
+    "res://46372468-23f4-4977-bebb-3809c2f9e3b0",
+    "res://182b130b-7802-4e25-b24c-814a65d284fb",
+    "res://5a8a614f-523b-4737-8d89-72492e6bb3a8",
+    "res://8c2d2830-d840-4505-a7b4-82913178db30",
+    "res://d1cf4e5e-6679-41e6-9665-840d72daef56",
+    "res://61699406-c745-46b8-98cd-590402ef6a78",
+    "res://58270e06-adf8-41aa-998a-3f9a5232af39",
+    "res://abcbbd72-67b4-4f97-b286-eff35a245b56",
+    "res://b208ea40-8b69-491b-93dd-437ffcfdc407",
+    "res://7ea3e297-f441-4cff-8587-fe9c6746a7b0",
+    "res://77532323-da04-477e-bdfa-1d9c9e38c2b4",
+    "res://2682cef9-d0ad-4580-886d-e208b0e47913",
+    "res://e6792a7d-61b8-4df7-a476-d78fc2253440",
+    "res://b009873e-391f-48ea-952f-6ead6bd3401f",
+    "res://f00dff8e-efa3-4cf8-8297-7522c0cdfb46",
+    "res://2994dc50-d02b-4842-9892-7d28a41ab77a",
+    "res://4102381c-4726-4ecf-8f05-72ec5df62282",
+    "res://8fc5d328-6e5f-4181-9ece-7d070e7cef3c",
+    "res://3cc3eec5-c37c-4a16-8509-15b6aca08980",
+    "res://3385c8c5-da99-4268-8304-a85c31497152",
+    "res://b5c4aa21-f08c-44f7-9775-3c73e43f95f7",
+    "res://292fe204-378c-4911-97ef-9f51bf20cf06",
+    "res://54b21238-ad21-4f8b-8667-de811d75359a",
+    "res://c207b11a-165e-4961-9d7a-206a6a78c572",
+    "res://86f9dd36-7ae1-4b33-9dde-1644d624561a",
+    "res://9d5d3b6a-59bb-4209-a2a7-405ef3960137",
+    "res://c7100532-10cb-4d6f-8449-6b6f7b4253df",
+    "res://ea1146ed-4d21-4fe4-a3c2-880be387ea45",
+    "res://a4163be9-ff85-4bf0-84ea-d9095b4282b0",
+    "res://a5b0c50b-ad36-4139-b566-db08cb85d999",
+    "res://cb3baa1b-9c49-4ace-ae2e-c2fcd12057fb",
+    "res://3b4b7432-0869-4fcc-8ddf-529baf80d7b4",
+    "res://c3fe59dd-779c-4898-97b4-0f5dc897c598",
+    "res://72845a9e-ba49-4327-9e97-6496d8de4bf7",
+    "res://d74706f5-4073-402b-ba1b-4ac324c146df",
+    "res://46b7d7c3-b582-4208-bb7e-3434968a1e35",
+    "res://5068628c-4aaf-4897-8556-468297cbb1db",
+    "res://5ed2a5bc-434d-4425-a32d-ee9d6b6a16c4",
+    "res://52181562-85b0-444a-8e70-c0ebab50daa4",
+    "res://25484639-927f-4ef3-9517-858d10510465",
+    "res://42acec94-9fc3-40cd-bfe2-db94a4ec1bde",
+    "res://ce0e449f-36cd-4364-bc92-d191cde86f30",
+    "res://d0263b21-fee1-40f3-81da-7fb24e6fab34",
+    "res://a8ebde7d-41ab-451b-a850-197bf9f5f3d7",
+    "res://222426ee-7da3-4b3e-af6d-aaa41c312930",
+    "res://08d5a198-b2bc-47ea-9f51-46a7b4804b68",
+    "res://dbf21ed8-8883-4e69-8d0e-d47a92e79014",
+    "res://dab9cf35-72ce-4d26-a7c7-4e16bdf9d43b",
+    "res://daf17bf8-18ae-4b5a-a86a-bddf859a6d26",
+    "res://c62cc2ab-6c04-47e0-bb2a-9f6cb2538c42",
+    "res://35b5adde-3121-4481-be86-8ef6894b038f",
+    "res://284960e1-7f76-4221-a74b-3014201d6057",
+    "res://07cbb975-fcb8-4f18-9458-5dad22746b2e",
+    "res://c976e739-245b-4e6c-acfc-427bf70191de",
+    "res://c55c4723-2862-47e5-832f-95a5c23d73d2",
+    "res://f84495cc-1510-4a6f-a223-6b3699c6af3b",
+    "res://91bef75d-460c-4cf4-98f2-b98d3149a078"
+  ],
+  "_$type": "GWidget",
+  "name": "chat",
+  "width": 1102,
+  "height": 134,
+  "_$child": [
+    {
+      "_$id": "bseuk2dd",
+      "_$type": "GWidget",
+      "name": "bg",
+      "width": 1102,
+      "height": 134,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "rgba(0,0,0,0.5882352941176471)"
+      },
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "arha90nu"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "oub9bzg9",
+      "_$var": true,
+      "_$type": "GTextInput",
+      "name": "inputChat",
+      "y": 1,
+      "width": 879,
+      "height": 48,
+      "_mouseState": 2,
+      "text": "",
+      "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+      "fontSize": 35,
+      "color": "#FFFFFF",
+      "valign": "middle",
+      "prompt": "输入聊天内容",
+      "promptColor": "#A9A9A9",
+      "_$child": [
+        {
+          "_$id": "d4o9r745",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 879,
+          "height": 48,
+          "src": "res://efd88f85-6c10-4da2-976c-7cec59c23187",
+          "autoSize": false
+        }
+      ]
+    },
+    {
+      "_$id": "e3bzon5c",
+      "_$var": true,
+      "_$type": "GButton",
+      "name": "btn_send",
+      "x": 880,
+      "y": 1,
+      "width": 36,
+      "height": 36,
+      "scaleX": 1.5,
+      "scaleY": 1.5,
+      "controllers": {
+        "_$type": "Record",
+        "button": {
+          "_$type": "Controller",
+          "pages": [
+            "up",
+            "down",
+            "over",
+            "selectedOver"
+          ]
+        }
+      },
+      "_$child": [
+        {
+          "_$id": "ksal076e",
+          "_$type": "GImage",
+          "name": "img_2",
+          "width": 36,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "e3bzon5c",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                2
+              ]
+            }
+          ],
+          "src": "res://01a3f04f-3446-4e81-a711-78774c95a488"
+        },
+        {
+          "_$id": "bwope6kx",
+          "_$type": "GImage",
+          "name": "img_1",
+          "width": 36,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "e3bzon5c",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                0
+              ]
+            }
+          ],
+          "src": "res://3cd9942c-98b3-4da8-9e6e-5082936f1205"
+        },
+        {
+          "_$id": "dbqu3uir",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 36,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "e3bzon5c",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                1
+              ]
+            }
+          ],
+          "src": "res://7f9fc67f-6431-4158-989f-f8259f7c026e"
+        }
+      ]
+    },
+    {
+      "_$id": "wp82aove",
+      "_$var": true,
+      "_$type": "GButton",
+      "name": "btn_face",
+      "x": 936,
+      "y": 1,
+      "width": 36,
+      "height": 36,
+      "scaleX": 1.5,
+      "scaleY": 1.5,
+      "controllers": {
+        "_$type": "Record",
+        "button": {
+          "_$type": "Controller",
+          "pages": [
+            "up",
+            "down",
+            "over",
+            "selectedOver"
+          ]
+        }
+      },
+      "_$child": [
+        {
+          "_$id": "rjqt2ua9",
+          "_$type": "GImage",
+          "name": "img_2",
+          "width": 36,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "wp82aove",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                2
+              ]
+            }
+          ],
+          "src": "res://f33a5809-216f-419a-907b-b3580f94222f"
+        },
+        {
+          "_$id": "1uxvxf2y",
+          "_$type": "GImage",
+          "name": "img_1",
+          "width": 36,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "wp82aove",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                0
+              ]
+            }
+          ],
+          "src": "res://e860efd8-a61b-4b24-abad-426afaa68348"
+        },
+        {
+          "_$id": "bvdz8209",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 36,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "wp82aove",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                1
+              ]
+            }
+          ],
+          "src": "res://5a3f4fbf-fa83-4a8d-9bbe-a58262bf74b0"
+        }
+      ]
+    },
+    {
+      "_$id": "zumf0rgr",
+      "_$var": true,
+      "_$type": "GButton",
+      "name": "btn_random",
+      "x": 992,
+      "y": 1,
+      "width": 36,
+      "height": 36,
+      "scaleX": 1.5,
+      "scaleY": 1.5,
+      "controllers": {
+        "_$type": "Record",
+        "button": {
+          "_$type": "Controller",
+          "pages": [
+            "up",
+            "down",
+            "over",
+            "selectedOver"
+          ]
+        }
+      },
+      "_$child": [
+        {
+          "_$id": "ikqd119n",
+          "_$type": "GImage",
+          "name": "img_2",
+          "width": 36,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "zumf0rgr",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                2
+              ]
+            }
+          ],
+          "src": "res://e2a52d01-b056-4648-93e2-9441c22a72c2"
+        },
+        {
+          "_$id": "90dk75uc",
+          "_$type": "GImage",
+          "name": "img_1",
+          "width": 36,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "zumf0rgr",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                0
+              ]
+            }
+          ],
+          "src": "res://b009e526-a886-4364-928b-5e45847ca44b"
+        },
+        {
+          "_$id": "ern2qqgm",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 36,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "zumf0rgr",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                1
+              ]
+            }
+          ],
+          "src": "res://764bc8ea-0968-4efc-b536-893111ef07e8"
+        }
+      ]
+    },
+    {
+      "_$id": "w82t7j8u",
+      "_$var": true,
+      "_$type": "GButton",
+      "name": "btn_show",
+      "x": 1046,
+      "y": 1,
+      "width": 36,
+      "height": 36,
+      "scaleX": 1.5,
+      "scaleY": 1.5,
+      "controllers": {
+        "_$type": "Record",
+        "button": {
+          "_$type": "Controller",
+          "pages": [
+            "up",
+            "down",
+            "over",
+            "selectedOver"
+          ]
+        }
+      },
+      "_$child": [
+        {
+          "_$id": "cndnwcrn",
+          "_$type": "GImage",
+          "name": "img_2",
+          "width": 36,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "w82t7j8u",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                2
+              ]
+            }
+          ],
+          "src": "res://afaf2f23-13f4-429b-b1ba-86e70473900a",
+          "autoSize": false
+        },
+        {
+          "_$id": "8xym6siz",
+          "_$type": "GImage",
+          "name": "img_1",
+          "width": 36,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "w82t7j8u",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                0
+              ]
+            }
+          ],
+          "src": "res://6e2f7490-f0bd-4dd6-a788-a0f98051c4e2",
+          "autoSize": false
+        },
+        {
+          "_$id": "ye7saer7",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 36,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "w82t7j8u",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                1
+              ]
+            }
+          ],
+          "src": "res://63e2ec5a-6d83-40e0-aaa6-03aedcc467c0",
+          "autoSize": false
+        }
+      ]
+    },
+    {
+      "_$id": "nzbouev7",
+      "_$var": true,
+      "_$type": "GButton",
+      "name": "btn_hide",
+      "x": 1046,
+      "y": 1,
+      "width": 36,
+      "height": 36,
+      "scaleX": 1.5,
+      "scaleY": 1.5,
+      "visible": false,
+      "controllers": {
+        "_$type": "Record",
+        "button": {
+          "_$type": "Controller",
+          "pages": [
+            "up",
+            "down",
+            "over",
+            "selectedOver"
+          ]
+        }
+      },
+      "_$child": [
+        {
+          "_$id": "9poidrn5",
+          "_$type": "GImage",
+          "name": "img_2",
+          "width": 36,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "nzbouev7",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                2
+              ]
+            }
+          ],
+          "src": "res://f32d5473-8c8c-4a48-8841-43490b8651d7",
+          "autoSize": false
+        },
+        {
+          "_$id": "6kfl6zx3",
+          "_$type": "GImage",
+          "name": "img_1",
+          "width": 36,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "nzbouev7",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                0
+              ]
+            }
+          ],
+          "src": "res://b5db8392-e88f-4474-93aa-4b23a8c24323",
+          "autoSize": false
+        },
+        {
+          "_$id": "rkvef1u3",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 36,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "nzbouev7",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                1
+              ]
+            }
+          ],
+          "src": "res://a67a8573-7d7e-409a-9716-1ff0beb9580d",
+          "autoSize": false
+        }
+      ]
+    },
+    {
+      "_$id": "l196ogpn",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "box",
+      "x": 762,
+      "y": -228,
+      "width": 338,
+      "height": 226,
+      "visible": false,
+      "_$child": [
+        {
+          "_$id": "hnlh4q16",
+          "_$prefab": "9c8c082d-8045-44b5-ae0b-a8772c1259c9",
+          "_$var": true,
+          "name": "fast",
+          "active": true,
+          "x": 0,
+          "y": 0,
+          "width": 338,
+          "height": 25,
+          "visible": true,
+          "titleColor": "#ffffff",
+          "titleFontSize": 20,
+          "visibleItemCount": 10,
+          "_$child": [
+            {
+              "_$override": "8vomfh1q",
+              "fontSize": 20,
+              "text": "",
+              "padding": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "jbguks8h",
+          "_$type": "GImage",
+          "name": "faceBg",
+          "x": 1,
+          "y": 25,
+          "width": 336,
+          "height": 201,
+          "src": "res://46372468-23f4-4977-bebb-3809c2f9e3b0",
+          "autoSize": false,
+          "_$child": [
+            {
+              "_$id": "u3kocp8j",
+              "_$type": "GBox",
+              "name": "faces",
+              "width": 336,
+              "height": 201,
+              "layout": {
+                "type": 3,
+                "rowGap": 1,
+                "columnGap": 1
+              },
+              "_$child": [
+                {
+                  "_$id": "fl1xvkvr",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_0",
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://182b130b-7802-4e25-b24c-814a65d284fb",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "cazbfouk",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_1",
+                  "x": 33,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://e6792a7d-61b8-4df7-a476-d78fc2253440",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "5se0kwap",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_2",
+                  "x": 66,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://c207b11a-165e-4961-9d7a-206a6a78c572",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "8zn9th7j",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_3",
+                  "x": 99,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://d74706f5-4073-402b-ba1b-4ac324c146df",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "c5vcbt7y",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_4",
+                  "x": 132,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://08d5a198-b2bc-47ea-9f51-46a7b4804b68",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "rvagy19j",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_5",
+                  "x": 165,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://c976e739-245b-4e6c-acfc-427bf70191de",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "6wgz0mtx",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_6",
+                  "x": 198,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://c55c4723-2862-47e5-832f-95a5c23d73d2",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "wfbqcydn",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_7",
+                  "x": 231,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://f84495cc-1510-4a6f-a223-6b3699c6af3b",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "fs7eb2tb",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_8",
+                  "x": 264,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://91bef75d-460c-4cf4-98f2-b98d3149a078",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "udjezdku",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_18",
+                  "x": 297,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://2682cef9-d0ad-4580-886d-e208b0e47913",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "wu8y9qw8",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_17",
+                  "y": 33,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://77532323-da04-477e-bdfa-1d9c9e38c2b4",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "kcgqacy6",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_16",
+                  "x": 33,
+                  "y": 33,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://7ea3e297-f441-4cff-8587-fe9c6746a7b0",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "800m0ryu",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_15",
+                  "x": 66,
+                  "y": 33,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://b208ea40-8b69-491b-93dd-437ffcfdc407",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "49yk2s86",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_14",
+                  "x": 99,
+                  "y": 33,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://abcbbd72-67b4-4f97-b286-eff35a245b56",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "yo1bozx7",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_13",
+                  "x": 132,
+                  "y": 33,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://58270e06-adf8-41aa-998a-3f9a5232af39",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "hmewcm8o",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_12",
+                  "x": 165,
+                  "y": 33,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://61699406-c745-46b8-98cd-590402ef6a78",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "czzdmuww",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_11",
+                  "x": 198,
+                  "y": 33,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://d1cf4e5e-6679-41e6-9665-840d72daef56",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "waho03ni",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_10",
+                  "x": 231,
+                  "y": 33,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://8c2d2830-d840-4505-a7b4-82913178db30",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "vwim7rkq",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_9",
+                  "x": 264,
+                  "y": 33,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://5a8a614f-523b-4737-8d89-72492e6bb3a8",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "ckzrbl5l",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_28",
+                  "x": 297,
+                  "y": 33,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://54b21238-ad21-4f8b-8667-de811d75359a",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "owd7qzl3",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_27",
+                  "y": 66,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://292fe204-378c-4911-97ef-9f51bf20cf06",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "yjl7jl1r",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_26",
+                  "x": 33,
+                  "y": 66,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://b5c4aa21-f08c-44f7-9775-3c73e43f95f7",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "jtk3vifd",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_25",
+                  "x": 66,
+                  "y": 66,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://3385c8c5-da99-4268-8304-a85c31497152",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "uj328czq",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_24",
+                  "x": 99,
+                  "y": 66,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://3cc3eec5-c37c-4a16-8509-15b6aca08980",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "yztuz8wz",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_23",
+                  "x": 132,
+                  "y": 66,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://8fc5d328-6e5f-4181-9ece-7d070e7cef3c",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "qp2xodz6",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_22",
+                  "x": 165,
+                  "y": 66,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://4102381c-4726-4ecf-8f05-72ec5df62282",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "k7cedf2p",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_21",
+                  "x": 198,
+                  "y": 66,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://2994dc50-d02b-4842-9892-7d28a41ab77a",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "xokjx7n4",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_20",
+                  "x": 231,
+                  "y": 66,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://f00dff8e-efa3-4cf8-8297-7522c0cdfb46",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "mwbmfyn8",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_19",
+                  "x": 264,
+                  "y": 66,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://b009873e-391f-48ea-952f-6ead6bd3401f",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "pg2p72nw",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_38",
+                  "x": 297,
+                  "y": 66,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://72845a9e-ba49-4327-9e97-6496d8de4bf7",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "22udd3wr",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_37",
+                  "y": 99,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://c3fe59dd-779c-4898-97b4-0f5dc897c598",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "zzebbcxq",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_36",
+                  "x": 33,
+                  "y": 99,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://3b4b7432-0869-4fcc-8ddf-529baf80d7b4",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "po3hlhj0",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_35",
+                  "x": 66,
+                  "y": 99,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://cb3baa1b-9c49-4ace-ae2e-c2fcd12057fb",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "f230z39l",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_34",
+                  "x": 99,
+                  "y": 99,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://a5b0c50b-ad36-4139-b566-db08cb85d999",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "axh4y0v9",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_33",
+                  "x": 132,
+                  "y": 99,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://a4163be9-ff85-4bf0-84ea-d9095b4282b0",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "6k1bixhv",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_32",
+                  "x": 165,
+                  "y": 99,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://ea1146ed-4d21-4fe4-a3c2-880be387ea45",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "n5pf0660",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_31",
+                  "x": 198,
+                  "y": 99,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://c7100532-10cb-4d6f-8449-6b6f7b4253df",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "uxfbaxdn",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_30",
+                  "x": 231,
+                  "y": 99,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://9d5d3b6a-59bb-4209-a2a7-405ef3960137",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "79vvfi3j",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_29",
+                  "x": 264,
+                  "y": 99,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://86f9dd36-7ae1-4b33-9dde-1644d624561a",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "2tbsy0tt",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_48",
+                  "x": 297,
+                  "y": 99,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://222426ee-7da3-4b3e-af6d-aaa41c312930",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "224yn02n",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_47",
+                  "y": 132,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://a8ebde7d-41ab-451b-a850-197bf9f5f3d7",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "b4nwpz9m",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_46",
+                  "x": 33,
+                  "y": 132,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://d0263b21-fee1-40f3-81da-7fb24e6fab34",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "3rwshixx",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_45",
+                  "x": 66,
+                  "y": 132,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://ce0e449f-36cd-4364-bc92-d191cde86f30",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "km0mfyq5",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_44",
+                  "x": 99,
+                  "y": 132,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://42acec94-9fc3-40cd-bfe2-db94a4ec1bde",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "l4ax3uu0",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_43",
+                  "x": 132,
+                  "y": 132,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://25484639-927f-4ef3-9517-858d10510465",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "0dsnljv0",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_42",
+                  "x": 165,
+                  "y": 132,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://52181562-85b0-444a-8e70-c0ebab50daa4",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "n7zli5vq",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_41",
+                  "x": 198,
+                  "y": 132,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://5ed2a5bc-434d-4425-a32d-ee9d6b6a16c4",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "8ncxtoa9",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_40",
+                  "x": 231,
+                  "y": 132,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://5068628c-4aaf-4897-8556-468297cbb1db",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "omg0xacx",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_39",
+                  "x": 264,
+                  "y": 132,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://46b7d7c3-b582-4208-bb7e-3434968a1e35",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "uow1sxvy",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_55",
+                  "x": 297,
+                  "y": 132,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://07cbb975-fcb8-4f18-9458-5dad22746b2e",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "qlhqel2x",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_54",
+                  "y": 165,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://284960e1-7f76-4221-a74b-3014201d6057",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "bt33fmuj",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_53",
+                  "x": 33,
+                  "y": 165,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://35b5adde-3121-4481-be86-8ef6894b038f",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "hr2eoh3r",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_52",
+                  "x": 66,
+                  "y": 165,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://c62cc2ab-6c04-47e0-bb2a-9f6cb2538c42",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "if8k60k8",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_51",
+                  "x": 99,
+                  "y": 165,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://daf17bf8-18ae-4b5a-a86a-bddf859a6d26",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "0e8sr41p",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_50",
+                  "x": 132,
+                  "y": 165,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://dab9cf35-72ce-4d26-a7c7-4e16bdf9d43b",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "ny6tmok5",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "img_49",
+                  "x": 165,
+                  "y": 165,
+                  "width": 32,
+                  "height": 32,
+                  "src": "res://dbf21ed8-8883-4e69-8d0e-d47a92e79014",
+                  "autoSize": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "ojp8zwia",
+      "_$var": true,
+      "_$type": "GPanel",
+      "name": "chats",
+      "y": 52,
+      "width": 1102,
+      "height": 77,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "arha90nu"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "selection": {
+        "mode": 0
+      },
+      "scroller": {
+        "_$type": "Scroller",
+        "vScrollBarRes": {
+          "_$uuid": "f109ab10-7012-4000-80bc-5fdff3eae172",
+          "_$type": "Prefab"
+        }
+      },
+      "_$child": [
+        {
+          "_$id": "wcoqivx8",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "txt",
+          "width": 1102,
+          "height": 80,
+          "text": "",
+          "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+          "fontSize": 35,
+          "color": "#ffffff",
+          "fitContent": 2,
+          "ubb": true,
+          "html": true,
+          "wordWrap": true
+        }
+      ]
+    }
+  ]
+}

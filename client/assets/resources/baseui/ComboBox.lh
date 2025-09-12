@@ -1,0 +1,82 @@
+{
+  "_$ver": 1,
+  "_$id": "8aime95a",
+  "_$preloads": [
+    "res://6cc4283a-4677-4de8-a2cb-19fe8d95c67c"
+  ],
+  "_$type": "GComboBox",
+  "name": "Root",
+  "width": 54,
+  "height": 20,
+  "controllers": {
+    "_$type": "Record",
+    "button": {
+      "_$type": "Controller",
+      "pages": [
+        "up",
+        "down",
+        "over",
+        "selectedOver"
+      ]
+    }
+  },
+  "titleWidget": {
+    "_$ref": "8vomfh1q"
+  },
+  "dropdownRes": {
+    "_$uuid": "90cb8832-5e90-4e8b-8a8e-90cf42ae3e25",
+    "_$type": "Prefab"
+  },
+  "_$child": [
+    {
+      "_$id": "cdba6wc0",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 54,
+      "height": 20,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "8aime95a"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://6cc4283a-4677-4de8-a2cb-19fe8d95c67c",
+      "autoSize": false
+    },
+    {
+      "_$id": "8vomfh1q",
+      "_$type": "GTextField",
+      "name": "title",
+      "x": 4,
+      "y": 4,
+      "width": 37,
+      "height": 12,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "8aime95a"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "text": "Title",
+      "fontSize": 20,
+      "valign": "middle",
+      "overflow": "hidden"
+    }
+  ]
+}

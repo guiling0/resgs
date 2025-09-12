@@ -1,0 +1,212 @@
+{
+  "_$ver": 1,
+  "_$id": "6s8dg9q7",
+  "_$runtime": "res://5d7a9748-cd44-4f5d-a824-e78bf017dcfa",
+  "_$preloads": [
+    "res://72a8ad6c-7580-443f-94cc-5a9d5cc6c451",
+    "res://8220dfac-f957-4de7-9661-31a5f85ce5eb",
+    "res://214cebac-0b23-4720-a4c8-19d36c07c3de",
+    "res://6fbea004-c29d-4043-a8d6-6dcb16a26fff",
+    "res://2354a4e7-ca80-4c68-a3e3-b2a61ac7a06e",
+    "res://4dc7fc44-a309-4f01-9df3-4a84a5ae6632",
+    "res://e6dbf10b-6ddf-4acc-94d6-420c4a00c190",
+    "res://41871b68-9f8f-425a-859f-a4bf04343f27",
+    "res://f759ee52-1121-41a1-b3ad-0cae88b3ae50",
+    "res://def0c56d-f74a-42b0-b23e-628faa258357"
+  ],
+  "_$type": "GWidget",
+  "name": "bancountry",
+  "width": 516,
+  "height": 539,
+  "_$child": [
+    {
+      "_$id": "l1sbc088",
+      "_$var": true,
+      "_$type": "Skeleton",
+      "name": "banBg",
+      "x": 248,
+      "y": 257,
+      "width": 100,
+      "height": 100,
+      "mouseThrough": true,
+      "source": "res://91327a3c-5e36-41eb-bedc-3e55c22424e7",
+      "animationName": "play7",
+      "loop": false,
+      "preview": true
+    },
+    {
+      "_$id": "4bm74jfq",
+      "_$var": true,
+      "_$type": "Skeleton",
+      "name": "ban_result",
+      "x": 248,
+      "y": 257,
+      "width": 100,
+      "height": 100,
+      "mouseThrough": true,
+      "source": "res://91327a3c-5e36-41eb-bedc-3e55c22424e7",
+      "animationName": "play5",
+      "loop": false,
+      "preview": true
+    },
+    {
+      "_$id": "m8p4lvdx",
+      "_$type": "GImage",
+      "name": "ban_wei",
+      "x": 203,
+      "y": 59,
+      "width": 87,
+      "height": 83,
+      "_mouseState": 2,
+      "src": "res://4dc7fc44-a309-4f01-9df3-4a84a5ae6632",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "k1221b3a",
+          "_$var": true,
+          "_$type": "Skeleton",
+          "name": "wei_result",
+          "x": 47,
+          "y": 40,
+          "width": 100,
+          "height": 100,
+          "visible": false,
+          "mouseThrough": true,
+          "source": "res://91327a3c-5e36-41eb-bedc-3e55c22424e7",
+          "animationName": "play11",
+          "loop": false,
+          "preview": true
+        }
+      ]
+    },
+    {
+      "_$id": "jqyz0emo",
+      "_$type": "GImage",
+      "name": "ban_shu",
+      "x": 343,
+      "y": 158,
+      "width": 87,
+      "height": 83,
+      "src": "res://e6dbf10b-6ddf-4acc-94d6-420c4a00c190",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "a66yiij4",
+          "_$var": true,
+          "_$type": "Skeleton",
+          "name": "shu_result",
+          "x": 47,
+          "y": 40,
+          "width": 100,
+          "height": 100,
+          "visible": false,
+          "mouseThrough": true,
+          "source": "res://91327a3c-5e36-41eb-bedc-3e55c22424e7",
+          "animationName": "play11",
+          "loop": false,
+          "preview": true
+        }
+      ]
+    },
+    {
+      "_$id": "2defym9z",
+      "_$type": "GImage",
+      "name": "ban_wu",
+      "x": 322,
+      "y": 316,
+      "width": 87,
+      "height": 83,
+      "src": "res://41871b68-9f8f-425a-859f-a4bf04343f27",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "60g18ku6",
+          "_$var": true,
+          "_$type": "Skeleton",
+          "name": "wu_result",
+          "x": 47,
+          "y": 40,
+          "width": 100,
+          "height": 100,
+          "visible": false,
+          "mouseThrough": true,
+          "source": "res://91327a3c-5e36-41eb-bedc-3e55c22424e7",
+          "animationName": "play11",
+          "loop": false,
+          "preview": true
+        }
+      ]
+    },
+    {
+      "_$id": "a1wq1ybi",
+      "_$type": "GImage",
+      "name": "ban_qun",
+      "x": 79,
+      "y": 316,
+      "width": 87,
+      "height": 83,
+      "src": "res://f759ee52-1121-41a1-b3ad-0cae88b3ae50",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "jy64zu63",
+          "_$var": true,
+          "_$type": "Skeleton",
+          "name": "qun_result",
+          "x": 47,
+          "y": 40,
+          "width": 100,
+          "height": 100,
+          "visible": false,
+          "mouseThrough": true,
+          "source": "res://91327a3c-5e36-41eb-bedc-3e55c22424e7",
+          "animationName": "play11",
+          "loop": false,
+          "preview": true
+        }
+      ]
+    },
+    {
+      "_$id": "j5e7dftb",
+      "_$type": "GImage",
+      "name": "ban_jin",
+      "x": 58,
+      "y": 158,
+      "width": 87,
+      "height": 83,
+      "_filters": [],
+      "src": "res://def0c56d-f74a-42b0-b23e-628faa258357",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "tl60lqca",
+          "_$var": true,
+          "_$type": "Skeleton",
+          "name": "jin_result",
+          "x": 47,
+          "y": 40,
+          "width": 100,
+          "height": 100,
+          "visible": false,
+          "mouseThrough": true,
+          "source": "res://91327a3c-5e36-41eb-bedc-3e55c22424e7",
+          "animationName": "play11",
+          "loop": false,
+          "preview": true
+        }
+      ]
+    },
+    {
+      "_$id": "10l9wyxy",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "result",
+      "x": 107,
+      "y": 476,
+      "width": 285,
+      "height": 41,
+      "visible": false,
+      "src": "res://72a8ad6c-7580-443f-94cc-5a9d5cc6c451"
+    }
+  ]
+}

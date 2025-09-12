@@ -1,0 +1,232 @@
+{
+  "_$ver": 1,
+  "_$id": "5q4lz1qh",
+  "_$runtime": "res://0b00f1f3-f6d1-48f4-b7ad-ac87a3aa7c0e",
+  "_$preloads": [
+    "res://e0d10505-9451-4ffe-97e0-85f22a8290b5",
+    "res://9f3c2af1-1248-452c-9e55-57cae857fe1c",
+    "res://1c511a53-8abf-4c39-9a7a-20312f37bccd"
+  ],
+  "_$type": "GButton",
+  "name": "option",
+  "width": 48,
+  "height": 50,
+  "controllers": {
+    "_$type": "Record",
+    "button": {
+      "_$type": "Controller",
+      "pages": [
+        "up",
+        "down",
+        "over",
+        "selectedOver"
+      ]
+    }
+  },
+  "relations": [
+    {
+      "_$type": "Relation",
+      "target": {
+        "_$ref": "x9lkyehy"
+      },
+      "data": [
+        1,
+        0,
+        2,
+        0
+      ]
+    }
+  ],
+  "titleWidget": {
+    "_$ref": "x9lkyehy"
+  },
+  "iconWidget": {
+    "_$ref": "oyru4riw"
+  },
+  "_$comp": [
+    {
+      "_$type": "9865351d-f61b-4be8-88df-c727c305fc27",
+      "scriptPath": "../src/comps/ChooseItemComp.ts",
+      "clickNode": {
+        "_$ref": "5q4lz1qh"
+      },
+      "selectedImage": [
+        {
+          "_$ref": "oyru4riw"
+        }
+      ],
+      "canClickMask": null,
+      "isButton": true
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "pq2hvf6e",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 48,
+      "height": 50,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "5q4lz1qh",
+            "_$ctrl": "button"
+          },
+          "pages": [
+            0
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "5q4lz1qh"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://e0d10505-9451-4ffe-97e0-85f22a8290b5",
+      "autoSize": false
+    },
+    {
+      "_$id": "7v2en7jq",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 48,
+      "height": 50,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "5q4lz1qh",
+            "_$ctrl": "button"
+          },
+          "pages": [
+            1,
+            3
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "5q4lz1qh"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://1c511a53-8abf-4c39-9a7a-20312f37bccd",
+      "autoSize": false
+    },
+    {
+      "_$id": "mbiojug6",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 48,
+      "height": 50,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "5q4lz1qh",
+            "_$ctrl": "button"
+          },
+          "pages": [
+            2
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "5q4lz1qh"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://9f3c2af1-1248-452c-9e55-57cae857fe1c",
+      "autoSize": false
+    },
+    {
+      "_$id": "oyru4riw",
+      "_$type": "GLoader",
+      "name": "isSelected",
+      "x": 9,
+      "y": 26,
+      "width": 24,
+      "height": 26,
+      "visible": false,
+      "mask": {
+        "_$ref": "peoyvmz1"
+      },
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "5q4lz1qh"
+          },
+          "data": [
+            6,
+            0
+          ]
+        }
+      ],
+      "src": "res://7068e005-38b2-4b2f-903f-b93d4152583f",
+      "align": 0,
+      "valign": 0,
+      "fitMode": 0,
+      "_$child": [
+        {
+          "_$id": "peoyvmz1",
+          "_$type": "GWidget",
+          "name": "node",
+          "width": 24,
+          "height": 26,
+          "visible": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#ffffff"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "x9lkyehy",
+      "_$type": "GTextField",
+      "name": "title",
+      "x": 11,
+      "y": 10,
+      "width": 24,
+      "height": 25,
+      "text": "",
+      "font": "res://5afb0bf5-9315-48c4-b332-4e0bb0e2042d",
+      "fontSize": 20,
+      "color": "#ffffff",
+      "fitContent": 1,
+      "align": "center",
+      "valign": "middle",
+      "overflow": "hidden",
+      "stroke": 3,
+      "strokeColor": "#2f3a85"
+    }
+  ]
+}

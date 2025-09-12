@@ -1,0 +1,40 @@
+{
+  "_$ver": 1,
+  "_$id": "dili4kne",
+  "_$runtime": "res://6bec7478-bb88-4ad5-9b4d-5e9a69e464c9",
+  "_$type": "GWidget",
+  "name": "cards",
+  "width": 140,
+  "height": 195,
+  "_$child": [
+    {
+      "_$id": "dsc3tgfq",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "areabg",
+      "width": 140,
+      "height": 195,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#777777"
+      },
+      "_$child": [
+        {
+          "_$id": "frdfome0",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "areaname",
+          "width": 140,
+          "height": 195,
+          "text": "牌堆顶",
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 25,
+          "color": "#FFFFFF",
+          "align": "center",
+          "valign": "middle",
+          "wordWrap": true
+        }
+      ]
+    }
+  ]
+}

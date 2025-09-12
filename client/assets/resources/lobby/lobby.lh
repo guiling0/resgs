@@ -1,0 +1,740 @@
+{
+  "_$ver": 1,
+  "_$id": "g7t209fy",
+  "_$runtime": "res://d847aaf7-75bb-4de6-9304-665870220cda",
+  "_$preloads": [
+    "res://995c00d5-aa66-4b9f-879d-8e35d4fc3b2c",
+    "res://0d745574-e046-49a9-9e53-90ed3ee76eee",
+    "res://9472d222-468f-4057-ba2a-42869f1d04ff"
+  ],
+  "_$type": "GWidget",
+  "name": "lobby",
+  "width": 1920,
+  "height": 1080,
+  "_$child": [
+    {
+      "_$id": "jc4qcbby",
+      "_$type": "GImage",
+      "name": "bg",
+      "width": 1920,
+      "height": 1080,
+      "src": "res://bb7bad82-2c76-40f3-84ed-340b8828b2df",
+      "autoSize": false
+    },
+    {
+      "_$id": "nrnej2or",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 1495,
+      "height": 1076,
+      "src": "res://9472d222-468f-4057-ba2a-42869f1d04ff",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "vvg9skls",
+          "_$type": "GTextField",
+          "name": "img_roomname",
+          "x": 112,
+          "y": 18,
+          "width": 135,
+          "height": 53,
+          "text": "房间名",
+          "fontSize": 40,
+          "color": "#ffffff",
+          "ubb": true,
+          "valign": "middle"
+        },
+        {
+          "_$id": "buhugd3b",
+          "_$type": "GTextField",
+          "name": "img_count",
+          "x": 839,
+          "y": 18,
+          "width": 135,
+          "height": 53,
+          "text": "人数",
+          "fontSize": 40,
+          "color": "#ffffff",
+          "ubb": true,
+          "valign": "middle"
+        },
+        {
+          "_$id": "13o8b8u0",
+          "_$type": "GTextField",
+          "name": "img_state",
+          "x": 992,
+          "y": 18,
+          "width": 135,
+          "height": 53,
+          "text": "状态",
+          "fontSize": 40,
+          "color": "#ffffff",
+          "ubb": true,
+          "valign": "middle"
+        },
+        {
+          "_$id": "zkcjlj2q",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "onlinecount",
+          "x": 79,
+          "y": 1028,
+          "width": 354,
+          "height": 40,
+          "text": "当前在线人数：{playerCount=0}",
+          "fontSize": 35,
+          "color": "#ffffff",
+          "ubb": true,
+          "templateVars": true,
+          "valign": "middle"
+        }
+      ]
+    },
+    {
+      "_$id": "vcgjgqqk",
+      "_$var": true,
+      "_$type": "GList",
+      "name": "list",
+      "x": 2,
+      "y": 83,
+      "width": 1488,
+      "height": 933,
+      "layout": {
+        "type": 1,
+        "columns": 1,
+        "columnGap": 19,
+        "padding": [
+          10,
+          0,
+          0,
+          0
+        ],
+        "align": 1
+      },
+      "scroller": {
+        "_$type": "Scroller"
+      },
+      "_templateNode": {
+        "_$ref": "wweqjh4b",
+        "_$tmpl": "itemTemplate"
+      },
+      "_initItemNum": null,
+      "_isDemo": true,
+      "_itemData": [],
+      "_$child": [
+        {
+          "_$id": "wweqjh4b",
+          "_$prefab": "dabfe89a-0cfb-414a-8384-c61afa242ace",
+          "name": "item",
+          "active": true,
+          "x": 0,
+          "y": 0,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "_$id": "bhx329bj",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "createnode",
+      "x": 5,
+      "y": 92,
+      "width": 1482,
+      "height": 924,
+      "visible": false,
+      "_$child": [
+        {
+          "_$id": "khg45l15",
+          "_$var": true,
+          "_$type": "GTextInput",
+          "name": "Input_Account",
+          "x": 22,
+          "y": 13,
+          "width": 293,
+          "height": 44,
+          "text": "",
+          "fontSize": 25,
+          "color": "#ffffff",
+          "valign": "middle",
+          "prompt": "输入房间名",
+          "_$child": [
+            {
+              "_$id": "4c7v80sh",
+              "_$type": "GImage",
+              "name": "img",
+              "width": 293,
+              "height": 44,
+              "src": "res://efd88f85-6c10-4da2-976c-7cec59c23187",
+              "autoSize": false
+            }
+          ]
+        },
+        {
+          "_$id": "3xgpu3nl",
+          "_$var": true,
+          "_$type": "GTextInput",
+          "name": "Input_Password",
+          "x": 22,
+          "y": 64,
+          "width": 294,
+          "height": 44,
+          "text": "",
+          "fontSize": 25,
+          "color": "#ffffff",
+          "valign": "middle",
+          "prompt": "输入密码(不填则没有)",
+          "_$child": [
+            {
+              "_$id": "osnhkdn0",
+              "_$type": "GImage",
+              "name": "img",
+              "width": 294,
+              "height": 44,
+              "src": "res://efd88f85-6c10-4da2-976c-7cec59c23187",
+              "autoSize": false
+            }
+          ]
+        },
+        {
+          "_$id": "bai8o62d",
+          "_$prefab": "9c8c082d-8045-44b5-ae0b-a8772c1259c9",
+          "_$var": true,
+          "name": "mode",
+          "active": true,
+          "x": 330,
+          "y": 15,
+          "width": 247,
+          "height": 38,
+          "visible": true,
+          "title": "国战[官晋]",
+          "titleColor": "#ffffff",
+          "titleFontSize": 25,
+          "items": [
+            "国战[官晋]",
+            "国战[西凉晋]",
+            "国战[自定义]",
+            "斗地主[测试]",
+            "国战[测试]"
+          ],
+          "values": [
+            "wars",
+            "wars_xl",
+            "wars_custom",
+            "doudizhu_test",
+            "wars_test"
+          ]
+        },
+        {
+          "_$id": "fhh5u3yc",
+          "_$type": "GTextField",
+          "name": "txt_choosecount",
+          "x": 22,
+          "y": 117,
+          "width": 133,
+          "height": 29,
+          "visible": false,
+          "text": "选将框数量",
+          "fontSize": 25,
+          "color": "#ffffff"
+        },
+        {
+          "_$id": "r1frxbpb",
+          "_$prefab": "9c8c082d-8045-44b5-ae0b-a8772c1259c9",
+          "_$var": true,
+          "name": "choosecount",
+          "active": true,
+          "x": 158,
+          "y": 112,
+          "width": 55,
+          "height": 34,
+          "visible": false,
+          "title": "5",
+          "titleColor": "#ffffff",
+          "titleFontSize": 25,
+          "items": [
+            "5",
+            "6",
+            "7"
+          ]
+        },
+        {
+          "_$id": "mxwrcqu8",
+          "_$type": "GTextField",
+          "name": "txt_luckcount",
+          "x": 228,
+          "y": 114,
+          "width": 133,
+          "height": 30,
+          "visible": false,
+          "text": "手气卡次数",
+          "fontSize": 25,
+          "color": "#ffffff"
+        },
+        {
+          "_$id": "ma6u8y3s",
+          "_$prefab": "9c8c082d-8045-44b5-ae0b-a8772c1259c9",
+          "_$var": true,
+          "name": "luckcount",
+          "active": true,
+          "x": 359,
+          "y": 110,
+          "width": 55,
+          "height": 34,
+          "visible": false,
+          "title": "5",
+          "titleColor": "#ffffff",
+          "titleFontSize": 25,
+          "items": [
+            "5",
+            "6",
+            "7"
+          ]
+        },
+        {
+          "_$id": "o1utgwkp",
+          "_$type": "GTextField",
+          "name": "txt_zuobi",
+          "x": 427,
+          "y": 114,
+          "width": 133,
+          "height": 30,
+          "visible": false,
+          "text": "启用作弊",
+          "fontSize": 25,
+          "color": "#ffffff"
+        },
+        {
+          "_$id": "u5pjlh9w",
+          "_$prefab": "9c8c082d-8045-44b5-ae0b-a8772c1259c9",
+          "_$var": true,
+          "name": "zuobi",
+          "active": true,
+          "x": 539,
+          "y": 110,
+          "width": 55,
+          "height": 34,
+          "visible": false,
+          "title": "否",
+          "titleColor": "#ffffff",
+          "titleFontSize": 25,
+          "items": [
+            "是",
+            "否"
+          ],
+          "visibleItemCount": 0
+        },
+        {
+          "_$id": "slfmpeti",
+          "_$type": "GTextField",
+          "name": "txt_generals",
+          "x": 22,
+          "y": 161,
+          "width": 133,
+          "height": 30,
+          "visible": false,
+          "text": "武将扩展",
+          "fontSize": 25,
+          "color": "#ffffff"
+        },
+        {
+          "_$id": "469rb7eu",
+          "_$var": true,
+          "_$type": "GList",
+          "name": "generals",
+          "x": 30,
+          "y": 197,
+          "width": 867,
+          "height": 284,
+          "visible": false,
+          "layout": {
+            "type": 3,
+            "columns": 5,
+            "rowGap": 20,
+            "columnGap": 20,
+            "padding": [
+              10,
+              0,
+              0,
+              0
+            ]
+          },
+          "scroller": {
+            "_$type": "Scroller"
+          },
+          "_templateNode": {
+            "_$ref": "0hjab52b",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 20,
+          "_isDemo": true,
+          "_itemData": [],
+          "_$child": [
+            {
+              "_$id": "0hjab52b",
+              "_$prefab": "5af51fd9-cd82-4c6d-9a46-fffe4ace53bb",
+              "name": "checkbox",
+              "active": true,
+              "x": 0,
+              "y": 0,
+              "width": 141,
+              "visible": true,
+              "title": "武将扩展包"
+            }
+          ]
+        },
+        {
+          "_$id": "hu2qvc8t",
+          "_$type": "GTextField",
+          "name": "txt_cards",
+          "x": 22,
+          "y": 494,
+          "width": 133,
+          "height": 30,
+          "visible": false,
+          "text": "卡牌扩展",
+          "fontSize": 25,
+          "color": "#ffffff"
+        },
+        {
+          "_$id": "90hdfyof",
+          "_$var": true,
+          "_$type": "GList",
+          "name": "cards",
+          "x": 30,
+          "y": 530,
+          "width": 867,
+          "height": 284,
+          "visible": false,
+          "layout": {
+            "type": 3,
+            "columns": 5,
+            "rowGap": 20,
+            "columnGap": 20,
+            "padding": [
+              10,
+              0,
+              0,
+              0
+            ]
+          },
+          "scroller": {
+            "_$type": "Scroller"
+          },
+          "_templateNode": {
+            "_$ref": "zyroxwie",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 20,
+          "_isDemo": true,
+          "_itemData": [],
+          "_$child": [
+            {
+              "_$id": "zyroxwie",
+              "_$prefab": "5af51fd9-cd82-4c6d-9a46-fffe4ace53bb",
+              "name": "checkbox",
+              "active": true,
+              "x": 0,
+              "y": 0,
+              "width": 141,
+              "visible": true,
+              "title": "卡牌扩展包"
+            }
+          ]
+        },
+        {
+          "_$id": "ccjyo6b0",
+          "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+          "_$var": true,
+          "name": "btn_create_confirm",
+          "active": true,
+          "x": 28,
+          "y": 833,
+          "visible": true,
+          "width": 268,
+          "height": 70,
+          "title": "  创建房间  ",
+          "_$child": [
+            {
+              "_$override": "x9lkyehy",
+              "fontSize": 40
+            }
+          ]
+        },
+        {
+          "_$id": "ro24cpvu",
+          "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+          "_$var": true,
+          "name": "btn_create_cancle",
+          "active": true,
+          "x": 317,
+          "y": 833,
+          "visible": true,
+          "width": 268,
+          "height": 70,
+          "title": "    取消    ",
+          "_$child": [
+            {
+              "_$override": "x9lkyehy",
+              "fontSize": 40
+            }
+          ]
+        },
+        {
+          "_$id": "3wzahh21",
+          "_$type": "GTextField",
+          "name": "txt_maxplayer",
+          "x": 333,
+          "y": 67,
+          "width": 154,
+          "height": 30,
+          "text": "最大游戏人数",
+          "fontSize": 25,
+          "color": "#ffffff"
+        },
+        {
+          "_$id": "fbvlsp3l",
+          "_$prefab": "9c8c082d-8045-44b5-ae0b-a8772c1259c9",
+          "_$var": true,
+          "name": "maxplayer",
+          "active": true,
+          "x": 493,
+          "y": 62,
+          "width": 83,
+          "height": 34,
+          "visible": true,
+          "title": "10",
+          "titleColor": "#ffffff",
+          "titleFontSize": 25,
+          "items": [
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "gehqjb8a",
+      "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+      "_$var": true,
+      "name": "btn_create",
+      "active": true,
+      "x": 1512,
+      "y": 751,
+      "visible": true,
+      "_mouseState": 0,
+      "width": 388,
+      "height": 70,
+      "title": "     创建房间     ",
+      "_$child": [
+        {
+          "_$override": "x9lkyehy",
+          "fontSize": 40
+        }
+      ]
+    },
+    {
+      "_$id": "iwmqe30t",
+      "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+      "_$var": true,
+      "name": "btn_general",
+      "active": true,
+      "x": 1511,
+      "y": 833,
+      "visible": true,
+      "width": 188,
+      "height": 70,
+      "title": "  武将  ",
+      "_$child": [
+        {
+          "_$override": "x9lkyehy",
+          "fontSize": 40
+        }
+      ]
+    },
+    {
+      "_$id": "xw9hkhrn",
+      "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+      "_$var": true,
+      "name": "btn_card",
+      "active": true,
+      "x": 1713,
+      "y": 833,
+      "visible": true,
+      "width": 188,
+      "height": 70,
+      "title": "  卡牌  ",
+      "_$child": [
+        {
+          "_$override": "x9lkyehy",
+          "fontSize": 40
+        }
+      ]
+    },
+    {
+      "_$id": "6cr185db",
+      "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+      "_$var": true,
+      "name": "btn_option",
+      "active": true,
+      "x": 1511,
+      "y": 992,
+      "visible": true,
+      "width": 188,
+      "height": 70,
+      "title": "  关于  ",
+      "_$child": [
+        {
+          "_$override": "x9lkyehy",
+          "fontSize": 40
+        }
+      ]
+    },
+    {
+      "_$id": "28wxdpdy",
+      "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+      "_$var": true,
+      "name": "btn_exit",
+      "active": true,
+      "x": 1713,
+      "y": 992,
+      "visible": true,
+      "width": 188,
+      "height": 70,
+      "title": "  退出  ",
+      "_$child": [
+        {
+          "_$override": "x9lkyehy",
+          "fontSize": 40
+        }
+      ]
+    },
+    {
+      "_$id": "txrbxbqw",
+      "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+      "_$var": true,
+      "name": "btn_user",
+      "active": true,
+      "x": 1511,
+      "y": 914,
+      "visible": true,
+      "width": 188,
+      "height": 70,
+      "title": "  设置  ",
+      "_$child": [
+        {
+          "_$override": "x9lkyehy",
+          "fontSize": 40
+        }
+      ]
+    },
+    {
+      "_$id": "kwfnf1vl",
+      "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+      "_$var": true,
+      "name": "btn_video",
+      "active": true,
+      "x": 1713,
+      "y": 914,
+      "visible": true,
+      "width": 188,
+      "height": 70,
+      "title": "  录像  ",
+      "_$child": [
+        {
+          "_$override": "x9lkyehy",
+          "fontSize": 40
+        }
+      ]
+    },
+    {
+      "_$id": "jikcbaqe",
+      "_$type": "GPanel",
+      "name": "note",
+      "x": 1507,
+      "y": 12,
+      "width": 402,
+      "height": 728,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "rgba(0,0,0,0.49019607843137253)"
+      },
+      "selection": {
+        "mode": 0
+      },
+      "scroller": {
+        "_$type": "Scroller"
+      },
+      "_$child": [
+        {
+          "_$id": "0cqrbt4h",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "txt",
+          "width": 402,
+          "height": 254,
+          "text": "",
+          "fontSize": 25,
+          "color": "#ffffff",
+          "fitContent": 2,
+          "overflow": "hidden",
+          "wordWrap": true
+        }
+      ]
+    },
+    {
+      "_$id": "yzfucnll",
+      "_$prefab": "5af51fd9-cd82-4c6d-9a46-fffe4ace53bb",
+      "_$var": true,
+      "name": "onlywait",
+      "active": true,
+      "x": 1206,
+      "y": 33,
+      "width": 249,
+      "height": 28,
+      "visible": true,
+      "title": "只查看等待房间",
+      "titleFontSize": 30,
+      "_$child": [
+        {
+          "_$override": "xt2idybo",
+          "y": -5
+        }
+      ]
+    },
+    {
+      "_$id": "t9olfou1",
+      "_$var": true,
+      "_$type": "GTextInput",
+      "name": "input_serch",
+      "x": 1215,
+      "y": 1022,
+      "width": 267,
+      "height": 48,
+      "_mouseState": 2,
+      "text": "",
+      "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+      "fontSize": 35,
+      "color": "#FFFFFF",
+      "valign": "middle",
+      "prompt": "输入房间号搜索",
+      "promptColor": "#A9A9A9",
+      "_$child": [
+        {
+          "_$id": "2oouiq4d",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 267,
+          "height": 48,
+          "src": "res://efd88f85-6c10-4da2-976c-7cec59c23187",
+          "autoSize": false
+        }
+      ]
+    }
+  ]
+}

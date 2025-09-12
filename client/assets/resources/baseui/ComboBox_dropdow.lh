@@ -1,0 +1,175 @@
+{
+  "_$ver": 1,
+  "_$id": "qt0yccy1",
+  "_$preloads": [
+    "res://efd88f85-6c10-4da2-976c-7cec59c23187"
+  ],
+  "_$type": "GWidget",
+  "width": 400,
+  "height": 400,
+  "_$child": [
+    {
+      "_$id": "wo2mz98z",
+      "_$type": "GImage",
+      "name": "bg",
+      "width": 400,
+      "height": 400,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "qt0yccy1"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://efd88f85-6c10-4da2-976c-7cec59c23187",
+      "autoSize": false
+    },
+    {
+      "_$id": "g4mvkvnl",
+      "_$type": "GList",
+      "name": "list",
+      "x": 4,
+      "y": 4,
+      "width": 391,
+      "height": 392,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "qt0yccy1"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "layout": {
+        "type": 1,
+        "stretchX": 1
+      },
+      "scroller": {
+        "_$type": "Scroller",
+        "vScrollBarRes": {
+          "_$uuid": "f109ab10-7012-4000-80bc-5fdff3eae172",
+          "_$type": "Prefab"
+        }
+      },
+      "_templateNode": {
+        "_$ref": "ynh1za2n",
+        "_$tmpl": "itemTemplate"
+      },
+      "_initItemNum": 4,
+      "_isDemo": true,
+      "_itemData": [
+        {
+          "_$type": "ItemData",
+          "title": "Title1"
+        },
+        {
+          "_$type": "ItemData",
+          "title": "Title2"
+        },
+        {
+          "_$type": "ItemData",
+          "title": "Title3"
+        },
+        {
+          "_$type": "ItemData",
+          "title": "Title4"
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "ynh1za2n",
+          "_$type": "GButton",
+          "name": "Root",
+          "width": 120,
+          "height": 35,
+          "controllers": {
+            "_$type": "Record",
+            "button": {
+              "_$type": "Controller",
+              "pages": [
+                "up",
+                "down",
+                "over",
+                "selectedOver"
+              ]
+            }
+          },
+          "titleColor": "#ffffff",
+          "titleFontSize": 25,
+          "titleWidget": {
+            "_$ref": "2z55fzl5"
+          },
+          "mode": 2,
+          "_$child": [
+            {
+              "_$id": "h6p306jw",
+              "_$type": "GImage",
+              "name": "img",
+              "width": 120,
+              "height": 35,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "ynh1za2n"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "src": "",
+              "autoSize": false
+            },
+            {
+              "_$id": "2z55fzl5",
+              "_$type": "GTextField",
+              "name": "title",
+              "x": 4,
+              "y": 4,
+              "width": 92,
+              "height": 30,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "ynh1za2n"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "text": "Title",
+              "fontSize": 25,
+              "color": "#ffffff",
+              "fitContent": 2,
+              "ubb": true,
+              "valign": "middle",
+              "overflow": "ellipsis"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

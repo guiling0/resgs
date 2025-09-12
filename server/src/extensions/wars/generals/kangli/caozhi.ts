@@ -1,0 +1,224 @@
+import { GameCard } from '../../../../core/card/card';
+import {
+    CardColor,
+    CardSuit,
+    CardType,
+} from '../../../../core/card/card.types';
+import { EventTriggers } from '../../../../core/event/triggers';
+import { DamageEvent } from '../../../../core/event/types/event.damage';
+import { JudgeEvent } from '../../../../core/event/types/event.judge';
+import { MoveCardEvent } from '../../../../core/event/types/event.move';
+import { SkipEvent } from '../../../../core/event/types/event.state';
+import { Gender } from '../../../../core/general/general.type';
+import { Phase } from '../../../../core/player/player.types';
+
+export const caozhi = sgs.General({
+    name: 'xl.caozhi',
+    kingdom: 'wei',
+    hp: 1.5,
+    gender: Gender.Male,
+    isWars: true,
+});
+
+export const linlang = sgs.Skill({
+    name: 'xl.caozhi.linlang',
+});
+
+linlang.addEffect(
+    sgs.TriggerEffect({
+        auto_log: 1,
+        trigger: EventTriggers.JudgeResulted2,
+        can_trigger(room, player, data: JudgeEvent) {
+            return (
+                this.isOwner(player) &&
+                data.card &&
+                data.card.type === CardType.Scroll
+            );
+        },
+        getSelectors(room, context) {
+            return {
+                skill_cost: () => {
+                    return {
+                        selectors: {
+                            option: room.createChooseOptions({
+                                step: 1,
+                                count: 1,
+                                selectable: context.handles,
+                            }),
+                        },
+                        options: {
+                            canCancle: true,
+                            prompt: '你可以发动技能琳琅，请选择一项',
+                            showMainButtons: false,
+                            thinkPrompt: '琳琅',
+                        },
+                    };
+                },
+            };
+        },
+        context(room, player, data: JudgeEvent) {
+            const handles: string[] = ['linlang.gain', 'linlang.move'];
+            const cards: GameCard[] = [];
+            room.playerAlives.forEach((v) => {
+                cards.push(...v.getEquipCards());
+                cards.push(...v.getJudgeCards());
+            });
+            if (cards.filter((v) => v.color === data.card.color).length === 0) {
+                handles[1] = '!' + handles[1];
+            }
+            return {
+                handles,
+            };
+        },
+        async cost(room, data: JudgeEvent, context) {
+            const { from } = context;
+            const result = context.req_result.results.option.result as string[];
+            if (result.includes('linlang.gain')) {
+                const effect = await room.addEffect('linlang.delay', from);
+                effect.setData('card', data.card);
+                return true;
+            }
+            if (result.includes('linlang.move')) {
+                let cards: GameCard[] = [];
+                room.playerAlives.forEach((v) => {
+                    cards.push(...v.getEquipCards());
+                    cards.push(...v.getJudgeCards());
+                });
+                cards = cards.filter((v) => v.color === data.card.color);
+                return await room.moveFiled(
+                    from,
+                    'ej',
+                    {
+                        canCancle: true,
+                        showMainButtons: true,
+                        prompt: this.name,
+                    },
+                    data,
+                    this.name,
+                    cards
+                );
+            }
+        },
+    })
+);
+
+export const linlang_delay = sgs.TriggerEffect({
+    name: 'linlang.delay',
+    trigger: EventTriggers.MoveCardAfter2,
+    can_trigger(room, player, data: MoveCardEvent) {
+        return this.isOwner(player) && data.get(this.getData('card'));
+    },
+    async cost(room, data, context) {
+        const { from } = context;
+        const card = this.getData('card') as GameCard;
+        await this.removeSelf();
+        return await room.obtainCards({
+            player: from,
+            cards: [card],
+            source: data,
+            reason: this.name,
+        });
+    },
+    lifecycle: [
+        {
+            trigger: EventTriggers.TurnEnded,
+            async on_exec(room, data) {
+                await this.removeSelf();
+            },
+        },
+    ],
+});
+
+export const luoying = sgs.Skill({
+    name: 'xl.caozhi.luoying',
+});
+
+luoying.addEffect(
+    sgs.TriggerEffect({
+        auto_log: 1,
+        forced: 'cost',
+        trigger: EventTriggers.StateChanged,
+        can_trigger(room, player, data: SkipEvent) {
+            return (
+                this.isOwner(player) &&
+                data.is(sgs.DataType.SkipEvent) &&
+                data.player === player &&
+                data.to_state === false
+            );
+        },
+        async cost(room, data, context) {
+            const { from } = context;
+            return await room.judge({
+                player: from,
+                isSucc(result) {
+                    return result.suit === CardSuit.Club;
+                },
+                source: data,
+                reason: this.name,
+            });
+        },
+        async effect(room, data, context) {
+            const { from } = context;
+            const judge = context.cost as JudgeEvent;
+            if (judge.success) {
+                await room.chooseYesOrNo(
+                    from,
+                    {
+                        prompt: `落英：是否于当前回合结束后执行一个只有出牌阶段的额外回合`,
+                        thinkPrompt: this.name,
+                    },
+                    async () => {
+                        await room.executeExtraTurn(
+                            room.createEventData(sgs.DataType.TurnEvent, {
+                                player: from,
+                                isExtra: true,
+                                phases: [{ phase: Phase.Play, isExtra: false }],
+                                skipPhases: [],
+                                source: undefined,
+                                reason: this.name,
+                            })
+                        );
+                    }
+                );
+            }
+        },
+    })
+);
+
+luoying.addEffect(
+    sgs.TriggerEffect({
+        trigger: EventTriggers.InflictDamaged,
+        forced: 'cost',
+        auto_log: 1,
+        can_trigger(room, player, data: DamageEvent) {
+            return (
+                this.isOwner(player) && player === data.to && player.losshp > 0
+            );
+        },
+        async cost(room, data: DamageEvent, context) {
+            const { from } = context;
+            return await room.drawCards({
+                player: from,
+                count: from.losshp,
+                source: data,
+                reason: this.name,
+            });
+        },
+        async effect(room, data, context) {
+            const { from } = context;
+            await room.skip({
+                player: from,
+                source: data,
+                reason: this.name,
+            });
+        },
+    })
+);
+
+caozhi.addSkill(linlang);
+caozhi.addSkill(luoying);
+
+sgs.loadTranslation({
+    ['linlang.gain']: '判定结束后获得判定牌',
+    ['linlang.move']: '移动场上的牌',
+});

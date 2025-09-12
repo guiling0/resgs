@@ -1,0 +1,191 @@
+{
+  "_$ver": 1,
+  "_$id": "dili4kne",
+  "_$runtime": "res://8c3f71db-6e6b-4883-95ba-6e506189cd54",
+  "_$type": "GWidget",
+  "name": "items",
+  "width": 176,
+  "height": 195,
+  "relations": [
+    {
+      "_$type": "Relation",
+      "target": {
+        "_$ref": "t1m9ch6h"
+      },
+      "data": [
+        20,
+        0,
+        24,
+        0
+      ]
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "t1m9ch6h",
+      "_$var": true,
+      "_$type": "GBox",
+      "name": "cards",
+      "width": 176,
+      "height": 195,
+      "layout": {
+        "type": 1,
+        "columns": 10,
+        "rowGap": 5,
+        "columnGap": 5,
+        "foldInvisibles": true,
+        "stretchX": 2,
+        "stretchY": 2
+      },
+      "_$child": [
+        {
+          "_$id": "xzaq75e2",
+          "_$prefab": "764728f1-d3b4-4810-9091-0c7f2559db59",
+          "_$var": true,
+          "name": "items_0",
+          "active": true,
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "width": 176,
+          "height": 195,
+          "_$child": [
+            {
+              "_$override": "frdfome0",
+              "text": "牌堆顶"
+            },
+            {
+              "_$override": "vzez5k2o",
+              "visible": false
+            },
+            {
+              "_$override": "sy58a7ye",
+              "visible": false
+            },
+            {
+              "_$override": "gr1gjf4y",
+              "visible": false
+            },
+            {
+              "_$override": "1l0fc82k",
+              "visible": false
+            },
+            {
+              "_$override": "wfnpbmvz",
+              "visible": false
+            }
+          ]
+        },
+        {
+          "_$id": "jkvngvly",
+          "_$prefab": "764728f1-d3b4-4810-9091-0c7f2559db59",
+          "_$var": true,
+          "name": "items_1",
+          "active": true,
+          "x": 0,
+          "y": 200,
+          "visible": false,
+          "width": 756,
+          "height": 195,
+          "_$child": [
+            {
+              "_$override": "frdfome0",
+              "text": "牌堆底"
+            },
+            {
+              "_$override": "vzez5k2o",
+              "visible": false
+            },
+            {
+              "_$override": [
+                "vzez5k2o",
+                "frdfome0"
+              ],
+              "text": "牌堆底"
+            },
+            {
+              "_$override": "sy58a7ye",
+              "visible": false
+            },
+            {
+              "_$override": [
+                "sy58a7ye",
+                "frdfome0"
+              ],
+              "text": "牌堆底"
+            },
+            {
+              "_$override": "gr1gjf4y",
+              "visible": false
+            },
+            {
+              "_$override": [
+                "gr1gjf4y",
+                "frdfome0"
+              ],
+              "text": "牌堆底"
+            },
+            {
+              "_$override": "1l0fc82k",
+              "visible": false
+            },
+            {
+              "_$override": [
+                "1l0fc82k",
+                "frdfome0"
+              ],
+              "text": "牌堆底"
+            },
+            {
+              "_$override": "wfnpbmvz",
+              "visible": false
+            },
+            {
+              "_$override": [
+                "wfnpbmvz",
+                "frdfome0"
+              ],
+              "text": "牌堆底"
+            }
+          ]
+        },
+        {
+          "_$id": "jeq539eh",
+          "_$prefab": "764728f1-d3b4-4810-9091-0c7f2559db59",
+          "_$var": true,
+          "name": "items_2",
+          "active": true,
+          "x": 0,
+          "y": 400,
+          "visible": false,
+          "width": 1481,
+          "height": 195
+        },
+        {
+          "_$id": "85462jhe",
+          "_$prefab": "764728f1-d3b4-4810-9091-0c7f2559db59",
+          "_$var": true,
+          "name": "items_3",
+          "active": true,
+          "x": 0,
+          "y": 600,
+          "visible": false,
+          "width": 1481,
+          "height": 195
+        },
+        {
+          "_$id": "0l5cq80a",
+          "_$prefab": "764728f1-d3b4-4810-9091-0c7f2559db59",
+          "_$var": true,
+          "name": "items_4",
+          "active": true,
+          "x": 0,
+          "y": 800,
+          "visible": false,
+          "width": 1481,
+          "height": 195
+        }
+      ]
+    }
+  ]
+}

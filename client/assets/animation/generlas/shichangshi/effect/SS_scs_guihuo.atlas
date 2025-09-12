@@ -1,0 +1,776 @@
+
+SS_scs_guihuo.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/guihuo/gh_000
+  rotate: false
+  xy: 302, 1756
+  size: 78, 61
+  orig: 512, 512
+  offset: 215, 212
+  index: -1
+images/guihuo/gh_002
+  rotate: false
+  xy: 440, 646
+  size: 79, 75
+  orig: 512, 512
+  offset: 214, 212
+  index: -1
+images/guihuo/gh_004
+  rotate: false
+  xy: 1624, 1578
+  size: 84, 115
+  orig: 512, 512
+  offset: 211, 212
+  index: -1
+images/guihuo/gh_006
+  rotate: true
+  xy: 226, 1229
+  size: 89, 132
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_008
+  rotate: true
+  xy: 1860, 1776
+  size: 89, 136
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_010
+  rotate: false
+  xy: 164, 75
+  size: 89, 136
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_012
+  rotate: false
+  xy: 316, 1091
+  size: 89, 136
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_014
+  rotate: true
+  xy: 387, 1591
+  size: 89, 136
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_016
+  rotate: false
+  xy: 223, 1092
+  size: 91, 135
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_018
+  rotate: false
+  xy: 387, 1682
+  size: 91, 135
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_020
+  rotate: false
+  xy: 1213, 1690
+  size: 91, 133
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_022
+  rotate: false
+  xy: 1306, 1690
+  size: 91, 133
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_024
+  rotate: true
+  xy: 663, 1589
+  size: 91, 133
+  orig: 512, 512
+  offset: 208, 211
+  index: -1
+images/guihuo/gh_026
+  rotate: true
+  xy: 798, 1591
+  size: 91, 133
+  orig: 512, 512
+  offset: 208, 211
+  index: -1
+images/guihuo/gh_028
+  rotate: false
+  xy: 480, 1682
+  size: 91, 135
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_030
+  rotate: false
+  xy: 666, 1682
+  size: 89, 135
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_032
+  rotate: false
+  xy: 1122, 1685
+  size: 89, 135
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_034
+  rotate: false
+  xy: 746, 1454
+  size: 89, 133
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_036
+  rotate: false
+  xy: 1399, 1690
+  size: 89, 133
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_038
+  rotate: false
+  xy: 1674, 1696
+  size: 90, 132
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_040
+  rotate: false
+  xy: 1766, 1696
+  size: 90, 132
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_042
+  rotate: false
+  xy: 219, 797
+  size: 88, 131
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_044
+  rotate: false
+  xy: 400, 958
+  size: 88, 131
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_046
+  rotate: false
+  xy: 309, 958
+  size: 89, 131
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_048
+  rotate: false
+  xy: 309, 825
+  size: 89, 131
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_050
+  rotate: false
+  xy: 400, 825
+  size: 88, 131
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_052
+  rotate: true
+  xy: 309, 735
+  size: 88, 131
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_054
+  rotate: false
+  xy: 210, 475
+  size: 88, 132
+  orig: 512, 512
+  offset: 210, 212
+  index: -1
+images/guihuo/gh_056
+  rotate: true
+  xy: 1213, 1600
+  size: 88, 132
+  orig: 512, 512
+  offset: 210, 212
+  index: -1
+images/guihuo/gh_058
+  rotate: true
+  xy: 1347, 1600
+  size: 88, 132
+  orig: 512, 512
+  offset: 210, 212
+  index: -1
+images/guihuo/gh_060
+  rotate: false
+  xy: 1490, 1695
+  size: 90, 133
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_062
+  rotate: false
+  xy: 1582, 1695
+  size: 90, 133
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_064
+  rotate: false
+  xy: 469, 1454
+  size: 90, 135
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_066
+  rotate: false
+  xy: 561, 1454
+  size: 90, 135
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_068
+  rotate: true
+  xy: 525, 1591
+  size: 89, 136
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_070
+  rotate: false
+  xy: 757, 1684
+  size: 89, 136
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_072
+  rotate: false
+  xy: 848, 1684
+  size: 89, 136
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_074
+  rotate: false
+  xy: 939, 1684
+  size: 89, 136
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_076
+  rotate: false
+  xy: 573, 1682
+  size: 91, 135
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_078
+  rotate: false
+  xy: 376, 1454
+  size: 91, 135
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_080
+  rotate: false
+  xy: 653, 1454
+  size: 91, 133
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_082
+  rotate: true
+  xy: 933, 1591
+  size: 91, 133
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_084
+  rotate: true
+  xy: 1068, 1592
+  size: 91, 133
+  orig: 512, 512
+  offset: 208, 211
+  index: -1
+images/guihuo/gh_086
+  rotate: false
+  xy: 837, 1456
+  size: 91, 133
+  orig: 512, 512
+  offset: 208, 211
+  index: -1
+images/guihuo/gh_088
+  rotate: false
+  xy: 1030, 1685
+  size: 90, 135
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_090
+  rotate: true
+  xy: 930, 1500
+  size: 89, 135
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_092
+  rotate: true
+  xy: 930, 1409
+  size: 89, 135
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_094
+  rotate: true
+  xy: 1858, 1685
+  size: 89, 133
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_096
+  rotate: false
+  xy: 194, 269
+  size: 89, 133
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_098
+  rotate: true
+  xy: 1490, 1603
+  size: 90, 132
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_100
+  rotate: true
+  xy: 1710, 1604
+  size: 90, 132
+  orig: 512, 512
+  offset: 208, 212
+  index: -1
+images/guihuo/gh_102
+  rotate: true
+  xy: 307, 646
+  size: 87, 131
+  orig: 512, 512
+  offset: 210, 212
+  index: -1
+images/guihuo/gh_104
+  rotate: false
+  xy: 390, 513
+  size: 87, 131
+  orig: 512, 512
+  offset: 210, 212
+  index: -1
+images/guihuo/gh_106
+  rotate: false
+  xy: 300, 513
+  size: 88, 131
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_108
+  rotate: false
+  xy: 216, 664
+  size: 89, 131
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_110
+  rotate: true
+  xy: 1844, 1594
+  size: 89, 132
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_112
+  rotate: true
+  xy: 300, 423
+  size: 88, 131
+  orig: 512, 512
+  offset: 209, 212
+  index: -1
+images/guihuo/gh_114
+  rotate: true
+  xy: 1710, 1514
+  size: 88, 132
+  orig: 512, 512
+  offset: 210, 212
+  index: -1
+images/guihuo/gh_116
+  rotate: true
+  xy: 1844, 1504
+  size: 88, 132
+  orig: 512, 512
+  offset: 210, 212
+  index: -1
+images/guihuo/gh_118
+  rotate: false
+  xy: 219, 930
+  size: 88, 132
+  orig: 512, 512
+  offset: 210, 212
+  index: -1
+images/guihuo/gh_glow_000
+  rotate: false
+  xy: 2, 1748
+  size: 298, 298
+  orig: 512, 512
+  offset: 107, 107
+  index: -1
+images/guihuo/gh_hj_000
+  rotate: false
+  xy: 1197, 1825
+  size: 219, 221
+  orig: 512, 512
+  offset: 150, 145
+  index: -1
+images/guihuo/gh_hj_001
+  rotate: true
+  xy: 2, 1292
+  size: 228, 222
+  orig: 512, 512
+  offset: 141, 145
+  index: -1
+images/guihuo/gh_hj_002
+  rotate: false
+  xy: 2, 1522
+  size: 227, 224
+  orig: 512, 512
+  offset: 142, 143
+  index: -1
+images/guihuo/gh_hj_003
+  rotate: false
+  xy: 302, 1819
+  size: 224, 227
+  orig: 512, 512
+  offset: 144, 140
+  index: -1
+images/guihuo/gh_hj_004
+  rotate: false
+  xy: 528, 1819
+  size: 222, 227
+  orig: 512, 512
+  offset: 145, 140
+  index: -1
+images/guihuo/gh_hj_005
+  rotate: false
+  xy: 2, 1064
+  size: 219, 226
+  orig: 512, 512
+  offset: 146, 140
+  index: -1
+images/guihuo/gh_hj_006
+  rotate: false
+  xy: 2, 836
+  size: 215, 226
+  orig: 512, 512
+  offset: 147, 141
+  index: -1
+images/guihuo/gh_hj_007
+  rotate: false
+  xy: 2, 609
+  size: 212, 225
+  orig: 512, 512
+  offset: 148, 142
+  index: -1
+images/guihuo/gh_hj_008
+  rotate: false
+  xy: 752, 1822
+  size: 221, 224
+  orig: 512, 512
+  offset: 149, 142
+  index: -1
+images/guihuo/gh_hj_009
+  rotate: true
+  xy: 1418, 1830
+  size: 216, 223
+  orig: 512, 512
+  offset: 155, 141
+  index: -1
+images/guihuo/gh_hj_010
+  rotate: false
+  xy: 975, 1822
+  size: 220, 224
+  orig: 512, 512
+  offset: 150, 140
+  index: -1
+images/guihuo/gh_hj_011
+  rotate: false
+  xy: 1643, 1830
+  size: 215, 216
+  orig: 512, 512
+  offset: 150, 143
+  index: -1
+images/guihuo/gh_hj_012
+  rotate: false
+  xy: 2, 404
+  size: 206, 203
+  orig: 512, 512
+  offset: 151, 149
+  index: -1
+images/guihuo/gh_hj_013
+  rotate: false
+  xy: 2, 213
+  size: 190, 189
+  orig: 512, 512
+  offset: 157, 155
+  index: -1
+images/guihuo/gh_hj_014
+  rotate: false
+  xy: 1860, 1867
+  size: 172, 179
+  orig: 512, 512
+  offset: 167, 163
+  index: -1
+images/guihuo/gh_hj_015
+  rotate: false
+  xy: 2, 42
+  size: 160, 169
+  orig: 512, 512
+  offset: 176, 172
+  index: -1
+images/guihuo/gh_hj_016
+  rotate: false
+  xy: 231, 1591
+  size: 154, 155
+  orig: 512, 512
+  offset: 181, 183
+  index: -1
+images/guihuo/gh_hj_017
+  rotate: false
+  xy: 231, 1451
+  size: 143, 138
+  orig: 512, 512
+  offset: 188, 195
+  index: -1
+images/guihuo/gh_hj_018
+  rotate: false
+  xy: 226, 1320
+  size: 130, 129
+  orig: 512, 512
+  offset: 196, 198
+  index: -1
+images/guihuo/gh_quan_000
+  rotate: true
+  xy: 285, 210
+  size: 102, 104
+  orig: 512, 512
+  offset: 201, 203
+  index: -1
+images/guihuo/gh_quan_002
+  rotate: false
+  xy: 442, 723
+  size: 102, 100
+  orig: 512, 512
+  offset: 201, 206
+  index: -1
+images/guihuo/gh_quan_004
+  rotate: false
+  xy: 885, 1199
+  size: 101, 101
+  orig: 512, 512
+  offset: 202, 204
+  index: -1
+images/guihuo/gh_quan_006
+  rotate: false
+  xy: 391, 209
+  size: 102, 102
+  orig: 512, 512
+  offset: 201, 202
+  index: -1
+images/guihuo/gh_quan_008
+  rotate: true
+  xy: 470, 104
+  size: 103, 104
+  orig: 512, 512
+  offset: 201, 201
+  index: -1
+images/guihuo/gh_quan_010
+  rotate: false
+  xy: 463, 1238
+  size: 103, 105
+  orig: 512, 512
+  offset: 201, 201
+  index: -1
+images/guihuo/gh_quan_012
+  rotate: false
+  xy: 358, 1342
+  size: 102, 107
+  orig: 512, 512
+  offset: 201, 200
+  index: -1
+images/guihuo/gh_quan_014
+  rotate: false
+  xy: 391, 313
+  size: 102, 108
+  orig: 512, 512
+  offset: 201, 200
+  index: -1
+images/guihuo/gh_quan_016
+  rotate: false
+  xy: 360, 1233
+  size: 101, 107
+  orig: 512, 512
+  offset: 202, 201
+  index: -1
+images/guihuo/gh_quan_018
+  rotate: false
+  xy: 479, 433
+  size: 101, 101
+  orig: 512, 512
+  offset: 202, 207
+  index: -1
+images/guihuo/gh_quan_020
+  rotate: false
+  xy: 781, 1349
+  size: 102, 103
+  orig: 512, 512
+  offset: 203, 204
+  index: -1
+images/guihuo/gh_quan_022
+  rotate: false
+  xy: 567, 1346
+  size: 103, 106
+  orig: 512, 512
+  offset: 202, 201
+  index: -1
+images/guihuo/gh_quan_024
+  rotate: true
+  xy: 361, 104
+  size: 103, 107
+  orig: 512, 512
+  offset: 202, 201
+  index: -1
+images/guihuo/gh_quan_026
+  rotate: false
+  xy: 285, 314
+  size: 104, 107
+  orig: 512, 512
+  offset: 201, 201
+  index: -1
+images/guihuo/gh_quan_028
+  rotate: true
+  xy: 672, 1350
+  size: 102, 107
+  orig: 512, 512
+  offset: 201, 201
+  index: -1
+images/guihuo/gh_quan_030
+  rotate: true
+  xy: 780, 1245
+  size: 102, 103
+  orig: 512, 512
+  offset: 201, 204
+  index: -1
+images/guihuo/gh_quan_032
+  rotate: true
+  xy: 511, 1134
+  size: 102, 99
+  orig: 512, 512
+  offset: 201, 207
+  index: -1
+images/guihuo/gh_quan_034
+  rotate: true
+  xy: 612, 1135
+  size: 102, 99
+  orig: 512, 512
+  offset: 201, 208
+  index: -1
+images/guihuo/gh_quan_036
+  rotate: false
+  xy: 471, 2
+  size: 104, 100
+  orig: 512, 512
+  offset: 201, 207
+  index: -1
+images/guihuo/gh_quan_038
+  rotate: false
+  xy: 674, 1245
+  size: 104, 103
+  orig: 512, 512
+  offset: 201, 205
+  index: -1
+images/guihuo/gh_quan_040
+  rotate: false
+  xy: 988, 1198
+  size: 102, 103
+  orig: 512, 512
+  offset: 201, 205
+  index: -1
+images/guihuo/gh_quan_042
+  rotate: false
+  xy: 407, 1128
+  size: 102, 103
+  orig: 512, 512
+  offset: 201, 205
+  index: -1
+images/guihuo/gh_quan_044
+  rotate: false
+  xy: 479, 536
+  size: 101, 108
+  orig: 512, 512
+  offset: 201, 200
+  index: -1
+images/guihuo/gh_quan_046
+  rotate: true
+  xy: 361, 2
+  size: 100, 108
+  orig: 512, 512
+  offset: 202, 200
+  index: -1
+images/guihuo/gh_quan_048
+  rotate: false
+  xy: 885, 1302
+  size: 101, 105
+  orig: 512, 512
+  offset: 201, 202
+  index: -1
+images/guihuo/gh_quan_050
+  rotate: false
+  xy: 713, 1141
+  size: 102, 102
+  orig: 512, 512
+  offset: 201, 205
+  index: -1
+images/guihuo/gh_quan_052
+  rotate: false
+  xy: 988, 1303
+  size: 102, 104
+  orig: 512, 512
+  offset: 201, 204
+  index: -1
+images/guihuo/gh_quan_054
+  rotate: false
+  xy: 568, 1239
+  size: 104, 105
+  orig: 512, 512
+  offset: 201, 203
+  index: -1
+images/guihuo/gh_quan_056
+  rotate: false
+  xy: 255, 101
+  size: 104, 107
+  orig: 512, 512
+  offset: 201, 201
+  index: -1
+images/guihuo/gh_quan_058
+  rotate: false
+  xy: 462, 1345
+  size: 103, 107
+  orig: 512, 512
+  offset: 201, 201
+  index: -1

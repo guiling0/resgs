@@ -1,0 +1,145 @@
+{
+  "_$ver": 1,
+  "_$id": "xcxihyhd",
+  "_$runtime": "res://708db50c-e687-406c-8739-efe01f400a88",
+  "_$type": "GWidget",
+  "name": "videos",
+  "width": 1920,
+  "height": 1080,
+  "_$child": [
+    {
+      "_$id": "mopfa6xp",
+      "_$type": "GImage",
+      "name": "bg",
+      "width": 1920,
+      "height": 1080,
+      "src": "res://bb7bad82-2c76-40f3-84ed-340b8828b2df",
+      "autoSize": false
+    },
+    {
+      "_$id": "60z98yvf",
+      "_$type": "GImage",
+      "name": "img",
+      "x": 28,
+      "y": 26,
+      "width": 1864,
+      "height": 1028,
+      "src": "res://9472d222-468f-4057-ba2a-42869f1d04ff",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "nfkd94mt",
+          "_$type": "GTextField",
+          "name": "title",
+          "x": 112,
+          "y": 18,
+          "width": 174,
+          "height": 53,
+          "text": "录像",
+          "fontSize": 40,
+          "color": "#ffffff",
+          "ubb": true,
+          "valign": "middle"
+        },
+        {
+          "_$id": "zcqg7vli",
+          "_$prefab": "1dd1b68b-7014-4f25-b642-e20a3cbb4713",
+          "_$var": true,
+          "name": "back",
+          "active": true,
+          "x": 1696,
+          "y": 13,
+          "visible": true,
+          "width": 151,
+          "height": 64,
+          "title": " 返回 ",
+          "titleFontSize": 40
+        }
+      ]
+    },
+    {
+      "_$id": "yxcye4h9",
+      "_$var": true,
+      "_$type": "GList",
+      "name": "list",
+      "x": 48,
+      "y": 124,
+      "width": 1826,
+      "height": 766,
+      "layout": {
+        "type": 1,
+        "columns": 1,
+        "columnGap": 19,
+        "padding": [
+          10,
+          0,
+          0,
+          0
+        ]
+      },
+      "scroller": {
+        "_$type": "Scroller",
+        "vScrollBarRes": {
+          "_$uuid": "f109ab10-7012-4000-80bc-5fdff3eae172",
+          "_$type": "Prefab"
+        }
+      },
+      "_templateNode": {
+        "_$ref": "ieqqisj7",
+        "_$tmpl": "itemTemplate"
+      },
+      "_initItemNum": null,
+      "_isDemo": true,
+      "_itemData": [],
+      "_$child": [
+        {
+          "_$id": "ieqqisj7",
+          "_$prefab": "c22116dc-73a9-4644-9cc6-c6ad0d1ac8a8",
+          "name": "video_item",
+          "active": true,
+          "x": 0,
+          "y": 0,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "_$id": "00pdu3md",
+      "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+      "_$var": true,
+      "name": "btn_load",
+      "active": true,
+      "x": 1607,
+      "y": 911,
+      "visible": true,
+      "width": 268,
+      "height": 70,
+      "title": "读取本地录像",
+      "_$child": [
+        {
+          "_$override": "x9lkyehy",
+          "fontSize": 40
+        }
+      ]
+    },
+    {
+      "_$id": "ybrai5fb",
+      "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+      "_$var": true,
+      "name": "btn_clear",
+      "active": true,
+      "x": 1411,
+      "y": 909,
+      "visible": true,
+      "width": 188,
+      "height": 70,
+      "title": "清空缓存",
+      "_$child": [
+        {
+          "_$override": "x9lkyehy",
+          "fontSize": 40
+        }
+      ]
+    }
+  ]
+}

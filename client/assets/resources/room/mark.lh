@@ -1,0 +1,82 @@
+{
+  "_$ver": 1,
+  "_$id": "5oo69jcg",
+  "_$runtime": "res://ff15a06c-fbfb-4d23-92ef-e1b3034e6756",
+  "_$type": "GImage",
+  "name": "mark",
+  "width": 21,
+  "height": 21,
+  "src": "res://0c7d7e25-3895-4456-9ad1-4b2454ab9818",
+  "autoSize": false,
+  "_$child": [
+    {
+      "_$id": "rueeek0p",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "value",
+      "x": 3,
+      "y": 3,
+      "width": 18,
+      "height": 22,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "5oo69jcg"
+          },
+          "data": [
+            9,
+            0,
+            16,
+            0
+          ]
+        }
+      ],
+      "text": "0",
+      "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+      "fontSize": 13,
+      "color": "#ffffff",
+      "align": "right",
+      "valign": "bottom",
+      "padding": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "stroke": 2
+    },
+    {
+      "_$id": "9hnk6t4u",
+      "_$type": "GWidget",
+      "name": "animations",
+      "width": 21,
+      "height": 21,
+      "_$child": [
+        {
+          "_$id": "ygjbwvo2",
+          "_$type": "Sprite",
+          "name": "numChange",
+          "x": 10,
+          "y": 10,
+          "width": 128,
+          "height": 128,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "visible": false,
+          "_$comp": [
+            {
+              "_$type": "Spine2DRenderNode",
+              "layer": 0,
+              "source": "res://715d6afa-aa2f-41f6-a4d1-8739463799a1",
+              "animationName": "animation",
+              "loop": false,
+              "preview": true,
+              "physicsUpdate": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

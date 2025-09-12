@@ -1,0 +1,76 @@
+
+qy_effect_shimingji.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+baidi
+  rotate: false
+  xy: 908, 964
+  size: 4, 4
+  orig: 4, 4
+  offset: 0, 0
+  index: -1
+heidi
+  rotate: false
+  xy: 606, 720
+  size: 6, 6
+  orig: 6, 6
+  offset: 0, 0
+  index: -1
+xianding_golw_00000
+  rotate: false
+  xy: 2, 728
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: -1
+xianding_golw_00001
+  rotate: false
+  xy: 2, 486
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: -1
+xianding_golw_00002
+  rotate: false
+  xy: 304, 728
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: -1
+xianding_golw_00003
+  rotate: false
+  xy: 2, 244
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: -1
+xianding_golw_00004
+  rotate: false
+  xy: 304, 486
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: -1
+xianding_golw_00005
+  rotate: false
+  xy: 606, 728
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: -1
+xianding_golw_00006
+  rotate: false
+  xy: 2, 2
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: -1
+xianding_golw_00007
+  rotate: false
+  xy: 304, 244
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: -1

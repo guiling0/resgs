@@ -1,0 +1,43 @@
+{
+  "_$ver": 1,
+  "_$id": "dili4kne",
+  "_$runtime": "res://d3b95dcb-2225-4f3b-89f3-eaed04b1725c",
+  "_$type": "GWidget",
+  "name": "cards",
+  "width": 285,
+  "height": 195,
+  "relations": [
+    {
+      "_$type": "Relation",
+      "target": {
+        "_$ref": "t1m9ch6h"
+      },
+      "data": [
+        20,
+        0,
+        24,
+        0
+      ]
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "t1m9ch6h",
+      "_$var": true,
+      "_$type": "GBox",
+      "name": "cards",
+      "width": 285,
+      "height": 195,
+      "layout": {
+        "type": 3,
+        "columns": 10,
+        "rowGap": 5,
+        "columnGap": 5,
+        "valign": 1,
+        "foldInvisibles": true,
+        "stretchX": 2,
+        "stretchY": 2
+      }
+    }
+  ]
+}

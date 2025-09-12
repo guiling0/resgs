@@ -1,0 +1,209 @@
+
+Ss_BiaoQing_PengBei.png
+size: 501,501
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+beizi
+  rotate: false
+  xy: 407, 384
+  size: 88, 115
+  orig: 105, 125
+  offset: 8, 0
+  index: -1
+beizi_00
+  rotate: true
+  xy: 275, 282
+  size: 105, 125
+  orig: 105, 125
+  offset: 0, 0
+  index: -1
+glow_00
+  rotate: false
+  xy: 2, 281
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+hx_01
+  rotate: true
+  xy: 196, 193
+  size: 87, 76
+  orig: 141, 128
+  offset: 26, 32
+  index: -1
+hx_02
+  rotate: false
+  xy: 140, 282
+  size: 118, 101
+  orig: 141, 128
+  offset: 11, 21
+  index: -1
+hx_03
+  rotate: false
+  xy: 275, 389
+  size: 130, 110
+  orig: 141, 128
+  offset: 3, 15
+  index: -1
+hx_04
+  rotate: false
+  xy: 140, 385
+  size: 133, 114
+  orig: 141, 128
+  offset: 2, 13
+  index: -1
+hx_05
+  rotate: false
+  xy: 2, 383
+  size: 136, 116
+  orig: 141, 128
+  offset: 0, 12
+  index: -1
+hx_06
+  rotate: true
+  xy: 195, 125
+  size: 59, 101
+  orig: 141, 128
+  offset: 0, 16
+  index: -1
+jiu_00000
+  rotate: false
+  xy: 104, 360
+  size: 28, 21
+  orig: 45, 115
+  offset: 17, 94
+  index: -1
+jiu_00001
+  rotate: true
+  xy: 257, 7
+  size: 42, 56
+  orig: 45, 115
+  offset: 3, 59
+  index: -1
+jiu_00002
+  rotate: true
+  xy: 298, 141
+  size: 45, 91
+  orig: 45, 115
+  offset: 0, 24
+  index: -1
+jiu_00003
+  rotate: true
+  xy: 274, 235
+  size: 45, 115
+  orig: 45, 115
+  offset: 0, 0
+  index: -1
+jiu_00004
+  rotate: true
+  xy: 274, 188
+  size: 45, 115
+  orig: 45, 115
+  offset: 0, 0
+  index: -1
+jiu_00005
+  rotate: false
+  xy: 391, 78
+  size: 45, 115
+  orig: 45, 115
+  offset: 0, 0
+  index: -1
+jiu_00006
+  rotate: false
+  xy: 438, 78
+  size: 45, 115
+  orig: 45, 115
+  offset: 0, 0
+  index: -1
+jiu_00007
+  rotate: false
+  xy: 328, 34
+  size: 45, 105
+  orig: 45, 115
+  offset: 0, 0
+  index: -1
+jiu_00008
+  rotate: true
+  xy: 375, 33
+  size: 43, 80
+  orig: 45, 115
+  offset: 0, 0
+  index: -1
+jiu_00009
+  rotate: false
+  xy: 457, 23
+  size: 42, 53
+  orig: 45, 115
+  offset: 0, 0
+  index: -1
+jiuhu
+  rotate: false
+  xy: 171, 20
+  size: 84, 87
+  orig: 84, 87
+  offset: 0, 0
+  index: -1
+shui_01
+  rotate: true
+  xy: 257, 51
+  size: 72, 69
+  orig: 110, 110
+  offset: 35, 9
+  index: -1
+shui_02
+  rotate: false
+  xy: 2, 13
+  size: 87, 87
+  orig: 110, 110
+  offset: 23, 12
+  index: -1
+shui_03
+  rotate: true
+  xy: 2, 189
+  size: 90, 93
+  orig: 110, 110
+  offset: 17, 14
+  index: -1
+shui_04
+  rotate: false
+  xy: 402, 289
+  size: 93, 93
+  orig: 110, 110
+  offset: 12, 15
+  index: -1
+shui_05
+  rotate: false
+  xy: 402, 195
+  size: 93, 92
+  orig: 110, 110
+  offset: 10, 16
+  index: -1
+shui_06
+  rotate: true
+  xy: 104, 186
+  size: 94, 90
+  orig: 110, 110
+  offset: 8, 17
+  index: -1
+shui_07
+  rotate: false
+  xy: 2, 102
+  size: 95, 85
+  orig: 110, 110
+  offset: 6, 18
+  index: -1
+shui_08
+  rotate: true
+  xy: 91, 5
+  size: 95, 78
+  orig: 110, 110
+  offset: 5, 18
+  index: -1
+shui_09
+  rotate: false
+  xy: 99, 109
+  size: 94, 75
+  orig: 110, 110
+  offset: 4, 16
+  index: -1

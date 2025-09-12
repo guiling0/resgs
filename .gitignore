@@ -1,0 +1,13 @@
+server/node_modules
+server/dist
+server/dist.zip
+server/logs
+.DS_Store
+resgs-client/temp
+resgs-client/library
+resgs-client/local
+resgs-client/release
+resgs-client/node_modules
+resgs-client/bin/js/bundles
+resgs-client/**/*.meta
+httpserver

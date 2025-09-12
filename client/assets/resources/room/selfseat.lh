@@ -1,0 +1,1596 @@
+{
+  "_$ver": 1,
+  "_$id": "a7r6i7al",
+  "_$runtime": "res://ce1f2a78-8a8a-4222-8346-41962a922d55",
+  "_$type": "GWidget",
+  "name": "selfseat",
+  "width": 1920,
+  "height": 430,
+  "controllers": {
+    "_$type": "Record",
+    "gmode": {
+      "_$type": "Controller",
+      "pages": [
+        "single",
+        "dual"
+      ]
+    }
+  },
+  "_$comp": [
+    {
+      "_$type": "6e5bf37a-78ab-43ce-9f0d-e657fe0ab0b5",
+      "scriptPath": "../src/comps/player/SelfSeatComp.ts"
+    },
+    {
+      "_$type": "9865351d-f61b-4be8-88df-c727c305fc27",
+      "scriptPath": "../src/comps/ChooseItemComp.ts",
+      "clickNode": {
+        "_$ref": "8qq0j7o1"
+      },
+      "selectedImage": [
+        {
+          "_$ref": [
+            "853zqbek",
+            "gmeiqg05"
+          ]
+        },
+        {
+          "_$ref": [
+            "9pc7em2a",
+            "gmeiqg05"
+          ]
+        }
+      ],
+      "canClickMask": {
+        "_$ref": "7zt59d5g"
+      },
+      "isButton": null
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "6ue9w4v4",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "main",
+      "width": 1920,
+      "height": 430,
+      "_$child": [
+        {
+          "_$id": "7gt9suzd",
+          "_$type": "GWidget",
+          "name": "bg",
+          "y": 208,
+          "width": 1920,
+          "height": 222,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "rgba(0,0,0,0.5882352941176471)"
+          }
+        },
+        {
+          "_$id": "oi5paah6",
+          "_$type": "GWidget",
+          "name": "equips",
+          "x": 3,
+          "y": 222,
+          "width": 246,
+          "height": 206,
+          "mouseThrough": true,
+          "background": {
+            "_$type": "Draw9GridTextureCmd",
+            "texture": {
+              "_$uuid": "dbaa20b7-a4bf-44b3-8c38-6600c9dfd283",
+              "_$type": "Texture"
+            }
+          },
+          "_$child": [
+            {
+              "_$id": "3blcsowd",
+              "_$prefab": "73f2ed1b-ebdb-40df-b29c-0fdd8b257c37",
+              "_$var": true,
+              "name": "equip31",
+              "active": true,
+              "x": 119,
+              "y": 32,
+              "scaleX": 1.5,
+              "scaleY": 1.5,
+              "visible": false
+            },
+            {
+              "_$id": "8lvhaepe",
+              "_$prefab": "73f2ed1b-ebdb-40df-b29c-0fdd8b257c37",
+              "_$var": true,
+              "name": "equip32",
+              "active": true,
+              "x": 119,
+              "y": 71,
+              "scaleX": 1.5,
+              "scaleY": 1.5,
+              "visible": false
+            },
+            {
+              "_$id": "udimul7o",
+              "_$prefab": "73f2ed1b-ebdb-40df-b29c-0fdd8b257c37",
+              "_$var": true,
+              "name": "equip35",
+              "active": true,
+              "x": 119,
+              "y": 110,
+              "scaleX": 1.5,
+              "scaleY": 1.5,
+              "visible": false
+            },
+            {
+              "_$id": "2e9grez4",
+              "_$prefab": "73f2ed1b-ebdb-40df-b29c-0fdd8b257c37",
+              "_$var": true,
+              "name": "equip33",
+              "active": true,
+              "x": 119,
+              "y": 110,
+              "scaleX": 1.5,
+              "scaleY": 1.5,
+              "visible": false
+            },
+            {
+              "_$id": "jem4x7oh",
+              "_$prefab": "73f2ed1b-ebdb-40df-b29c-0fdd8b257c37",
+              "_$var": true,
+              "name": "equip34",
+              "active": true,
+              "x": 119,
+              "y": 149,
+              "scaleX": 1.5,
+              "scaleY": 1.5,
+              "visible": false
+            },
+            {
+              "_$id": "uybjzimd",
+              "_$prefab": "73f2ed1b-ebdb-40df-b29c-0fdd8b257c37",
+              "_$var": true,
+              "name": "equip36",
+              "active": true,
+              "x": 119,
+              "y": 188,
+              "scaleX": 1.5,
+              "scaleY": 1.5,
+              "visible": false
+            }
+          ]
+        },
+        {
+          "_$id": "ouit2msr",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "baseBg",
+          "x": 1542,
+          "y": 208,
+          "width": 375,
+          "height": 222,
+          "mouseThrough": true,
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "a7r6i7al"
+              },
+              "data": [
+                9,
+                0,
+                16,
+                0
+              ]
+            },
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "8qq0j7o1"
+              },
+              "data": [
+                1,
+                0
+              ]
+            }
+          ],
+          "src": "",
+          "autoSize": false,
+          "_$child": [
+            {
+              "_$id": "5y3e50vz",
+              "_$type": "GImage",
+              "name": "baseBg",
+              "x": 153,
+              "width": 220,
+              "height": 222,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "ouit2msr"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "src": "res://857da7dd-4188-4f15-936e-5616121705b3",
+              "autoSize": false
+            },
+            {
+              "_$id": "790adbbm",
+              "_$type": "GImage",
+              "name": "baseBorder",
+              "x": 155,
+              "width": 220,
+              "height": 222,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "ouit2msr"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "src": "res://d382412f-82da-4885-b5ef-8135739f33fd",
+              "autoSize": false
+            },
+            {
+              "_$id": "9vswo021",
+              "_$type": "GImage",
+              "name": "mainBg",
+              "width": 153,
+              "height": 224,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "ouit2msr"
+                  },
+                  "data": [
+                    3,
+                    0,
+                    10,
+                    0
+                  ]
+                }
+              ],
+              "src": "res://d39c2f77-5bff-4205-8763-253b429e60b7",
+              "autoSize": false,
+              "_$child": [
+                {
+                  "_$id": "swqia539",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "seat",
+                  "x": 106,
+                  "y": 175,
+                  "width": 44,
+                  "height": 44,
+                  "src": "",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "hemfra1z",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "handcard",
+                  "x": 36,
+                  "y": 186,
+                  "width": 45,
+                  "height": 27,
+                  "mouseThrough": true,
+                  "src": "res://a781e3af-89cb-44d2-a84c-ad1fb8aec578",
+                  "autoSize": false,
+                  "_$child": [
+                    {
+                      "_$id": "kbnrdcgi",
+                      "_$var": true,
+                      "_$type": "GTextField",
+                      "name": "handlabel",
+                      "x": 7,
+                      "y": 2,
+                      "width": 35,
+                      "height": 21,
+                      "text": "0",
+                      "fontSize": 20,
+                      "color": "#FFFFFF",
+                      "align": "center",
+                      "valign": "middle",
+                      "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                      ],
+                      "stroke": 3
+                    }
+                  ]
+                },
+                {
+                  "_$id": "pixe2ddh",
+                  "_$var": true,
+                  "_$type": "GWidget",
+                  "name": "camp",
+                  "x": 52,
+                  "width": 105,
+                  "height": 121,
+                  "mouseThrough": true,
+                  "_$child": [
+                    {
+                      "_$id": "up1c474y",
+                      "_$var": true,
+                      "_$type": "GWidget",
+                      "name": "guozhan_k_mark",
+                      "x": 46,
+                      "width": 59,
+                      "height": 41,
+                      "_$child": [
+                        {
+                          "_$id": "z408vxys",
+                          "_$var": true,
+                          "_$type": "GImage",
+                          "name": "kingdom",
+                          "x": 7,
+                          "y": 4,
+                          "width": 45,
+                          "height": 45,
+                          "src": "",
+                          "autoSize": false
+                        },
+                        {
+                          "_$id": "180cu4fn",
+                          "_$var": true,
+                          "_$type": "Animation",
+                          "name": "ani_dashili",
+                          "x": 10,
+                          "y": 10,
+                          "width": 50,
+                          "height": 50,
+                          "visible": false,
+                          "source": "res://5874272b-2373-4af0-8a4d-50dad5fb562b",
+                          "autoPlay": true,
+                          "index": 2,
+                          "interval": 50
+                        },
+                        {
+                          "_$id": "zog0g6yg",
+                          "_$var": true,
+                          "_$type": "Animation",
+                          "name": "zhenfa_jiaji",
+                          "x": -117,
+                          "y": -18,
+                          "width": 100,
+                          "height": 100,
+                          "scaleX": 1.3,
+                          "scaleY": 1.21,
+                          "visible": false,
+                          "source": "res://aae83082-3b79-4c9a-aea3-88f10eee876c",
+                          "autoPlay": true,
+                          "index": 2,
+                          "interval": 50
+                        },
+                        {
+                          "_$id": "2ko7cytq",
+                          "_$var": true,
+                          "_$type": "Animation",
+                          "name": "zhenfa_icon",
+                          "x": -51,
+                          "y": -21,
+                          "width": 100,
+                          "height": 100,
+                          "visible": false,
+                          "source": "res://9c00c6f8-85e5-49c8-8c97-6f11b8330c04",
+                          "autoPlay": true,
+                          "index": 2,
+                          "interval": 50
+                        },
+                        {
+                          "_$id": "m0se2xoo",
+                          "_$var": true,
+                          "_$type": "Animation",
+                          "name": "zhenfa_zi",
+                          "x": -13,
+                          "y": -18,
+                          "width": 100,
+                          "height": 100,
+                          "visible": false,
+                          "source": "res://635b059d-e59b-497d-9c84-b3b2cd66d60e",
+                          "autoPlay": true,
+                          "index": 2,
+                          "interval": 50
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "dajsvbsc",
+                      "_$var": true,
+                      "_$type": "GWidget",
+                      "name": "k_mark",
+                      "x": 57,
+                      "y": 6,
+                      "width": 39,
+                      "height": 181,
+                      "visible": false,
+                      "_$child": [
+                        {
+                          "_$id": "360iqif4",
+                          "_$var": true,
+                          "_$type": "GImage",
+                          "name": "figure",
+                          "width": 38,
+                          "height": 39,
+                          "src": "res://c7dc16e8-60f1-41cc-91bb-d4289470df7e",
+                          "autoSize": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "_$id": "gay4s4hv",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "turnstate",
+                  "x": -68,
+                  "y": -10,
+                  "width": 180,
+                  "height": 18,
+                  "src": "",
+                  "autoSize": false
+                }
+              ]
+            },
+            {
+              "_$id": "8qq0j7o1",
+              "_$type": "GBox",
+              "name": "generlas",
+              "x": 153,
+              "width": 188,
+              "height": 221,
+              "layout": {
+                "type": 2,
+                "foldInvisibles": true,
+                "stretchX": 2
+              },
+              "_$child": [
+                {
+                  "_$id": "853zqbek",
+                  "_$prefab": "bae82ca6-d6c7-4d20-b833-ed160ae8eb2c",
+                  "_$var": true,
+                  "name": "general_head",
+                  "active": true,
+                  "x": 0,
+                  "y": 0,
+                  "visible": true,
+                  "_$child": [
+                    {
+                      "_$override": "glnc7ika",
+                      "src": "res://93b3dbdf-3904-4522-b739-0335b09d7b87"
+                    },
+                    {
+                      "_$override": "7fhtde53",
+                      "src": ""
+                    },
+                    {
+                      "_$override": "82k4s26f",
+                      "text": ""
+                    },
+                    {
+                      "_$override": "tilq8eg6",
+                      "src": ""
+                    }
+                  ]
+                },
+                {
+                  "_$id": "9pc7em2a",
+                  "_$prefab": "bae82ca6-d6c7-4d20-b833-ed160ae8eb2c",
+                  "_$var": true,
+                  "name": "general_deputy",
+                  "active": true,
+                  "x": 188,
+                  "y": 0,
+                  "visible": true,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "a7r6i7al",
+                        "_$ctrl": "gmode"
+                      },
+                      "pages": [
+                        1
+                      ]
+                    }
+                  ],
+                  "_$child": [
+                    {
+                      "_$override": "glnc7ika",
+                      "src": "res://93b3dbdf-3904-4522-b739-0335b09d7b87"
+                    },
+                    {
+                      "_$override": "7fhtde53",
+                      "src": ""
+                    },
+                    {
+                      "_$override": "82k4s26f",
+                      "text": ""
+                    },
+                    {
+                      "_$override": "tilq8eg6",
+                      "src": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "7zt59d5g",
+              "_$var": true,
+              "_$type": "GWidget",
+              "name": "canClick",
+              "x": 153,
+              "width": 225,
+              "height": 222,
+              "visible": false,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "rgba(0,0,0,0.5882352941176471)"
+              },
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "ouit2msr"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "3a7q9dnh",
+              "_$var": true,
+              "_$type": "GBox",
+              "name": "hps",
+              "x": 341,
+              "y": 179,
+              "width": 31,
+              "height": 40,
+              "background": {
+                "_$type": "Draw9GridTextureCmd",
+                "texture": {
+                  "_$uuid": "50ee20df-286c-4c8f-9659-71961ac301b8",
+                  "_$type": "Texture"
+                }
+              },
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "ouit2msr"
+                  },
+                  "data": [
+                    9,
+                    0,
+                    16,
+                    0
+                  ]
+                }
+              ],
+              "layout": {
+                "type": 1,
+                "rows": 1,
+                "columns": 4,
+                "rowGap": 1,
+                "padding": [
+                  2,
+                  0,
+                  1,
+                  0
+                ],
+                "align": 1,
+                "valign": 2,
+                "foldInvisibles": true,
+                "stretchY": 2
+              },
+              "_$child": [
+                {
+                  "_$id": "c20z3qlv",
+                  "_$var": true,
+                  "_$type": "GImage",
+                  "name": "shield",
+                  "y": 2,
+                  "width": 35,
+                  "height": 37,
+                  "visible": false,
+                  "src": "res://eee3939d-8532-4774-8b80-b35ac47c4bc2",
+                  "autoSize": false,
+                  "_$child": [
+                    {
+                      "_$id": "04g4n06l",
+                      "_$var": true,
+                      "_$type": "GTextField",
+                      "name": "shield_label",
+                      "y": -3,
+                      "width": 35,
+                      "height": 37,
+                      "text": "0",
+                      "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+                      "fontSize": 30,
+                      "color": "#FFFFFF",
+                      "bold": true,
+                      "align": "center",
+                      "valign": "middle",
+                      "stroke": 3
+                    }
+                  ]
+                },
+                {
+                  "_$id": "ku2pt31f",
+                  "_$var": true,
+                  "_$type": "GTextField",
+                  "name": "hplabel",
+                  "x": -3,
+                  "y": 43,
+                  "width": 36,
+                  "height": 167,
+                  "visible": false,
+                  "text": "{inthp=0}\n/\n{maxhp=0}",
+                  "fontSize": 30,
+                  "color": "rgba(0, 255, 14, 1)",
+                  "bold": true,
+                  "templateVars": true,
+                  "align": "center",
+                  "wordWrap": true,
+                  "underlineColor": "rgba(255, 255, 255, 1)",
+                  "stroke": 2,
+                  "strokeColor": "rgba(87, 87, 87, 0.5882352941176471)"
+                }
+              ]
+            },
+            {
+              "_$id": "3wadr6mr",
+              "_$var": true,
+              "_$type": "GBox",
+              "name": "marks",
+              "x": 157,
+              "y": 28,
+              "width": 120,
+              "height": 126,
+              "scaleX": 1.5,
+              "scaleY": 1.5,
+              "mouseThrough": true,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "ouit2msr"
+                  },
+                  "data": [
+                    1,
+                    0
+                  ]
+                }
+              ],
+              "layout": {
+                "type": 3,
+                "rowGap": 1,
+                "columnGap": 1,
+                "foldInvisibles": true
+              }
+            }
+          ]
+        },
+        {
+          "_$id": "a0mimdcg",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "nameBg",
+          "x": 1694,
+          "y": 210,
+          "width": 183,
+          "height": 27,
+          "visible": false,
+          "mouseThrough": true,
+          "src": "res://5e80ccdc-d8e2-46b6-a19f-3fe0664c8520",
+          "autoSize": false,
+          "_$child": [
+            {
+              "_$id": "n0rntkid",
+              "_$var": true,
+              "_$type": "GTextField",
+              "name": "playername",
+              "x": 39,
+              "y": 5,
+              "width": 105,
+              "height": 16,
+              "text": "玩家名字七个字",
+              "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+              "fontSize": 14,
+              "color": "rgba(255, 255, 255, 1)",
+              "ubb": true,
+              "templateVars": true,
+              "align": "center",
+              "valign": "middle"
+            }
+          ]
+        },
+        {
+          "_$id": "4lgptvi7",
+          "_$var": true,
+          "_$type": "Skeleton",
+          "name": "tiesuo",
+          "x": 1792,
+          "y": 320,
+          "width": 100,
+          "height": 100,
+          "scaleX": 1.2,
+          "scaleY": 1.2,
+          "visible": false,
+          "mouseThrough": true,
+          "source": "res://6308196f-ccef-4339-b337-d83591bb4190",
+          "animationName": "play",
+          "loop": false
+        },
+        {
+          "_$id": "xp017hh3",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "skill_name",
+          "x": 1788,
+          "y": 319,
+          "width": 39,
+          "height": 40,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "text": "",
+          "font": "res://3d1c161a-47db-4877-8042-750bcea29919",
+          "fontSize": 35,
+          "color": "#ffffff",
+          "fitContent": 1,
+          "bold": true,
+          "align": "center",
+          "valign": "middle",
+          "stroke": 3
+        },
+        {
+          "_$id": "llx1wxq8",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "bprompt",
+          "x": 1790,
+          "y": 320,
+          "width": 183,
+          "height": 217,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "text": "",
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 40,
+          "color": "#ffffff",
+          "bold": true,
+          "align": "center",
+          "valign": "middle",
+          "wordWrap": true,
+          "stroke": 3
+        },
+        {
+          "_$id": "s4k5fowm",
+          "_$var": true,
+          "_$type": "GBox",
+          "name": "judges",
+          "x": 252,
+          "y": 182,
+          "width": 157,
+          "height": 28,
+          "scaleX": 1.5,
+          "scaleY": 1.5,
+          "mouseThrough": true,
+          "layout": {
+            "type": 2
+          }
+        },
+        {
+          "_$id": "4btkri64",
+          "_$var": true,
+          "_$type": "GBox",
+          "name": "skills",
+          "x": 1435,
+          "y": -18,
+          "width": 447,
+          "height": 221,
+          "layout": {
+            "type": 3,
+            "rowGap": 1,
+            "columnGap": 3,
+            "padding": [
+              0,
+              0,
+              3,
+              0
+            ],
+            "align": 2,
+            "valign": 2,
+            "foldInvisibles": true
+          }
+        },
+        {
+          "_$id": "7ioas44a",
+          "_$var": true,
+          "_$type": "GWidget",
+          "name": "none_skills",
+          "x": 1924,
+          "y": 205,
+          "width": 447,
+          "height": 221,
+          "visible": false
+        }
+      ]
+    },
+    {
+      "_$id": "o2yem7yk",
+      "_$type": "GWidget",
+      "name": "handle",
+      "y": 15,
+      "width": 1920,
+      "height": 179,
+      "_mouseState": 2,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "hy2bbdn8",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "prompt",
+          "x": 246,
+          "y": -108,
+          "width": 1428,
+          "height": 191,
+          "_mouseState": 2,
+          "mouseThrough": true,
+          "text": "",
+          "font": "res://5afb0bf5-9315-48c4-b332-4e0bb0e2042d",
+          "fontSize": 30,
+          "color": "#ffffff",
+          "ubb": true,
+          "templateVars": true,
+          "align": "center",
+          "valign": "bottom",
+          "wordWrap": true,
+          "stroke": 5,
+          "strokeColor": "rgba(47, 58, 133, 1)"
+        },
+        {
+          "_$id": "b5b6xteg",
+          "_$var": true,
+          "_$type": "GProgressBar",
+          "name": "timebar",
+          "x": 734,
+          "y": 88,
+          "width": 452,
+          "height": 23,
+          "visible": false,
+          "value": 1,
+          "max": 1,
+          "_hBar": {
+            "_$ref": "rfnj5ldm"
+          },
+          "_$child": [
+            {
+              "_$id": "7n7370hd",
+              "_$type": "GImage",
+              "name": "bg",
+              "width": 452,
+              "height": 23,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "b5b6xteg"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "src": "res://eca6b4a6-e3c1-4053-8875-f2579d07000b",
+              "autoSize": false
+            },
+            {
+              "_$id": "rfnj5ldm",
+              "_$type": "GImage",
+              "name": "bar",
+              "width": 452,
+              "height": 23,
+              "src": "res://a903e8d4-a82a-4d21-9096-596c8c438154",
+              "autoSize": false
+            },
+            {
+              "_$id": "8nekqzlm",
+              "_$var": true,
+              "_$type": "GTextField",
+              "name": "think_prompt",
+              "x": 36,
+              "y": -2,
+              "width": 120,
+              "height": 19,
+              "visible": false,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "a7r6i7al"
+                  },
+                  "data": [
+                    9,
+                    0
+                  ]
+                }
+              ],
+              "text": "[color=#FFFF00]{prompt=思考内容}[/color] 思考中...",
+              "font": "res://36a54572-1e5e-4b85-a5b5-3bbc7456494b",
+              "fontSize": 14,
+              "color": "#ffffff",
+              "fitContent": 1,
+              "ubb": true,
+              "templateVars": true,
+              "align": "right",
+              "valign": "middle"
+            }
+          ]
+        },
+        {
+          "_$id": "xfdufo7h",
+          "_$var": true,
+          "_$type": "GBox",
+          "name": "options",
+          "y": 109,
+          "width": 1280,
+          "height": 58,
+          "scaleX": 1.5,
+          "scaleY": 1.5,
+          "_mouseState": 2,
+          "mouseThrough": true,
+          "layout": {
+            "type": 2,
+            "align": 1,
+            "valign": 1
+          }
+        },
+        {
+          "_$id": "roh7voa6",
+          "_$var": true,
+          "_$type": "GWidget",
+          "name": "buttons",
+          "x": 735,
+          "y": 105,
+          "width": 435,
+          "height": 50,
+          "scaleX": 1.5,
+          "scaleY": 1.5,
+          "_mouseState": 2,
+          "mouseThrough": true,
+          "_$child": [
+            {
+              "_$id": "yszy1qbe",
+              "_$var": true,
+              "_$type": "GButton",
+              "name": "confirm",
+              "y": 13,
+              "width": 100,
+              "height": 36,
+              "visible": false,
+              "controllers": {
+                "_$type": "Record",
+                "button": {
+                  "_$type": "Controller",
+                  "pages": [
+                    "up",
+                    "down",
+                    "over",
+                    "selectedOver"
+                  ]
+                }
+              },
+              "_$child": [
+                {
+                  "_$id": "b2ixq20j",
+                  "_$type": "GImage",
+                  "name": "img_2",
+                  "width": 100,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "yszy1qbe",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        2
+                      ]
+                    }
+                  ],
+                  "src": "res://e52214a0-c3f8-41f5-ab46-4112635339de"
+                },
+                {
+                  "_$id": "018qntkn",
+                  "_$type": "GImage",
+                  "name": "img_1",
+                  "width": 100,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "yszy1qbe",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        0
+                      ]
+                    }
+                  ],
+                  "src": "res://94135dd3-7841-484e-8e4c-9d43e479e5f8"
+                },
+                {
+                  "_$id": "fr51iqio",
+                  "_$type": "GImage",
+                  "name": "img",
+                  "width": 100,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "yszy1qbe",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        1
+                      ]
+                    }
+                  ],
+                  "src": "res://b6d31724-a1b0-4c9b-900d-5483e52bd41e"
+                }
+              ]
+            },
+            {
+              "_$id": "0drasbf9",
+              "_$var": true,
+              "_$type": "GButton",
+              "name": "recast",
+              "y": 13,
+              "width": 100,
+              "height": 36,
+              "visible": false,
+              "controllers": {
+                "_$type": "Record",
+                "button": {
+                  "_$type": "Controller",
+                  "pages": [
+                    "up",
+                    "down",
+                    "over",
+                    "selectedOver"
+                  ]
+                }
+              },
+              "_$child": [
+                {
+                  "_$id": "bz9ry94b",
+                  "_$type": "GImage",
+                  "name": "img_2",
+                  "width": 100,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "0drasbf9",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        2
+                      ]
+                    }
+                  ],
+                  "src": "res://e52214a0-c3f8-41f5-ab46-4112635339de"
+                },
+                {
+                  "_$id": "2wlyvmu0",
+                  "_$type": "GImage",
+                  "name": "img_1",
+                  "width": 100,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "0drasbf9",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        0
+                      ]
+                    }
+                  ],
+                  "src": "res://94135dd3-7841-484e-8e4c-9d43e479e5f8"
+                },
+                {
+                  "_$id": "n9k2rt5i",
+                  "_$type": "GImage",
+                  "name": "img",
+                  "width": 100,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "0drasbf9",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        1
+                      ]
+                    }
+                  ],
+                  "src": "res://b6d31724-a1b0-4c9b-900d-5483e52bd41e"
+                }
+              ]
+            },
+            {
+              "_$id": "1drmkjj9",
+              "_$var": true,
+              "_$type": "GButton",
+              "name": "cancle",
+              "x": 198,
+              "y": 13,
+              "width": 100,
+              "height": 36,
+              "visible": false,
+              "controllers": {
+                "_$type": "Record",
+                "button": {
+                  "_$type": "Controller",
+                  "pages": [
+                    "up",
+                    "down",
+                    "over",
+                    "selectedOver"
+                  ]
+                }
+              },
+              "_$child": [
+                {
+                  "_$id": "zqdyf1n6",
+                  "_$type": "GImage",
+                  "name": "img_2",
+                  "width": 100,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "1drmkjj9",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        2
+                      ]
+                    }
+                  ],
+                  "src": "res://c8d9fadc-b323-4fe5-8a1f-6a6ed7839f14"
+                },
+                {
+                  "_$id": "iruy1mbi",
+                  "_$type": "GImage",
+                  "name": "img_1",
+                  "width": 100,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "1drmkjj9",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        0
+                      ]
+                    }
+                  ],
+                  "src": "res://2aee7162-8fba-4f3f-ae09-921622600aad"
+                },
+                {
+                  "_$id": "r9bg30c1",
+                  "_$type": "GImage",
+                  "name": "img",
+                  "width": 100,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "1drmkjj9",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        1
+                      ]
+                    }
+                  ],
+                  "src": "res://76b98614-5163-4913-85c6-6ce9f7fe6546"
+                }
+              ]
+            },
+            {
+              "_$id": "5l6zkzxp",
+              "_$var": true,
+              "_$type": "GButton",
+              "name": "end",
+              "x": 352,
+              "y": 13,
+              "width": 80,
+              "height": 36,
+              "visible": false,
+              "controllers": {
+                "_$type": "Record",
+                "button": {
+                  "_$type": "Controller",
+                  "pages": [
+                    "up",
+                    "down",
+                    "over",
+                    "selectedOver"
+                  ]
+                }
+              },
+              "_$child": [
+                {
+                  "_$id": "w2jkhpse",
+                  "_$type": "GImage",
+                  "name": "img_2",
+                  "width": 80,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "5l6zkzxp",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        2
+                      ]
+                    }
+                  ],
+                  "src": "res://3d0c59e5-6041-44b0-98c9-7f2e79f3502c"
+                },
+                {
+                  "_$id": "cyu5cilr",
+                  "_$type": "GImage",
+                  "name": "img_1",
+                  "width": 80,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "5l6zkzxp",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        0
+                      ]
+                    }
+                  ],
+                  "src": "res://ceb9bea6-d8dd-4f1c-b304-477b9c517988"
+                },
+                {
+                  "_$id": "u5q9187u",
+                  "_$type": "GImage",
+                  "name": "img",
+                  "width": 80,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "5l6zkzxp",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        1
+                      ]
+                    }
+                  ],
+                  "src": "res://05fd11a4-c0de-40dc-973f-e7701b5030a4"
+                }
+              ]
+            },
+            {
+              "_$id": "dt676upl",
+              "_$var": true,
+              "_$type": "GButton",
+              "name": "confirm_skill",
+              "y": 13,
+              "width": 100,
+              "height": 36,
+              "visible": false,
+              "controllers": {
+                "_$type": "Record",
+                "button": {
+                  "_$type": "Controller",
+                  "pages": [
+                    "up",
+                    "down",
+                    "over",
+                    "selectedOver"
+                  ]
+                }
+              },
+              "_$child": [
+                {
+                  "_$id": "g1stkz41",
+                  "_$type": "GImage",
+                  "name": "img_2",
+                  "width": 100,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "dt676upl",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        2
+                      ]
+                    }
+                  ],
+                  "src": "res://e52214a0-c3f8-41f5-ab46-4112635339de"
+                },
+                {
+                  "_$id": "deoo0x7e",
+                  "_$type": "GImage",
+                  "name": "img_1",
+                  "width": 100,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "dt676upl",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        0
+                      ]
+                    }
+                  ],
+                  "src": "res://94135dd3-7841-484e-8e4c-9d43e479e5f8"
+                },
+                {
+                  "_$id": "ioy4ft63",
+                  "_$type": "GImage",
+                  "name": "img",
+                  "width": 100,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "dt676upl",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        1
+                      ]
+                    }
+                  ],
+                  "src": "res://b6d31724-a1b0-4c9b-900d-5483e52bd41e"
+                }
+              ]
+            },
+            {
+              "_$id": "628p61fp",
+              "_$var": true,
+              "_$type": "GButton",
+              "name": "cancle_skill",
+              "x": 198,
+              "y": 13,
+              "width": 100,
+              "height": 36,
+              "visible": false,
+              "controllers": {
+                "_$type": "Record",
+                "button": {
+                  "_$type": "Controller",
+                  "pages": [
+                    "up",
+                    "down",
+                    "over",
+                    "selectedOver"
+                  ]
+                }
+              },
+              "_$child": [
+                {
+                  "_$id": "i74zvslv",
+                  "_$type": "GImage",
+                  "name": "img_2",
+                  "width": 100,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "628p61fp",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        2
+                      ]
+                    }
+                  ],
+                  "src": "res://c8d9fadc-b323-4fe5-8a1f-6a6ed7839f14"
+                },
+                {
+                  "_$id": "zolzlqql",
+                  "_$type": "GImage",
+                  "name": "img_1",
+                  "width": 100,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "628p61fp",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        0
+                      ]
+                    }
+                  ],
+                  "src": "res://2aee7162-8fba-4f3f-ae09-921622600aad"
+                },
+                {
+                  "_$id": "zwla731b",
+                  "_$type": "GImage",
+                  "name": "img",
+                  "width": 100,
+                  "height": 36,
+                  "gears": [
+                    {
+                      "_$type": "GearDisplay",
+                      "controller": {
+                        "_$ref": "628p61fp",
+                        "_$ctrl": "button"
+                      },
+                      "pages": [
+                        1
+                      ]
+                    }
+                  ],
+                  "src": "res://76b98614-5163-4913-85c6-6ce9f7fe6546"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "yl8ubaex",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "death",
+      "x": 902,
+      "y": 274,
+      "width": 116,
+      "height": 93,
+      "visible": false,
+      "mouseThrough": true,
+      "src": "",
+      "autoSize": false
+    },
+    {
+      "_$id": "p629z9cy",
+      "_$var": true,
+      "_$type": "GBox",
+      "name": "images",
+      "x": 1804,
+      "y": 211,
+      "width": 44,
+      "height": 127,
+      "scaleX": 1.7,
+      "scaleY": 1.7,
+      "mouseThrough": true,
+      "layout": {
+        "type": 4,
+        "rowGap": 1,
+        "columnGap": 1,
+        "align": 2
+      }
+    },
+    {
+      "_$id": "w3bpbgau",
+      "_$prefab": "0e40eb30-b9ab-46dc-b1ca-5a989a2ef78f",
+      "_$var": true,
+      "name": "paopao",
+      "active": true,
+      "x": 1591,
+      "y": 104,
+      "scaleX": 1,
+      "scaleY": 1,
+      "visible": false
+    },
+    {
+      "_$id": "qcnvt7os",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "looking",
+      "x": 1105,
+      "y": 377,
+      "width": 268,
+      "height": 50,
+      "visible": false,
+      "src": "res://a6cf99cf-ad5a-4af9-baed-b5086184767e"
+    },
+    {
+      "_$id": "5cyblfsx",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "tuoguaning",
+      "x": 1105,
+      "y": 377,
+      "width": 268,
+      "height": 48,
+      "visible": false,
+      "src": "res://eae021d1-d8b2-4c65-b967-ec5ad232d371"
+    },
+    {
+      "_$id": "5ndmzbmm",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "rest",
+      "x": 959,
+      "y": 325,
+      "width": 157,
+      "height": 181,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "visible": false,
+      "mouseThrough": true,
+      "text": "休整\n剩余{count=10}回合",
+      "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+      "fontSize": 30,
+      "color": "#ffffff",
+      "bold": true,
+      "templateVars": true,
+      "align": "center",
+      "valign": "middle",
+      "wordWrap": true,
+      "stroke": 3
+    }
+  ]
+}

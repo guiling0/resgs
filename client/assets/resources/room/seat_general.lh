@@ -1,0 +1,109 @@
+{
+  "_$ver": 1,
+  "_$id": "lwm2o99r",
+  "_$runtime": "res://9f6fe16f-399a-44d5-80af-6514fde91d71",
+  "_$type": "GWidget",
+  "name": "seat_general",
+  "width": 157,
+  "height": 181,
+  "_$child": [
+    {
+      "_$id": "c0zek2ir",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "img",
+      "width": 250,
+      "height": 292,
+      "scaleX": 0.63,
+      "scaleY": 0.63,
+      "mask": {
+        "_$ref": "nu52sn89"
+      },
+      "src": "res://85f0de5f-2c1d-4969-8ff8-f5bc3d2602b4",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "nu52sn89",
+          "_$type": "GWidget",
+          "name": "mask",
+          "width": 249,
+          "height": 287,
+          "cacheAs": "bitmap",
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#ffffff"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "05tonnsp",
+      "_$prefab": "197024ce-52c8-438f-b6b2-43520c7157d3",
+      "_$var": true,
+      "name": "skin_animation",
+      "active": true,
+      "x": 79,
+      "y": 91,
+      "visible": false,
+      "_$child": [
+        {
+          "_$override": "pxc7zjg7",
+          "name": "dynamic"
+        },
+        {
+          "_$override": "3h27nxvv",
+          "x": 39,
+          "y": 81
+        }
+      ]
+    },
+    {
+      "_$id": "eynigo5t",
+      "_$type": "GWidget",
+      "name": "frames",
+      "width": 157,
+      "height": 181,
+      "_$child": [
+        {
+          "_$id": "orzzpbk5",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "lock",
+          "x": 28,
+          "y": 29,
+          "width": 100,
+          "height": 122,
+          "visible": false,
+          "src": "res://98c243af-1f76-436a-b1bd-f4e854133907"
+        },
+        {
+          "_$id": "2wkaz1p3",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "qianfu",
+          "width": 157,
+          "height": 181,
+          "visible": false,
+          "src": "res://e7c62393-471c-4c63-a066-6376825e78ef",
+          "autoSize": false,
+          "_$child": [
+            {
+              "_$id": "jjixqyqi",
+              "_$var": true,
+              "_$type": "GImage",
+              "name": "qianfu_icon",
+              "x": 68,
+              "y": 84,
+              "width": 35,
+              "height": 21,
+              "scaleX": 0.6,
+              "scaleY": 0.6,
+              "src": "res://49526630-f731-4d41-9e5e-41632576ec16",
+              "autoSize": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

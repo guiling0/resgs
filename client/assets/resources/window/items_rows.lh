@@ -1,0 +1,174 @@
+{
+  "_$ver": 1,
+  "_$id": "dili4kne",
+  "_$runtime": "res://7794ddc9-ce5d-4d52-945e-d5fb3a737813",
+  "_$type": "GWidget",
+  "name": "cards",
+  "width": 1481,
+  "height": 195,
+  "relations": [
+    {
+      "_$type": "Relation",
+      "target": {
+        "_$ref": "kgara6l9"
+      },
+      "data": [
+        20,
+        0,
+        24,
+        0
+      ]
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "dsc3tgfq",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "areabg",
+      "width": 35,
+      "height": 195,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#777777"
+      },
+      "_$child": [
+        {
+          "_$id": "frdfome0",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "areaname",
+          "width": 35,
+          "height": 195,
+          "text": "手牌区",
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 25,
+          "color": "#FFFFFF",
+          "align": "center",
+          "valign": "middle",
+          "wordWrap": true
+        }
+      ]
+    },
+    {
+      "_$id": "kgara6l9",
+      "_$var": true,
+      "_$type": "GBox",
+      "name": "cards",
+      "x": 36,
+      "width": 1445,
+      "height": 195,
+      "layout": {
+        "type": 3,
+        "columns": 10,
+        "rowGap": 5,
+        "columnGap": 5,
+        "foldInvisibles": true,
+        "stretchX": 2,
+        "stretchY": 2
+      },
+      "_$child": [
+        {
+          "_$id": "vzez5k2o",
+          "_$prefab": "51a141ca-f365-46a5-897c-5529bc8514c0",
+          "_$var": true,
+          "name": "items_items_0",
+          "active": true,
+          "x": 0,
+          "y": 0,
+          "visible": false
+        },
+        {
+          "_$id": "sy58a7ye",
+          "_$prefab": "51a141ca-f365-46a5-897c-5529bc8514c0",
+          "_$var": true,
+          "name": "items_items_1",
+          "active": true,
+          "x": 145,
+          "y": 0,
+          "visible": false
+        },
+        {
+          "_$id": "gr1gjf4y",
+          "_$prefab": "51a141ca-f365-46a5-897c-5529bc8514c0",
+          "_$var": true,
+          "name": "items_items_2",
+          "active": true,
+          "x": 290,
+          "y": 0,
+          "visible": false
+        },
+        {
+          "_$id": "1l0fc82k",
+          "_$prefab": "51a141ca-f365-46a5-897c-5529bc8514c0",
+          "_$var": true,
+          "name": "items_items_3",
+          "active": true,
+          "x": 435,
+          "y": 0,
+          "visible": false
+        },
+        {
+          "_$id": "wfnpbmvz",
+          "_$prefab": "51a141ca-f365-46a5-897c-5529bc8514c0",
+          "_$var": true,
+          "name": "items_items_4",
+          "active": true,
+          "x": 580,
+          "y": 0,
+          "visible": false
+        },
+        {
+          "_$id": "oee9k1vx",
+          "_$prefab": "51a141ca-f365-46a5-897c-5529bc8514c0",
+          "_$var": true,
+          "name": "items_items_5",
+          "active": true,
+          "x": 725,
+          "y": 0,
+          "visible": false
+        },
+        {
+          "_$id": "hx9exsp8",
+          "_$prefab": "51a141ca-f365-46a5-897c-5529bc8514c0",
+          "_$var": true,
+          "name": "items_items_6",
+          "active": true,
+          "x": 870,
+          "y": 0,
+          "visible": false
+        },
+        {
+          "_$id": "w1yzs6j0",
+          "_$prefab": "51a141ca-f365-46a5-897c-5529bc8514c0",
+          "_$var": true,
+          "name": "items_items_7",
+          "active": true,
+          "x": 1015,
+          "y": 0,
+          "visible": false
+        },
+        {
+          "_$id": "jw335wdi",
+          "_$prefab": "51a141ca-f365-46a5-897c-5529bc8514c0",
+          "_$var": true,
+          "name": "items_items_8",
+          "active": true,
+          "x": 1160,
+          "y": 0,
+          "visible": false
+        },
+        {
+          "_$id": "5s1idp36",
+          "_$prefab": "51a141ca-f365-46a5-897c-5529bc8514c0",
+          "_$var": true,
+          "name": "items_items_9",
+          "active": true,
+          "x": 1305,
+          "y": 0,
+          "visible": false
+        }
+      ]
+    }
+  ]
+}

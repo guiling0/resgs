@@ -1,0 +1,174 @@
+{
+  "_$ver": 1,
+  "_$id": "5q4lz1qh",
+  "_$preloads": [
+    "res://cdd17b29-e9b2-4f9a-ba43-75706213a663",
+    "res://2ac4c268-8928-4a19-9956-2ea2be666601",
+    "res://0b3a5f47-7977-4f57-9f54-1eeed7c5e120"
+  ],
+  "_$type": "GButton",
+  "name": "window_btn_1",
+  "width": 51,
+  "height": 44,
+  "controllers": {
+    "_$type": "Record",
+    "button": {
+      "_$type": "Controller",
+      "pages": [
+        "up",
+        "down",
+        "over",
+        "selectedOver"
+      ]
+    }
+  },
+  "relations": [
+    {
+      "_$type": "Relation",
+      "target": {
+        "_$ref": "x9lkyehy"
+      },
+      "data": [
+        1,
+        0,
+        2,
+        0
+      ]
+    }
+  ],
+  "titleWidget": {
+    "_$ref": "x9lkyehy"
+  },
+  "_$child": [
+    {
+      "_$id": "pq2hvf6e",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 51,
+      "height": 44,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "5q4lz1qh",
+            "_$ctrl": "button"
+          },
+          "pages": [
+            0
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "5q4lz1qh"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://0b3a5f47-7977-4f57-9f54-1eeed7c5e120",
+      "autoSize": false
+    },
+    {
+      "_$id": "7v2en7jq",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 51,
+      "height": 44,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "5q4lz1qh",
+            "_$ctrl": "button"
+          },
+          "pages": [
+            1,
+            3
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "5q4lz1qh"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://cdd17b29-e9b2-4f9a-ba43-75706213a663",
+      "autoSize": false
+    },
+    {
+      "_$id": "mbiojug6",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 51,
+      "height": 44,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "5q4lz1qh",
+            "_$ctrl": "button"
+          },
+          "pages": [
+            2
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "5q4lz1qh"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://2ac4c268-8928-4a19-9956-2ea2be666601",
+      "autoSize": false
+    },
+    {
+      "_$id": "x9lkyehy",
+      "_$type": "GTextField",
+      "name": "title",
+      "x": 11,
+      "y": 11,
+      "width": 27,
+      "height": 21,
+      "text": "",
+      "font": "res://5afb0bf5-9315-48c4-b332-4e0bb0e2042d",
+      "fontSize": 20,
+      "color": "#ffffff",
+      "fitContent": 1,
+      "align": "center",
+      "valign": "middle",
+      "overflow": "hidden",
+      "padding": [
+        0,
+        5,
+        0,
+        2
+      ],
+      "strokeColor": "#2f3a85"
+    }
+  ]
+}

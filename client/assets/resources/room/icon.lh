@@ -1,0 +1,17 @@
+{
+  "_$ver": 1,
+  "_$id": "5qitb9o6",
+  "_$runtime": "res://508acec3-9a22-4874-b733-65284e20b6cb",
+  "_$preloads": [
+    "res://95f32b4e-436c-4d00-8bf5-7b58bb4366f4",
+    "res://ef02da92-c2d5-47d0-b05c-acf0e8fb2136",
+    "res://7e11056c-da76-43f6-8fd5-848d7bddfef1",
+    "res://987bdbdf-535f-4c65-9ca8-346e3efc2946"
+  ],
+  "_$type": "GImage",
+  "name": "img",
+  "width": 28,
+  "height": 28,
+  "src": "res://95f32b4e-436c-4d00-8bf5-7b58bb4366f4",
+  "autoSize": false
+}

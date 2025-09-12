@@ -1,0 +1,163 @@
+{
+  "_$ver": 1,
+  "_$id": "5q4lz1qh",
+  "_$runtime": "res://8d0c9588-9bcd-4f03-bd36-5c288249fa3e",
+  "_$preloads": [
+    "res://7f7652f2-da41-4cb0-8f8d-eabdb59f0f04",
+    "res://e299dfce-0f9a-4abf-a5be-a446cf7be71e",
+    "res://896374ba-e527-4628-b163-df324ecb61ff",
+    "res://094885d2-270f-4122-9ec7-f7c5c6b1e948",
+    "res://661cbe4b-106c-49a2-af93-935260ce765f",
+    "res://80f702aa-ed76-46cf-bf1b-cedcb1a96751",
+    "res://1677c4cf-91d6-4bd9-b6e8-d92cc0757784"
+  ],
+  "_$type": "GButton",
+  "name": "option",
+  "width": 85,
+  "height": 37,
+  "titleWidget": {
+    "_$ref": "x9lkyehy"
+  },
+  "_$comp": [
+    {
+      "_$type": "9865351d-f61b-4be8-88df-c727c305fc27",
+      "scriptPath": "../src/comps/ChooseItemComp.ts",
+      "clickNode": {
+        "_$ref": "5q4lz1qh"
+      },
+      "selectedImage": [
+        {
+          "_$ref": "b5238i51"
+        }
+      ],
+      "canClickMask": null,
+      "isButton": true
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "pq2hvf6e",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "img",
+      "width": 85,
+      "height": 37,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "5q4lz1qh",
+            "_$ctrl": "button"
+          },
+          "pages": [
+            0
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "5q4lz1qh"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://661cbe4b-106c-49a2-af93-935260ce765f",
+      "autoSize": false
+    },
+    {
+      "_$id": "k13bhbdt",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "avatar",
+      "x": 1,
+      "y": -13,
+      "width": 41,
+      "height": 48,
+      "visible": false,
+      "src": "",
+      "autoSize": false
+    },
+    {
+      "_$id": "x9lkyehy",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "title",
+      "x": 32,
+      "y": 7,
+      "width": 44,
+      "height": 25,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "5q4lz1qh"
+          },
+          "data": [
+            1,
+            0
+          ]
+        }
+      ],
+      "text": "技能 ",
+      "font": "res://3d1c161a-47db-4877-8042-750bcea29919",
+      "fontSize": 20,
+      "color": "#ffffff",
+      "bold": true,
+      "align": "center",
+      "valign": "middle",
+      "overflow": "hidden",
+      "underlineColor": "#000000",
+      "stroke": 3
+    },
+    {
+      "_$id": "b5238i51",
+      "_$var": true,
+      "_$type": "GLoader",
+      "name": "isSelected",
+      "x": -3,
+      "y": -3,
+      "width": 91,
+      "height": 43,
+      "visible": false,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "5q4lz1qh"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://0891e0a8-61d3-4614-a5d1-7a6773f3218f",
+      "fitMode": 1,
+      "_$comp": [
+        {
+          "_$type": "9865351d-f61b-4be8-88df-c727c305fc27",
+          "scriptPath": "../src/comps/ChooseItemComp.ts",
+          "clickNode": {
+            "_$ref": "5q4lz1qh"
+          },
+          "selectedImage": [
+            {
+              "_$ref": "b5238i51"
+            }
+          ],
+          "canClickMask": null,
+          "isButton": true
+        }
+      ]
+    }
+  ]
+}

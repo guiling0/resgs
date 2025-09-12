@@ -1,0 +1,139 @@
+
+Ss_BiaoQing_PengBei_meigui.png
+size: 547,299
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hb_00
+  rotate: false
+  xy: 2, 194
+  size: 103, 103
+  orig: 103, 103
+  offset: 0, 0
+  index: -1
+hb_01
+  rotate: false
+  xy: 2, 89
+  size: 103, 103
+  orig: 103, 103
+  offset: 0, 0
+  index: -1
+hb_02
+  rotate: true
+  xy: 458, 70
+  size: 68, 69
+  orig: 103, 103
+  offset: 18, 20
+  index: -1
+hb_03
+  rotate: true
+  xy: 457, 140
+  size: 72, 76
+  orig: 103, 103
+  offset: 16, 17
+  index: -1
+hb_04
+  rotate: false
+  xy: 451, 214
+  size: 75, 83
+  orig: 103, 103
+  offset: 15, 14
+  index: -1
+hb_05
+  rotate: false
+  xy: 377, 113
+  size: 78, 88
+  orig: 103, 103
+  offset: 14, 11
+  index: -1
+hb_06
+  rotate: false
+  xy: 376, 14
+  size: 80, 92
+  orig: 103, 103
+  offset: 13, 9
+  index: -1
+hb_07
+  rotate: true
+  xy: 101, 4
+  size: 83, 94
+  orig: 103, 103
+  offset: 11, 8
+  index: -1
+hb_08
+  rotate: true
+  xy: 2, 2
+  size: 85, 97
+  orig: 103, 103
+  offset: 10, 6
+  index: -1
+hb_09
+  rotate: false
+  xy: 107, 98
+  size: 87, 98
+  orig: 103, 103
+  offset: 9, 5
+  index: -1
+hb_10
+  rotate: false
+  xy: 107, 198
+  size: 87, 99
+  orig: 103, 103
+  offset: 9, 4
+  index: -1
+hb_11
+  rotate: false
+  xy: 287, 108
+  size: 88, 93
+  orig: 103, 103
+  offset: 8, 10
+  index: -1
+hb_12
+  rotate: false
+  xy: 196, 203
+  size: 89, 94
+  orig: 103, 103
+  offset: 8, 9
+  index: -1
+hb_13
+  rotate: false
+  xy: 196, 107
+  size: 89, 94
+  orig: 103, 103
+  offset: 8, 8
+  index: -1
+hb_14
+  rotate: false
+  xy: 197, 11
+  size: 89, 94
+  orig: 103, 103
+  offset: 8, 7
+  index: -1
+hb_15
+  rotate: false
+  xy: 287, 203
+  size: 89, 94
+  orig: 103, 103
+  offset: 8, 6
+  index: -1
+hb_16
+  rotate: true
+  xy: 288, 17
+  size: 89, 86
+  orig: 103, 103
+  offset: 8, 6
+  index: -1
+hb_17
+  rotate: true
+  xy: 378, 208
+  size: 89, 71
+  orig: 103, 103
+  offset: 8, 19
+  index: -1
+hb_18
+  rotate: false
+  xy: 458, 18
+  size: 87, 50
+  orig: 103, 103
+  offset: 9, 18
+  index: -1

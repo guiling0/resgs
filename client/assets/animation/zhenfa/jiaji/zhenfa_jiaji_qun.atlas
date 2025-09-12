@@ -1,0 +1,143 @@
+{
+  "frames": {
+    "jiaji_qun_00000.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 0,
+        "w": 149,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 2
+      }
+    },
+    "jiaji_qun_00001.png": {
+      "frame": {
+        "idx": 0,
+        "x": 151,
+        "y": 174,
+        "w": 147,
+        "h": 172
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 4
+      }
+    },
+    "jiaji_qun_00002.png": {
+      "frame": {
+        "idx": 0,
+        "x": 151,
+        "y": 0,
+        "w": 149,
+        "h": 172
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 4
+      }
+    },
+    "jiaji_qun_00003.png": {
+      "frame": {
+        "idx": 0,
+        "x": 302,
+        "y": 0,
+        "w": 145,
+        "h": 169
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 6
+      }
+    },
+    "jiaji_qun_00004.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 178,
+        "w": 146,
+        "h": 168
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 6
+      }
+    },
+    "jiaji_qun_00005.png": {
+      "frame": {
+        "idx": 0,
+        "x": 300,
+        "y": 344,
+        "w": 145,
+        "h": 169
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 6
+      }
+    },
+    "jiaji_qun_00006.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 348,
+        "w": 145,
+        "h": 168
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 6
+      }
+    },
+    "jiaji_qun_00007.png": {
+      "frame": {
+        "idx": 0,
+        "x": 300,
+        "y": 174,
+        "w": 146,
+        "h": 168
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 6
+      }
+    }
+  },
+  "meta": {
+    "scale": 1
+  }
+}

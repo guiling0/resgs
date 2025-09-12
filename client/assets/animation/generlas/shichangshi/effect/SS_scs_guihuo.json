@@ -1,0 +1,2311 @@
+{
+  "skeleton": {
+    "hash": "M8r0N5efCZPZiiC42JCS8dCp9Jo",
+    "spine": "3.8",
+    "width": 0,
+    "height": 0,
+    "chibi_gif": "s38_chibi_gif_0.1.32.2"
+  },
+  "bones": [
+    {
+      "name": "root",
+      "transform": "normal"
+    },
+    {
+      "name": "Effect",
+      "parent": "root",
+      "transform": "normal"
+    },
+    {
+      "name": "gh",
+      "parent": "Effect",
+      "transform": "normal"
+    },
+    {
+      "name": "glow",
+      "parent": "Effect",
+      "transform": "normal"
+    },
+    {
+      "name": "hj",
+      "parent": "Effect",
+      "transform": "normal"
+    },
+    {
+      "name": "quan",
+      "parent": "Effect",
+      "transform": "normal"
+    }
+  ],
+  "slots": [
+    {
+      "name": "images/guihuo/gh_quan_000",
+      "bone": "quan",
+      "attachment": null,
+      "blend": "normal"
+    },
+    {
+      "name": "images/guihuo/gh_000",
+      "bone": "gh",
+      "attachment": null,
+      "blend": "normal"
+    },
+    {
+      "name": "images/guihuo/gh_hj_000",
+      "bone": "hj",
+      "attachment": null,
+      "blend": "additive"
+    },
+    {
+      "name": "images/guihuo/gh_glow_000",
+      "bone": "glow",
+      "attachment": null,
+      "blend": "additive"
+    }
+  ],
+  "ik": [],
+  "transform": [],
+  "path": [],
+  "skins": [
+    {
+      "name": "default",
+      "attachments": {
+        "images/guihuo/gh_quan_000": {
+          "images/guihuo/gh_quan_000": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_000",
+            "path": "images/guihuo/gh_quan_000",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_002": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_002",
+            "path": "images/guihuo/gh_quan_002",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_004": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_004",
+            "path": "images/guihuo/gh_quan_004",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_006": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_006",
+            "path": "images/guihuo/gh_quan_006",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_008": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_008",
+            "path": "images/guihuo/gh_quan_008",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_010": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_010",
+            "path": "images/guihuo/gh_quan_010",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_012": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_012",
+            "path": "images/guihuo/gh_quan_012",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_014": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_014",
+            "path": "images/guihuo/gh_quan_014",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_016": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_016",
+            "path": "images/guihuo/gh_quan_016",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_018": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_018",
+            "path": "images/guihuo/gh_quan_018",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_020": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_020",
+            "path": "images/guihuo/gh_quan_020",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_022": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_022",
+            "path": "images/guihuo/gh_quan_022",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_024": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_024",
+            "path": "images/guihuo/gh_quan_024",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_026": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_026",
+            "path": "images/guihuo/gh_quan_026",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_028": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_028",
+            "path": "images/guihuo/gh_quan_028",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_030": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_030",
+            "path": "images/guihuo/gh_quan_030",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_032": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_032",
+            "path": "images/guihuo/gh_quan_032",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_034": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_034",
+            "path": "images/guihuo/gh_quan_034",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_036": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_036",
+            "path": "images/guihuo/gh_quan_036",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_038": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_038",
+            "path": "images/guihuo/gh_quan_038",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_040": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_040",
+            "path": "images/guihuo/gh_quan_040",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_042": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_042",
+            "path": "images/guihuo/gh_quan_042",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_044": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_044",
+            "path": "images/guihuo/gh_quan_044",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_046": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_046",
+            "path": "images/guihuo/gh_quan_046",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_048": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_048",
+            "path": "images/guihuo/gh_quan_048",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_050": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_050",
+            "path": "images/guihuo/gh_quan_050",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_052": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_052",
+            "path": "images/guihuo/gh_quan_052",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_054": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_054",
+            "path": "images/guihuo/gh_quan_054",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_056": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_056",
+            "path": "images/guihuo/gh_quan_056",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_quan_058": {
+            "type": "region",
+            "name": "images/guihuo/gh_quan_058",
+            "path": "images/guihuo/gh_quan_058",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          }
+        },
+        "images/guihuo/gh_000": {
+          "images/guihuo/gh_000": {
+            "type": "region",
+            "name": "images/guihuo/gh_000",
+            "path": "images/guihuo/gh_000",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_002": {
+            "type": "region",
+            "name": "images/guihuo/gh_002",
+            "path": "images/guihuo/gh_002",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_004": {
+            "type": "region",
+            "name": "images/guihuo/gh_004",
+            "path": "images/guihuo/gh_004",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_006": {
+            "type": "region",
+            "name": "images/guihuo/gh_006",
+            "path": "images/guihuo/gh_006",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_008": {
+            "type": "region",
+            "name": "images/guihuo/gh_008",
+            "path": "images/guihuo/gh_008",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_010": {
+            "type": "region",
+            "name": "images/guihuo/gh_010",
+            "path": "images/guihuo/gh_010",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_012": {
+            "type": "region",
+            "name": "images/guihuo/gh_012",
+            "path": "images/guihuo/gh_012",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_014": {
+            "type": "region",
+            "name": "images/guihuo/gh_014",
+            "path": "images/guihuo/gh_014",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_016": {
+            "type": "region",
+            "name": "images/guihuo/gh_016",
+            "path": "images/guihuo/gh_016",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_018": {
+            "type": "region",
+            "name": "images/guihuo/gh_018",
+            "path": "images/guihuo/gh_018",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_020": {
+            "type": "region",
+            "name": "images/guihuo/gh_020",
+            "path": "images/guihuo/gh_020",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_022": {
+            "type": "region",
+            "name": "images/guihuo/gh_022",
+            "path": "images/guihuo/gh_022",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_024": {
+            "type": "region",
+            "name": "images/guihuo/gh_024",
+            "path": "images/guihuo/gh_024",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_026": {
+            "type": "region",
+            "name": "images/guihuo/gh_026",
+            "path": "images/guihuo/gh_026",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_028": {
+            "type": "region",
+            "name": "images/guihuo/gh_028",
+            "path": "images/guihuo/gh_028",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_030": {
+            "type": "region",
+            "name": "images/guihuo/gh_030",
+            "path": "images/guihuo/gh_030",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_032": {
+            "type": "region",
+            "name": "images/guihuo/gh_032",
+            "path": "images/guihuo/gh_032",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_034": {
+            "type": "region",
+            "name": "images/guihuo/gh_034",
+            "path": "images/guihuo/gh_034",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_036": {
+            "type": "region",
+            "name": "images/guihuo/gh_036",
+            "path": "images/guihuo/gh_036",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_038": {
+            "type": "region",
+            "name": "images/guihuo/gh_038",
+            "path": "images/guihuo/gh_038",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_040": {
+            "type": "region",
+            "name": "images/guihuo/gh_040",
+            "path": "images/guihuo/gh_040",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_042": {
+            "type": "region",
+            "name": "images/guihuo/gh_042",
+            "path": "images/guihuo/gh_042",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_044": {
+            "type": "region",
+            "name": "images/guihuo/gh_044",
+            "path": "images/guihuo/gh_044",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_046": {
+            "type": "region",
+            "name": "images/guihuo/gh_046",
+            "path": "images/guihuo/gh_046",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_048": {
+            "type": "region",
+            "name": "images/guihuo/gh_048",
+            "path": "images/guihuo/gh_048",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_050": {
+            "type": "region",
+            "name": "images/guihuo/gh_050",
+            "path": "images/guihuo/gh_050",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_052": {
+            "type": "region",
+            "name": "images/guihuo/gh_052",
+            "path": "images/guihuo/gh_052",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_054": {
+            "type": "region",
+            "name": "images/guihuo/gh_054",
+            "path": "images/guihuo/gh_054",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_056": {
+            "type": "region",
+            "name": "images/guihuo/gh_056",
+            "path": "images/guihuo/gh_056",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_058": {
+            "type": "region",
+            "name": "images/guihuo/gh_058",
+            "path": "images/guihuo/gh_058",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_060": {
+            "type": "region",
+            "name": "images/guihuo/gh_060",
+            "path": "images/guihuo/gh_060",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_062": {
+            "type": "region",
+            "name": "images/guihuo/gh_062",
+            "path": "images/guihuo/gh_062",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_064": {
+            "type": "region",
+            "name": "images/guihuo/gh_064",
+            "path": "images/guihuo/gh_064",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_066": {
+            "type": "region",
+            "name": "images/guihuo/gh_066",
+            "path": "images/guihuo/gh_066",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_068": {
+            "type": "region",
+            "name": "images/guihuo/gh_068",
+            "path": "images/guihuo/gh_068",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_070": {
+            "type": "region",
+            "name": "images/guihuo/gh_070",
+            "path": "images/guihuo/gh_070",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_072": {
+            "type": "region",
+            "name": "images/guihuo/gh_072",
+            "path": "images/guihuo/gh_072",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_074": {
+            "type": "region",
+            "name": "images/guihuo/gh_074",
+            "path": "images/guihuo/gh_074",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_076": {
+            "type": "region",
+            "name": "images/guihuo/gh_076",
+            "path": "images/guihuo/gh_076",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_078": {
+            "type": "region",
+            "name": "images/guihuo/gh_078",
+            "path": "images/guihuo/gh_078",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_080": {
+            "type": "region",
+            "name": "images/guihuo/gh_080",
+            "path": "images/guihuo/gh_080",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_082": {
+            "type": "region",
+            "name": "images/guihuo/gh_082",
+            "path": "images/guihuo/gh_082",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_084": {
+            "type": "region",
+            "name": "images/guihuo/gh_084",
+            "path": "images/guihuo/gh_084",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_086": {
+            "type": "region",
+            "name": "images/guihuo/gh_086",
+            "path": "images/guihuo/gh_086",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_088": {
+            "type": "region",
+            "name": "images/guihuo/gh_088",
+            "path": "images/guihuo/gh_088",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_090": {
+            "type": "region",
+            "name": "images/guihuo/gh_090",
+            "path": "images/guihuo/gh_090",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_092": {
+            "type": "region",
+            "name": "images/guihuo/gh_092",
+            "path": "images/guihuo/gh_092",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_094": {
+            "type": "region",
+            "name": "images/guihuo/gh_094",
+            "path": "images/guihuo/gh_094",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_096": {
+            "type": "region",
+            "name": "images/guihuo/gh_096",
+            "path": "images/guihuo/gh_096",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_098": {
+            "type": "region",
+            "name": "images/guihuo/gh_098",
+            "path": "images/guihuo/gh_098",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_100": {
+            "type": "region",
+            "name": "images/guihuo/gh_100",
+            "path": "images/guihuo/gh_100",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_102": {
+            "type": "region",
+            "name": "images/guihuo/gh_102",
+            "path": "images/guihuo/gh_102",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_104": {
+            "type": "region",
+            "name": "images/guihuo/gh_104",
+            "path": "images/guihuo/gh_104",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_106": {
+            "type": "region",
+            "name": "images/guihuo/gh_106",
+            "path": "images/guihuo/gh_106",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_108": {
+            "type": "region",
+            "name": "images/guihuo/gh_108",
+            "path": "images/guihuo/gh_108",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_110": {
+            "type": "region",
+            "name": "images/guihuo/gh_110",
+            "path": "images/guihuo/gh_110",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_112": {
+            "type": "region",
+            "name": "images/guihuo/gh_112",
+            "path": "images/guihuo/gh_112",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_114": {
+            "type": "region",
+            "name": "images/guihuo/gh_114",
+            "path": "images/guihuo/gh_114",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_116": {
+            "type": "region",
+            "name": "images/guihuo/gh_116",
+            "path": "images/guihuo/gh_116",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_118": {
+            "type": "region",
+            "name": "images/guihuo/gh_118",
+            "path": "images/guihuo/gh_118",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          }
+        },
+        "images/guihuo/gh_hj_000": {
+          "images/guihuo/gh_hj_000": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_000",
+            "path": "images/guihuo/gh_hj_000",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_001": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_001",
+            "path": "images/guihuo/gh_hj_001",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_002": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_002",
+            "path": "images/guihuo/gh_hj_002",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_003": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_003",
+            "path": "images/guihuo/gh_hj_003",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_004": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_004",
+            "path": "images/guihuo/gh_hj_004",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_005": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_005",
+            "path": "images/guihuo/gh_hj_005",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_006": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_006",
+            "path": "images/guihuo/gh_hj_006",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_007": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_007",
+            "path": "images/guihuo/gh_hj_007",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_008": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_008",
+            "path": "images/guihuo/gh_hj_008",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_009": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_009",
+            "path": "images/guihuo/gh_hj_009",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_010": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_010",
+            "path": "images/guihuo/gh_hj_010",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_011": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_011",
+            "path": "images/guihuo/gh_hj_011",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_012": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_012",
+            "path": "images/guihuo/gh_hj_012",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_013": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_013",
+            "path": "images/guihuo/gh_hj_013",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_014": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_014",
+            "path": "images/guihuo/gh_hj_014",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_015": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_015",
+            "path": "images/guihuo/gh_hj_015",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_016": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_016",
+            "path": "images/guihuo/gh_hj_016",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_017": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_017",
+            "path": "images/guihuo/gh_hj_017",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          },
+          "images/guihuo/gh_hj_018": {
+            "type": "region",
+            "name": "images/guihuo/gh_hj_018",
+            "path": "images/guihuo/gh_hj_018",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          }
+        },
+        "images/guihuo/gh_glow_000": {
+          "images/guihuo/gh_glow_000": {
+            "type": "region",
+            "name": "images/guihuo/gh_glow_000",
+            "path": "images/guihuo/gh_glow_000",
+            "rotation": 0,
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 512,
+            "height": 512,
+            "color": "ffffffff"
+          }
+        }
+      }
+    }
+  ],
+  "events": {},
+  "eventsName": [],
+  "animations": {
+    "play1": {
+      "slots": {
+        "images/guihuo/gh_000": {
+          "attachment": [
+            {
+              "time": 0.5666666626930237,
+              "name": "images/guihuo/gh_000"
+            },
+            {
+              "time": 0.6333333253860474,
+              "name": "images/guihuo/gh_002"
+            },
+            {
+              "time": 0.699999988079071,
+              "name": "images/guihuo/gh_004"
+            },
+            {
+              "time": 0.7666666507720947,
+              "name": "images/guihuo/gh_006"
+            },
+            {
+              "time": 0.8333333134651184,
+              "name": "images/guihuo/gh_008"
+            },
+            {
+              "time": 0.8999999761581421,
+              "name": "images/guihuo/gh_010"
+            },
+            {
+              "time": 0.9666666388511658,
+              "name": "images/guihuo/gh_012"
+            },
+            {
+              "time": 1.0333333015441895,
+              "name": "images/guihuo/gh_014"
+            },
+            {
+              "time": 1.100000023841858,
+              "name": "images/guihuo/gh_016"
+            },
+            {
+              "time": 1.1666666269302368,
+              "name": "images/guihuo/gh_018"
+            },
+            {
+              "time": 1.2333333492279053,
+              "name": "images/guihuo/gh_020"
+            },
+            {
+              "time": 1.2999999523162842,
+              "name": "images/guihuo/gh_022"
+            },
+            {
+              "time": 1.3666666746139526,
+              "name": "images/guihuo/gh_024"
+            },
+            {
+              "time": 1.4333332777023315,
+              "name": "images/guihuo/gh_026"
+            },
+            {
+              "time": 1.5,
+              "name": "images/guihuo/gh_028"
+            },
+            {
+              "time": 1.5666667222976685,
+              "name": "images/guihuo/gh_030"
+            },
+            {
+              "time": 1.6333333253860474,
+              "name": "images/guihuo/gh_032"
+            },
+            {
+              "time": 1.7000000476837158,
+              "name": "images/guihuo/gh_034"
+            },
+            {
+              "time": 1.7666666507720947,
+              "name": "images/guihuo/gh_036"
+            },
+            {
+              "time": 1.8333333730697632,
+              "name": "images/guihuo/gh_038"
+            },
+            {
+              "time": 1.899999976158142,
+              "name": "images/guihuo/gh_040"
+            },
+            {
+              "time": 1.9666666984558105,
+              "name": "images/guihuo/gh_042"
+            },
+            {
+              "time": 2.0333333015441895,
+              "name": "images/guihuo/gh_044"
+            },
+            {
+              "time": 2.0999999046325684,
+              "name": "images/guihuo/gh_046"
+            },
+            {
+              "time": 2.1666667461395264,
+              "name": "images/guihuo/gh_048"
+            },
+            {
+              "time": 2.2333333492279053,
+              "name": "images/guihuo/gh_050"
+            },
+            {
+              "time": 2.299999952316284,
+              "name": "images/guihuo/gh_052"
+            },
+            {
+              "time": 2.366666555404663,
+              "name": "images/guihuo/gh_054"
+            },
+            {
+              "time": 2.433333396911621,
+              "name": "images/guihuo/gh_056"
+            },
+            {
+              "time": 2.5,
+              "name": "images/guihuo/gh_058"
+            },
+            {
+              "time": 2.5333333015441895,
+              "name": "images/guihuo/gh_058"
+            }
+          ]
+        },
+        "images/guihuo/gh_glow_000": {
+          "color": [
+            {
+              "time": 0.6000000238418579,
+              "color": "ffffffff"
+            },
+            {
+              "time": 0.7333333492279053,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "time": 0.6000000238418579,
+              "name": "images/guihuo/gh_glow_000"
+            }
+          ]
+        },
+        "images/guihuo/gh_hj_000": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "images/guihuo/gh_hj_000"
+            },
+            {
+              "time": 0.03333333507180214,
+              "name": "images/guihuo/gh_hj_001"
+            },
+            {
+              "time": 0.06666667014360428,
+              "name": "images/guihuo/gh_hj_002"
+            },
+            {
+              "time": 0.10000000149011612,
+              "name": "images/guihuo/gh_hj_003"
+            },
+            {
+              "time": 0.13333334028720856,
+              "name": "images/guihuo/gh_hj_004"
+            },
+            {
+              "time": 0.1666666716337204,
+              "name": "images/guihuo/gh_hj_005"
+            },
+            {
+              "time": 0.20000000298023224,
+              "name": "images/guihuo/gh_hj_006"
+            },
+            {
+              "time": 0.23333333432674408,
+              "name": "images/guihuo/gh_hj_007"
+            },
+            {
+              "time": 0.2666666805744171,
+              "name": "images/guihuo/gh_hj_008"
+            },
+            {
+              "time": 0.30000001192092896,
+              "name": "images/guihuo/gh_hj_009"
+            },
+            {
+              "time": 0.3333333432674408,
+              "name": "images/guihuo/gh_hj_010"
+            },
+            {
+              "time": 0.36666667461395264,
+              "name": "images/guihuo/gh_hj_011"
+            },
+            {
+              "time": 0.4000000059604645,
+              "name": "images/guihuo/gh_hj_012"
+            },
+            {
+              "time": 0.4333333373069763,
+              "name": "images/guihuo/gh_hj_013"
+            },
+            {
+              "time": 0.46666666865348816,
+              "name": "images/guihuo/gh_hj_014"
+            },
+            {
+              "time": 0.5,
+              "name": "images/guihuo/gh_hj_015"
+            },
+            {
+              "time": 0.5333333611488342,
+              "name": "images/guihuo/gh_hj_016"
+            },
+            {
+              "time": 0.5666666626930237,
+              "name": "images/guihuo/gh_hj_017"
+            },
+            {
+              "time": 0.6000000238418579,
+              "name": "images/guihuo/gh_hj_018"
+            },
+            {
+              "time": 0.6333333253860474,
+              "name": null
+            }
+          ]
+        },
+        "images/guihuo/gh_quan_000": {
+          "color": [
+            {
+              "time": 0.5333333611488342,
+              "color": "ffffff00"
+            },
+            {
+              "time": 0.7666666507720947,
+              "color": "ffffffff"
+            }
+          ],
+          "attachment": [
+            {
+              "time": 0.5666666626930237,
+              "name": "images/guihuo/gh_quan_000"
+            },
+            {
+              "time": 0.6333333253860474,
+              "name": "images/guihuo/gh_quan_002"
+            },
+            {
+              "time": 0.699999988079071,
+              "name": "images/guihuo/gh_quan_004"
+            },
+            {
+              "time": 0.7666666507720947,
+              "name": "images/guihuo/gh_quan_006"
+            },
+            {
+              "time": 0.8333333134651184,
+              "name": "images/guihuo/gh_quan_008"
+            },
+            {
+              "time": 0.8999999761581421,
+              "name": "images/guihuo/gh_quan_010"
+            },
+            {
+              "time": 0.9666666388511658,
+              "name": "images/guihuo/gh_quan_012"
+            },
+            {
+              "time": 1.0333333015441895,
+              "name": "images/guihuo/gh_quan_014"
+            },
+            {
+              "time": 1.100000023841858,
+              "name": "images/guihuo/gh_quan_016"
+            },
+            {
+              "time": 1.1666666269302368,
+              "name": "images/guihuo/gh_quan_018"
+            },
+            {
+              "time": 1.2333333492279053,
+              "name": "images/guihuo/gh_quan_020"
+            },
+            {
+              "time": 1.2999999523162842,
+              "name": "images/guihuo/gh_quan_022"
+            },
+            {
+              "time": 1.3666666746139526,
+              "name": "images/guihuo/gh_quan_024"
+            },
+            {
+              "time": 1.4333332777023315,
+              "name": "images/guihuo/gh_quan_026"
+            },
+            {
+              "time": 1.5,
+              "name": "images/guihuo/gh_quan_028"
+            },
+            {
+              "time": 1.5666667222976685,
+              "name": "images/guihuo/gh_quan_030"
+            },
+            {
+              "time": 1.6333333253860474,
+              "name": "images/guihuo/gh_quan_032"
+            },
+            {
+              "time": 1.7000000476837158,
+              "name": "images/guihuo/gh_quan_034"
+            },
+            {
+              "time": 1.7666666507720947,
+              "name": "images/guihuo/gh_quan_036"
+            },
+            {
+              "time": 1.8333333730697632,
+              "name": "images/guihuo/gh_quan_038"
+            },
+            {
+              "time": 1.899999976158142,
+              "name": "images/guihuo/gh_quan_040"
+            },
+            {
+              "time": 1.9666666984558105,
+              "name": "images/guihuo/gh_quan_042"
+            },
+            {
+              "time": 2.0333333015441895,
+              "name": "images/guihuo/gh_quan_044"
+            },
+            {
+              "time": 2.0999999046325684,
+              "name": "images/guihuo/gh_quan_046"
+            },
+            {
+              "time": 2.1666667461395264,
+              "name": "images/guihuo/gh_quan_048"
+            },
+            {
+              "time": 2.2333333492279053,
+              "name": "images/guihuo/gh_quan_050"
+            },
+            {
+              "time": 2.299999952316284,
+              "name": "images/guihuo/gh_quan_052"
+            },
+            {
+              "time": 2.366666555404663,
+              "name": "images/guihuo/gh_quan_054"
+            },
+            {
+              "time": 2.433333396911621,
+              "name": "images/guihuo/gh_quan_056"
+            },
+            {
+              "time": 2.5,
+              "name": "images/guihuo/gh_quan_058"
+            }
+          ]
+        }
+      },
+      "bones": {},
+      "ik": {},
+      "transform": {},
+      "paths": {},
+      "deform": {}
+    },
+    "play2": {
+      "slots": {
+        "images/guihuo/gh_000": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "images/guihuo/gh_060"
+            },
+            {
+              "time": 0.06666667014360428,
+              "name": "images/guihuo/gh_062"
+            },
+            {
+              "time": 0.13333334028720856,
+              "name": "images/guihuo/gh_064"
+            },
+            {
+              "time": 0.20000000298023224,
+              "name": "images/guihuo/gh_066"
+            },
+            {
+              "time": 0.2666666805744171,
+              "name": "images/guihuo/gh_068"
+            },
+            {
+              "time": 0.3333333432674408,
+              "name": "images/guihuo/gh_070"
+            },
+            {
+              "time": 0.4000000059604645,
+              "name": "images/guihuo/gh_072"
+            },
+            {
+              "time": 0.46666666865348816,
+              "name": "images/guihuo/gh_074"
+            },
+            {
+              "time": 0.5333333611488342,
+              "name": "images/guihuo/gh_076"
+            },
+            {
+              "time": 0.6000000238418579,
+              "name": "images/guihuo/gh_078"
+            },
+            {
+              "time": 0.6666666865348816,
+              "name": "images/guihuo/gh_080"
+            },
+            {
+              "time": 0.7333333492279053,
+              "name": "images/guihuo/gh_082"
+            },
+            {
+              "time": 0.800000011920929,
+              "name": "images/guihuo/gh_084"
+            },
+            {
+              "time": 0.8666666746139526,
+              "name": "images/guihuo/gh_086"
+            },
+            {
+              "time": 0.9333333373069763,
+              "name": "images/guihuo/gh_088"
+            },
+            {
+              "time": 1,
+              "name": "images/guihuo/gh_090"
+            },
+            {
+              "time": 1.0666667222976685,
+              "name": "images/guihuo/gh_092"
+            },
+            {
+              "time": 1.1333333253860474,
+              "name": "images/guihuo/gh_094"
+            },
+            {
+              "time": 1.2000000476837158,
+              "name": "images/guihuo/gh_096"
+            },
+            {
+              "time": 1.2666666507720947,
+              "name": "images/guihuo/gh_098"
+            },
+            {
+              "time": 1.3333333730697632,
+              "name": "images/guihuo/gh_100"
+            },
+            {
+              "time": 1.399999976158142,
+              "name": "images/guihuo/gh_102"
+            },
+            {
+              "time": 1.4666666984558105,
+              "name": "images/guihuo/gh_104"
+            },
+            {
+              "time": 1.5333333015441895,
+              "name": "images/guihuo/gh_106"
+            },
+            {
+              "time": 1.600000023841858,
+              "name": "images/guihuo/gh_108"
+            },
+            {
+              "time": 1.6666666269302368,
+              "name": "images/guihuo/gh_110"
+            },
+            {
+              "time": 1.7333333492279053,
+              "name": "images/guihuo/gh_112"
+            },
+            {
+              "time": 1.7999999523162842,
+              "name": "images/guihuo/gh_114"
+            },
+            {
+              "time": 1.8666666746139526,
+              "name": "images/guihuo/gh_116"
+            },
+            {
+              "time": 1.9333332777023315,
+              "name": "images/guihuo/gh_118"
+            },
+            {
+              "time": 2,
+              "name": "images/guihuo/gh_060"
+            }
+          ]
+        },
+        "images/guihuo/gh_quan_000": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "images/guihuo/gh_quan_000"
+            },
+            {
+              "time": 0.06666667014360428,
+              "name": "images/guihuo/gh_quan_002"
+            },
+            {
+              "time": 0.13333334028720856,
+              "name": "images/guihuo/gh_quan_004"
+            },
+            {
+              "time": 0.20000000298023224,
+              "name": "images/guihuo/gh_quan_006"
+            },
+            {
+              "time": 0.2666666805744171,
+              "name": "images/guihuo/gh_quan_008"
+            },
+            {
+              "time": 0.3333333432674408,
+              "name": "images/guihuo/gh_quan_010"
+            },
+            {
+              "time": 0.4000000059604645,
+              "name": "images/guihuo/gh_quan_012"
+            },
+            {
+              "time": 0.46666666865348816,
+              "name": "images/guihuo/gh_quan_014"
+            },
+            {
+              "time": 0.5333333611488342,
+              "name": "images/guihuo/gh_quan_016"
+            },
+            {
+              "time": 0.6000000238418579,
+              "name": "images/guihuo/gh_quan_018"
+            },
+            {
+              "time": 0.6666666865348816,
+              "name": "images/guihuo/gh_quan_020"
+            },
+            {
+              "time": 0.7333333492279053,
+              "name": "images/guihuo/gh_quan_022"
+            },
+            {
+              "time": 0.800000011920929,
+              "name": "images/guihuo/gh_quan_024"
+            },
+            {
+              "time": 0.8666666746139526,
+              "name": "images/guihuo/gh_quan_026"
+            },
+            {
+              "time": 0.9333333373069763,
+              "name": "images/guihuo/gh_quan_028"
+            },
+            {
+              "time": 1,
+              "name": "images/guihuo/gh_quan_030"
+            },
+            {
+              "time": 1.0666667222976685,
+              "name": "images/guihuo/gh_quan_032"
+            },
+            {
+              "time": 1.1333333253860474,
+              "name": "images/guihuo/gh_quan_034"
+            },
+            {
+              "time": 1.2000000476837158,
+              "name": "images/guihuo/gh_quan_036"
+            },
+            {
+              "time": 1.2666666507720947,
+              "name": "images/guihuo/gh_quan_038"
+            },
+            {
+              "time": 1.3333333730697632,
+              "name": "images/guihuo/gh_quan_040"
+            },
+            {
+              "time": 1.399999976158142,
+              "name": "images/guihuo/gh_quan_042"
+            },
+            {
+              "time": 1.4666666984558105,
+              "name": "images/guihuo/gh_quan_044"
+            },
+            {
+              "time": 1.5333333015441895,
+              "name": "images/guihuo/gh_quan_046"
+            },
+            {
+              "time": 1.600000023841858,
+              "name": "images/guihuo/gh_quan_048"
+            },
+            {
+              "time": 1.6666666269302368,
+              "name": "images/guihuo/gh_quan_050"
+            },
+            {
+              "time": 1.7333333492279053,
+              "name": "images/guihuo/gh_quan_052"
+            },
+            {
+              "time": 1.7999999523162842,
+              "name": "images/guihuo/gh_quan_054"
+            },
+            {
+              "time": 1.8666666746139526,
+              "name": "images/guihuo/gh_quan_056"
+            },
+            {
+              "time": 1.9333332777023315,
+              "name": "images/guihuo/gh_quan_058"
+            },
+            {
+              "time": 2,
+              "name": "images/guihuo/gh_quan_000"
+            }
+          ]
+        }
+      },
+      "bones": {},
+      "ik": {},
+      "transform": {},
+      "paths": {},
+      "deform": {}
+    },
+    "play3": {
+      "slots": {
+        "images/guihuo/gh_000": {
+          "color": [
+            {
+              "time": 0,
+              "color": "35b4aaff"
+            }
+          ],
+          "attachment": [
+            {
+              "time": 0,
+              "name": "images/guihuo/gh_060"
+            },
+            {
+              "time": 0.06666667014360428,
+              "name": "images/guihuo/gh_062"
+            },
+            {
+              "time": 0.13333334028720856,
+              "name": "images/guihuo/gh_064"
+            },
+            {
+              "time": 0.20000000298023224,
+              "name": "images/guihuo/gh_066"
+            },
+            {
+              "time": 0.2666666805744171,
+              "name": "images/guihuo/gh_068"
+            },
+            {
+              "time": 0.3333333432674408,
+              "name": "images/guihuo/gh_070"
+            },
+            {
+              "time": 0.4000000059604645,
+              "name": "images/guihuo/gh_072"
+            },
+            {
+              "time": 0.46666666865348816,
+              "name": "images/guihuo/gh_074"
+            },
+            {
+              "time": 0.5333333611488342,
+              "name": "images/guihuo/gh_076"
+            },
+            {
+              "time": 0.6000000238418579,
+              "name": "images/guihuo/gh_078"
+            },
+            {
+              "time": 0.6666666865348816,
+              "name": "images/guihuo/gh_080"
+            },
+            {
+              "time": 0.7333333492279053,
+              "name": "images/guihuo/gh_082"
+            },
+            {
+              "time": 0.800000011920929,
+              "name": "images/guihuo/gh_084"
+            },
+            {
+              "time": 0.8666666746139526,
+              "name": "images/guihuo/gh_086"
+            },
+            {
+              "time": 0.9333333373069763,
+              "name": "images/guihuo/gh_088"
+            },
+            {
+              "time": 1,
+              "name": "images/guihuo/gh_090"
+            },
+            {
+              "time": 1.0666667222976685,
+              "name": "images/guihuo/gh_092"
+            },
+            {
+              "time": 1.1333333253860474,
+              "name": "images/guihuo/gh_094"
+            },
+            {
+              "time": 1.2000000476837158,
+              "name": "images/guihuo/gh_096"
+            },
+            {
+              "time": 1.2666666507720947,
+              "name": "images/guihuo/gh_098"
+            },
+            {
+              "time": 1.3333333730697632,
+              "name": "images/guihuo/gh_100"
+            },
+            {
+              "time": 1.399999976158142,
+              "name": "images/guihuo/gh_102"
+            },
+            {
+              "time": 1.4666666984558105,
+              "name": "images/guihuo/gh_104"
+            },
+            {
+              "time": 1.5333333015441895,
+              "name": "images/guihuo/gh_106"
+            },
+            {
+              "time": 1.600000023841858,
+              "name": "images/guihuo/gh_108"
+            },
+            {
+              "time": 1.6666666269302368,
+              "name": "images/guihuo/gh_110"
+            },
+            {
+              "time": 1.7333333492279053,
+              "name": "images/guihuo/gh_112"
+            },
+            {
+              "time": 1.7999999523162842,
+              "name": "images/guihuo/gh_114"
+            },
+            {
+              "time": 1.8666666746139526,
+              "name": "images/guihuo/gh_116"
+            },
+            {
+              "time": 1.9333332777023315,
+              "name": "images/guihuo/gh_118"
+            },
+            {
+              "time": 2,
+              "name": "images/guihuo/gh_060"
+            }
+          ]
+        }
+      },
+      "bones": {},
+      "ik": {},
+      "transform": {},
+      "paths": {},
+      "deform": {}
+    },
+    "pseudo_setup_pose": {
+      "bones": {},
+      "slots": {},
+      "ik": {},
+      "ffd": {},
+      "drawOrder": [
+        {
+          "offsets": [],
+          "time": 0
+        }
+      ]
+    }
+  }
+}

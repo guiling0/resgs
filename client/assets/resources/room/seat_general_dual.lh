@@ -1,0 +1,179 @@
+{
+  "_$ver": 1,
+  "_$id": "lwm2o99r",
+  "_$runtime": "res://4dbd0e76-0b8d-487e-8eff-b650a1c78a73",
+  "_$type": "GWidget",
+  "name": "seat_general_dual",
+  "width": 79,
+  "height": 181,
+  "drawCallOptimize": true,
+  "_$child": [
+    {
+      "_$id": "c0zek2ir",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "img",
+      "x": -45,
+      "width": 250,
+      "height": 292,
+      "scaleX": 0.63,
+      "scaleY": 0.63,
+      "mask": {
+        "_$ref": "nu52sn89"
+      },
+      "src": "res://85f0de5f-2c1d-4969-8ff8-f5bc3d2602b4",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "nu52sn89",
+          "_$type": "GWidget",
+          "name": "mask",
+          "x": 73,
+          "width": 121,
+          "height": 287,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#ffffff"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "nuhnkjyy",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "img_dual",
+      "width": 129,
+      "height": 292,
+      "scaleX": 0.63,
+      "scaleY": 0.63,
+      "visible": false,
+      "mask": {
+        "_$ref": "r0x0kbzl"
+      },
+      "src": "res://85f0de5f-2c1d-4969-8ff8-f5bc3d2602b4",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "r0x0kbzl",
+          "_$type": "GWidget",
+          "name": "mask",
+          "width": 121,
+          "height": 287,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#ffffff"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "0zu98pg0",
+      "_$prefab": "197024ce-52c8-438f-b6b2-43520c7157d3",
+      "_$var": true,
+      "name": "skin_animation",
+      "active": true,
+      "x": 39,
+      "y": 90,
+      "visible": false,
+      "mask": {
+        "_$ref": "mm9aa7jb"
+      },
+      "_$child": [
+        {
+          "_$override": "pxc7zjg7",
+          "mask": null
+        },
+        {
+          "_$id": "mm9aa7jb",
+          "_$type": "GWidget",
+          "name": "mask_1",
+          "x": 41,
+          "y": 1,
+          "width": 76,
+          "height": 181,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#ffffff"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "zqcjrbp2",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "gname",
+      "x": 1,
+      "y": 17,
+      "width": 23,
+      "height": 87,
+      "text": "",
+      "_isDemo": true,
+      "font": "res://f69bd55c-f37d-4938-a7ea-559c8976cc6b",
+      "fontSize": 20,
+      "color": "#ffffff",
+      "align": "center",
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 0,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stroke": 2
+    },
+    {
+      "_$id": "eynigo5t",
+      "_$type": "GWidget",
+      "name": "frames",
+      "width": 79,
+      "height": 181,
+      "_$child": [
+        {
+          "_$id": "orzzpbk5",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "lock",
+          "x": -1,
+          "y": 41,
+          "width": 100,
+          "height": 122,
+          "scaleX": 0.8,
+          "scaleY": 0.8,
+          "visible": false,
+          "src": "res://98c243af-1f76-436a-b1bd-f4e854133907"
+        },
+        {
+          "_$id": "2wkaz1p3",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "qianfu",
+          "width": 79,
+          "height": 181,
+          "visible": false,
+          "src": "res://e7c62393-471c-4c63-a066-6376825e78ef",
+          "autoSize": false,
+          "_$child": [
+            {
+              "_$id": "jjixqyqi",
+              "_$var": true,
+              "_$type": "GImage",
+              "name": "qianfu_icon",
+              "x": 29,
+              "y": 84,
+              "width": 35,
+              "height": 21,
+              "scaleX": 0.6,
+              "scaleY": 0.6,
+              "src": "res://49526630-f731-4d41-9e5e-41632576ec16",
+              "autoSize": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

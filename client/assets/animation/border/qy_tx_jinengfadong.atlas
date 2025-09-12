@@ -1,0 +1,48 @@
+
+qy_tx_jinengfadong.png
+size: 815,815
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+yanse_00
+  rotate: false
+  xy: 2, 513
+  size: 269, 300
+  orig: 300, 340
+  offset: 13, 11
+  index: -1
+yanse_01
+  rotate: false
+  xy: 2, 211
+  size: 269, 300
+  orig: 300, 340
+  offset: 13, 11
+  index: -1
+yanse_02
+  rotate: false
+  xy: 273, 513
+  size: 269, 300
+  orig: 300, 340
+  offset: 13, 11
+  index: -1
+yanse_03
+  rotate: false
+  xy: 273, 211
+  size: 269, 300
+  orig: 300, 340
+  offset: 13, 11
+  index: -1
+yanse_04
+  rotate: false
+  xy: 544, 513
+  size: 269, 300
+  orig: 300, 340
+  offset: 13, 11
+  index: -1
+yanse_05
+  rotate: false
+  xy: 544, 211
+  size: 269, 300
+  orig: 300, 340
+  offset: 13, 11
+  index: -1

@@ -1,0 +1,162 @@
+{
+  "_$ver": 1,
+  "_$id": "xcwz9jay",
+  "_$runtime": "res://29ff3449-bee8-43e3-b57b-1ed02f17cd71",
+  "_$type": "GWidget",
+  "name": "item",
+  "width": 1486,
+  "height": 64,
+  "_$child": [
+    {
+      "_$id": "gzn3y9p2",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "roomname",
+      "y": 3,
+      "width": 828,
+      "height": 59,
+      "text": "房间名字[img]resources/lobby/texture/hall_room_jinyan_mark.png[/img] [img]resources/lobby/texture/hall_room_yaoshi.png[/img]",
+      "fontSize": 35,
+      "color": "#ffffff",
+      "ubb": true,
+      "valign": "middle",
+      "overflow": "ellipsis"
+    },
+    {
+      "_$id": "5ee2redl",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "playercount",
+      "x": 835,
+      "y": 9,
+      "width": 137,
+      "height": 53,
+      "text": "10/10",
+      "fontSize": 35,
+      "color": "#ffffff",
+      "ubb": true,
+      "valign": "middle"
+    },
+    {
+      "_$id": "gzvmn6xn",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "roomstate",
+      "x": 974,
+      "y": 9,
+      "width": 137,
+      "height": 53,
+      "text": "等待中",
+      "fontSize": 35,
+      "color": "#ffffff",
+      "ubb": true,
+      "valign": "middle"
+    },
+    {
+      "_$id": "lkj3ewmp",
+      "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+      "_$var": true,
+      "name": "btn_joinroom",
+      "active": true,
+      "x": 1110,
+      "y": 2,
+      "visible": true,
+      "width": 103,
+      "height": 55,
+      "title": " 进入 ",
+      "_$child": [
+        {
+          "_$override": "x9lkyehy",
+          "fontSize": 25
+        }
+      ]
+    },
+    {
+      "_$id": "j0rf0116",
+      "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+      "_$var": true,
+      "name": "btn_standroom",
+      "active": true,
+      "x": 1226,
+      "y": 2,
+      "visible": true,
+      "width": 103,
+      "height": 55,
+      "title": " 旁观 ",
+      "_$child": [
+        {
+          "_$override": "x9lkyehy",
+          "fontSize": 25
+        }
+      ]
+    },
+    {
+      "_$id": "fckagpse",
+      "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+      "_$var": true,
+      "name": "btn_options",
+      "active": true,
+      "x": 1346,
+      "y": 2,
+      "visible": true,
+      "width": 128,
+      "height": 55,
+      "title": "查看信息",
+      "_$child": [
+        {
+          "_$override": "x9lkyehy",
+          "fontSize": 25
+        }
+      ]
+    },
+    {
+      "_$id": "9woopynb",
+      "_$var": true,
+      "_$type": "GTextInput",
+      "name": "inputpassword",
+      "x": 1116,
+      "y": 53,
+      "width": 248,
+      "height": 48,
+      "visible": false,
+      "_mouseState": 2,
+      "text": "",
+      "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+      "fontSize": 35,
+      "color": "#FFFFFF",
+      "valign": "middle",
+      "prompt": "输入密码",
+      "promptColor": "#A9A9A9",
+      "_$child": [
+        {
+          "_$id": "4309cpnf",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 358,
+          "height": 48,
+          "src": "res://efd88f85-6c10-4da2-976c-7cec59c23187",
+          "autoSize": false
+        },
+        {
+          "_$id": "uil8wrhe",
+          "_$prefab": "ceb9e840-7bc0-4391-b135-62a0353dc1b5",
+          "_$var": true,
+          "name": "btn_confirm",
+          "active": true,
+          "x": 256,
+          "y": -1,
+          "visible": true,
+          "width": 103,
+          "height": 55,
+          "title": " 进入 ",
+          "_$child": [
+            {
+              "_$override": "x9lkyehy",
+              "fontSize": 25
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

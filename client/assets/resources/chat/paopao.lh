@@ -1,0 +1,42 @@
+{
+  "_$ver": 1,
+  "_$id": "fib6gh3n",
+  "_$runtime": "res://b6cba656-9ec9-4c77-8c42-44c4ccbbd5c2",
+  "_$preloads": [
+    "res://3ec791aa-5e70-43fb-a9f4-7c016790849a"
+  ],
+  "_$type": "GWidget",
+  "name": "paopao",
+  "width": 342,
+  "height": 216,
+  "drawCallOptimize": true,
+  "_$child": [
+    {
+      "_$id": "6gculenz",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 342,
+      "height": 216,
+      "src": "res://3ec791aa-5e70-43fb-a9f4-7c016790849a"
+    },
+    {
+      "_$id": "zdy3zboj",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "chatLabel",
+      "x": 19,
+      "y": 25,
+      "width": 301,
+      "height": 166,
+      "text": "这是一段我说的话",
+      "fontSize": 30,
+      "color": "#FFFFFF",
+      "ubb": true,
+      "templateVars": true,
+      "align": "center",
+      "valign": "middle",
+      "overflow": "shrink",
+      "wordWrap": true
+    }
+  ]
+}

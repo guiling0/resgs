@@ -1,0 +1,445 @@
+
+SS_scs_bgrw.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/chuxian/feiru_101
+  rotate: false
+  xy: 1850, 995
+  size: 195, 146
+  orig: 614, 300
+  offset: 354, 48
+  index: -1
+images/chuxian/guihun1_364
+  rotate: false
+  xy: 1983, 1893
+  size: 63, 150
+  orig: 614, 300
+  offset: 183, 150
+  index: -1
+images/chuxian/guihun1_365
+  rotate: true
+  xy: 1596, 17
+  size: 80, 155
+  orig: 614, 300
+  offset: 183, 137
+  index: -1
+images/chuxian/guihun1_366
+  rotate: true
+  xy: 1005, 2
+  size: 95, 110
+  orig: 614, 300
+  offset: 188, 126
+  index: -1
+images/chuxian/guihun1_372
+  rotate: false
+  xy: 1117, 6
+  size: 232, 91
+  orig: 614, 300
+  offset: 216, 92
+  index: -1
+images/chuxian/guihun1_373
+  rotate: false
+  xy: 1351, 17
+  size: 243, 80
+  orig: 614, 300
+  offset: 233, 91
+  index: -1
+images/chuxian/guihun1_374
+  rotate: false
+  xy: 1753, 27
+  size: 244, 70
+  orig: 614, 300
+  offset: 258, 90
+  index: -1
+images/chuxian/guihun1_378
+  rotate: true
+  xy: 1983, 1678
+  size: 213, 61
+  orig: 614, 300
+  offset: 364, 98
+  index: -1
+images/chuxian/guihun1_379
+  rotate: true
+  xy: 1983, 1481
+  size: 195, 55
+  orig: 614, 300
+  offset: 394, 101
+  index: -1
+images/chuxian/guihun2_388
+  rotate: true
+  xy: 1850, 1143
+  size: 301, 194
+  orig: 614, 300
+  offset: 88, 106
+  index: -1
+images/scs_0000s_0000s_0001_zhangrang
+  rotate: false
+  xy: 2, 18
+  size: 1001, 964
+  orig: 1600, 1131
+  offset: 176, 0
+  index: -1
+images/scs_0000s_0000s_0002_zhaozhong
+  rotate: false
+  xy: 1005, 99
+  size: 1002, 883
+  orig: 1600, 1131
+  offset: 581, 0
+  index: -1
+images/scs_0000s_0001s_0002_hualan
+  rotate: false
+  xy: 1594, 1446
+  size: 387, 597
+  orig: 1600, 1131
+  offset: 324, 262
+  index: -1
+images/scs_0000s_0001s_0003_fenwei3
+  rotate: false
+  xy: 1594, 1020
+  size: 254, 424
+  orig: 1600, 1131
+  offset: 313, 274
+  index: -1
+images/scs_0000s_0003_fenwei2
+  rotate: false
+  xy: 2, 984
+  size: 1590, 1059
+  orig: 1600, 1131
+  offset: 0, 0
+  index: -1
+
+SS_scs_bgrw2.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/chuxian/feiru_103
+  rotate: false
+  xy: 1423, 1746
+  size: 614, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/chuxian/feiru_104
+  rotate: false
+  xy: 1423, 1444
+  size: 614, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/chuxian/feiru_105
+  rotate: false
+  xy: 1423, 1142
+  size: 614, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/chuxian/feiru_107
+  rotate: true
+  xy: 831, 131
+  size: 583, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/chuxian/feiru_108
+  rotate: true
+  xy: 1640, 32
+  size: 542, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/chuxian/feiru_114
+  rotate: false
+  xy: 999, 3
+  size: 305, 126
+  orig: 614, 300
+  offset: 104, 131
+  index: -1
+images/chuxian/feiru_115
+  rotate: false
+  xy: 414, 8
+  size: 217, 109
+  orig: 614, 300
+  offset: 96, 134
+  index: -1
+images/chuxian/guihun1_367
+  rotate: false
+  xy: 1306, 12
+  size: 120, 126
+  orig: 614, 300
+  offset: 186, 116
+  index: -1
+images/chuxian/guihun1_368
+  rotate: false
+  xy: 851, 2
+  size: 146, 127
+  orig: 614, 300
+  offset: 187, 110
+  index: -1
+images/chuxian/guihun1_369
+  rotate: false
+  xy: 1428, 16
+  size: 170, 122
+  orig: 614, 300
+  offset: 191, 103
+  index: -1
+images/chuxian/guihun1_370
+  rotate: false
+  xy: 218, 4
+  size: 194, 113
+  orig: 614, 300
+  offset: 195, 98
+  index: -1
+images/chuxian/guihun1_371
+  rotate: false
+  xy: 633, 16
+  size: 216, 101
+  orig: 614, 300
+  offset: 203, 95
+  index: -1
+images/chuxian/guihun1_375
+  rotate: true
+  xy: 1416, 718
+  size: 240, 66
+  orig: 614, 300
+  offset: 284, 92
+  index: -1
+images/chuxian/guihun1_376
+  rotate: true
+  xy: 1942, 342
+  size: 232, 65
+  orig: 614, 300
+  offset: 311, 93
+  index: -1
+images/chuxian/guihun1_377
+  rotate: true
+  xy: 1942, 115
+  size: 225, 65
+  orig: 614, 300
+  offset: 336, 94
+  index: -1
+images/chuxian/guihun1_380
+  rotate: false
+  xy: 1484, 720
+  size: 171, 55
+  orig: 614, 300
+  offset: 425, 102
+  index: -1
+images/chuxian/guihun2_384
+  rotate: false
+  xy: 2, 4
+  size: 214, 113
+  orig: 614, 300
+  offset: 206, 187
+  index: -1
+images/chuxian/guihun2_392
+  rotate: false
+  xy: 1416, 960
+  size: 217, 180
+  orig: 614, 300
+  offset: 20, 59
+  index: -1
+images/chuxian/guihun2_393
+  rotate: true
+  xy: 1484, 777
+  size: 181, 153
+  orig: 614, 300
+  offset: 15, 60
+  index: -1
+images/scs_0000s_0000_zhaozhong_shou
+  rotate: true
+  xy: 1640, 839
+  size: 301, 396
+  orig: 1600, 1131
+  offset: 997, 0
+  index: -1
+images/scs_0000s_0000s_0000_lingdi
+  rotate: true
+  xy: 1133, 140
+  size: 574, 505
+  orig: 1600, 1131
+  offset: 528, 0
+  index: -1
+images/scs_0000s_0001_zhangrang_shou
+  rotate: false
+  xy: 1657, 576
+  size: 388, 261
+  orig: 1600, 1131
+  offset: 592, 179
+  index: -1
+images/scs_0000s_0001s_0004_sunzhang
+  rotate: true
+  xy: 2, 119
+  size: 1144, 827
+  orig: 1600, 1131
+  offset: 52, 122
+  index: -1
+images/scs_0000s_0002_fenwei1
+  rotate: false
+  xy: 2, 1265
+  size: 1419, 781
+  orig: 1600, 1131
+  offset: 63, 0
+  index: -1
+images/scs_0000s_0002s_0002_ligao
+  rotate: true
+  xy: 831, 716
+  size: 547, 583
+  orig: 1600, 1131
+  offset: 953, 469
+  index: -1
+
+SS_scs_bgrw3.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/chuxian/feiru_098
+  rotate: true
+  xy: 1877, 1513
+  size: 238, 161
+  orig: 614, 300
+  offset: 263, 0
+  index: -1
+images/chuxian/feiru_099
+  rotate: false
+  xy: 1285, 26
+  size: 247, 173
+  orig: 614, 300
+  offset: 282, 0
+  index: -1
+images/chuxian/feiru_100
+  rotate: true
+  xy: 1877, 1282
+  size: 229, 164
+  orig: 614, 300
+  offset: 317, 22
+  index: -1
+images/chuxian/feiru_102
+  rotate: true
+  xy: 1552, 193
+  size: 284, 300
+  orig: 614, 300
+  offset: 330, 0
+  index: -1
+images/chuxian/feiru_106
+  rotate: true
+  xy: 807, 478
+  size: 614, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/chuxian/feiru_109
+  rotate: false
+  xy: 1036, 201
+  size: 514, 253
+  orig: 614, 300
+  offset: 0, 47
+  index: -1
+images/chuxian/feiru_110
+  rotate: true
+  xy: 1854, 163
+  size: 289, 189
+  orig: 614, 300
+  offset: 192, 111
+  index: -1
+images/chuxian/feiru_111
+  rotate: true
+  xy: 1109, 456
+  size: 299, 187
+  orig: 614, 300
+  offset: 156, 113
+  index: -1
+images/chuxian/feiru_112
+  rotate: true
+  xy: 1109, 757
+  size: 335, 181
+  orig: 614, 300
+  offset: 130, 119
+  index: -1
+images/chuxian/feiru_113
+  rotate: true
+  xy: 1866, 454
+  size: 286, 175
+  orig: 614, 300
+  offset: 116, 125
+  index: -1
+images/chuxian/guihun2_385
+  rotate: true
+  xy: 1877, 1052
+  size: 228, 137
+  orig: 614, 300
+  offset: 170, 163
+  index: -1
+images/chuxian/guihun2_386
+  rotate: true
+  xy: 1877, 1753
+  size: 271, 160
+  orig: 614, 300
+  offset: 138, 140
+  index: -1
+images/chuxian/guihun2_387
+  rotate: true
+  xy: 1866, 742
+  size: 308, 179
+  orig: 614, 300
+  offset: 110, 121
+  index: -1
+images/chuxian/guihun2_389
+  rotate: false
+  xy: 1298, 479
+  size: 290, 209
+  orig: 614, 300
+  offset: 64, 91
+  index: -1
+images/chuxian/guihun2_390
+  rotate: false
+  xy: 1590, 480
+  size: 272, 208
+  orig: 614, 300
+  offset: 45, 78
+  index: -1
+images/chuxian/guihun2_391
+  rotate: false
+  xy: 1036, 2
+  size: 247, 197
+  orig: 614, 300
+  offset: 30, 66
+  index: -1
+images/scs_0000s_0001s_0000_duangui
+  rotate: false
+  xy: 1305, 1264
+  size: 570, 760
+  orig: 1600, 1131
+  offset: 10, 0
+  index: -1
+images/scs_0000s_0001s_0001_xiayun
+  rotate: false
+  xy: 2, 1094
+  size: 1301, 930
+  orig: 1600, 1131
+  offset: 299, 0
+  index: -1
+images/scs_0000s_0002s_0000_hanli
+  rotate: true
+  xy: 1305, 690
+  size: 572, 559
+  orig: 1600, 1131
+  offset: 669, 513
+  index: -1
+images/scs_0000s_0002s_0001_gaowang
+  rotate: true
+  xy: 2, 108
+  size: 984, 803
+  orig: 1600, 1131
+  offset: 356, 237
+  index: -1
+images/scs_0000s_0002s_0003_guosheng
+  rotate: false
+  xy: 807, 11
+  size: 227, 465
+  orig: 1600, 1131
+  offset: 368, 595
+  index: -1

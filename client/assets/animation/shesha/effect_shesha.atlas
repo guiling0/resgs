@@ -1,0 +1,83 @@
+
+effect_shesha.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hongsha_jianti01
+  rotate: false
+  xy: 311, 27
+  size: 285, 197
+  orig: 285, 197
+  offset: 0, 0
+  index: -1
+hongsha_jianti02_00
+  rotate: false
+  xy: 2, 2
+  size: 307, 222
+  orig: 307, 222
+  offset: 0, 0
+  index: -1
+modi01_01
+  rotate: false
+  xy: 816, 77
+  size: 37, 38
+  orig: 37, 38
+  offset: 0, 0
+  index: -1
+modi01_02
+  rotate: false
+  xy: 760, 58
+  size: 54, 54
+  orig: 54, 54
+  offset: 0, 0
+  index: -1
+modi01_03
+  rotate: true
+  xy: 687, 32
+  size: 74, 71
+  orig: 74, 71
+  offset: 0, 0
+  index: -1
+modi01_04
+  rotate: true
+  xy: 598, 20
+  size: 86, 87
+  orig: 86, 87
+  offset: 0, 0
+  index: -1
+modi01_05
+  rotate: false
+  xy: 911, 123
+  size: 98, 101
+  orig: 98, 101
+  offset: 0, 0
+  index: -1
+modi01_06
+  rotate: false
+  xy: 809, 117
+  size: 100, 107
+  orig: 100, 107
+  offset: 0, 0
+  index: -1
+modi01_07
+  rotate: false
+  xy: 706, 114
+  size: 101, 110
+  orig: 101, 110
+  offset: 0, 0
+  index: -1
+modi01_08
+  rotate: false
+  xy: 598, 108
+  size: 106, 116
+  orig: 106, 116
+  offset: 0, 0
+  index: -1
+modi01_09
+  rotate: false
+  xy: 598, 108
+  size: 106, 116
+  orig: 106, 116
+  offset: 0, 0
+  index: -1

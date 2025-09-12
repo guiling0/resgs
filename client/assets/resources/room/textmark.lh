@@ -1,0 +1,19 @@
+{
+  "_$ver": 1,
+  "_$id": "d0msfnbf",
+  "_$runtime": "res://908a5f30-baff-4785-a9e7-57795b0d9b7a",
+  "_$type": "GTextField",
+  "name": "txt",
+  "width": 74,
+  "height": 20,
+  "background": {
+    "_$type": "DrawRectCmd",
+    "fillColor": "rgba(0,0,0,0.5882352941176471)"
+  },
+  "text": "标记[标记]",
+  "_isDemo": true,
+  "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+  "fontSize": 15,
+  "color": "#ffffff",
+  "fitContent": 1
+}

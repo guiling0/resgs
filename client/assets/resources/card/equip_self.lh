@@ -1,0 +1,105 @@
+{
+  "_$ver": 1,
+  "_$id": "l4uzvgvd",
+  "_$runtime": "res://aa29803d-3deb-41a2-9845-d25f74cf02aa",
+  "_$type": "GWidget",
+  "name": "equip_self",
+  "width": 145,
+  "height": 22,
+  "anchorX": 0.5,
+  "anchorY": 0.5,
+  "_startPages": {
+    "_$type": "Record",
+    "canClick": 0,
+    "selected": 1
+  },
+  "_$comp": [
+    {
+      "_$type": "9865351d-f61b-4be8-88df-c727c305fc27",
+      "scriptPath": "../src/comps/ChooseItemComp.ts",
+      "clickNode": {
+        "_$ref": "l4uzvgvd"
+      },
+      "selectedImage": [
+        {
+          "_$ref": "c9ppujt5"
+        }
+      ],
+      "canClickMask": null,
+      "isButton": null
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "168rb7zd",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "img",
+      "width": 145,
+      "height": 22,
+      "src": "res://2792fde6-2bbb-4a19-9b61-931d572af68c",
+      "autoSize": false
+    },
+    {
+      "_$id": "o61k1g73",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "number",
+      "x": 109,
+      "y": -2,
+      "width": 27,
+      "height": 28,
+      "src": "res://84af6c7d-d5a9-400d-89c6-fda93ce2a2bc",
+      "autoSize": false
+    },
+    {
+      "_$id": "ixfzibn2",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "suit",
+      "x": 125,
+      "y": 3,
+      "width": 21,
+      "height": 17,
+      "src": "res://5d59695e-dd0f-4d6c-93e6-5b21456b5640",
+      "autoSize": false
+    },
+    {
+      "_$id": "a5tdlbpi",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "canClick",
+      "width": 145,
+      "height": 22,
+      "visible": false,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "rgba(0,0,0,0.49019607843137253)"
+      },
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "l4uzvgvd",
+            "_$ctrl": "canClick"
+          },
+          "pages": [
+            1
+          ],
+          "condition": 1
+        }
+      ]
+    },
+    {
+      "_$id": "c9ppujt5",
+      "_$var": true,
+      "_$type": "GLoader",
+      "name": "isSelected",
+      "width": 145,
+      "height": 22,
+      "visible": false,
+      "src": "res://b224e225-d2c3-4da9-8e80-f273610c9622",
+      "fitMode": 0
+    }
+  ]
+}

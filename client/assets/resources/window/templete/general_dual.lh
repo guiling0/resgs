@@ -1,0 +1,139 @@
+{
+  "_$ver": 1,
+  "_$id": "g0okz4x4",
+  "_$runtime": "res://ea50d2f9-ddde-4749-af08-b21ae64c0aea",
+  "_$type": "GBox",
+  "name": "general_dual",
+  "width": 140,
+  "height": 436,
+  "layout": {
+    "type": 1,
+    "rowGap": 20,
+    "stretchX": 2,
+    "stretchY": 2
+  },
+  "_$child": [
+    {
+      "_$id": "vpd6wkig",
+      "_$var": true,
+      "_$type": "GBox",
+      "name": "generals",
+      "width": 140,
+      "height": 195,
+      "layout": {
+        "type": 3,
+        "columns": 6,
+        "rowGap": 5,
+        "columnGap": 5,
+        "stretchX": 2,
+        "stretchY": 2
+      }
+    },
+    {
+      "_$id": "3tay6646",
+      "_$type": "GImage",
+      "name": "line",
+      "y": 215,
+      "width": 140,
+      "height": 6,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "g0okz4x4"
+          },
+          "data": [
+            1,
+            0
+          ]
+        }
+      ],
+      "src": "res://fbc7c04c-db40-43c4-a03e-c41faa8287f9",
+      "autoSize": false
+    },
+    {
+      "_$id": "ijsacwk5",
+      "_$type": "GBox",
+      "name": "selecteds",
+      "y": 241,
+      "width": 140,
+      "height": 195,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "g0okz4x4"
+          },
+          "data": [
+            1,
+            0
+          ]
+        }
+      ],
+      "layout": {
+        "type": 2,
+        "rowGap": 50,
+        "columnGap": 50,
+        "align": 1
+      },
+      "_$child": [
+        {
+          "_$id": "36wnp0ox",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "head",
+          "x": -95,
+          "width": 140,
+          "height": 195,
+          "src": "res://b130fb4e-7392-4afe-91d0-21a902d58eec",
+          "autoSize": false,
+          "_$child": [
+            {
+              "_$id": "8xn18qob",
+              "_$type": "GTextField",
+              "name": "headLabel",
+              "x": 40,
+              "y": 82,
+              "width": 60,
+              "height": 31,
+              "text": "主将",
+              "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+              "fontSize": 30,
+              "color": "#FFFFFF",
+              "align": "center",
+              "valign": "middle"
+            }
+          ]
+        },
+        {
+          "_$id": "sxjrepxr",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "deputy",
+          "x": 95,
+          "width": 140,
+          "height": 195,
+          "src": "res://b130fb4e-7392-4afe-91d0-21a902d58eec",
+          "autoSize": false,
+          "_$child": [
+            {
+              "_$id": "n8418kg6",
+              "_$type": "GTextField",
+              "name": "headLabel",
+              "x": 40,
+              "y": 82,
+              "width": 60,
+              "height": 31,
+              "text": "副将",
+              "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+              "fontSize": 30,
+              "color": "#FFFFFF",
+              "align": "center",
+              "valign": "middle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

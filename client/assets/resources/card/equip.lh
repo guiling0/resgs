@@ -1,0 +1,47 @@
+{
+  "_$ver": 1,
+  "_$id": "kao9ls4v",
+  "_$runtime": "res://d898dbbc-89d7-42fa-bf31-8db313e61bc6",
+  "_$type": "GWidget",
+  "name": "equip",
+  "width": 140,
+  "height": 19,
+  "anchorX": 0.5,
+  "anchorY": 0.5,
+  "_$child": [
+    {
+      "_$id": "lrp736bh",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "img",
+      "width": 140,
+      "height": 19,
+      "src": "res://2792fde6-2bbb-4a19-9b61-931d572af68c",
+      "autoSize": false
+    },
+    {
+      "_$id": "rzb9cjur",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "number",
+      "x": 105,
+      "y": -4,
+      "width": 27,
+      "height": 28,
+      "src": "res://84af6c7d-d5a9-400d-89c6-fda93ce2a2bc",
+      "autoSize": false
+    },
+    {
+      "_$id": "5948p9qa",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "suit",
+      "x": 121,
+      "y": 1,
+      "width": 21,
+      "height": 17,
+      "src": "res://5d59695e-dd0f-4d6c-93e6-5b21456b5640",
+      "autoSize": false
+    }
+  ]
+}

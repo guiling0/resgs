@@ -1,0 +1,63 @@
+{
+  "_$ver": 1,
+  "_$id": "dili4kne",
+  "_$runtime": "res://91aff58a-6fb5-4bf5-8efa-94f497648430",
+  "_$type": "GWidget",
+  "name": "row_items",
+  "width": 176,
+  "height": 195,
+  "relations": [
+    {
+      "_$type": "Relation",
+      "target": {
+        "_$ref": "73bblib6"
+      },
+      "data": [
+        20,
+        0,
+        24,
+        0
+      ]
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "dsc3tgfq",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "areabg",
+      "width": 35,
+      "height": 195,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#777777"
+      },
+      "_$child": [
+        {
+          "_$id": "frdfome0",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "areaname",
+          "width": 35,
+          "height": 195,
+          "text": "手牌区",
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 25,
+          "color": "#FFFFFF",
+          "align": "center",
+          "valign": "middle",
+          "wordWrap": true
+        }
+      ]
+    },
+    {
+      "_$id": "73bblib6",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "cards",
+      "x": 36,
+      "width": 140,
+      "height": 195
+    }
+  ]
+}

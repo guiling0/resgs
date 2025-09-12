@@ -1,0 +1,202 @@
+
+Ss_BiaoQing_huiqi.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+chouqi/chouqi_001
+  rotate: false
+  xy: 675, 926
+  size: 65, 96
+  orig: 128, 128
+  offset: 42, 8
+  index: -1
+chouqi/chouqi_002
+  rotate: false
+  xy: 2, 282
+  size: 63, 99
+  orig: 128, 128
+  offset: 44, 8
+  index: -1
+chouqi/chouqi_003
+  rotate: false
+  xy: 146, 730
+  size: 64, 100
+  orig: 128, 128
+  offset: 43, 8
+  index: -1
+chouqi/chouqi_004
+  rotate: false
+  xy: 611, 922
+  size: 62, 100
+  orig: 128, 128
+  offset: 44, 9
+  index: -1
+chouqi/chouqi_005
+  rotate: false
+  xy: 2, 180
+  size: 62, 100
+  orig: 128, 128
+  offset: 44, 9
+  index: -1
+chouqi/chouqi_006
+  rotate: false
+  xy: 2, 78
+  size: 60, 100
+  orig: 128, 128
+  offset: 45, 9
+  index: -1
+chouqi/chouqi_007
+  rotate: true
+  xy: 742, 963
+  size: 59, 100
+  orig: 128, 128
+  offset: 46, 9
+  index: -1
+chouqi/chouqi_008
+  rotate: true
+  xy: 844, 965
+  size: 57, 100
+  orig: 128, 128
+  offset: 47, 7
+  index: -1
+chouqi/chouqi_009
+  rotate: false
+  xy: 67, 285
+  size: 56, 96
+  orig: 128, 128
+  offset: 48, 10
+  index: -1
+chouqi/chouqi_010
+  rotate: true
+  xy: 254, 816
+  size: 56, 92
+  orig: 128, 128
+  offset: 48, 14
+  index: -1
+chouqi/chouqi_011
+  rotate: false
+  xy: 123, 565
+  size: 55, 89
+  orig: 128, 128
+  offset: 49, 18
+  index: -1
+chouqi/chouqi_012
+  rotate: true
+  xy: 212, 759
+  size: 55, 87
+  orig: 128, 128
+  offset: 49, 20
+  index: -1
+chouqi/chouqi_013
+  rotate: false
+  xy: 215, 669
+  size: 54, 88
+  orig: 128, 128
+  offset: 50, 22
+  index: -1
+chouqi/chouqi_014
+  rotate: true
+  xy: 742, 907
+  size: 54, 91
+  orig: 128, 128
+  offset: 50, 20
+  index: -1
+chouqi/chouqi_015
+  rotate: false
+  xy: 180, 564
+  size: 53, 90
+  orig: 128, 128
+  offset: 51, 21
+  index: -1
+chouqi/chouqi_016
+  rotate: false
+  xy: 271, 669
+  size: 53, 88
+  orig: 128, 128
+  offset: 51, 22
+  index: -1
+chouqi/chouqi_017
+  rotate: false
+  xy: 235, 578
+  size: 52, 89
+  orig: 128, 128
+  offset: 52, 23
+  index: -1
+dan
+  rotate: false
+  xy: 497, 890
+  size: 112, 132
+  orig: 121, 141
+  offset: 6, 0
+  index: -1
+dan1
+  rotate: false
+  xy: 2, 525
+  size: 119, 139
+  orig: 121, 141
+  offset: 1, 1
+  index: -1
+danke1
+  rotate: false
+  xy: 146, 656
+  size: 67, 72
+  orig: 67, 72
+  offset: 0, 0
+  index: -1
+danke1_1
+  rotate: false
+  xy: 289, 597
+  size: 65, 70
+  orig: 67, 72
+  offset: 1, 1
+  index: -1
+danke2
+  rotate: true
+  xy: 946, 959
+  size: 63, 76
+  orig: 63, 76
+  offset: 0, 0
+  index: -1
+danke2_1
+  rotate: false
+  xy: 2, 2
+  size: 61, 74
+  orig: 63, 76
+  offset: 1, 1
+  index: -1
+danlie1
+  rotate: false
+  xy: 376, 883
+  size: 119, 139
+  orig: 119, 139
+  offset: 0, 0
+  index: -1
+dansui
+  rotate: false
+  xy: 2, 666
+  size: 142, 164
+  orig: 144, 166
+  offset: 1, 1
+  index: -1
+jidan
+  rotate: false
+  xy: 2, 383
+  size: 112, 140
+  orig: 122, 150
+  offset: 5, 5
+  index: -1
+jidan1
+  rotate: false
+  xy: 254, 874
+  size: 120, 148
+  orig: 120, 148
+  offset: 0, 0
+  index: -1
+shan2_00
+  rotate: false
+  xy: 2, 832
+  size: 250, 190
+  orig: 260, 260
+  offset: 10, 34
+  index: -1

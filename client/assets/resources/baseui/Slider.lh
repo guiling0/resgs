@@ -1,0 +1,190 @@
+{
+  "_$ver": 1,
+  "_$id": "egle7572",
+  "_$type": "GSlider",
+  "width": 200,
+  "height": 20,
+  "_hBar": {
+    "_$ref": "xbi87825"
+  },
+  "_gripButton": {
+    "_$ref": "l8brgabm"
+  },
+  "_$child": [
+    {
+      "_$id": "jcqjpnkj",
+      "_$type": "GImage",
+      "name": "bg",
+      "width": 200,
+      "height": 20,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "egle7572"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://964f60bd-f6c7-45fa-b3d3-76b0f922091f",
+      "autoSize": false
+    },
+    {
+      "_$id": "xbi87825",
+      "_$type": "GImage",
+      "name": "bar",
+      "width": 200,
+      "height": 20,
+      "src": "res://b79979fe-5cc3-411d-b587-c11c6d1b3ef4",
+      "autoSize": false
+    },
+    {
+      "_$id": "l8brgabm",
+      "_$type": "GButton",
+      "name": "grip",
+      "x": 200,
+      "y": 10,
+      "width": 34,
+      "height": 36,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "controllers": {
+        "_$type": "Record",
+        "button": {
+          "_$type": "Controller",
+          "pages": [
+            "up",
+            "down",
+            "over",
+            "selectedOver"
+          ]
+        }
+      },
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "xbi87825"
+          },
+          "data": [
+            5,
+            0
+          ]
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "62bl5ih7",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 34,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "l8brgabm",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                0
+              ]
+            }
+          ],
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "l8brgabm"
+              },
+              "data": [
+                1,
+                0,
+                2,
+                0
+              ]
+            }
+          ],
+          "src": "res://87102cff-11fc-4ffe-8962-6b83e534c59f",
+          "autoSize": false
+        },
+        {
+          "_$id": "ezit6qq9",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 34,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "l8brgabm",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                1,
+                3
+              ]
+            }
+          ],
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "l8brgabm"
+              },
+              "data": [
+                1,
+                0,
+                2,
+                0
+              ]
+            }
+          ],
+          "src": "res://add4af78-bae5-451a-b112-36455c4453e4",
+          "autoSize": false
+        },
+        {
+          "_$id": "jvqqquym",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 34,
+          "height": 36,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "l8brgabm",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                2
+              ]
+            }
+          ],
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "l8brgabm"
+              },
+              "data": [
+                1,
+                0,
+                2,
+                0
+              ]
+            }
+          ],
+          "src": "res://f60a5203-1859-47d1-a17f-4abfa7c9b6b7",
+          "autoSize": false
+        }
+      ]
+    }
+  ]
+}

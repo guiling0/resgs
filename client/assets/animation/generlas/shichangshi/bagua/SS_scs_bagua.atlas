@@ -1,0 +1,453 @@
+
+SS_scs_bagua.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/bagua
+  rotate: false
+  xy: 594, 1422
+  size: 550, 550
+  orig: 550, 550
+  offset: 0, 0
+  index: -1
+images/bagua/bag_feichu_154
+  rotate: true
+  xy: 779, 61
+  size: 173, 278
+  orig: 614, 300
+  offset: 211, 0
+  index: -1
+images/bagua/bag_feichu_160
+  rotate: true
+  xy: 477, 350
+  size: 451, 300
+  orig: 614, 300
+  offset: 91, 0
+  index: -1
+images/bagua/bag_feichu_162
+  rotate: false
+  xy: 2, 27
+  size: 544, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/bagua/bag_feichu_164
+  rotate: false
+  xy: 594, 1120
+  size: 550, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/bagua/bag_feichu_166
+  rotate: true
+  xy: 779, 236
+  size: 580, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/bagua/bag_feichu_172
+  rotate: true
+  xy: 1762, 1152
+  size: 254, 214
+  orig: 614, 300
+  offset: 295, 0
+  index: -1
+images/bagua/bag_feichu_174
+  rotate: false
+  xy: 548, 48
+  size: 229, 300
+  orig: 614, 300
+  offset: 341, 0
+  index: -1
+images/bagua/bag_fire_012
+  rotate: true
+  xy: 1526, 10
+  size: 150, 152
+  orig: 300, 300
+  offset: 76, 75
+  index: -1
+images/bagua/bag_fire_022
+  rotate: true
+  xy: 1059, 12
+  size: 148, 154
+  orig: 300, 300
+  offset: 79, 74
+  index: -1
+images/bagua/bag_fire_024
+  rotate: true
+  xy: 1215, 10
+  size: 150, 154
+  orig: 300, 300
+  offset: 77, 74
+  index: -1
+images/bagua/bag_fire_026
+  rotate: true
+  xy: 1371, 9
+  size: 151, 153
+  orig: 300, 300
+  offset: 76, 74
+  index: -1
+images/bagua/bag_fire_052
+  rotate: true
+  xy: 1836, 2
+  size: 146, 153
+  orig: 300, 300
+  offset: 76, 75
+  index: -1
+images/bagua/bag_fire_054
+  rotate: true
+  xy: 1680, 2
+  size: 146, 154
+  orig: 300, 300
+  offset: 76, 74
+  index: -1
+images/bagua/bag_mask_000
+  rotate: true
+  xy: 1762, 1408
+  size: 285, 231
+  orig: 614, 300
+  offset: 163, 30
+  index: -1
+images/bagua/bag_mask_001
+  rotate: false
+  xy: 576, 818
+  size: 537, 300
+  orig: 614, 300
+  offset: 45, 0
+  index: -1
+images/bagua/bag_mask_002
+  rotate: false
+  xy: 1146, 1672
+  size: 614, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/bagua/bag_mask_003
+  rotate: false
+  xy: 1146, 1370
+  size: 614, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/bagua/bag_mask_004
+  rotate: false
+  xy: 1146, 1068
+  size: 614, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/bagua/bag_mask_005
+  rotate: false
+  xy: 1115, 766
+  size: 614, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/bagua/bag_mask_006
+  rotate: false
+  xy: 1081, 464
+  size: 614, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/bagua/bag_mask_007
+  rotate: false
+  xy: 1081, 162
+  size: 614, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/bagua/bag_mask_008
+  rotate: true
+  xy: 1697, 150
+  size: 614, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/bagua/bag_zjglow_000
+  rotate: false
+  xy: 1762, 1695
+  size: 280, 277
+  orig: 286, 290
+  offset: 6, 0
+  index: -1
+images/bagua/baguaglow_070
+  rotate: false
+  xy: 1731, 766
+  size: 303, 300
+  orig: 614, 300
+  offset: 156, 0
+  index: -1
+images/baguazhongjian
+  rotate: false
+  xy: 2, 803
+  size: 572, 578
+  orig: 572, 578
+  offset: 0, 0
+  index: -1
+images/baguazuiwai
+  rotate: false
+  xy: 2, 329
+  size: 473, 472
+  orig: 473, 472
+  offset: 0, 0
+  index: -1
+images/gangdi
+  rotate: false
+  xy: 2, 1383
+  size: 590, 589
+  orig: 590, 589
+  offset: 0, 0
+  index: -1
+images/image
+  rotate: false
+  xy: 576, 1380
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+
+SS_scs_bagua2.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/bagua/bag_feichu_156
+  rotate: false
+  xy: 1638, 1609
+  size: 342, 299
+  orig: 614, 300
+  offset: 162, 0
+  index: -1
+images/bagua/bag_feichu_158
+  rotate: false
+  xy: 2, 702
+  size: 388, 300
+  orig: 614, 300
+  offset: 142, 0
+  index: -1
+images/bagua/bag_feichu_168
+  rotate: false
+  xy: 1032, 1306
+  size: 366, 300
+  orig: 614, 300
+  offset: 131, 0
+  index: -1
+images/bagua/bag_feichu_170
+  rotate: false
+  xy: 1234, 1608
+  size: 402, 300
+  orig: 614, 300
+  offset: 111, 0
+  index: -1
+images/bagua/bag_fire_000
+  rotate: false
+  xy: 545, 703
+  size: 146, 148
+  orig: 300, 300
+  offset: 76, 76
+  index: -1
+images/bagua/bag_fire_002
+  rotate: false
+  xy: 1491, 1158
+  size: 148, 146
+  orig: 300, 300
+  offset: 77, 76
+  index: -1
+images/bagua/bag_fire_004
+  rotate: false
+  xy: 839, 747
+  size: 145, 145
+  orig: 300, 300
+  offset: 77, 76
+  index: -1
+images/bagua/bag_fire_006
+  rotate: false
+  xy: 839, 894
+  size: 145, 146
+  orig: 300, 300
+  offset: 77, 75
+  index: -1
+images/bagua/bag_fire_008
+  rotate: false
+  xy: 1552, 1457
+  size: 146, 149
+  orig: 300, 300
+  offset: 76, 75
+  index: -1
+images/bagua/bag_fire_010
+  rotate: false
+  xy: 2, 156
+  size: 147, 152
+  orig: 300, 300
+  offset: 76, 75
+  index: -1
+images/bagua/bag_fire_014
+  rotate: false
+  xy: 2, 310
+  size: 148, 152
+  orig: 300, 300
+  offset: 77, 75
+  index: -1
+images/bagua/bag_fire_016
+  rotate: true
+  xy: 392, 703
+  size: 146, 151
+  orig: 300, 300
+  offset: 77, 76
+  index: -1
+images/bagua/bag_fire_018
+  rotate: false
+  xy: 1849, 1458
+  size: 143, 149
+  orig: 300, 300
+  offset: 80, 77
+  index: -1
+images/bagua/bag_fire_020
+  rotate: false
+  xy: 152, 311
+  size: 141, 151
+  orig: 300, 300
+  offset: 82, 76
+  index: -1
+images/bagua/bag_fire_028
+  rotate: false
+  xy: 618, 1041
+  size: 151, 151
+  orig: 300, 300
+  offset: 76, 75
+  index: -1
+images/bagua/bag_fire_030
+  rotate: false
+  xy: 1400, 1306
+  size: 149, 147
+  orig: 300, 300
+  offset: 76, 77
+  index: -1
+images/bagua/bag_fire_032
+  rotate: false
+  xy: 1700, 1458
+  size: 147, 149
+  orig: 300, 300
+  offset: 76, 78
+  index: -1
+images/bagua/bag_fire_034
+  rotate: false
+  xy: 692, 891
+  size: 145, 148
+  orig: 300, 300
+  offset: 77, 79
+  index: -1
+images/bagua/bag_fire_036
+  rotate: false
+  xy: 544, 853
+  size: 146, 149
+  orig: 300, 300
+  offset: 76, 78
+  index: -1
+images/bagua/bag_fire_038
+  rotate: false
+  xy: 771, 1042
+  size: 150, 150
+  orig: 300, 300
+  offset: 76, 77
+  index: -1
+images/bagua/bag_fire_040
+  rotate: false
+  xy: 392, 851
+  size: 150, 151
+  orig: 300, 300
+  offset: 76, 76
+  index: -1
+images/bagua/bag_fire_042
+  rotate: false
+  xy: 1400, 1455
+  size: 150, 151
+  orig: 300, 300
+  offset: 76, 76
+  index: -1
+images/bagua/bag_fire_044
+  rotate: false
+  xy: 2, 2
+  size: 146, 152
+  orig: 300, 300
+  offset: 77, 75
+  index: -1
+images/bagua/bag_fire_046
+  rotate: true
+  xy: 1186, 1159
+  size: 145, 151
+  orig: 300, 300
+  offset: 77, 75
+  index: -1
+images/bagua/bag_fire_048
+  rotate: false
+  xy: 693, 741
+  size: 144, 148
+  orig: 300, 300
+  offset: 76, 76
+  index: -1
+images/bagua/bag_fire_050
+  rotate: true
+  xy: 1032, 1159
+  size: 145, 152
+  orig: 300, 300
+  offset: 76, 75
+  index: -1
+images/bagua/bag_fire_056
+  rotate: false
+  xy: 241, 547
+  size: 147, 153
+  orig: 300, 300
+  offset: 76, 74
+  index: -1
+images/bagua/bag_fire_058
+  rotate: true
+  xy: 1339, 1158
+  size: 146, 150
+  orig: 300, 300
+  offset: 76, 75
+  index: -1
+images/bagua/bag_mask_009
+  rotate: false
+  xy: 2, 1608
+  size: 614, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/bagua/bag_mask_010
+  rotate: false
+  xy: 2, 1306
+  size: 614, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/bagua/bag_mask_011
+  rotate: false
+  xy: 618, 1608
+  size: 614, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/bagua/bag_mask_012
+  rotate: false
+  xy: 2, 1004
+  size: 614, 300
+  orig: 614, 300
+  offset: 0, 0
+  index: -1
+images/bagua/bag_zwglow_000
+  rotate: false
+  xy: 2, 464
+  size: 237, 236
+  orig: 237, 236
+  offset: 0, 0
+  index: -1
+images/baguadi
+  rotate: false
+  xy: 618, 1194
+  size: 412, 412
+  orig: 412, 412
+  offset: 0, 0
+  index: -1

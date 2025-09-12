@@ -1,0 +1,118 @@
+
+SS_eff_zhulianbihe.png
+size: 614,614
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fangsheguangxianbi
+  rotate: false
+  xy: 246, 52
+  size: 125, 124
+  orig: 128, 128
+  offset: 2, 2
+  index: -1
+zhulianhexinbi
+  rotate: false
+  xy: 524, 92
+  size: 82, 85
+  orig: 82, 85
+  offset: 0, 0
+  index: -1
+zhulianwenzi
+  rotate: false
+  xy: 2, 231
+  size: 279, 76
+  orig: 279, 76
+  offset: 0, 0
+  index: -1
+zhulianyoubi
+  rotate: true
+  xy: 2, 110
+  size: 119, 229
+  orig: 119, 229
+  offset: 0, 0
+  index: -1
+zhulianzuobi
+  rotate: false
+  xy: 324, 382
+  size: 119, 230
+  orig: 119, 230
+  offset: 0, 0
+  index: -1
+zhulianzuobi/hebilizitu_00000
+  rotate: false
+  xy: 233, 197
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+zhulianzuobi/zhulianhexinbi_00000
+  rotate: false
+  xy: 2, 309
+  size: 320, 303
+  orig: 320, 332
+  offset: 0, 29
+  index: -1
+zhulianzuobi/zhulianzuobi_00000
+  rotate: true
+  xy: 129, 17
+  size: 91, 115
+  orig: 256, 256
+  offset: 109, 73
+  index: -1
+zhulianzuobi/zhulianzuobi_00001
+  rotate: false
+  xy: 416, 179
+  size: 128, 128
+  orig: 256, 256
+  offset: 72, 67
+  index: -1
+zhulianzuobi/zhulianzuobi_00002
+  rotate: false
+  xy: 445, 471
+  size: 157, 141
+  orig: 256, 256
+  offset: 43, 60
+  index: -1
+zhulianzuobi/zhulianzuobi_00003
+  rotate: false
+  xy: 445, 334
+  size: 143, 135
+  orig: 256, 256
+  offset: 57, 63
+  index: -1
+zhulianzuobi/zhulianzuobi_00004
+  rotate: false
+  xy: 283, 178
+  size: 131, 129
+  orig: 256, 256
+  offset: 69, 66
+  index: -1
+zhulianzuobi/zhulianzuobi_00005
+  rotate: true
+  xy: 2, 2
+  size: 106, 125
+  orig: 256, 256
+  offset: 94, 68
+  index: -1
+zhulianzuobi/zhulianzuobi_00006
+  rotate: false
+  xy: 373, 55
+  size: 86, 121
+  orig: 256, 256
+  offset: 114, 70
+  index: -1
+zhulianzuobi/zhulianzuobi_00007
+  rotate: true
+  xy: 324, 309
+  size: 71, 117
+  orig: 256, 256
+  offset: 129, 72
+  index: -1
+zhulianzuobi/zhulianzuobi_00008
+  rotate: false
+  xy: 461, 63
+  size: 61, 114
+  orig: 256, 256
+  offset: 139, 74
+  index: -1

@@ -1,0 +1,728 @@
+{
+  "_$ver": 1,
+  "_$id": "v8x30skn",
+  "_$runtime": "res://a50e61ce-87a9-4074-8649-8adaa0ec1837",
+  "_$preloads": [
+    "res://7068e005-38b2-4b2f-903f-b93d4152583f",
+    "res://9fdad28c-9193-4c37-bd4a-6a660c3398b5",
+    "res://05ecf346-1637-472f-ace3-a975cad437d8",
+    "res://df0b4fc5-4b51-4a1f-8920-9fa9c677a6d3",
+    "res://d4b63484-fd0a-44df-bd24-7ef86af39f83",
+    "res://3ab3a667-7358-4dc8-bf41-cb18725c2f36",
+    "res://63cbcaa9-037f-4ed7-ba3f-e5027efa49f0",
+    "res://0ddab936-f58c-4aff-b1df-5281f1b4c5dc"
+  ],
+  "_$type": "GWidget",
+  "name": "card",
+  "width": 140,
+  "height": 195,
+  "anchorX": 0.5,
+  "anchorY": 0.5,
+  "drawCallOptimize": true,
+  "controllers": {
+    "_$type": "Record",
+    "type": {
+      "_$type": "Controller",
+      "pages": [
+        "card",
+        "general",
+        "command"
+      ]
+    }
+  },
+  "_startPages": {
+    "_$type": "Record"
+  },
+  "_$comp": [
+    {
+      "_$type": "9865351d-f61b-4be8-88df-c727c305fc27",
+      "scriptPath": "../src/comps/ChooseItemComp.ts",
+      "clickNode": {
+        "_$ref": "v8x30skn"
+      },
+      "selectedImage": [
+        {
+          "_$ref": "00nmr7jf"
+        }
+      ],
+      "canClickMask": {
+        "_$ref": "vb5rrsjr"
+      },
+      "isButton": null
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "trso4nhj",
+      "_$type": "GWidget",
+      "name": "card",
+      "width": 140,
+      "height": 195,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "v8x30skn",
+            "_$ctrl": "type"
+          },
+          "pages": [
+            0
+          ]
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "8okbawdc",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "card_image",
+          "width": 140,
+          "height": 195,
+          "src": "res://9fdad28c-9193-4c37-bd4a-6a660c3398b5",
+          "autoSize": false
+        },
+        {
+          "_$id": "3pzn8qnn",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "number",
+          "x": 2,
+          "y": 2,
+          "width": 41,
+          "height": 41,
+          "src": "",
+          "autoSize": false
+        },
+        {
+          "_$id": "h2e1u02n",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "suit",
+          "x": 6,
+          "y": 29,
+          "width": 32,
+          "height": 26,
+          "src": "",
+          "autoSize": false
+        },
+        {
+          "_$id": "xzvvmrlk",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "color",
+          "x": 109,
+          "y": 7,
+          "width": 24,
+          "height": 40,
+          "src": ""
+        },
+        {
+          "_$id": "okrth11q",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "transferable",
+          "y": 150,
+          "width": 45,
+          "height": 45,
+          "visible": false,
+          "src": "res://fe239c23-9909-491d-a99f-806b7511d06c",
+          "autoSize": false
+        },
+        {
+          "_$id": "vpmkd8ic",
+          "_$prefab": "5073e869-ab61-473d-af96-fb7200c6da75",
+          "_$var": true,
+          "name": "viewas",
+          "active": true,
+          "x": 8,
+          "y": 80,
+          "visible": false,
+          "_$child": [
+            {
+              "_$override": "nbv7gumm",
+              "text": "",
+              "fontSize": 20
+            }
+          ]
+        },
+        {
+          "_$id": "iqvshn57",
+          "_$type": "GBox",
+          "name": "subcards",
+          "x": 8,
+          "y": 195,
+          "width": 124,
+          "height": 30,
+          "layout": {
+            "type": 1,
+            "rowGap": -5,
+            "stretchY": 2
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "25j3nym3",
+      "_$type": "GWidget",
+      "name": "general",
+      "width": 140,
+      "height": 195,
+      "controllers": {
+        "_$type": "Record",
+        "kingdom": {
+          "_$type": "Controller",
+          "pages": [
+            "",
+            ""
+          ]
+        }
+      },
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "v8x30skn",
+            "_$ctrl": "type"
+          },
+          "pages": [
+            1
+          ]
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "ut5icaoq",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "general_image",
+          "x": -15,
+          "y": 2,
+          "width": 250,
+          "height": 292,
+          "scaleX": 0.66,
+          "scaleY": 0.66,
+          "mask": {
+            "_$ref": "e8aa8u5h"
+          },
+          "src": "res://dedcbece-f951-4b87-9e7f-f905ec9ed597",
+          "autoSize": false,
+          "_$child": [
+            {
+              "_$id": "e8aa8u5h",
+              "_$type": "GWidget",
+              "name": "mask",
+              "x": 25,
+              "y": -3,
+              "width": 206,
+              "height": 295,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#ffffff"
+              }
+            }
+          ]
+        },
+        {
+          "_$id": "8oaorcvu",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "pkgname",
+          "x": 62,
+          "y": 172,
+          "width": 76,
+          "height": 23,
+          "visible": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "rgba(0,0,0,0.5882352941176471)"
+          },
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "25j3nym3"
+              },
+              "data": [
+                9,
+                0,
+                16,
+                0
+              ]
+            }
+          ],
+          "text": "国战标准",
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 18,
+          "color": "rgba(255, 255, 255, 1)",
+          "fitContent": 1,
+          "align": "right",
+          "valign": "middle",
+          "strokeColor": "rgba(255,255,255,0.5882352941176471)"
+        },
+        {
+          "_$id": "4u5z2934",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "border",
+          "width": 140,
+          "height": 195,
+          "src": "res://3ab3a667-7358-4dc8-bf41-cb18725c2f36",
+          "autoSize": false
+        },
+        {
+          "_$id": "bj3xtch8",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "kingdom",
+          "width": 78,
+          "height": 82,
+          "scaleX": 0.6,
+          "scaleY": 0.6,
+          "_mouseState": 2,
+          "src": "res://98eba5af-f1f2-4ead-9533-09d2355b10f5",
+          "autoSize": false
+        },
+        {
+          "_$id": "qjvffzt6",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "kingdom2",
+          "x": 13,
+          "y": 19,
+          "width": 78,
+          "height": 82,
+          "scaleX": 0.6,
+          "scaleY": 0.6,
+          "_mouseState": 2,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "25j3nym3",
+                "_$ctrl": "kingdom"
+              },
+              "pages": [
+                1
+              ]
+            }
+          ],
+          "src": "res://98eba5af-f1f2-4ead-9533-09d2355b10f5",
+          "autoSize": false
+        },
+        {
+          "_$id": "pxlsddzl",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "general_name",
+          "x": 3,
+          "y": 33,
+          "width": 35,
+          "height": 129,
+          "text": "[color=#f2ff00]{prefix=}[/color]{name=孙策}",
+          "font": "res://f69bd55c-f37d-4938-a7ea-559c8976cc6b",
+          "fontSize": 30,
+          "color": "#ffffff",
+          "ubb": true,
+          "templateVars": true,
+          "align": "center",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 0,
+          "stroke": 2
+        },
+        {
+          "_$id": "2spq4c65",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "shield",
+          "x": 116,
+          "y": 5,
+          "width": 46,
+          "height": 49,
+          "scaleX": 0.5,
+          "scaleY": 0.5,
+          "visible": false,
+          "src": "res://eee3939d-8532-4774-8b80-b35ac47c4bc2",
+          "autoSize": false,
+          "_$child": [
+            {
+              "_$id": "zpi9vxlb",
+              "_$var": true,
+              "_$type": "GTextField",
+              "name": "shield_label",
+              "y": -6,
+              "width": 46,
+              "height": 49,
+              "text": "0",
+              "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+              "fontSize": 40,
+              "color": "#FFFFFF",
+              "bold": true,
+              "align": "center",
+              "valign": "middle",
+              "stroke": 3
+            }
+          ]
+        },
+        {
+          "_$id": "i2tmjlny",
+          "_$var": true,
+          "_$type": "GBox",
+          "name": "hps",
+          "x": 36,
+          "y": 5,
+          "width": 83,
+          "height": 20,
+          "layout": {
+            "type": 2,
+            "rows": 1,
+            "columns": 4,
+            "columnGap": -3,
+            "foldInvisibles": true
+          }
+        },
+        {
+          "_$id": "7dw34qaw",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "hp_label",
+          "x": 55,
+          "y": 4,
+          "width": 40,
+          "height": 21,
+          "visible": false,
+          "text": "5/5",
+          "_isDemo": true,
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 20,
+          "color": "#FFFFFF",
+          "fitContent": 1,
+          "bold": true,
+          "valign": "middle",
+          "padding": [
+            0,
+            5,
+            0,
+            5
+          ],
+          "stroke": 3
+        },
+        {
+          "_$id": "1uu2e9dp",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "zhulian",
+          "x": 2,
+          "y": 130,
+          "width": 94,
+          "height": 42,
+          "scaleX": 1.45,
+          "scaleY": 1.45,
+          "visible": false,
+          "src": "res://f0134225-2744-4f28-8e79-c25346d08c5d",
+          "autoSize": false,
+          "_$child": [
+            {
+              "_$id": "zleorbvx",
+              "_$var": true,
+              "_$type": "GImage",
+              "name": "zhulian_zi",
+              "y": 14,
+              "width": 95,
+              "height": 15,
+              "src": "res://508e019b-df78-4718-9045-90d96537b017",
+              "autoSize": false
+            }
+          ]
+        },
+        {
+          "_$id": "gj7bdtu3",
+          "_$type": "GImage",
+          "name": "zhulian_selected0",
+          "x": 23,
+          "y": 104,
+          "width": 92,
+          "height": 92,
+          "visible": false,
+          "src": "res://07219b79-c88f-4323-8f0a-3ef1bd764659"
+        },
+        {
+          "_$id": "cl58qoee",
+          "_$type": "GImage",
+          "name": "zhulian_selected1",
+          "x": 23,
+          "y": 104,
+          "width": 92,
+          "height": 92,
+          "visible": false,
+          "src": "res://d6b35cda-65c4-4a7e-b1f1-7b9358a6fb54"
+        },
+        {
+          "_$id": "rkq41ily",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "general_back",
+          "width": 140,
+          "height": 195,
+          "visible": false,
+          "src": "res://63cbcaa9-037f-4ed7-ba3f-e5027efa49f0",
+          "autoSize": false
+        },
+        {
+          "_$id": "ifnk8zkw",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "pkg_icon",
+          "x": 97,
+          "y": 152,
+          "width": 40,
+          "height": 40,
+          "src": "",
+          "autoSize": false
+        }
+      ]
+    },
+    {
+      "_$id": "xmn6mqal",
+      "_$type": "GWidget",
+      "name": "command",
+      "width": 140,
+      "height": 195,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "v8x30skn",
+            "_$ctrl": "type"
+          },
+          "pages": [
+            2
+          ]
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "iwrpoly6",
+          "_$type": "GImage",
+          "name": "image",
+          "width": 140,
+          "height": 195,
+          "src": "res://9fdad28c-9193-4c37-bd4a-6a660c3398b5",
+          "autoSize": false
+        },
+        {
+          "_$id": "73dnv3f9",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "img",
+          "x": -43,
+          "y": -79,
+          "width": 186,
+          "height": 234,
+          "scaleX": 1.2,
+          "scaleY": 1.2,
+          "mask": {
+            "_$ref": "t8hv8qaa"
+          },
+          "src": "res://d4b63484-fd0a-44df-bd24-7ef86af39f83",
+          "_$child": [
+            {
+              "_$id": "t8hv8qaa",
+              "_$type": "GWidget",
+              "name": "node",
+              "x": 42,
+              "y": 72,
+              "width": 104,
+              "height": 149,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#ffffff"
+              }
+            }
+          ]
+        },
+        {
+          "_$id": "m5u20cop",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "miaoji",
+          "width": 140,
+          "height": 195,
+          "visible": false,
+          "src": "res://aa029795-1254-40ef-bc4a-82aa45c73464",
+          "autoSize": false
+        },
+        {
+          "_$id": "ge7j0uqo",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "command_label",
+          "x": 3,
+          "width": 137,
+          "height": 195,
+          "_mouseState": 2,
+          "text": "",
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 30,
+          "color": "rgba(255, 255, 255, 1)",
+          "ubb": true,
+          "align": "center",
+          "valign": "middle",
+          "overflow": "shrink",
+          "wordWrap": true,
+          "stroke": 4
+        },
+        {
+          "_$id": "cbjbgqb4",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "command_back",
+          "width": 140,
+          "height": 195,
+          "visible": false,
+          "src": "res://df0b4fc5-4b51-4a1f-8920-9fa9c677a6d3"
+        }
+      ]
+    },
+    {
+      "_$id": "vb5rrsjr",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "canClick",
+      "width": 140,
+      "height": 195,
+      "visible": false,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "rgba(0,0,0,0.49019607843137253)"
+      }
+    },
+    {
+      "_$id": "00nmr7jf",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "isSelected",
+      "x": 39,
+      "y": 162,
+      "width": 63,
+      "height": 26,
+      "visible": false,
+      "src": "res://7068e005-38b2-4b2f-903f-b93d4152583f"
+    },
+    {
+      "_$id": "42wwcyoz",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "label",
+      "x": 8,
+      "y": 111,
+      "width": 124,
+      "height": 79,
+      "text": "",
+      "_isDemo": true,
+      "font": "res://5afb0bf5-9315-48c4-b332-4e0bb0e2042d",
+      "fontSize": 22,
+      "color": "#ffffff",
+      "bold": true,
+      "ubb": true,
+      "align": "center",
+      "valign": "bottom",
+      "overflow": "shrink",
+      "wordWrap": true,
+      "stroke": 3
+    },
+    {
+      "_$id": "y19eo8ih",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "animations",
+      "width": 140,
+      "height": 195,
+      "_$child": [
+        {
+          "_$id": "wiqc7bn0",
+          "_$var": true,
+          "_$type": "Sprite",
+          "name": "panding",
+          "x": 69,
+          "y": 103,
+          "width": 300,
+          "height": 300,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "visible": false,
+          "_$comp": [
+            {
+              "_$type": "Spine2DRenderNode",
+              "layer": 0,
+              "useFastRender": false,
+              "source": "res://e85dc68e-46ba-4812-8456-ac07be4eea83",
+              "animationName": "play5",
+              "loop": false,
+              "preview": true,
+              "physicsUpdate": 2
+            }
+          ]
+        },
+        {
+          "_$id": "92pw02ho",
+          "_$var": true,
+          "_$type": "Animation",
+          "name": "pindianlose",
+          "x": -7,
+          "y": 44,
+          "width": 100,
+          "height": 100,
+          "scaleX": 0.5,
+          "scaleY": 0.5,
+          "visible": false,
+          "source": "res://d783693f-2a44-4bf7-8b49-0a05d70b99eb",
+          "index": 0,
+          "interval": 50,
+          "loop": false
+        },
+        {
+          "_$id": "m72tn0r5",
+          "_$var": true,
+          "_$type": "Animation",
+          "name": "pindianwin",
+          "x": -80,
+          "y": -99,
+          "width": 100,
+          "height": 100,
+          "visible": false,
+          "source": "res://b52f760b-1289-43b4-a0ad-7e37c9dcf5ff",
+          "index": 0,
+          "interval": 50,
+          "loop": false
+        }
+      ]
+    },
+    {
+      "_$id": "72v0mh8s",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "cardtag",
+      "x": 4,
+      "y": 143,
+      "width": 67,
+      "height": 29,
+      "visible": false,
+      "src": "res://f5afdabc-c115-4c12-9dd2-a00e3fbc1c05",
+      "_$child": [
+        {
+          "_$id": "nuxm6os9",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "tagtext",
+          "width": 67,
+          "height": 29,
+          "text": "明牌",
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 20,
+          "color": "#ffffff"
+        }
+      ]
+    }
+  ]
+}

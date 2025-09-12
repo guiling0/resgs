@@ -1,0 +1,47 @@
+{
+  "_$ver": 1,
+  "_$id": "kwbfu7cw",
+  "_$runtime": "res://7b0b4440-7591-4846-90e7-671bd06bbf3f",
+  "_$preloads": [
+    "res://2854fc36-30d9-48a5-8925-e13397a44339"
+  ],
+  "_$type": "Sprite",
+  "name": "Sprite",
+  "x": 490,
+  "y": 510,
+  "width": 940,
+  "height": 94,
+  "_$child": [
+    {
+      "_$id": "pdqht008",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 940,
+      "height": 94,
+      "src": "res://2854fc36-30d9-48a5-8925-e13397a44339",
+      "_$child": [
+        {
+          "_$id": "suzx8234",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "text",
+          "width": 940,
+          "height": 94,
+          "text": "提示文本",
+          "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+          "fontSize": 40,
+          "color": "#FFFFFF",
+          "align": "center",
+          "valign": "middle",
+          "overflow": "shrink",
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

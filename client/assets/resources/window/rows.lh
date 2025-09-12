@@ -1,0 +1,104 @@
+{
+  "_$ver": 1,
+  "_$id": "dili4kne",
+  "_$runtime": "res://9164cc6f-40ba-4815-a21a-6c9d8241f627",
+  "_$type": "GWidget",
+  "name": "cards",
+  "width": 176,
+  "height": 195,
+  "relations": [
+    {
+      "_$type": "Relation",
+      "target": {
+        "_$ref": "t1m9ch6h"
+      },
+      "data": [
+        20,
+        0,
+        24,
+        0
+      ]
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "t1m9ch6h",
+      "_$var": true,
+      "_$type": "GBox",
+      "name": "cards",
+      "width": 176,
+      "height": 195,
+      "layout": {
+        "type": 1,
+        "columns": 10,
+        "rowGap": 1,
+        "columnGap": 5,
+        "foldInvisibles": true,
+        "stretchX": 2,
+        "stretchY": 2
+      },
+      "_$child": [
+        {
+          "_$id": "3ibk54hy",
+          "_$prefab": "e01736b2-5a3b-4e76-b0ca-eb55d84ca29e",
+          "_$var": true,
+          "name": "rows_items_0",
+          "active": true,
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "width": 176,
+          "height": 195
+        },
+        {
+          "_$id": "7j77lr0v",
+          "_$prefab": "e01736b2-5a3b-4e76-b0ca-eb55d84ca29e",
+          "_$var": true,
+          "name": "rows_items_1",
+          "active": true,
+          "x": 0,
+          "y": 196,
+          "visible": false,
+          "width": 176,
+          "height": 195
+        },
+        {
+          "_$id": "qbudqw3g",
+          "_$prefab": "e01736b2-5a3b-4e76-b0ca-eb55d84ca29e",
+          "_$var": true,
+          "name": "rows_items_2",
+          "active": true,
+          "x": 0,
+          "y": 392,
+          "visible": false,
+          "width": 176,
+          "height": 195
+        },
+        {
+          "_$id": "nkq8xcva",
+          "_$prefab": "e01736b2-5a3b-4e76-b0ca-eb55d84ca29e",
+          "_$var": true,
+          "name": "rows_items_3",
+          "active": true,
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "width": 176,
+          "height": 195
+        },
+        {
+          "_$id": "0y585gx8",
+          "_$prefab": "e01736b2-5a3b-4e76-b0ca-eb55d84ca29e",
+          "_$var": true,
+          "name": "rows_items_4",
+          "active": true,
+          "x": 0,
+          "y": 784,
+          "visible": false,
+          "width": 176,
+          "height": 195
+        }
+      ]
+    }
+  ]
+}

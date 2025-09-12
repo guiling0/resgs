@@ -1,0 +1,2016 @@
+{
+  "_$ver": 1,
+  "_$id": "t6d7joow",
+  "_$runtime": "res://ea8c89af-3601-4c9f-b471-85eba4c150eb",
+  "_$preloads": [
+    "res://9536be18-4cdb-4084-b6e4-6b92dcb402fa",
+    "res://ddd7cf5a-724b-4913-b083-ef33d7e2924b",
+    "res://987005ff-7c5d-41ca-b74d-7fd0bf1c1c51",
+    "res://d7efa675-9e8a-4221-a8f6-97f88fd7caec",
+    "res://eb343f49-32df-4e3a-af37-8d4e0f540dfe",
+    "res://632114a5-04da-40ae-8980-890c4f058270",
+    "res://44d5c44e-e21e-4eb4-90d7-77cc20fb6cd4",
+    "res://ae6d62eb-138e-47e6-86b6-467a5614f257",
+    "res://b87ce4aa-86f9-4dc6-9b72-d9116dfbe798",
+    "res://8d97b7da-1cbc-483a-a98d-8839ec31f820",
+    "res://93b3dbdf-3904-4522-b739-0335b09d7b87",
+    "res://092e6084-07c6-4ca8-ad85-485338a3130d",
+    "res://69bcfa4f-bf6b-4a43-8f58-825b7a372ac8",
+    "res://cac4898f-9026-486a-9f91-48867d26795b",
+    "res://a903e8d4-a82a-4d21-9096-596c8c438154",
+    "res://eca6b4a6-e3c1-4053-8875-f2579d07000b",
+    "res://52442da1-6760-43b4-a316-15b84e5218d4",
+    "res://93cbc9b5-cf20-4a3b-95c5-da26944f3f2a",
+    "res://7badcd46-85a9-4236-bc81-48cdf53a844c",
+    "res://c30b1d85-cfec-4430-be81-269230fdf263",
+    "res://1c17ada0-4343-485f-bb62-5d4cdfe88821",
+    "res://d382412f-82da-4885-b5ef-8135739f33fd",
+    "res://857da7dd-4188-4f15-936e-5616121705b3",
+    "res://d39c2f77-5bff-4205-8763-253b429e60b7",
+    "res://bcc471fd-5e5e-40fd-a746-bfb533a552b8",
+    "res://2ffc2719-f024-4894-aa0d-f38e234983f2",
+    "res://84ebbf9c-2655-4afc-a2bd-01405ae1cfe3",
+    "res://a6cf99cf-ad5a-4af9-baed-b5086184767e",
+    "res://eee6eea6-a66b-4dec-a1ee-b00bb085afb6",
+    "res://700da9d5-3457-4b1e-a708-fe7321541ea3",
+    "res://5e80ccdc-d8e2-46b6-a19f-3fe0664c8520",
+    "res://dbaa20b7-a4bf-44b3-8c38-6600c9dfd283",
+    "res://8a4b9c88-77da-41b5-85e5-b37a9e518c82",
+    "res://eae021d1-d8b2-4c65-b967-ec5ad232d371",
+    "res://994d3952-7a55-430c-b0bd-7f99dc626c6e",
+    "res://a45cd8b6-8cac-4593-bb4f-b728b3a35f81",
+    "res://f65eb690-7e92-4272-93d6-6f342aaafefb",
+    "res://98c243af-1f76-436a-b1bd-f4e854133907",
+    "res://930a5783-6051-4cec-bf80-3a158514877c",
+    "res://595494ce-1f1f-4746-833c-82f07957d5bd",
+    "res://e7c62393-471c-4c63-a066-6376825e78ef",
+    "res://49526630-f731-4d41-9e5e-41632576ec16",
+    "res://c49a03b1-5e41-43e1-a061-fffc8e70c97c",
+    "res://0e5de363-844b-47a3-a05e-c8edc5dc95ec",
+    "res://3e9528aa-4702-4bbc-8390-c35a703ad377"
+  ],
+  "_$type": "GWidget",
+  "name": "game",
+  "width": 1920,
+  "height": 1080,
+  "mouseThrough": true,
+  "gears": [
+    {
+      "_$type": "GearDisplay",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "_$comp": [
+    {
+      "_$type": "2604882a-3ace-47ee-a51c-9322c37496d0",
+      "scriptPath": "../src/comps/room/RoomGameComp.ts"
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "dakv17wv",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "bg",
+      "width": 1920,
+      "height": 1080,
+      "src": "",
+      "autoSize": false
+    },
+    {
+      "_$id": "k4soq0mm",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "aozhan",
+      "width": 1920,
+      "height": 1080,
+      "visible": false,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "ai4hru2m",
+          "_$type": "Sprite",
+          "name": "aozhan_huo",
+          "x": 959,
+          "y": 539,
+          "width": 1336,
+          "height": 752,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "scaleX": 1.45,
+          "scaleY": 1.45,
+          "_$comp": [
+            {
+              "_$type": "Spine2DRenderNode",
+              "layer": 0,
+              "source": "res://e52ccb05-dfd4-429f-9d2e-99d8e3e998ea",
+              "animationName": "aozhan_huo",
+              "preview": true,
+              "physicsUpdate": 2
+            }
+          ]
+        },
+        {
+          "_$id": "33unodjc",
+          "_$type": "GImage",
+          "name": "img",
+          "x": 465,
+          "y": 420,
+          "width": 990,
+          "height": 239,
+          "src": "res://8935b069-281e-48ca-aada-2e0b30f24ce6",
+          "_$child": [
+            {
+              "_$id": "kokkuwtj",
+              "_$type": "GImage",
+              "name": "img_1",
+              "x": 342,
+              "y": 181,
+              "width": 306,
+              "height": 40,
+              "src": "res://3299644d-0e76-4f32-addd-5c0ed6ddf05a"
+            }
+          ]
+        },
+        {
+          "_$id": "dogeb5h9",
+          "_$var": true,
+          "_$type": "Skeleton",
+          "name": "aozhan_ani",
+          "x": 957,
+          "y": 541,
+          "width": 100,
+          "height": 100,
+          "mouseThrough": true,
+          "source": "res://aacb423d-3a34-4ada-a2a1-e4fb636abc71",
+          "animationName": "play",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "_$id": "yjdqzcgr",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "time",
+      "x": 1653,
+      "y": -2,
+      "width": 241,
+      "height": 55,
+      "text": "00:00:00",
+      "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+      "fontSize": 35,
+      "color": "#ffffff",
+      "bold": true,
+      "align": "center",
+      "valign": "middle"
+    },
+    {
+      "_$id": "xk5mzjwm",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "round",
+      "x": 1643,
+      "y": 43,
+      "width": 254,
+      "height": 86,
+      "background": {
+        "_$type": "DrawTextureCmd",
+        "texture": {
+          "_$uuid": "69bcfa4f-bf6b-4a43-8f58-825b7a372ac8",
+          "_$type": "Texture"
+        }
+      },
+      "_$child": [
+        {
+          "_$id": "2zn57dvk",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "circle",
+          "x": 124,
+          "y": -11,
+          "width": 74,
+          "height": 55,
+          "text": "1",
+          "font": "res://8d97b7da-1cbc-483a-a98d-8839ec31f820",
+          "fontSize": 40,
+          "color": "#ffffff",
+          "align": "center",
+          "valign": "middle"
+        },
+        {
+          "_$id": "s8ma3jfl",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "cardcount",
+          "x": 184,
+          "y": 35,
+          "width": 99,
+          "height": 55,
+          "text": "0",
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 35,
+          "color": "#e4dcb1",
+          "valign": "middle"
+        }
+      ]
+    },
+    {
+      "_$id": "5eeejbxa",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "players",
+      "width": 1920,
+      "height": 1080,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "6zrjmx1b",
+          "_$prefab": "dc8c148f-b30a-4475-b100-a358d00c6ec2",
+          "_$var": true,
+          "name": "selfseat",
+          "active": true,
+          "x": 0,
+          "y": 650,
+          "height": 430,
+          "visible": true,
+          "mouseThrough": true,
+          "_$child": [
+            {
+              "_$override": [
+                "853zqbek",
+                "oov48q2u"
+              ],
+              "visible": false
+            },
+            {
+              "_$override": "4btkri64",
+              "y": 65,
+              "height": 138
+            },
+            {
+              "_$override": "hy2bbdn8",
+              "text": ""
+            },
+            {
+              "_$override": "yszy1qbe",
+              "visible": false
+            },
+            {
+              "_$override": "0drasbf9",
+              "visible": false
+            },
+            {
+              "_$override": "1drmkjj9",
+              "visible": false
+            },
+            {
+              "_$override": "5l6zkzxp",
+              "visible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "l2uyneex",
+      "_$var": true,
+      "_$type": "GButton",
+      "name": "tuoguan",
+      "y": 725,
+      "width": 82,
+      "height": 62,
+      "controllers": {
+        "_$type": "Record",
+        "button": {
+          "_$type": "Controller",
+          "pages": [
+            "up",
+            "down",
+            "over",
+            "selectedOver"
+          ]
+        }
+      },
+      "title": "托管",
+      "titleColor": "#a6a080",
+      "titleFontSize": 25,
+      "titleWidget": {
+        "_$ref": "5nhoz976"
+      },
+      "_$child": [
+        {
+          "_$id": "yrj0rezt",
+          "_$type": "GImage",
+          "name": "img",
+          "y": 3,
+          "width": 82,
+          "height": 62,
+          "src": "res://f04e731d-fe51-4109-bc27-c5ec7dfe7496"
+        },
+        {
+          "_$id": "5nhoz976",
+          "_$type": "GTextField",
+          "name": "txt",
+          "width": 82,
+          "height": 62,
+          "text": "托管",
+          "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+          "fontSize": 25,
+          "color": "#a6a080",
+          "bold": true,
+          "align": "center",
+          "valign": "middle",
+          "padding": [
+            6,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "upfvkwof",
+      "_$var": true,
+      "_$type": "GButton",
+      "name": "liaotian",
+      "x": -1,
+      "y": 793,
+      "width": 82,
+      "height": 62,
+      "controllers": {
+        "_$type": "Record",
+        "button": {
+          "_$type": "Controller",
+          "pages": [
+            "up",
+            "down",
+            "over",
+            "selectedOver"
+          ]
+        }
+      },
+      "title": "聊天",
+      "titleColor": "#a6a080",
+      "titleFontSize": 25,
+      "titleWidget": {
+        "_$ref": "d4vhefjw"
+      },
+      "_$child": [
+        {
+          "_$id": "xytk755p",
+          "_$type": "GImage",
+          "name": "img",
+          "y": 3,
+          "width": 82,
+          "height": 62,
+          "src": "res://f04e731d-fe51-4109-bc27-c5ec7dfe7496"
+        },
+        {
+          "_$id": "d4vhefjw",
+          "_$type": "GTextField",
+          "name": "txt",
+          "width": 82,
+          "height": 62,
+          "text": "聊天",
+          "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+          "fontSize": 25,
+          "color": "#a6a080",
+          "bold": true,
+          "align": "center",
+          "valign": "middle",
+          "padding": [
+            6,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "5v9q7y9f",
+      "_$var": true,
+      "_$type": "GButton",
+      "name": "shezhi",
+      "x": 81,
+      "y": 793,
+      "width": 82,
+      "height": 62,
+      "controllers": {
+        "_$type": "Record",
+        "button": {
+          "_$type": "Controller",
+          "pages": [
+            "up",
+            "down",
+            "over",
+            "selectedOver"
+          ]
+        }
+      },
+      "title": "设置",
+      "titleColor": "#a6a080",
+      "titleFontSize": 25,
+      "titleWidget": {
+        "_$ref": "o5byzmv0"
+      },
+      "_$child": [
+        {
+          "_$id": "2uiuqp2s",
+          "_$type": "GImage",
+          "name": "img",
+          "y": 3,
+          "width": 82,
+          "height": 62,
+          "src": "res://f04e731d-fe51-4109-bc27-c5ec7dfe7496"
+        },
+        {
+          "_$id": "o5byzmv0",
+          "_$type": "GTextField",
+          "name": "txt",
+          "width": 82,
+          "height": 62,
+          "text": "设置",
+          "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+          "fontSize": 25,
+          "color": "#a6a080",
+          "bold": true,
+          "align": "center",
+          "valign": "middle",
+          "padding": [
+            6,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "vjlem96i",
+      "_$var": true,
+      "_$type": "GButton",
+      "name": "touxiang",
+      "x": 163,
+      "y": 793,
+      "width": 82,
+      "height": 62,
+      "controllers": {
+        "_$type": "Record",
+        "button": {
+          "_$type": "Controller",
+          "pages": [
+            "up",
+            "down",
+            "over",
+            "selectedOver"
+          ]
+        }
+      },
+      "title": "投降",
+      "titleColor": "#a6a080",
+      "titleFontSize": 25,
+      "titleWidget": {
+        "_$ref": "57jzz4sl"
+      },
+      "_$child": [
+        {
+          "_$id": "2nonpo1l",
+          "_$type": "GImage",
+          "name": "img",
+          "y": 3,
+          "width": 82,
+          "height": 62,
+          "src": "res://f04e731d-fe51-4109-bc27-c5ec7dfe7496"
+        },
+        {
+          "_$id": "57jzz4sl",
+          "_$type": "GTextField",
+          "name": "txt",
+          "width": 82,
+          "height": 62,
+          "text": "投降",
+          "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+          "fontSize": 25,
+          "color": "#a6a080",
+          "bold": true,
+          "align": "center",
+          "valign": "middle",
+          "padding": [
+            6,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "3m8y189u",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "touxiang_item",
+      "x": 253,
+      "y": 692,
+      "width": 254,
+      "height": 45,
+      "visible": false,
+      "_$child": [
+        {
+          "_$id": "vmiuua88",
+          "_$type": "GImage",
+          "name": "bg",
+          "width": 254,
+          "height": 45,
+          "relations": [
+            {
+              "_$type": "Relation",
+              "data": [
+                1,
+                0,
+                2,
+                0
+              ]
+            }
+          ],
+          "src": "res://efd88f85-6c10-4da2-976c-7cec59c23187",
+          "autoSize": false
+        },
+        {
+          "_$id": "j8tg8ddw",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "touxiang_result",
+          "width": 254,
+          "height": 45,
+          "text": "已确认:{count=10} ({time=15}s)",
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 40,
+          "color": "#ffffff",
+          "fitContent": 1,
+          "templateVars": true
+        }
+      ]
+    },
+    {
+      "_$id": "8lqqp061",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "cards",
+      "width": 1920,
+      "height": 1080,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "8kf9mb17",
+          "_$var": true,
+          "_$type": "GWidget",
+          "name": "machebg",
+          "x": 240,
+          "y": 847,
+          "width": 200,
+          "height": 234,
+          "visible": false,
+          "background": {
+            "_$type": "Draw9GridTextureCmd",
+            "texture": {
+              "_$uuid": "eee6eea6-a66b-4dec-a1ee-b00bb085afb6",
+              "_$type": "Texture"
+            }
+          },
+          "_$child": [
+            {
+              "_$id": "4m0f4217",
+              "_$type": "GWidget",
+              "name": "machebg_1",
+              "x": 40,
+              "width": 160,
+              "height": 46,
+              "background": {
+                "_$type": "Draw9GridTextureCmd",
+                "texture": {
+                  "_$uuid": "700da9d5-3457-4b1e-a708-fe7321541ea3",
+                  "_$type": "Texture"
+                }
+              },
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "8kf9mb17"
+                  },
+                  "data": [
+                    9,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "phu2h9e8",
+          "_$var": true,
+          "_$type": "GWidget",
+          "name": "handbg",
+          "x": 255,
+          "y": 867,
+          "width": 1118,
+          "height": 212,
+          "visible": false
+        },
+        {
+          "_$id": "t991oia6",
+          "_$var": true,
+          "_$type": "GWidget",
+          "name": "handlebg",
+          "x": 293,
+          "y": 412,
+          "width": 1320,
+          "height": 212,
+          "visible": false
+        },
+        {
+          "_$id": "jjgeybk8",
+          "_$var": true,
+          "_$type": "GWidget",
+          "name": "houbeiqu",
+          "x": 29,
+          "y": 22,
+          "width": 160,
+          "height": 114,
+          "visible": false,
+          "_$child": [
+            {
+              "_$id": "a8cqcjom",
+              "_$type": "GImage",
+              "name": "img",
+              "width": 160,
+              "height": 114,
+              "src": "res://d7718849-0a56-4e9d-bc3b-e0bbbc17d90f"
+            },
+            {
+              "_$id": "ri5ihh90",
+              "_$var": true,
+              "_$type": "GTextField",
+              "name": "houbeiqutxt",
+              "x": 1,
+              "y": 11,
+              "width": 160,
+              "height": 39,
+              "text": "后备区",
+              "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+              "fontSize": 35,
+              "color": "#ffffff",
+              "bold": true,
+              "templateVars": true,
+              "align": "center"
+            },
+            {
+              "_$id": "psdfe8oe",
+              "_$var": true,
+              "_$type": "GTextField",
+              "name": "houbeiqu_up",
+              "x": 3,
+              "y": 55,
+              "width": 81,
+              "height": 40,
+              "text": "10/10",
+              "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+              "fontSize": 30,
+              "color": "#ffffff",
+              "bold": true,
+              "templateVars": true,
+              "align": "center"
+            },
+            {
+              "_$id": "6ecxqfvk",
+              "_$var": true,
+              "_$type": "GTextField",
+              "name": "houbeiqu_down",
+              "x": 77,
+              "y": 55,
+              "width": 81,
+              "height": 40,
+              "text": "0",
+              "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+              "fontSize": 30,
+              "color": "#ffffff",
+              "bold": true,
+              "templateVars": true,
+              "align": "center"
+            }
+          ]
+        },
+        {
+          "_$id": "wn732284",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "markbg",
+          "x": 241,
+          "y": 791,
+          "width": 117,
+          "height": 75,
+          "visible": false,
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "iiww1yjz"
+              },
+              "data": [
+                1,
+                0,
+                2,
+                0
+              ]
+            }
+          ],
+          "src": "res://93cbc9b5-cf20-4a3b-95c5-da26944f3f2a",
+          "autoSize": false,
+          "_$child": [
+            {
+              "_$id": "iiww1yjz",
+              "_$var": true,
+              "_$type": "GBox",
+              "name": "markbg_",
+              "width": 117,
+              "height": 75,
+              "layout": {
+                "type": 2,
+                "columnGap": 22,
+                "padding": [
+                  16,
+                  50,
+                  18,
+                  25
+                ],
+                "valign": 1,
+                "stretchX": 2
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "68on19eh",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "markhandbg",
+      "y": 867,
+      "width": 1920,
+      "height": 212,
+      "visible": false,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "rgba(0,0,0,0.5882352941176471)"
+      },
+      "src": ""
+    },
+    {
+      "_$id": "psk38obt",
+      "_$prefab": "fc300d7c-c5ae-4788-9477-eb3000d41143",
+      "_$var": true,
+      "name": "wuxie",
+      "active": true,
+      "x": 456,
+      "y": 791,
+      "visible": false,
+      "width": 268,
+      "height": 52,
+      "title": "不再询问无懈可击",
+      "titleFontSize": 30
+    },
+    {
+      "_$id": "gsao9hk9",
+      "_$prefab": "fc300d7c-c5ae-4788-9477-eb3000d41143",
+      "_$var": true,
+      "name": "fanxuan",
+      "active": true,
+      "x": 1211,
+      "y": 1024,
+      "visible": false,
+      "width": 88,
+      "height": 52,
+      "title": "反选",
+      "titleColor": "#ffffff",
+      "titleFontSize": 30
+    },
+    {
+      "_$id": "ftin7wkk",
+      "_$prefab": "fc300d7c-c5ae-4788-9477-eb3000d41143",
+      "_$var": true,
+      "name": "zhengli",
+      "active": true,
+      "x": 1299,
+      "y": 1024,
+      "visible": false,
+      "width": 88,
+      "height": 52,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "t6d7joow"
+          },
+          "data": []
+        }
+      ],
+      "title": "整理",
+      "titleColor": "#ffffff",
+      "titleFontSize": 30
+    },
+    {
+      "_$id": "bf0i8rxg",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "zhengli_item",
+      "x": 1302,
+      "y": 879,
+      "width": 122,
+      "height": 144,
+      "visible": false,
+      "_$child": [
+        {
+          "_$id": "wdvmg7ke",
+          "_$type": "GImage",
+          "name": "bg",
+          "width": 122,
+          "height": 144,
+          "relations": [
+            {
+              "_$type": "Relation",
+              "data": [
+                1,
+                0,
+                2,
+                0
+              ]
+            }
+          ],
+          "src": "res://efd88f85-6c10-4da2-976c-7cec59c23187",
+          "autoSize": false
+        },
+        {
+          "_$id": "7wluanu4",
+          "_$var": true,
+          "_$type": "GButton",
+          "name": "sort_name",
+          "width": 120,
+          "height": 32,
+          "controllers": {
+            "_$type": "Record",
+            "button": {
+              "_$type": "Controller",
+              "pages": [
+                "up",
+                "down",
+                "over",
+                "selectedOver"
+              ]
+            }
+          },
+          "title": "按[color=#f2ff00]牌名[/color]整理",
+          "titleColor": "#ffffff",
+          "titleFontSize": 20,
+          "titleWidget": {
+            "_$ref": "2proq77w"
+          },
+          "mode": 2,
+          "_$child": [
+            {
+              "_$id": "rpqjnfxg",
+              "_$type": "GImage",
+              "name": "img",
+              "width": 120,
+              "height": 32,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "7wluanu4"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "src": "",
+              "autoSize": false
+            },
+            {
+              "_$id": "2proq77w",
+              "_$type": "GTextField",
+              "name": "title",
+              "x": 4,
+              "y": 4,
+              "width": 112,
+              "height": 24,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "7wluanu4"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "text": "按[color=#f2ff00]牌名[/color]整理",
+              "fontSize": 20,
+              "color": "#ffffff",
+              "ubb": true,
+              "align": "center",
+              "valign": "middle",
+              "overflow": "hidden"
+            }
+          ]
+        },
+        {
+          "_$id": "ufadhyk9",
+          "_$var": true,
+          "_$type": "GButton",
+          "name": "sort_type",
+          "y": 37,
+          "width": 120,
+          "height": 32,
+          "controllers": {
+            "_$type": "Record",
+            "button": {
+              "_$type": "Controller",
+              "pages": [
+                "up",
+                "down",
+                "over",
+                "selectedOver"
+              ]
+            }
+          },
+          "title": "按[color=#f2ff00]类型[/color]整理",
+          "titleColor": "#ffffff",
+          "titleFontSize": 20,
+          "titleWidget": {
+            "_$ref": "34x4f8rb"
+          },
+          "mode": 2,
+          "_$child": [
+            {
+              "_$id": "x7rr06y2",
+              "_$type": "GImage",
+              "name": "img",
+              "width": 120,
+              "height": 32,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "ufadhyk9"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "src": "",
+              "autoSize": false
+            },
+            {
+              "_$id": "34x4f8rb",
+              "_$type": "GTextField",
+              "name": "title",
+              "x": 4,
+              "y": 4,
+              "width": 112,
+              "height": 24,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "ufadhyk9"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "text": "按[color=#f2ff00]类型[/color]整理",
+              "fontSize": 20,
+              "color": "#ffffff",
+              "ubb": true,
+              "align": "center",
+              "valign": "middle",
+              "overflow": "hidden"
+            }
+          ]
+        },
+        {
+          "_$id": "4grav7f9",
+          "_$var": true,
+          "_$type": "GButton",
+          "name": "sort_suit",
+          "y": 74,
+          "width": 120,
+          "height": 32,
+          "controllers": {
+            "_$type": "Record",
+            "button": {
+              "_$type": "Controller",
+              "pages": [
+                "up",
+                "down",
+                "over",
+                "selectedOver"
+              ]
+            }
+          },
+          "title": "按[color=#f2ff00]花色[/color]整理",
+          "titleColor": "#ffffff",
+          "titleFontSize": 20,
+          "titleWidget": {
+            "_$ref": "8j5q3pul"
+          },
+          "mode": 2,
+          "_$child": [
+            {
+              "_$id": "en9x1c39",
+              "_$type": "GImage",
+              "name": "img",
+              "width": 120,
+              "height": 32,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "4grav7f9"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "src": "",
+              "autoSize": false
+            },
+            {
+              "_$id": "8j5q3pul",
+              "_$type": "GTextField",
+              "name": "title",
+              "x": 4,
+              "y": 4,
+              "width": 112,
+              "height": 24,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "4grav7f9"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "text": "按[color=#f2ff00]花色[/color]整理",
+              "fontSize": 20,
+              "color": "#ffffff",
+              "ubb": true,
+              "align": "center",
+              "valign": "middle",
+              "overflow": "hidden"
+            }
+          ]
+        },
+        {
+          "_$id": "3zo5hley",
+          "_$var": true,
+          "_$type": "GButton",
+          "name": "sort_point",
+          "y": 111,
+          "width": 120,
+          "height": 32,
+          "controllers": {
+            "_$type": "Record",
+            "button": {
+              "_$type": "Controller",
+              "pages": [
+                "up",
+                "down",
+                "over",
+                "selectedOver"
+              ]
+            }
+          },
+          "title": "按[color=#f2ff00]点数[/color]整理",
+          "titleColor": "#ffffff",
+          "titleFontSize": 20,
+          "titleWidget": {
+            "_$ref": "dt6bk1mn"
+          },
+          "mode": 2,
+          "_$child": [
+            {
+              "_$id": "huak7zrw",
+              "_$type": "GImage",
+              "name": "img",
+              "width": 120,
+              "height": 32,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "3zo5hley"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "src": "",
+              "autoSize": false
+            },
+            {
+              "_$id": "dt6bk1mn",
+              "_$type": "GTextField",
+              "name": "title",
+              "x": 4,
+              "y": 4,
+              "width": 112,
+              "height": 24,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "3zo5hley"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "text": "按[color=#f2ff00]点数[/color]整理",
+              "fontSize": 20,
+              "color": "#ffffff",
+              "ubb": true,
+              "align": "center",
+              "valign": "middle",
+              "overflow": "hidden"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "pbk85cx2",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "windows",
+      "width": 1920,
+      "height": 1080,
+      "mouseThrough": true
+    },
+    {
+      "_$id": "loasaarm",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "log",
+      "x": 222,
+      "y": 66,
+      "width": 1476,
+      "height": 430,
+      "visible": false,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "geas1uwu",
+          "_$type": "GImage",
+          "name": "logBg",
+          "width": 1476,
+          "height": 430,
+          "src": "res://8a4b9c88-77da-41b5-85e5-b37a9e518c82",
+          "autoSize": false
+        },
+        {
+          "_$id": "phtyzflx",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "game_info",
+          "y": 9,
+          "width": 1195,
+          "height": 30,
+          "_mouseState": 2,
+          "mouseThrough": true,
+          "text": "牌堆剩余牌：[b][color=#ffff00]{draw=0}[/color][/b]  洗牌次数：[b][color=#ffff00]{shuffle=0}[/color][/b] 当前轮数：[b][color=#ffff00]{circle=0}[/color][/b]  弃牌堆：[b][color=#ffff00]{drop=0}[/color][/b]",
+          "fontSize": 25,
+          "color": "#ffffff",
+          "ubb": true,
+          "html": true,
+          "templateVars": true,
+          "wordWrap": true
+        },
+        {
+          "_$id": "7ll7dp3y",
+          "_$prefab": "0ba69d40-ac95-4706-bea8-cc25f9f0d051",
+          "_$var": true,
+          "name": "btn_discard",
+          "active": true,
+          "x": 495,
+          "y": 0,
+          "visible": true,
+          "width": 144,
+          "height": 49,
+          "title": "弃牌堆：[b][color=#ffff00]{drop=0}[/color][/b]",
+          "titleFontSize": 25,
+          "_$child": [
+            {
+              "_$override": "x9lkyehy",
+              "text": "弃牌堆：[b][color=#ffff00]{drop=0}[/color][/b]",
+              "ubb": true
+            }
+          ]
+        },
+        {
+          "_$id": "5tiplltn",
+          "_$var": true,
+          "_$type": "GPanel",
+          "name": "logPanel",
+          "y": 49,
+          "width": 1200,
+          "height": 381,
+          "selection": {
+            "mode": 0
+          },
+          "scroller": {
+            "_$type": "Scroller",
+            "vScrollBarRes": {
+              "_$uuid": "f109ab10-7012-4000-80bc-5fdff3eae172",
+              "_$type": "Prefab"
+            }
+          },
+          "_$child": [
+            {
+              "_$id": "duaykdh4",
+              "_$var": true,
+              "_$type": "GTextField",
+              "name": "logLabel",
+              "width": 1163,
+              "height": 30,
+              "_mouseState": 2,
+              "mouseThrough": true,
+              "text": "",
+              "fontSize": 25,
+              "color": "#ffffff",
+              "fitContent": 2,
+              "ubb": true,
+              "html": true,
+              "wordWrap": true
+            }
+          ]
+        },
+        {
+          "_$id": "6us6kc5y",
+          "_$prefab": "0ba69d40-ac95-4706-bea8-cc25f9f0d051",
+          "_$var": true,
+          "name": "btn_lock",
+          "active": true,
+          "x": 1119,
+          "y": -2,
+          "visible": true,
+          "width": 81,
+          "height": 49,
+          "title": "锁定",
+          "titleFontSize": 25,
+          "_$child": [
+            {
+              "_$override": "x9lkyehy",
+              "text": "锁定",
+              "ubb": true
+            }
+          ]
+        },
+        {
+          "_$id": "n5clsiwt",
+          "_$var": true,
+          "_$type": "GList",
+          "name": "stands",
+          "x": 1203,
+          "y": 6,
+          "width": 265,
+          "height": 414,
+          "layout": {
+            "type": 1
+          },
+          "scroller": {
+            "_$type": "Scroller",
+            "vScrollBarRes": {
+              "_$uuid": "f109ab10-7012-4000-80bc-5fdff3eae172",
+              "_$type": "Prefab"
+            }
+          },
+          "_templateNode": {
+            "_$ref": "aqtk1j3w",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": null,
+          "_isDemo": true,
+          "_itemData": [],
+          "_$child": [
+            {
+              "_$id": "aqtk1j3w",
+              "_$type": "GTextField",
+              "name": "txt",
+              "width": 265,
+              "height": 35,
+              "text": "玩家名字七个字",
+              "fontSize": 30,
+              "color": "#ffffff"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "hsfgoqd8",
+      "_$type": "GWidget",
+      "name": "animations",
+      "width": 1920,
+      "height": 1080,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "c1niehtk",
+          "_$prefab": "f33534a1-4523-493d-8a5b-fae7a172189b",
+          "_$var": true,
+          "name": "bancountry",
+          "active": true,
+          "x": 702,
+          "y": 270,
+          "visible": false
+        },
+        {
+          "_$id": "9jwuntra",
+          "_$var": true,
+          "_$type": "Sprite",
+          "name": "jxxd",
+          "x": 960,
+          "y": 540,
+          "width": 1205,
+          "height": 724,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "scaleX": 2,
+          "scaleY": 2,
+          "visible": false,
+          "_$comp": [
+            {
+              "_$type": "Spine2DRenderNode",
+              "layer": 0,
+              "useFastRender": false,
+              "source": "res://9d18576d-6845-4b39-997b-c3b166f30f5f",
+              "animationName": "animation1",
+              "preview": true,
+              "physicsUpdate": 2,
+              "externalSkins": []
+            }
+          ]
+        },
+        {
+          "_$id": "lf8uc1wo",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "skill_name",
+          "x": 1059,
+          "y": 620,
+          "width": 84,
+          "height": 45,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "scaleX": 2,
+          "scaleY": 2,
+          "visible": false,
+          "text": "",
+          "font": "res://3d1c161a-47db-4877-8042-750bcea29919",
+          "fontSize": 40,
+          "color": "#ffffff",
+          "fitContent": 1,
+          "bold": true,
+          "align": "center",
+          "valign": "middle",
+          "stroke": 3
+        },
+        {
+          "_$id": "4pkkqsyw",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "avatar_jxxd",
+          "x": 685,
+          "y": 552,
+          "width": 250,
+          "height": 292,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "scaleX": 1.6,
+          "scaleY": 1.6,
+          "skewX": 10.5,
+          "skewY": -10,
+          "visible": false,
+          "mask": {
+            "_$ref": "x8xzvtji"
+          },
+          "src": "res://85f0de5f-2c1d-4969-8ff8-f5bc3d2602b4",
+          "_$child": [
+            {
+              "_$id": "x8xzvtji",
+              "_$type": "GWidget",
+              "name": "mask",
+              "x": 41,
+              "y": 11,
+              "width": 170,
+              "height": 270,
+              "visible": false,
+              "cacheAs": "bitmap",
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#ffffff"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "zqlrqah4",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "playerinfo",
+      "x": 499,
+      "y": 254,
+      "width": 922,
+      "height": 571,
+      "visible": false,
+      "_$child": [
+        {
+          "_$id": "ci0c0yn8",
+          "_$type": "GImage",
+          "name": "bg",
+          "width": 922,
+          "height": 571,
+          "src": "res://8d07c836-a981-4af7-8ea1-1fbad99880d2",
+          "autoSize": false
+        },
+        {
+          "_$id": "r938kkvp",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "player_title",
+          "width": 922,
+          "height": 35,
+          "mouseThrough": true,
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "t6d7joow"
+              },
+              "data": [
+                1,
+                0,
+                10,
+                0
+              ]
+            }
+          ],
+          "text": "游戏设置",
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 30,
+          "color": "#FFFFFF",
+          "ubb": true,
+          "templateVars": true,
+          "align": "center",
+          "valign": "middle"
+        },
+        {
+          "_$id": "ibm0xmcw",
+          "_$prefab": "0fb8c395-868d-48e6-a7ae-b55b9885f80d",
+          "_$var": true,
+          "name": "player_close",
+          "active": true,
+          "x": 884,
+          "y": 0,
+          "visible": true,
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "t6d7joow"
+              },
+              "data": [
+                9,
+                0,
+                10,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "jie7thgv",
+          "_$prefab": "6b1993b1-68d8-448a-a34c-fc756b52f4c5",
+          "_$var": true,
+          "name": "player_head",
+          "active": true,
+          "x": 100,
+          "y": 170,
+          "scaleX": 1.3,
+          "scaleY": 1.3,
+          "visible": true
+        },
+        {
+          "_$id": "kst6uutp",
+          "_$prefab": "6b1993b1-68d8-448a-a34c-fc756b52f4c5",
+          "_$var": true,
+          "name": "player_deputy",
+          "active": true,
+          "x": 100,
+          "y": 430,
+          "scaleX": 1.3,
+          "scaleY": 1.3,
+          "visible": true
+        },
+        {
+          "_$id": "sk0ilhtz",
+          "_$var": true,
+          "_$type": "GList",
+          "name": "info_list",
+          "x": 191,
+          "y": 54,
+          "width": 671,
+          "height": 498,
+          "layout": {
+            "type": 1,
+            "rowGap": 5,
+            "padding": [
+              10,
+              0,
+              10,
+              0
+            ]
+          },
+          "scroller": {
+            "_$type": "Scroller",
+            "barDisplay": 2,
+            "vScrollBarRes": {
+              "_$uuid": "f109ab10-7012-4000-80bc-5fdff3eae172",
+              "_$type": "Prefab"
+            }
+          },
+          "_initItemNum": null
+        },
+        {
+          "_$id": "bo66u0ew",
+          "_$var": true,
+          "_$type": "GWidget",
+          "name": "general_skills",
+          "x": 870,
+          "y": 51,
+          "width": 35,
+          "height": 195,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#777777"
+          },
+          "_$child": [
+            {
+              "_$id": "0cu69b88",
+              "_$var": true,
+              "_$type": "GTextField",
+              "name": "areaname",
+              "width": 35,
+              "height": 195,
+              "text": "武将技能",
+              "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+              "fontSize": 25,
+              "color": "#FFFFFF",
+              "align": "center",
+              "valign": "middle",
+              "wordWrap": true
+            },
+            {
+              "_$id": "polh81j4",
+              "_$var": true,
+              "_$type": "GWidget",
+              "name": "general_selected",
+              "width": 35,
+              "height": 195,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "lineWidth": 4,
+                "lineColor": "#ffff00"
+              }
+            }
+          ]
+        },
+        {
+          "_$id": "5txg3y1c",
+          "_$var": true,
+          "_$type": "GWidget",
+          "name": "equip_skills",
+          "x": 870,
+          "y": 250,
+          "width": 35,
+          "height": 195,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#777777"
+          },
+          "_$child": [
+            {
+              "_$id": "ag7to6db",
+              "_$var": true,
+              "_$type": "GTextField",
+              "name": "areaname",
+              "width": 35,
+              "height": 195,
+              "text": "装备技能",
+              "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+              "fontSize": 25,
+              "color": "#FFFFFF",
+              "align": "center",
+              "valign": "middle",
+              "wordWrap": true
+            },
+            {
+              "_$id": "hzyryc7i",
+              "_$var": true,
+              "_$type": "GWidget",
+              "name": "equip_selected",
+              "width": 35,
+              "height": 195,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "lineWidth": 4,
+                "lineColor": "#ffff00"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "csyu3o3n",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "card_note",
+      "x": 460,
+      "y": 525,
+      "width": 1000,
+      "height": 30,
+      "visible": false,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "rgba(0,0,0,0.5882352941176471)"
+      },
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "t6d7joow"
+          },
+          "data": [
+            6,
+            0,
+            13,
+            0
+          ]
+        }
+      ],
+      "text": "【】",
+      "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+      "fontSize": 25,
+      "color": "#ffffff",
+      "fitContent": 2,
+      "ubb": true,
+      "templateVars": true,
+      "wordWrap": true,
+      "strokeColor": "rgba(255,255,255,0.5882352941176471)"
+    },
+    {
+      "_$id": "gde4srqs",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "game_over",
+      "width": 1920,
+      "height": 1080,
+      "visible": false,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "rgba(0,0,0,0.5882352941176471)"
+      },
+      "_$child": [
+        {
+          "_$id": "dpu9d0gg",
+          "_$var": true,
+          "_$type": "Sprite",
+          "name": "mvp",
+          "x": 920,
+          "y": 558,
+          "width": 1400,
+          "height": 1143,
+          "anchorX": 0.472,
+          "anchorY": 0.517,
+          "_$comp": [
+            {
+              "_$type": "Spine2DRenderNode",
+              "layer": 0,
+              "useFastRender": false,
+              "source": "res://c306ae5f-4b8c-41eb-b895-af0cc6e95542",
+              "animationName": "play2",
+              "preview": true,
+              "physicsUpdate": 2
+            }
+          ]
+        },
+        {
+          "_$id": "ie8dep3p",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "avatar_mvp",
+          "x": 692,
+          "y": 546,
+          "width": 250,
+          "height": 292,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "scaleX": 2,
+          "scaleY": 2,
+          "skewX": 3,
+          "skewY": -4,
+          "mask": {
+            "_$ref": "51novr6s"
+          },
+          "src": "res://85f0de5f-2c1d-4969-8ff8-f5bc3d2602b4",
+          "_$child": [
+            {
+              "_$id": "51novr6s",
+              "_$type": "GWidget",
+              "name": "mask",
+              "x": 21,
+              "y": 4,
+              "width": 207,
+              "height": 284,
+              "visible": false,
+              "cacheAs": "bitmap",
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#ffffff"
+              }
+            }
+          ]
+        },
+        {
+          "_$id": "vr31qnj4",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "mvp_txt",
+          "x": 1081,
+          "y": 505,
+          "width": 244,
+          "height": 131,
+          "text": "{username=我}\n\n技术分：{score=200}",
+          "font": "res://d90effa0-fe20-4203-b0d9-705db9aa4921",
+          "fontSize": 40,
+          "color": "#ffffff",
+          "bold": true,
+          "templateVars": true,
+          "valign": "middle"
+        }
+      ]
+    },
+    {
+      "_$id": "rtten1a0",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "popup",
+      "x": 2,
+      "y": 1091,
+      "width": 122,
+      "height": 74,
+      "_$child": [
+        {
+          "_$id": "bk98ezry",
+          "_$type": "GImage",
+          "name": "bg",
+          "width": 122,
+          "height": 74,
+          "relations": [
+            {
+              "_$type": "Relation",
+              "data": [
+                1,
+                0,
+                2,
+                0
+              ]
+            }
+          ],
+          "src": "res://efd88f85-6c10-4da2-976c-7cec59c23187",
+          "autoSize": false
+        },
+        {
+          "_$id": "lzfyh4j3",
+          "_$var": true,
+          "_$type": "GButton",
+          "name": "popup_pingbi",
+          "width": 120,
+          "height": 32,
+          "controllers": {
+            "_$type": "Record",
+            "button": {
+              "_$type": "Controller",
+              "pages": [
+                "up",
+                "down",
+                "over",
+                "selectedOver"
+              ]
+            }
+          },
+          "title": "屏蔽发言",
+          "titleColor": "#ffffff",
+          "titleFontSize": 20,
+          "titleWidget": {
+            "_$ref": "5w9qmw7m"
+          },
+          "mode": 2,
+          "_$child": [
+            {
+              "_$id": "v1z9vomd",
+              "_$type": "GImage",
+              "name": "img",
+              "width": 120,
+              "height": 32,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "lzfyh4j3"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "src": "",
+              "autoSize": false
+            },
+            {
+              "_$id": "5w9qmw7m",
+              "_$type": "GTextField",
+              "name": "title",
+              "x": 4,
+              "y": 4,
+              "width": 112,
+              "height": 24,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "lzfyh4j3"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "text": "屏蔽发言",
+              "fontSize": 20,
+              "color": "#ffffff",
+              "ubb": true,
+              "align": "center",
+              "valign": "middle",
+              "overflow": "hidden"
+            }
+          ]
+        },
+        {
+          "_$id": "utu20zni",
+          "_$var": true,
+          "_$type": "GButton",
+          "name": "popup_jubao",
+          "y": 37,
+          "width": 120,
+          "height": 32,
+          "controllers": {
+            "_$type": "Record",
+            "button": {
+              "_$type": "Controller",
+              "pages": [
+                "up",
+                "down",
+                "over",
+                "selectedOver"
+              ]
+            }
+          },
+          "title": "举报玩家",
+          "titleColor": "#ffffff",
+          "titleFontSize": 20,
+          "titleWidget": {
+            "_$ref": "llvhxxh3"
+          },
+          "mode": 2,
+          "_$child": [
+            {
+              "_$id": "k83nym8k",
+              "_$type": "GImage",
+              "name": "img",
+              "width": 120,
+              "height": 32,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "utu20zni"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "src": "",
+              "autoSize": false
+            },
+            {
+              "_$id": "llvhxxh3",
+              "_$type": "GTextField",
+              "name": "title",
+              "x": 4,
+              "y": 4,
+              "width": 112,
+              "height": 24,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "utu20zni"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "text": "举报玩家",
+              "fontSize": 20,
+              "color": "#ffffff",
+              "ubb": true,
+              "align": "center",
+              "valign": "middle",
+              "overflow": "hidden"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

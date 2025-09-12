@@ -1,0 +1,51 @@
+{
+  "_$ver": 1,
+  "_$id": "87egn2c9",
+  "_$runtime": "res://9dc28f12-2208-4f56-b8ff-d9fc4da19dab",
+  "_$type": "GWidget",
+  "name": "skill_audio",
+  "width": 490,
+  "height": 34,
+  "background": {
+    "_$type": "DrawRoundRectCmd",
+    "lt": 10,
+    "rt": 10,
+    "lb": 10,
+    "rb": 10,
+    "fillColor": "#929191"
+  },
+  "relations": [
+    {
+      "_$type": "Relation",
+      "target": {
+        "_$ref": "rq1eucd6"
+      },
+      "data": [
+        24,
+        0
+      ]
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "rq1eucd6",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "txt",
+      "width": 490,
+      "height": 34,
+      "text": "技能：语音",
+      "font": "res://4815de03-74c4-4d1e-8276-0c6d2a3cd1f6",
+      "fontSize": 23,
+      "color": "#ffffff",
+      "fitContent": 2,
+      "wordWrap": true,
+      "padding": [
+        5,
+        10,
+        5,
+        10
+      ]
+    }
+  ]
+}

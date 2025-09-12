@@ -1,0 +1,146 @@
+{
+  "_$ver": 1,
+  "_$id": "b4kp71r5",
+  "_$runtime": "res://d831dca0-f65f-4aa8-b1da-d389552690dd",
+  "_$type": "GWidget",
+  "name": "load",
+  "width": 1920,
+  "height": 1080,
+  "drawCallOptimize": true,
+  "_$child": [
+    {
+      "_$id": "7dsc0h6v",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "bg",
+      "width": 1920,
+      "height": 1080,
+      "visible": false,
+      "src": "",
+      "autoSize": false
+    },
+    {
+      "_$id": "2tuueuwn",
+      "_$type": "Sprite",
+      "name": "BeiJing",
+      "x": 876,
+      "y": 512,
+      "width": 2140,
+      "height": 1014,
+      "anchorX": 1,
+      "anchorY": 1,
+      "scaleX": 1.3,
+      "scaleY": 1.3,
+      "_$comp": [
+        {
+          "_$type": "Spine2DRenderNode",
+          "layer": 0,
+          "useFastRender": false,
+          "source": "res://286243e9-37fc-42a5-8779-556366b0496e",
+          "animationName": "BeiJing",
+          "preview": true,
+          "physicsUpdate": 2
+        }
+      ]
+    },
+    {
+      "_$id": "up5hsjde",
+      "_$type": "Sprite",
+      "name": "XingXiang",
+      "x": 1057,
+      "y": 478,
+      "width": 2203,
+      "height": 1404,
+      "anchorX": 1,
+      "anchorY": 1,
+      "_$comp": [
+        {
+          "_$type": "Spine2DRenderNode",
+          "layer": 0,
+          "useFastRender": false,
+          "source": "res://11b53e12-db5a-423a-b082-48cae0acc843",
+          "animationName": "DaiJi",
+          "preview": true,
+          "physicsUpdate": 2
+        }
+      ]
+    },
+    {
+      "_$id": "p2bz3jj8",
+      "_$var": true,
+      "_$type": "GProgressBar",
+      "name": "ProgressBar",
+      "y": 1000,
+      "width": 1920,
+      "height": 33,
+      "value": 1,
+      "max": 1,
+      "_hBar": {
+        "_$ref": "yowkdsvd"
+      },
+      "_$child": [
+        {
+          "_$id": "yowkdsvd",
+          "_$type": "GImage",
+          "name": "bar",
+          "width": 1920,
+          "height": 33,
+          "src": "res://8b5ff549-6299-4c81-a286-6701eb6095a1",
+          "autoSize": false
+        },
+        {
+          "_$id": "z4ddnosa",
+          "_$type": "GImage",
+          "name": "bg",
+          "width": 1920,
+          "height": 33,
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "p2bz3jj8"
+              },
+              "data": [
+                1,
+                0,
+                2,
+                0
+              ]
+            }
+          ],
+          "src": "res://970fc65b-6f8d-4151-b616-74798b4a8ba6",
+          "autoSize": false
+        },
+        {
+          "_$id": "onpieqsn",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "txt",
+          "x": 827,
+          "y": -1,
+          "width": 265,
+          "height": 35,
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "p2bz3jj8"
+              },
+              "data": [
+                6,
+                0,
+                13,
+                0
+              ]
+            }
+          ],
+          "text": "正在加载{text=资源}...{value=0}%",
+          "fontSize": 30,
+          "fitContent": 1,
+          "bold": true,
+          "templateVars": true
+        }
+      ]
+    }
+  ]
+}

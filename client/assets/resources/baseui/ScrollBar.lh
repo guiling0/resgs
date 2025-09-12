@@ -1,0 +1,301 @@
+{
+  "_$ver": 1,
+  "_$id": "7jq1coqv",
+  "_$preloads": [
+    "res://00e20861-e599-4fe3-92d4-f506298989b9",
+    "res://9d069842-6e5b-4d7b-942e-89167460a441",
+    "res://73a42ba3-4b2b-4d5a-83ad-310e47546065",
+    "res://c9874243-f1a4-444f-92e2-be8bdd1cb0c9",
+    "res://144f401f-bec0-4c86-8354-262be03662ff",
+    "res://1cd1ed6d-5082-4f63-afb5-d7b41c2a931d"
+  ],
+  "_$type": "GScrollBar",
+  "width": 11,
+  "height": 300,
+  "_bar": {
+    "_$ref": "yd2jbu4p"
+  },
+  "_gripButton": {
+    "_$ref": "oxnrmoqc"
+  },
+  "_arrowButton1": {
+    "_$ref": "xx95efyc"
+  },
+  "_arrowButton2": {
+    "_$ref": "19cri747"
+  },
+  "_$child": [
+    {
+      "_$id": "wq9twkln",
+      "_$type": "GImage",
+      "name": "bg",
+      "width": 11,
+      "height": 300,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "7jq1coqv"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://1cd1ed6d-5082-4f63-afb5-d7b41c2a931d",
+      "autoSize": false
+    },
+    {
+      "_$id": "yd2jbu4p",
+      "_$type": "GWidget",
+      "name": "bar",
+      "y": 11,
+      "width": 11,
+      "height": 278,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "7jq1coqv"
+          },
+          "data": [
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "xx95efyc",
+      "_$type": "GButton",
+      "name": "arrow1",
+      "width": 11,
+      "height": 11,
+      "controllers": {
+        "_$type": "Record",
+        "button": {
+          "_$type": "Controller",
+          "pages": [
+            "up",
+            "down",
+            "over",
+            "selectedOver"
+          ]
+        }
+      },
+      "_$child": [
+        {
+          "_$id": "rvhvgsza",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 11,
+          "height": 11,
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "xx95efyc"
+              },
+              "data": [
+                1,
+                0,
+                2,
+                0
+              ]
+            }
+          ],
+          "src": "res://144f401f-bec0-4c86-8354-262be03662ff",
+          "autoSize": false
+        }
+      ]
+    },
+    {
+      "_$id": "19cri747",
+      "_$type": "GButton",
+      "name": "arrow2",
+      "y": 289,
+      "width": 11,
+      "height": 11,
+      "controllers": {
+        "_$type": "Record",
+        "button": {
+          "_$type": "Controller",
+          "pages": [
+            "up",
+            "down",
+            "over",
+            "selectedOver"
+          ]
+        }
+      },
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "7jq1coqv"
+          },
+          "data": [
+            16,
+            0
+          ]
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "4cnsqgfx",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 11,
+          "height": 11,
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "19cri747"
+              },
+              "data": [
+                1,
+                0,
+                2,
+                0
+              ]
+            }
+          ],
+          "src": "res://c9874243-f1a4-444f-92e2-be8bdd1cb0c9",
+          "autoSize": false
+        }
+      ]
+    },
+    {
+      "_$id": "oxnrmoqc",
+      "_$type": "GButton",
+      "name": "grip",
+      "y": 11,
+      "width": 11,
+      "height": 40,
+      "controllers": {
+        "_$type": "Record",
+        "button": {
+          "_$type": "Controller",
+          "pages": [
+            "up",
+            "down",
+            "over",
+            "selectedOver"
+          ]
+        }
+      },
+      "_$child": [
+        {
+          "_$id": "srvi8vv3",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 11,
+          "height": 40,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "oxnrmoqc",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                0
+              ]
+            }
+          ],
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "oxnrmoqc"
+              },
+              "data": [
+                1,
+                0,
+                2,
+                0
+              ]
+            }
+          ],
+          "src": "res://73a42ba3-4b2b-4d5a-83ad-310e47546065",
+          "autoSize": false
+        },
+        {
+          "_$id": "px0h3brt",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 11,
+          "height": 40,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "oxnrmoqc",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                1,
+                3
+              ]
+            }
+          ],
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "oxnrmoqc"
+              },
+              "data": [
+                1,
+                0,
+                2,
+                0
+              ]
+            }
+          ],
+          "src": "res://9d069842-6e5b-4d7b-942e-89167460a441",
+          "autoSize": false
+        },
+        {
+          "_$id": "u0mz7cs3",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 11,
+          "height": 40,
+          "gears": [
+            {
+              "_$type": "GearDisplay",
+              "controller": {
+                "_$ref": "oxnrmoqc",
+                "_$ctrl": "button"
+              },
+              "pages": [
+                2
+              ]
+            }
+          ],
+          "relations": [
+            {
+              "_$type": "Relation",
+              "target": {
+                "_$ref": "oxnrmoqc"
+              },
+              "data": [
+                1,
+                0,
+                2,
+                0
+              ]
+            }
+          ],
+          "src": "res://00e20861-e599-4fe3-92d4-f506298989b9",
+          "autoSize": false
+        }
+      ]
+    }
+  ]
+}

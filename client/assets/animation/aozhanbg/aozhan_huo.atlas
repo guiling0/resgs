@@ -1,0 +1,146 @@
+
+aozhan_huo.png
+size: 1200,1200
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+huo_00000
+  rotate: false
+  xy: 2, 820
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00001
+  rotate: false
+  xy: 338, 1010
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00002
+  rotate: false
+  xy: 2, 630
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00003
+  rotate: false
+  xy: 338, 820
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00004
+  rotate: false
+  xy: 674, 1010
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00005
+  rotate: false
+  xy: 2, 440
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00006
+  rotate: false
+  xy: 338, 630
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00007
+  rotate: false
+  xy: 674, 820
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00008
+  rotate: true
+  xy: 1010, 864
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00009
+  rotate: false
+  xy: 2, 250
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00010
+  rotate: false
+  xy: 338, 440
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00011
+  rotate: false
+  xy: 674, 630
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00012
+  rotate: false
+  xy: 2, 60
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00013
+  rotate: false
+  xy: 338, 250
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00014
+  rotate: false
+  xy: 674, 440
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00015
+  rotate: true
+  xy: 1010, 528
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00016
+  rotate: false
+  xy: 338, 60
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00017
+  rotate: false
+  xy: 674, 250
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00018
+  rotate: false
+  xy: 674, 60
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
+huo_00019
+  rotate: false
+  xy: 2, 1010
+  size: 334, 188
+  orig: 334, 188
+  offset: 0, 0
+  index: -1
