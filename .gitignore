@@ -11,3 +11,51 @@ resgs-client/node_modules
 resgs-client/bin/js/bundles
 resgs-client/**/*.meta
 httpserver
+server/yarn.lock
+server/package-lock.json
+
+# Node modules
+node_modules/
+**/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency lockfiles（根据团队习惯，通常只保留顶层 lockfile）
+server/yarn.lock
+client/yarn.lock
+*.lock.hmr
+
+# Build output
+dist/
+build/
+server/build/
+out/
+coverage/
+.next/
+.nuxt/
+.cache/
+.tmp/
+
+# Editor & system files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Env & secrets
+.env
+.env.*.local
+*.pem
+*.key
+
+# Typescript
+*.tsbuildinfo
+
+# Misc
+*.tgz
+*.tar.gz

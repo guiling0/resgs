@@ -98,12 +98,29 @@ dangpan.addEffect(
     sgs.StateEffect({
         tag: [SkillTag.Lock],
         [StateEffectType.TargetMod_PassTimeCheck](from, card, target) {
-            if (!target || card.custom.check) return this.isOwner(from);
-            return (
-                this.isOwner(from) &&
-                card.name === 'sha' &&
-                card.hasAttr(CardAttr.Fire)
-            );
+            
+            // 如果是检查阶段或者玩家不是技能拥有者，不提供无限杀效果
+            if (!this.isOwner(from)) return false;
+            
+            // 如果是特殊检查阶段或没有目标，也返回true
+            if (!target || card.custom.check) return true;
+            
+            // 检查是否为杀
+            if (card.name !== 'sha') return false;
+            
+            // 火杀 - 无限出杀
+            if (card.hasAttr(CardAttr.Fire)) return true;
+            // 雷杀 - 不能无线出杀
+            if (card.hasAttr(CardAttr.Thunder)) return false;
+            
+            // 检查玩家是否装备了朱雀羽扇(id为31是武器槽)
+            const weapon = from.getEquip(31);
+            if (weapon && weapon.name === 'zhuqueyushan') {
+                // 如果装备了朱雀羽扇，所有杀都视为能无限次使用
+                return true;
+            }
+            
+            return false;
         },
     })
 );
