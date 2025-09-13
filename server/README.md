@@ -1,29 +1,88 @@
-# Welcome to Colyseus!
+# RESGS - Real-time Game Server
 
-This project has been created using [⚔️ `create-colyseus-app`](https://github.com/colyseus/create-colyseus-app/) - an npm init template for kick starting a Colyseus project in TypeScript.
+This project is a real-time game server built with [Colyseus](https://colyseus.io/), a powerful framework for developing multiplayer games and real-time applications in TypeScript/Node.js.
 
-[Documentation](http://docs.colyseus.io/)
+## 📋 Overview
 
-## :crossed_swords: Usage
+RESGS provides a scalable and robust backend for multiplayer games, handling:
+- Real-time communication
+- Game state synchronization
+- Player matchmaking
+- Room management
 
+[Colyseus Documentation](http://docs.colyseus.io/)
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/resgs.git
+
+# Navigate to the server directory
+cd resgs/server
+
+# Install dependencies
+npm install
 ```
+
+### Running the Server
+```bash
 npm start
 ```
 
-## Structure
+The server will be running at `http://localhost:2567` by default.
 
-- `index.ts`: main entry point, register an empty room handler and attach [`@colyseus/monitor`](https://github.com/colyseus/colyseus-monitor)
-- `src/rooms/MyRoom.ts`: an empty room handler for you to implement your logic
-- `src/rooms/schema/MyRoomState.ts`: an empty schema used on your room's state.
-- `loadtest/example.ts`: scriptable client for the loadtest tool (see `npm run loadtest`)
-- `package.json`:
-    - `scripts`:
-        - `npm start`: runs `ts-node-dev index.ts`
-        - `npm test`: runs mocha test suite
-        - `npm run loadtest`: runs the [`@colyseus/loadtest`](https://github.com/colyseus/colyseus-loadtest/) tool for testing the connection, using the `loadtest/example.ts` script.
-- `tsconfig.json`: TypeScript configuration file
+## 🏗️ Project Structure
 
+- `index.ts`: Main entry point that registers room handlers and middleware
+- `src/rooms/`: Contains all room implementations
+  - `MyRoom.ts`: Sample room implementation
+  - Other game room implementations
+- `src/rooms/schema/`: Contains all state schemas
+  - `MyRoomState.ts`: Sample state schema
+  - Other state schemas
+- `src/services/`: Utility services and helpers
+- `src/types/`: TypeScript type definitions
+- `loadtest/`: Load testing scripts
+- `config/`: Configuration files
 
-## License
+## 🔧 Development Tools
 
-MIT
+- **Starting the server**: `npm start`
+- **Running tests**: `npm test`
+- **Load testing**: `npm run loadtest` - Uses the [`@colyseus/loadtest`](https://github.com/colyseus/colyseus-loadtest/) tool with the `loadtest/example.ts` script
+
+## 📝 Configuration
+
+Server configuration can be modified in the `.env` file or through environment variables:
+
+```
+PORT=2567
+HOST=0.0.0.0
+```
+
+## 🔄 Deployment
+
+Instructions for deploying to various platforms:
+
+### Docker
+```bash
+# Build the Docker image
+docker build -t resgs .
+
+# Run the container
+docker run -p 2567:2567 resgs
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📜 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
