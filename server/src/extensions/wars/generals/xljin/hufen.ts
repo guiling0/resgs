@@ -190,32 +190,44 @@ export const jiesha_delay = sgs.TriggerEffect({
     },
     async cost(room, data, context) {
         const { from } = context;
+        const target = this.getData<GamePlayer>('target');
+        const count = this.getData<number>('count') ?? 1;
+        context.count = 1;
+        context.targets = [target];
         const handles: string[] = [
             'jiesha.draw',
             'jiesha.gain',
             'jiesha.skill',
         ];
-        context.handles = handles;
-        context.count = this.getData<number>('count');
-        const target = this.getData<GamePlayer>('target');
-        context.targets = [target];
-        if (!target || !context.count) {
-            await this.removeSelf();
-            return true;
+        const results: string[] = [];
+        for (let i = 0; i < count; i++) {
+            context.handles = handles;
+            if (!target || !context.count) {
+                await this.removeSelf();
+                return true;
+            }
+            const req = await room.doRequest({
+                player: from,
+                get_selectors: {
+                    selectorId: this.getSelectorName('choose'),
+                    context,
+                },
+            });
+            if (req.result.cancle) break;
+            const result = room.getResult(req, 'option').result as string[];
+            result.forEach((v) => {
+                const index = handles.findIndex((h) => h === v);
+                if (index > -1) {
+                    handles[index] = '!' + handles[index];
+                    results.push(v);
+                }
+            });
         }
-        const req = await room.doRequest({
-            player: from,
-            get_selectors: {
-                selectorId: this.getSelectorName('choose'),
-                context,
-            },
-        });
-        const result = room.getResult(req, 'option').result as string[];
-        if (result.includes('jiesha.draw')) {
+        if (results.includes('jiesha.draw')) {
             const draw = await room.addEffect('jieyue.delay.draw', target);
             draw.setData('turn', room.currentTurn);
         }
-        if (result.includes('jiesha.gain')) {
+        if (results.includes('jiesha.gain')) {
             const req = await room.doRequest({
                 player: from,
                 get_selectors: {
@@ -231,7 +243,7 @@ export const jiesha_delay = sgs.TriggerEffect({
                 reason: this.name,
             });
         }
-        if (result.includes('jiesha.skill')) {
+        if (results.includes('jiesha.skill')) {
             const generals: General[] = target.getOpenGenerls();
             let tar_general: General;
             if (generals.length > 1) {

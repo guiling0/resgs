@@ -1,18 +1,16 @@
 server/node_modules
-server/dist
-server/dist.zip
+server/build
+server/build.zip
 server/logs
 .DS_Store
-resgs-client/temp
-resgs-client/library
-resgs-client/local
-resgs-client/release
-resgs-client/node_modules
-resgs-client/bin/js/bundles
-resgs-client/**/*.meta
-httpserver
-server/yarn.lock
-server/package-lock.json
+client/temp
+client/library
+client/local
+client/release
+client/node_modules
+client/bin/js/bundles
+client/src/core
+client/src/extensions
 
 # Node modules
 node_modules/

@@ -169,13 +169,19 @@ import { zhangze } from './kangli/zhangze';
 import { chenhuiqian } from './kangli/chenhuiqian';
 import { shichong } from './kangli/shichong';
 import { lvzhu } from './kangli/lvzhu';
+import { zhonghui } from './ex/zhonghui';
 
 const WarsDefaultGenerals = sgs.Package('WarsDefaultGenerals');
 WarsDefaultGenerals.addGenerals([shibingn, shibingv]);
 
-const WarsStandardGenerals = sgs.Package('WarsStandardGenerals');
+const WarsStandardGenerals_Wei = sgs.Package('WarsStandard.Wei');
+const WarsStandardGenerals_Shu = sgs.Package('WarsStandard.Shu');
+const WarsStandardGenerals_Wu = sgs.Package('WarsStandard.Wu');
+const WarsStandardGenerals_Qun = sgs.Package('WarsStandard.Qun');
+const WarsStandardGenerals_Jin = sgs.Package('WarsStandard.Jin');
+const WarsStandardGenerals_XlJin = sgs.Package('WarsStandard.XlJin');
 //wei
-WarsStandardGenerals.addGenerals([
+WarsStandardGenerals_Wei.addGenerals([
     caocao,
     simayi,
     xiahoudun,
@@ -193,7 +199,7 @@ WarsStandardGenerals.addGenerals([
     yuejin,
 ]);
 //shu
-WarsStandardGenerals.addGenerals([
+WarsStandardGenerals_Shu.addGenerals([
     liubei,
     guanyu,
     zhangfei,
@@ -212,7 +218,7 @@ WarsStandardGenerals.addGenerals([
     huangzhong_v2025,
 ]);
 //wu
-WarsStandardGenerals.addGenerals([
+WarsStandardGenerals_Wu.addGenerals([
     sunquan,
     ganning,
     lvmeng,
@@ -231,7 +237,7 @@ WarsStandardGenerals.addGenerals([
     luxun_v2025,
 ]);
 //qun
-WarsStandardGenerals.addGenerals([
+WarsStandardGenerals_Qun.addGenerals([
     huatuo,
     lvbu,
     diaochan,
@@ -252,7 +258,7 @@ WarsStandardGenerals.addGenerals([
     tianfeng_v2025,
 ]);
 //jin
-WarsStandardGenerals.addGenerals([
+WarsStandardGenerals_Jin.addGenerals([
     simayi_jin,
     zhangchunhua_jin,
     simashi,
@@ -270,7 +276,7 @@ WarsStandardGenerals.addGenerals([
     malong,
 ]);
 //xljin
-WarsStandardGenerals.addGenerals([
+WarsStandardGenerals_XlJin.addGenerals([
     simayan,
     xl_simazhao,
     xl_wangyuanji,
@@ -288,7 +294,7 @@ WarsStandardGenerals.addGenerals([
     huliehuyuan,
 ]);
 
-const WarsPowerZhenGenerals = sgs.Package('WarsPowerZhenGenerals');
+const WarsPowerZhenGenerals = sgs.Package('WarsPower.Zhen');
 WarsPowerZhenGenerals.addGenerals([
     dengai,
     caohong,
@@ -304,7 +310,7 @@ WarsPowerZhenGenerals.addGenerals([
     xl_duyu,
 ]);
 
-const WarsPowerShiGenerals = sgs.Package('WarsPowerShiGenerals');
+const WarsPowerShiGenerals = sgs.Package('WarsPower.Shi');
 WarsPowerShiGenerals.addGenerals([
     lidian,
     zangba,
@@ -320,7 +326,7 @@ WarsPowerShiGenerals.addGenerals([
     zhouzhi,
 ]);
 
-const WarsPowerBianGenerals = sgs.Package('WarsPowerBianGenerals');
+const WarsPowerBianGenerals = sgs.Package('WarsPower.Bian');
 WarsPowerBianGenerals.addGenerals([
     xunyou,
     bianfuren,
@@ -337,7 +343,7 @@ WarsPowerBianGenerals.addGenerals([
     jishao,
 ]);
 
-const WarsPowerQuanGenerals = sgs.Package('WarsPowerQuanGenerals');
+const WarsPowerQuanGenerals = sgs.Package('WarsPower.Quan');
 WarsPowerQuanGenerals.addGenerals([
     cuiyanmaojie,
     yujin,
@@ -353,7 +359,7 @@ WarsPowerQuanGenerals.addGenerals([
     xl_yanghuiyu,
 ]);
 
-const WarsLordsGenerals = sgs.Package('WarsLordsGenerals');
+const WarsLordsGenerals = sgs.Package('WarsPower.Lords');
 WarsLordsGenerals.addGenerals([
     lord_liubei,
     lord_zhangjiao,
@@ -363,7 +369,10 @@ WarsLordsGenerals.addGenerals([
     lord_simayan,
 ]);
 
-const WarsZonghengGenerals = sgs.Package('WarsZonghengGenerals');
+const WarsPowerExGenerals = sgs.Package('WarsPower.Ex');
+WarsPowerExGenerals.addGenerals([zhonghui]);
+
+const WarsZonghengGenerals = sgs.Package('WarsSp.ZongHeng');
 WarsZonghengGenerals.addGenerals([
     yanghu_wei,
     huaxin,
@@ -378,7 +387,7 @@ WarsZonghengGenerals.addGenerals([
     luyun,
 ]);
 
-const WarsKangLiGenerals = sgs.Package('WarsKangLiGenerals');
+const WarsKangLiGenerals = sgs.Package('WarsSp.KangLi');
 WarsKangLiGenerals.addGenerals([
     caozhi,
     cuifei,
@@ -392,29 +401,23 @@ WarsKangLiGenerals.addGenerals([
     lvzhu,
 ]);
 
-const WarsSpGenerals = sgs.Package('WarsSpGenerals');
+const WarsSpGenerals = sgs.Package('WarsSp.Other');
 WarsSpGenerals.addGenerals([jiananfeng, xiahouhui, kl_zhongyan, kl_wanghun]);
-
-sgs.loadTranslation({
-    WarsDefaultGenerals: '国战标准',
-    WarsStandardGenerals: '国战标准',
-    WarsPowerZhenGenerals: '君临天下·阵',
-    WarsPowerShiGenerals: '君临天下·势',
-    WarsPowerBianGenerals: '君临天下·变',
-    WarsPowerQuanGenerals: '君临天下·权',
-    WarsLordsGenerals: '君临天下·君主',
-    WarsZonghengGenerals: '纵横捭阖',
-    WarsKangLiGenerals: '西凉·伉俪情深',
-    WarsSpGenerals: '国战SP',
-});
 
 export {
     WarsDefaultGenerals,
-    WarsStandardGenerals,
+    WarsStandardGenerals_Wei,
+    WarsStandardGenerals_Shu,
+    WarsStandardGenerals_Wu,
+    WarsStandardGenerals_Qun,
+    WarsStandardGenerals_Jin,
+    WarsStandardGenerals_XlJin,
     WarsPowerZhenGenerals,
     WarsPowerShiGenerals,
     WarsPowerBianGenerals,
     WarsPowerQuanGenerals,
     WarsLordsGenerals,
     WarsZonghengGenerals,
+    WarsKangLiGenerals,
+    WarsSpGenerals,
 };

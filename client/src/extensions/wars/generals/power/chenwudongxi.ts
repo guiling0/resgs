@@ -2,6 +2,7 @@ import { EventTriggers } from '../../../../core/event/triggers';
 import { DieEvent } from '../../../../core/event/types/event.die';
 import { PhaseEvent } from '../../../../core/event/types/event.turn';
 import { Gender } from '../../../../core/general/general.type';
+import { Phase } from '../../../../core/player/player.types';
 import { Skill } from '../../../../core/skill/skill';
 
 export const chenwudongxi = sgs.General({
@@ -75,6 +76,7 @@ duanxie.addEffect(
         },
         async effect(room, data, context) {
             const { from } = context;
+            await room.currentTurn.skipPhase(Phase.Judge);
             const haoshi = await room.addSkill('wars.lusu.haoshi', from, {
                 source: this.name,
                 showui: 'default',

@@ -579,17 +579,32 @@ export class GamePlayer {
     public getKingdomAfterOpen() {
         //TODO 双势力武将未处理
         let kindom: string = this.kingdom;
-        if (this.head && !this.head.isShibing()) {
-            kindom = this.head.kingdom;
-        } else if (this.deputy && !this.deputy.isShibing()) {
-            kindom = this.deputy.kingdom;
+        if (this.head && this.head.kingdom === 'ye') {
+            if (this.headOpen) {
+                kindom = `ye_${this.head.name}`;
+            } else if (this.deputy && !this.deputy.isShibing()) {
+                kindom = this.deputy.kingdom;
+            } else {
+                kindom = 'none';
+            }
         } else {
-            kindom = 'none';
+            if (
+                this.head &&
+                !this.head.isShibing() &&
+                this.head.kingdom !== 'ye'
+            ) {
+                kindom = this.head.kingdom;
+            } else if (this.deputy && !this.deputy.isShibing()) {
+                kindom = this.deputy.kingdom;
+            } else {
+                kindom = 'none';
+            }
         }
-        if (this.kingdom !== 'none') {
-            kindom = this.kingdom;
-        }
+        // if (this.kingdom !== 'none') {
+        //     kindom = this.kingdom;
+        // }
         if (kindom === 'none') return 'none';
+        if (kindom.includes('ye')) return kindom;
         if (this.room.getData(`lord_${kindom}`)) {
         } else if (this.room.getData(`lord_${kindom}_die`)) {
             kindom = `ye_${kindom}`;

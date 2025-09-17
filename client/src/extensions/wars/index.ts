@@ -1,5 +1,6 @@
 import { CardSuit, GameCardData } from '../../core/card/card.types';
 import { ChooseGeneralData } from '../../core/choose/types/choose.general';
+import { CustomString } from '../../core/custom/custom.type';
 import { EventData } from '../../core/event/data';
 import { EventTriggers } from '../../core/event/triggers';
 import { DieEvent } from '../../core/event/types/event.die';
@@ -8,7 +9,8 @@ import { TurnEvent } from '../../core/event/types/event.turn';
 import { General } from '../../core/general/general';
 import { GameRoom } from '../../core/room/room';
 import { MoveCardReason } from '../../core/room/room.types';
-import { PriorityType } from '../../core/skill/skill.types';
+import { TriggerEffect } from '../../core/skill/effect';
+import { PriorityType, StateEffectType } from '../../core/skill/skill.types';
 import { aozhan, warsmark } from './rules';
 
 export const game_wars_rules = sgs.Skill({
@@ -254,17 +256,21 @@ game_wars_rules.addEffect(
                                         if (item.name === 'mobile.shichangshi')
                                             return true;
                                         return (
-                                            !item.isDual() &&
-                                            !!(<ChooseGeneralData>(
-                                                this.selectors.general
-                                            )).selectable.find(
-                                                (v) =>
-                                                    v !== item && item.sameAs(v)
-                                            )
+                                            item.kingdom === 'ye' ||
+                                            (!item.isDual() &&
+                                                !!(<ChooseGeneralData>(
+                                                    this.selectors.general
+                                                )).selectable.find(
+                                                    (v) =>
+                                                        v !== item &&
+                                                        item.sameAs(v)
+                                                ))
                                         );
                                     } else if (selected.length === 1) {
                                         if (item.name === 'mobile.shichangshi')
                                             return false;
+                                        if (selected[0].kingdom === 'ye')
+                                            return true;
                                         return (
                                             item.kingdom !== 'ye' &&
                                             item.sameAs(selected[0])
@@ -710,6 +716,37 @@ game_wars_rules.addEffect(
         name: 'gamerule_gameover1',
         priorityType: PriorityType.GlobalRule,
         trigger: EventTriggers.StateChanged,
+        getSelectors(room, context) {
+            const from = context.from;
+            return {
+                choose: () => {
+                    const handles = ['!yes', 'no'];
+                    const player = room.getPlayer(context.player);
+                    if (
+                        player &&
+                        player.hasHead() &&
+                        player.head.kingdom === 'ye'
+                    ) {
+                        handles[0] = 'yes';
+                    }
+                    return {
+                        selectors: {
+                            option: room.createChooseOptions({
+                                step: 1,
+                                count: 1,
+                                selectable: handles,
+                            }),
+                        },
+                        options: {
+                            canCancle: false,
+                            showMainButtons: false,
+                            prompt: '是否暴露野心',
+                            thinkPrompt: '野心家',
+                        },
+                    };
+                },
+            };
+        },
         can_trigger(room, player, data) {
             return (
                 room.playerAlives.every((v) =>
@@ -717,15 +754,27 @@ game_wars_rules.addEffect(
                 ) && room.players.every((v) => v.rest === 0)
             );
         },
-        async cost(room, data: DieEvent, context) {
+        async effect(room, data: DieEvent, context) {
+            if (room.playerAlives.length > 1) {
+                const ret = await handleYeXinJia(room, this, data);
+                if (ret && room.getKingdomCount() > 1) return;
+            }
+            room.playerAlives.forEach((v) => {
+                v.setProperty('headOpen', true);
+                v.setProperty('deputyOpen', true);
+                v.definWarsKindom();
+            });
+            const base =
+                room.playerAlives.find(
+                    (v) => v.head && v.head.kingdom !== 'ye'
+                ) ?? room.playerAlives[0];
             await room.gameOver(
                 room.getPlayerByFilter(
-                    (v) => room.sameAsKingdom(v, room.playerAlives[0]),
+                    (v) => room.sameAsKingdom(v, base),
                     true
                 ),
                 this.name
             );
-            return true;
         },
     })
 );
@@ -736,6 +785,37 @@ game_wars_rules.addEffect(
         name: 'gamerule_gameover2',
         priorityType: PriorityType.GlobalRule,
         trigger: EventTriggers.ConfirmRole,
+        getSelectors(room, context) {
+            const from = context.from;
+            return {
+                choose: () => {
+                    const handles = ['!yes', 'no'];
+                    const player = room.getPlayer(context.player);
+                    if (
+                        player &&
+                        player.hasHead() &&
+                        player.head.kingdom === 'ye'
+                    ) {
+                        handles[0] = 'yes';
+                    }
+                    return {
+                        selectors: {
+                            option: room.createChooseOptions({
+                                step: 1,
+                                count: 1,
+                                selectable: handles,
+                            }),
+                        },
+                        options: {
+                            canCancle: false,
+                            showMainButtons: false,
+                            prompt: '是否暴露野心',
+                            thinkPrompt: '野心家',
+                        },
+                    };
+                },
+            };
+        },
         can_trigger(room, player, data) {
             return (
                 room.playerAlives.every((v) =>
@@ -743,15 +823,117 @@ game_wars_rules.addEffect(
                 ) && room.players.every((v) => v.rest === 0)
             );
         },
-        async cost(room, data: DieEvent, context) {
+        async effect(room, data: DieEvent, context) {
+            if (room.playerAlives.length > 1) {
+                const ret = await handleYeXinJia(room, this, data);
+                if (ret && room.getKingdomCount() > 1) return;
+            }
+            room.playerAlives.forEach((v) => {
+                v.setProperty('headOpen', true);
+                v.setProperty('deputyOpen', true);
+                v.definWarsKindom();
+            });
+            const base =
+                room.playerAlives.find(
+                    (v) => v.head && v.head.kingdom !== 'ye'
+                ) ?? room.playerAlives[0];
             await room.gameOver(
                 room.getPlayerByFilter(
-                    (v) => room.sameAsKingdom(v, room.playerAlives[0]),
+                    (v) => room.sameAsKingdom(v, base),
                     true
                 ),
                 this.name
             );
-            return true;
+        },
+    })
+);
+
+async function handleYeXinJia(
+    room: GameRoom,
+    effect: TriggerEffect,
+    data: EventData
+) {
+    const players = room.playerAlives.filter((v) => v.hasHead() && !v.headOpen);
+    let open = false;
+    if (players.length) {
+        room.sortResponse(players);
+        for (const player of players) {
+            const req = await room.doRequest({
+                player,
+                get_selectors: {
+                    selectorId: effect.getSelectorName('choose'),
+                    context: {
+                        player: player.playerId,
+                    },
+                },
+            });
+            const result = room.getResult(req, 'option').result as string[];
+            if (result.includes('yes')) {
+                open = true;
+                await room.open({
+                    player,
+                    generals: [player.head],
+                    source: data,
+                    reason: effect.name,
+                });
+                const skill = room.skills.find(
+                    (v) =>
+                        v.name === 'wars.mark.yexinjia' && v.player === player
+                );
+                if (skill || !player.getData('__yexinjia')) {
+                    const reps = room.sortResponse(room.playerAlives);
+                    for (const rep of reps) {
+                        if (rep !== player) {
+                            const ret = await room.chooseYesOrNo(rep, {
+                                prompt: {
+                                    text: '@yexinjia_join',
+                                    values: [
+                                        {
+                                            type: 'string',
+                                            value: player.head.name,
+                                        },
+                                    ],
+                                },
+                                thinkPrompt: '@@yexinjia_join',
+                            });
+                            if (ret) {
+                                if (skill) {
+                                    await skill.removeSelf();
+                                }
+                                player.setData('__yexinjia', true);
+                                rep.setMark('yexinjia_player', player.playerId);
+                            } else {
+                                await room.drawCards({
+                                    player: rep,
+                                    count: 4 - rep.getHandCards().length,
+                                    source: data,
+                                    reason: effect.name,
+                                });
+                                await room.recoverhp({
+                                    player: rep,
+                                    source: data,
+                                    reason: effect.name,
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return open;
+}
+
+/** 与野心家势力相同 */
+game_wars_rules.addEffect(
+    sgs.StateEffect({
+        [StateEffectType.Regard_Kingdom](player) {
+            if (player.hasMark('yexinjia_player')) {
+                const from = player.room.getPlayer(
+                    player.getMark('yexinjia_player')
+                );
+                if (from) return from._kingdom;
+            }
         },
     })
 );
@@ -776,4 +958,7 @@ sgs.loadTranslation({
     ['openHead']: '明置主将',
     ['openDeputy']: '明置副将',
     ['openAll']: '全部明置',
+
+    ['@yexinjia_join']: '是否加入{0}的阵营',
+    ['@@yexinjia_join']: '入伙',
 });

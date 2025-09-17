@@ -16,6 +16,8 @@ export class UIAboutGeneralBase extends Laya.GWidget {
     public set_avatar!: UIOptionButton;
     public info_list!: Laya.GList;
     public infos!: Laya.GTextField;
+    public g_enable!: Laya.GTextField;
+    public g_zhulianbihe!: Laya.GTextField;
     public concept!: Laya.GTextField;
 }
 

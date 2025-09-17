@@ -11,7 +11,7 @@ import { cs_xiayun } from './shichangshi/xiayun';
 import { cs_zhangrang } from './shichangshi/zhangrang';
 import { cs_zhaozhong } from './shichangshi/zhaozhong';
 
-export const MobileXiuLiQianKun = sgs.Package('MobileXiuLiQianKun');
+export const MobileXiuLiQianKun = sgs.Package('MobileExclusive.XiuLiQianKun');
 
 MobileXiuLiQianKun.addGenerals([
     shichangshi,

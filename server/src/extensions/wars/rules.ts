@@ -707,6 +707,25 @@ export const warsmark = sgs.TriggerEffect({
                 showui: 'mark',
             });
         }
+        //野心家
+        if (
+            !from.getData('__yexinjia') &&
+            from.hasHead() &&
+            from.headOpen &&
+            from.head.kingdom === 'ye'
+        ) {
+            from.setData('__yexinjia', true);
+            room.broadcast({
+                type: 'MsgPlayFaceAni',
+                ani: 'yexinjia',
+                player: from.playerId,
+            });
+            await room.delay(2);
+            await room.addSkill('wars.mark.yexinjia', from, {
+                source: this.name,
+                showui: 'mark',
+            });
+        }
         const generals = from.getOpenGenerls();
         if (generals.length >= 2) {
             const head = generals[0];
@@ -1361,6 +1380,488 @@ zhulianbihe.addEffect(
     })
 );
 
+export const yexinjia = sgs.Skill({
+    name: 'wars.mark.yexinjia',
+});
+
+yexinjia.addEffect(
+    sgs.TriggerEffect({
+        name: `${yexinjia.name}0`,
+        auto_log: 1,
+        auto_directline: 1,
+        priorityType: PriorityType.Rule,
+        trigger: EventTriggers.PlayPhaseProceeding,
+        can_trigger(room, player, data: PhaseEvent) {
+            return (
+                this.isOwner(player) &&
+                data.isOwner(player) &&
+                this.skill &&
+                (player.getHandCards().length < 4 ||
+                    room.players.some((v) => v !== player && v.hasNoneOpen()))
+            );
+        },
+        getSelectors(room, context) {
+            return {
+                skill_cost: () => {
+                    const from = context.from;
+                    const has = room.players.some(
+                        (v) => v !== from && v.hasNoneOpen()
+                    );
+                    return {
+                        selectors: {
+                            target: room.createChoosePlayer({
+                                step: 1,
+                                count: has ? 1 : 0,
+                                filter(item, selected) {
+                                    return item !== from && item.hasNoneOpen();
+                                },
+                            }),
+                        },
+                        options: {
+                            canCancle: true,
+                            showMainButtons: true,
+                            prompt: '先驱：你可以选择一名有暗置武将牌的角色，观看他的一张武将牌并将手牌补至4张',
+                            thinkPrompt: this.name,
+                        },
+                    };
+                },
+                choose: () => {
+                    return {
+                        selectors: {
+                            option: room.createChooseOptions({
+                                step: 1,
+                                count: 1,
+                                selectable: context.handles,
+                            }),
+                        },
+                        options: {
+                            canCancle: false,
+                            prompt: '先驱：请选择一项',
+                            showMainButtons: false,
+                        },
+                    };
+                },
+            };
+        },
+        async cost(room, data, context) {
+            const { from } = context;
+            room.broadcast({
+                type: 'MsgPlayCardMoveAni',
+                data: [
+                    {
+                        cards: [
+                            {
+                                name: '@yexinjia',
+                                suit: CardSuit.None,
+                                number: -1,
+                                color: CardColor.None,
+                                subcards: [],
+                                custom: {},
+                                attr: [],
+                            },
+                        ],
+                        fromArea: from.handArea.areaId,
+                        toArea: room.processingArea.areaId,
+                        movetype: CardPut.Up,
+                        puttype: CardPut.Up,
+                        animation: true,
+                        moveVisibles: [],
+                        cardVisibles: [],
+                        isMove: false,
+                        label: {
+                            text: '#Move_Use',
+                            values: [{ type: 'player', value: from.playerId }],
+                        },
+                    },
+                ],
+            });
+            return true;
+        },
+        async effect(room, data, context) {
+            const {
+                from,
+                targets: [target],
+            } = context;
+            if (target && target.hasNoneOpen()) {
+                const watchHead = room.createEventData(
+                    sgs.DataType.WatchGeneralData,
+                    {
+                        watcher: from,
+                        player: target,
+                        generals: [target.head],
+                        source: data,
+                        reason: this.name,
+                    }
+                );
+                const watchDeputy = room.createEventData(
+                    sgs.DataType.WatchGeneralData,
+                    {
+                        watcher: from,
+                        player: target,
+                        generals: [target.deputy],
+                        source: data,
+                        reason: this.name,
+                    }
+                );
+                const handles: string[] = [];
+                handles.push(`${watchHead.check() ? '' : '!'}watchHead`);
+                handles.push(`${watchDeputy.check() ? '' : '!'}watchDeputy`);
+                context.handles = handles;
+                const req = await room.doRequest({
+                    player: from,
+                    get_selectors: {
+                        selectorId: this.getSelectorName('choose'),
+                        context,
+                    },
+                });
+                const result = room.getResult(req, 'option').result as string[];
+                if (result.includes('watchHead')) {
+                    await room.watchGeneral(watchHead);
+                }
+                if (result.includes('watchDeputy')) {
+                    await room.watchGeneral(watchDeputy);
+                }
+            }
+            if (from.getHandCards().length < 4) {
+                await room.drawCards({
+                    player: from,
+                    count: 4 - from.getHandCards().length,
+                    source: data,
+                    reason: this.name,
+                });
+            }
+            await this.skill.removeSelf();
+        },
+        lifecycle: [
+            {
+                trigger: EventTriggers.onObtain,
+                async on_exec(room, data) {
+                    if (this.player) {
+                        const count = this.player.getMark<number>(this.name, 0);
+                        this.player.setMark(this.name, count + 1, {
+                            type: 'img',
+                            visible: true,
+                            url: '@yexinjia',
+                        });
+                    }
+                },
+            },
+            {
+                trigger: EventTriggers.onLose,
+                async on_exec(room, data) {
+                    if (this.player) {
+                        const count = this.player.getMark<number>(this.name, 0);
+                        if (count < 2) {
+                            this.player.removeMark(this.name);
+                        } else {
+                            this.player.setMark(this.name, count - 1, {
+                                type: 'img',
+                                visible: true,
+                                url: '@yexinjia',
+                            });
+                        }
+                    }
+                },
+            },
+        ],
+    })
+);
+yexinjia.addEffect(
+    sgs.TriggerEffect({
+        name: `${yexinjia.name}1`,
+        auto_log: 1,
+        priorityType: PriorityType.Rule,
+        trigger: EventTriggers.PlayPhaseProceeding,
+        can_trigger(room, player, data: PhaseEvent) {
+            return this.isOwner(player) && data.isOwner(player) && this.skill;
+        },
+        getSelectors(room, context) {
+            return {
+                skill_cost: () => {
+                    return room.createCac({
+                        canCancle: true,
+                        showMainButtons: true,
+                        prompt: '是否弃置“野心家”，摸一张牌',
+                    });
+                },
+            };
+        },
+        async cost(room, data, context) {
+            const { from } = context;
+            room.broadcast({
+                type: 'MsgPlayCardMoveAni',
+                data: [
+                    {
+                        cards: [
+                            {
+                                name: '@yexinjia',
+                                suit: CardSuit.None,
+                                number: -1,
+                                color: CardColor.None,
+                                subcards: [],
+                                custom: {},
+                                attr: [],
+                            },
+                        ],
+                        fromArea: from.handArea.areaId,
+                        toArea: room.processingArea.areaId,
+                        movetype: CardPut.Up,
+                        puttype: CardPut.Up,
+                        animation: true,
+                        moveVisibles: [],
+                        cardVisibles: [],
+                        isMove: false,
+                        label: {
+                            text: '#Move_Use',
+                            values: [{ type: 'player', value: from.playerId }],
+                        },
+                    },
+                ],
+            });
+            return true;
+        },
+        async effect(room, data, context) {
+            const { from } = context;
+            await this.skill.removeSelf();
+            await room.drawCards({
+                player: from,
+                source: data,
+                reason: this.name,
+            });
+        },
+    })
+);
+yexinjia.addEffect(
+    sgs.TriggerEffect({
+        name: `${yexinjia.name}2`,
+        auto_log: 1,
+        forced: 'cost',
+        priorityType: PriorityType.Rule,
+        trigger: EventTriggers.DropPhaseStarted,
+        can_trigger(room, player, data: PhaseEvent) {
+            return (
+                this.isOwner(player) &&
+                data.isOwner(player) &&
+                this.skill &&
+                player.getHandCards().length > player.maxhand
+            );
+        },
+        async cost(room, data, context) {
+            const { from } = context;
+            room.broadcast({
+                type: 'MsgPlayCardMoveAni',
+                data: [
+                    {
+                        cards: [
+                            {
+                                name: '@yexinjia',
+                                suit: CardSuit.None,
+                                number: -1,
+                                color: CardColor.None,
+                                subcards: [],
+                                custom: {},
+                                attr: [],
+                            },
+                        ],
+                        fromArea: from.handArea.areaId,
+                        toArea: room.processingArea.areaId,
+                        movetype: CardPut.Up,
+                        puttype: CardPut.Up,
+                        animation: true,
+                        moveVisibles: [],
+                        cardVisibles: [],
+                        isMove: false,
+                        label: {
+                            text: '#Move_Use',
+                            values: [{ type: 'player', value: from.playerId }],
+                        },
+                    },
+                ],
+            });
+            return true;
+        },
+        async effect(room, data, context) {
+            const { from } = context;
+            await this.skill.removeSelf();
+            const effect = await room.addEffect('yinyangyu.delay', from);
+            effect.setData('data', room.currentTurn);
+        },
+    })
+);
+yexinjia.addEffect(
+    sgs.TriggerEffect({
+        name: 'wars.mark.yexinjia.draw',
+        auto_log: 1,
+        priorityType: PriorityType.Rule,
+        trigger: EventTriggers.PlayPhaseProceeding,
+        can_trigger(room, player, data: PhaseEvent) {
+            return this.isOwner(player) && data.isOwner(player) && this.skill;
+        },
+        getSelectors(room, context) {
+            return {
+                skill_cost: () => {
+                    return room.createCac({
+                        canCancle: true,
+                        showMainButtons: true,
+                        prompt: '是否弃置“野心家”，摸两张牌',
+                    });
+                },
+            };
+        },
+        async cost(room, data, context) {
+            const { from } = context;
+            room.broadcast({
+                type: 'MsgPlayCardMoveAni',
+                data: [
+                    {
+                        cards: [
+                            {
+                                name: '@yexinjia',
+                                suit: CardSuit.None,
+                                number: -1,
+                                color: CardColor.None,
+                                subcards: [],
+                                custom: {},
+                                attr: [],
+                            },
+                        ],
+                        fromArea: from.handArea.areaId,
+                        toArea: room.processingArea.areaId,
+                        movetype: CardPut.Up,
+                        puttype: CardPut.Up,
+                        animation: true,
+                        moveVisibles: [],
+                        cardVisibles: [],
+                        isMove: false,
+                        label: {
+                            text: '#Move_Use',
+                            values: [{ type: 'player', value: from.playerId }],
+                        },
+                    },
+                ],
+            });
+            return true;
+        },
+        async effect(room, data, context) {
+            const { from } = context;
+            await this.skill.removeSelf();
+            await room.drawCards({
+                player: from,
+                count: 2,
+                source: data,
+                reason: this.name,
+            });
+        },
+    })
+);
+yexinjia.addEffect(
+    sgs.TriggerEffect({
+        name: 'wars.mark.yexinjia.use',
+        auto_log: 1,
+        priorityType: PriorityType.Rule,
+        trigger: EventTriggers.NeedUseCard2,
+        getSelectors(room, context) {
+            return {
+                skill_cost: () => {
+                    const from = context.from;
+                    const tao = room.createVirtualCardByNone(
+                        'tao',
+                        undefined,
+                        false
+                    );
+                    tao.custom.method = context.method ?? 1;
+                    tao.custom.canuse = from.canUseCard(
+                        tao,
+                        undefined,
+                        this.name
+                    );
+                    return {
+                        selectors: {
+                            card: room.createChooseVCard({
+                                step: 1,
+                                count: 1,
+                                selectable: [tao.vdata],
+                                filter(item, selected) {
+                                    return item.custom.canuse;
+                                },
+                                onChange(type, item) {
+                                    if (type === 'add') {
+                                        this._use_or_play_vcard =
+                                            room.createVirtualCardByData(
+                                                item,
+                                                false
+                                            );
+                                    }
+                                },
+                            }),
+                        },
+                        options: {
+                            canCancle: true,
+                            showMainButtons: true,
+                            prompt: '野心家：你可以视为使用一张【桃】',
+                        },
+                    };
+                },
+            };
+        },
+        can_trigger(room, player, data) {
+            return (
+                this.isOwner(player) &&
+                this.skill &&
+                data.is(sgs.DataType.NeedUseCardData) &&
+                data.from === player &&
+                data.has('tao', 0)
+            );
+        },
+        context(room, player, data: NeedUseCardData) {
+            let method = 1;
+            data.cards.find((v) => {
+                if (v.name === 'tao') method = v.method ?? 1;
+            });
+            return {
+                method,
+            };
+        },
+        async cost(room, data, context) {
+            const { from } = context;
+            room.broadcast({
+                type: 'MsgPlayCardMoveAni',
+                data: [
+                    {
+                        cards: [
+                            {
+                                name: '@yexinjia',
+                                suit: CardSuit.None,
+                                number: -1,
+                                color: CardColor.None,
+                                subcards: [],
+                                custom: {},
+                                attr: [],
+                            },
+                        ],
+                        fromArea: from.handArea.areaId,
+                        toArea: room.processingArea.areaId,
+                        movetype: CardPut.Up,
+                        puttype: CardPut.Up,
+                        animation: true,
+                        moveVisibles: [],
+                        cardVisibles: [],
+                        isMove: false,
+                        label: {
+                            text: '#Move_Use',
+                            values: [{ type: 'player', value: from.playerId }],
+                        },
+                    },
+                ],
+            });
+            return true;
+        },
+        async effect(room, data, context) {
+            await this.skill.removeSelf();
+        },
+    })
+);
+
 sgs.loadTranslation({
     ['wars.hezong']: '合纵',
     ['@desc:wars.hezong']:
@@ -1376,5 +1877,13 @@ sgs.loadTranslation({
         '出牌阶段，若场上有未明置的武将牌或你的手牌数不足4张，你可以弃置一枚“先驱”，观看一张未明置的武将牌并将手牌数补至4张',
     ['@method:wars.mark.zhulianbihe.draw']: '摸两张牌',
     ['@method:wars.mark.zhulianbihe.use']: '使用桃',
+    ['@method:wars.mark.yexinjia0']: '先驱',
+    ['@method:wars.mark.yexinjia1']: '摸一张牌',
+    ['@method:wars.mark.yexinjia2']: '',
+    ['@method:wars.mark.yexinjia.draw']: '摸两张牌',
+    ['@method:wars.mark.yexinjia.use']: '使用桃',
     ['mark.yinyangyu.maxhand']: '手牌上限',
+    ['wars.mark.yexinjia']: '野心家',
+    ['@desc:wars.mark.yexinjia']:
+        '你可以将此标记当“先驱”“阴阳鱼”或“珠联璧合”使用。',
 });

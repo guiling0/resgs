@@ -18,6 +18,7 @@ export const chenjiang = sgs.Skill({
 
 chenjiang.addEffect(
     sgs.TriggerEffect({
+        audio: ['xl/xl.wangjun/chenjiang1'],
         auto_log: 1,
         priorityType: PriorityType.General,
         trigger: EventTriggers.NeedUseCard3,
@@ -74,6 +75,7 @@ chenjiang.addEffect(
 
 chenjiang.addEffect(
     sgs.TriggerEffect({
+        audio: ['xl/xl.wangjun/chenjiang2'],
         auto_log: 1,
         auto_directline: 1,
         forced: 'cost',

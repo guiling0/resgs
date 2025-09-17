@@ -1,6 +1,6 @@
 import { Gender } from '../../../core/general/general.type';
 
-export const YiJIang1 = sgs.Package('YJ1');
+export const YiJIang1 = sgs.Package('YJ.2011');
 
 YiJIang1.addGenerals([
     sgs.General({
@@ -77,7 +77,7 @@ YiJIang1.addGenerals([
     }),
 ]);
 
-export const YiJIang2 = sgs.Package('YJ2');
+export const YiJIang2 = sgs.Package('YJ.2012');
 
 YiJIang2.addGenerals([
     sgs.General({
@@ -148,7 +148,7 @@ YiJIang2.addGenerals([
     }),
 ]);
 
-export const YiJIang3 = sgs.Package('YJ3');
+export const YiJIang3 = sgs.Package('YJ.2013');
 
 YiJIang3.addGenerals([
     sgs.General({
@@ -219,7 +219,7 @@ YiJIang3.addGenerals([
     }),
 ]);
 
-export const YiJIang4 = sgs.Package('YJ4');
+export const YiJIang4 = sgs.Package('YJ.2014');
 
 YiJIang4.addGenerals([
     sgs.General({
@@ -290,7 +290,7 @@ YiJIang4.addGenerals([
     }),
 ]);
 
-export const YiJIang5 = sgs.Package('YJ5');
+export const YiJIang5 = sgs.Package('YJ.2015');
 
 YiJIang5.addGenerals([
     sgs.General({
@@ -364,7 +364,7 @@ YiJIang5.addGenerals([
     }),
 ]);
 
-export const YiJIang6 = sgs.Package('YJ6');
+export const YiJIang6 = sgs.Package('YJ.2016');
 
 YiJIang6.addGenerals([
     sgs.General({
@@ -417,7 +417,7 @@ YiJIang6.addGenerals([
     }),
 ]);
 
-export const YiJIang7 = sgs.Package('YJ7');
+export const YiJIang7 = sgs.Package('YJ.2017');
 
 YiJIang7.addGenerals([
     sgs.General({

@@ -108,9 +108,7 @@ export class DieEvent extends EventProcess {
 
     protected async [`${EventTriggers.BeforeDeath}_After`]() {
         this.player.setProperty('death', true);
-        if (this.room.mode.name === 'wars' && this.player.isNoneKingdom()) {
-            this.player.definWarsKindom();
-        }
+        this.player.definWarsKindom();
         for (const skill of this.room.skills) {
             if (
                 skill.sourceGeneral === this.player.head ||

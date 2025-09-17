@@ -1,5 +1,10 @@
 sgs.GeneralSetting('wars.caocao', {
     title: '魏武帝',
+    id: 'WEI001',
+    designer: 'KayaK',
+    cv: '马洋',
+    painter: 'KayaK',
+    script: '归零',
     rs: '卞夫人 典韦 许褚',
     death_audio: '霸业未成，未成啊……',
     skills: {
@@ -23,6 +28,11 @@ sgs.GeneralSetting('wars.caocao', {
 
 sgs.GeneralSetting('wars.simayi', {
     title: '狼顾之鬼',
+    id: 'WEI002',
+    designer: 'KayaK',
+    cv: '龚韶华',
+    painter: '木美人',
+    script: '归零',
     rs: '',
     death_audio: '我的气数就到这里了么……',
     skills: {
@@ -63,6 +73,11 @@ sgs.GeneralSetting('wars.simayi', {
 
 sgs.GeneralSetting('wars.xiahoudun', {
     title: '独眼的罗刹',
+    id: 'WEI003',
+    designer: 'KayaK',
+    cv: '冷泉夜月',
+    painter: 'KayaK',
+    script: '归零',
     rs: '夏侯渊 于禁',
     death_audio: '两…两边都看不见了……',
     skills: {
@@ -86,6 +101,11 @@ sgs.GeneralSetting('wars.xiahoudun', {
 
 sgs.GeneralSetting('wars.zhangliao', {
     title: '前将军',
+    id: 'WEI004',
+    designer: 'KayaK',
+    cv: '万小鳖',
+    painter: '张帅',
+    script: '归零',
     rs: '臧霸',
     death_audio: '被敌人占了先机，呃啊…………',
     skills: {
@@ -109,6 +129,11 @@ sgs.GeneralSetting('wars.zhangliao', {
 
 sgs.GeneralSetting('wars.xuchu', {
     title: '虎痴',
+    id: 'WEI005',
+    designer: 'KayaK',
+    cv: '冷泉夜月',
+    painter: 'KayaK',
+    script: '归零',
     rs: '曹操',
     death_audio: '冷，好冷啊…………',
     skills: {
@@ -132,6 +157,11 @@ sgs.GeneralSetting('wars.xuchu', {
 
 sgs.GeneralSetting('wars.guojia', {
     title: '早终的先知',
+    id: 'WEI006',
+    designer: 'KayaK',
+    cv: '花少关',
+    painter: '绘聚艺堂',
+    script: '归零',
     rs: '',
     death_audio: '咳，咳……',
     skills: {
@@ -170,6 +200,11 @@ sgs.GeneralSetting('wars.guojia', {
 
 sgs.GeneralSetting('wars.zhenji', {
     title: '薄幸的美人',
+    id: 'WEI007',
+    designer: 'KayaK',
+    cv: '林簌',
+    painter: 'DH',
+    script: '归零',
     rs: '曹丕',
     death_audio: '悼良会之永绝兮，哀一逝而异乡。',
     skills: {
@@ -210,6 +245,11 @@ sgs.GeneralSetting('wars.zhenji', {
 
 sgs.GeneralSetting('wars.xiahouyuan', {
     title: '疾行的猎豹',
+    id: 'WEI008',
+    designer: 'KayaK',
+    cv: '未知',
+    painter: 'KayaK',
+    script: '归零',
     rs: '夏侯惇',
     death_audio: '竟然比我还…快……',
     skills: {
@@ -233,6 +273,11 @@ sgs.GeneralSetting('wars.xiahouyuan', {
 
 sgs.GeneralSetting('wars.zhanghe', {
     title: '料敌机先',
+    id: 'WEI009',
+    designer: 'KayaK',
+    cv: '彭尧',
+    painter: '张帅',
+    script: '归零',
     rs: '',
     death_audio: '呃，膝盖中箭了……',
     skills: {
@@ -256,6 +301,11 @@ sgs.GeneralSetting('wars.zhanghe', {
 
 sgs.GeneralSetting('wars.xuhuang', {
     title: '周亚夫之风',
+    id: 'WEI010',
+    designer: 'KayaK',
+    cv: '彭尧',
+    painter: 'Tuu.',
+    script: '归零',
     rs: '',
     death_audio: '一顿不吃饿得慌……',
     skills: {
@@ -279,6 +329,11 @@ sgs.GeneralSetting('wars.xuhuang', {
 
 sgs.GeneralSetting('wars.caoren', {
     title: '大将军',
+    id: 'WEI011',
+    designer: 'KayaK',
+    cv: '徐少杰',
+    painter: 'Ccat',
+    script: '归零',
     rs: '曹洪',
     death_audio: '长江以南，再无王土矣……',
     skills: {
@@ -302,6 +357,11 @@ sgs.GeneralSetting('wars.caoren', {
 
 sgs.GeneralSetting('wars.dianwei', {
     title: '古之恶来',
+    id: 'WEI012',
+    designer: 'KayaK',
+    cv: '彭尧',
+    painter: '小冷',
+    script: '归零',
     rs: '曹操',
     death_audio: '主公！快走……',
     skills: {
@@ -325,6 +385,11 @@ sgs.GeneralSetting('wars.dianwei', {
 
 sgs.GeneralSetting('wars.xunyu', {
     title: '王佐之才',
+    id: 'WEI013',
+    designer: 'KayaK',
+    cv: '彭尧',
+    painter: 'LiuHeng',
+    script: '归零',
     rs: '荀攸',
     death_audio: '主公要臣死，臣不得不死。',
     skills: {
@@ -363,6 +428,11 @@ sgs.GeneralSetting('wars.xunyu', {
 
 sgs.GeneralSetting('wars.caopi', {
     title: '霸业的继承者',
+    id: 'WEI014',
+    designer: 'KayaK',
+    cv: '彭尧',
+    painter: 'DH',
+    script: '归零',
     rs: '甄姬 崔琰毛玠',
     death_audio: '子建，子建……',
     skills: {
@@ -401,6 +471,11 @@ sgs.GeneralSetting('wars.caopi', {
 
 sgs.GeneralSetting('wars.yuejin', {
     title: '奋强突固',
+    id: 'WEI016',
+    designer: '淬毒',
+    cv: '冷泉夜月',
+    painter: '巴萨小马',
+    script: '归零',
     rs: '李典',
     death_audio: '箭疮发作，吾命休矣……',
     skills: {
@@ -424,6 +499,11 @@ sgs.GeneralSetting('wars.yuejin', {
 
 sgs.GeneralSetting('wars.liubei', {
     title: '乱世的枭雄',
+    id: 'SHU001',
+    designer: 'KayaK',
+    cv: '彭博',
+    painter: '木美人',
+    script: '归零',
     rs: '关羽 张飞 甘夫人 法正',
     death_audio: '汉室未兴，祖宗未耀，朕实不忍此时西去……',
     skills: {
@@ -449,6 +529,11 @@ sgs.GeneralSetting('wars.liubei', {
 
 sgs.GeneralSetting('wars.guanyu', {
     title: '美髯公',
+    id: 'SHU002',
+    designer: 'KayaK',
+    cv: '未知',
+    painter: 'KayaK',
+    script: '归零',
     rs: '刘备 张飞',
     death_audio: '什么？此地名叫麦城？',
     skills: {
@@ -472,6 +557,11 @@ sgs.GeneralSetting('wars.guanyu', {
 
 sgs.GeneralSetting('wars.zhangfei', {
     title: '万夫不当',
+    id: 'SHU003',
+    designer: 'KayaK',
+    cv: '未知',
+    painter: 'KayaK',
+    script: '归零',
     rs: '刘备 关羽',
     death_audio: '实在是杀不动了……',
     skills: {
@@ -495,6 +585,11 @@ sgs.GeneralSetting('wars.zhangfei', {
 
 sgs.GeneralSetting('wars.zhugeliang', {
     title: '迟暮的丞相',
+    id: 'SHU004',
+    designer: 'KayaK',
+    cv: '未知',
+    painter: '木美人',
+    script: '归零',
     rs: '黄月英 蒋琬费祎 姜维',
     death_audio: '将星陨落，天命难违……',
     skills: {
@@ -533,6 +628,11 @@ sgs.GeneralSetting('wars.zhugeliang', {
 
 sgs.GeneralSetting('wars.zhaoyun', {
     title: '虎威将军',
+    id: 'SHU005',
+    designer: 'KayaK&Loun老萌',
+    cv: '未知',
+    painter: 'KayaK',
+    script: '归零',
     rs: '刘禅',
     death_audio: '这，就是失败的滋味吗？',
     skills: {
@@ -556,6 +656,11 @@ sgs.GeneralSetting('wars.zhaoyun', {
 
 sgs.GeneralSetting('wars.machao', {
     title: '一骑当千',
+    id: 'SHU006',
+    designer: 'KayaK',
+    cv: '彭博',
+    painter: 'KayaK&木美人&张帅',
+    script: '归零',
     rs: '马岱',
     death_audio: '请将我葬在西凉……',
     skills: {
@@ -594,6 +699,11 @@ sgs.GeneralSetting('wars.machao', {
 
 sgs.GeneralSetting('wars.huangyueying', {
     title: '归隐的杰女',
+    id: 'SHU007',
+    designer: 'KayaK',
+    cv: '林簌',
+    painter: '木美人',
+    script: '归零',
     rs: '诸葛亮 卧龙·诸葛亮',
     death_audio: '亮……',
     skills: {
@@ -632,6 +742,11 @@ sgs.GeneralSetting('wars.huangyueying', {
 
 sgs.GeneralSetting('wars.huangzhong', {
     title: '老当益壮',
+    id: 'SHU008',
+    designer: 'KayaK',
+    cv: '未知',
+    painter: 'KayaK',
+    script: '归零',
     rs: '魏延',
     death_audio: '不得不服老了……',
     skills: {
@@ -655,6 +770,11 @@ sgs.GeneralSetting('wars.huangzhong', {
 
 sgs.GeneralSetting('wars.v2025.huangzhong', {
     title: '老当益壮',
+    id: 'SHU008',
+    designer: 'KayaK',
+    cv: '未知',
+    painter: 'KayaK',
+    script: '归零',
     version: '2025移动版修订',
     rs: '魏延',
     death_audio: '不得不服老了……',
@@ -680,6 +800,11 @@ sgs.GeneralSetting('wars.v2025.huangzhong', {
 
 sgs.GeneralSetting('wars.weiyan', {
     title: '嗜血的独狼',
+    id: 'SHU009',
+    designer: 'KayaK',
+    cv: '拜跃',
+    painter: '瞌瞌一休',
+    script: '归零',
     rs: '黄忠',
     death_audio: '奸贼……害我……',
     skills: {
@@ -703,6 +828,11 @@ sgs.GeneralSetting('wars.weiyan', {
 
 sgs.GeneralSetting('wars.pangtong', {
     title: '凤雏',
+    id: 'SHU010',
+    designer: 'KayaK',
+    cv: '彭尧',
+    painter: 'KayaK',
+    script: '归零',
     rs: '卧龙·诸葛亮',
     death_audio: '看来，我命中注定将丧命于此。',
     skills: {
@@ -741,6 +871,11 @@ sgs.GeneralSetting('wars.pangtong', {
 
 sgs.GeneralSetting('wars.wolong', {
     title: '卧龙',
+    id: 'SHU011',
+    designer: 'KayaK',
+    cv: '彭尧',
+    painter: '绘聚艺堂',
+    script: '归零',
     rs: '黄月英 庞统',
     death_audio: '我的计谋竟被……',
     skills: {
@@ -794,6 +929,11 @@ sgs.GeneralSetting('wars.wolong', {
 
 sgs.GeneralSetting('wars.liushan', {
     title: '无为的真命主',
+    id: 'SHU013',
+    designer: 'KayaK',
+    cv: '彭尧',
+    painter: 'LiuHeng',
+    script: '归零',
     rs: '赵云',
     death_audio: '别打脸，我投降还不行吗？',
     skills: {
@@ -832,6 +972,11 @@ sgs.GeneralSetting('wars.liushan', {
 
 sgs.GeneralSetting('wars.menghuo', {
     title: '南蛮王',
+    id: 'SHU014',
+    designer: 'KayaK',
+    cv: '彭尧',
+    painter: '废柴男',
+    script: '归零',
     rs: '祝融',
     death_audio: '七纵之恩，来世再报了。',
     skills: {
@@ -870,6 +1015,11 @@ sgs.GeneralSetting('wars.menghuo', {
 
 sgs.GeneralSetting('wars.zhurong', {
     title: '野性的女王',
+    id: 'SHU015',
+    designer: 'KayaK',
+    cv: '未知',
+    painter: '废柴男',
+    script: '归零',
     rs: '孟获',
     death_audio: '七纵之恩，来世再报了。',
     skills: {
@@ -908,6 +1058,11 @@ sgs.GeneralSetting('wars.zhurong', {
 
 sgs.GeneralSetting('wars.ganfuren', {
     title: '昭烈皇后',
+    id: 'SHU016',
+    designer: '淬毒',
+    cv: '水原',
+    painter: '琛·美弟奇',
+    script: '归零',
     rs: '刘备',
     death_audio: '请替我照顾好阿斗。',
     skills: {
@@ -946,6 +1101,11 @@ sgs.GeneralSetting('wars.ganfuren', {
 
 sgs.GeneralSetting('wars.sunquan', {
     title: '年轻的贤君',
+    id: 'WU001',
+    designer: 'KayaK',
+    cv: '薛倞',
+    painter: 'KayaK',
+    script: '归零',
     rs: '周泰',
     death_audio: '父亲，大哥，仲谋愧矣……',
     skills: {
@@ -969,6 +1129,11 @@ sgs.GeneralSetting('wars.sunquan', {
 
 sgs.GeneralSetting('wars.ganning', {
     title: '锦帆游侠',
+    id: 'WU002',
+    designer: 'KayaK',
+    cv: '未知',
+    painter: 'KayaK',
+    script: '归零',
     rs: '凌统',
     death_audio: '二十年后，又是一条好汉！',
     skills: {
@@ -992,6 +1157,11 @@ sgs.GeneralSetting('wars.ganning', {
 
 sgs.GeneralSetting('wars.lvmeng', {
     title: '士别三日',
+    id: 'WU003',
+    designer: 'Loun老萌',
+    cv: '绯川陵彦',
+    painter: '樱花闪乱',
+    script: '归零',
     rs: '',
     death_audio: '种下恶因，必有恶果。',
     skills: {
@@ -1030,6 +1200,11 @@ sgs.GeneralSetting('wars.lvmeng', {
 
 sgs.GeneralSetting('wars.huanggai', {
     title: '轻身为国',
+    id: 'WU004',
+    designer: 'KayaK',
+    cv: '徐少杰',
+    painter: 'G.G.G.',
+    script: '归零',
     rs: '周瑜',
     death_audio: '盖，有负公瑾重托……',
     skills: {
@@ -1053,6 +1228,11 @@ sgs.GeneralSetting('wars.huanggai', {
 
 sgs.GeneralSetting('wars.zhouyu', {
     title: '大都督',
+    id: 'WU005',
+    designer: 'KayaK',
+    cv: '刘以嘉',
+    painter: '绘聚艺堂',
+    script: '归零',
     rs: '小乔 孙策 黄盖',
     death_audio: '既生瑜，何生亮。既生瑜，何生亮！',
     skills: {
@@ -1091,6 +1271,11 @@ sgs.GeneralSetting('wars.zhouyu', {
 
 sgs.GeneralSetting('wars.daqiao', {
     title: '矜持之花',
+    id: 'WU006',
+    designer: 'KayaK',
+    cv: '林簌',
+    painter: 'KayaK',
+    script: '归零',
     rs: '孙策 小乔',
     death_audio: '伯符，我去了……',
     skills: {
@@ -1129,6 +1314,11 @@ sgs.GeneralSetting('wars.daqiao', {
 
 sgs.GeneralSetting('wars.luxun', {
     title: '擎天之柱',
+    id: 'WU007',
+    designer: 'KayaK&韩旭',
+    cv: '未知',
+    painter: 'KayaK',
+    script: '归零',
     rs: '陆抗',
     death_audio: '还以为我已经不再年轻……',
     skills: {
@@ -1168,6 +1358,11 @@ sgs.GeneralSetting('wars.luxun', {
 sgs.GeneralSetting('wars.v2025.luxun', {
     version: '2025移动版修订',
     title: '擎天之柱',
+    id: 'WU007',
+    designer: 'KayaK&韩旭',
+    cv: '未知',
+    painter: 'KayaK',
+    script: '归零',
     image_url: 'generals/luxun/image',
     rs: '陆抗',
     death_audio: '还以为我已经不再年轻……',
@@ -1207,6 +1402,11 @@ sgs.GeneralSetting('wars.v2025.luxun', {
 
 sgs.GeneralSetting('wars.sunshangxiang', {
     title: '弓腰姬',
+    id: 'WU008',
+    designer: 'KayaK',
+    cv: '未知',
+    painter: 'KayaK',
+    script: '归零',
     rs: '',
     death_audio: '不！还不可以死……',
     skills: {
@@ -1245,6 +1445,11 @@ sgs.GeneralSetting('wars.sunshangxiang', {
 
 sgs.GeneralSetting('wars.sunjian', {
     title: '武烈帝',
+    id: 'WU009',
+    designer: 'KayaK',
+    cv: '彭博',
+    painter: 'LiuHeng',
+    script: '归零',
     rs: '吴国太',
     death_audio: '有埋伏！呃……啊！！',
     skills: {
@@ -1268,6 +1473,11 @@ sgs.GeneralSetting('wars.sunjian', {
 
 sgs.GeneralSetting('wars.xiaoqiao', {
     title: '矫情之花',
+    id: 'WU011',
+    designer: 'KayaK',
+    cv: '未知',
+    painter: '绘聚艺堂',
+    script: '归零',
     rs: '周瑜 大乔',
     death_audio: '公瑾，我先走一步……',
     skills: {
@@ -1308,6 +1518,11 @@ sgs.GeneralSetting('wars.xiaoqiao', {
 
 sgs.GeneralSetting('wars.taishici', {
     title: '笃烈之士',
+    id: 'WU012',
+    designer: 'KayaK',
+    cv: '彭尧',
+    painter: 'Tuu.',
+    script: '归零',
     rs: '孙策',
     death_audio: '大丈夫当带三尺之剑，立不世之功……',
     skills: {
@@ -1331,6 +1546,11 @@ sgs.GeneralSetting('wars.taishici', {
 
 sgs.GeneralSetting('wars.zhoutai', {
     title: '历战之躯',
+    id: 'WU013',
+    designer: 'KayaK',
+    cv: '李杨',
+    painter: 'Thinking',
+    script: '归零',
     rs: '孙权 蒋钦',
     death_audio: '敌众我寡，无力回天……',
     skills: {
@@ -1369,6 +1589,11 @@ sgs.GeneralSetting('wars.zhoutai', {
 
 sgs.GeneralSetting('wars.lusu', {
     title: '独断的外交家',
+    id: 'WU014',
+    designer: 'KayaK',
+    cv: '彭尧',
+    painter: 'LiuHeng',
+    script: '归零',
     death_audio: '此联盟已破，吴蜀休矣……',
     skills: {
         ['wars.lusu.haoshi']: {
@@ -1406,6 +1631,11 @@ sgs.GeneralSetting('wars.lusu', {
 
 sgs.GeneralSetting('wars.zhangzhaozhanghong', {
     title: '经天纬地',
+    id: 'WU015',
+    designer: 'KayaK',
+    cv: '彭尧',
+    painter: '废柴男',
+    script: '归零',
     rs: '',
     death_audio: '竭力尽智，死而无憾……',
     image_self_url: 'generals/zhangzhaozhanghong/image',
@@ -1445,6 +1675,11 @@ sgs.GeneralSetting('wars.zhangzhaozhanghong', {
 
 sgs.GeneralSetting('wars.dingfeng', {
     title: '清侧重臣',
+    id: 'WU016',
+    designer: '淬毒',
+    cv: '冷泉夜月',
+    painter: '魔鬼鱼',
+    script: '归零',
     rs: '徐盛',
     death_audio: '这风，太冷了……',
     skills: {
@@ -1483,6 +1718,11 @@ sgs.GeneralSetting('wars.dingfeng', {
 
 sgs.GeneralSetting('wars.huatuo', {
     title: '神医',
+    id: 'QUN001',
+    designer: '韩旭',
+    cv: '彭博',
+    painter: '琛·美弟奇',
+    script: '归零',
     rs: '',
     death_audio: '生老病死，命不可违……',
     skills: {
@@ -1521,6 +1761,11 @@ sgs.GeneralSetting('wars.huatuo', {
 
 sgs.GeneralSetting('wars.lvbu', {
     title: '武的化身',
+    id: 'QUN002',
+    designer: 'KayaK',
+    cv: '未知',
+    painter: 'LiuHeng',
+    script: '归零',
     rs: '貂蝉',
     death_audio: '不可能！',
     skills: {
@@ -1544,6 +1789,11 @@ sgs.GeneralSetting('wars.lvbu', {
 
 sgs.GeneralSetting('wars.diaochan', {
     title: '绝世的舞姬',
+    id: 'QUN003',
+    designer: 'KayaK',
+    cv: '林簌',
+    painter: 'LiuHeng',
+    script: '归零',
     rs: '吕布',
     death_audio: '父亲大人，对不起……',
     skills: {
@@ -1582,6 +1832,11 @@ sgs.GeneralSetting('wars.diaochan', {
 
 sgs.GeneralSetting('wars.yuanshao', {
     title: '高贵的名门',
+    id: 'QUN004',
+    designer: 'KayaK',
+    cv: '彭尧',
+    painter: '北辰菌',
+    script: '归零',
     rs: '颜良文丑',
     death_audio: '老天不助我袁家啊！',
     skills: {
@@ -1605,6 +1860,11 @@ sgs.GeneralSetting('wars.yuanshao', {
 
 sgs.GeneralSetting('wars.yanliangwenchou', {
     title: '虎狼兄弟',
+    id: 'QUN005',
+    designer: 'KayaK',
+    cv: '彭尧',
+    painter: 'KayaK',
+    script: '归零',
     rs: '袁绍',
     death_audio: '这红脸长须大将是……',
     image_self_url: 'generals/yanliangwenchou/image',
@@ -1629,6 +1889,11 @@ sgs.GeneralSetting('wars.yanliangwenchou', {
 
 sgs.GeneralSetting('wars.jiaxu', {
     title: '冷酷的毒士',
+    id: 'QUN007',
+    designer: 'KayaK',
+    cv: '马洋',
+    painter: '绘聚艺堂',
+    script: '归零',
     rs: '张绣 李傕郭汜',
     death_audio: '我的时辰也到了……',
     skills: {
@@ -1682,6 +1947,11 @@ sgs.GeneralSetting('wars.jiaxu', {
 
 sgs.GeneralSetting('wars.pangde', {
     title: '人马一体',
+    id: 'QUN008',
+    designer: '韩旭',
+    cv: '刘北辰',
+    painter: '凝聚永恒',
+    script: '归零',
     death_audio: '我宁为国家鬼，不为贼将也……',
     skills: {
         ['wars.pangde.mashu']: {
@@ -1710,6 +1980,11 @@ sgs.GeneralSetting('wars.pangde', {
 
 sgs.GeneralSetting('wars.zhangjiao', {
     title: '天公将军',
+    id: 'QUN010',
+    designer: 'KayaK',
+    cv: '未知',
+    painter: 'LiuHeng',
+    script: '归零',
     death_audio: '黄天…也死了……',
     skills: {
         ['wars.zhangjiao.leiji']: {
@@ -1749,6 +2024,11 @@ sgs.GeneralSetting('wars.zhangjiao', {
 
 sgs.GeneralSetting('wars.caiwenji', {
     title: '异乡的孤女',
+    id: 'QUN012',
+    designer: 'KayaK',
+    cv: '未知',
+    painter: 'SoniaTang',
+    script: '归零',
     death_audio: '人生几何时，怀忧终年岁。',
     skills: {
         ['wars.caiwenji.beige']: {
@@ -1786,6 +2066,11 @@ sgs.GeneralSetting('wars.caiwenji', {
 
 sgs.GeneralSetting('wars.mateng', {
     title: '驰骋西陲',
+    id: 'QUN013',
+    designer: '淬毒',
+    cv: '龚韶华',
+    painter: 'DH',
+    script: '归零',
     death_audio: '儿子，为爹报仇啊……',
     skills: {
         ['wars.mateng.mashu']: {
@@ -1814,6 +2099,11 @@ sgs.GeneralSetting('wars.mateng', {
 
 sgs.GeneralSetting('wars.kongrong', {
     title: '凛然重义',
+    id: 'QUN014',
+    designer: '淬毒',
+    cv: '未知',
+    painter: '苍月白龙',
+    script: '归零',
     rs: '祢衡',
     death_audio: '覆巢之下，岂有完卵……',
     skills: {
@@ -1852,6 +2142,11 @@ sgs.GeneralSetting('wars.kongrong', {
 
 sgs.GeneralSetting('wars.jiling', {
     title: '仲家的主将',
+    id: 'QUN015',
+    designer: '淬毒',
+    cv: '龚韶华',
+    painter: '樱花闪乱',
+    script: '归零',
     rs: '袁术',
     death_audio: '将军为何咆哮不断……',
     skills: {
@@ -1876,6 +2171,11 @@ sgs.GeneralSetting('wars.jiling', {
 sgs.GeneralSetting('wars.v2025.jiling', {
     version: '2025移动版修订',
     title: '仲家的主将',
+    id: 'QUN015',
+    designer: '淬毒',
+    cv: '龚韶华',
+    painter: '樱花闪乱',
+    script: '归零',
     image_url: 'generals/jiling/image',
     rs: '袁术',
     death_audio: '将军为何咆哮不断……',
@@ -1900,6 +2200,11 @@ sgs.GeneralSetting('wars.v2025.jiling', {
 
 sgs.GeneralSetting('wars.tianfeng', {
     title: '河北瑰杰',
+    id: 'QUN016',
+    designer: '淬毒',
+    cv: '龚韶华',
+    painter: '地狱许',
+    script: '归零',
     death_audio: '不纳吾言而反诛吾心，奈何奈何……',
     skills: {
         ['wars.tianfeng.sijian']: {
@@ -1938,6 +2243,11 @@ sgs.GeneralSetting('wars.tianfeng', {
 sgs.GeneralSetting('wars.v2025.tianfeng', {
     version: '2025移动版修订',
     title: '河北瑰杰',
+    id: 'QUN016',
+    designer: '淬毒',
+    cv: '龚韶华',
+    painter: '地狱许',
+    script: '归零',
     image_url: 'generals/tianfeng/image',
     death_audio: '不纳吾言而反诛吾心，奈何奈何……',
     skills: {
@@ -1976,6 +2286,11 @@ sgs.GeneralSetting('wars.v2025.tianfeng', {
 
 sgs.GeneralSetting('wars.panfeng', {
     title: '联军上将',
+    id: 'QUN017',
+    designer: '傅翊钧',
+    cv: '龚韶华',
+    painter: 'Yi章',
+    script: '归零',
     death_audio: '潘凤又被华雄斩啦……',
     skills: {
         ['wars.panfeng.kuangfu']: {
@@ -1999,6 +2314,11 @@ sgs.GeneralSetting('wars.panfeng', {
 sgs.GeneralSetting('wars.v2025.panfeng', {
     version: '2025移动版修订',
     title: '联军上将',
+    id: 'QUN017',
+    designer: '傅翊钧&Loun老萌',
+    cv: '龚韶华',
+    painter: 'Yi章',
+    script: '归零',
     image_url: 'generals/panfeng/image',
     death_audio: '潘凤又被华雄斩啦……',
     skills: {
@@ -2022,6 +2342,11 @@ sgs.GeneralSetting('wars.v2025.panfeng', {
 
 sgs.GeneralSetting('wars.zoushi', {
     title: '惑心之魅',
+    id: 'QUN018',
+    designer: '淬毒',
+    cv: '水原',
+    painter: 'Tuu.',
+    script: '归零',
     death_audio: '年老色衰了吗？',
     skills: {
         ['wars.zoushi.huoshui']: {
@@ -2059,6 +2384,11 @@ sgs.GeneralSetting('wars.zoushi', {
 
 sgs.GeneralSetting('wars.simayi_jin', {
     title: '冢虎',
+    id: 'JIN001',
+    designer: '山巅隐士',
+    cv: '马洋',
+    painter: '小罗没想好',
+    script: '归零',
     rs: '张春华',
     death_audio: '虎入骷冢，司马难兴。',
     skills: {
@@ -2097,6 +2427,11 @@ sgs.GeneralSetting('wars.simayi_jin', {
 
 sgs.GeneralSetting('wars.zhangchunhua_jin', {
     title: '冷血皇后',
+    id: 'JIN002',
+    designer: '山巅隐士',
+    cv: '诺语兰',
+    painter: '小罗没想好',
+    script: '归零',
     rs: '司马懿',
     death_audio: '我不负懿，懿负我……',
     skills: {
@@ -2135,6 +2470,11 @@ sgs.GeneralSetting('wars.zhangchunhua_jin', {
 
 sgs.GeneralSetting('wars.simashi', {
     title: '睚眦侧目',
+    id: 'JIN003',
+    designer: '山巅隐士',
+    cv: '李洋',
+    painter: '拉布拉卡',
+    script: '归零',
     rs: '羊徽瑜',
     death_audio: '子上，这是为兄给你打下的江山……',
     skills: {
@@ -2173,6 +2513,11 @@ sgs.GeneralSetting('wars.simashi', {
 
 sgs.GeneralSetting('wars.simazhao', {
     title: '嘲风开天',
+    id: 'JIN004',
+    designer: '山巅隐士',
+    cv: '人到中年的李皮',
+    painter: '君恒文化',
+    script: '归零',
     rs: '王元姬',
     death_audio: '司马三代，一梦成空……',
     skills: {
@@ -2211,6 +2556,11 @@ sgs.GeneralSetting('wars.simazhao', {
 
 sgs.GeneralSetting('wars.simazhou', {
     title: '温恭的狻猊',
+    id: 'JIN005',
+    designer: '山巅隐士',
+    cv: '云中亭曲',
+    painter: '凝聚永恒',
+    script: '归零',
     death_audio: '恩赐重物，病身难消受……',
     skills: {
         ['wars.simazhou.pojing']: {
@@ -2233,6 +2583,11 @@ sgs.GeneralSetting('wars.simazhou', {
 
 sgs.GeneralSetting('wars.simaliang', {
     title: '冲粹的蒲牢',
+    id: 'JIN006',
+    designer: '山巅隐士',
+    cv: 'LIU巴斯',
+    painter: '小罗没想好',
+    script: '归零',
     death_audio: '生此篡逆之世，罪臣难辞其咎……',
     skills: {
         ['wars.simaliang.gongzhi']: {
@@ -2270,6 +2625,11 @@ sgs.GeneralSetting('wars.simaliang', {
 
 sgs.GeneralSetting('wars.simalun', {
     title: '螭吻裂冠',
+    id: 'JIN011',
+    designer: '山巅隐士',
+    cv: '冷泉夜月',
+    painter: '荆芥',
+    script: '归零',
     death_audio: '大事当以急行，而不可缓图……',
     skills: {
         ['wars.simalun.zhulan']: {
@@ -2307,6 +2667,11 @@ sgs.GeneralSetting('wars.simalun', {
 
 sgs.GeneralSetting('wars.shibao', {
     title: '经国之才',
+    id: 'JIN016',
+    designer: '山巅隐士',
+    cv: '翔宇_hxy',
+    painter: '凝聚永恒',
+    script: '归零',
     death_audio: '寒门出身，难以擢升……',
     skills: {
         ['wars.shibao.zhuosheng']: {
@@ -2329,6 +2694,11 @@ sgs.GeneralSetting('wars.shibao', {
 
 sgs.GeneralSetting('wars.yanghuiyu', {
     title: '克明礼教',
+    id: 'JIN017',
+    designer: '山巅隐士',
+    cv: '楼倾司',
+    painter: 'Jzeo',
+    script: '归零',
     rs: '司马师',
     death_audio: '韶华易老，佳容不再……',
     skills: {
@@ -2367,6 +2737,11 @@ sgs.GeneralSetting('wars.yanghuiyu', {
 
 sgs.GeneralSetting('wars.wangyuanji', {
     title: '垂心万物',
+    id: 'JIN018',
+    designer: '山巅隐士',
+    cv: '苏子芜',
+    painter: '六道目',
+    script: '归零',
     rs: '司马昭',
     death_audio: '祖父已逝，哀凄悲戚……',
     skills: {
@@ -2405,6 +2780,11 @@ sgs.GeneralSetting('wars.wangyuanji', {
 
 sgs.GeneralSetting('wars.weiguan', {
     title: '忠允清識',
+    id: 'JIN020',
+    designer: '山巅隐士',
+    cv: '-安志-',
+    painter: 'Karneval',
+    script: '归零',
     death_audio: '辞荣善终，不可求……',
     skills: {
         ['wars.weiguan.chengxi']: {
@@ -2442,6 +2822,11 @@ sgs.GeneralSetting('wars.weiguan', {
 
 sgs.GeneralSetting('wars.jiachong', {
     title: '悖逆篡弑',
+    id: 'JIN021',
+    designer: '山巅隐士',
+    cv: '飛流',
+    painter: '游漫美绘',
+    script: '归零',
     rs: '郭槐',
     death_audio: '任元褒，吾与汝势不两立！',
     skills: {
@@ -2480,6 +2865,11 @@ sgs.GeneralSetting('wars.jiachong', {
 
 sgs.GeneralSetting('wars.guohuai_jin', {
     title: '嫉贤妒能',
+    id: 'JIN027',
+    designer: '山巅隐士',
+    cv: '张溪敉',
+    painter: '凝聚永恒',
+    script: '归零',
     rs: '贾充',
     death_audio: '我死后，切勿从粲、午之言……',
     skills: {
@@ -2518,6 +2908,11 @@ sgs.GeneralSetting('wars.guohuai_jin', {
 
 sgs.GeneralSetting('wars.wangjun', {
     title: '顺流长驱',
+    id: 'JIN036',
+    designer: '山巅隐士',
+    cv: '王教授就是王宇航',
+    painter: '荆芥',
+    script: '归零',
     death_audio: '吾功大无匹，但为浑父子所抑而已……',
     skills: {
         ['wars.wangjun.chengliu']: {
@@ -2540,6 +2935,11 @@ sgs.GeneralSetting('wars.wangjun', {
 
 sgs.GeneralSetting('wars.malong', {
     title: '困局诡阵',
+    id: 'JIN037',
+    designer: '山巅隐士',
+    cv: '王教授就是王宇航',
+    painter: '荆芥',
+    script: '归零',
     death_audio: '惟愿长守边境，不使百姓为虏所扰……',
     skills: {
         ['wars.malong.zhuanzhan']: {

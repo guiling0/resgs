@@ -1,8 +1,8 @@
 {
-  "name": "RESGS-1.0.92",
-  "displayName": "RESGS-1.0.92",
+  "name": "RESGS-1.0.93",
+  "displayName": "RESGS-1.0.93",
   "icon": "res://062cd9ec-97ae-47fd-83a4-0b66f6c96076",
-  "version": "1.0.92",
+  "version": "1.0.93",
   "minifyJS": true,
   "startupScene": "res://bfb713ef-79ec-4272-af66-6e46ed76e39d",
   "alwaysIncluded": [

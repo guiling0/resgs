@@ -1,12 +1,10 @@
 ## RESGS - 实时三国杀游戏服务器
 
-RESGS (Real-time SGS) 是一个基于TypeScript和Node.js开发的实时多人三国杀游戏服务器及客户端实现。本项目使用Colyseus作为实时游戏服务器框架，提供稳定、可扩展的游戏体验。
+RESGS是一个基于TypeScript和Node.js开发的实时多人三国杀游戏服务器及客户端实现。本项目使用Colyseus作为实时游戏服务器框架，提供稳定、可扩展的游戏体验。
 
 ### 准备工作
 
 #### Windows用户
-
-Windows用户在克隆此仓库前，请先在命令行执行以下命令以启用符号链接支持：
 
 ```bash
 git config --global core.symlinks true
@@ -47,6 +45,10 @@ git config --global core.symlinks true
     - **rooms/**：游戏房间实现
     - **db/**：数据库操作
   - **build/**：编译后的服务器代码
+  
+### 准备工作
+
+本项目中server/src/core以及server/src/extensions目录下的代码都是通过符号链接方式在服务端与客户断进行引用。请于开发前在client/src目录下对上述两个目录进行符号链接。
 
 ### 扩展系统
 
@@ -72,7 +74,3 @@ git config --global core.symlinks true
 3. 配置MongoDB连接
 4. 启动服务器和客户端
 5. 开始开发或游戏测试
-
-#### 武将/技能开发
-
-技能开发主要在`server/src/extensions`目录下进行，客户端会通过符号链接自动同步这些更改。

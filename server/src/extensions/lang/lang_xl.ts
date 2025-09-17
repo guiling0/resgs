@@ -1,5 +1,10 @@
 sgs.GeneralSetting('xl.simayan', {
     title: '晋武帝',
+    id: 'JIN001',
+    designer: '梦魇狂朝',
+    cv: '苏子墨',
+    painter: '啪啪三国',
+    script: '归零',  
     rs: '张华 裴秀',
     death_audio: '汝南王何在……',
     image_url: 'generals/xl/xl.simayan/image',
@@ -46,6 +51,11 @@ sgs.GeneralSetting('xl.simayan', {
 
 sgs.GeneralSetting('xl.simazhao', {
     title: '四海威服',
+    id: 'JIN002',
+    designer: '梦魇狂朝',
+    cv: '寂镜',
+    painter: 'Thinking',
+    script: '归零',  
     rs: '王元姬 司马师',
     death_audio: '这最后一步，就交给安世了……',
     image_url: 'generals/xl/xl.simazhao/image',
@@ -102,6 +112,11 @@ sgs.GeneralSetting('xl.simazhao', {
 
 sgs.GeneralSetting('xl.wangyuanji', {
     title: '闱芳廷正',
+    id: 'JIN006',
+    designer: '梦魇狂朝',
+    cv: '乐乐常乐',
+    painter: 'Thinking',
+    script: '归零',  
     rs: '司马昭',
     death_audio: '桃符性急，汝为兄不慈，恐不能相容……',
     image_url: 'generals/xl/xl.wangyuanji/image',
@@ -143,6 +158,11 @@ sgs.GeneralSetting('xl.wangyuanji', {
 
 sgs.GeneralSetting('xl.wenyang', {
     title: '披靡震霄',
+    id: 'JIN008',
+    designer: '梦魇狂朝',
+    cv: '苏子墨',
+    painter: 'biou09',
+    script: '归零',  
     rs: '',
     death_audio: '司马繇，你竟敢公报私仇！',
     image_url: 'generals/xl/xl.wenyang/image',
@@ -169,6 +189,11 @@ sgs.GeneralSetting('xl.wenyang', {
 
 sgs.GeneralSetting('xl.simafu', {
     title: '魏之贞士',
+    id: 'JIN009',
+    designer: '梦魇狂朝',
+    cv: '凉辰',
+    painter: '久吉',
+    script: '归零',  
     rs: '',
     death_audio: '不伊不周，不夷不惠，立身行道，终始若一。',
     image_url: 'generals/xl/xl.simafu/image',
@@ -210,6 +235,11 @@ sgs.GeneralSetting('xl.simafu', {
 
 sgs.GeneralSetting('xl.simawang', {
     title: '盛銮赞国',
+    id: 'JIN010',
+    designer: '梦魇狂朝&cgl',
+    cv: '凉辰',
+    painter: '林时',
+    script: '归零', 
     rs: '',
     death_audio: '',
     image_url: 'generals/xl/xl.simawang/image',
@@ -250,6 +280,11 @@ sgs.GeneralSetting('xl.simawang', {
 
 sgs.GeneralSetting('xl.zhanghua', {
     title: '近次夫子',
+    id: 'JIN012',
+    designer: '小狼甫心',
+    cv: '苏子墨',
+    painter: '啪啪三国',
+    script: '归零', 
     rs: '司马炎',
     death_audio: '广武涧前叹……竖子……难与谋……',
     image_url: 'generals/xl/xl.zhanghua/image',
@@ -291,6 +326,11 @@ sgs.GeneralSetting('xl.zhanghua', {
 
 sgs.GeneralSetting('xl.peixiu', {
     title: '方寸万里',
+    id: 'JIN015',
+    designer: '千幻&梦魇狂朝',
+    cv: '苏子墨',
+    painter: '凡果&食茸',
+    script: '归零', 
     rs: '司马炎',
     death_audio: '这酒，怎么是冷的……',
     image_url: 'generals/xl/xl.peixiu/image',
@@ -347,6 +387,11 @@ sgs.GeneralSetting('xl.peixiu', {
 
 sgs.GeneralSetting('xl.wangjun', {
     title: '起旌览胜',
+    id: 'JIN016',
+    designer: '千幻&梦魇狂朝',
+    cv: '凉辰',
+    painter: '匠人绘',
+    script: '归零',
     rs: '唐彬',
     death_audio: '千帆化作烽烟烬……',
     image_url: 'generals/xl/xl.wangjun/image',
@@ -373,6 +418,11 @@ sgs.GeneralSetting('xl.wangjun', {
 
 sgs.GeneralSetting('xl.hufen', {
     title: '泾传震声',
+    id: 'JIN024',
+    designer: '步穗',
+    cv: '凉辰',
+    painter: '匠人绘',
+    script: '归零',
     rs: '胡烈胡渊',
     death_audio: '只求，归葬故乡，伴水长眠……',
     image_url: 'generals/xl/xl.hufen/image',
@@ -407,6 +457,11 @@ sgs.GeneralSetting('xl.hufen', {
 
 sgs.GeneralSetting('xl.xiahouhui', {
     title: '深潭的青莲',
+    id: 'JIN025',
+    designer: 'dk语文&梦魇狂朝',
+    cv: '乐乐常乐',
+    painter: '一梦江湖',
+    script: '归零',
     rs: '',
     death_audio: '只怨生在帝王家……',
     image_url: 'generals/xl/xl.xiahouhui/image',
@@ -463,6 +518,11 @@ sgs.GeneralSetting('xl.xiahouhui', {
 
 sgs.GeneralSetting('xl.wanghun', {
     title: '艨下千里',
+    id: 'JIN028',
+    designer: '梦魇狂朝',
+    cv: '苏子墨',
+    painter: '鸿图之下',
+    script: '归零',
     rs: '钟琰',
     death_audio: '吾洁身自好，只求保身于浊流……',
     image_url: 'generals/xl/xl.wanghun/image',
@@ -489,6 +549,11 @@ sgs.GeneralSetting('xl.wanghun', {
 
 sgs.GeneralSetting('xl.zhongyan', {
     title: '莺咏一族',
+    id: 'JIN030',
+    designer: '豌豆帮帮主&梦魇狂朝',
+    cv: '乐乐常乐',
+    painter: '鸿图之下',
+    script: '归零',
     rs: '王浑',
     death_audio: '嗟尔姜任，邈不我留。',
     image_url: 'generals/xl/xl.zhongyan/image',
@@ -530,6 +595,11 @@ sgs.GeneralSetting('xl.zhongyan', {
 
 sgs.GeneralSetting('xl.tangbin', {
     title: '抚宁疆场',
+    id: 'JIN032',
+    designer: '梦魇狂朝',
+    cv: '寂镜',
+    painter: '空白白',
+    script: '归零',
     rs: '王濬',
     death_audio: '臣见机行事，君上为何疑我？',
     image_url: 'generals/xl/xl.tangbin/image',
@@ -538,7 +608,7 @@ sgs.GeneralSetting('xl.tangbin', {
     skills: {
         ['xl.tangbin.suiyu']: {
             name: '绥御',
-            desc: '当你于回合内使用的基本牌或普通锦囊牌进入弃牌堆时，若后备区里没有与此牌花色相同的牌，你可以移存牌堆顶一张相同花色的牌（若没有则从弃牌堆内随机移存）。\n当一名与你势力相同的角色于其回合外成为牌的目标后，你可以弃置后备区里一张与此牌花色相同的牌，令其摸一张牌。',
+            desc: '当你使用的基本牌或普通锦囊牌进入弃牌堆时，若后备区里没有与此牌花色相同的牌，你可以移存牌堆顶一张相同花色的牌（若没有则从弃牌堆内随机移存）。\n当一名与你势力相同的角色于其回合外成为牌的目标后，你可以弃置后备区里一张与此牌花色相同的牌，令其摸一张牌。',
             desc2: '',
             audios: [
                 {
@@ -556,6 +626,11 @@ sgs.GeneralSetting('xl.tangbin', {
 
 sgs.GeneralSetting('xl.huliehuyuan', {
     title: '忠魂烈骨',
+    id: 'JIN034',
+    designer: '梦魇狂朝',
+    cv: '凉辰&黑马义从',
+    painter: '率土之滨&食茸',
+    script: '归零',
     rs: '胡奋',
     death_audio: '既临战场，何惧生死，啊！',
     image_url: 'generals/xl/xl.huyuanhulie/image',
@@ -599,6 +674,11 @@ sgs.GeneralSetting('xl.huliehuyuan', {
 
 sgs.GeneralSetting('xl.lord_simayan', {
     title: '狼图天下',
+    id: 'EM005',
+    designer: '千幻&梦魇狂朝',
+    cv: '苏子墨',
+    painter: '波子',
+    script: '归零',
     rs: '晋势力武将',
     death_audio: '只求，治世能续……',
     image_url: 'generals/xl/xl.lord_simayan/image',
@@ -770,6 +850,11 @@ sgs.GeneralSetting('xl.lord_simayan', {
 
 sgs.GeneralSetting('xl.yanghu', {
     title: '闻碑堕泪',
+    id: 'JIN004',
+    designer: '韩旭',
+    cv: '凉辰',
+    painter: '白',
+    script: '归零',
     rs: '杜预',
     death_audio: '取吴不必须臣自行，元凯可继也……',
     image_url: 'generals/xl/xl.yanghu/image',
@@ -828,6 +913,11 @@ sgs.GeneralSetting('xl.yanghu', {
 
 sgs.GeneralSetting('xl.duyu', {
     title: '允文允武',
+    id: 'JIN005',
+    designer: '千幻',
+    cv: '凉辰',
+    painter: '君恒文化',
+    script: '归零',
     rs: '羊祜',
     death_audio: '古不合葬，明于终始之理，同于无有也……',
     image_url: 'generals/xl/xl.duyu/image',
@@ -868,7 +958,7 @@ sgs.GeneralSetting('xl.duyu', {
 
         ['xl.duyu.shannong']: {
             name: '缮农',
-            desc: '副将技，此武将牌上单独的阴阳鱼个数-1。\n一名与你势力相同的角色的结束阶段，你可以使用一张后备区里的牌，当此牌结算后，若此牌造成过伤害，你令当前回合角色移存一张手牌。',
+            desc: '副将技，此武将牌上单独的阴阳鱼个数-1。\n一名与你势力相同的角色的结束阶段，你可以使用一张后备区里的牌，当此牌结算后，若此牌造成过伤害，你令当前回合角色移存一张牌。',
             desc2: '',
             audios: [
                 {
@@ -886,6 +976,11 @@ sgs.GeneralSetting('xl.duyu', {
 
 sgs.GeneralSetting('xl.weiguan', {
     title: '绵章有折',
+    id: 'JIN026',
+    designer: '梦魇狂朝',
+    cv: '苏子墨',
+    painter: '率土之滨',
+    script: '归零',
     rs: '',
     death_audio: '刀俎一世，鱼肉一时……',
     image_url: 'generals/xl/xl.weiguan/image',
@@ -928,6 +1023,11 @@ sgs.GeneralSetting('xl.weiguan', {
 
 sgs.GeneralSetting('xl.zhouzhi', {
     title: '以计代战',
+    id: 'JIN033',
+    designer: '梦魇狂朝',
+    cv: '寂镜',
+    painter: '啪啪三国',
+    script: '归零',
     rs: '',
     death_audio: '报国身死他乡，壮哉！烈哉！',
     image_url: 'generals/xl/xl.zhouzhi/image',
@@ -970,6 +1070,11 @@ sgs.GeneralSetting('xl.zhouzhi', {
 
 sgs.GeneralSetting('xl.malong', {
     title: '风后再世',
+    id: 'JIN011',
+    designer: '梦魇狂朝&千幻',
+    cv: '寂镜',
+    painter: '未知',
+    script: '归零',
     rs: '',
     death_audio: '凉州未安，马隆……有愧……',
     image_url: 'generals/xl/xl.malong/image',
@@ -1063,6 +1168,11 @@ sgs.GeneralSetting('xl.malong', {
 
 sgs.GeneralSetting('xl.shantao', {
     title: '璞玉浑金',
+    id: 'JIN022',
+    designer: '梦魇狂朝',
+    cv: '苏子墨',
+    painter: '佚名',
+    script: '归零',
     rs: '',
     death_audio: '臣垂没之人，岂可污朝堂乎……',
     image_url: 'generals/xl/xl.shantao/image',
@@ -1119,6 +1229,11 @@ sgs.GeneralSetting('xl.shantao', {
 
 sgs.GeneralSetting('xl.jishao', {
     title: '中散遗孤',
+    id: 'JIN·EX001',
+    designer: '梦魇狂朝',
+    cv: '苏子墨',
+    painter: '杨如卿',
+    script: '归零',
     rs: '',
     death_audio: '山伯伯，你在哪里呀……',
     image_url: 'generals/xl/xl.jishao/image',
@@ -1160,6 +1275,11 @@ sgs.GeneralSetting('xl.jishao', {
 
 sgs.GeneralSetting('xl.simashi', {
     title: '晋室的掌旗者',
+    id: 'JIN003',
+    designer: '淬毒',
+    cv: '凉辰',
+    painter: '随随',
+    script: '归零',
     rs: '羊徽瑜 司马昭',
     death_audio: '眇目何碍……只恨……未见……九鼎归一……',
     image_url: 'generals/xl/xl.simashi/image',
@@ -1201,6 +1321,11 @@ sgs.GeneralSetting('xl.simashi', {
 
 sgs.GeneralSetting('xl.yanghuiyu', {
     title: '俪皇协运',
+    id: 'JIN007',
+    designer: 'dk语文&梦魇狂朝',
+    cv: '凉辰',
+    painter: '随随',
+    script: '归零',
     rs: '司马师',
     death_audio: '生逢乱世，得见太平……',
     image_url: 'generals/xl/xl.yanghuiyu/image',
@@ -1242,6 +1367,11 @@ sgs.GeneralSetting('xl.yanghuiyu', {
 
 sgs.GeneralSetting('xl.wangxiang', {
     title: '履冰执幕',
+    id: 'JIN018',
+    designer: '千幻',
+    cv: '凉辰',
+    painter: '罔両',
+    script: '归零',
     rs: '',
     death_audio: '夫生之有死，自然之理……',
     image_url: 'generals/xl/xl.wangxiang/image',
@@ -1295,6 +1425,11 @@ sgs.GeneralSetting('xl.wangxiang', {
 
 sgs.GeneralSetting('xl.luji_jin', {
     title: '鸿鹄之裴回',
+    id: 'JIN042A',
+    designer: '梦魇狂朝',
+    cv: '凉辰',
+    painter: '空心烧烤城',
+    script: '归零',
     rs: '张华 周处',
     death_audio: '华亭鹤唳 ，岂可复闻乎……',
     image_url: 'generals/xl/xl.luji_jin/image',
@@ -1351,6 +1486,11 @@ sgs.GeneralSetting('xl.luji_jin', {
 
 sgs.GeneralSetting('xl.luyun', {
     title: '悬鼓之待槌',
+    id: 'JIN042B',
+    designer: '梦魇狂朝',
+    cv: '苏子墨',
+    painter: '空心烧烤城',
+    script: '归零',
     rs: '张华 周处',
     death_audio: '唉，南人终不得见信于北……',
     image_url: 'generals/xl/xl.luyun/image',

@@ -191,6 +191,7 @@ export const nijie = sgs.Skill({
 
 nijie.addEffect(
     sgs.TriggerEffect({
+        audio: [`xl/xl.simazhao/nijie2`],
         auto_log: 1,
         priorityType: PriorityType.General,
         trigger: EventTriggers.CauseDamage2,
@@ -213,6 +214,7 @@ nijie.addEffect(
 
 nijie.addEffect(
     sgs.TriggerEffect({
+        audio: [`xl/xl.simazhao/nijie1`],
         auto_log: 1,
         priorityType: PriorityType.General,
         trigger: EventTriggers.InflictDamage2,

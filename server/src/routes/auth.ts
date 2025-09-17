@@ -20,7 +20,7 @@ export function createAuthRouter(
         try {
             const { username, password, client_version } = req.body;
             const ip = req.ip;
-            if (client_version !== '1.0.92') {
+            if (client_version !== '1.0.93') {
                 throw new Error('Client Version Invalid');
             }
 

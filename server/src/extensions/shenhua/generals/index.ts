@@ -1,6 +1,6 @@
 import { Gender } from '../../../core/general/general.type';
 
-export const ShenHua_Feng = sgs.Package('ShenHua_Feng');
+export const ShenHua_Feng = sgs.Package('ShenHua.Feng');
 
 ShenHua_Feng.addGenerals([
     sgs.General({
@@ -54,7 +54,7 @@ ShenHua_Feng.addGenerals([
     }),
 ]);
 
-export const ShenHua_Huo = sgs.Package('ShenHua_Huo');
+export const ShenHua_Huo = sgs.Package('ShenHua.Huo');
 
 ShenHua_Huo.addGenerals([
     sgs.General({
@@ -108,7 +108,7 @@ ShenHua_Huo.addGenerals([
     }),
 ]);
 
-export const ShenHua_Lin = sgs.Package('ShenHua_Lin');
+export const ShenHua_Lin = sgs.Package('ShenHua.Lin');
 
 ShenHua_Lin.addGenerals([
     sgs.General({
@@ -163,7 +163,7 @@ ShenHua_Lin.addGenerals([
     }),
 ]);
 
-export const ShenHua_Shan = sgs.Package('ShenHua_Shan');
+export const ShenHua_Shan = sgs.Package('ShenHua.Shan');
 
 ShenHua_Shan.addGenerals([
     sgs.General({
@@ -218,7 +218,7 @@ ShenHua_Shan.addGenerals([
     }),
 ]);
 
-export const ShenHua_Yin = sgs.Package('ShenHua_Yin');
+export const ShenHua_Yin = sgs.Package('ShenHua.Yin');
 
 ShenHua_Yin.addGenerals([
     sgs.General({
@@ -272,7 +272,7 @@ ShenHua_Yin.addGenerals([
     }),
 ]);
 
-export const ShenHua_Lei = sgs.Package('ShenHua_Lei');
+export const ShenHua_Lei = sgs.Package('ShenHua.Lei');
 
 ShenHua_Lei.addGenerals([
     sgs.General({
@@ -326,7 +326,7 @@ ShenHua_Lei.addGenerals([
     }),
 ]);
 
-export const ShenHua_Shen = sgs.Package('ShenHua_Shen');
+export const ShenHua_Shen = sgs.Package('ShenHua.Shen');
 
 ShenHua_Shen.addGenerals([
     sgs.General({

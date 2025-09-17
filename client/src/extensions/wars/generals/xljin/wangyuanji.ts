@@ -52,6 +52,7 @@ qianchong.addEffect(
 
 qianchong.addEffect(
     sgs.TriggerEffect({
+        audio: ['xl/xl.wangyuanji/qianchong2'],
         tag: [SkillTag.Lock],
         priorityType: PriorityType.None,
         trigger: EventTriggers.CardBeUse,
@@ -90,6 +91,7 @@ export const zhijian = sgs.Skill({
 
 zhijian.addEffect(
     sgs.TriggerEffect({
+        audio: ['xl/xl.wangyuanji/zhijian1'],
         auto_log: 1,
         forced: 'cost',
         trigger: EventTriggers.DropPhaseEnd,
@@ -200,6 +202,7 @@ zhijian.addEffect(
 
 zhijian.addEffect(
     sgs.TriggerEffect({
+        audio: ['xl/xl.wangyuanji/zhijian2'],
         auto_log: 1,
         auto_directline: 1,
         trigger: EventTriggers.MoveCardAfter2,

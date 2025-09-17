@@ -30,7 +30,7 @@ export class UIEntry extends UIEntryBase {
                 password,
                 core_version: '',
                 packages: [],
-                client_version: '1.0.92',
+                client_version: '1.0.93',
             })
         ) {
             this.onLobby();
@@ -251,6 +251,8 @@ export class UIEntry extends UIEntryBase {
                 'wars.v2025.panfeng',
 
                 'caomao',
+
+                'wars.zhonghui',
             ],
             settings: {
                 // lordEquip: 'true',

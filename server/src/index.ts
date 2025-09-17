@@ -47,8 +47,8 @@ async function start() {
     const port = 12699;
 
     const allowedOrigin = [
-        'http://192.168.1.3:18090',
-        'http://192.168.1.3:8000',
+        'http://192.168.1.2:18090',
+        'http://192.168.1.2:8000',
         'http://resgs.com/',
         'http://resgs.com/game/',
         'http://resgs.com',

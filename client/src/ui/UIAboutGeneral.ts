@@ -13,6 +13,7 @@ import { UISkillAudio } from './UISkillAudio';
 export class UIAboutGeneral extends UIAboutGeneralBase {
     public pkg_name: string[] = [];
     public pkgs_translation: string[] = [];
+    public pkg_name2sub: { [key: string]: string[] } = {};
     public currentValue: string;
 
     protected translation_type = 1;
@@ -20,8 +21,15 @@ export class UIAboutGeneral extends UIAboutGeneralBase {
     onAwake(): void {
         sgs.packages.forEach((v) => {
             if (v.generals.length && !v.generals.every((g) => g.hidden)) {
-                this.pkg_name.push(v.name);
-                this.pkgs_translation.push(sgs.getTranslation(v.name));
+                const pkg = v.name.split('.');
+                const name = pkg.length > 1 ? pkg[0] : v.name;
+                if (this.pkg_name.includes(name)) {
+                    this.pkg_name2sub[name].push(v.name);
+                } else {
+                    this.pkg_name.push(name);
+                    this.pkgs_translation.push(sgs.getTranslation(name));
+                    this.pkg_name2sub[name] = [v.name];
+                }
             }
         });
         this.pkgs.items = this.pkgs_translation;
@@ -61,16 +69,32 @@ export class UIAboutGeneral extends UIAboutGeneralBase {
             this.currentValue = value;
             this.generals.children.forEach((v) => v.destroy());
             this.generals.removeChildren();
-            sgs.getPackage(value)?.generals.forEach((v) => {
-                const ui = UICard.createGeneral(
-                    new General(undefined, v),
-                    true
-                );
-                this.generals.addChild(ui);
-                ui.on(Laya.Event.CLICK, () => {
-                    this.showInfo(ui.general);
+            const pkgs = this.pkg_name2sub[value];
+            if (pkgs) {
+                pkgs.forEach((v) => {
+                    const txt = Laya.Pool.getItemByClass(
+                        'ui.general.pack',
+                        Laya.GTextField
+                    );
+                    txt.font = 'resources/font/FZLBGBK.ttf';
+                    txt.fontSize = 40;
+                    txt.color = '#ffffff';
+                    txt.bold = true;
+                    txt.text = sgs.getTranslation(v);
+                    txt.size(1323, 50);
+                    this.generals.addChild(txt);
+                    sgs.getPackage(v).generals.forEach((general) => {
+                        const ui = UICard.createGeneral(
+                            new General(undefined, general),
+                            true
+                        );
+                        this.generals.addChild(ui);
+                        ui.on(Laya.Event.CLICK, () => {
+                            this.showInfo(ui.general);
+                        });
+                    });
                 });
-            });
+            }
         }
     }
 
@@ -80,6 +104,7 @@ export class UIAboutGeneral extends UIAboutGeneralBase {
         this.info_list.children.forEach((v) => v.destroy());
         this.info_list.removeChildren();
         this.infos
+            .setVar('id', sgs.getTranslation(`@id:${general.id}`) ?? '0')
             .setVar(
                 'title',
                 sgs.getTranslation(`@title:${general.id}`) ?? '暂无'
@@ -97,6 +122,13 @@ export class UIAboutGeneral extends UIAboutGeneralBase {
                 'script',
                 sgs.getTranslation(`@script:${general.id}`) ?? '归零'
             );
+        this.g_enable.visible = !general.sourceData.enable;
+        if (general.sourceData.isWars) {
+            const zlbh = sgs.getTranslation(`@rs:${general.id}`);
+            this.g_zhulianbihe.text = `珠联璧合：${zlbh === '' ? '无' : zlbh}`;
+        } else {
+            this.g_zhulianbihe.text = '';
+        }
         const assets = sgs.generalAssets[general.name];
         //配音表
         general.skills.forEach((v) => {

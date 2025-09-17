@@ -1,9 +1,10 @@
 sgs.GeneralSetting('shichangshi', {
     title: '祸乱朝纲',
+    id: 'QUN000',
     designer: '官方',
     cv: '官方',
     painter: '鱼仔',
-    script: 'QUN000',
+    script: '归零',
     death_audio: '无',
     skills: {
         ['shichangshi.danggu']: {
@@ -21,8 +22,11 @@ sgs.GeneralSetting('shichangshi', {
 });
 
 sgs.GeneralSetting('cs_zhangrang', {
-    title: '',
-    rs: '',
+    id: 'QUN000',
+    title: '祸乱朝纲',
+    designer: '官方',
+    painter: '凡果',
+    cv: '官方',
     image_url: 'generals/shichangshi/zhangrang',
     death_audio: '无',
     skills: {
@@ -41,8 +45,11 @@ sgs.GeneralSetting('cs_zhangrang', {
 });
 
 sgs.GeneralSetting('cs_zhaozhong', {
-    title: '',
-    rs: '',
+    id: 'QUN000',
+    title: '祸乱朝纲',
+    designer: '官方',
+    painter: '凡果',
+    cv: '官方',
     image_url: 'generals/shichangshi/zhaozhong',
     death_audio: '无',
     skills: {
@@ -61,8 +68,11 @@ sgs.GeneralSetting('cs_zhaozhong', {
 });
 
 sgs.GeneralSetting('cs_sunzhang', {
-    title: '',
-    rs: '',
+    id: 'QUN000',
+    title: '祸乱朝纲',
+    designer: '官方',
+    painter: '鬼画府',
+    cv: '官方',
     image_url: 'generals/shichangshi/sunzhang',
     death_audio: '无',
     skills: {
@@ -81,8 +91,11 @@ sgs.GeneralSetting('cs_sunzhang', {
 });
 
 sgs.GeneralSetting('cs_bilan', {
-    title: '',
-    rs: '',
+    id: 'QUN000',
+    title: '祸乱朝纲',
+    designer: '官方',
+    painter: '鬼画府',
+    cv: '官方',
     image_url: 'generals/shichangshi/bilan',
     death_audio: '无',
     skills: {
@@ -101,8 +114,11 @@ sgs.GeneralSetting('cs_bilan', {
 });
 
 sgs.GeneralSetting('cs_xiayun', {
-    title: '',
-    rs: '',
+    id: 'QUN000',
+    title: '祸乱朝纲',
+    designer: '官方',
+    painter: '铁杵文化',
+    cv: '桑毓泽',
     image_url: 'generals/shichangshi/xiayun',
     death_audio: '无',
     skills: {
@@ -121,8 +137,11 @@ sgs.GeneralSetting('cs_xiayun', {
 });
 
 sgs.GeneralSetting('cs_hankui', {
-    title: '',
-    rs: '',
+    id: 'QUN000',
+    title: '祸乱朝纲',
+    designer: '官方',
+    painter: '鬼画府',
+    cv: '桑毓泽',
     image_url: 'generals/shichangshi/hankui',
     death_audio: '无',
     skills: {
@@ -141,8 +160,11 @@ sgs.GeneralSetting('cs_hankui', {
 });
 
 sgs.GeneralSetting('cs_lisong', {
-    title: '',
-    rs: '',
+    id: 'QUN000',
+    title: '祸乱朝纲',
+    designer: '官方',
+    painter: '铁杵文化',
+    cv: '官方',
     image_url: 'generals/shichangshi/lisong',
     death_audio: '无',
     skills: {
@@ -161,8 +183,11 @@ sgs.GeneralSetting('cs_lisong', {
 });
 
 sgs.GeneralSetting('cs_duangui', {
-    title: '',
-    rs: '',
+    id: 'QUN000',
+    title: '祸乱朝纲',
+    designer: '官方',
+    painter: '鬼画府',
+    cv: '官方',
     image_url: 'generals/shichangshi/duangui',
     death_audio: '无',
     skills: {
@@ -181,8 +206,11 @@ sgs.GeneralSetting('cs_duangui', {
 });
 
 sgs.GeneralSetting('cs_guosheng', {
-    title: '',
-    rs: '',
+    id: 'QUN000',
+    title: '祸乱朝纲',
+    designer: '官方',
+    painter: '鬼画府',
+    cv: '官方',
     image_url: 'generals/shichangshi/guosheng',
     death_audio: '无',
     skills: {
@@ -201,8 +229,11 @@ sgs.GeneralSetting('cs_guosheng', {
 });
 
 sgs.GeneralSetting('cs_gaowang', {
-    title: '',
-    rs: '',
+    id: 'QUN000',
+    title: '祸乱朝纲',
+    designer: '官方',
+    painter: '鬼画府',
+    cv: '官方',
     image_url: 'generals/shichangshi/gaowang',
     death_audio: '无',
     skills: {
@@ -225,45 +256,45 @@ sgs.GeneralSetting('caomao', {
     title: '向死存魏',
     designer: '官方',
     painter: '铁杵文化',
-    cv: '官方',
+    cv: '张愚舟舟（张坤）',
     death_audio: '纵不成身死，朕亦为太祖子孙，大魏君王……',
     image_url: 'generals/caomao/image',
     skills: {
         ['caomao.qianlong']: {
             name: '潜龙',
-            desc: '持恒技，游戏开始时，你获得4点道心值（道心值的上限为20）。\n当你受到1点伤害后，获得2点道心值；\n当你造成1点伤害后，获得3点道心值；\n当你获得牌时，获得1点道心值。\n你根据道心值视为拥有以下技能：\n5点及以上，“清正”；\n10点及以上，“酒诗”；\n15点及以上，“放逐”；\n20点，“决进”。',
-            desc2: '①持恒技，游戏的第一个回合开始后❸，你获得4枚“道心”。\n②持恒技，当你受到1点伤害后，若你的“道心”数小于20，你获得2枚“道心”。\n③持恒技，当你造成1点伤害后，若你的“道心”数小于20，你获得3枚“道心”。\n④持恒技，当你得到牌后❷，或当牌移至你的装备区后❷，若你的“道心”数小于20，你获得1枚“道心”。\n⑤持恒技，若你的“道心”数不小于5/10/15/20，你拥有〖秘·清正〗/〖秘·酒诗〗/〖秘·放逐〗/〖决进〗。',
+            desc: '持恒技，游戏开始时，你获得20点道心值。\n当你受到1点伤害后，获得10点道心值；\n当你造成1点伤害后，获得15点道心值；\n当你获得牌时，获得5点道心值。\n你根据道心值视为拥有以下技能：\n25点及以上，“清正”；\n50点及以上，“酒诗”；\n75点及以上，“放逐”；\n99点，“决进”。\n你的道心值上限为99。',
+            desc2: '①持恒技，游戏的第一个回合开始后❸，你获得20枚“道心”。\n②持恒技，当你受到1点伤害后，若你的“道心”数小于，你获得10枚“道心”。\n③持恒技，当你造成1点伤害后，若你的“道心”数小于99，你获得15枚“道心”。\n④持恒技，当你得到牌后❷，或当牌移至你的装备区后❷，若你的“道心”数小于99，你获得5枚“道心”。\n⑤持恒技，若你的“道心”数不小于25/50/75/99，你拥有〖秘·清正〗/〖秘·酒诗〗/〖秘·放逐〗/〖决进〗。',
             audios: [
                 {
                     url: 'generals/caomao/qianlong1',
-                    lang: '权臣震主，竟视天子于无物！',
-                },
-                {
-                    url: 'generals/caomao/qianlong2',
-                    lang: '假以时日，必讨司马一族！',
-                },
-                {
-                    url: 'generals/caomao/qianlong3',
                     lang: '朕为天子，岂忍威权日去！',
                 },
                 {
-                    url: 'generals/caomao/qianlong4',
+                    url: 'generals/caomao/qianlong2',
                     lang: '朕行之决矣！正使死又何惧？',
                 },
                 {
+                    url: 'generals/caomao/qianlong3',
+                    lang: '权臣震主，竟视天子于无物！',
+                },
+                {
+                    url: 'generals/caomao/qianlong4',
+                    lang: '假以时日，必讨司马一族！',
+                },
+                {
                     url: 'generals/caomao/qianlong5',
-                    lang: '暗蓄忠君之士，以待破局之机！',
+                    lang: '若安司马于外，或则皇权可收！',
                 },
                 {
                     url: 'generals/caomao/qianlong6',
-                    lang: '若安司马于外，或则皇权可收！',
+                    lang: '暗蓄忠君之士，以待破局之机！',
                 },
             ],
         },
         ['caomao.weitong']: {
             name: '卫统',
-            desc: '持恒技，主公技，游戏开始时，若场上有其他魏势力角色且你拥有“潜龙”，你因“潜龙”于游戏开始时获得的道心值改为12点。',
-            desc2: '持恒技，主公技，若有其他魏势力角色，你的〖潜龙①〗改为{ 持恒技，游戏的第一个回合开始后❸，你获得12枚“道心” }。',
+            desc: '持恒技，主公技，游戏开始时，若场上有其他魏势力角色且你拥有“潜龙”，你因“潜龙”于游戏开始时获得的道心值改为60点。',
+            desc2: '持恒技，主公技，若有其他魏势力角色，你的〖潜龙①〗改为{ 持恒技，游戏的第一个回合开始后❸，你获得60枚“道心” }。',
             audios: [
                 {
                     url: 'generals/caomao/weitong1',
@@ -357,6 +388,102 @@ sgs.GeneralSetting('caomao', {
             },
         },
     ],
+});
+
+sgs.GeneralSetting('luotong', {
+    title: '力政人臣',
+    id: 'WU094',
+    designer: '新老哥',
+    cv: '新白张小虾',
+    painter: '鬼画府',
+    script: '归零',
+    death_audio: '臣统之大愿，足矣死而不朽矣……',
+    skills: {
+        ['luotong.qinzheng']: {
+            name: '勤政',
+            desc: '锁定技，当你使用或打出牌时，根据X的值（X为你本局游戏使用或打出的牌数），你随机获得牌堆中一张对应的牌：3的倍数，【杀】或【闪】；5的倍数，【桃】或【酒】；8的倍数，【无中生有】或【决斗】。',
+            desc2: '锁定技，当牌被使用/打出时，若使用/打出者为你，你获得1枚“政”▶若mod(X,3)=0，你获得牌堆里的一张{【杀】或【闪】}。若mod(X,5)=0，你获得牌堆里的一张{【桃】或【酒】}。若mod(X,8)=0，你获得牌堆里的一张{【无中生有】或【决斗】}。（X为“政”数）',
+            audios: [
+                {
+                    url: 'generals/luotong/qinzheng1',
+                    lang: '夫国之有民，犹水之有舟，停则以安，扰则以危。',
+                },
+                {
+                    url: 'generals/luotong/qinzheng2',
+                    lang: '治疾及其未笃，除患贵其未深。',
+                },
+            ],
+        },
+    },
+});
+
+sgs.GeneralSetting('shi.taishici', {
+    title: '志踏天阶',
+    id: 'WU012',
+    designer: '未知',
+    cv: '翔宇_hxy',
+    painter: '铁杵文化',
+    script: '归零',
+    death_audio: '身证大义，魂念江东……',
+    skills: {
+        ['shi.taishici.hanzhan']: {
+            name: '酣战',
+            desc: '出牌阶段限一次，你可以选择一名其他角色，你与其各将手牌摸至X张（X为各自的体力上限，各至多摸三张），然后你视为对其使用一张【决斗】。',
+            desc2: '出牌阶段限一次，你可选择一名其他角色并获得1枚“酣”▶你摸X张牌（X=min{你的体力上限-你的手牌数,3}），令其摸Y张牌（Y=min{其体力上限-其手牌数,3}），对其使用无对应的实体牌的【决斗】。',
+            audios: [
+                {
+                    url: 'generals/taishici/shi.taishici/hanzhan1',
+                    lang: '君壮情烈胆，某必当奉陪！',
+                },
+                {
+                    url: 'generals/taishici/shi.taishici/hanzhan2',
+                    lang: '哼！你我再斗一番，方知孰为霸王！',
+                },
+            ],
+        },
+        ['shi.taishici.zhanlie']: {
+            name: '战烈',
+            desc: '每回合开始时，你记录X（X为你的攻击范围）。当每回合前X张【杀】进入弃牌堆时，若此牌在弃牌堆中，你获得1枚“烈”（“烈”的数量至多为6）。出牌阶段结束时，你可以弃所有“烈”，视为使用一张【杀】（无次数限制，有距离限制）并选择至多Y项（Y为你本次弃的“烈”数的三分之一，向下取整）：1.此【杀】目标+1；2.此【杀】伤害基数+1；3.此【杀】需额外弃置一张牌方可响应；4.此【杀】结算结束后你摸两张牌。',
+            desc2: '①一名角色的回合开始后❾，你获得1枚“战烈”并为此“战烈”记录你的攻击范围。\n②当包括【杀】在内的牌移至弃牌堆后❷，若此牌在弃牌堆里，你获得X枚“烈”（X=min{这些牌中【杀】的数量,你本回合获得的“战烈”所记录的数字-你本回合以此法获得的“烈”数,6-你的“烈”数}）。\n③出牌阶段结束时，你可弃所有“烈”▶若你因执行此技能的消耗而弃的“烈”数大于2，你选择你未因执行发动此次〖战烈③〗的效果而选择过的一个选项：1.获得1枚“战1”；2.获得1枚“战2”；3.获得1枚“战3”；4.获得1枚“战4”。若你因执行此技能的消耗而弃的“烈”数为6，你重复此流程。你使用无对应的实体牌且额定目标数+X（X=min{你以此法获得的“战1”数,1}）且伤害基数+Y（Y=min{你以此法获得的“战2”数,1}）的普【杀】→当此【杀】指定目标后，若你有以此法获得的“战3”，你将此目标对应的角色抵消此【杀】的方式改为{弃置一张牌▷使用一张【闪】}；此【杀】结算结束后❸，你摸2Z张牌（Z=min{你以此法获得的“战4”数,1}）。\n◆“此流程”即“你选择你未因执行发动此次〖战烈③〗的效果而选择过的一个选项：1.获得1枚‘战1’；2.获得1枚‘战2’；3.获得1枚‘战3’；4.获得1枚‘战4’。”',
+            audios: [
+                {
+                    url: 'generals/taishici/shi.taishici/zhanlie1',
+                    lang: '且看此箭之下，焉有偷生之人？',
+                },
+                {
+                    url: 'generals/taishici/shi.taishici/zhanlie2',
+                    lang: '君头已在此，还不授首来降！',
+                },
+                {
+                    url: 'generals/taishici/shi.taishici/zhanlie3',
+                    lang: '哼，汝还能战否？',
+                },
+            ],
+        },
+        ['shi.taishici.zhenfeng']: {
+            name: '振锋',
+            desc: '限定技，出牌阶段，你可以选择一项：1.回复2点体力；2.分别修改〖酣战〗与〖战烈〗中的X为体力值、已损失的体力值、存活角色数中的一项（拥有对应技能方可选择此项）。',
+            desc2: '限定技，出牌阶段，若你：没有〖酣战〗且没有〖战烈〗，你可回复2点体力▶你获得1枚“振锋”；有〖酣战〗或有〖战烈〗，你可选择：{1.回复2点体力▶你获得1枚“振锋”；2.获得1枚“振锋”▶你选择：{1.将〖酣战〗修改为{出牌阶段限一次，你可选择一名其他角色并获得1枚“酣”▶你摸X张牌（X=min{你的体力值-你的手牌数,3}），令其摸Y张牌（Y=min{其体力值-其手牌数,3}），对其使用无对应的实体牌的【决斗】。}；2.将〖酣战〗修改为{出牌阶段限一次，你可选择一名其他角色并获得1枚“酣”▶你摸X张牌（X=min{你已损失的体力值-你的手牌数,3}），令其摸Y张牌（Y=min{其已损失的体力值-其手牌数,3}），对其使用无对应的实体牌的【决斗】。}；3.将〖酣战〗修改为{出牌阶段限一次，你可选择一名其他角色并获得1枚“酣”▶你{与其各摸X张牌（X=min{存活角色数-你的手牌数,3}），对其使用无对应的实体牌的【决斗】}。}}，选择：{1.将〖战烈①〗修改为{一名角色的回合开始后❾，你获得1枚“战烈”并为此“战烈”记录你的体力值。}；2.将〖战烈①〗修改为{一名角色的回合开始后❾，你获得1枚“战烈”并为此“战烈”记录你已损失的体力值。}；3.将〖战烈①〗修改为{一名角色的回合开始后❾，你获得1枚“战烈”并为此“战烈”记录角色数。}}}。',
+            audios: [
+                {
+                    url: 'generals/taishici/shi.taishici/zhenfeng1',
+                    lang: '前番未见高下，此番定决生死！',
+                },
+                {
+                    url: 'generals/taishici/shi.taishici/zhenfeng2',
+                    lang: '天道择义而襄，英雄待机而胜！',
+                },
+                {
+                    url: 'generals/taishici/shi.taishici/zhenfeng3',
+                    lang: '有胆气者，随某前去一战！',
+                },
+                {
+                    url: 'generals/taishici/shi.taishici/zhenfeng4',
+                    lang: '待吾重振兵马，胜负犹未可知！',
+                },
+            ],
+        },
+    },
 });
 
 export {};

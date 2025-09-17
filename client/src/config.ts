@@ -354,6 +354,8 @@ export const RoomOptions: { [key: string]: RoomOption } = {
             'wars.xiahouhui',
 
             'wars.lord_simayi',
+
+            'wars.zhonghui',
         ],
         settings: {
             datamode: 'wars_temp_jin',
@@ -362,6 +364,7 @@ export const RoomOptions: { [key: string]: RoomOption } = {
             // zuobi: 'true',
             randomSeat: 'true',
             watchNext: 'true',
+            test: 'true',
         },
     },
     ['wars_xl']: {
@@ -532,6 +535,8 @@ export const RoomOptions: { [key: string]: RoomOption } = {
             'xl.chenhuiqian',
             'xl.shichong',
             'xl.lvzhu',
+
+            'wars.zhonghui',
         ],
         settings: {
             datamode: 'wars_temp_xl',
@@ -819,6 +824,16 @@ export const RoomOptions: { [key: string]: RoomOption } = {
 
             'caomao',
             'mobile.shichangshi',
+            'cs_zhangrang',
+            'cs_zhaozhong',
+            'cs_sunzhang',
+            'cs_bilan',
+            'cs_xiayun',
+            'cs_hankui',
+            'cs_lisong',
+            'cs_duangui',
+            'cs_guosheng',
+            'cs_gaowang',
         ],
         settings: {
             datamode: 'doudizhu_test',
