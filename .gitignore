@@ -1,6 +1,7 @@
 server/node_modules
 server/build
 server/build.zip
+server/src/extensions/lang.zip
 server/logs
 .DS_Store
 client/temp
