@@ -54,65 +54,45 @@ export class EventManager {
     // ===== 核心触发 =====
 
     /**
-     * 触发一个时机。
-     * @param timingName 时机名
-     * @param data 事件数据（EventProcess 实例或独立 TimingData）
-     * @param skipRefreshs 为 true 时跳过 refreshs（事件流程已在 triggerFunc 中注入）
+     * 触发一个时机 — 按优先级调度触发效果。
+     *
+     * refreshs 在 EventProcess.triggerFunc() 中通过 injectRefreshs 注入，
+     * 此处仅负责 triggerEffects 的调度。
      */
     async trigger(
         timingName: TimingName,
         data: EventProcess | Record<string, any>,
-        skipRefreshs: boolean = false,
     ) {
-        if (!skipRefreshs) {
-            const entry = this.room.refreshsByTiming.get(timingName);
-            if (entry) {
-                for (const item of entry.before) {
-                    try { await item.fn(this.room, data); } catch (e) { console.error('[refresh before]', e); }
-                }
-            }
-        }
-
         const timingMap = this.room.triggerEffects.get(timingName);
-        if (timingMap) {
-            const players = this.room.player.sortResponse(this.room.alives);
-            const times: Record<string, Record<number, number>> = {};
+        if (!timingMap) return;
 
-            for (const player of players) {
-                let order = 1;
-                while (order <= 6) {
-                    if (order === 4 || order === 5) { order++; continue; }
+        const players = this.room.player.sortResponse(this.room.alives);
+        const times: Record<string, Record<number, number>> = {};
 
-                    const priority = this.orderToPriority(order);
-                    const entry = timingMap.get(priority);
-                    const effects = entry
-                        ? [
-                              ...(entry.byPlayer.get(player.playerId) ?? []),
-                              ...entry.global,
-                          ]
-                        : [];
+        for (const player of players) {
+            for (let order = 1; order <= 6; order++) {
+                if (order === 4 || order === 5) continue;
 
-                    const available = effects.filter((e) => {
-                        if (!e.check(data)) return false;
-                        const t = times[player.playerId]?.[e.id] ?? 0;
-                        const max = e._jsonData.context
-                            ? ((e._jsonData.context.call(e, this.room, player, data) as any)?.maxTimes ?? 1)
-                            : 1;
-                        return max === -1 || t < max;
-                    });
+                const priority = this.orderToPriority(order);
+                const entry = timingMap.get(priority);
+                const effects = entry
+                    ? [
+                          ...(entry.byPlayer.get(player.playerId) ?? []),
+                          ...entry.global,
+                      ]
+                    : [];
 
-                    if (available.length > 0) {
-                    }
-                    order++;
-                }
-            }
-        }
+                const available = effects.filter((e) => {
+                    if (!e.check(data)) return false;
+                    const t = times[player.playerId]?.[e.id] ?? 0;
+                    const max = e._jsonData.context
+                        ? ((e._jsonData.context.call(e, this.room, player, data) as any)?.maxTimes ?? 1)
+                        : 1;
+                    return max === -1 || t < max;
+                });
 
-        if (!skipRefreshs) {
-            const entry = this.room.refreshsByTiming.get(timingName);
-            if (entry) {
-                for (const item of entry.after) {
-                    try { await item.fn(this.room, data); } catch (e) { console.error('[refresh after]', e); }
+                // TODO Phase 7: askForSkillInvoke → create UseSkillEvent → exec
+                if (available.length > 0) {
                 }
             }
         }

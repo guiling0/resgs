@@ -228,20 +228,19 @@ export class Player implements MarkHost {
     getAreaId(type: AreaType): AreaId {
         return `${this.playerId}.${type}`;
     }
-    /** 手牌区卡牌 */
+    /** 从指定区域类型获取卡牌 */
+    private _getCardsByArea(type: AreaType): GameCard[] {
+        const ids = this.room.area.get(this.getAreaId(type));
+        return ids ? this.room.card.gets([...ids]) : [];
+    }
     getHandCards(): GameCard[] {
-        const ids = this.room.area.get(this.getAreaId(AreaType.Hand));
-        return ids ? this.room.card.gets([...ids]) : [];
+        return this._getCardsByArea(AreaType.Hand);
     }
-    /** 装备区卡牌 */
     getEquipCards(): GameCard[] {
-        const ids = this.room.area.get(this.getAreaId(AreaType.Equip));
-        return ids ? this.room.card.gets([...ids]) : [];
+        return this._getCardsByArea(AreaType.Equip);
     }
-    /** 判定区卡牌 */
     getJudgeCards(): GameCard[] {
-        const ids = this.room.area.get(this.getAreaId(AreaType.Judge));
-        return ids ? this.room.card.gets([...ids]) : [];
+        return this._getCardsByArea(AreaType.Judge);
     }
     /** 自己的所有牌（手牌+装备） */
     getSelfCards(): GameCard[] {
@@ -284,13 +283,15 @@ export class Player implements MarkHost {
     get deputyOpen() {
         return this.deputy?.put;
     }
-    /** 是否有主将（排除士兵） */
-    hasHead() {
-        return this.head && !this.head.name.includes('shibing');
+    /** 是否拥有非士兵武将 */
+    private _hasGeneral(g: General | undefined): boolean {
+        return !!g && !g.name.includes('shibing');
     }
-    /** 是否有副将（排除士兵） */
+    hasHead() {
+        return this._hasGeneral(this.head);
+    }
     hasDeputy() {
-        return this.deputy && !this.deputy.name.includes('shibing');
+        return this._hasGeneral(this.deputy);
     }
     /** 获取所有已明置的武将 */
     getOpenedGenerals() {

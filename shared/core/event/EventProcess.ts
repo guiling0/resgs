@@ -102,7 +102,6 @@ export abstract class EventProcess<T extends EventType = EventType> {
                 await this.room.event.trigger(
                     timing.name as TimingName,
                     this,
-                    true,
                 );
             }
 
@@ -127,19 +126,11 @@ export abstract class EventProcess<T extends EventType = EventType> {
         if (!entry) return;
         if (entry.before.length > 0) {
             if (!timing.before) timing.before = [];
-            for (const item of entry.before) {
-                timing.before.push((room: Room, data: any) =>
-                    item.fn(room, data),
-                );
-            }
+            timing.before.push(...entry.before.map((item) => item.fn));
         }
         if (entry.after.length > 0) {
             if (!timing.after) timing.after = [];
-            for (const item of entry.after) {
-                timing.after.push((room: Room, data: any) =>
-                    item.fn(room, data),
-                );
-            }
+            timing.after.push(...entry.after.map((item) => item.fn));
         }
     }
 
@@ -267,9 +258,8 @@ export abstract class EventProcess<T extends EventType = EventType> {
 
     /** 强制完成事件 */
     async complete() {
+        await this.end();
         this.isComplete = true;
-        this.isEnd = true;
-        this.triggerable = false;
         return this;
     }
 }
