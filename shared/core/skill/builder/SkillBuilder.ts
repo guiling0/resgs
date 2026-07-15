@@ -15,18 +15,18 @@ export class SkillBuilder {
     /** 是否为主公技能 */
     is_lord: boolean = false;
     /** 哪个装备的技能 */
-    attached_equip: string;
+    attached_equip?: string;
     /** 哪些势力可以获得该技能，仅用于势力技 */
-    attached_kingdom: string;
+    attached_kingdom?: string;
 
     /** 基础技能条件 */
-    private _condition: (this: Skill, room: Room) => boolean;
+    private _condition?: (this: Skill, room: Room) => boolean;
     /** 是否可见 */
     private _visible?: (this: Skill, room: Room) => boolean;
     /** 全局技能哪些玩家显示按钮 */
     private _global?: (this: Skill, room: Room, player: Player) => boolean;
     private _effects: EffectBuilder[] = [];
-    private _refreshs?: Array<TimingCallback<any, Skill>> = [];
+    private _refreshs: Array<TimingCallback<any, Skill>> = [];
     private _ai?: any;
 
     constructor(name: string) {

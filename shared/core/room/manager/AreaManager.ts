@@ -2,6 +2,7 @@ import { ArraySchema } from '@colyseus/schema';
 import { AreaId, GameCardId } from '@shared/core/card/CardTypes';
 import { Room } from '../Room';
 import { GameCard } from '@shared/core/card/GameCard';
+import { sampleRandom, shuffleArray } from '@shared/core/utils';
 
 /**
  * 区域管理器 — 卡牌区域的增删查改、洗牌、移动。
@@ -143,10 +144,7 @@ export class AreaManager {
             }
         } else {
             const arr = [...cards];
-            for (let i = arr.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [arr[i], arr[j]] = [arr[j], arr[i]];
-            }
+            shuffleArray(arr);
             cards.splice(0, cards.length, ...arr);
         }
     }
@@ -164,13 +162,6 @@ export class AreaManager {
 
     /** 从数组中随机取 count 个元素（不修改原数组） */
     private randomPick<T>(arr: T[], count: number): T[] {
-        const result: T[] = [];
-        const pool = [...arr];
-        for (let i = 0; i < Math.min(count, pool.length); i++) {
-            result.push(
-                pool.splice(Math.floor(Math.random() * pool.length), 1)[0],
-            );
-        }
-        return result;
+        return sampleRandom(arr, count);
     }
 }

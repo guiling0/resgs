@@ -2,6 +2,7 @@ import { Room } from '../Room';
 import { General } from '@shared/core/general/General';
 import { GeneralId } from '@shared/core/general/GeneralType';
 import { Player } from '@shared/core/player/Player';
+import { shuffleArray } from '@shared/core/utils';
 
 /**
  * 武将管理器 — 武将查询、选将分配、变更。
@@ -41,10 +42,7 @@ export class GeneralManager {
         for (const g of this.room.generals.values()) {
             if (g.isLord()) lords.push(g);
         }
-        for (let i = lords.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [lords[i], lords[j]] = [lords[j], lords[i]];
-        }
+        shuffleArray(lords);
         const seen = new Set<string>();
         const result: General[] = [];
         for (const g of lords) {

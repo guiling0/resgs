@@ -19,7 +19,7 @@ export class EffectBuilder<T extends TimingTrigger = never> {
     /** 自定义数据 */
     data: Record<string, any> = {};
     /** 拥有效果时显示的标记 */
-    mark: string | string[];
+    mark?: string | string[];
     /** 技能标签 */
     tag: SkillTag[] = [];
 
@@ -40,8 +40,8 @@ export class EffectBuilder<T extends TimingTrigger = never> {
         global: false,
     };
     private _selectors: EffectSelectors = {};
-    private _condition: (this: Effect, room: Room, ctx?: EffectContext) => any;
-    private _refreshs?: Array<TimingCallback<any, Effect>> = [];
+    private _condition?: (this: Effect, room: Room, ctx?: EffectContext) => any;
+    private _refreshs: Array<TimingCallback<any, Effect>> = [];
 
     //==================触发技相关==================
     /** 效果优先级 */

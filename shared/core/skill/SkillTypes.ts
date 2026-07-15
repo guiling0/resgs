@@ -175,9 +175,9 @@ export interface SkillData {
     /** 是否为主公技能 */
     is_lord: boolean;
     /** 哪个装备的技能 */
-    attached_equip: string;
+    attached_equip?: string;
     /** 哪些势力可以获得该技能，仅用于势力技 */
-    attached_kingdom: string;
+    attached_kingdom?: string;
     /** 基础技能条件 */
     condition: (this: Skill, room: Room) => boolean;
     /** 是否可见 */
@@ -202,7 +202,7 @@ export interface EffectData {
     /** 效果名 */
     name: string;
     /** 拥有效果时显示的标记 */
-    mark: string | string[];
+    mark?: string | string[];
     /** 技能标签 */
     tag: SkillTag[];
     /** 效果设置 */
@@ -225,11 +225,11 @@ export interface EffectData {
 
     /** 效果优先级 */
     priority: PriorityType;
-    trigger: TimingTrigger;
+    trigger?: TimingTrigger;
     /** 触发条件。返回任意真值即为可以发动 */
-    can_trigger: (this: Effect, room: Room, player: Player, data: any) => any;
+    can_trigger?: (this: Effect, room: Room, player: Player, data: any) => any;
     /** 在执行消耗和选择之前执行。可以在这里定义本次发动上下文的内容 */
-    context: (
+    context?: (
         this: Effect,
         room: Room,
         player: Player,
@@ -240,7 +240,7 @@ export interface EffectData {
      * 但需要注意，最好不要对相关的selector的thinkprompt进行赋值，该方法里的选择询问不会自动处理暗将信息。
      * 如果该函数返回任意假值，技能视为未发动过
      */
-    choose: (
+    choose?: (
         this: Effect,
         room: Room,
         player: Player,
@@ -248,7 +248,7 @@ export interface EffectData {
         ctx: EffectContext,
     ) => Promise<any>;
     /** 技能消耗 */
-    cost: (
+    cost?: (
         this: Effect,
         room: Room,
         player: Player,
@@ -256,7 +256,7 @@ export interface EffectData {
         context: EffectContext,
     ) => Promise<any>;
     /** 技能效果 */
-    effect: (
+    effect?: (
         this: Effect,
         room: Room,
         player: Player,
