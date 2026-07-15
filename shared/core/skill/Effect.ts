@@ -1,0 +1,184 @@
+import { MapSchema } from '@colyseus/schema';
+import { MarkState } from '../schema/MarkState';
+import { EffectData, EffectOptions, SkillTag } from './SkillTypes';
+import { EffectState } from '../schema/EffectState';
+import { Player } from '../player/Player';
+import { Skill } from './Skill';
+import { MarkHost, MarkMethods } from '../mark/MarkTypes';
+import { Room } from '../room/Room';
+import { TimingData, TimingName, TimingTrigger } from '../event/EventTypes';
+
+export class Effect implements MarkHost {
+    readonly id: number;
+    readonly room: Room;
+    readonly skill?: Skill;
+    readonly _jsonData: EffectData;
+    readonly state: EffectState;
+    readonly data: Record<string, any> = {};
+    readonly marksMap: MapSchema<MarkState>;
+    readonly _markKeyMap = new Map<string, Set<string>>();
+    readonly options: EffectOptions;
+    readonly audios: string[] = [];
+
+    constructor(
+        id: number,
+        player: Player | undefined,
+        data: EffectData,
+        room: Room,
+        state: EffectState,
+        options: EffectOptions,
+        fromSkill?: Skill,
+    ) {
+        this.id = id;
+        this.state = state;
+        this.state.id = id;
+        this.state.playerId = player?.playerId ?? '';
+        this.room = room;
+        this._jsonData = data;
+        this.marksMap = state.markStates;
+        this.options = options;
+        this.skill = fromSkill;
+        this.state.skillId = fromSkill?.id ?? 0;
+
+        //audio
+        if (data.settings?.audios === 'extends') {
+            if (fromSkill) {
+                this.state.audios.push(...fromSkill.audios);
+            }
+        } else if (data.settings?.audios && data.settings.audios.length > 0) {
+            data.settings.audios.forEach((v) => {
+                this.audios.push(`${v}.mp3`);
+            });
+        }
+    }
+
+    setMark = MarkMethods.setMark;
+    getMark = MarkMethods.getMark;
+    removeMark = MarkMethods.removeMark;
+    hasMark = MarkMethods.hasMark;
+    countMark = MarkMethods.countMark;
+    pushMark = MarkMethods.pushMark;
+    unpushMark = MarkMethods.unpushMark;
+    clearMark = MarkMethods.clearMark;
+
+    set player(value: Player | undefined) {
+        this.state.playerId = value?.playerId ?? '';
+    }
+
+    get player(): Player | undefined {
+        return this.room.playerMaps.get(this.state.playerId);
+    }
+
+    get name() {
+        return this._jsonData.name;
+    }
+
+    get skillName() {
+        return this.skill?.name;
+    }
+
+    get hasTrigger() {
+        return this._jsonData.has_trigger;
+    }
+
+    get hasState() {
+        return this._jsonData.has_state;
+    }
+
+    get isViewAsOrPlayPhase(): boolean {
+        return (
+            this.inTrigger(TimingName.UseCardNeed1) ||
+            this.inTrigger(TimingName.UseCardNeed2) ||
+            this.inTrigger(TimingName.DropCardNeed1) ||
+            this.inTrigger(TimingName.DropCardNeed2) ||
+            this.inTrigger(TimingName.PlayPhase)
+        );
+    }
+
+    setInvalids(reason: string, state: boolean = true) {
+        if (state) {
+            if (!this.state.invalids.includes(reason)) {
+                this.state.invalids.push(reason);
+            }
+        } else {
+            const idx = this.state.invalids.indexOf(reason);
+            if (idx !== -1) {
+                this.state.invalids.splice(idx, 1);
+            }
+        }
+    }
+
+    get isInvalid() {
+        return this.state.invalids.length > 0;
+    }
+
+    get preshow() {
+        return this.skill?.preshow ?? true;
+    }
+
+    /** 所属武将牌是否明置 */
+    isOpen() {
+        return this.skill?.isOpen() ?? true;
+    }
+
+    /** 移除自身，委托到 SkillManager */
+    async removeSelf(removeSkill: boolean = false) {
+        await this.room.skill.removeEffect(this, removeSkill);
+    }
+
+    hasTag(tag?: SkillTag) {
+        return tag === undefined
+            ? this._jsonData.tag && this._jsonData.tag.length > 0
+            : this._jsonData?.tag.includes(tag);
+    }
+
+    get isLock() {
+        return this.hasTag(SkillTag.Lock) || this.isAwake;
+    }
+
+    get isLimit() {
+        return this.hasTag(SkillTag.Limit);
+    }
+
+    get isAwake() {
+        return this.hasTag(SkillTag.Awake);
+    }
+
+    get isLord() {
+        return this.hasTag(SkillTag.Lord);
+    }
+
+    get isArray() {
+        return this.hasTag(SkillTag.Array);
+    }
+
+    /**
+     * 效果是否可用：
+     * 1) 未被禁用
+     * 2) 关联技能可用
+     * 3) 标签检查（limit/awake 标记）
+     * 4) 标签检查（head/deputy/zhuShuai/qianFeng）
+     */
+    check(data?: TimingData<any>): boolean {
+        if (this.isInvalid) return false;
+        if (this.skill && !this.skill.check()) return false;
+        // limit/awake 标记检查（已发动过则不可用）
+        if (this.isLimit || this.isAwake) {
+            const count = this.player?.countMark(this.name, this.id) ?? 0;
+            if (this.isLimit && count > 0) return false;
+            if (this.isAwake && count > 0) return false;
+        }
+        // 主将技/副将技标签检查
+        if (this.hasTag(SkillTag.Head) && this.player) {
+            if (!this.player.hasHead()) return false;
+        }
+        if (this.hasTag(SkillTag.Deputy) && this.player) {
+            if (!this.player.hasDeputy()) return false;
+        }
+        return true;
+    }
+
+    inTrigger(trigger: TimingTrigger) {
+        return this._jsonData.trigger === trigger;
+    }
+}

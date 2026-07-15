@@ -1,0 +1,106 @@
+{
+    "wumiao.huangfusong": {
+        "name": "wumiao.huangfusong",
+        "kingdom": "qun",
+        "hp": [1, 4],
+        "skills": [
+            "wumiao.huangfusong.chaozhen",
+            "wumiao.huangfusong.lianjie",
+            "wumiao.huangfusong.jiangxian"
+        ]
+    },
+    "wumiao.guanyu": {
+        "name": "wumiao.guanyu",
+        "kingdom": "shu",
+        "hp": 5,
+        "skills": [
+            "wumiao.guanyu.juewu",
+            "wumiao.guanyu.wuyou",
+            "wumiao.guanyu.yixian"
+        ]
+    },
+    "wumiao.zhugeliang": {
+        "name": "wumiao.zhugeliang",
+        "kingdom": "shu",
+        "hp": [4, 7],
+        "skills": [
+            "wumiao.zhugeliang.jincui",
+            "wumiao.zhugeliang.qingshi",
+            "wumiao.zhugeliang.zhizhe"
+        ]
+    },
+    "wumiao.luxun": {
+        "name": "wumiao.luxun",
+        "kingdom": "wu",
+        "hp": 3,
+        "skills": [
+            "wumiao.luxun.xiongmu",
+            "wumiao.luxun.zhangcai",
+            "wumiao.luxun.ruxian"
+        ]
+    },
+    "wumiao.lukang": {
+        "name": "wumiao.lukang",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": [
+            "wumiao.lukang.shenduan",
+            "wumiao.lukang.kegou",
+            "wumiao.lukang.dixian"
+        ]
+    },
+    "jianggan": {
+        "name": "jianggan",
+        "kingdom": "wei",
+        "hp": 3,
+        "skills": ["jianggan.weicheng", "jianggan.daoshu"]
+    },
+    "shamoke": {
+        "name": "shamoke",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["shamoke.jili"]
+    },
+    "yanrou": {
+        "name": "yanrou",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["yanrou.choutao", "yanrou.xiangshu"]
+    },
+    "panfeng": {
+        "name": "panfeng",
+        "kingdom": "qun",
+        "hp": 4,
+        "skills": ["panfeng.kuangfu"]
+    },
+    "sp.zhaoyun": {
+        "name": "sp.zhaoyun",
+        "kingdom": "qun",
+        "hp": 3,
+        "skills": ["sp.zhaoyun.longdan", "sp.zhaoyun.chongzhen"]
+    },
+    "spsunce": {
+        "name": "spsunce",
+        "kingdom": "qun",
+        "hp": 4,
+        "skills": ["spsunce.liantao"]
+    },
+    "tianfeng": {
+        "name": "tianfeng",
+        "kingdom": "qun",
+        "hp": 3,
+        "skills": ["tianfeng.sijian", "tianfeng.suishi"]
+    },
+    "mateng": {
+        "name": "mateng",
+        "kingdom": "qun",
+        "hp": 4,
+        "skills": ["mateng.mashu", "mateng.xiongyi"]
+    },
+    "zhugeke": {
+        "name": "zhugeke",
+        "kingdom": "wu",
+        "hp": 3,
+        "skills": ["zhugeke.aocai", "zhugeke.duwu"]
+    }
+}

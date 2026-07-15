@@ -1,0 +1,8 @@
+{
+    "cat.zhuhuan": {
+        "name": "cat.zhuhuan",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": ["cat.zhuhuan.fenli", "cat.zhuhuan.pingkou"]
+    }
+}

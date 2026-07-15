@@ -1,0 +1,539 @@
+{
+    "shi.taishici": {
+        "info": {
+            "id": "WU012",
+            "title": "志踏天阶",
+            "prefix": "势",
+            "designer": "未知",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "铁杵文化",
+                "cv": "翔宇_hxy",
+                "baseUrl": "taishici/shi.taishici",
+                "audios": {
+                    "death": {
+                        "url": "taishici/shi.taishici/death",
+                        "translation": "身证大义，魂念江东……"
+                    }
+                }
+            }
+        ]
+    },
+    "shi.guoyuan": {
+        "info": {
+            "id": "WEIXXX",
+            "title": "清介有守",
+            "designer": "未知",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "未知",
+                "cv": "czc请您保持安静",
+                "audios": {
+                    "death": { "translation": "吾一生清俭，死亦当薄葬……" }
+                }
+            }
+        ]
+    },
+    "shi.weiyan": {
+        "info": {
+            "id": "SHU009",
+            "title": "矜忠跨万山",
+            "prefix": "势",
+            "designer": "Loun老萌",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "凝聚永恒",
+                "cv": "虞晓旭",
+                "baseUrl": "weiyan/shi.weiyan",
+                "audios": {
+                    "death": {
+                        "url": "weiyan/shi.weiyan/death",
+                        "translation": "志为大汉献身，纵死又有何恨？"
+                    }
+                }
+            }
+        ]
+    },
+    "luotong": {
+        "info": {
+            "id": "WU094",
+            "title": "力政人臣",
+            "designer": "新老哥",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "鬼 画府",
+                "cv": "新白张小虾",
+                "audios": {
+                    "death": { "translation": "臣统之大愿，足矣死而不朽矣……" }
+                }
+            }
+        ]
+    },
+    "gaolan": {
+        "info": {
+            "id": "QUN079",
+            "title": "绝击坚营",
+            "designer": "步穗",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "兴游",
+                "cv": "不配音的 小夏",
+                "audios": {
+                    "death": { "translation": "满腹忠肝，难抵一句谮言……哎！" }
+                }
+            }
+        ]
+    },
+    "cuiyan": {
+        "info": {
+            "id": "WEI021A",
+            "title": " 伯夷之风",
+            "designer": "未知",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "匠人绘",
+                "cv": "爱恰饭的漠桀",
+                "audios": {
+                    "death": { "translation": "生当如君子，死当追竹德……" }
+                }
+            }
+        ]
+    },
+    "jiangqin": {
+        "info": {
+            "id": "WU017",
+            "title": "折节尚义",
+            "designer": "Loun老萌",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "铁杵文化",
+                "cv": "马洋",
+                "baseUrl": "jiangqin/jiangqin",
+                "audios": {
+                    "death": {
+                        "url": "jiangqin/jiangqin/death",
+                        "translation": "奋敌护主，成吾忠名……"
+                    }
+                }
+            }
+        ]
+    },
+    "caomao": {
+        "info": {
+            "id": "WEI101",
+            "title": "向死存魏",
+            "designer": "官方",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "铁杵文化",
+                "cv": "张愚舟舟（张坤）",
+                "audios": {
+                    "death": {
+                        "translation": "纵不成身死，朕亦为太祖子孙，大魏君王……"
+                    }
+                }
+            }
+        ]
+    },
+    "lifeng": {
+        "info": {
+            "id": "SHU060",
+            "title": "继父尽事",
+            "designer": "官方",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "NOVART",
+                "cv": "秦且歌",
+                "audios": { "death": { "translation": "吾，有负丞相重托。" } }
+            }
+        ]
+    },
+    "liuzan": {
+        "info": {
+            "id": "WU062",
+            "title": "啸天亢声",
+            "designer": "未知",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "NOVART",
+                "cv": "未知",
+                "audios": {
+                    "death": { "translation": "今病 困若此，固命也。" }
+                }
+            }
+        ]
+    },
+    "lingcao": {
+        "info": {
+            "id": "WU061",
+            "version": "手杀",
+            "title": "激流勇进",
+            "designer": "韩旭",
+            "script": " 归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "樱花闪乱",
+                "cv": "刘以嘉",
+                "audios": { "death": { "translation": "啊，此箭何来……" } }
+            }
+        ]
+    },
+    "sunru": {
+        "info": {
+            "id": "WU060",
+            "title": "出水青莲",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "撒呀酱",
+                "cv": "凌寒君",
+                "audios": { "death": { "translation": "佑我江东，虽死无怨。" } }
+            }
+        ]
+    },
+    "shichangshi": {
+        "info": {
+            "id": "QUN000",
+            "title": "祸乱朝纲",
+            "designer": "未知",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "鱼仔",
+                "cv": "官方",
+                "audios": { "death": { "translation": "无" } }
+            }
+        ]
+    },
+    "cs_zhangrang": {
+        "info": {
+            "id": "QUN000",
+            "title": "祸乱朝纲",
+            "designer": "官方",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "凡果",
+                "cv": "清水浊流",
+                "baseUrl": "zhangrang",
+                "audios": {
+                    "death": {
+                        "url": "generals/shichangshi/death",
+                        "translation": "无"
+                    }
+                }
+            }
+        ]
+    },
+    "cs_zhaozhong": {
+        "info": {
+            "id": "QUN000",
+            "title": "祸乱朝纲",
+            "designer": "官方",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "凡果",
+                "cv": "马洋",
+                "baseUrl": "zhaozhong",
+                "audios": {
+                    "death": {
+                        "url": "generals/shichangshi/death",
+                        "translation": "无"
+                    }
+                }
+            }
+        ]
+    },
+    "cs_sunzhang": {
+        "info": {
+            "id": "QUN000",
+            "title": "祸乱朝纲",
+            "designer": "官方",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "鬼画府",
+                "cv": "未知",
+                "baseUrl": "sunzhang",
+                "audios": {
+                    "death": {
+                        "url": "generals/shichangshi/death",
+                        "translation": "无"
+                    }
+                }
+            }
+        ]
+    },
+    "cs_bilan": {
+        "info": { "id": "QUN000", "title": "祸乱朝纲", "designer": "官方" },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "鬼画府",
+                "cv": "未知",
+                "baseUrl": "bilan",
+                "audios": {
+                    "death": {
+                        "url": "generals/shichangshi/death",
+                        "translation": "无"
+                    }
+                }
+            }
+        ]
+    },
+    "cs_xiayun": {
+        "info": {
+            "id": "QUN000",
+            "title": "祸乱朝纲",
+            "designer": "官方",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "铁杵文化",
+                "cv": "桑毓泽",
+                "baseUrl": "xiayun",
+                "audios": {
+                    "death": {
+                        "url": "generals/shichangshi/death",
+                        "translation": "无"
+                    }
+                }
+            }
+        ]
+    },
+    "cs_hankui": {
+        "info": {
+            "id": "QUN000",
+            "title": "祸乱朝纲",
+            "designer": "官方",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "鬼画府",
+                "cv": "桑毓泽",
+                "baseUrl": "hankui",
+                "audios": {
+                    "death": {
+                        "url": "generals/shichangshi/death",
+                        "translation": "无"
+                    }
+                }
+            }
+        ]
+    },
+    "cs_lisong": {
+        "info": {
+            "id": "QUN000",
+            "title": "祸乱朝 纲",
+            "designer": "官方",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "铁杵文化",
+                "cv": "桑毓泽",
+                "baseUrl": "lisong",
+                "audios": {
+                    "death": {
+                        "url": "generals/shichangshi/death",
+                        "translation": "无"
+                    }
+                }
+            }
+        ]
+    },
+    "cs_duangui": {
+        "info": {
+            "id": "QUN000",
+            "title": "祸乱朝纲",
+            "designer": "官方",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "鬼画府",
+                "cv": "爱果冻的若林",
+                "baseUrl": "duangui",
+                "audios": {
+                    "death": {
+                        "url": "generals/shichangshi/death",
+                        "translation": "无"
+                    }
+                }
+            }
+        ]
+    },
+    "cs_guosheng": {
+        "info": {
+            "id": "QUN000",
+            "title": "祸乱朝纲",
+            "designer": "官方",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "鬼画府",
+                "cv": "花少 关",
+                "baseUrl": "guosheng",
+                "audios": {
+                    "death": {
+                        "url": "generals/shichangshi/death",
+                        "translation": "无"
+                    }
+                }
+            }
+        ]
+    },
+    "cs_gaowang": {
+        "info": {
+            "id": "QUN000",
+            "title": "祸乱朝纲",
+            "designer": "官方",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "鬼画府",
+                "cv": "未知",
+                "baseUrl": "gaowang",
+                "audios": {
+                    "death": {
+                        "url": "generals/shichangshi/death",
+                        "translation": "无"
+                    }
+                }
+            }
+        ]
+    },
+    "sp.xuhuang": {
+        "info": {
+            "id": "QUN162",
+            "title": "沉详性严",
+            "prefix": "SP",
+            "designer": "未知",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "王强",
+                "cv": "杨祖淏",
+                "baseUrl": "xuhuang/sp.xuhuang",
+                "audios": {
+                    "death": {
+                        "url": "xuhuang/sp.xuhuang/death",
+                        "translation": "哎！明主未遇，大功未成。"
+                    }
+                }
+            }
+        ]
+    },
+    "maojie": {
+        "info": {
+            "id": "WEI021B",
+            "title": "清公素履",
+            "designer": "未知",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "君恒文化",
+                "cv": "葫芦啊Flew",
+                "audios": {
+                    "death": { "translation": "废立大事，公 不可不慎……" }
+                }
+            }
+        ]
+    },
+    "qiaozhou": {
+        "info": {
+            "id": "SHU083",
+            "title": "观星知命",
+            "designer": "未知",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "鬼画府",
+                "cv": "-安志-",
+                "audios": {
+                    "death": {
+                        "translation": "老夫死不足惜，但求蜀地百姓无虞！"
+                    }
+                }
+            }
+        ]
+    },
+    "zhangyi": {
+        "info": {
+            "id": "SHU054",
+            "title": "亢锐怀忠",
+            "designer": "Loun老萌",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "王强",
+                "cv": "王教授就是王宇航",
+                "audios": {
+                    "death": { "translation": "唯愿百姓，不受此乱所害，哎……" }
+                }
+            }
+        ]
+    }
+}

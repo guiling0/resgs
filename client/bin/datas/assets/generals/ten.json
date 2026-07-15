@@ -1,0 +1,288 @@
+{
+    "wumiao.huangfusong": {
+        "info": {
+            "id": "QUN054",
+            "title": "襄武翼汉",
+            "prefix": "武",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "菲菲公主",
+                "cv": "杨祖淏",
+                "baseUrl": "huangfusong/wumiao.huangfusong",
+                "audios": {
+                    "death": {
+                        "url": "generals/huangfusong/wumiao.huangfusong/death",
+                        "translation": "心不忘忠，何为不安?"
+                    }
+                }
+            }
+        ]
+    },
+    "wumiao.guanyu": {
+        "info": {
+            "id": "SHU002",
+            "title": "义武千秋",
+            "prefix": "武",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "黠 荧岛_小董",
+                "cv": "扬羽Miro",
+                "baseUrl": "guanyu/wumiao.guanyu",
+                "audios": {
+                    "death": {
+                        "url": "generals/guanyu/wumiao.guanyu/death",
+                        "translation": "寻了兄长三弟一辈子，今日，便等兄弟来寻了。"
+                    }
+                }
+            }
+        ]
+    },
+    "wumiao.zhugeliang": {
+        "info": {
+            "id": "SHU004",
+            "title": " 忠武良弼",
+            "prefix": "武",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "梦回唐朝",
+                "cv": "马洋",
+                "baseUrl": "zhugeliang/wumiao.zhugeliang",
+                "audios": {
+                    "death": {
+                        "url": "generals/zhugeliang/wumiao.zhugeliang/death",
+                        "translation": "天下事，了犹未了，终以不了了之。"
+                    }
+                }
+            }
+        ]
+    },
+    "wumiao.luxun": {
+        "info": {
+            "id": "WU007",
+            "title": "释武怀儒",
+            "prefix": "武",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "小新",
+                "cv": "LXH(凌晨)",
+                "baseUrl": "luxun/wumiao.luxun",
+                "audios": {
+                    "death": {
+                        "url": "generals/luxun/wumiao.luxun/death",
+                        "translation": "此生清白，不为浊泥所染。"
+                    }
+                }
+            }
+        ]
+    },
+    "wumiao.lukang": {
+        "info": {
+            "id": "WU019",
+            "title": "桢武熙朝",
+            "prefix": "武",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "未知",
+                "cv": "戴超行",
+                "baseUrl": "lukang/wumiao.lukang",
+                "audios": {
+                    "death": {
+                        "url": "lukang/wumiao.lukang/death",
+                        "translation": "父亲，吾已尽力了……"
+                    }
+                }
+            }
+        ]
+    },
+    "jianggan": {
+        "info": {
+            "id": "WEI075",
+            "title": "锋镝悬信",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "biou09",
+                "cv": "未知",
+                "audios": {
+                    "death": { "translation": "丞相，再给我一次机会啊！" }
+                }
+            }
+        ]
+    },
+    "shamoke": {
+        "info": {
+            "id": "SHU020",
+            "title": "五溪蛮王",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "张帅",
+                "cv": "冷泉夜月",
+                "baseUrl": "shamoke/shamoke",
+                "audios": {
+                    "death": {
+                        "url": "generals/shamoke/shamoke/death",
+                        "translation": "啊，我竟然会……"
+                    }
+                }
+            }
+        ]
+    },
+    "yanrou": {
+        "info": {
+            "id": "WEI088",
+            "title": "冠玉啸北",
+            "designer": "Loun老萌",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "凝聚永恒",
+                "cv": "Voice达",
+                "audios": {
+                    "death": { "translation": "寒风折戍 矛，铁衣裹枯骨。" }
+                }
+            }
+        ]
+    },
+    "panfeng": {
+        "info": {
+            "id": "QUN017",
+            "title": "联军上将",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "游歌",
+                "cv": "鬼叔",
+                "baseUrl": "panfeng/panfeng",
+                "audios": {
+                    "death": {
+                        "url": "generals/panfeng/panfeng/death",
+                        "translation": "来者……可是魔将……"
+                    }
+                }
+            }
+        ]
+    },
+    "sp.zhaoyun": {
+        "info": {
+            "id": "QUN043",
+            "title": "白马先锋",
+            "prefix": "SP",
+            "designer": "KayaK&丹尼",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Vincent",
+                "cv": "彭尧",
+                "baseUrl": "zhaoyun/sp.zhaoyun",
+                "audios": {
+                    "death": { "translation": "这，就是失败的滋味吗？" }
+                }
+            }
+        ]
+    },
+    "spsunce": {
+        "info": {
+            "id": "QUN183",
+            "title": " 壮武命世",
+            "prefix": "SP",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "君恒文化",
+                "cv": "花少关",
+                "audios": { "death": { "translation": "身受百创，力难从心。" } }
+            }
+        ]
+    },
+    "tianfeng": {
+        "info": {
+            "id": "QUN016",
+            "title": "河北瑰杰",
+            "designer": "淬毒",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "君恒文化",
+                "cv": "五色石南叶",
+                "baseUrl": "tianfeng/tianfeng",
+                "audios": {
+                    "death": { "translation": "不纳吾言而反诛吾心，奈何奈何……" }
+                }
+            }
+        ]
+    },
+    "mateng": {
+        "info": {
+            "id": "QUN013",
+            "title": "驰骋西陲",
+            "designer": "淬毒",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "君恒文化",
+                "cv": "五色石南叶",
+                "baseUrl": "mateng/mateng",
+                "audios": { "death": { "translation": "儿子，为爹报仇啊……" } }
+            }
+        ]
+    },
+    "zhugeke": {
+        "info": {
+            "id": "WU042",
+            "title": " 兴家赤族",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "LiuHeng",
+                "cv": "Aaron_Bo",
+                "audios": {
+                    "death": { "translation": "重权震主，是我疏忽了。" }
+                }
+            }
+        ]
+    }
+}

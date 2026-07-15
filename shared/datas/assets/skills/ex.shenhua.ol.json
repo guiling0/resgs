@@ -1,0 +1,182 @@
+{
+    "olex.xiahouyuan.shensu": {
+        "name": "olex.xiahouyuan.shensu",
+        "lang_name": "神速",
+        "lang_desc": "你可以做出如下选择：\n1.跳过 判定阶段和摸牌阶段；\n2.跳过出牌阶段并弃置一张装备牌；\n3.跳过弃牌阶段并翻面。\n你每选择一项，便视为你使用一张无距离限制的【杀】。",
+        "lang_desc2": "①判定阶段开始前，你可跳过此阶段和摸牌阶段并选择是你使用无对应的实体牌的普【杀】的合法目标的一名角色▶你对其使用无对应的实体牌的普【杀】。②出牌阶段开始前，若你未跳过过此阶段，你可弃置一张装备牌并选择是你使用无对应的实体牌的普【杀】的合法目标的一名角色▶你对其使用无对应的实体牌的普【杀】，跳过此阶段。③弃牌阶段开始前，若你未跳过过此阶段，你可翻面并选择是你使用无对应的实体牌的普【杀】的合法目标的一名角色▶你对其使用无对应的实体牌的普【杀】，跳过此阶段。",
+        "audios": [
+            {
+                "url": "generals/xiahouyuan/olex.xiahouyuan/shensu1",
+                "translation": "奔轶绝尘，不留踪影。"
+            },
+            {
+                "url": "generals/xiahouyuan/olex.xiahouyuan/shensu2",
+                "translation": "健步如飞，破敌不备。"
+            }
+        ]
+    },
+    "olex.xiahouyuan.shebian": {
+        "name": "olex.xiahouyuan.shebian",
+        "lang_name": "设变",
+        "lang_desc": "当你翻面时，你可以移动场上的一张装备牌。",
+        "lang_desc2": "当你翻面后，你可将一名角色的装备区里的一张牌置入另一名角色的装备区。",
+        "audios": [
+            {
+                "url": "generals/xiahouyuan/olex.xiahouyuan/shebian1",
+                "translation": "设变力战，虏敌千万。"
+            },
+            {
+                "url": "generals/xiahouyuan/olex.xiahouyuan/shebian2",
+                "translation": "随机应变，临 机设变。"
+            }
+        ]
+    },
+    "olex.dianwei.qiangxi": {
+        "name": "olex.dianwei.qiangxi",
+        "lang_name": "强袭",
+        "lang_desc": "出牌阶段限两次，你可 以受到1点伤害或弃置一张武器牌，然后对一名本回合未以此法指定过的其他角色造成1点伤害。",
+        "lang_desc2": "",
+        "audios": [
+            { "url": "generals/dianwei/qiangxi1", "translation": "吃我一戟！" },
+            {
+                "url": "generals/dianwei/qiangxi2",
+                "translation": "看我三步之内取 你小命！"
+            }
+        ]
+    },
+    "olex.dianwei.ninge": {
+        "name": "olex.dianwei.ninge",
+        "lang_name": "狞恶",
+        "lang_desc": "锁定技，当一名角色每回合 第二次受到伤害后，若其为你或伤害来源为你，你摸一张牌并弃置其区域里的一张牌。",
+        "lang_desc2": "",
+        "audios": []
+    },
+    "olex.sunjian.yinghun": {
+        "name": "olex.sunjian.yinghun",
+        "lang_name": "英魂",
+        "lang_desc": "准备阶段，若你已受伤，你可以选择一名其他角色并 选择一项：\n1.令其摸X张牌，然后弃置一张牌；\n2.令其摸一张牌，然后弃置X张牌。（X为你已损失的体力值）",
+        "lang_desc2": "准备 阶段开始时，若你已受伤，你可选择：1.{令一名其他角色获得1枚\"魂\"▶其摸X张牌，弃置一张牌}；2.{令一名其他角色获得1枚\"魂\"▶其摸一张牌，弃置X张牌}。（X为你已损失的体力值）",
+        "audios": [
+            {
+                "url": "generals/sunjian/olex.sunjian/yinghun1",
+                "translation": "提刀奔走，灭敌不休。"
+            },
+            {
+                "url": "generals/sunjian/olex.sunjian/yinghun2",
+                "translation": "贼寇草莽，我且出战。"
+            }
+        ]
+    },
+    "olex.sunjian.wulie": {
+        "name": "olex.sunjian.wulie",
+        "lang_name": "武烈",
+        "lang_desc": "限定技，结束阶段，你可以失去任意点体力，令 等量名其他角色各获得“烈”；\n有“烈”的角色受到伤害时，弃其“烈”并防止此伤害。",
+        "lang_desc2": "限定技，结束阶段开始时，你可失去至少1点体力并选择等量的其他角色▶你令这些角色各获得1枚“烈”→当一名角色受到伤害时❷，若其有“烈”，其弃所有“烈”▷其防止此伤害。",
+        "audios": [
+            {
+                "url": "generals/sunjian/olex.sunjian/wulie1",
+                "translation": "孙武之后，英烈勇战。"
+            },
+            {
+                "url": "generals/sunjian/olex.sunjian/wulie2",
+                "translation": "兴义之中，忠烈之名。"
+            }
+        ]
+    },
+    "olex.jiaxu.wansha": {
+        "name": "olex.jiaxu.wansha",
+        "lang_name": "完杀",
+        "lang_desc": "锁定技，不处于濒死状态的其他角色于你回合内不能使用【桃】；\n一名角色于你回合内进入濒死状态时，你与其以外的所有角色非锁定技失效直到结算完成。",
+        "lang_desc2": "锁定技，若有角色正在进行濒死流程且当前回合角色为你[1]，除进行濒死流程的角色外的所有其他角色均不能使用【桃】且所有未带有“锁定技”标签的武将技能无效。",
+        "audios": [
+            {
+                "url": "generals/jiaxu/olex.jiaxu/wansha1",
+                "translation": "斩草务尽，以绝后患。"
+            },
+            {
+                "url": "generals/jiaxu/olex.jiaxu/wansha2",
+                "translation": "有谁敢试试？"
+            }
+        ]
+    },
+    "olex.jiaxu.luanwu": {
+        "name": "olex.jiaxu.luanwu",
+        "lang_name": "乱武",
+        "lang_desc": "限定技 ，出牌阶段，你可以令所有其他角色依次选择一项：\n1.对距离最近的另一名角色使用一张【杀】；\n2.失去1点体力。\n结算完成后， 你可以视为使用一张无距离次数限制的【杀】。",
+        "lang_desc2": "限定技，出牌阶段，你可获得1枚“乱武”并选择所有其他角色▶这些 角色各需对包括距离最小的另一名角色在内的角色使用【杀】，否则失去1点体力。你可使用无对应的实体牌的普【杀】。",
+        "audios": [
+            {
+                "url": "generals/jiaxu/olex.jiaxu/luanwu1",
+                "translation": "一切，都在我的掌控中。"
+            },
+            {
+                "url": "generals/jiaxu/olex.jiaxu/luanwu2",
+                "translation": "这乱世还不够乱！"
+            }
+        ]
+    },
+    "olex.jiaxu.weimu": {
+        "name": "olex.jiaxu.weimu",
+        "lang_name": "帷幕",
+        "lang_desc": " 锁定技，你不能成为黑色锦囊牌的目标；\n当你于回合内受到伤害时，你防止此伤害并摸X张牌（X为此伤害值的两倍）。",
+        "lang_desc2": "①锁定技，你不是黑色锦囊牌的合法目标。\n②锁定技，当你于回合内受到伤害时❸，你摸2X张牌（X为伤害值）▶你防止此伤害。",
+        "audios": [
+            {
+                "url": "generals/jiaxu/olex.jiaxu/weimu1",
+                "translation": "此伤与我无关。"
+            },
+            {
+                "url": "generals/jiaxu/olex.jiaxu/weimu2",
+                "translation": "还是另寻他法吧。"
+            }
+        ]
+    },
+    "olex.jiangwei.tiaoxin": {
+        "name": "olex.jiangwei.tiaoxin",
+        "lang_name": "挑衅",
+        "lang_desc": "出牌阶段限一次，你可以选择一名攻击范围内包含你的角色，然后除非该角色对你使用一张【杀】且此【杀】对你造成伤害， 否则你弃置其一张牌并在本阶段内将此技能修改为“出牌阶段限两次”。",
+        "lang_desc2": "出牌阶段限一次，你可选择一名攻击范围内包含你的角色▶除非该角色对你使用一张【杀】且此【杀】对你造成伤害，否则你弃置其一张牌，并将此技能的使用次数修改为“出牌阶段限两次”直到本阶段结束。",
+        "audios": [
+            {
+                "url": "generals/jiangwei/olex.jiangwei/tiaoxin1",
+                "translation": "会闻用师，观衅而动 。"
+            },
+            {
+                "url": "generals/jiangwei/olex.jiangwei/tiaoxin2",
+                "translation": "宜乘其兴会，以挑敌将。"
+            }
+        ]
+    },
+    "olex.jiangwei.zhiji": {
+        "name": "olex.jiangwei.zhiji",
+        "lang_name": "志继",
+        "lang_desc": "觉醒技，准备阶段或结束阶段，若你没有手牌，你回复1点体力或摸两张牌，然后减1点体力上限并获得“观星”。",
+        "lang_desc2": "觉醒技，准备阶段或结束阶段开始时，若你没有手牌，你须选择：1.回 复1点体力；2.摸两张牌。然后扣减1点体力上限，获得技能〖观星〗。",
+        "audios": [
+            {
+                "url": "generals/jiangwei/olex.jiangwei/zhiji1",
+                "translation": "丞相遗志，不死不休！"
+            },
+            {
+                "url": "generals/jiangwei/olex.jiangwei/zhiji2",
+                "translation": "大业未成，矢志不 渝！"
+            }
+        ]
+    },
+    "olex.jiangwei.guanxing": {
+        "name": "olex.jiangwei.guanxing",
+        "lang_name": "观星",
+        "lang_desc": "准备阶段，你可以观 看牌堆顶的五张牌（若存活角色数小于4则改为三张），然后将这些牌以任意顺序置于牌堆顶或牌堆底。若你将这些牌均置于牌堆底，则 结束阶段你可以再发动一次“观星”。",
+        "lang_desc2": "①准备阶段开始时，你可观看牌堆顶的X张牌（X为5且与存活角色数中取小，底 线为3），然后将其中任意数量的牌以任意顺序置于牌堆顶，将其余的牌以任意顺序置于牌堆底。②结束阶段开始时，若你于本回合的准 备阶段发动过〖观星〗且将牌均置于了牌堆底，你可再次发动此技能。",
+        "audios": [
+            {
+                "url": "generals/jiangwei/olex.jiangwei/guanxing1",
+                "translation": "星象相弦，此乃吉兆！"
+            },
+            {
+                "url": "generals/jiangwei/olex.jiangwei/guanxing2",
+                "translation": "星之分野， 各有所属。"
+            }
+        ]
+    }
+}

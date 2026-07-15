@@ -1,0 +1,145 @@
+{
+    "ex.caocao": {
+        "name": "ex.caocao",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["ex.caocao.jianxiong", "ex.caocao.hujia"]
+    },
+    "ex.simayi": {
+        "name": "ex.simayi",
+        "kingdom": "wei",
+        "hp": 3,
+        "skills": ["ex.simayi.fankui", "ex.simayi.guicai"]
+    },
+    "ex.zhangliao": {
+        "name": "ex.zhangliao",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["ex.zhangliao.tuxi"]
+    },
+    "ex.xuchu": {
+        "name": "ex.xuchu",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["ex.xuchu.luoyi"]
+    },
+    "ex.guojia": {
+        "name": "ex.guojia",
+        "kingdom": "wei",
+        "hp": 3,
+        "skills": ["ex.guojia.tiandu", "ex.guojia.yiji"]
+    },
+    "ex.zhenji": {
+        "name": "ex.zhenji",
+        "kingdom": "wei",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["ex.zhenji.luoshen", "ex.zhenji.qingguo"]
+    },
+    "lidian": {
+        "name": "lidian",
+        "kingdom": "wei",
+        "hp": 3,
+        "skills": ["lidian.xunxun", "lidian.wangxi"]
+    },
+    "ex.liubei": {
+        "name": "ex.liubei",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["ex.liubei.rende", "ex.liubei.jijiang"]
+    },
+    "ex.guanyu": {
+        "name": "ex.guanyu",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["ex.guanyu.wusheng", "ex.guanyu.yijue"]
+    },
+    "olex.zhangfei": {
+        "name": "olex.zhangfei",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["olex.zhangfei.paoxiao", "olex.zhangfei.tishen"]
+    },
+    "ex.zhugeliang": {
+        "name": "ex.zhugeliang",
+        "kingdom": "shu",
+        "hp": 3,
+        "skills": ["ex.zhugeliang.guanxing", "ex.zhugeliang.kongcheng"]
+    },
+    "ex.machao": {
+        "name": "ex.machao",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["ex.machao.mashu", "ex.machao.tieqi"]
+    },
+    "ex.huangyueying": {
+        "name": "ex.huangyueying",
+        "kingdom": "shu",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["ex.huangyueying.jizhi", "ex.huangyueying.qicai"]
+    },
+    "ex.sunquan": {
+        "name": "ex.sunquan",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": ["ex.sunquan.zhiheng", "ex.sunquan.jiuyuan"]
+    },
+    "ex.ganning": {
+        "name": "ex.ganning",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": ["ex.ganning.qixi", "ex.ganning.fenwei"]
+    },
+    "ex.huanggai": {
+        "name": "ex.huanggai",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": ["ex.huanggai.kurou", "ex.huanggai.zhaxiang"]
+    },
+    "ex.zhouyu": {
+        "name": "ex.zhouyu",
+        "kingdom": "wu",
+        "hp": 3,
+        "skills": ["ex.zhouyu.yingzi", "ex.zhouyu.fanjian"]
+    },
+    "ex.daqiao": {
+        "name": "ex.daqiao",
+        "kingdom": "wu",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["ex.daqiao.guose", "ex.daqiao.liuli"]
+    },
+    "ex.luxun": {
+        "name": "ex.luxun",
+        "kingdom": "wu",
+        "hp": 3,
+        "skills": ["ex.luxun.qianxun", "ex.luxun.lianying"]
+    },
+    "ex.sunshangxiang": {
+        "name": "ex.sunshangxiang",
+        "kingdom": "wu",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["ex.sunshangxiang.jieyin", "ex.sunshangxiang.xiaoji"]
+    },
+    "ex.huatuo": {
+        "name": "ex.huatuo",
+        "kingdom": "qun",
+        "hp": 3,
+        "skills": ["ex.huatuo.jijiu", "ex.huatuo.qingnang"]
+    },
+    "ex.lvbu": {
+        "name": "ex.lvbu",
+        "kingdom": "qun",
+        "hp": 5,
+        "skills": ["ex.lvbu.wushuang", "ex.lvbu.liyu"]
+    },
+    "ex.diaochan": {
+        "name": "ex.diaochan",
+        "kingdom": "qun",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["ex.diaochan.lijian", "ex.diaochan.biyue"]
+    }
+}

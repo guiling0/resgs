@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "rootDir": "..",
+        "outDir": "build",
+        "target": "ESNext",
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "strict": true,
+        "allowJs": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "useDefineForClassFields": false,
+        "ignoreDeprecations": "6.0",
+        "paths": {
+            "@shared/*": ["../shared/*"],
+            "@colyseus/schema": ["./node_modules/@colyseus/schema"]
+        }
+    },
+    "include": ["src", "test", "../shared"]
+}

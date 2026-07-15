@@ -1,0 +1,513 @@
+{
+    "wars.simayi_jin": {
+        "info": {
+            "id": "JIN001",
+            "title": "冢虎",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "小罗没想好",
+                "cv": "马洋",
+                "cv_designer": "未知",
+                "audios": { "death": { "translation": "虎入骷冢，司马难兴。" } }
+            }
+        ]
+    },
+    "wars.zhangchunhua_jin": {
+        "info": {
+            "id": "JIN002",
+            "title": "冷血皇后",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "小罗没想好",
+                "cv": "诺语兰",
+                "cv_designer": "未知",
+                "audios": { "death": { "translation": "我不负懿，懿负我……" } }
+            }
+        ]
+    },
+    "wars.simashi": {
+        "info": {
+            "id": "JIN003",
+            "title": "睚眦侧目",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "拉布拉卡",
+                "cv": "李洋",
+                "cv_designer": "未知",
+                "audios": {
+                    "death": { "translation": "子上，这是为兄给你打下的江山……" }
+                }
+            }
+        ]
+    },
+    "wars.simazhao": {
+        "info": {
+            "id": "JIN004",
+            "title": "嘲风开天",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "君恒文化",
+                "cv": "人到中年的李皮",
+                "cv_designer": "未知",
+                "audios": {
+                    "death": { "translation": "司马 三代，一梦成空……" }
+                }
+            }
+        ]
+    },
+    "wars.simazhou": {
+        "info": {
+            "id": "JIN005",
+            "title": "温恭的狻猊",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "凝聚永恒",
+                "cv": "云中亭曲",
+                "cv_designer": "未知",
+                "audios": {
+                    "death": { "translation": "恩赐重物，病身难消受……" }
+                }
+            }
+        ]
+    },
+    "wars.simaliang": {
+        "info": {
+            "id": "JIN006",
+            "title": "冲粹的蒲牢",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "小罗没想好",
+                "cv": "LIU巴斯",
+                "cv_designer": "未知",
+                "audios": {
+                    "death": { "translation": "生此篡逆之世，罪臣难辞其咎……" }
+                }
+            }
+        ]
+    },
+    "wars.simalun": {
+        "info": {
+            "id": "JIN011",
+            "title": "螭吻裂冠",
+            "designer": "山巅 隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "荆芥",
+                "cv": "冷泉夜月",
+                "cv_designer": "未知",
+                "audios": {
+                    "death": { "translation": "大事当以急行，而不可缓图……" }
+                }
+            }
+        ]
+    },
+    "wars.shibao": {
+        "info": {
+            "id": "JIN016",
+            "title": "经国之才",
+            "designer": " 山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "凝聚永恒",
+                "cv": "翔宇_hxy",
+                "cv_designer": "未知",
+                "audios": { "death": { "translation": "寒门出身，难以擢升……" } }
+            }
+        ]
+    },
+    "wars.yanghuiyu": {
+        "info": {
+            "id": "JIN017",
+            "title": "克明礼教",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Jzeo",
+                "cv": "楼倾司",
+                "cv_designer": "未知",
+                "audios": { "death": { "translation": "韶华易老，佳容不再……" } }
+            }
+        ]
+    },
+    "wars.wangyuanji": {
+        "info": {
+            "id": "JIN018",
+            "title": "垂心万物",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "六道目",
+                "cv": "苏子芜",
+                "cv_designer": "未知",
+                "audios": { "death": { "translation": "祖父已逝，哀凄悲戚……" } }
+            }
+        ]
+    },
+    "wars.weiguan": {
+        "info": {
+            "id": "JIN020",
+            "title": "忠允清識",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Karneval",
+                "cv": "-安志-",
+                "cv_designer": "未知",
+                "audios": { "death": { "translation": "辞荣善终，不可求……" } }
+            }
+        ]
+    },
+    "wars.jiachong": {
+        "info": {
+            "id": "JIN021",
+            "title": "悖逆篡弑",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "游漫美绘",
+                "cv": "飛流",
+                "cv_designer": "未知",
+                "audios": {
+                    "death": { "translation": "任元褒，吾与汝势不两立！" }
+                }
+            }
+        ]
+    },
+    "wars.guohuai_jin": {
+        "info": {
+            "id": "JIN027",
+            "title": "嫉贤妒能",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "凝聚永恒",
+                "cv": "张溪敉",
+                "cv_designer": "未知",
+                "audios": {
+                    "death": { "translation": "我死后，切勿从粲、午之言……" }
+                }
+            }
+        ]
+    },
+    "wars.wangjun": {
+        "info": {
+            "id": "JIN036",
+            "title": "顺流长驱",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "荆芥",
+                "cv": "王教授就是王宇航",
+                "cv_designer": " 未知",
+                "audios": {
+                    "death": {
+                        "translation": "吾功大无匹，但为浑父子所抑而已……"
+                    }
+                }
+            }
+        ]
+    },
+    "wars.malong": {
+        "info": {
+            "id": "JIN037",
+            "title": "困局诡阵",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "荆芥",
+                "cv": "王教授就是王宇航",
+                "cv_designer": "未知",
+                "audios": {
+                    "death": {
+                        "translation": "惟愿长守边境，不使百姓为虏所扰……"
+                    }
+                }
+            }
+        ]
+    },
+    "wars.yanghu": {
+        "info": {
+            "id": "JIN022",
+            "title": "执德清劭",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "匠人绘",
+                "cv": "宋十一（宋国庆）",
+                "audios": { "death": { "translation": "当断不断，反受其乱。" } }
+            }
+        ]
+    },
+    "wars.duyu": {
+        "info": {
+            "id": "JIN019",
+            "title": "文成武德",
+            "designer": "张浩&山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "君恒文化",
+                "cv": "-安志-",
+                "audios": { "death": { "translation": "金瓯尚缺，死难瞑目……" } }
+            }
+        ]
+    },
+    "wars.zhanghuyuechen": {
+        "info": {
+            "id": "JIN014",
+            "title": "不辱门庭",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "凝聚永恒",
+                "cv": "未知",
+                "isDualImage": true,
+                "image_dual": "image.dual",
+                "image_dual2": "image.dual.self",
+                "audios": { "death": { "translation": "儿有辱，父亲威名……" } }
+            }
+        ]
+    },
+    "wars.wenyang": {
+        "info": {
+            "id": "JIN042",
+            "title": "陆拔山岳",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "小罗没想好",
+                "cv": "张愚舟舟",
+                "audios": {
+                    "death": {
+                        "translation": "半生功业，而见疑于一家之言，岂能无怨！"
+                    }
+                }
+            }
+        ]
+    },
+    "wars.baifuren": {
+        "info": {
+            "id": "JIN040",
+            "title": "玲珑心窍",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "小罗没想好",
+                "cv": "苏子芜",
+                "audios": {
+                    "death": { "translation": "世人皆惧司马，独我痴情仲达……" }
+                }
+            }
+        ]
+    },
+    "wars.wangxiang": {
+        "info": {
+            "id": "JIN032",
+            "title": "沂川跃鲤",
+            "designer": "七哀凌虚",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KY",
+                "cv": "未知",
+                "audios": {
+                    "death": { "translation": "夫生之有死，自然之理也。" }
+                }
+            }
+        ]
+    },
+    "wars.yangjun": {
+        "info": {
+            "id": "JIN039",
+            "title": "祸心专辅",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "荆芥",
+                "cv": "未知",
+                "audios": {
+                    "death": { "translation": "唉，终是难逃灭门之祸。" }
+                }
+            }
+        ]
+    },
+    "wars.sunxiu_jin": {
+        "info": {
+            "id": "JIN041",
+            "title": "青纸为诏",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "荆芥",
+                "cv": "Aaron_Bo",
+                "audios": { "death": { "translation": "这就是所谓的报应吗？" } }
+            }
+        ]
+    },
+    "wars.lord_simayi": {
+        "info": {
+            "id": "EM005",
+            "prefix": "君",
+            "title": "时代的归墟",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "小罗没想好",
+                "cv": "马洋",
+                "audios": {
+                    "death": { "translation": "洛水滔滔，难诉吾一生坎坷……" }
+                }
+            }
+        ]
+    },
+    "wars.jiananfeng": {
+        "info": {
+            "id": "JIN038",
+            "title": "凤啸峻峕",
+            "designer": "山巅隐士",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "小罗没想好",
+                "cv": "未知",
+                "audios": {
+                    "death": { "translation": "只恨未早下杀手，致有今日险境……" }
+                }
+            }
+        ]
+    },
+    "wars.xiahouhui": {
+        "info": {
+            "id": "JIN015",
+            "title": "深渊的白莲",
+            "designer": "张浩",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "凝聚永恒",
+                "cv": "未知",
+                "audios": {
+                    "death": { "translation": "夫君，你怎么对我如 此狠心……" }
+                }
+            }
+        ]
+    },
+    "wars.wanghun": {
+        "info": {
+            "id": "JIN035",
+            "title": "虚怀绥纳",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "匠人绘",
+                "cv": "未知",
+                "audios": {
+                    "death": {
+                        "translation": "灭国之功本属我，奈何罔做他人衣。"
+                    }
+                }
+            }
+        ]
+    },
+    "wars.zhongyan": {
+        "info": {
+            "id": "JIN028",
+            "title": "紫闼飞莺",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "凡果",
+                "cv": "楼倾司",
+                "audios": {
+                    "death": { "translation": "此间天下人，皆分一斗之才。" }
+                }
+            }
+        ]
+    }
+}

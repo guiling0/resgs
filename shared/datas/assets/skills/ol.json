@@ -1,0 +1,146 @@
+{
+    "olex.lidian.xunxun": {
+        "name": "olex.lidian.xunxun",
+        "lang_name": "恂恂",
+        "lang_desc": "摸牌阶段开始时，你可以观看牌堆顶的四 张牌，然后将其中的两张牌置于牌堆顶，将其余的牌置于牌堆底。",
+        "lang_desc2": "摸牌阶段开始时❷，你可将牌堆顶的四张牌扣置入处理区（对你可见）▶你将其中两张牌置于牌堆顶，将其余的牌置于牌堆底。",
+        "audios": [
+            {
+                "url": "generals/lidian/xunxun1",
+                "translation": "众将死战，非吾之功。"
+            },
+            {
+                "url": "generals/lidian/xunxun2",
+                "translation": "爱兵如子，胜乃可全。"
+            }
+        ]
+    },
+    "olex.lidian.wangxi": {
+        "name": "olex.lidian.wangxi",
+        "lang_name": "忘隙",
+        "lang_desc": "当你对其他角色造成1点伤害后，或当你受到其他角色造成的1点伤害后，你可以摸两张牌并将其中一张牌交给其。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/lidian/wangxi1",
+                "translation": "大丈夫何拘小节。"
+            },
+            {
+                "url": "generals/lidian/wangxi2",
+                "translation": "前尘往事，莫再提起。"
+            }
+        ]
+    },
+    "luzhi_wei.qingzhong": {
+        "name": "luzhi_wei.qingzhong",
+        "lang_name": "清忠",
+        "lang_desc": "出牌阶段开始时，你可以摸两张牌，然后本阶段结束时，你与一名手牌数最少的其他角色交换手牌。",
+        "lang_desc2": "出牌阶段开始时，你可摸两张牌▶本阶段结束时，你选择一名手牌数最少的其他角色并与之交换手牌。",
+        "audios": [
+            {
+                "url": "generals/luzhi_wei/qingzhong1",
+                "translation": "执政为民，当尽我所能。"
+            },
+            {
+                "url": "generals/luzhi_wei/qingzhong2",
+                "translation": "吾自幼流离失所，更能体恤百姓之苦。"
+            }
+        ]
+    },
+    "luzhi_wei.weijing": {
+        "name": "luzhi_wei.weijing",
+        "lang_name": "卫境",
+        "lang_desc": "每轮限一次，你可以视为使用一张【杀】或【闪】。",
+        "lang_desc2": "每轮限一次，你可视为使用一张【杀】或【闪】。",
+        "audios": [
+            {
+                "url": "generals/luzhi_wei/weijing1",
+                "translation": "战事兴起，最苦的，仍是百姓。"
+            },
+            {
+                "url": "generals/luzhi_wei/weijing2",
+                "translation": "国乃大家，保大家才有小家。"
+            }
+        ]
+    },
+    "ol.lingcao.dujin": {
+        "name": "ol.lingcao.dujin",
+        "lang_name": "独进",
+        "lang_desc": "摸牌阶段，你可以多摸X+1张牌（X为你装备区里牌数的一半且向上取整）。",
+        "lang_desc2": "摸牌阶段，你可令额定摸牌数+X（X=[(你装备区里牌数+1)/2]+1）。",
+        "audios": [
+            {
+                "url": "generals/lingcao/dujin1",
+                "translation": "带兵十万，不如老夫多甲一件！"
+            },
+            {
+                "url": "generals/lingcao/dujin2",
+                "translation": "轻舟独进，破敌先锋！"
+            }
+        ]
+    },
+    "tianchou.shandao": {
+        "name": "tianchou.shandao",
+        "lang_name": "善刀",
+        "lang_desc": "出牌阶段限一次，你可以将任意名角色的各一张牌置于牌堆顶，视为对这些角色使用一张【五谷丰登】，然后视为对除这些角色外的其他角色使用一张【万箭齐发】。",
+        "lang_desc2": "出牌阶段限一次，你可选择至少一名角色并获得1枚“刀”▶你将这些角色的各一张牌置于牌堆顶，使用无对应的实体牌的【五谷丰登】，再使用无对应的实 体牌的【万箭齐发】▶除你以此法选择的角色外的角色不是此【五谷丰登】的合法目标，你以此法选择的角色不是此【万箭齐发】的合法目标。",
+        "audios": [
+            {
+                "url": "generals/tianchou/shandao1",
+                "translation": "君子藏器，待天时而动。"
+            },
+            {
+                "url": "generals/tianchou/shandao2",
+                "translation": "善刀而藏之，可解充栋之牛。"
+            }
+        ]
+    },
+    "ol.zhuling.jixian": {
+        "name": "ol.zhuling.jixian",
+        "lang_name": "急 陷",
+        "lang_desc": "摸牌阶段结束时，你可以视为对满足以下任意条件的一名其他角色使用一张【杀】并摸X张牌（X为其满足的条件数） ：1.装备区里有防具牌；2.技能数多于你；3.未受伤。若此【杀】没有对其造成伤害，你失去1点体力。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhuling/ol.zhuling/jixian1",
+                "translation": "执政为民，当尽我所能。"
+            },
+            {
+                "url": "generals/zhuling/ol.zhuling/jixian2",
+                "translation": "吾自幼流离失所，更能体恤百姓之苦。"
+            }
+        ]
+    },
+    "xsp.caoren.weikui": {
+        "name": "xsp.caoren.weikui",
+        "lang_name": "伪溃",
+        "lang_desc": "出牌阶段限一次，你可以失去1点体力并选择一名有手牌的其他角色，你观看其手牌：若其手牌中：有【闪】，则视为你对其使用一张无次数限制的【杀】，且本回合你计算与其的距离视为1；没有【闪】，你弃置其中一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/caoren/xsp/weikui1",
+                "translation": "骑兵列队，准备突围！"
+            },
+            {
+                "url": "generals/caoren/xsp/weikui2",
+                "translation": "休整片刻，且随我杀出一条血路！"
+            }
+        ]
+    },
+    "xsp.caoren.lizhan": {
+        "name": "xsp.caoren.lizhan",
+        "lang_name": "励战",
+        "lang_desc": "回合结束时，你可以令任意名已受伤的角色各摸一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/caoren/xsp/lizhan1",
+                "translation": "行伍严整，百战不殆！"
+            },
+            {
+                "url": "generals/caoren/xsp/lizhan2",
+                "translation": "敌军围困万千重，我自岿然不动！"
+            }
+        ]
+    }
+}

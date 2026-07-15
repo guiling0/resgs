@@ -1,0 +1,14 @@
+{
+    "olex.fazheng": {
+        "name": "olex.fazheng",
+        "kingdom": "shu",
+        "hp": 3,
+        "skills": ["olex.fazheng.enyuan", "olex.fazheng.xuanhuo"]
+    },
+    "olex.xusheng": {
+        "name": "olex.xusheng",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": ["olex.xusheng.pojun"]
+    }
+}

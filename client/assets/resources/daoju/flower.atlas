@@ -1,0 +1,58 @@
+{
+  "frames": {
+    "egg1.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 106,
+        "w": 53,
+        "h": 102
+      },
+      "sourceSize": {
+        "w": 120,
+        "h": 115
+      },
+      "spriteSourceSize": {
+        "x": 35,
+        "y": 10
+      }
+    },
+    "egg2.png": {
+      "frame": {
+        "idx": 0,
+        "x": 70,
+        "y": 0,
+        "w": 57,
+        "h": 104
+      },
+      "sourceSize": {
+        "w": 120,
+        "h": 115
+      },
+      "spriteSourceSize": {
+        "x": 33,
+        "y": 9
+      }
+    },
+    "egg3.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 0,
+        "w": 68,
+        "h": 104
+      },
+      "sourceSize": {
+        "w": 120,
+        "h": 115
+      },
+      "spriteSourceSize": {
+        "x": 25,
+        "y": 9
+      }
+    }
+  },
+  "meta": {
+    "scale": 1
+  }
+}

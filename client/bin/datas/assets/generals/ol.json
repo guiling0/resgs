@@ -1,0 +1,107 @@
+{
+    "olex.lidian": {
+        "info": {
+            "id": "WEI017",
+            "title": "深明大义",
+            "designer": "KayaK",
+            "script": "归零",
+            "version": "OL"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "张帅",
+                "cv": "未知",
+                "audios": { "death": { "translation": "报国杀敌，虽死犹荣……" } }
+            }
+        ]
+    },
+    "luzhi_wei": {
+        "info": {
+            "id": "WEI069",
+            "title": "夷夏慕德",
+            "designer": "世外高V狼",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": " 秋呆呆",
+                "cv": "大白siro",
+                "audios": {
+                    "death": { "translation": "年迈力微，是该告老还乡了。" }
+                }
+            }
+        ]
+    },
+    "ol.lingcao": {
+        "info": {
+            "id": "WU061",
+            "version": "OL",
+            "title": "激流勇进",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "樱花闪 乱",
+                "cv": "刘以嘉",
+                "audios": { "death": { "translation": "啊，此箭何来……" } }
+            }
+        ]
+    },
+    "tianchou": {
+        "info": {
+            "id": "QUN194",
+            "title": "善刀而藏",
+            "designer": "扬林",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "君恒文化",
+                "cv": "飛流",
+                "audios": {
+                    "death": { "translation": "吾罪大矣，何堪封侯之荣？" }
+                }
+            }
+        ]
+    },
+    "ol.zhuling": {
+        "info": {
+            "id": "WEI060",
+            "title": "良将之亚",
+            "designer": "缺失",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "缺失",
+                "cv": "缺失",
+                "baseUrl": "zhuling/ol.zhuling",
+                "audios": { "death": { "translation": "母亲，弟弟，我来了……" } }
+            }
+        ]
+    },
+    "xsp.caoren": {
+        "info": {
+            "id": "WEI010",
+            "title": "险不辞难",
+            "prefix": "SP",
+            "designer": "Danny",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "张帅",
+                "cv": "缺失",
+                "baseUrl": "caoren/xsp",
+                "audios": { "death": { "translation": "城在人在，城破人亡……" } }
+            }
+        ]
+    }
+}

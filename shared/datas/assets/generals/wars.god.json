@@ -1,0 +1,209 @@
+{
+    "wars.god_guanyu": {
+        "info": {
+            "id": "LE001",
+            "title": "鬼神再临",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "未知",
+                "baseUrl": "guanyu/god.guanyu",
+                "audios": {
+                    "death": {
+                        "url": "guanyu/god.guanyu/death",
+                        "translation": ""
+                    }
+                }
+            }
+        ]
+    },
+    "wars.god_lvmeng": {
+        "info": {
+            "id": "LE002",
+            "title": "圣光之国士",
+            "designer": "KayaK",
+            "script": "归 零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "未知",
+                "baseUrl": "lvmeng/god.lvmeng",
+                "audios": {
+                    "death": {
+                        "url": "lvmeng/god.lvmeng/death",
+                        "translation": "劫数难逃，我们别无选择……"
+                    }
+                }
+            }
+        ]
+    },
+    "wars.god_zhouyu": {
+        "info": {
+            "id": "LE003",
+            "title": "赤壁的火神",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "未知",
+                "baseUrl": "zhouyu/god.zhouyu",
+                "audios": {
+                    "death": {
+                        "url": "zhouyu/god.zhouyu/death",
+                        "translation": "逝者不死，浴火 重生。"
+                    }
+                }
+            }
+        ]
+    },
+    "wars.god_zhugeliang": {
+        "info": {
+            "id": "LE004",
+            "title": "赤壁的妖术师",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "未知",
+                "baseUrl": "zhugeliang/god.zhugeliang",
+                "audios": {
+                    "death": {
+                        "url": "zhugeliang/god.zhugeliang/death",
+                        "translation": "今当远离，临表涕零，不知所言……"
+                    }
+                }
+            }
+        ]
+    },
+    "wars.god_caocao": {
+        "info": {
+            "id": "LE 005",
+            "title": "超世之英杰",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "未知",
+                "baseUrl": "caocao/god.caocao",
+                "audios": {
+                    "death": {
+                        "url": "caocao/god.caocao/death",
+                        "translation": "腾蛇乘雾，终为土灰。"
+                    }
+                }
+            }
+        ]
+    },
+    "wars.god_lvbu": {
+        "info": {
+            "id": "LE005",
+            "title": "修罗之道",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "未知",
+                "baseUrl": "lvbu/god.lvbu",
+                "audios": {
+                    "death": {
+                        "url": "lvbu/god.lvbu/death",
+                        "translation": "我在修罗炼狱，等着你们，呃哈哈哈哈哈~"
+                    }
+                }
+            }
+        ]
+    },
+    "wars.god_zhaoyun": {
+        "info": {
+            "id": "LE 007",
+            "title": "神威如龙",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": " 未知",
+                "baseUrl": "zhaoyun/god.zhaoyun",
+                "audios": {
+                    "death": {
+                        "url": "zhaoyun/god.zhaoyun/death",
+                        "translation": "龙身虽死，魂魄 不灭！"
+                    }
+                }
+            }
+        ]
+    },
+    "wars.god_simayi": {
+        "info": {
+            "id": "LE 008",
+            "title": "晋国之祖",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "未知",
+                "baseUrl": "simayi/god.simayi",
+                "audios": {
+                    "death": {
+                        "url": "simayi/god.simayi/death",
+                        "translation": "鼎足三分已成梦，一切都结束了……"
+                    }
+                }
+            }
+        ]
+    },
+    "wars.god_diaochan": {
+        "info": {
+            "id": "LE013",
+            "title": "欲界非天",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "桃妮儿",
+                "baseUrl": "diaochan/god.diaochan",
+                "audios": {
+                    "death": {
+                        "url": "diaochan/god.diaochan/death",
+                        "translation": "也许，你们日后的所闻所望，都是我某天的所叹所想……"
+                    }
+                }
+            }
+        ]
+    }
+}

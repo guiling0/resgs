@@ -1,0 +1,279 @@
+{
+    "1v1.caocao": {
+        "name": "1v1.caocao",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["1v1.caocao.jianxiong"]
+    },
+    "1v1.simayi": {
+        "name": "1v1.simayi",
+        "kingdom": "wei",
+        "hp": 3,
+        "skills": ["1v1.simayi.fankui", "1v1.simayi.guicai"]
+    },
+    "1v1.xiahoudun": {
+        "name": "1v1.xiahoudun",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["1v1.xiahoudun.ganglie"]
+    },
+    "1v1.zhangliao": {
+        "name": "1v1.zhangliao",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["1v1.zhangliao.tuxi"]
+    },
+    "1v1.xuchu": {
+        "name": "1v1.xuchu",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["1v1.xuchu.luoyi", "1v1.xuchu.xiechan"]
+    },
+    "1v1.guojia": {
+        "name": "1v1.guojia",
+        "kingdom": "wei",
+        "hp": 3,
+        "skills": ["1v1.guojia.tiandu", "1v1.guojia.yiji"]
+    },
+    "1v1.zhenji": {
+        "name": "1v1.zhenji",
+        "kingdom": "wei",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["1v1.zhenji.luoshen", "1v1.zhenji.qingguo"]
+    },
+    "1v1.xiahouyuan": {
+        "name": "1v1.xiahouyuan",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["1v1.xiahouyuan.shensu", "1v1.xiahouyuan.suzi"]
+    },
+    "1v1.xuhuang": {
+        "name": "1v1.xuhuang",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["1v1.xuhuang.duanliang"]
+    },
+    "1v1.caoren": {
+        "name": "1v1.caoren",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["1v1.caoren.jushou"]
+    },
+    "1v1.dianwei": {
+        "name": "1v1.dianwei",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["1v1.dianwei.qiangxi"]
+    },
+    "1v1.niujin": {
+        "name": "1v1.niujin",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["1v1.niujin.cuorui", "1v1.niujin.liewei"]
+    },
+    "1v1.liubei": {
+        "name": "1v1.liubei",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["1v1.liubei.renwang"]
+    },
+    "1v1.guanyu": {
+        "name": "1v1.guanyu",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["1v1.guanyu.wusheng", "1v1.guanyu.huwei"]
+    },
+    "1v1.zhangfei": {
+        "name": "1v1.zhangfei",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["1v1.zhangfei.paoxiao"]
+    },
+    "1v1.zhugeliang": {
+        "name": "1v1.zhugeliang",
+        "kingdom": "shu",
+        "hp": 3,
+        "skills": ["1v1.zhugeliang.guanxing", "1v1.zhugeliang.kongcheng"]
+    },
+    "1v1.zhaoyun": {
+        "name": "1v1.zhaoyun",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["1v1.zhaoyun.longdan"]
+    },
+    "1v1.machao": {
+        "name": "1v1.machao",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["1v1.machao.xiaoxi", "1v1.machao.tieqi"]
+    },
+    "1v1.huangyueying": {
+        "name": "1v1.huangyueying",
+        "kingdom": "shu",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["1v1.huangyueying.jizhi", "1v1.huangyueying.cangji"]
+    },
+    "1v1.huangzhong": {
+        "name": "1v1.huangzhong",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["1v1.huangzhong.liegong"]
+    },
+    "1v1.weiyan": {
+        "name": "1v1.weiyan",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["1v1.weiyan.kuanggu"]
+    },
+    "1v1.jiangwei": {
+        "name": "1v1.jiangwei",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["1v1.jiangwei.tiaoxin"]
+    },
+    "1v1.menghuo": {
+        "name": "1v1.menghuo",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["1v1.menghuo.manyi", "1v1.menghuo.zaiqi"]
+    },
+    "1v1.zhurong": {
+        "name": "1v1.zhurong",
+        "kingdom": "shu",
+        "hp": 4,
+        "gender": 2,
+        "skills": ["1v1.zhurong.manyi", "1v1.zhurong.lieren"]
+    },
+    "1v1.xiangchong": {
+        "name": "1v1.xiangchong",
+        "kingdom": "shu",
+        "hp": 3,
+        "skills": ["1v1.xiangchong.changjun", "1v1.xiangchong.aibing"]
+    },
+    "1v1.sunquan": {
+        "name": "1v1.sunquan",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": ["1v1.sunquan.zhiheng"]
+    },
+    "1v1.ganning": {
+        "name": "1v1.ganning",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": ["1v1.ganning.qixi"]
+    },
+    "1v1.lvmeng": {
+        "name": "1v1.lvmeng",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": ["1v1.lvmeng.shenju", "1v1.lvmeng.botu"]
+    },
+    "1v1.huanggai": {
+        "name": "1v1.huanggai",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": ["1v1.huanggai.kurou"]
+    },
+    "1v1.zhouyu": {
+        "name": "1v1.zhouyu",
+        "kingdom": "wu",
+        "hp": 3,
+        "skills": ["1v1.zhouyu.yingzi", "1v1.zhouyu.fanjian"]
+    },
+    "1v1.daqiao": {
+        "name": "1v1.daqiao",
+        "kingdom": "wu",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["1v1.daqiao.guose", "1v1.daqiao.wanrong"]
+    },
+    "1v1.luxun": {
+        "name": "1v1.luxun",
+        "kingdom": "wu",
+        "hp": 3,
+        "skills": ["1v1.luxun.qianxun", "1v1.luxun.lianying"]
+    },
+    "1v1.sunshangxiang": {
+        "name": "1v1.sunshangxiang",
+        "kingdom": "wu",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["1v1.sunshangxiang.yinli", "1v1.sunshangxiang.xiaoji"]
+    },
+    "1v1.sunjian": {
+        "name": "1v1.sunjian",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": ["1v1.sunjian.yinghun"]
+    },
+    "1v1.xiaoqiao": {
+        "name": "1v1.xiaoqiao",
+        "kingdom": "wu",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["1v1.xiaoqiao.tianxiang", "1v1.xiaoqiao.hongyan"]
+    },
+    "1v1.zhoutai": {
+        "name": "1v1.zhoutai",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": ["1v1.zhoutai.buqu"]
+    },
+    "1v1.sunyi": {
+        "name": "1v1.sunyi",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": ["1v1.sunyi.guolie", "1v1.sunyi.hunbi"]
+    },
+    "1v1.huatuo": {
+        "name": "1v1.huatuo",
+        "kingdom": "qun",
+        "hp": 3,
+        "skills": ["1v1.huatuo.jijiu", "1v1.huatuo.puji"]
+    },
+    "1v1.lvbu": {
+        "name": "1v1.lvbu",
+        "kingdom": "qun",
+        "hp": 4,
+        "skills": ["1v1.lvbu.wushuang"]
+    },
+    "1v1.diaochan": {
+        "name": "1v1.diaochan",
+        "kingdom": "qun",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["1v1.diaochan.pianyi", "1v1.diaochan.biyue"]
+    },
+    "1v1.yanliangwenchou": {
+        "name": "1v1.yanliangwenchou",
+        "kingdom": "qun",
+        "hp": 4,
+        "skills": ["1v1.yanliangwenchou.shuangxiong"]
+    },
+    "1v1.pangde": {
+        "name": "1v1.pangde",
+        "kingdom": "qun",
+        "hp": 4,
+        "skills": ["1v1.pangde.xiaoxi", "1v1.pangde.mengjin"]
+    },
+    "1v1.zhangjiao": {
+        "name": "1v1.zhangjiao",
+        "kingdom": "qun",
+        "hp": 3,
+        "skills": ["1v1.zhangjiao.leiji", "1v1.zhangjiao.guidao"]
+    },
+    "1v1.hejin": {
+        "name": "1v1.hejin",
+        "kingdom": "qun",
+        "hp": 4,
+        "skills": ["1v1.hejin.mouzhu", "1v1.hejin.yanhuo"]
+    },
+    "1v1.hansui": {
+        "name": "1v1.hansui",
+        "kingdom": "qun",
+        "hp": 4,
+        "skills": ["1v1.hansui.xiaoxi", "1v1.hansui.niluan"]
+    }
+}

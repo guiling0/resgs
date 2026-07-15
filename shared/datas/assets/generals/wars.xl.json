@@ -1,0 +1,1243 @@
+{
+    "xl.simayan": {
+        "info": {
+            "id": "JIN001",
+            "title": "晋武帝",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "啪啪三国",
+                "cv": "苏子墨",
+                "baseUrl": "xl/xl.simayan",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.simayan/death",
+                        "translation": "汝南王何在……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.simazhao": {
+        "info": {
+            "id": "JIN002",
+            "title": "四海威服",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Thinking",
+                "cv": "寂镜",
+                "baseUrl": "xl/xl.simazhao",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.simazhao/death",
+                        "translation": "这最后一步，就交给安世了……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.wangyuanji": {
+        "info": {
+            "id": "JIN006",
+            "title": "闱芳廷正",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Thinking",
+                "cv": "乐乐常乐",
+                "baseUrl": "xl/xl.wangyuanji",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.wangyuanji/death",
+                        "translation": "桃符性急，汝为兄不慈，恐不能相容……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.wenyang": {
+        "info": {
+            "id": "JIN008",
+            "title": "披靡震霄",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "biou09",
+                "cv": "苏子墨",
+                "baseUrl": "xl/xl.wenyang",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.wenyang/death",
+                        "translation": "司马 繇，你竟敢公报私仇！"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.simafu": {
+        "info": {
+            "id": "JIN009",
+            "title": "魏之贞士",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "久吉",
+                "cv": "凉辰",
+                "baseUrl": "xl/xl.simafu",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.simafu/death",
+                        "translation": "不伊不周，不夷不惠，立身行道，终始若一。"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.simawang": {
+        "info": {
+            "id": "JIN010",
+            "title": "盛銮赞国",
+            "designer": "梦魇狂朝&cgl",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "林时",
+                "cv": "凉辰",
+                "cv_designer": "未知",
+                "baseUrl": "xl/xl.simawang",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.simawang/death",
+                        "translation": ""
+                    }
+                }
+            }
+        ]
+    },
+    "xl.zhanghua": {
+        "info": {
+            "id": "JIN012",
+            "title": "近次夫子",
+            "designer": "小狼甫心",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "啪啪三国",
+                "cv": "苏子墨",
+                "baseUrl": "xl/xl.zhanghua",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.zhanghua/death",
+                        "translation": "广武涧前叹……竖子……难与谋……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.peixiu": {
+        "info": {
+            "id": "JIN015",
+            "title": "方寸万里",
+            "designer": "千幻&梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "凡果&食茸",
+                "cv": "苏子墨",
+                "baseUrl": "xl/xl.peixiu",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.peixiu/death",
+                        "translation": "这酒，怎么是冷的……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.wangjun": {
+        "info": {
+            "id": "JIN016",
+            "title": "起旌览胜",
+            "designer": " 千幻&梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "匠人绘",
+                "cv": "凉辰",
+                "baseUrl": "xl/xl.wangjun",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.wangjun/death",
+                        "translation": "千帆化作烽烟烬……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.hufen": {
+        "info": {
+            "id": "JIN024",
+            "title": "泾传震声",
+            "designer": "步穗",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "匠人绘",
+                "cv": "凉辰",
+                "baseUrl": "xl/xl.hufen",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.hufen/death",
+                        "translation": "只求，归葬故乡，伴水长眠……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.xiahouhui": {
+        "info": {
+            "id": "JIN025",
+            "title": "深潭的青莲",
+            "designer": "dk语文&梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "一梦江湖",
+                "cv": "乐乐常乐",
+                "baseUrl": "xl/xl.xiahouhui",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.xiahouhui/death",
+                        "translation": "只怨生在帝王家……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.wanghun": {
+        "info": {
+            "id": "JIN028",
+            "title": "艨下千里",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "鸿图之下",
+                "cv": "苏子墨",
+                "baseUrl": "xl/xl.wanghun",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.wanghun/death",
+                        "translation": "吾洁身自好，只求保身于浊流……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.zhongyan": {
+        "info": {
+            "id": "JIN030",
+            "title": "莺咏一族",
+            "designer": "豌豆帮帮主&梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "鸿图之下",
+                "cv": "乐乐常乐",
+                "baseUrl": "xl/xl.zhongyan",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.zhongyan/death",
+                        "translation": "嗟尔姜任，邈不我留。"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.tangbin": {
+        "info": {
+            "id": "JIN032",
+            "title": "抚宁疆场",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "空白白",
+                "cv": "寂镜",
+                "baseUrl": "xl/xl.tangbin",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.tangbin/death",
+                        "translation": "臣见机行事 ，君上为何疑我？"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.huliehuyuan": {
+        "info": {
+            "id": "JIN034",
+            "title": "忠魂烈骨",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "率土之滨&食茸",
+                "cv": "凉辰&黑马义从",
+                "isDualImage": true,
+                "baseUrl": "xl/xl.huliehuyuan",
+                "image_dual": "image.dual",
+                "image_dual2": "image",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.huliehuyuan/death",
+                        "translation": "既临 战场，何惧生死，啊！"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.yanghu": {
+        "info": {
+            "id": "JIN004",
+            "title": "闻碑堕泪",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "白",
+                "cv": "凉辰",
+                "baseUrl": "xl/xl.yanghu",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.yanghu/death",
+                        "translation": "取吴不必须臣自行，元凯可继也……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.duyu": {
+        "info": {
+            "id": "JIN005",
+            "title": "允文允武",
+            "designer": "千幻",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "君恒文化",
+                "cv": "凉辰",
+                "baseUrl": "xl/xl.duyu",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.duyu/death",
+                        "translation": "古不合葬，明于终始之理，同于无有也……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.weiguan": {
+        "info": {
+            "id": "JIN026",
+            "title": "绵章有折",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "率土之滨",
+                "cv": "苏子墨",
+                "baseUrl": "xl/xl.weiguan",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.weiguan/death",
+                        "translation": "刀俎一世，鱼肉一时……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.zhouzhi": {
+        "info": {
+            "id": "JIN033",
+            "title": "以计代战",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "啪啪三国",
+                "cv": "寂镜",
+                "baseUrl": "xl/xl.zhouzhi",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.zhouzhi/death",
+                        "translation": "报国 身死他乡，壮哉！烈哉！"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.shantao": {
+        "info": {
+            "id": "JIN022",
+            "title": "璞玉浑金",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "佚名",
+                "cv": "苏子墨",
+                "baseUrl": "xl/xl.shantao",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.shantao/death",
+                        "translation": "臣垂没之人，岂可污朝堂乎……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.malong": {
+        "info": {
+            "id": "JIN011",
+            "title": "风后再世",
+            "designer": "梦魇狂朝&千幻",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "李敏然",
+                "cv": "寂镜",
+                "baseUrl": "xl/xl.malong",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.malong/death",
+                        "translation": "凉州未安，马隆……有愧……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.simashi": {
+        "info": {
+            "id": "JIN003",
+            "title": "晋室的掌旗者",
+            "designer": "淬毒",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "随随",
+                "cv": "凉 辰",
+                "cv_designer": "未知",
+                "baseUrl": "xl/xl.simashi",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.simashi/death",
+                        "translation": "眇目何碍……只恨……未见……九鼎归一……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.yanghuiyu": {
+        "info": {
+            "id": "JIN007",
+            "title": "俪皇协运",
+            "designer": "dk语文&梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "随随",
+                "cv": "乐乐常乐",
+                "baseUrl": "xl/xl.yanghuiyu",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.yanghuiyu/death",
+                        "translation": "生逢乱世，得见太平……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.jishao": {
+        "info": {
+            "id": "JIN·EX001",
+            "title": "中散遗孤",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "杨如卿",
+                "cv": "苏子墨",
+                "baseUrl": "xl/xl.jishao",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.jishao/death",
+                        "translation": "山伯伯，你在哪里呀……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.caoang": {
+        "info": {
+            "id": "WEI049",
+            "title": "孝战生死",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Zero",
+                "cv": "未知",
+                "baseUrl": "xl/xl.caoang",
+                "audios": { "death": { "translation": "父亲，安全就好……" } }
+            }
+        ]
+    },
+    "xl.zhangchunhua": {
+        "info": {
+            "id": "WEI027",
+            "title": "冷血皇后",
+            "designer": "小狼甫心",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "木美人",
+                "cv": "未知",
+                "baseUrl": "xl/xl.zhangchunhua",
+                "audios": { "death": { "translation": "怎能如此对我！" } }
+            }
+        ]
+    },
+    "xl.xushu": {
+        "info": {
+            "id": "SHU017",
+            "title": "化剑为犁",
+            "designer": "梦魇狂朝&Loun老萌",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Zero",
+                "cv": "一木",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.xushu/death",
+                        "translation": "愿诸公善事使君，勿效庶之无始终……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.shitao": {
+        "info": {
+            "id": "SHU901",
+            "title": "同进共退",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "凝聚永恒",
+                "cv": "水仓玉",
+                "baseUrl": "xl/xl.shitao",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.shitao/death",
+                        "translation": "与子同仇，与子偕作，与子偕行！"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.chengpu": {
+        "info": {
+            "id": "WU027",
+            "title": "虎首",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "zoo",
+                "cv": "天舞延云",
+                "baseUrl": "xl/xl.chengpu",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.chengpu/death",
+                        "translation": "汝等叛逆之贼，安敢索命于我！啊……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.guyong": {
+        "info": {
+            "id": "WU032",
+            "title": "辞顺执正",
+            "designer": "锦帆游侠_甘",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "张帅",
+                "cv": "凉辰",
+                "baseUrl": "xl/xl.guyong",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.guyong/death",
+                        "translation": "臣心昭日月，惟愿佐明君……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.liru": {
+        "info": {
+            "id": "QUN032",
+            "title": "魔仕",
+            "designer": "淬毒&梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "天空之城",
+                "cv": "未知",
+                "baseUrl": "xl/xl.liru",
+                "audios": { "death": { "translation": "如遇明主，大业必成……" } }
+            }
+        ]
+    },
+    "xl.gongsunzan": {
+        "info": {
+            "id": "QUN026",
+            "title": "白马将军",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "XXX-狗爷",
+                "cv": "Voice达",
+                "baseUrl": "xl/xl.gongsunzan",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.gongsunzan/death",
+                        "translation": "皇图 霸业梦，付之一炬中……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.shibao": {
+        "info": {
+            "id": "JIN020",
+            "title": "娇容无双",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "君临天下",
+                "cv": "苏子墨",
+                "baseUrl": "xl/xl.shibao",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.shibao/death",
+                        "translation": "此生得遇司马氏，我死无憾矣……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.lord_simayan": {
+        "info": {
+            "id": "EM005",
+            "title": "狼图天 下",
+            "prefix": "君",
+            "designer": "千幻&梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "波子",
+                "cv": "苏子墨",
+                "cv_designer": "未知",
+                "baseUrl": "xl/xl.lord_simayan",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.lord_simayan/death",
+                        "translation": "只 求，治世能续……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.chengyu": {
+        "info": {
+            "id": "WEI044",
+            "title": "生未其位",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "未知",
+                "cv": "未知",
+                "audios": {
+                    "death": {
+                        "translation": "此诚报效国家之时......吾却休矣......"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.maliang": {
+        "info": {
+            "id": "SHU043",
+            "title": "白眉策士",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "未知",
+                "cv": "未知",
+                "audios": {
+                    "death": {
+                        "url": "sp.maliang/death",
+                        "translation": "皇叔为何不听我之言？"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.chendeng": {
+        "info": {
+            "id": "QUN095",
+            "title": "湖海豪气",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "未知",
+                "cv": "凉辰",
+                "baseUrl": "xl/xl.chendeng",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.chendeng/death",
+                        "translation": "只惜华佗，求之不得..."
+                    }
+                }
+            }
+        ]
+    },
+    "xl.xunxu": {
+        "info": {
+            "id": "JIN017",
+            "title": "天宝悬瓶",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "畅游",
+                "cv": "苏子墨",
+                "baseUrl": "xl/xl.xunxu",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.xunxu/death",
+                        "translation": "倾国害时，愧对荀氏人。"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.simayou": {
+        "info": {
+            "id": "JIN027",
+            "title": "兰烧以薰",
+            "designer": "千幻",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "未知",
+                "cv": "风落江南",
+                "baseUrl": "xl/xl.simayou",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.simayou/death",
+                        "translation": "母亲，孩儿来见您了……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.wangyi": {
+        "info": {
+            "id": "WEI030",
+            "title": "奇计九策",
+            "designer": "韩旭&梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Yi章",
+                "cv": "林簌",
+                "baseUrl": "xl/xl.wangyi",
+                "audios": {
+                    "death": {
+                        "url": "wangyi/death",
+                        "translation": "忠义已 尽，死又何妨？"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.guanyinping": {
+        "info": {
+            "id": "SHU039",
+            "title": "将门虎女",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "未知",
+                "cv": "诸葛小叶",
+                "baseUrl": "xl/xl.guanyinping",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.guanyinping/death",
+                        "translation": "同为大汉百姓，吾等当一以视之。"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.sunhuan": {
+        "info": {
+            "id": "WU120",
+            "title": "宗室颜 渊",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "三国志大战",
+                "cv": "未知",
+                "baseUrl": "xl/xl.sunhuan",
+                "audios": {
+                    "death": {
+                        "url": "sunhuan/death",
+                        "translation": "此建功立业之时，奈何……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.sunluban": {
+        "info": {
+            "id": "WU033",
+            "title": "为虎作伥",
+            "designer": "梦魇狂朝&锦帆游侠_甘",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": " 未知",
+                "cv": "未知",
+                "baseUrl": "xl/xl.sunluban",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.sunluban/death",
+                        "translation": "本公主、何罪 之有…"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.chengong": {
+        "info": {
+            "id": "QUN028",
+            "title": "刚直壮烈",
+            "designer": "Kaycent&梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "猎枭",
+                "cv": "未知",
+                "baseUrl": "xl/xl.chengong",
+                "audios": {
+                    "death": {
+                        "url": "chengong/tenex.chengong/death",
+                        "translation": "一步迟，步步迟啊。"
+                    }
+                }
+            }
+        ]
+    },
+    "wars.liufuren": {
+        "info": {
+            "id": "QUN234",
+            "title": "酷妒的海棠",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Jzeo",
+                "cv": "苏子芜",
+                "audios": {
+                    "death": { "translation": "害人终害己，最毒妇人心……" }
+                }
+            }
+        ]
+    },
+    "xl.jiachong": {
+        "info": {
+            "id": "JIN013",
+            "title": "权奸",
+            "designer": "Loun老萌",
+            "script": " 归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "铁杵文化",
+                "cv": "凉辰",
+                "baseUrl": "xl/xl.jiachong",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.jiachong/death",
+                        "translation": "未曾惧斧刃病痛，只恐史笔如刀啊……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.zhouchu": {
+        "info": {
+            "id": "JIN029",
+            "title": "英情天逸",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "未知",
+                "cv": "未知",
+                "baseUrl": "xl/xl.zhouchu",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.zhouchu/death",
+                        "translation": "改励自砥，誓除三害……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.caozhi": {
+        "info": {
+            "id": "WEI026",
+            "title": "白马落泞",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "苏摩",
+                "cv": "Aaron_Bo",
+                "baseUrl": "xl/xl.caozhi",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.caozhi/death",
+                        "translation": "枯桑知天风，海水知天寒。"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.cuifei": {
+        "info": {
+            "id": "WEI902",
+            "title": "锦雀据棘",
+            "designer": "ゑゐ&梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "阿汉吉",
+                "cv": "乐乐常乐",
+                "baseUrl": "xl/xl.cuifei",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.cuifei/death",
+                        "translation": "侯门似海，罗衣委尘……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.guansuo": {
+        "info": {
+            "id": "SHU045",
+            "title": "拢营簪花",
+            "designer": "续约&伯约&对勾对勾w",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "deep",
+                "cv": "苏子墨",
+                "baseUrl": "xl/xl.guansuo",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.guansuo/death",
+                        "translation": "大义当前，岂可做儿女之态。"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.wangtaowangyue": {
+        "info": {
+            "id": "SHU093",
+            "title": "刀钗并舞",
+            "designer": "对勾对勾w&续约",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "红花血月",
+                "cv": "鸽子&乐乐常乐",
+                "isDualImage": true,
+                "baseUrl": "xl/xl.wangtaowangyue",
+                "image_dual": "image.dual",
+                "image_dual2": "image",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.wangtaowangyue/death",
+                        "translation": "恨不能与夫君再守此关。"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.zhuju": {
+        "info": {
+            "id": "WU902",
+            "title": "舌嚼喉鲠",
+            "designer": "续约&ゑゐ",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "率土之滨",
+                "cv": " 凉辰",
+                "baseUrl": "xl/xl.zhuju",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.zhuju/death",
+                        "translation": "望我一腔碧血，可转陛下之意。"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.sunluyu": {
+        "info": {
+            "id": "WU043",
+            "title": "二宫堂燕",
+            "designer": "郑处龙",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "石蝉",
+                "cv": "乐乐常乐",
+                "baseUrl": "xl/xl.sunluyu",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.sunluyu/death",
+                        "translation": "天理昭昭，姐姐终会自食其果……"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.zhangze": {
+        "info": {
+            "id": "QUN902",
+            "title": "卧虎",
+            "designer": "这里是nya桑",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "夜电皮卡丘",
+                "cv": "凉辰",
+                "baseUrl": "xl/xl.zhangze",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.zhangze/death",
+                        "translation": "而今可卫土一方，吾已无所憾矣。"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.chenhuiqian": {
+        "info": {
+            "id": "QUN903",
+            "title": "哲鴷",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "千树",
+                "cv": "诸葛小叶",
+                "baseUrl": "xl/xl.chenhuiqian",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.chenhuiqian/death",
+                        "translation": "夫君若可去疴除弊，则百姓可安矣。"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.shichong": {
+        "info": {
+            "id": "JIN060",
+            "title": "金谷含悲",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "鱼俞木",
+                "cv": "苏子墨",
+                "baseUrl": "xl/xl.shichong",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.shichong/death",
+                        "translation": "今死东市，乃奴辈利吾家财耳!"
+                    }
+                }
+            }
+        ]
+    },
+    "xl.lvzhu": {
+        "info": {
+            "id": "JIN061",
+            "title": "吹楼将坠",
+            "designer": "梦魇狂朝",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "鱼俞木",
+                "cv": "诸葛小叶",
+                "baseUrl": "xl/xl.lvzhu",
+                "audios": {
+                    "death": {
+                        "url": "xl/xl.lvzhu/death",
+                        "translation": "此祸皆由妾起，自当效死君前。"
+                    }
+                }
+            }
+        ]
+    }
+}

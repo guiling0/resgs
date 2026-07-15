@@ -1,0 +1,61 @@
+{
+    "ex.huangzhong": {
+        "name": "ex.huangzhong",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["ex.huangzhong.liegong"]
+    },
+    "ex.weiyan": {
+        "name": "ex.weiyan",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["ex.weiyan.kuanggu", "ex.weiyan.qimou"]
+    },
+    "ex.xunyu": {
+        "name": "ex.xunyu",
+        "kingdom": "wei",
+        "hp": 3,
+        "skills": ["ex.xunyu.quhu", "ex.xunyu.jieming"]
+    },
+    "ex.dengai": {
+        "name": "ex.dengai",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["ex.dengai.tuntian", "ex.dengai.zaoxian", "#ex.dengai.jixi"]
+    },
+    "ex.liushan": {
+        "name": "ex.liushan",
+        "kingdom": "shu",
+        "hp": 3,
+        "skills": [
+            "ex.liushan.xiangle",
+            "ex.liushan.fangquan",
+            "ex.liushan.ruoyu",
+            "#ex.liushan.jijiang"
+        ],
+        "lord": true
+    },
+    "ex.jiangwei": {
+        "name": "ex.jiangwei",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": [
+            "ex.jiangwei.tiaoxin",
+            "ex.jiangwei.zhiji",
+            "#ex.jiangwei.guanxing"
+        ]
+    },
+    "ex.sunce": {
+        "name": "ex.sunce",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": [
+            "ex.sunce.jiang",
+            "ex.sunce.hunzi",
+            "#ex.sunce.yingzi",
+            "#ex.sunce.yinghun",
+            "ex.sunce.zhiba"
+        ],
+        "lord": true
+    }
+}

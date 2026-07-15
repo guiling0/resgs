@@ -1,0 +1,70 @@
+{
+  "private": true,
+  "name": "my-app",
+  "version": "0.17.0",
+  "description": "npm init template for bootstrapping an empty Colyseus project",
+  "type": "module",
+  "main": "build/index.js",
+  "engines": {
+    "node": ">= 20.9.0"
+  },
+  "scripts": {
+    "start": "tsx watch src/index.ts",
+    "loadtest": "tsx loadtest/example.ts --room my_room --numClients 2",
+    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "clean": "rimraf build",
+    "test": "mocha -r tsx test/**.test.ts --exit --timeout 15000"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/colyseus/create-colyseus/issues"
+  },
+  "homepage": "https://github.com/colyseus/create-colyseus#readme",
+  "devDependencies": {
+    "@colyseus/loadtest": "^0.17.7",
+    "@colyseus/sdk": "^0.17.17",
+    "@colyseus/testing": "^0.17.10",
+    "@rollup/plugin-commonjs": "^29.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^1.0.0",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.1",
+    "@types/lodash": "^4.17.24",
+    "@types/mocha": "^10.0.1",
+    "@types/pako": "^2.0.4",
+    "@types/uuid": "^10.0.0",
+    "mocha": "^11.7.5",
+    "rimraf": "^5.0.0",
+    "rollup": "^4.62.2",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "tslib": "^2.8.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@colyseus/auth": "^0.17.9",
+    "@colyseus/core": "^0.17.44",
+    "@colyseus/monitor": "^0.17.8",
+    "@colyseus/playground": "^0.17.12",
+    "@colyseus/redis-driver": "^0.17.7",
+    "@colyseus/redis-presence": "^0.17.7",
+    "@colyseus/schema": "^4.0.0",
+    "@colyseus/tools": "^0.17.0",
+    "@colyseus/uwebsockets-transport": "^0.17.20",
+    "@colyseus/ws-transport": "^0.17.13",
+    "bcryptjs": "^3.0.3",
+    "colyseus": "^0.17.6",
+    "cors": "^2.8.6",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.3",
+    "lodash": "^4.18.1",
+    "mongodb": "^7.5.0",
+    "pako": "^3.0.1",
+    "uuid": "^14.0.1",
+    "winston": "^3.19.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  }
+}

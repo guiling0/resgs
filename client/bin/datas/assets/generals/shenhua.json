@@ -1,0 +1,902 @@
+{
+    "xiahouyuan": {
+        "info": {
+            "id": "WEI008",
+            "title": "疾行的猎豹",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "龙吟",
+                "audios": { "death": { "translation": "竟然比我还…快……" } }
+            }
+        ]
+    },
+    "caoren": {
+        "info": {
+            "id": "WEI011",
+            "title": "大将军",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "梧桐",
+                "baseUrl": "caoren/caoren",
+                "audios": {
+                    "death": {
+                        "url": "caoren/caoren/death",
+                        "translation": "实在是守不住了。"
+                    }
+                }
+            }
+        ]
+    },
+    "huangzhong": {
+        "info": {
+            "id": "SHU008",
+            "title": "老当益壮",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "龙吟",
+                "audios": { "death": { "translation": "不得不服老了……" } }
+            }
+        ]
+    },
+    "weiyan": {
+        "info": {
+            "id": "SHU009",
+            "title": "嗜血的独狼",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "SoniaTang",
+                "cv": "黑曜石",
+                "baseUrl": "weiyan/weiyan",
+                "audios": {
+                    "death": {
+                        "url": "weiyan/weiyan/death",
+                        "translation": "谁敢杀我？呃啊啊啊啊"
+                    }
+                }
+            }
+        ]
+    },
+    "xiaoqiao": {
+        "info": {
+            "id": "WU011",
+            "title": "矫情之花",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "木木蓝颜",
+                "baseUrl": "xiaoqiao/xiaoqiao",
+                "audios": { "death": { "translation": "公瑾，我先走一步……" } }
+            }
+        ]
+    },
+    "zhoutai": {
+        "info": {
+            "id": "WU013",
+            "title": "历战之躯",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "未知",
+                "baseUrl": "zhoutai/zhoutai",
+                "audios": {
+                    "death": {
+                        "url": "zhoutai/zhoutai/death",
+                        "translation": "已经尽力了……"
+                    }
+                }
+            }
+        ]
+    },
+    "zhangjiao": {
+        "info": {
+            "id": "QUN010",
+            "title": "天公将军",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "LiuHeng",
+                "cv": "龙吟",
+                "audios": { "death": { "translation": "黄天…也死了……" } }
+            }
+        ]
+    },
+    "yuji": {
+        "info": {
+            "id": "QUN011",
+            "title": "太 平道人",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "LiuHeng",
+                "cv": "龙吟",
+                "baseUrl": "yuji/yuji",
+                "audios": {
+                    "death": {
+                        "url": "yuji/yuji/death",
+                        "translation": "竟然……被猜到了……"
+                    }
+                }
+            }
+        ]
+    },
+    "xunyu": {
+        "info": {
+            "id": "WEI013",
+            "title": "王佐之才",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "LiuHeng",
+                "cv": "六翼天使",
+                "audios": {
+                    "death": { "translation": "主公要臣死，臣不得不死。" }
+                }
+            }
+        ]
+    },
+    "dianwei": {
+        "info": {
+            "id": "WEI012",
+            "title": "古之恶来",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "小冷",
+                "cv": "六翼天 使",
+                "audios": { "death": { "translation": "主公！快走……" } }
+            }
+        ]
+    },
+    "pangtong": {
+        "info": {
+            "id": "SHU010",
+            "title": "凤雏",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "六翼天使",
+                "audios": {
+                    "death": { "translation": " 看来，我命中注定将丧命于此。" }
+                }
+            }
+        ]
+    },
+    "wolong": {
+        "info": {
+            "id": "SHU011",
+            "title": "卧龙",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "北",
+                "cv": "彭尧",
+                "baseUrl": "wolong/wolong",
+                "audios": {
+                    "death": {
+                        "url": "wolong/death",
+                        "translation": "我的计谋竟被……"
+                    }
+                }
+            }
+        ]
+    },
+    "taishici": {
+        "info": {
+            "id": "WU012",
+            "title": "笃烈之士",
+            "designer": "KayaK",
+            "script": "归 零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Tuu.",
+                "cv": "玄宵",
+                "audios": {
+                    "death": {
+                        "translation": "大丈夫当带三尺之剑，立不 世之功……"
+                    }
+                }
+            }
+        ]
+    },
+    "yuanshao": {
+        "info": {
+            "id": "QUN004",
+            "title": "高贵的名门",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "SoniaTang",
+                "cv": "彭尧",
+                "baseUrl": "yuanshao/yuanshao",
+                "audios": {
+                    "death": {
+                        "url": "yuanshao/death",
+                        "translation": "老天不助我袁家啊！"
+                    }
+                }
+            }
+        ]
+    },
+    "yanliangwenchou": {
+        "info": {
+            "id": "QUN005",
+            "title": "虎狼兄弟",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "六翼天使&彭尧",
+                "audios": { "death": { "translation": "这 红脸长须大将是……" } }
+            }
+        ]
+    },
+    "pangde": {
+        "info": {
+            "id": "QUN008",
+            "title": "人马一体",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "LiuHeng",
+                "cv": "六翼天使",
+                "baseUrl": "pangde/pangde",
+                "audios": {
+                    "death": {
+                        "url": "pangde/pangde/death",
+                        "translation": "四面都是水，我命休矣……"
+                    }
+                }
+            }
+        ]
+    },
+    "caopi": {
+        "info": {
+            "id": "WEI014",
+            "title": "霸业的继承者",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "SoniaTang",
+                "cv": "佳音",
+                "baseUrl": "caopi/caopi",
+                "audios": {
+                    "death": {
+                        "url": "caopi/death",
+                        "translation": "子建，子建……"
+                    }
+                }
+            }
+        ]
+    },
+    "xuhuang": {
+        "info": {
+            "id": "WEI010",
+            "title": "周亚夫之风",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Tuu.",
+                "cv": "风流·浊酒",
+                "audios": { "death": { "translation": "一顿不吃饿得慌……" } }
+            }
+        ]
+    },
+    "menghuo": {
+        "info": {
+            "id": "SHU014",
+            "title": "南蛮王",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "废柴男",
+                "cv": "彭博",
+                "audios": {
+                    "death": { "translation": "七纵之恩，来世再报了。" }
+                }
+            }
+        ]
+    },
+    "zhurong": {
+        "info": {
+            "id": "SHU015",
+            "title": "野性的女 王",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "废柴男",
+                "cv": "未知",
+                "audios": {
+                    "death": { "translation": "大王，我……先走一步了……" }
+                }
+            }
+        ]
+    },
+    "sunjian": {
+        "info": {
+            "id": "WU009",
+            "title": "武烈帝",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "LiuHeng",
+                "cv": "风流·浊酒",
+                "audios": { "death": { "translation": "有埋伏！呃 ……啊！！" } }
+            }
+        ]
+    },
+    "lusu": {
+        "info": {
+            "id": "WU014",
+            "title": "独断的外交家",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "LiuHeng",
+                "cv": "风流·浊酒",
+                "audios": {
+                    "death": { "translation": "此联盟已破，吴蜀休矣……" }
+                }
+            }
+        ]
+    },
+    "dongzhuo": {
+        "info": {
+            "id": "QUN006",
+            "title": "魔王",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "小冷",
+                "cv": "彭博",
+                "baseUrl": "dongzhuo/dongzhuo",
+                "audios": {
+                    "death": {
+                        "url": "dongzhuo/dongzhuo/death",
+                        "translation": "汉室衰落，非我一人之罪……"
+                    }
+                }
+            }
+        ]
+    },
+    "jiaxu": {
+        "info": {
+            "id": "QUN007",
+            "title": "冷酷的毒士",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "柳郎中",
+                "baseUrl": "jiaxu/jiaxu",
+                "audios": {
+                    "death": {
+                        "url": "jiaxu/death",
+                        "translation": "我的时辰也到了……"
+                    }
+                }
+            }
+        ]
+    },
+    "zhanghe": {
+        "info": {
+            "id": "WEI009",
+            "title": "料敌机先",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "张帅",
+                "cv": "风流·浊酒",
+                "audios": { "death": { "translation": "呃，膝盖中箭了……" } }
+            }
+        ]
+    },
+    "dengai": {
+        "info": {
+            "id": "WEI015",
+            "title": "矫然的壮士",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "烈の流星",
+                "baseUrl": "dengai/dengai",
+                "audios": {
+                    "death": {
+                        "url": "dengai/dengai/death",
+                        "translation": "吾破蜀克敌，竟葬于奸贼之手……"
+                    }
+                }
+            }
+        ]
+    },
+    "liushan": {
+        "info": {
+            "id": "SHU013",
+            "title": "无为的真命主",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "LiuHeng",
+                "cv": "彭尧",
+                "audios": {
+                    "death": { "translation": "别打脸，我投降还不行吗？" }
+                }
+            }
+        ]
+    },
+    "jiangwei": {
+        "info": {
+            "id": "SHU012",
+            "title": "龙的衣钵",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "彭尧",
+                "baseUrl": "jiangwei/jiangwei",
+                "audios": {
+                    "death": {
+                        "url": "jiangwei/jiangwei/death",
+                        "translation": "我计不成，乃天命 也……"
+                    }
+                }
+            }
+        ]
+    },
+    "sunce": {
+        "info": {
+            "id": "WU010",
+            "title": "江东的小霸王",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "彭尧",
+                "baseUrl": "sunce/sunce",
+                "audios": {
+                    "death": {
+                        "url": "sunce/death",
+                        "translation": "内 事不决问张昭，外事不决问周瑜……"
+                    }
+                }
+            }
+        ]
+    },
+    "zhangzhaozhanghong": {
+        "info": {
+            "id": "WU015",
+            "title": "经天纬地",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "废柴男",
+                "cv": "风流·浊酒",
+                "audios": {
+                    "death": { "translation": "竭力 尽智，死而无憾……" }
+                }
+            }
+        ]
+    },
+    "zuoci": {
+        "info": {
+            "id": "QUN009",
+            "title": "谜之仙人",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "废柴男",
+                "cv": "风流·浊酒",
+                "baseUrl": "zuoci/zuoci",
+                "audios": {
+                    "death": {
+                        "url": "zuoci/hdeath",
+                        "translation": "腾云跨风，飞升太虚……"
+                    }
+                }
+            }
+        ]
+    },
+    "caiwenji": {
+        "info": {
+            "id": "QUN012",
+            "title": "异乡的孤女",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "SoniaTang",
+                "cv": "异域雪影儿 ",
+                "audios": {
+                    "death": { "translation": "人生几何时，怀忧终年岁。" }
+                }
+            }
+        ]
+    },
+    "god_guanyu": {
+        "info": {
+            "id": "LE001",
+            "title": "鬼神再临",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "未知",
+                "baseUrl": "guanyu/god.guanyu",
+                "audios": {
+                    "death": {
+                        "url": "guanyu/god.guanyu/death",
+                        "translation": ""
+                    }
+                }
+            }
+        ]
+    },
+    "god_lvmeng": {
+        "info": {
+            "id": "LE002",
+            "title": "圣光之国士",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "未知",
+                "baseUrl": "lvmeng/god.lvmeng",
+                "audios": {
+                    "death": {
+                        "url": "lvmeng/god.lvmeng/death",
+                        "translation": "劫数难逃，我们别无选择……"
+                    }
+                }
+            }
+        ]
+    },
+    "god_zhouyu": {
+        "info": {
+            "id": "LE003",
+            "title": "赤壁的火神",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "未知",
+                "baseUrl": "zhouyu/god.zhouyu",
+                "audios": {
+                    "death": {
+                        "url": "zhouyu/god.zhouyu/death",
+                        "translation": "逝者不死，浴火重生。"
+                    }
+                }
+            }
+        ]
+    },
+    "god_zhugeliang": {
+        "info": {
+            "id": "LE004",
+            "title": "赤壁的妖术师",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "未知",
+                "baseUrl": "zhugeliang/god.zhugeliang",
+                "audios": {
+                    "death": {
+                        "url": "zhugeliang/god.zhugeliang/death",
+                        "translation": "今当远离，临表涕零，不知所言……"
+                    }
+                }
+            }
+        ]
+    },
+    "god_caocao": {
+        "info": {
+            "id": "LE006",
+            "title": "超世之英杰",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "未知",
+                "baseUrl": "caocao/god.caocao",
+                "audios": {
+                    "death": {
+                        "url": "caocao/god.caocao/death",
+                        "translation": "腾蛇乘雾，终为土灰。"
+                    }
+                }
+            }
+        ]
+    },
+    "god_lvbu": {
+        "info": {
+            "id": "LE005",
+            "title": "修罗之道",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "未知",
+                "baseUrl": "lvbu/god.lvbu",
+                "audios": {
+                    "death": {
+                        "url": "lvbu/god.lvbu/death",
+                        "translation": "我在修罗炼狱，等着你们，呃哈哈哈哈哈~"
+                    }
+                }
+            }
+        ]
+    },
+    "god_zhaoyun": {
+        "info": {
+            "id": "LE 007",
+            "title": "神威如龙",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "未知",
+                "baseUrl": "zhaoyun/god.zhaoyun",
+                "audios": {
+                    "death": {
+                        "url": "zhaoyun/god.zhaoyun/death",
+                        "translation": "龙身虽死，魂魄不灭！"
+                    }
+                }
+            }
+        ]
+    },
+    "god_simayi": {
+        "info": {
+            "id": "LE 008",
+            "title": "晋国之祖",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "未知",
+                "baseUrl": "simayi/god.simayi",
+                "audios": {
+                    "death": {
+                        "url": "simayi/god.simayi/death",
+                        "translation": "鼎足三分已成梦，一切都结束了……"
+                    }
+                }
+            }
+        ]
+    },
+    "god_diaochan": {
+        "info": {
+            "id": "LE013",
+            "title": "欲界非天",
+            "designer": "KayaK",
+            "script": "归零",
+            "prefix": "神"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "桃妮儿",
+                "baseUrl": "diaochan/god.diaochan",
+                "audios": {
+                    "death": {
+                        "url": "diaochan/god.diaochan/death",
+                        "translation": "也许，你们日后的所闻所望，都是我某天的所叹所想……"
+                    }
+                }
+            }
+        ]
+    },
+    "wangji": {
+        "info": {
+            "id": "WEI053/SP041",
+            "title": "经行合一",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "雪君S",
+                "cv": "马洋",
+                "audios": {
+                    "death": {
+                        "translation": "天下之势，必归大魏。可恨，未能得见哪……"
+                    }
+                }
+            }
+        ]
+    },
+    "wangping": {
+        "info": {
+            "id": "SHU023",
+            "title": "兵谋以致用",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "YanBai",
+                "cv": "王教授就是王宇航",
+                "baseUrl": "wangping/wangping",
+                "audios": {
+                    "death": {
+                        "url": "wangping/wangping/death",
+                        "translation": "无当飞军，也有困于山林之时。"
+                    }
+                }
+            }
+        ]
+    },
+    "haozhao": {
+        "info": {
+            "id": "WEI067",
+            "title": "扣弦的豪将",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "秋呆呆",
+                "cv": "王教授就是王宇航",
+                "audios": { "death": { "translation": "镇守陈仓，也有一失……" } }
+            }
+        ]
+    },
+    "zhugezhan": {
+        "info": {
+            "id": "SHU068",
+            "title": "临难死义",
+            "designer": "Loun老萌",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "zoo",
+                "cv": "爱恰饭的漠桀",
+                "audios": {
+                    "death": { "translation": "临难而死义，无愧先父。" }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "ctre.dianwei.skill": {
+        "name": "ctre.dianwei.skill",
+        "lang_name": "技能",
+        "lang_desc": "当你受到【杀】或【决斗】的伤害时，[横置][休整1]：防止其中的1点伤害。若发动此技能时休整自身，判定，若结果为：黑色，对对手造成1点伤害；红色：你获得此判定牌。",
+        "lang_desc2": "",
+        "audios": [
+            { "url": "generals/dianwei/qiangxi1", "translation": "吃我一戟！" },
+            {
+                "url": "generals/dianwei/qiangxi2",
+                "translation": "看我三步之内取你小命！"
+            }
+        ]
+    },
+    "ctre.simayi.skill": {
+        "name": "ctre.simayi.skill",
+        "lang_name": "技能",
+        "lang_desc": "一次判定生效时：打出一张牌代替之。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/simayi/simayi/guicai1",
+                "translation": "天命？哈哈哈哈哈哈哈哈！"
+            },
+            {
+                "url": "generals/simayi/simayi/guicai2",
+                "translation": "吾乃天命之子！"
+            }
+        ]
+    },
+    "ctre.simayi.exskill": {
+        "name": "ctre.simayi.exskill",
+        "lang_name": "界限突破",
+        "lang_desc": "[魏势力1][军师1]追加：若打出的是红色牌，摸一张牌",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/simayi/simayi/guicai1",
+                "translation": "天命？哈哈哈哈哈哈哈哈！"
+            },
+            {
+                "url": "generals/simayi/simayi/guicai2",
+                "translation": "吾乃天命之子！"
+            }
+        ]
+    }
+}

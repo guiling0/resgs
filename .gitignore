@@ -1,0 +1,27 @@
+# ===== 本地开发交流 =====
+.claude/
+discuss/
+CLAUDE.md
+
+# ===== IDE =====
+.vscode/
+
+# ===== 历史项目（重构完成后删除） =====
+old/
+
+# ===== 依赖 =====
+node_modules/
+
+# ===== 日志 =====
+logs/
+
+# ===== 构建产物 =====
+dist/
+build/
+*.js.map
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

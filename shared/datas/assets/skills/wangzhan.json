@@ -1,0 +1,3998 @@
+{
+    "wz.simayi.fankui": {
+        "name": "wz.simayi.fankui",
+        "lang_name": "反馈",
+        "lang_desc": "当你受到1点伤害后，你可以选择一名角色并选 择一项：\n1.观看其手牌并获得其中一张；\n2.获得其装备区或判定区里的一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/simayi/fankui1",
+                "translation": "哼！正中下怀！"
+            },
+            {
+                "url": "generals/simayi/fankui2",
+                "translation": "哼！自作孽不可活！"
+            }
+        ]
+    },
+    "wz.simayi.guicai": {
+        "name": "wz.simayi.guicai",
+        "lang_name": "鬼才",
+        "lang_desc": "当一名角色的判定牌生效前，你可以打出一张牌代替 之。",
+        "lang_desc2": "当判定结果确定前，你可打出对应的实体牌是你的一张牌且与此牌牌名相同的牌▶系统将此牌作为判定牌，将原判 定牌置入弃牌堆。\n◆你发动〖鬼才〗开始的打出流程结束之前，不会插入默认的系统将此判定牌置入弃牌堆的移动事件。",
+        "audios": [
+            {
+                "url": "generals/simayi/guicai1",
+                "translation": "才通天地，逆天改命！"
+            },
+            {
+                "url": "generals/simayi/guicai2",
+                "translation": "天 命难违？哈哈哈哈哈哈！"
+            }
+        ]
+    },
+    "wz.huangyueying.jizhi": {
+        "name": "wz.huangyueying.jizhi",
+        "lang_name": "集智",
+        "lang_desc": "当你使用一张非转化锦囊牌时，你可以摸一张牌且本回合的手牌上限+1。",
+        "lang_desc2": "当非转化的锦囊牌A被使用时，若使用者为你，你可摸一张牌▶你的手牌上限于此回合内+1。",
+        "audios": [
+            {
+                "url": "generals/huangyueying/ex.huangyueying/jizhi1",
+                "translation": "得上通，智集心。"
+            },
+            {
+                "url": "generals/huangyueying/ex.huangyueying/jizhi2",
+                "translation": "集万千才智，致巧趣鲜用。"
+            }
+        ]
+    },
+    "wz.huangyueying.qicai": {
+        "name": "wz.huangyueying.qicai",
+        "lang_name": "奇才",
+        "lang_desc": "锁定技，你使用锦囊牌无距离限制；\n其他角色 不能弃置你装备区里的宝物牌和防具牌。",
+        "lang_desc2": "①锁定技，你使用锦囊牌无距离关系的限制。\n②锁定技，当有牌因其他角色 的弃置而移动前❷，若其中有你的装备区里的防具牌或宝物牌，你取消你的装备区里的防具牌和宝物牌的此次移动。",
+        "audios": []
+    },
+    "wz.ganning.qixi": {
+        "name": "wz.ganning.qixi",
+        "lang_name": "奇袭",
+        "lang_desc": "你可以将一张黑色牌当【过河拆桥】使用。",
+        "lang_desc2": "当你需要使用【过河拆桥】时❸，你可使用对应的实体牌为你的一张黑色牌的【过河拆桥】。",
+        "audios": [
+            {
+                "url": "generals/ganning/ex.ganning/qixi1",
+                "translation": "弟兄们，准备动手！"
+            },
+            {
+                "url": "generals/ganning/ex.ganning/qixi2",
+                "translation": "你用不了这么多了！"
+            }
+        ]
+    },
+    "wz.ganning.fenwei": {
+        "name": "wz.ganning.fenwei",
+        "lang_name": "奋威",
+        "lang_desc": "每轮限一次，当目标数大于1的锦囊牌指定目标后，你可以令此牌对其中任意个目标无效。",
+        "lang_desc2": "每轮限一次，当锦囊牌指定第一个目标后，若目标对应的角色数大于1，你可获得1枚“奋”并选择其中的至少一个目标▶此牌对你以此法选择的这些目标均无效。",
+        "audios": [
+            {
+                "url": "generals/ganning/ex.ganning/fenwei1",
+                "translation": "哼！敢欺我东吴无人！"
+            },
+            {
+                "url": "generals/ganning/ex.ganning/fenwei2",
+                "translation": "奋勇当先，威名远扬！"
+            }
+        ]
+    },
+    "wz.zhouyu.yingzi": {
+        "name": "wz.zhouyu.yingzi",
+        "lang_name": "英姿",
+        "lang_desc": "锁定技，摸牌 阶段，你多摸一张牌；\n你的手牌上限与你的体力上限相等。",
+        "lang_desc2": "①锁定技，摸牌阶段，你令额定摸牌数+1。②锁定技，你 的手牌上限为X（X为你的体力上限）。",
+        "audios": [
+            {
+                "url": "generals/zhouyu/yingzi1",
+                "translation": "伯符，且看我这一手！"
+            },
+            {
+                "url": "generals/zhouyu/yingzi2",
+                "translation": "哈哈哈哈哈哈哈哈！"
+            }
+        ]
+    },
+    "wz.zhouyu.fanjian": {
+        "name": "wz.zhouyu.fanjian",
+        "lang_name": "反间",
+        "lang_desc": "出牌阶段限一次，你可以展示一张手牌，将其交给一名角色并令其本回合非锁定技失效，然后其选择一项：\n1.展示所有手牌，并弃置与其颜色相同的所有牌（至少两张）；\n2.失去1点体力。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhouyu/fanjian1",
+                "translation": "抉择吧，在这苦与痛的地狱中！"
+            },
+            {
+                "url": "generals/zhouyu/fanjian2",
+                "translation": "与我为敌， 就当这般生不如死！"
+            }
+        ]
+    },
+    "wz.zhurong.juxiang": {
+        "name": "wz.zhurong.juxiang",
+        "lang_name": "巨象",
+        "lang_desc": "锁定技，【南蛮入侵】对你无效；\n当其他角色使用的【南蛮入侵】结算结束后，你获得之。",
+        "lang_desc2": "①锁定技，当【南蛮入侵】对目标的使用结 算开始时，若此目标对应的角色为你，你令此【南蛮入侵】对此目标无效。②锁定技，当【南蛮入侵】使用结算结束后❸，若使用者不为 你，你获得此【南蛮入侵】对应的所有实体牌。",
+        "audios": [
+            {
+                "url": "generals/zhurong/mou.zhurong/juxiang1",
+                "translation": "哼！ 何须我亲自出马！"
+            },
+            {
+                "url": "generals/zhurong/mou.zhurong/juxiang2",
+                "translation": "都给我留下吧！"
+            }
+        ]
+    },
+    "wz.zhurong.lieren": {
+        "name": "wz.zhurong.lieren",
+        "lang_name": "烈刃",
+        "lang_desc": "当你使用【杀】指定唯一目标后，你可以与其拼点，若你赢，结算完成后，你可以对其以外的一名其他角色造成1点伤害。",
+        "lang_desc2": "当你使用【杀】指定目标后，若目标对应的角色数为1，你可与其拼 点▶若你赢，你获得1枚“烈刃”→此【杀】使用结算结束后❷，你可对除其外的一名其他角色造成1点普通伤害。",
+        "audios": [
+            {
+                "url": "generals/zhurong/mou.zhurong/lieren1",
+                "translation": "哼！可知本夫人厉害！"
+            },
+            {
+                "url": "generals/zhurong/mou.zhurong/lieren2",
+                "translation": "我的飞刀，谁敢小瞧！"
+            }
+        ]
+    },
+    "wz.maliang.zishu": {
+        "name": "wz.maliang.zishu",
+        "lang_name": "自书",
+        "lang_desc": "锁 定技，当你于回合内非因此法而获得牌后，你摸一张牌；其他角色的结束阶段，你将手牌中本回合获得的所有牌置入弃牌堆。",
+        "lang_desc2": "①锁定技，其他角色的回合结束前❶，你将手牌区里所有的你于此回合内得到过的牌置入弃牌堆。②锁定技，当你于回合内并非因你发动此技能而得到牌后❷，你摸一张牌。",
+        "audios": [
+            {
+                "url": "generals/maliang/zishu1",
+                "translation": "慢着，让我来！"
+            },
+            {
+                "url": "generals/maliang/zishu2",
+                "translation": "身外之物，不要也罢！"
+            }
+        ]
+    },
+    "wz.maliang.yingyuan": {
+        "name": "wz.maliang.yingyuan",
+        "lang_name": "应援",
+        "lang_desc": "当你于回合内使用的基本牌或普通锦囊牌结算结束后，你可以将之交给一名其他角色（每种类别每回合限 一次）。",
+        "lang_desc2": "当基本牌或普通锦囊牌于你的回合内使用结算结束后❸，若使用者为你且你于此回合内未发动过此技能将与此 牌类别相同的牌对应的所有实体牌交给过其他角色，你可将此牌对应的所有实体牌交给一名其他角色。",
+        "audios": [
+            {
+                "url": "generals/maliang/yingyuan1",
+                "translation": "好牌只用一次怎么够？"
+            },
+            { "url": "generals/maliang/yingyuan2", "translation": "接好嘞！" }
+        ]
+    },
+    "wz.wenyang.quedi": {
+        "name": "wz.wenyang.quedi",
+        "lang_name": "却敌",
+        "lang_desc": "每回合限一次，当你使用【杀】或【决斗】指定唯 一目标后，你可以选择一项：\n1.获得其一张手牌；\n2.弃置一张基本牌，然后此【杀】或【决斗】伤害+1；\n背水：减1点体力上限。",
+        "lang_desc2": "当【杀】或【决斗】指定目标后，若使用者为你且目标对应的角色数为1且你于当前回合内发动过此技能的次数小于1，你 可选择：1.获得其一张手牌▶你获得1枚“膂”；2.弃置一张基本牌▶你令此牌的伤害值基数+1；3.减1点体力上限▶{你获得其一张手牌。你可弃置一张基本牌▷你令此牌的伤害值基数+1}。",
+        "audios": [
+            {
+                "url": "generals/wenyang/quedi1",
+                "translation": "力摧敌阵，如视天光破云！"
+            },
+            {
+                "url": "generals/wenyang/quedi2",
+                "translation": "让尔等有命追，无命回！"
+            }
+        ]
+    },
+    "wz.wenyang.choujue": {
+        "name": "wz.wenyang.choujue",
+        "lang_name": "仇决",
+        "lang_desc": "锁定技，当你杀死其他角色后，你加1点体力上限，摸两张牌，然后本回合可以多发 动一次“却敌”。",
+        "lang_desc2": "锁定技，当一名角色死亡后，若杀死其的角色为你，你加1点体力上限▶你摸两张牌。〖却敌〗于此回合内的发动次数上限+1。",
+        "audios": [
+            {
+                "url": "generals/wenyang/choujue1",
+                "translation": "血海深仇，便在今日来报！"
+            },
+            {
+                "url": "generals/wenyang/choujue2",
+                "translation": "取汝之头，以祭先父！"
+            }
+        ]
+    },
+    "wz.mizhu.ziyuan": {
+        "name": "wz.mizhu.ziyuan",
+        "lang_name": "资援",
+        "lang_desc": "出牌阶段限一次，你可以展示任意张点数之和为13的手牌并交给一名其他角色，令其回复1点体力。",
+        "lang_desc2": "出牌阶段限一次，你可将至少一张点数之和为13的手牌交给一名角色▶其回复1点体力。",
+        "audios": [
+            {
+                "url": "generals/mizhu/ziyuan1",
+                "translation": "区区薄礼，万望使君笑纳。"
+            },
+            {
+                "url": "generals/mizhu/ziyuan2",
+                "translation": "雪中送炭，以解君愁。"
+            }
+        ]
+    },
+    "wz.mizhu.jugu": {
+        "name": "wz.mizhu.jugu",
+        "lang_name": "巨贾",
+        "lang_desc": "锁定技，你的手牌上限+X；游戏开始时，你摸X张牌（X为你的体力上限）。",
+        "lang_desc2": "①锁定技，游戏的第一个回合开始后❸，你摸X张牌（X为你的体力上限）。\n②锁定技，你的手牌上限+X （X为你的体力上限）。",
+        "audios": [
+            {
+                "url": "generals/mizhu/jugu1",
+                "translation": "君子爱财，取之有道。"
+            },
+            {
+                "url": "generals/mizhu/jugu2",
+                "translation": "钱？要多少有多少。"
+            }
+        ]
+    },
+    "wz.sunluyu.mumu": {
+        "name": "wz.sunluyu.mumu",
+        "lang_name": "穆穆",
+        "lang_desc": "出牌阶段开始时，你可以选择一项：1.获得场上的一张防具牌，然后本回合你不能使用或打出【杀】；2.弃置场上的一张装备牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/sunluyu/mumu1",
+                "translation": "立储乃国家大事，我们姊妹不便参与。"
+            },
+            {
+                "url": "generals/sunluyu/mumu2",
+                "translation": "只求相夫教子，不求参政议事。"
+            }
+        ]
+    },
+    "wz.sunluyu.zhixi": {
+        "name": "wz.sunluyu.zhixi",
+        "lang_name": "止息",
+        "lang_desc": "其他角色的出牌阶段开始时，若其攻击范围内包含你，你可以弃置一张牌（若此牌不为【杀】或黑色锦囊牌， 本回合其与你的距离视为 1），然后该角色于此阶段至多再使用 X 张牌（X为其体力值），该角色于此阶段使用的锦囊牌结算完成后，其 结束此阶段。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/sunluyu/meibu1",
+                "translation": "萧墙之乱，宫闱之衅，实为吴国之祸 阿。"
+            },
+            {
+                "url": "generals/sunluyu/meibu2",
+                "translation": "若要动手，就请先杀我吧!"
+            }
+        ]
+    },
+    "wz26.caocao.shuzhi": {
+        "name": "wz26.caocao.shuzhi",
+        "lang_name": "述志",
+        "lang_desc": "锁定技，亮将后，你选择“奸雄”和“清正”中的一个技能添加限定技标签。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/caocao/mou.caocao/shuzhi1",
+                "translation": "以某观之，今天下英雄，唯使君与操耳！"
+            },
+            {
+                "url": "generals/caocao/mou.caocao/shuzhi2",
+                "translation": "唯以雄霸之志，方能清平乱世。"
+            }
+        ]
+    },
+    "wz26.caocao.jianxiong": {
+        "name": "wz26.caocao.jianxiong",
+        "lang_name": "奸雄",
+        "lang_desc": "当你受到伤害后，你可以获得对你造成伤害的牌并摸一张牌。",
+        "lang_desc2": "当你受到伤害后，你可获得1枚“奸”▶你获得是此伤害的渠道的牌对应的所有实体牌，摸一张牌。",
+        "audios": [
+            {
+                "url": "generals/caocao/mou.caocao/jianxiong1",
+                "translation": "古今英雄盛世，尽赴沧海东流。"
+            },
+            {
+                "url": "generals/caocao/mou.caocao/jianxiong2",
+                "translation": "骖六龙行御九州，行四海路下八邦！"
+            }
+        ]
+    },
+    "wz26.caocao.qingzheng": {
+        "name": "wz26.caocao.qingzheng",
+        "lang_name": "清正",
+        "lang_desc": "出牌阶段开始时，你可以弃置你手牌中一种花色的所有牌并选择一名其他角色观看你的手牌，然后你观看其手牌并 弃置其中一种花色的所有牌；若其被弃置的牌数小于你弃置的牌数，你对其造成1点伤害。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/caocao/mou.caocao/qingzheng1",
+                "translation": "立威行严法，肃佞正国纲！"
+            },
+            {
+                "url": "generals/caocao/mou.caocao/qingzheng2",
+                "translation": "悬杖分五色，治法扬清名。"
+            }
+        ]
+    },
+    "wz26.caocao.hujia": {
+        "name": "wz26.caocao.hujia",
+        "lang_name": "护驾",
+        "lang_desc": "主公技，当你需要使用或打出【闪】时，你可以令其他魏势力角色选择是否替你使用或打出【闪】（视为由你使用或打出）；其他魏 势力角色于其回合外使用、打出或替你使用或打出【闪】时，其可以令你摸一张牌（每回合限一次）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/caocao/mou.caocao/hujia1",
+                "translation": "虎贲三千，堪当敌万余！"
+            },
+            {
+                "url": "generals/caocao/mou.caocao/hujia2",
+                "translation": "壮士八百，足护卫吾身！"
+            }
+        ]
+    },
+    "wz26.caocao.jianxiong_limit": {
+        "name": "wz26.caocao.jianxiong_limit",
+        "lang_name": "奸雄",
+        "lang_desc": "限定技，当你受到伤害后，你可以获得对你造成伤害的牌并摸一张牌。",
+        "lang_desc2": "当你受到伤害后，你可获得1枚“奸”▶你获得是此伤害的渠道的牌对应的所有实体牌，摸一张牌。",
+        "audios": [
+            {
+                "url": "generals/caocao/mou.caocao/jianxiong1",
+                "translation": "古今英雄盛世，尽赴沧海东流。"
+            },
+            {
+                "url": "generals/caocao/mou.caocao/jianxiong2",
+                "translation": "骖六龙行御九州，行四海路下八邦！"
+            }
+        ]
+    },
+    "wz26.caocao.qingzheng_limit": {
+        "name": "wz26.caocao.qingzheng_limit",
+        "lang_name": "清正",
+        "lang_desc": "限定技，出牌阶段开始时，你可以弃置你手牌中一种花色的所有牌并选择一名其他角色观看你的手牌，然后你观看其手牌并 弃置其中一种花色的所有牌；若其被弃置的牌数小于你弃置的牌数，你对其造成1点伤害。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/caocao/mou.caocao/qingzheng1",
+                "translation": "立威行严法，肃佞正国纲！"
+            },
+            {
+                "url": "generals/caocao/mou.caocao/qingzheng2",
+                "translation": "悬杖分五色，治法扬清名。"
+            }
+        ]
+    },
+    "wz26.liubei.rende": {
+        "name": "wz26.liubei.rende",
+        "lang_name": "仁德",
+        "lang_desc": "出牌阶段每名角色限一次，你可以将任意张手牌交给一名其他角色，当你于此阶段给出第二张牌时，你可以选择一项：1.视为使用一 张基本牌；2.回复 1 点体力并于此阶段取消此技能“每名角色限一次“的限制。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/liubei/rende1",
+                "translation": "施仁布泽，乃我大汉立国之本！"
+            },
+            {
+                "url": "generals/liubei/rende2",
+                "translation": "同心同德，救困扶危！"
+            }
+        ]
+    },
+    "wz26.liubei.renwang": {
+        "name": "wz26.liubei.renwang",
+        "lang_name": "仁望",
+        "lang_desc": "每回合限一次，当其他角色于其出牌阶段对你使用【杀】或普通锦囊牌时，若你不是此阶段内第一次成为上述牌的目标，你可以弃置其一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/liubei/liubei/renwang1",
+                "translation": "仁德之世，岂能毁于你手？"
+            },
+            {
+                "url": "generals/liubei/liubei/renwang2",
+                "translation": "民心，就是最好的武器！"
+            }
+        ]
+    },
+    "wz26.liubei.jijiang": {
+        "name": "wz26.liubei.jijiang",
+        "lang_name": "激将",
+        "lang_desc": "主公技，你可以令其他蜀势力角色在你需要使用或打出【杀】时，依次选择是否打出一张【杀】（视为由你使用或打出），然后其可以令你摸一张牌（每回合限一次）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/liubei/jijiang1",
+                "translation": "哪位将军替我拿下此贼？"
+            },
+            {
+                "url": "generals/liubei/jijiang2",
+                "translation": "欺我军无人乎？"
+            }
+        ]
+    },
+    "wz26.liubei.shouyue": {
+        "name": "wz26.liubei.shouyue",
+        "lang_name": "授钺",
+        "lang_desc": "主公技，出牌阶段结束时，你可以令一名体力值不小于你的其他蜀势力角色选择 一项：1.跳过下一个出牌阶段；2.视为对其攻击范围内你指定的一名角色使用一张【杀】。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/lord_liubei/shouyue",
+                "translation": "布德而昭仁，见旗如见朕!"
+            }
+        ]
+    },
+    "wz26.liushan.xiangle": {
+        "name": "wz26.liushan.xiangle",
+        "lang_name": "享乐",
+        "lang_desc": "锁定技，当你成为一名角色使用【杀】的目标后，除非该角色弃置一张基本牌，否则此【杀】对你无效。",
+        "lang_desc2": "锁定技，当你成为【杀】的目标后，你令使用者选择：1.弃置一张基本牌；2.此【杀】对此目标无效。",
+        "audios": [
+            {
+                "url": "generals/liushan/ex.liushan/xiangle1",
+                "translation": "天府之国，自然民安国泰。"
+            },
+            {
+                "url": "generals/liushan/ex.liushan/xiangle2",
+                "translation": "战事扰乱民生，不如作罢。"
+            }
+        ]
+    },
+    "wz26.liushan.fangquan": {
+        "name": "wz26.liushan.fangquan",
+        "lang_name": "放权",
+        "lang_desc": "你可以跳过出牌阶段，令你本回合的手牌上限等于体力上限。若如此做，本回合结束时，你可以弃置一张手牌，令一名其他角色执行一个额外的回合。",
+        "lang_desc2": "出牌阶段开始前，你可跳过此阶段▶你本回合的手牌上限为X（X为你的体力上 限）▷（→）此回合结束前❶，你可弃置一张手牌并选择一名其他角色▷其获得一个额外回合。",
+        "audios": [
+            {
+                "url": "generals/liushan/ex.liushan/fangquan1",
+                "translation": "爱卿自行定夺便是。"
+            },
+            {
+                "url": "generals/liushan/ex.liushan/fangquan2",
+                "translation": " 北伐事重，相父全权处理即可。"
+            }
+        ]
+    },
+    "wz26.liushan.ruoyu": {
+        "name": "wz26.liushan.ruoyu",
+        "lang_name": "若愚",
+        "lang_desc": "主公技，觉醒技，准备阶段，若你是体力值最小的角色，你加1点体力上限并回复体力至3点，然后获得“激将”和“思蜀”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/liushan/ex.liushan/ruoyu1",
+                "translation": "唯有自认庸主之名，方能保蜀地官民无虞啊。"
+            },
+            {
+                "url": "generals/liushan/ex.liushan/ruoyu2",
+                "translation": "既无争雄天下之才，只好做守成之主。"
+            }
+        ]
+    },
+    "wz26.liushan.jijiang": {
+        "name": "wz26.liushan.jijiang",
+        "lang_name": "激将",
+        "lang_desc": "主公技，你可以令其他蜀势力角色在你需要使用或打出【杀】时，依次选择是否打出一张【杀】（视为由你使用或打出）；其他蜀势力角色于其回合外使用或打出【杀】时，其可以令你摸一张牌（每回合限一次 ）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/liushan/ex.liushan/jijiang1",
+                "translation": "还望诸卿勠力同心，以保国祚。"
+            },
+            {
+                "url": "generals/liushan/ex.liushan/jijiang2",
+                "translation": "哪位爱卿愿意报效国家？"
+            }
+        ]
+    },
+    "wz26.liushan.sishu": {
+        "name": "wz26.liushan.sishu",
+        "lang_name": "思蜀",
+        "lang_desc": "出牌阶段开始时，你可以指定一名角色，令其本局游戏中【乐不思蜀】判定 结果反转。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/liushan/olex.liushan/sishu1",
+                "translation": "配音缺失"
+            },
+            {
+                "url": "generals/liushan/olex.liushan/sishu2",
+                "translation": "配音缺失"
+            }
+        ]
+    },
+    "wz26.sunquan.zhiheng": {
+        "name": "wz26.sunquan.zhiheng",
+        "lang_name": "制衡",
+        "lang_desc": "出牌阶段限一次，你可以弃置任意张牌，然后摸等量的牌。\n若你以此法弃置了所有手牌，你多摸一张牌 。",
+        "lang_desc2": "出牌阶段限一次，你可弃置至少一张牌▶若你以此法弃置的牌中：包括所有手牌，你摸X+1张牌；未包括所有手牌或没有手牌，你摸X张牌。（X为你以此法弃置的牌数）",
+        "audios": [
+            {
+                "url": "generals/sunquan/mou.sunquan/zhiheng1",
+                "translation": "待 孤熟虑一番，再行定夺吧。"
+            },
+            {
+                "url": "generals/sunquan/mou.sunquan/zhiheng2",
+                "translation": "江东兴亡，尽在孤的此番考量之中。"
+            }
+        ]
+    },
+    "wz26.sunquan.jiuyuan": {
+        "name": "wz26.sunquan.jiuyuan",
+        "lang_name": "救援",
+        "lang_desc": "主公技，当其他吴势力角色使用【桃】时，你可以摸一张牌。其他吴势力角色对你使用【桃】时，你可以额外回复1点体力。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/sunquan/mou.sunquan/jiuyuan1",
+                "translation": "有爱卿这等良将，孤有何所惧。"
+            },
+            {
+                "url": "generals/sunquan/mou.sunquan/jiuyuan2",
+                "translation": "幸有爱卿相助啊。"
+            }
+        ]
+    },
+    "wz26.sunquan.tongye": {
+        "name": "wz26.sunquan.tongye",
+        "lang_name": "统业",
+        "lang_desc": "主公技，锁定技，首轮开始时，你获得“英姿”和“固政”；首轮结束时，你失去“英姿”和“固政”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/sunquan/mou.sunquan/tongye1",
+                "translation": "有众卿相佐，何忧曹贼万众！"
+            },
+            {
+                "url": "generals/sunquan/mou.sunquan/tongye2",
+                "translation": "广纳贤才，不辱父兄之基业！"
+            }
+        ]
+    },
+    "wz26.sunquan.yingzi": {
+        "name": "wz26.sunquan.yingzi",
+        "lang_name": "英姿",
+        "lang_desc": "锁定技，摸牌阶段，你多摸一张牌；\n你的手牌上限与你的体力上限相等。",
+        "lang_desc2": "①锁定技，摸牌阶段，你令额定摸牌数+1。②锁定技，你的手牌上限为X（X为你的体力上限）。",
+        "audios": [
+            {
+                "url": "generals/zhouyu/yingzi1",
+                "translation": "伯符，且看我这一手！"
+            },
+            {
+                "url": "generals/zhouyu/yingzi2",
+                "translation": "哈哈哈哈哈哈哈哈！"
+            }
+        ]
+    },
+    "wz26.sunquan.guzheng": {
+        "name": "wz26.sunquan.guzheng",
+        "lang_name": "固政",
+        "lang_desc": "其他角色的弃牌阶段结束时，你可以将此阶段中的一 张弃牌返还给该角色，然后你获得其余的弃牌。",
+        "lang_desc2": "其他角色的弃牌阶段结束时，你可将弃牌堆里的一张曾是其于此阶段内 弃置过的其手牌的牌交给该角色▶你可获得弃牌堆里的所有曾是于此阶段内因弃置而移至弃牌堆的牌的牌。",
+        "audios": [
+            {
+                "url": "generals/zhangzhaozhanghong/guzheng1",
+                "translation": "今当稳固内政，以御外患！"
+            },
+            {
+                "url": "generals/zhangzhaozhanghong/guzheng2",
+                "translation": "固国安邦，须当如是！"
+            }
+        ]
+    },
+    "wz26.sunce.jiang": {
+        "name": "wz26.sunce.jiang",
+        "lang_name": "激昂",
+        "lang_desc": "当你 使用【决斗】或红色【杀】指定目标后，或成为【决斗】或红色【杀】目标后，你可以摸一张牌；【决斗】或红色【杀】因弃置进入弃牌 堆后，你可以失去1点体力获得之（每回合限一次）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/sunce/olex.sunce/jiang1",
+                "translation": "我会把胜利带回江东。"
+            },
+            {
+                "url": "generals/sunce/olex.sunce/jiang2",
+                "translation": "天下英雄，谁能与我一战？"
+            }
+        ]
+    },
+    "wz26.sunce.hunzi": {
+        "name": "wz26.sunce.hunzi",
+        "lang_name": "魂姿",
+        "lang_desc": "觉醒技，准备阶段，若你的体力值为1，你减 1 点体力上限，然后获得“英姿”和“英魂”。 本回合的结束阶段，你摸两张牌或回复1点体力。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/sunce/olex.sunce/hunzi1",
+                "translation": "小霸王之名响彻天下，何人不知？"
+            },
+            {
+                "url": "generals/sunce/olex.sunce/hunzi2",
+                "translation": "江东已平，中原动荡，直取许昌。"
+            }
+        ]
+    },
+    "wz26.sunce.yingzi": {
+        "name": "wz26.sunce.yingzi",
+        "lang_name": "英姿",
+        "lang_desc": "锁定技，摸牌阶段，你多摸一张牌；\n你的手牌上限与你的体力上限相等。",
+        "lang_desc2": "①锁定技，摸牌阶段，你令额定摸牌数+1。\n②锁定技，你的手牌上限为X（X为你的体力上限）。",
+        "audios": [
+            {
+                "url": "generals/sunce/olex.sunce/yingzi1",
+                "translation": "有公瑾助我，可平天下。"
+            },
+            {
+                "url": "generals/sunce/olex.sunce/yingzi2",
+                "translation": "所到之处，战无不胜。"
+            }
+        ]
+    },
+    "wz26.sunce.yinghun": {
+        "name": "wz26.sunce.yinghun",
+        "lang_name": "英魂",
+        "lang_desc": "准备阶段，若你已受伤，你可以选择一名其他角 色并选择一项：\n1.令其摸X张牌，然后弃置一张牌；\n2.令其摸一张牌，然后弃置X张牌。（X为你已损失的体力值）",
+        "lang_desc2": "准备阶段开始时，若你已受伤，你可选择：1.{令一名其他角色获得1枚“魂”▶其摸X张牌，弃置一张牌}；2.{令一名其他角色获得1枚“魂 ”▶其摸一张牌，弃置X张牌}。（X为你已损失的体力值）",
+        "audios": [
+            {
+                "url": "generals/sunce/olex.sunce/yinghun1",
+                "translation": "武烈之魂，助我扬名。"
+            },
+            {
+                "url": "generals/sunce/olex.sunce/yinghun2",
+                "translation": "江东之主，众望所归。"
+            }
+        ]
+    },
+    "wz26.sunce.zhiba": {
+        "name": "wz26.sunce.zhiba",
+        "lang_name": "制霸",
+        "lang_desc": "主公技，其他吴势力角色的出牌阶段限一次，其可以与你拼点（你可以拒绝此拼点）；出牌阶段限一次，你可以与一名其他吴势力角色拼点。若其没赢，你可以获得拼点的两张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/sunce/olex.sunce/zhiba1",
+                "translation": "我的霸业才刚刚开始。"
+            },
+            {
+                "url": "generals/sunce/olex.sunce/zhiba2",
+                "translation": "汝是战是降，我皆奉陪。"
+            }
+        ]
+    },
+    "wz26.sunjian.yinghun": {
+        "name": "wz26.sunjian.yinghun",
+        "lang_name": "英魂",
+        "lang_desc": "准备阶段，若你已受伤，你可以选择一名其他角色并选择一项：\n1.令其摸X张牌，然后弃置一张牌；\n2.令其摸一张 牌，然后弃置X张牌。（X为你已损失的体力值）",
+        "lang_desc2": "准备阶段开始时，若你已受伤，你可选择：1.{令一名其他角色获得1枚\"魂\"▶其摸X张牌，弃置一张牌}；2.{令一名其他角色获得1枚\"魂\"▶其摸一张牌，弃置X张牌}。（X为你已损失的体力值）",
+        "audios": [
+            {
+                "url": "generals/sunjian/olex.sunjian/yinghun1",
+                "translation": "提刀奔走，灭敌不休。"
+            },
+            {
+                "url": "generals/sunjian/olex.sunjian/yinghun2",
+                "translation": "贼寇草莽，我且出战。"
+            }
+        ]
+    },
+    "wz26.sunjian.wulie": {
+        "name": "wz26.sunjian.wulie",
+        "lang_name": "武烈",
+        "lang_desc": "限定技，结束阶段，你可以选择至多等同你体力值的其他角色并失去等量体力，然后防止这些角色下一次受到的伤害。若你因此失去体力后体力值不大于3，则你可以令场上一名角色获得“平讨”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/sunjian/olex.sunjian/wulie1",
+                "translation": "孙武之后，英烈勇战。"
+            },
+            {
+                "url": "generals/sunjian/olex.sunjian/wulie2",
+                "translation": "兴义之中，忠烈之名。"
+            }
+        ]
+    },
+    "wz26.sunjian.polu": {
+        "name": "wz26.sunjian.polu",
+        "lang_name": "破虏",
+        "lang_desc": "主公技，当吴势力角色杀死一名角色或死亡后，你可以令至多三名角色各摸Y张牌（Y为你此前发动过此技能的次数+1且至多为3）。",
+        "lang_desc2": "",
+        "audios": []
+    },
+    "wz26.sunjian.pingtao": {
+        "name": "wz26.sunjian.pingtao",
+        "lang_name": "平讨",
+        "lang_desc": "锁定技，你使用【杀】对目标角色造成伤害时，若该角色没有手牌或拥有“破虏”，则此伤害+1。",
+        "lang_desc2": "",
+        "audios": []
+    },
+    "wz26.lord.sunhao.canzhu": {
+        "name": "wz26.lord.sunhao.canzhu",
+        "lang_name": "残蚀",
+        "lang_desc": "摸牌阶段，你可以改为摸X张牌（X为已受伤的角色数且至少为4）。若如此做，当你本回合内使用【杀】或普通锦囊牌时，你弃置一张牌。",
+        "lang_desc2": "摸牌阶段开始时，你可改为摸X张牌（X为已受伤 的角色数且至少为4）▶若如此做，直到本回合结束，每当你使用一张【杀】或普通锦囊牌时，你须弃置一张牌。",
+        "audios": [
+            {
+                "url": "generals/sunhao/canzhu1",
+                "translation": "难道一切不在朕手中？"
+            },
+            {
+                "url": "generals/sunhao/canzhu2",
+                "translation": "众人与蝼蚁何异？哈哈哈……"
+            }
+        ]
+    },
+    "wz26.lord.sunhao.chouhai": {
+        "name": "wz26.lord.sunhao.chouhai",
+        "lang_name": "仇海",
+        "lang_desc": "锁定技，当你受到【杀】的伤害时，若你没有手牌，此伤害+1。",
+        "lang_desc2": "锁定技，当你受到【杀】造成的伤害时，若你没有手牌▶此伤害+1。",
+        "audios": [
+            {
+                "url": "generals/sunhao/chouhai1",
+                "translation": "哼，树敌三千又如何？"
+            },
+            {
+                "url": "generals/sunhao/chouhai2",
+                "translation": "不发狂，就灭亡！"
+            }
+        ]
+    },
+    "wz26.lord.sunhao.guiming": {
+        "name": "wz26.lord.sunhao.guiming",
+        "lang_name": "归命",
+        "lang_desc": "主公技，锁定技，你因执行残蚀的效果而摸牌时，吴势力角色视为已受伤的角色。",
+        "lang_desc2": "主公技，锁定技，当你因执行〖残蚀〗的效果而确定摸牌数X时▶所有吴势力角色在此次摸牌中均视为已受伤的角色。",
+        "audios": [
+            {
+                "url": "generals/sunhao/guiming1",
+                "translation": "这是要我命归黄泉吗？！"
+            },
+            {
+                "url": "generals/sunhao/guiming2",
+                "translation": "这就是末世皇帝的不归路！"
+            }
+        ]
+    },
+    "wz26.lord.liuxie.tianming": {
+        "name": "wz26.lord.liuxie.tianming",
+        "lang_name": "天命",
+        "lang_desc": "当你成为【杀】的目标后，你可以弃置两张牌并摸两张牌（不足则全弃，无牌则不弃），然后你可以令全场除你以外体力值唯一最大的角色也如此做。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/liuxie/tianming1",
+                "translation": "朕乃大汉皇帝，天命之子！"
+            },
+            {
+                "url": "generals/liuxie/tianming2",
+                "translation": "皇汉国祚，千年不息！"
+            }
+        ]
+    },
+    "wz26.lord.liuxie.mizhao": {
+        "name": "wz26.lord.liuxie.mizhao",
+        "lang_name": "密诏",
+        "lang_desc": "出牌阶段限一次，你可以将所有手牌交给一名其他角色，然后令其与你选择的另一名其他角色拼点，拼点赢的角色视为对拼点没赢的角色使用一张【杀】。",
+        "lang_desc2": "出牌阶段限一次，你可将所有手牌交给一名角色▶其与你选择的除其外的一名其他 角色拼点。拼点赢的角色对拼点未赢的角色使用无对应的实体牌的普【杀】。",
+        "audios": [
+            {
+                "url": "generals/liuxie/mizhao1",
+                "translation": "爱卿世受皇恩，堪此重任。"
+            },
+            {
+                "url": "generals/liuxie/mizhao2",
+                "translation": "此诏事关重大，切记小心行事。"
+            }
+        ]
+    },
+    "wz26.lord.liuxie.zhuiting": {
+        "name": "wz26.lord.liuxie.zhuiting",
+        "lang_name": "坠廷",
+        "lang_desc": "主公技，当一张锦囊牌对你生效前 ，其他群势力或魏势力角色可以将一张与此牌颜色相同的手牌当【无懈可击】使用；本局进入鏖战阶段后，你须执行的鏖战效果修改为： 弃置两张牌（不足则全弃，无牌则不弃）。[国际]",
+        "lang_desc2": "",
+        "audios": []
+    },
+    "wz26.simayi.guicai": {
+        "name": "wz26.simayi.guicai",
+        "lang_name": "鬼才",
+        "lang_desc": "当一名角色的判定牌生效前，你可以打出一张牌代替之。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/simayi/guicai1",
+                "translation": "天命？哈哈哈哈！"
+            },
+            {
+                "url": "generals/simayi/guicai2",
+                "translation": "吾乃天命之子 ！"
+            }
+        ]
+    },
+    "wz26.simayi.fankui": {
+        "name": "wz26.simayi.fankui",
+        "lang_name": "反馈",
+        "lang_desc": "当你受到1点伤害后，可以选择其中 一项：1.你获得一名角色区域里的一张牌；2.观看一名角色手牌并获得其中一张牌(每轮限一次)。",
+        "lang_desc2": "",
+        "audios": [
+            { "url": "generals/simayi/fankui1", "translation": "下次注意点！" },
+            {
+                "url": "generals/simayi/fankui2",
+                "translation": "出来混，早晚要还 的！"
+            }
+        ]
+    },
+    "wz26.xiahoudun.ganglie": {
+        "name": "wz26.xiahoudun.ganglie",
+        "lang_name": "刚烈",
+        "lang_desc": "当你受到1点伤害后，你 可以选择一名其他角色并进行判定，若结果为：红色，你对其造成1点伤害；黑色，你弃置其一张牌。",
+        "lang_desc2": "当你受到1点伤害 后，你可选择一名其他角色并判定▶若结果为：红色，你对其造成1点普通伤害；黑色，你弃置其的一张牌。",
+        "audios": [
+            {
+                "url": "generals/xiahoudun/ex.xiahoudun/ganglie1",
+                "translation": "哪个敢动我！"
+            },
+            {
+                "url": "generals/xiahoudun/ex.xiahoudun/ganglie2",
+                "translation": "伤我者，十倍奉还！"
+            }
+        ]
+    },
+    "wz26.xiahoudun.qingjian": {
+        "name": "wz26.xiahoudun.qingjian",
+        "lang_name": "清俭",
+        "lang_desc": "每轮限一次，当你于摸牌阶段外获得牌后，你可以展示任意张牌并将这些牌交给一名其他角色，然后当前回合角色本回合手牌上限+X （X为你以此法展示的牌包含的类型数）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/xiahoudun/ex.xiahoudun/qingjian1",
+                "translation": "福生于清俭，德生于卑退。"
+            },
+            {
+                "url": "generals/xiahoudun/ex.xiahoudun/qingjian2",
+                "translation": "钱财乃身外之物。"
+            }
+        ]
+    },
+    "wz26.zhangliao.tuxi": {
+        "name": "wz26.zhangliao.tuxi",
+        "lang_name": "突袭",
+        "lang_desc": "你的回合内限两次，当你不以此法获得牌后，你可以弃置至多X张手牌，然后获得至多X名其他角色各一张手牌（X为你获得的牌数且至多为2，若为本回合第二次发动则改为至多 为1）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhangliao/mou.zhangliao/tuxi1",
+                "translation": "成败之机，在此一战，诸 君何疑！"
+            },
+            {
+                "url": "generals/zhangliao/mou.zhangliao/tuxi2",
+                "translation": "及敌未合，折其盛势，以安众心！"
+            }
+        ]
+    },
+    "wz26.xuchu.luoyi": {
+        "name": "wz26.xuchu.luoyi",
+        "lang_name": "裸衣",
+        "lang_desc": "摸牌阶段开始前，你可以亮出牌堆顶的三张牌，然后你可以跳 过摸牌阶段并获得其中的基本牌、武器牌或【决斗】。若如此做，直到你的下个回合开始，你为伤害来源的【杀】或【决斗】造成的伤害+1且当你使用的【杀】被【闪】抵消后，你可以摸一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/xuchu/ex.xuchu/luoyi1",
+                "translation": "废话少说，放马过来吧！"
+            },
+            {
+                "url": "generals/xuchu/ex.xuchu/luoyi2",
+                "translation": "过来打一架，对，就是你！"
+            }
+        ]
+    },
+    "wz26.xuchu.xiechan": {
+        "name": "wz26.xuchu.xiechan",
+        "lang_name": "挟缠",
+        "lang_desc": "限定技，出牌阶段，你可以与一名其他角色拼点，若你赢，你视为对其使用一张【决斗】；若你没赢，其视为对你使用一张【决斗】。",
+        "lang_desc2": "限定技，出牌阶段，你可以 与一名其他角色拼点▶赢则你对其使用无对应实体牌的【决斗】，否则其对你使用之。",
+        "audios": [
+            {
+                "url": "generals/xuchu/xiechan1",
+                "translation": "休走！你我今日定要分个胜负！"
+            },
+            {
+                "url": "generals/xuchu/xiechan2",
+                "translation": "不是你死，便是我亡！"
+            }
+        ]
+    },
+    "wz26.guojia.tiandu": {
+        "name": "wz26.guojia.tiandu",
+        "lang_name": "天妒",
+        "lang_desc": "当你的判定牌生效后，你可以获得之。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/guojia/ex.guojia/tiandu1",
+                "translation": "那，就这样吧。\t"
+            },
+            {
+                "url": "generals/guojia/ex.guojia/tiandu2",
+                "translation": "天意如此么。"
+            }
+        ]
+    },
+    "wz26.guojia.yiji": {
+        "name": "wz26.guojia.yiji",
+        "lang_name": "遗计",
+        "lang_desc": "当你受到1点伤害后，你可以摸两张牌，然后你可以将至多两张手牌交给一至两名其他角色。当你每轮首次进入濒死状态时，你 可以摸一张牌，然后你可以将一张手牌交给一名其他角色。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/guojia/ex.guojia/yiji1",
+                "translation": "锦囊妙策，终定社稷。"
+            },
+            {
+                "url": "generals/guojia/ex.guojia/yiji2",
+                "translation": "依此计行，辽东可定。"
+            }
+        ]
+    },
+    "wz.zhenji.luoshen": {
+        "name": "wz.zhenji.luoshen",
+        "lang_name": "洛神",
+        "lang_desc": "准备阶段，你可以进行判定，若结果为黑色，你 获得此判定牌且本回合的手牌上限+1，然后你可以重复此流程。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhenji/ex.zhenji/luoshen1",
+                "translation": "屏翳收风，川后静波。"
+            },
+            {
+                "url": "generals/zhenji/ex.zhenji/luoshen2",
+                "translation": "冯夷鸣鼓，女娲清 歌。"
+            }
+        ]
+    },
+    "wz.zhenji.qingguo": {
+        "name": "wz.zhenji.qingguo",
+        "lang_name": "倾国",
+        "lang_desc": "你可以将一张黑色手牌当【闪】使用或打出。",
+        "lang_desc2": "当你需要使用/打出【闪】时❸，你可使用/打出对应的实体牌为你的一张黑色手牌的【闪】。",
+        "audios": [
+            {
+                "url": "generals/zhenji/ex.zhenji/qingguo1",
+                "translation": "肩若削成，腰如约素。"
+            },
+            {
+                "url": "generals/zhenji/ex.zhenji/qingguo2",
+                "translation": "延颈秀项，皓质呈露。"
+            }
+        ]
+    },
+    "wz26.xuhuang.duanliang": {
+        "name": "wz26.xuhuang.duanliang",
+        "lang_name": "断粮",
+        "lang_desc": "你可以将一张黑色非锦囊牌当【兵粮寸断】使用；若你本回合未造成过伤害，你使用【兵粮寸断】无距离限制 。（团队模式 中修改为“你对手牌数不小于你的角色使用【兵粮寸断】无距离限制”）",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/xuhuang/duanliang1",
+                "translation": "截其源，断其粮，贼可擒也！"
+            },
+            {
+                "url": "generals/xuhuang/duanliang2",
+                "translation": "人是铁，饭是钢。"
+            }
+        ]
+    },
+    "wz26.xuhuang.jiezi": {
+        "name": "wz26.xuhuang.jiezi",
+        "lang_name": "截辎",
+        "lang_desc": "其他角色跳过摸牌阶段后，你可以令一 名角色摸一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/xuhuang/jiezi1",
+                "translation": "兵马未动，粮草先行！"
+            },
+            {
+                "url": "generals/xuhuang/jiezi2",
+                "translation": "夺敌辎重，为我所用！"
+            }
+        ]
+    },
+    "wz26.xunyu.quhu": {
+        "name": "wz26.xunyu.quhu",
+        "lang_name": "驱虎",
+        "lang_desc": "出牌阶段限一次，你可以与一名体力值大于你的角色拼点。若你赢，该角色对其攻击范围内你选择的一名角色造成 1 点伤害；若你没赢，该角色对你造成 1 点伤害。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/xunyu/quhu1",
+                "translation": "此乃驱虎吞狼之计！"
+            },
+            {
+                "url": "generals/xunyu/quhu2",
+                "translation": " 借你之手，与他一搏吧！"
+            }
+        ]
+    },
+    "wz26.xunyu.jieming": {
+        "name": "wz26.xunyu.jieming",
+        "lang_name": "节命",
+        "lang_desc": "当你受到 1  点伤害后，你可以令一名角色将手牌摸至 X 张。当你死亡时，你可以令一名角色摸X张牌，然后令其将手牌弃置至X张（X 为其体力上限且最多为 5）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/xunyu/jieming1",
+                "translation": "秉忠贞之志，守退节之操！"
+            },
+            {
+                "url": "generals/xunyu/jieming2",
+                "translation": "我，永不背弃汉室！"
+            }
+        ]
+    },
+    "wz26.dengai.tuntian": {
+        "name": "wz26.dengai.tuntian",
+        "lang_name": "屯田",
+        "lang_desc": "当你于回合外失去牌后，或你于回合内弃置【杀】后，你可以进行判定，若结果不为红桃，将判定牌置于 你的武将牌上，称为“田”；若结果为红桃，则你获得此判定牌；你计算与其他角色的距离-X（X为“田”的数量）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/dengai/ex.dengai/tuntian1",
+                "translation": "休养生息，是为以备不虞。"
+            },
+            {
+                "url": "generals/dengai/ex.dengai/tuntian2",
+                "translation": "战损难免，应以军务减之。"
+            }
+        ]
+    },
+    "wz26.dengai.zaoxian": {
+        "name": "wz26.dengai.zaoxian",
+        "lang_name": "凿险",
+        "lang_desc": "觉醒技，准备阶段，若“田”的数量不小于 3，你减少 1 点体力上限并获得“急袭” 。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/dengai/ex.dengai/zaoxian1",
+                "translation": "用兵以险，则战之以胜！"
+            },
+            {
+                "url": "generals/dengai/ex.dengai/zaoxian2",
+                "translation": "已至马阁山，宜速进军破蜀！"
+            }
+        ]
+    },
+    "wz26.dengai.jixi": {
+        "name": "wz26.dengai.jixi",
+        "lang_name": "急袭",
+        "lang_desc": "你可以将一张“田”当【顺手牵羊】使用。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/dengai/ex.dengai/jixi1",
+                "translation": "攻敌之不备，斩将夺辎！"
+            },
+            {
+                "url": "generals/dengai/ex.dengai/jixi2",
+                "translation": "奇兵正攻，敌何能为？"
+            }
+        ]
+    },
+    "wz26.wenpin.jiancheng": {
+        "name": "wz26.wenpin.jiancheng",
+        "lang_name": "坚城",
+        "lang_desc": "游戏开始时，若本局为团队模式，你可以失去“镇卫”，获得“守御”。",
+        "lang_desc2": "",
+        "audios": []
+    },
+    "wz26.wenpin.zhenwei": {
+        "name": "wz26.wenpin.zhenwei",
+        "lang_name": "镇卫",
+        "lang_desc": "当其他角色成为【杀】或黑色锦囊牌的唯一目标时，若其体力值小于你，你可以弃置一张牌并选择 一项：1.摸一张牌，然后将此牌转移给你；2.令此牌无效，回合结束后，使用者获得此牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/wenpin/zhenwei1",
+                "translation": "再敢来犯，仍叫你无功而返！"
+            },
+            {
+                "url": "generals/wenpin/zhenwei2",
+                "translation": "江夏防 线，固若金汤！"
+            }
+        ]
+    },
+    "wz26.wenpin.shouyu": {
+        "name": "wz26.wenpin.shouyu",
+        "lang_name": "守御",
+        "lang_desc": "锁定技，敌方角色计算与其他己方角色的距离+1。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/wenpin/zhenwei1",
+                "translation": "再敢来犯，仍叫你无功而返！"
+            },
+            {
+                "url": "generals/wenpin/zhenwei2",
+                "translation": "江夏防线，固若金汤！"
+            }
+        ]
+    },
+    "wz26.maojie.bingqing": {
+        "name": "wz26.maojie.bingqing",
+        "lang_name": "秉清",
+        "lang_desc": "出牌阶段，你使用每种花色的第一张牌结算完成后，若该花色为你此阶段使用的 ：第二种花色，你可以令一名角色摸两张牌；第三种，你可以弃置一名角色区域里的一张牌；第四种，你可以对一名其他角色造成 1 点伤害。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/maojie/bingqing1",
+                "translation": "常怀圣言，以是自励。"
+            },
+            {
+                "url": "generals/maojie/bingqing2",
+                "translation": "身受贵宠，不忘初心。"
+            }
+        ]
+    },
+    "wz26.maojie.fengying": {
+        "name": "wz26.maojie.fengying",
+        "lang_name": "奉迎",
+        "lang_desc": "限定技，出牌阶段，你可以弃置所有手牌并于此回合结束后执行一个额外的回合。此额外的回合开始时，若你 已受伤且体力值为全场最少，你可以将手牌摸至体力值。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/maojie/yingfeng1",
+                "translation": "公，内奉天子，外令诸侯，则天下可定。"
+            },
+            {
+                "url": "generals/maojie/yingfeng2",
+                "translation": "公怀奉君之心，则民有安国 之志。"
+            }
+        ]
+    },
+    "wz26.zhangchunhua.jueqing": {
+        "name": "wz26.zhangchunhua.jueqing",
+        "lang_name": "绝情",
+        "lang_desc": "当你造成非传导伤害时，你可以失去等量的体力并令此伤害翻倍。若如此做，此伤害结算完成后，你修改“绝情”。（修改：锁定技，你即将造成的伤害 视为失去体力。）",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhangchunhua/jueqing1",
+                "translation": "无情者伤人，有情者自伤。"
+            },
+            {
+                "url": "generals/zhangchunhua/jueqing2",
+                "translation": "你的死活，与我何干？"
+            }
+        ]
+    },
+    "wz26.zhangchunhua.shangshi": {
+        "name": "wz26.zhangchunhua.shangshi",
+        "lang_name": "伤逝",
+        "lang_desc": "当你的手牌数小于X时，你可以将手牌摸至X张(X为你已损失的体力 值)。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhangchunhua/shangshi1",
+                "translation": "自戕于此，无哀无伤。"
+            },
+            {
+                "url": "generals/zhangchunhua/shangshi2",
+                "translation": "身伤易愈，心伤难合。"
+            }
+        ]
+    },
+    "wz26.zhangchunhua.jianmie": {
+        "name": "wz26.zhangchunhua.jianmie",
+        "lang_name": "翦灭",
+        "lang_desc": "限定技，出牌阶段，你可以令一名其他角色选择一种颜色，然后你选择一种颜色，你与其展示所有手牌并弃置各自所选颜色的全部手牌(没有该颜色则不弃)，然后弃置牌较多的角色视为对另一名角色使用一张【决斗】。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhangchunhua/jianmie1",
+                "translation": "斩草除根，以绝后患！"
+            },
+            {
+                "url": "generals/zhangchunhua/jianmie2",
+                "translation": "挡我者，杀无赦！"
+            }
+        ]
+    },
+    "wz26.zhonghui.quanji": {
+        "name": "wz26.zhonghui.quanji",
+        "lang_name": "权计",
+        "lang_desc": "出牌阶段结束时，若你的手牌数大于你的体力值，或当你受到1点伤害后，你可以摸一张牌，然后你将一张手牌 置于武将牌上，称为“权”；你的手牌上限+X(X为“权”的数量)。（修改“权计”删除描述：“出牌阶段结束时，若你的手牌数大于你的体力值”）",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhonghui/zhonghui/quanji1",
+                "translation": "这仇，我记下了。"
+            },
+            {
+                "url": "generals/zhonghui/zhonghui/quanji2",
+                "translation": "先让你得意几天！"
+            }
+        ]
+    },
+    "wz26.zhonghui.zili": {
+        "name": "wz26.zhonghui.zili",
+        "lang_name": "自立",
+        "lang_desc": "觉醒技，准备阶段，若“权”的数量不小于3，你减1点体力上限并获得“排异”，然后回复1点体力或摸两张牌。然后你修改“权计”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhonghui/zhonghui/zili1",
+                "translation": "欲取天下，当在此时！"
+            },
+            {
+                "url": "generals/zhonghui/zhonghui/zili2",
+                "translation": "良禽择木而栖，贤臣择主而事。"
+            }
+        ]
+    },
+    "wz26.zhonghui.paiyi": {
+        "name": "wz26.zhonghui.paiyi",
+        "lang_name": "排异",
+        "lang_desc": "出牌阶段限一次，你可以移去一张“权”，令一名 角色摸两张牌。若该角色的手牌数大于你，你对其造成1点伤害。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhonghui/zhonghui/paiyi1",
+                "translation": "非我族类，其心必异！"
+            },
+            {
+                "url": "generals/zhonghui/zhonghui/paiyi2",
+                "translation": "此地容不下你！"
+            }
+        ]
+    },
+    "wz26.caochong.chengxiang": {
+        "name": "wz26.caochong.chengxiang",
+        "lang_name": "称象",
+        "lang_desc": "当你受到伤害后，你可以亮出牌堆顶的四张牌，获得其中任意张点数之和不大于 13 的牌；若获得的牌点数之和恰好为 13，你可以复原武将牌或下次发动“称象”亮出牌堆顶五张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/caochong/chengxiang1",
+                "translation": "置象大船之上，而刻其水痕 所至。"
+            },
+            {
+                "url": "generals/caochong/chengxiang2",
+                "translation": "称物之重，只需此法。"
+            }
+        ]
+    },
+    "wz26.caochong.renxin": {
+        "name": "wz26.caochong.renxin",
+        "lang_name": "仁心",
+        "lang_desc": "当体力值为 1 的其他角色受到伤害时，你可以弃置一张装备牌并翻面，然后 防止此伤害。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/caochong/renxin1",
+                "translation": "仁者爱人，不可见死不救。"
+            },
+            {
+                "url": "generals/caochong/renxin2",
+                "translation": "体恤草木，何况乎人？"
+            }
+        ]
+    },
+    "re.chenqun.pindi": {
+        "name": "re.chenqun.pindi",
+        "lang_name": "品第",
+        "lang_desc": "出牌阶段每名角色限一次，你可以弃置一张牌并选择一名角色（不能弃置相同类型的牌），令其摸X张牌或令其弃置X张牌（X为本回合此技能发动次数）。若其已受伤，你横置。",
+        "lang_desc2": "",
+        "audios": []
+    },
+    "re.chenqun.faen": {
+        "name": "re.chenqun.faen",
+        "lang_name": "法恩",
+        "lang_desc": "当一名角色翻至正面或横置后，你可以令其摸一张牌。",
+        "lang_desc2": "",
+        "audios": []
+    },
+    "wz26.caoang.kangkai": {
+        "name": "wz26.caoang.kangkai",
+        "lang_name": "慷忾",
+        "lang_desc": "当一名角色成为【杀】的目标后， 若你与其距离1以内，你可以摸一张牌，然后交给其一张牌并展示之。若此牌为装备牌，该角色可以使用此牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/caoang/kangkai1",
+                "translation": "典将军，比比看谁杀敌更多！"
+            },
+            {
+                "url": "generals/caoang/kangkai2",
+                "translation": "贼将休狂，曹昂在此！"
+            }
+        ]
+    },
+    "wz26.caoang.sheshen": {
+        "name": "wz26.caoang.sheshen",
+        "lang_name": "舍身",
+        "lang_desc": "出牌阶段限一次，你可以弃置一名角色区域里的一张牌，然后失去1点体力，若弃置的牌为一名角色判定区里的牌，你失去“舍身”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/caoang/sheshen1",
+                "translation": "父亲快走，有我殿后！"
+            },
+            {
+                "url": "generals/caoang/sheshen2",
+                "translation": "舍生忘死，全凭此身！"
+            }
+        ]
+    },
+    "wz26.zhugedan.gongao": {
+        "name": "wz26.zhugedan.gongao",
+        "lang_name": "功獒",
+        "lang_desc": "锁定技，每名角色限一次，当一名其他角色第一次进入濒死状态时，你加1点体力上限并回复1点体力。（修改“功獒”的发 动时机为“当其他角色死亡后”）",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhugedan/gongao1",
+                "translation": "攻城拔寨，建 功立业。"
+            },
+            {
+                "url": "generals/zhugedan/gongao2",
+                "translation": "恪尽职守，忠心事主。"
+            }
+        ]
+    },
+    "wz26.zhugedan.juyi": {
+        "name": "wz26.zhugedan.juyi",
+        "lang_name": "举义",
+        "lang_desc": "觉醒技，准备阶段，若你的体力上限大于场上角色数，你将手牌摸至体力上限，获得“崩坏”和“威重”，并修改“功獒”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhugedan/juyi1",
+                "translation": "司马氏篡 权，我当替天伐之！"
+            },
+            {
+                "url": "generals/zhugedan/juyi2",
+                "translation": "定当夷司马氏三族！"
+            }
+        ]
+    },
+    "wz26.zhugedan.weizhong": {
+        "name": "wz26.zhugedan.weizhong",
+        "lang_name": "危重",
+        "lang_desc": "锁定技，当你的体力上限减少时，你摸一张牌；本局进入鏖战阶段后，你须执行的鏖战效果修改为：失去1点体力。",
+        "lang_desc2": "",
+        "audios": []
+    },
+    "wz26.zhugedan.benghuai": {
+        "name": "wz26.zhugedan.benghuai",
+        "lang_name": "崩坏",
+        "lang_desc": "锁定技，结束阶段，若你不是体力值最小的角色，你失去1点体力或减1点体力上限。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhugedan/benghuai1",
+                "translation": "（咳嗽声）"
+            }
+        ]
+    },
+    "wz26.jiangwei.kunfen": {
+        "name": "wz26.jiangwei.kunfen",
+        "lang_name": "困奋",
+        "lang_desc": "结束阶段，你可以失去1点体力，然后摸两张牌（修改：增加描述“且可以视为使用一张【火攻】”）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/jiangwei/sp.jiangwei/kunfen1",
+                "translation": "纵 使困顿难行，亦当砥砺奋进！"
+            },
+            {
+                "url": "generals/jiangwei/sp.jiangwei/kunfen2",
+                "translation": "兴蜀需时，众将切勿惫怠！"
+            }
+        ]
+    },
+    "wz26.jiangwei.fengliang": {
+        "name": "wz26.jiangwei.fengliang",
+        "lang_name": "逢亮",
+        "lang_desc": "觉醒技，当你进入濒死状态时，你减1点体力上限并将体力回复至2点，然后获得“挑衅”，并修改“困奋”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/jiangwei/sp.jiangwei/fengliang1",
+                "translation": "得遇丞相，再生之德！"
+            },
+            {
+                "url": "generals/jiangwei/sp.jiangwei/fengliang2",
+                "translation": "丞相大义，维岂有不从之理！"
+            }
+        ]
+    },
+    "wz26.jiangwei.tiaoxin": {
+        "name": "wz26.jiangwei.tiaoxin",
+        "lang_name": "挑衅",
+        "lang_desc": "出牌阶段限一次，你可以令一名其他角色选择一项：1.对你使用一张【杀】；2.你弃置其一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/jiangwei/sp.jiangwei/tiaoxin1",
+                "translation": "今日天公作美，怎能不战而退？"
+            },
+            {
+                "url": "generals/jiangwei/sp.jiangwei/tiaoxin2",
+                "translation": "贼将无胆，何不早降！"
+            }
+        ]
+    },
+    "wz26.wangji.qizhi": {
+        "name": "wz26.wangji.qizhi",
+        "lang_name": " 奇制",
+        "lang_desc": "当你于回合内使用牌指定目标后，你可以弃置不是此牌目标的一名角色一张牌，然后该角色摸一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/wangji/qizhi1",
+                "translation": "奇正相生，敌军不可测。"
+            },
+            {
+                "url": "generals/wangji/qizhi2",
+                "translation": "制敌机先，方可制胜。"
+            }
+        ]
+    },
+    "wz26.wangji.jinqu": {
+        "name": "wz26.wangji.jinqu",
+        "lang_name": "进趋",
+        "lang_desc": "结束阶段，你可以摸两张牌，然后将手牌弃置至X+1张 (X为你于此回合内发动过“奇制”的次数)。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/wangji/jinqu1",
+                "translation": "乘胜追击，不可迟疑！"
+            },
+            {
+                "url": "generals/wangji/jinqu2",
+                "translation": "大军所至，摧枯拉朽！"
+            }
+        ]
+    },
+    "wz26.jianggan.weicheng": {
+        "name": "wz26.jianggan.weicheng",
+        "lang_name": "伪诚",
+        "lang_desc": "当你将手牌交给其他角色，或你的手牌被其他角色获得后，若你的手牌数不大于体力值，你可以摸一张牌。",
+        "lang_desc2": "当其他角色因获得或你交给其牌 后，若你的手牌数不大于体力值，你可摸一张牌。",
+        "audios": [
+            {
+                "url": "generals/jianggan/weicheng1",
+                "translation": "略施谋略，敌 军便信以为真。"
+            },
+            {
+                "url": "generals/jianggan/weicheng2",
+                "translation": "吾只观雅规，而非说客。"
+            }
+        ]
+    },
+    "wz26.jianggan.daoshu": {
+        "name": "wz26.jianggan.daoshu",
+        "lang_name": "盗书",
+        "lang_desc": "出牌阶段限一次，你可以选择一名其他角色并选择一种花色，然后获得其一张手牌。\n若此牌与你选择的花色相同，你对其造成1点伤害且此技能视为未发动过；\n不同，你交给其一张其他花色的手牌（若没有须展示所有手牌）。",
+        "lang_desc2": "出牌阶段限一次，你可选择一名有手牌的其他角色并选择一种花色▶你获得其一张手牌。若该牌 与你选择的花色相同，你对其造成1点普通伤害，并重置〖盗书〗使用次数；若不同，若你有其他花色手牌，可交给其一张不同花色手牌；若没有，则展示所有手牌。",
+        "audios": [
+            {
+                "url": "generals/jianggan/daoshu1",
+                "translation": "得此文书，丞相定可高枕无忧。"
+            },
+            {
+                "url": "generals/jianggan/daoshu2",
+                "translation": "让我看看，这是什么机密。"
+            }
+        ]
+    },
+    "wz26.jianggan.daizui": {
+        "name": "wz26.jianggan.daizui",
+        "lang_name": "戴罪",
+        "lang_desc": "限定技，当你受到致命伤害时，你可以对伤害来源发动一次“盗书”，若本次“盗书”你对 其造成了伤害，则防止你受到的致命伤害。",
+        "lang_desc2": "出牌阶段限一次，你可选择一名有手牌的其他角色并选择一种花色▶你获得 其一张手牌。若该牌与你选择的花色相同，你对其造成1点普通伤害，并重置〖盗书〗使用次数；若不同，若你有其他花色手牌，可交给其一张不同花色手牌；若没有，则展示所有手牌。",
+        "audios": [
+            {
+                "url": "generals/jiagngan/mobile.jianggan/daizui1",
+                "translation": " 望丞相权且记过，容干将功折罪啊！"
+            },
+            {
+                "url": "generals/jianggan/mobile.jianggan/daizui2",
+                "translation": "干谢丞相不杀之恩！"
+            }
+        ]
+    },
+    "wz26.guanyu.huwei": {
+        "name": "wz26.guanyu.huwei",
+        "lang_name": "虎威",
+        "lang_desc": "若本局为团队模式，亮将后，你可以失去“义绝”，获得“忠义”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/guanyu/huwei1",
+                "translation": "来人，引水对敌！"
+            },
+            {
+                "url": "generals/guanyu/huwei2",
+                "translation": "传令，发动水计！"
+            }
+        ]
+    },
+    "wz26.guanyu.wusheng": {
+        "name": "wz26.guanyu.wusheng",
+        "lang_name": "武圣",
+        "lang_desc": "你可以将一张红色牌当【杀】使用或打出；你使用的方块【杀】无距离限制。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/guanyu/3v3.guanyu/wusheng1",
+                "translation": "习武之人，手底见真章。"
+            },
+            {
+                "url": "generals/guanyu/3v3.guanyu/wusheng2",
+                "translation": "观尔乃插标卖首！"
+            },
+            {
+                "url": "generals/guanyu/3v3.guanyu/wusheng3",
+                "translation": "关羽在此，尔等受 死！"
+            }
+        ]
+    },
+    "wz26.guanyu.qinglong": {
+        "name": "wz26.guanyu.qinglong",
+        "lang_name": "青龙",
+        "lang_desc": "当你使用的【杀】被目标角色使用的【闪】抵消时，你可以对其使用一张红色的【杀】（有距离限制）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/guanyu/ex.guanyu/wusheng1",
+                "translation": "刀锋所向，战无不克。"
+            },
+            {
+                "url": "generals/guanyu/ex.guanyu/wusheng2",
+                "translation": "逆贼， 哪里走？！"
+            }
+        ]
+    },
+    "wz26.guanyu.yijue": {
+        "name": "wz26.guanyu.yijue",
+        "lang_name": "义绝",
+        "lang_desc": "出牌阶段限一次，你可以弃置一张牌，然后令一名其他角色展示一张手牌，若此牌为： 红色，你获得之并可以令其回复 1 点体力；黑色，本回合其非锁定技失效且不 能使用或打出手牌，你对其使用的红桃【杀】伤害+1。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/guanyu/ex.guanyu/yijue1",
+                "translation": "恩已断，义当绝！"
+            },
+            {
+                "url": "generals/guanyu/ex.guanyu/yijue2",
+                "translation": "关某向来恩怨分明。"
+            }
+        ]
+    },
+    "wz26.guanyu.zhongyi": {
+        "name": "wz26.guanyu.zhongyi",
+        "lang_name": "忠义",
+        "lang_desc": "限定技，出牌阶段，你可以将一张红色牌置于你的 武将牌上，若你有“忠义”牌，己方其他角色使用【杀】造成的伤害+1，你的下个准备阶段移去“忠义”牌。当己方角色杀死一名角色后 ，你复原并修改此技能。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/guanyu/3v3.guanyu/zhongyi1",
+                "translation": "忠义是为将 之本。"
+            },
+            {
+                "url": "generals/guanyu/3v3.guanyu/zhongyi2",
+                "translation": "为国尽忠，天经地义。"
+            }
+        ]
+    },
+    "wz26.zhangfei.paoxiao": {
+        "name": "wz26.zhangfei.paoxiao",
+        "lang_name": "咆哮",
+        "lang_desc": "锁定技，你使用【杀】无次数限制，每回合你使用第二张【杀】时，摸一张牌；你使用的【杀】被抵消时，本回合你下一次因【杀】造成的伤害+1。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhangfei/ex.zhangfei/paoxiao1",
+                "translation": "喝啊"
+            },
+            {
+                "url": "generals/zhangfei/ex.zhangfei/paoxiao2",
+                "translation": "今，必斩汝 马下！"
+            }
+        ]
+    },
+    "wz26.zhangfei.tishen": {
+        "name": "wz26.zhangfei.tishen",
+        "lang_name": "替身",
+        "lang_desc": "限定技，准备阶段，你可以将体力回复至体力上限并摸 X 张牌（X 为你回复的体力值），然后修改“咆哮”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhangfei/ex.zhangfei/tishen1",
+                "translation": "欺我无谋？定要汝等血偿！"
+            },
+            {
+                "url": "generals/zhangfei/ex.zhangfei/tishen2",
+                "translation": "谁，还敢过来一战？！"
+            }
+        ]
+    },
+    "wz26.machao.mashu": {
+        "name": "wz26.machao.mashu",
+        "lang_name": "马术",
+        "lang_desc": "锁定技，你计算与其他角色的距离-1；当你使用或失去装备区里的坐骑牌时，你摸一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/machao/mashu1",
+                "translation": "西凉铁骑，来去如风！"
+            }
+        ]
+    },
+    "wz26.machao.tieqi": {
+        "name": "wz26.machao.tieqi",
+        "lang_name": "铁骑",
+        "lang_desc": "当你使用【杀】指定一名角色为目标后，你可以令其本回合内非锁定技失效，然后你进行判定，除非该角色弃置与结果花色 相同的一张牌，否则不能使用【闪】响应此【杀】。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/machao/tieqi1",
+                "translation": "全军突击，踏平敌阵！"
+            },
+            {
+                "url": "generals/machao/tieqi2",
+                "translation": "看枪！这一击你可接得住？"
+            }
+        ]
+    },
+    "wz26.machao.jinzi": {
+        "name": "wz26.machao.jinzi",
+        "lang_name": "锦姿",
+        "lang_desc": "若你的装备区里没有防具牌，你视为装备着【白银狮子】。每轮限一次 ，你可以将一张武器牌或防具牌当【杀】使用，然后你可以令此【杀】无次数限制并失去“锦姿”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/machao/jinzi1",
+                "translation": "白甲银枪，威震西凉！"
+            }
+        ]
+    },
+    "wz26.huangyueying.jizhi": {
+        "name": "wz26.huangyueying.jizhi",
+        "lang_name": "集智",
+        "lang_desc": "当你使用一张非转化锦囊牌时，你可以摸一张牌且本回合手牌上限+1。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/huangyueying/ex.huangyueying/jizhi1",
+                "translation": "得上通，智集心。"
+            },
+            {
+                "url": "generals/huangyueying/ex.huangyueying/jizhi2",
+                "translation": "集万千才智，致巧趣鲜用。"
+            }
+        ]
+    },
+    "wz26.huangyueying.qicai": {
+        "name": "wz26.huangyueying.qicai",
+        "lang_name": "奇才",
+        "lang_desc": "锁定技，你使用锦囊牌无距离限制；其他角色弃置你装备区里的防具牌时，取消之。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/huangyueying/qicai1",
+                "translation": "奇门遁甲，略知一二。"
+            },
+            {
+                "url": "generals/huangyueying/qicai2",
+                "translation": "这八阵图的玄机，你可看得透？"
+            }
+        ]
+    },
+    "wz26.huangyueying.jiqiao": {
+        "name": "wz26.huangyueying.jiqiao",
+        "lang_name": "机巧",
+        "lang_desc": "限定技，出牌阶段开始时，你可以弃置任意张装备牌，然后亮出牌堆顶两倍数量的牌，获得其 中所有非装备牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/huangyueying/sp.huangyueying/jiqiao1",
+                "translation": "驭巧器 ，以取先机。"
+            },
+            {
+                "url": "generals/huangyueying/sp.huangyueying/jiqiao2",
+                "translation": "颖悟之人，不以拙力取胜。"
+            }
+        ]
+    },
+    "wz26.huangzhong.liegong": {
+        "name": "wz26.huangzhong.liegong",
+        "lang_name": "烈弓",
+        "lang_desc": "你使用【杀】可以选择距离不大于此【杀】点数的角色为目标；当你使用【杀】指定目标后，你可以根据下列条件执行相应的效果：1.其手牌数不大于你的手牌数，此【杀】不可 被【闪】响应；2.其体力值不小于你的体力值，此【杀】伤害+1。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/huangzhong/liegong1",
+                "translation": "百步穿杨，箭无虚发！"
+            },
+            {
+                "url": "generals/huangzhong/liegong2",
+                "translation": "老夫宝刀不老，看箭！"
+            }
+        ]
+    },
+    "wz26.huangzhong.yizhuang": {
+        "name": "wz26.huangzhong.yizhuang",
+        "lang_name": "益壮",
+        "lang_desc": "准备阶段，若你的判定区里有牌 ，你可以对自己造成1点伤害，然后弃置判定区里的所有牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/huangzhong/yizhuang1",
+                "translation": "老当益壮，宁移白首之心？"
+            },
+            {
+                "url": "generals/huangzhong/yizhuang2",
+                "translation": "烈士暮年，壮心不已！"
+            }
+        ]
+    },
+    "wz26.weiyan.kuanggu": {
+        "name": "wz26.weiyan.kuanggu",
+        "lang_name": "狂骨",
+        "lang_desc": "当你对距离1以内的一名角色造成伤害后， 你可以选择一项：1.回复1点体力；2.摸一张牌；3.回复1点体力并摸一张牌，然后弃置一张牌，令你此阶段内使用【杀】的次数+1（每回 合限一次）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/weiyan/kuanggu1",
+                "translation": "我会怕你吗？！"
+            },
+            {
+                "url": "generals/weiyan/kuanggu2",
+                "translation": "哈哈，真是令人兴奋的血腥味！"
+            }
+        ]
+    },
+    "wz26.weiyan.qimou": {
+        "name": "wz26.weiyan.qimou",
+        "lang_name": "奇谋",
+        "lang_desc": "限定技，出牌阶段，你可以失去任意点体力，然后本回合你使用【杀】的次数+X， 你与其他角色的距离-X（X 为你失去的体力值）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/weiyan/qimou1",
+                "translation": "看我暗渡陈仓，直取长安！"
+            },
+            {
+                "url": "generals/weiyan/qimou2",
+                "translation": "此计若成，天下可定！"
+            }
+        ]
+    },
+    "wz26.pangtong.lianhuan": {
+        "name": "wz26.pangtong.lianhuan",
+        "lang_name": "连环",
+        "lang_desc": "你可以将一张梅花牌当【铁索连环】使用或重铸；你使用【铁索连环】可以额外指定一 名目标。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/pangtong/lianhuan1",
+                "translation": "连环之策，江山可锁！"
+            },
+            {
+                "url": "generals/pangtong/lianhuan2",
+                "translation": "铁索连舟，任他风浪。"
+            }
+        ]
+    },
+    "wz26.pangtong.niepan": {
+        "name": "wz26.pangtong.niepan",
+        "lang_name": "涅槃",
+        "lang_desc": "限定技，当你处于濒死状态时，你可以弃置区域里的所有牌，然后复原你的武将牌，摸三张牌，将体 力回复至3点，然后你获得“八阵”“火计”“看破”中的一个。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/pangtong/niepan1",
+                "translation": "凤雏浴火，展翅重生！"
+            },
+            {
+                "url": "generals/pangtong/niepan2",
+                "translation": "凤凰涅槃，死而复生！"
+            }
+        ]
+    },
+    "wz26.pangtong.bazhen": {
+        "name": "wz26.pangtong.bazhen",
+        "lang_name": "八阵",
+        "lang_desc": "锁定技，若你的装备区里没有防具牌，你视为装备着【八卦阵】。你的【八卦阵】判定失效时，你摸一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/pangtong/bazhen1",
+                "translation": "纵横交错，皆入阵中！"
+            }
+        ]
+    },
+    "wz26.pangtong.huoji": {
+        "name": "wz26.pangtong.huoji",
+        "lang_name": "火计",
+        "lang_desc": "你可以将一张红色牌当【火攻】使用。你的【火攻】改为你展示目标一张手牌，你弃置与其展示牌颜色相同的手牌以造成伤害。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/pangtong/huoji1",
+                "translation": "此火一出，曹贼必败！"
+            }
+        ]
+    },
+    "wz26.pangtong.kanpo": {
+        "name": "wz26.pangtong.kanpo",
+        "lang_name": "看破",
+        "lang_desc": "你可以将一张黑色牌当【无懈可击】使用；你的【无懈可击】不能被响应。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/pangtong/kanpo1",
+                "translation": "你的小聪明，早已被我看穿！"
+            }
+        ]
+    },
+    "wz26.zhurong.juxiang": {
+        "name": "wz26.zhurong.juxiang",
+        "lang_name": "巨象",
+        "lang_desc": "锁定技，【南蛮入侵】对你无效；其他角色使用的【南蛮入侵】结算完成后，你获得之。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhurong/juxiang1",
+                "translation": "大象大象 ，踩扁他们！"
+            },
+            {
+                "url": "generals/zhurong/juxiang2",
+                "translation": "南蛮野兽，听我号令。"
+            }
+        ]
+    },
+    "wz26.zhurong.lieren": {
+        "name": "wz26.zhurong.lieren",
+        "lang_name": "烈刃",
+        "lang_desc": "当你使用【杀】指定目标后，你可以与其拼点，若你：赢，你获得其一张牌；没赢，你与其获得对方的拼点牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhurong/lieren1",
+                "translation": "尝尝我飞刀的厉害！"
+            },
+            {
+                "url": "generals/zhurong/lieren2",
+                "translation": "烈火焚身，就在今日！"
+            }
+        ]
+    },
+    "wz26.zhurong.changbiao": {
+        "name": "wz26.zhurong.changbiao",
+        "lang_name": "长标",
+        "lang_desc": "限定技，出牌阶段，你可以将任意张手牌（至少一张）当一张无距离限制的【杀 】使用，若此【杀】造成过伤害，出牌阶段结束时，你摸等量的牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhurong/changbiao1",
+                "translation": "长标在手，百步穿杨！"
+            },
+            {
+                "url": "generals/zhurong/changbiao2",
+                "translation": "让你见识下南蛮的厉害！"
+            }
+        ]
+    },
+    "wz26.masu.sanyao": {
+        "name": "wz26.masu.sanyao",
+        "lang_name": "散谣",
+        "lang_desc": "出牌阶段各限一次，你可以弃置一张牌，然后对 体力值最大/手牌数最多的一名角色造成1点伤害。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/masu/sanyao1",
+                "translation": "散 播流言，足叫敌军自乱！"
+            },
+            {
+                "url": "generals/masu/sanyao2",
+                "translation": "人心不稳，不攻自破。"
+            }
+        ]
+    },
+    "wz26.masu.zhiman": {
+        "name": "wz26.masu.zhiman",
+        "lang_name": "制蛮",
+        "lang_desc": "当你对其他角色造成伤害时，你可以防止此伤害，然后获得其区域里的一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/masu/zhiman1",
+                "translation": "恩威并施，方能克制南蛮。"
+            },
+            {
+                "url": "generals/masu/zhiman2",
+                "translation": "攻心为上，攻城为下。"
+            }
+        ]
+    },
+    "wz26.masu.huilei": {
+        "name": "wz26.masu.huilei",
+        "lang_name": "挥泪",
+        "lang_desc": "锁定技，当你死亡时，杀死你的角色弃置所有牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/masu/huilei1",
+                "translation": "失街亭，臣之罪也。"
+            }
+        ]
+    },
+    "wz26.guanxingzhangbao.fuhun": {
+        "name": "wz26.guanxingzhangbao.fuhun",
+        "lang_name": "父魂",
+        "lang_desc": "你可以将两张手牌当一张【杀】使用或打出；当你于出牌阶段内以此法造成伤害后，你本回合获得“武圣”和“咆哮”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/guanxingzhangbao/fuhun1",
+                "translation": "父魂在上，赐我力量！"
+            },
+            {
+                "url": "generals/guanxingzhangbao/fuhun2",
+                "translation": "继承父志，斩将夺旗！"
+            }
+        ]
+    },
+    "wz26.guanxingzhangbao.tongxin": {
+        "name": "wz26.guanxingzhangbao.tongxin",
+        "lang_name": "同心",
+        "lang_desc": "限定技，出牌阶段开始时，你可以令你本回合使用的第一张【杀】攻击范围+2。（团 队模式中失去此技能）",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/guanxingzhangbao/tongxin1",
+                "translation": "兄弟同心，其利断金！"
+            }
+        ]
+    },
+    "wz26.guanxingzhangbao.wusheng": {
+        "name": "wz26.guanxingzhangbao.wusheng",
+        "lang_name": "武圣",
+        "lang_desc": "你可以将一张红色牌当【杀】使用或打出；你使用的方块【杀】无距离限制。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/guanxingzhangbao/wusheng1",
+                "translation": "看刀！不堕关家威名！"
+            }
+        ]
+    },
+    "wz26.guanxingzhangbao.paoxiao": {
+        "name": "wz26.guanxingzhangbao.paoxiao",
+        "lang_name": "咆哮",
+        "lang_desc": "锁定技，你使用【杀】无次数限制，每回合你使用第二张【杀】时，摸一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/guanxingzhangbao/paoxiao1",
+                "translation": "受死吧！喝啊啊啊！"
+            }
+        ]
+    },
+    "wz26.wuyi.benxi": {
+        "name": "wz26.wuyi.benxi",
+        "lang_name": "奔袭",
+        "lang_desc": "出牌阶段开始时，你可以弃置至多四张牌，令你本阶段计算与其他角色的距离-X、你使用的下一张基本牌或普通锦囊牌可以额外指定至多X名你计算与其距离为1的角色为目标，然后此牌结 算结束后，若此牌造成过伤害，你摸X张牌。(X为你以此法弃置的牌数)",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/wuyi/benxi1",
+                "translation": "长驱直入，势如破竹！"
+            },
+            {
+                "url": "generals/wuyi/benxi2",
+                "translation": "将士们，随我破阵！"
+            }
+        ]
+    },
+    "wz26.zhangsong.xiantu": {
+        "name": "wz26.zhangsong.xiantu",
+        "lang_name": "献图",
+        "lang_desc": "其他角色的出牌阶段开始时，你可以摸三张牌，然后交 给其两张牌。此阶段结束时，若其此阶段未杀死过角色，你失去1点体力。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhangsong/xiantu1",
+                "translation": "将军，此乃西川五十四州之图！"
+            },
+            {
+                "url": "generals/zhangsong/xiantu2",
+                "translation": "益州险塞，尽在图中。"
+            }
+        ]
+    },
+    "wz26.zhangsong.qiangzhi": {
+        "name": "wz26.zhangsong.qiangzhi",
+        "lang_name": "强识",
+        "lang_desc": "出牌阶段开始时，你可以展示一名其他角色的一张手牌，本回合你使用与之类型相同的牌时可以摸一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhangsong/qiangzhi1",
+                "translation": "过目不忘，乃吾天赋！"
+            },
+            {
+                "url": "generals/zhangsong/qiangzhi2",
+                "translation": "此书吾已倒 背如流。"
+            }
+        ]
+    },
+    "wz26.liuchen.zhanjue": {
+        "name": "wz26.liuchen.zhanjue",
+        "lang_name": "战绝",
+        "lang_desc": "出牌阶段限两次，你可以将所有手牌当【决斗】使用并摸一张牌，然后因此受伤的角色摸一张牌。若你本阶段因此技能受到过伤害，此技能本阶段失效。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/liuchen/zhanjue1",
+                "translation": "成败在此一举！"
+            },
+            {
+                "url": "generals/liuchen/zhanjue2",
+                "translation": "宁可战死，绝不降魏！"
+            }
+        ]
+    },
+    "wz26.liuchen.qinwang": {
+        "name": "wz26.liuchen.qinwang",
+        "lang_name": "勤王",
+        "lang_desc": "每回合限一次，当你需要打出【杀】时，你可以弃置一张牌，然后令其他角色依次选择是否打出【杀】（视为由你打出），响应的角色摸一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/liuchen/qinwang1",
+                "translation": "大厦将倾，谁可挽狂澜于既倒？"
+            },
+            {
+                "url": "generals/liuchen/qinwang2",
+                "translation": "谁敢为汉室死战？"
+            }
+        ]
+    },
+    "wz26.xiahoushi.qiaoshi": {
+        "name": "wz26.xiahoushi.qiaoshi",
+        "lang_name": "樵拾",
+        "lang_desc": "其他角色的结束阶段，若其手牌数等于你，你可以与其各摸一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/xiahoushi/qiaoshi1",
+                "translation": "樵采有时，闲拾杂情。"
+            },
+            {
+                "url": "generals/xiahoushi/qiaoshi2",
+                "translation": "缘结桑林，拾以为佳。"
+            }
+        ]
+    },
+    "wz26.xiahoushi.yanyu": {
+        "name": "wz26.xiahoushi.yanyu",
+        "lang_name": "燕语",
+        "lang_desc": "出牌阶段，你可以重铸【杀】。出牌阶段结束时，你可以令一名男性角色摸X张牌。（X为你此阶段重铸【杀】的数量且至多为3）",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/xiahoushi/yanyu1",
+                "translation": "燕语呢喃，将军且听。"
+            },
+            {
+                "url": "generals/xiahoushi/yanyu2",
+                "translation": "春风送暖，燕语倾心。"
+            }
+        ]
+    },
+    "wz26.xiahouba.baobian": {
+        "name": "wz26.xiahouba.baobian",
+        "lang_name": "豹变",
+        "lang_desc": "锁定技，当你受到伤害后，你依次获得以下技能：“挑衅”“咆哮”“神速”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/xiahouba/baobian1",
+                "translation": "世事如棋，身不由己。"
+            },
+            {
+                "url": "generals/xiahouba/baobian2",
+                "translation": "变则通，通则久。"
+            }
+        ]
+    },
+    "wz26.xiahouba.baolie": {
+        "name": "wz26.xiahouba.baolie",
+        "lang_name": "豹烈",
+        "lang_desc": "限定技，准备阶段，你可以对自己造成2点伤害。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/xiahouba/baolie1",
+                "translation": "舍此一身，以成大业！"
+            },
+            {
+                "url": "generals/xiahouba/baolie2",
+                "translation": "壮志未酬，宁可玉碎！"
+            }
+        ]
+    },
+    "wz26.xiahouba.tiaoxin": {
+        "name": "wz26.xiahouba.tiaoxin",
+        "lang_name": "挑衅",
+        "lang_desc": "出牌阶段限一次，你可以选择一名攻击范围内包含你的角色，然后除非该角色对你使用一张【杀】且此【杀】对你造成伤害，否则你弃置其一张牌并在本阶段内将此技能修改为“出牌阶段限两次”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/xiahouba/tiaoxin1",
+                "translation": "汝等小儿，可敢与我一战？"
+            }
+        ]
+    },
+    "wz26.xiahouba.paoxiao": {
+        "name": "wz26.xiahouba.paoxiao",
+        "lang_name": "咆哮",
+        "lang_desc": "锁定技，你使用【杀】无次数限制；你使用的【杀】被抵消时，本回 合你下一次因【杀】造成的伤害+1。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/xiahouba/paoxiao1",
+                "translation": "挡我者死！喝啊啊！"
+            }
+        ]
+    },
+    "wz26.xiahouba.shensu": {
+        "name": "wz26.xiahouba.shensu",
+        "lang_name": "神速",
+        "lang_desc": "你可以做出如下选择：1.跳过判定阶段和摸牌阶段；2.跳过出牌阶段并弃置一张装备牌；3.跳过弃牌阶段并翻面。你每选择一项，视为你使用一张无距离限制的 【杀】。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/xiahouba/shensu1",
+                "translation": "兵贵神速，杀！"
+            }
+        ]
+    },
+    "wz26.maliang.zishu": {
+        "name": "wz26.maliang.zishu",
+        "lang_name": "自书",
+        "lang_desc": "锁定技，当你于回合内非因此法而获得牌后，你摸一张牌；其 他角色的回合结束后，你弃置X张牌。（X为你本回合获得的牌数）",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/maliang/zishu1",
+                "translation": "笔下生花，墨中生智。"
+            },
+            {
+                "url": "generals/maliang/zishu2",
+                "translation": "秉笔直书，不偏不倚。"
+            }
+        ]
+    },
+    "wz26.maliang.yingyuan": {
+        "name": "wz26.maliang.yingyuan",
+        "lang_name": "应援",
+        "lang_desc": "每回合限两次，当你于回合内使用的基本牌或普通 锦囊牌结算结束后，你可以将之交给一名其他角色。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/maliang/yingyuan1",
+                "translation": "白眉有才，愿为军师之助。"
+            },
+            {
+                "url": "generals/maliang/yingyuan2",
+                "translation": "物尽其用，方可破敌。"
+            }
+        ]
+    },
+    "wz26.maliang.xiemu": {
+        "name": "wz26.maliang.xiemu",
+        "lang_name": "协穆",
+        "lang_desc": "其他角色的出牌阶段限一次，其可以交给你一张基本牌并展 示之，然后你可以令其本回合攻击范围+1。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/maliang/xiemu1",
+                "translation": "内安百 姓，外和友邦。"
+            },
+            {
+                "url": "generals/maliang/xiemu2",
+                "translation": "和衷共济，共御外辱。"
+            }
+        ]
+    },
+    "wz26.mizhu.jugu": {
+        "name": "wz26.mizhu.jugu",
+        "lang_name": "巨贾",
+        "lang_desc": "锁定技，你的手牌上限+X;游戏开始时，你摸 X 张牌(X 为你的体力上限)。",
+        "lang_desc2": "",
+        "audios": []
+    },
+    "wz26.mizhu.ziyuan": {
+        "name": "wz26.mizhu.ziyuan",
+        "lang_name": "资援",
+        "lang_desc": "出牌阶段限一次，你可以交给一名其他角色任意张点数之和不大于 13 的牌并展示之，然后你摸 一张牌，若:点数之和等于 13，你令该角色回复 1 点体力。",
+        "lang_desc2": "",
+        "audios": []
+    },
+    "wz26.huangquan.choujin": {
+        "name": "wz26.huangquan.choujin",
+        "lang_name": "筹进",
+        "lang_desc": "游 戏开始时，你可以令一名其他角色获得“筹进”标记；每回合限一次，一名角色对拥有“筹进”标记的角色造成伤害后，伤害来源可以摸 一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/huangquan/choujin1",
+                "translation": "运筹帷幄，方能稳步推进。"
+            }
+        ]
+    },
+    "wz26.huangquan.jianji": {
+        "name": "wz26.huangquan.jianji",
+        "lang_name": "谏计",
+        "lang_desc": "出牌阶段限一次，你可以令一名其他角色 摸一张牌并展示之，然后其可以使用此牌(可转化使用)。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/huangquan/jianji1",
+                "translation": "臣有忠言，愿主公思之。"
+            },
+            {
+                "url": "generals/huangquan/jianji2",
+                "translation": "此计虽险，却可破敌。"
+            }
+        ]
+    },
+    "wz26.huangquan.tujue": {
+        "name": "wz26.huangquan.tujue",
+        "lang_name": "途绝",
+        "lang_desc": "限定技，当你进入濒死状态时，你可以将所有牌交给 一名其他角色，然后你回复X点体力并摸X张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/huangquan/tujue1",
+                "translation": " 进退维谷，已无归路……"
+            }
+        ]
+    },
+    "wz26.zhangyi.zhiyi": {
+        "name": "wz26.zhangyi.zhiyi",
+        "lang_name": "执义",
+        "lang_desc": "每名角色的结束阶段，若你本回合使用或打出过基本牌，你可以选择一项：1.摸一张牌；2.视为使用一张本回合你使用或打出过的基本牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhangyi/zhiyi1",
+                "translation": "坚执大义，至死方休！"
+            },
+            {
+                "url": "generals/zhangyi/zhiyi2",
+                "translation": "效死沙场，以报先帝之恩！"
+            }
+        ]
+    },
+    "wz26.ganning.qixi": {
+        "name": "wz26.ganning.qixi",
+        "lang_name": "奇袭",
+        "lang_desc": "你可以将一张黑色牌当【过河拆桥】使用，若你因此弃置的牌与此牌花色相同，你复原“奋威”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/ganning/ex.ganning/qixi1",
+                "translation": "弟兄们，准备动手！"
+            },
+            {
+                "url": "generals/ganning/ex.ganning/qixi2",
+                "translation": "你用不了这么多了！"
+            }
+        ]
+    },
+    "wz26.ganning.fenwei": {
+        "name": "wz26.ganning.fenwei",
+        "lang_name": "奋威",
+        "lang_desc": "限定技，当一张锦囊牌指定多个目标后，你可令此牌对其中任意个目标无效。首轮结束时，若“奋威”已发动，你复原此技能。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/ganning/ex.ganning/fenwei1",
+                "translation": "哼！敢欺我东吴无人！"
+            },
+            {
+                "url": "generals/ganning/ex.ganning/fenwei2",
+                "translation": "奋勇当先，威名远扬！"
+            }
+        ]
+    },
+    "wz26.lvmeng.keji": {
+        "name": "wz26.lvmeng.keji",
+        "lang_name": "克己",
+        "lang_desc": "若你未于出牌阶段内使用或打出过【杀】，你可以跳过弃牌阶段。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/lvmeng/keci1",
+                "translation": "执戟安邦，克己奉公。"
+            },
+            {
+                "url": "generals/lvmeng/keci2",
+                "translation": "蓄力待发，方为上策。"
+            }
+        ]
+    },
+    "wz26.lvmeng.qinxue": {
+        "name": "wz26.lvmeng.qinxue",
+        "lang_name": "勤学",
+        "lang_desc": "觉醒技，准备阶段或结束阶段，若你的手牌数减体力值大于1，你减1点体力上限并获得“攻心”，然后回复1点体力或摸两张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/lvmeng/qinxue1",
+                "translation": "士别三日，当刮目相待！"
+            },
+            {
+                "url": "generals/lvmeng/qinxue2",
+                "translation": "勤能补拙，挑灯夜读。"
+            }
+        ]
+    },
+    "wz26.lvmeng.botu": {
+        "name": "wz26.lvmeng.botu",
+        "lang_name": "博图",
+        "lang_desc": "每轮限两次，你的回合结束后，若本回合置入弃牌堆的牌包含四种花色，你可以执行一个额外的回合。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/lvmeng/botu1",
+                "translation": "运筹帷幄，静待良机。"
+            },
+            {
+                "url": "generals/lvmeng/botu2",
+                "translation": "窥敌破绽，一击制胜！"
+            }
+        ]
+    },
+    "wz26.lvmeng.gongxin": {
+        "name": "wz26.lvmeng.gongxin",
+        "lang_name": "攻心",
+        "lang_desc": "出牌阶段限一次，你可以观看一名其他角色的手牌，然后 你可以展示其中的一张红桃牌；并选择一项：1.弃置此牌；2.将此牌置于牌堆顶。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/lvmeng/gongxin1",
+                "translation": "攻心为上，攻城为下。"
+            }
+        ]
+    },
+    "wz26.zhouyu.yingzi": {
+        "name": "wz26.zhouyu.yingzi",
+        "lang_name": "英姿",
+        "lang_desc": "锁定技，摸牌阶段，你多摸一张牌；你的手牌上限+X（X 为你的体力上限）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhouyu/yingzi1",
+                "translation": "哈哈哈哈，公瑾在此！"
+            },
+            {
+                "url": "generals/zhouyu/yingzi2",
+                "translation": "周郎顾曲，英 姿勃发。"
+            }
+        ]
+    },
+    "wz26.zhouyu.fanjian": {
+        "name": "wz26.zhouyu.fanjian",
+        "lang_name": "反间",
+        "lang_desc": "出牌阶段限一次，你可以展示一张手牌，将其交给一名角色并令其本回合非锁定技失效，然后其须选择一项：1.展示所有手牌，然后弃置与此牌颜色相同的所有牌（ 至少两张）；2. 失去 1 点体力。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhouyu/fanjian1",
+                "translation": "痛苦吧，在猜忌中走向毁灭！"
+            },
+            {
+                "url": "generals/zhouyu/fanjian2",
+                "translation": "挣扎吧，虚实之间难得真意！"
+            }
+        ]
+    },
+    "wz26.daqiao.guose": {
+        "name": "wz26.daqiao.guose",
+        "lang_name": "国色",
+        "lang_desc": "出牌阶段限一次，你可以选择一项：1.将一张方块牌当【乐不思蜀】使用；2.弃置一张方块牌并弃置场上的一张【乐不思蜀】。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/daqiao/ex.daqiao/guose1",
+                "translation": "旅途劳顿，请下马休整吧"
+            },
+            {
+                "url": "generals/daqiao/ex.daqiao/guose2",
+                "translation": "还没到休息的时候！"
+            }
+        ]
+    },
+    "wz26.daqiao.liuli": {
+        "name": "wz26.daqiao.liuli",
+        "lang_name": "流离",
+        "lang_desc": "当你成为【杀】的目标时，你可以弃置一张牌并选择你攻击范围内的一名其他角色，然后将此【杀】转移给该角色。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/daqiao/ex.daqiao/liuli1",
+                "translation": "帮帮人家嘛"
+            },
+            {
+                "url": "generals/daqiao/ex.daqiao/liuli2",
+                "translation": "伯符不在身边，我要自己保重！"
+            }
+        ]
+    },
+    "wz26.daqiao.wanrong": {
+        "name": "wz26.daqiao.wanrong",
+        "lang_name": "婉容",
+        "lang_desc": "当你使用或弃置方块牌时，你可以摸一张 牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/daqiao/wanrong1",
+                "translation": "无礼之徒，速速退下。"
+            },
+            {
+                "url": "generals/daqiao/wanrong2",
+                "translation": "狂蜂浪蝶，休想得逞。"
+            }
+        ]
+    },
+    "wz26.luxun.qianxun": {
+        "name": "wz26.luxun.qianxun",
+        "lang_name": " 谦逊",
+        "lang_desc": "当一张延时锦囊牌或其他角色使用的普通锦囊牌对你生效时，若你是此牌唯一目标，你可以将所有手牌扣置于武将牌上，然后此回合结束时，你获得这些牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/luxun/ex.luxun/qianxun1",
+                "translation": "谦谦君子，温润如玉。"
+            },
+            {
+                "url": "generals/luxun/ex.luxun/qianxun2",
+                "translation": "满招损，谦受益。"
+            }
+        ]
+    },
+    "wz26.luxun.lianying": {
+        "name": "wz26.luxun.lianying",
+        "lang_name": "连营",
+        "lang_desc": "当你失去手牌后，若你没有手牌，你可以令至多X名角色各摸一张牌（X为你此次失去的手牌数）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/luxun/ex.luxun/lianying1",
+                "translation": "生生不息，源源不绝。"
+            },
+            {
+                "url": "generals/luxun/ex.luxun/lianying2",
+                "translation": "失之淡然，得之坦然。"
+            }
+        ]
+    },
+    "wz26.luxun.shunshi": {
+        "name": "wz26.luxun.shunshi",
+        "lang_name": "顺势",
+        "lang_desc": "当你于回合外因“连营”而获得非基本牌时，你可以展示之并摸一张牌。（团队模式中失去此技能）",
+        "lang_desc2": "",
+        "audios": []
+    },
+    "wz26.sunshangxiang.yuanding": {
+        "name": "wz26.sunshangxiang.yuanding",
+        "lang_name": "缘定",
+        "lang_desc": "锁定技，亮将后，你选择其中一项：1.“良助”添加限定技标签；2.失去“结姻”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/sunshangxiang/yuanding1",
+                "translation": "千里姻缘，自有天定。"
+            }
+        ]
+    },
+    "wz26.sunshangxiang.jieyin": {
+        "name": "wz26.sunshangxiang.jieyin",
+        "lang_name": "结姻",
+        "lang_desc": "出牌阶段限一次，你可以选择一名男性角色并弃置 一张手牌或将一张装备牌置入其装备区。然后你与其体力值较高的角色摸一张牌，体力值较低的角色回复1点体力。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/sunshangxiang/ex.sunshangxiang/jieyin1",
+                "translation": "得遇夫君，妾身福分。"
+            },
+            {
+                "url": "generals/sunshangxiang/ex.sunshangxiang/jieyin2",
+                "translation": "随夫嫁娶，宜室宜家。"
+            }
+        ]
+    },
+    "wz26.sunshangxiang.liangzhu": {
+        "name": "wz26.sunshangxiang.liangzhu",
+        "lang_name": "良助",
+        "lang_desc": "每回合限一次，当一名角色于其出牌阶段内不因“结姻”回复体力后， 你可以摸一张牌或令其摸两张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/sunshangxiang/sp.sunshangxiang/liangzhu1",
+                "translation": "贤内之助，可安邦定国。"
+            },
+            {
+                "url": "generals/sunshangxiang/sp.sunshangxiang/liangzhu2",
+                "translation": "愿尽绵薄， 助夫君一臂之力。"
+            }
+        ]
+    },
+    "wz26.sunshangxiang.xiaoji": {
+        "name": "wz26.sunshangxiang.xiaoji",
+        "lang_name": "枭姬",
+        "lang_desc": "当你失去装备区里的一张牌后，你可以摸两张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/sunshangxiang/ex.sunshangxiang/xiaoji1",
+                "translation": "剑利弓急，你可打不过我的。"
+            },
+            {
+                "url": "generals/sunshangxiang/ex.sunshangxiang/xiaoji2",
+                "translation": " 我会的武器，可多着呢。"
+            }
+        ]
+    },
+    "wz26.taishici.tianyi": {
+        "name": "wz26.taishici.tianyi",
+        "lang_name": "天义",
+        "lang_desc": "出牌阶段限一次，你可以与一名角色拼点，若你：赢，本回合你使用【杀】的次数+1，你使用【杀】无距离限制且可以增加一个目标；没赢，本回 合你不能使用【杀】。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/taishici/tianyi1",
+                "translation": "我当提三尺剑，立不世之 功！"
+            },
+            {
+                "url": "generals/taishici/tianyi2",
+                "translation": "顺应天意，斩将夺旗！"
+            }
+        ]
+    },
+    "wz26.taishici.hanzhan": {
+        "name": "wz26.taishici.hanzhan",
+        "lang_name": "酣战",
+        "lang_desc": "当你拼点前，你可以令对方用你选择的手牌拼点；当你拼点后，你可以获得拼点牌中点数最大的【杀】。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/taishici/hanzhan1",
+                "translation": "痛快！再来大战三百回合！"
+            },
+            {
+                "url": "generals/taishici/hanzhan2",
+                "translation": "神亭岭下，战个痛快！"
+            }
+        ]
+    },
+    "wz26.lusu.haoshi": {
+        "name": "wz26.lusu.haoshi",
+        "lang_name": "好施",
+        "lang_desc": "摸牌阶段，你可以多摸两张牌，然后若你的手牌数大于 5，你将一半手牌（向下取整）交给场 上手牌数最少的一名其他角色。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/lusu/haoshi1",
+                "translation": "拿去拿去，莫跟哥哥 客气！"
+            },
+            {
+                "url": "generals/lusu/haoshi2",
+                "translation": "来来来，见面分一半。"
+            }
+        ]
+    },
+    "wz26.lusu.dimeng": {
+        "name": "wz26.lusu.dimeng",
+        "lang_name": "缔盟",
+        "lang_desc": "出牌阶段限一次，你可以令两名其他角色交换手牌（这两名角色手牌数差须不大于你的牌数）。若如此做，此阶段结束时，你弃置X张牌(X为这两名角色此时的手牌数差）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/lusu/dimeng1",
+                "translation": "以和为贵，以和为贵！"
+            },
+            {
+                "url": "generals/lusu/dimeng2",
+                "translation": "结好使节，共退曹贼！"
+            }
+        ]
+    },
+    "wz26.zhangzhaozhanghong.zhijian": {
+        "name": "wz26.zhangzhaozhanghong.zhijian",
+        "lang_name": "直谏",
+        "lang_desc": "出牌阶段，你可以将一张装备牌置于其他角色的装备区里（替换原装备），然后摸一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhangzhaozhanghong/zhijian1",
+                "translation": "为臣者，当直言进谏！"
+            },
+            {
+                "url": "generals/zhangzhaozhanghong/zhijian2",
+                "translation": "此物赠予 将军，以助军威。"
+            }
+        ]
+    },
+    "wz26.zhangzhaozhanghong.guzheng": {
+        "name": "wz26.zhangzhaozhanghong.guzheng",
+        "lang_name": "固政",
+        "lang_desc": "其他角色的弃牌阶段结束时，你可以将该角色此阶段内弃置的一张手牌交给该角色，然后你可以获得其余此阶段内弃置的牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhangzhaozhanghong/guzheng1",
+                "translation": "固守根本，方可图天下。"
+            },
+            {
+                "url": "generals/zhangzhaozhanghong/guzheng2",
+                "translation": "开源节流，乃治国之要道。"
+            }
+        ]
+    },
+    "wz26.dingfeng.duanbing": {
+        "name": "wz26.dingfeng.duanbing",
+        "lang_name": "短兵",
+        "lang_desc": "你使用【杀】可以多选择一名距离为1的角色为目标。你对距离为1的角色使用的【杀】需使用两张【闪】才能抵消。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/dingfeng/duanbing1",
+                "translation": "短兵相接， 方显男儿本色！"
+            },
+            {
+                "url": "generals/dingfeng/duanbing2",
+                "translation": "寸有所长，看刀！"
+            }
+        ]
+    },
+    "wz26.dingfeng.fenxun": {
+        "name": "wz26.dingfeng.fenxun",
+        "lang_name": "奋迅",
+        "lang_desc": "出牌阶段限一次，你可以弃置一张牌并选择一名其他角色，然后本回合你计算与其的距离视为1，若如此做，此阶段结束时，若你本阶段使用【杀】对距离1以内的角色造成过至少2点伤害，你可以摸两张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/dingfeng/fenxun1",
+                "translation": "奋起神威，迅烈如风！"
+            },
+            {
+                "url": "generals/dingfeng/fenxun2",
+                "translation": "脱甲飞身，一战破敌！"
+            }
+        ]
+    },
+    "wz26.zhugejin.huanshi": {
+        "name": "wz26.zhugejin.huanshi",
+        "lang_name": "缓 释",
+        "lang_desc": "当一名角色的判定牌生效前，你可以令其观看你的手牌并选择你的一张牌，然后你打出此牌代替判定牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhugejin/huanshi1",
+                "translation": "缓兵之计，或可解局。"
+            },
+            {
+                "url": "generals/zhugejin/huanshi2",
+                "translation": "此事，还需从长计议。"
+            }
+        ]
+    },
+    "wz26.zhugejin.hongyuan": {
+        "name": "wz26.zhugejin.hongyuan",
+        "lang_name": "弘援",
+        "lang_desc": "摸牌阶段结束时，你可以依次交给至多两名其他角色各一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhugejin/hongyuan1",
+                "translation": "广结盟友，方能共克时艰。"
+            },
+            {
+                "url": "generals/zhugejin/hongyuan2",
+                "translation": "略尽绵薄之力 ，望能助君一臂。"
+            }
+        ]
+    },
+    "wz26.zhugejin.mingzhe": {
+        "name": "wz26.zhugejin.mingzhe",
+        "lang_name": "明哲",
+        "lang_desc": "当你于回合外或摸牌阶段失去红色牌时，你可以展示之并摸一张牌。（团队模式中：摸牌阶段限一次）",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhugejin/mingzhe1",
+                "translation": "明哲保身，方为上策。"
+            },
+            {
+                "url": "generals/zhugejin/mingzhe2",
+                "translation": "福祸相依， 需谨慎行事。"
+            }
+        ]
+    },
+    "wz26.xusheng.pojun": {
+        "name": "wz26.xusheng.pojun",
+        "lang_name": "破军",
+        "lang_desc": "当你使用【杀】指定目标后，你可以将该角色的至多X张牌扣置于其武将牌上，本回合结束后，其获得这些牌（X为其体力值）；当你使用【杀】对目标角色造成伤 害时，若其手牌区和装备区里的牌数均不大于你，此伤害+1。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/xusheng/olex.xusheng/pojun1",
+                "translation": "犯大吴疆土者，盛必击而破之！"
+            },
+            {
+                "url": "generals/xusheng/olex.xusheng/pojun2",
+                "translation": "若敢来 犯，必叫你大败而归！"
+            }
+        ]
+    },
+    "wz26.xusheng.yicheng": {
+        "name": "wz26.xusheng.yicheng",
+        "lang_name": "疑城",
+        "lang_desc": "与你相邻的角色成为【杀】的目标后，你可以令其摸一张牌，然后弃置一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/xusheng/yicheng1",
+                "translation": "不怕死，就尽管放马过来！"
+            },
+            {
+                "url": "generals/xusheng/yicheng2",
+                "translation": "待末将布下疑城，以退曹贼。"
+            }
+        ]
+    },
+    "wz.lingtong.xuanfeng": {
+        "name": "wz.lingtong.xuanfeng",
+        "lang_name": "旋风",
+        "lang_desc": "当你于弃牌阶段弃置过至少两张牌 ，或当你失去装备区里的牌后，若没有角色处于濒死状态，你可以弃置至多两名其他角色的共计两张牌。",
+        "lang_desc2": "①弃牌阶段结 束时，若你于此阶段内弃置过你的至少两张手牌，你可弃置一名其他角色的一张牌▶你可弃置一名其他角色的一张牌。②当你失去装备区 里的牌后❷，你可弃置一名其他角色的一张牌▶你可弃置一名其他角色的一张牌。",
+        "audios": [
+            {
+                "url": "generals/lingtong/tenex.lingtong/xuanfeng1",
+                "translation": "风动扬帆起，枪出敌军溃！\t"
+            },
+            {
+                "url": "generals/lingtong/tenex.lingtong/xuanfeng2",
+                "translation": "御风而动，敌军四散！"
+            }
+        ]
+    },
+    "wz.lingtong.yongjin": {
+        "name": "wz.lingtong.yongjin",
+        "lang_name": "勇进",
+        "lang_desc": "限定技 ，出牌阶段，你可以移动场上的至多三张装备牌（每张牌限一次）。",
+        "lang_desc2": "限定技，出牌阶段，你可将一名角色的装备区里的 一张牌置入另一名角色的装备区▶你可将一名角色的装备区里的一张牌置入另一名角色的装备区▷你可将一名角色的装备区里的一张牌置 入另一名角色的装备区。",
+        "audios": [
+            {
+                "url": "generals/lingtong/tenex.lingtong/yongjin1",
+                "translation": "鏖兵卫主，勇足以却敌 ！"
+            },
+            {
+                "url": "generals/lingtong/tenex.lingtong/yongjin2",
+                "translation": "勇不可荡，进则无退。"
+            }
+        ]
+    },
+    "wz26.bulianshi.anxu": {
+        "name": "wz26.bulianshi.anxu",
+        "lang_name": "安恤",
+        "lang_desc": "出牌阶段限一次，你可以令一名其他角色获得另一名其他角色的一张牌并展示之，若其获得的是手牌且不为黑桃牌，你摸一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/bulianshi/anxu1",
+                "translation": "和睦后宫，方能安天下。"
+            },
+            {
+                "url": "generals/bulianshi/anxu2",
+                "translation": "恩恤有加，上下同心。"
+            }
+        ]
+    },
+    "wz26.bulianshi.zhuiyi": {
+        "name": "wz26.bulianshi.zhuiyi",
+        "lang_name": "追忆",
+        "lang_desc": "当你死亡时，你可以令一名其他角色（杀死你的角色 除外）摸三张牌并回复1点体力。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/bulianshi/zhuiyi1",
+                "translation": "惟愿陛下，长 乐无忧。"
+            },
+            {
+                "url": "generals/bulianshi/zhuiyi2",
+                "translation": "追思往昔，情意绵绵。"
+            }
+        ]
+    },
+    "wz26.handang.gongqi": {
+        "name": "wz26.handang.gongqi",
+        "lang_name": "弓骑",
+        "lang_desc": "出牌阶段限一次，你可以弃置一张牌，令你本回合的攻击范围无限。若你以此法 弃置的牌为非基本牌，你可以弃置一名其他角色的一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/handang/gongqi1",
+                "translation": "弓马娴熟，百步穿杨！"
+            },
+            {
+                "url": "generals/handang/gongqi2",
+                "translation": "策马张弓，令敌胆寒！"
+            }
+        ]
+    },
+    "wz26.handang.jiefan": {
+        "name": "wz26.handang.jiefan",
+        "lang_name": "解烦",
+        "lang_desc": "限定技，出牌阶段，你可以选择一名角色，令攻击范围内包 含其的角色选择一项：1.弃置一张武器牌；2.令其摸一张牌。若此时为第一轮游戏，回合结束时，此技能视为未发动过。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/handang/jiefan1",
+                "translation": "主公勿忧，老臣来也！"
+            },
+            {
+                "url": "generals/handang/jiefan2",
+                "translation": "解主公之烦，乃臣本分。"
+            }
+        ]
+    },
+    "wz26.cenhun.jishe": {
+        "name": "wz26.cenhun.jishe",
+        "lang_name": "极奢",
+        "lang_desc": " 出牌阶段，若你的手牌上限大于0，你可以摸一张牌，然后本回合你的手牌上限-1；结束阶段，若你没有手牌，你可以横置至多X名角色（X为你的体力值）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/cenhun/jishe1",
+                "translation": "穷奢极欲，方显我主威严！"
+            },
+            {
+                "url": "generals/cenhun/jishe2",
+                "translation": "享乐当下，何必管明日之祸？"
+            }
+        ]
+    },
+    "wz26.cenhun.lianhuo": {
+        "name": "wz26.cenhun.lianhuo",
+        "lang_name": "链祸",
+        "lang_desc": "锁定技，当你受到火焰伤害时，若你处于连环状态且你是传导伤害的起点，则此伤害+1。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/cenhun/lianhuo1",
+                "translation": "铁索连江，亦能连天火！"
+            },
+            {
+                "url": "generals/cenhun/lianhuo2",
+                "translation": "引火烧身，这可如何是好！"
+            }
+        ]
+    },
+    "wz26.cenhun.wudu": {
+        "name": "wz26.cenhun.wudu",
+        "lang_name": "无度",
+        "lang_desc": "限定技，当一名没有手牌的角色受到伤害时，你可以防止此伤害，然后你减1点体力上限。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/cenhun/wudu1",
+                "translation": "大兴土木，无度之求！"
+            },
+            {
+                "url": "generals/cenhun/wudu2",
+                "translation": "搜刮民脂 ，只为讨主公欢心。"
+            }
+        ]
+    },
+    "wz26.buzhi.hongde": {
+        "name": "wz26.buzhi.hongde",
+        "lang_name": "弘德",
+        "lang_desc": "当你一次性获得或失去至少两张牌后，你可以令一名其他角色摸一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/buzhi/hongde1",
+                "translation": "江南重义，东吴尚德。"
+            },
+            {
+                "url": "generals/buzhi/hongde2",
+                "translation": "德无单行，福必双至。"
+            }
+        ]
+    },
+    "wz26.buzhi.dingpan": {
+        "name": "wz26.buzhi.dingpan",
+        "lang_name": "定叛",
+        "lang_desc": "出牌阶段限 X 次(X为存活角色最多阵营的存活角色数且至多为3)，你可以令一名装备区里有牌的角色摸一张牌，然后其选择一项：1.令你弃置其一至两张牌；2.获得装备区里的所有牌，然后你对其造成1点伤害。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/buzhi/dingpan1",
+                "translation": "从孙者生，从刘者死！"
+            },
+            {
+                "url": "generals/buzhi/dingpan2",
+                "translation": "多行不义必自毙！"
+            }
+        ]
+    },
+    "wz26.sp.pangtong.guolun": {
+        "name": "wz26.sp.pangtong.guolun",
+        "lang_name": " 过论",
+        "lang_desc": "出牌阶段限一次，你可以展示一名其他角色的一张手牌。若如此做，你可以展示一张手牌交换之，然后你可以选择一项：1.令展示牌点数较小的角色摸一张牌；2.令展示牌点数较大的角色回复1点体力。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/pangtong/sp.pangtong/guolun1",
+                "translation": "品评天下之士，吾当仁不让。"
+            },
+            {
+                "url": "generals/pangtong/sp.pangtong/guolun2",
+                "translation": "真才实学，一试便知。"
+            }
+        ]
+    },
+    "wz26.sp.pangtong.songsang": {
+        "name": "wz26.sp.pangtong.songsang",
+        "lang_name": "送丧",
+        "lang_desc": "限定技，当一名角色死亡时，你可以加1点体力上限并回复1点体力，然后获得〖展骥〗。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/pangtong/sp.pangtong/songsang1",
+                "translation": "送丧至东吴，使命已完。"
+            },
+            {
+                "url": "generals/pangtong/sp.pangtong/songsang2",
+                "translation": "送丧虽至，吾与孝则得相交。"
+            }
+        ]
+    },
+    "wz26.sp.pangtong.zhanji": {
+        "name": "wz26.sp.pangtong.zhanji",
+        "lang_name": "展骥",
+        "lang_desc": "锁定技，当你于出牌阶段内不因此技能而摸牌时，你摸一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/pangtong/sp.pangtong/zhanji1",
+                "translation": "功曹之恩，吾必有展骥之机。"
+            },
+            {
+                "url": "generals/pangtong/sp.pangtong/zhanji2",
+                "translation": "公瑾安全至吴，心安之。"
+            }
+        ]
+    },
+    "wz26.zhoufang.duanfa": {
+        "name": "wz26.zhoufang.duanfa",
+        "lang_name": "断发",
+        "lang_desc": "出牌阶段，你可以弃置任意张黑色牌，环境摸等量的牌（每阶段至多弃置 X 张，X为你的体力上限）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhoufang/duanfa1",
+                "translation": "断发致诚信，誓报主公恩。"
+            },
+            {
+                "url": "generals/zhoufang/duanfa2",
+                "translation": "身体发肤，亦可为国而舍。"
+            }
+        ]
+    },
+    "wz26.zhoufang.youdi": {
+        "name": "wz26.zhoufang.youdi",
+        "lang_name": "诱敌",
+        "lang_desc": "结束阶段，你可以令一名其他角色弃置你的一张手牌，你依次执行满足条件的选项：1.若此牌不为【杀】，你获得其一张牌；2.若此牌不为黑色，你摸一张牌；若两项均满足，则你增加1点体力上限(至多增加至5)。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhoufang/youdi1",
+                "translation": "诱敌深入，一网打尽。"
+            },
+            {
+                "url": "generals/zhoufang/youdi2",
+                "translation": "曹休小儿， 已堕吾计之中！"
+            }
+        ]
+    },
+    "wz26.sunru.yingjian": {
+        "name": "wz26.sunru.yingjian",
+        "lang_name": "影箭",
+        "lang_desc": "准备阶段，你可以视为使用一张无距离限制的【杀】。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/sunru/yingjian1",
+                "translation": "疾风残影，箭不虚发。"
+            },
+            {
+                "url": "generals/sunru/yingjian2",
+                "translation": "看箭，防不胜防吧！"
+            }
+        ]
+    },
+    "wz26.sunru.shixin": {
+        "name": "wz26.sunru.shixin",
+        "lang_name": "释衅",
+        "lang_desc": "锁定技，防止你受到的属性伤害。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/sunru/shixin1",
+                "translation": "身处烈火，泰然处之。"
+            },
+            {
+                "url": "generals/sunru/shixin2",
+                "translation": "雕虫小技，安能伤我。"
+            }
+        ]
+    },
+    "wz26.lingcao.dujin": {
+        "name": "wz26.lingcao.dujin",
+        "lang_name": "独进",
+        "lang_desc": "摸牌阶段，你可以多摸 X+1 张牌（X 为你装备区里牌数的一半且向上取整）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/lingcao/dujin1",
+                "translation": "带兵十万，不如老 夫多甲一件！"
+            },
+            {
+                "url": "generals/lingcao/dujin2",
+                "translation": "轻舟独进，破敌先锋！"
+            }
+        ]
+    },
+    "wz26.lingcao.dufeng": {
+        "name": "wz26.lingcao.dufeng",
+        "lang_name": "独锋",
+        "lang_desc": "限定技，出牌阶段开始时，你可以失去1点体力，令你本回合使用【杀】的次数+Y（Y为你已损失体力值-1）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/lingcao/dufeng1",
+                "translation": "不畏死者，都随我来！"
+            },
+            {
+                "url": "generals/lingcao/dufeng2",
+                "translation": "大功当前，小损又何妨！"
+            }
+        ]
+    },
+    "wz26.tangzi.xingzhao": {
+        "name": "wz26.tangzi.xingzhao",
+        "lang_name": "兴棹",
+        "lang_desc": "锁定技，若场上受伤的角色数不少于：1，你视为拥有“恂恂”；2，你使用装备牌时摸一张牌；3，你跳过弃牌阶段。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/tangzi/xingzhao1",
+                "translation": "顺流兴棹，破浪千层！"
+            },
+            {
+                "url": "generals/tangzi/xingzhao2",
+                "translation": "造舟集兵，顺势而发！"
+            }
+        ]
+    },
+    "wz26.wenyang.quedi": {
+        "name": "wz26.wenyang.quedi",
+        "lang_name": "却敌",
+        "lang_desc": "每回合限一次，当你使用【杀】或【决斗】指定唯一目标后，你可以选择一项或减1点体力上限依次执行两项：1.获得其一张手牌；2.弃置一张基本牌令此牌造成的伤害+1。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/wenyang/quedi1",
+                "translation": "力摧敌阵，如视天光破云！"
+            },
+            {
+                "url": "generals/wenyang/quedi2",
+                "translation": "让尔等有命追，无命回！"
+            }
+        ]
+    },
+    "wz26.wenyang.choujue": {
+        "name": "wz26.wenyang.choujue",
+        "lang_name": "仇 决",
+        "lang_desc": "锁定技，当你杀死其他角色后，你加1点体力上限并摸两张牌，本回合“却敌”可发动次数+1。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/wenyang/choujue1",
+                "translation": "血海深仇，便在今日来报！"
+            },
+            {
+                "url": "generals/wenyang/choujue2",
+                "translation": "取汝之头，以祭先父！"
+            }
+        ]
+    },
+    "wz26.wenyang.chongjian": {
+        "name": "wz26.wenyang.chongjian",
+        "lang_name": "冲坚",
+        "lang_desc": "限定技，出牌阶段，你可以减1点体力上限，将一张装备牌当【酒】或无视防具的任意一种【杀】使用。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/wenyang/chongjian1",
+                "translation": "此等残兵，破之何其易也！"
+            },
+            {
+                "url": "generals/wenyang/chongjian2",
+                "translation": "尔等良将，于我不堪一击！"
+            }
+        ]
+    },
+    "wz26.lvbu.zhanshen": {
+        "name": "wz26.lvbu.zhanshen",
+        "lang_name": "战神",
+        "lang_desc": "锁定技，准备阶段，你选择一项未获得的效果获得，直到本局结束：1.摸牌阶段，多摸一张牌；2.使用【杀】造成的伤害+1；3.使用【杀】可以额外选择一个目标；4. 出牌阶段，你可以多使用一张【杀】。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/lvbu/3v3.lvbu/zhanshen1",
+                "translation": "战神既出，谁与争锋。"
+            },
+            {
+                "url": "generals/lvbu/3v3.lvbu/zhanshen2",
+                "translation": "战神降世，神威再临。"
+            }
+        ]
+    },
+    "wz26.diaochan.qingshi": {
+        "name": "wz26.diaochan.qingshi",
+        "lang_name": "倾世",
+        "lang_desc": "锁定技，亮将后，你失去“离间”或“离魂”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/diaochan/qingshi1",
+                "translation": "倾国倾城，唯愿一舞。"
+            }
+        ]
+    },
+    "wz26.diaochan.lijian": {
+        "name": "wz26.diaochan.lijian",
+        "lang_name": "离间",
+        "lang_desc": "出牌阶段限一次，你可以弃置一张牌并选择两名男性角色，然后令其中一名角色视为对另一名角色使用一张【决斗】(不能被【无懈可击】响应)。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/diaochan/lijian1",
+                "translation": "大王，他欺负妾身。"
+            },
+            {
+                "url": "generals/diaochan/lijian2",
+                "translation": "英雄难过美人关。"
+            }
+        ]
+    },
+    "wz26.diaochan.lihun": {
+        "name": "wz26.diaochan.lihun",
+        "lang_name": "离魂",
+        "lang_desc": "出牌阶段限 一次，你可以弃置一张牌并翻面，然后选择一名男性角色，获得其所有手牌。出牌阶段结束时，你交给其X张牌(X为其体力值)。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/diaochan/lihun1",
+                "translation": "勾魂摄魄，随我来吧。"
+            },
+            {
+                "url": "generals/diaochan/lihun2",
+                "translation": "将军，你的人和牌，都是妾身的了。"
+            }
+        ]
+    },
+    "wz26.diaochan.biyue": {
+        "name": "wz26.diaochan.biyue",
+        "lang_name": "闭月",
+        "lang_desc": "结束阶段，若你的手牌数小于你的体力值，你可以摸两张牌，否则摸一张牌。（团队模式中修改为“结束阶段，你可以摸一张牌，若你没有手牌，则改为摸两张牌”）",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/diaochan/biyue1",
+                "translation": "月儿…也害羞得躲起来了呢。"
+            },
+            {
+                "url": "generals/diaochan/biyue2",
+                "translation": "轻云蔽月，流风回雪。"
+            }
+        ]
+    },
+    "wz26.yuanshao.luanji": {
+        "name": "wz26.yuanshao.luanji",
+        "lang_name": "乱击",
+        "lang_desc": "出牌阶段限一次，你可以将两张手牌当【万箭齐发】使用。 当其他角色打出【闪】响应你使用的【万箭齐发】时，若你的手牌数小于你的手牌上限，你可以摸一张牌。你于回合内杀死一名角色时， 本回合手牌上限+2。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/yuanshao/yuanshao/luanji1",
+                "translation": "名门之威，岂容挑衅！万箭齐发！"
+            },
+            {
+                "url": "generals/yuanshao/yuanshao/luanji2",
+                "translation": "顺我者昌，逆我者亡！放箭！"
+            }
+        ]
+    },
+    "wz26.jiaxu.wansha": {
+        "name": "wz26.jiaxu.wansha",
+        "lang_name": "完杀",
+        "lang_desc": "锁定技，你的回合内，若有角色处于濒死状态，只有你和处于 濒死状态的角色才能使用【桃】；任意角色的濒死结算中，除你和濒死角色外的其他角色非锁定技失效。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/jiaxu/olex.jiaxu/wansha1",
+                "translation": "斩草务尽，以绝后患。"
+            },
+            {
+                "url": "generals/jiaxu/olex.jiaxu/wansha2",
+                "translation": "有谁敢试试？"
+            }
+        ]
+    },
+    "wz26.jiaxu.luanwu": {
+        "name": "wz26.jiaxu.luanwu",
+        "lang_name": "乱武",
+        "lang_desc": "限定技 ，出牌阶段，你可以令所有其他角色依次选择一项：1.失去1点体力；2.对其距离最近的一名角色使用一张【杀】。结算完成后，你可以视为使用一张无距离次数限制的【杀】。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/jiaxu/olex.jiaxu/luanwu1",
+                "translation": " 一切，都在我的掌控中。"
+            },
+            {
+                "url": "generals/jiaxu/olex.jiaxu/luanwu2",
+                "translation": "这乱世还不够乱！"
+            }
+        ]
+    },
+    "wz26.jiaxu.weimu": {
+        "name": "wz26.jiaxu.weimu",
+        "lang_name": "帷幕",
+        "lang_desc": "锁定技，你不能成为黑色锦囊牌的目标。当你于回合内受到伤害时，防止此伤害并摸等同于伤害数的牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/jiaxu/olex.jiaxu/weimu1",
+                "translation": "此伤与我无关。"
+            },
+            {
+                "url": "generals/jiaxu/olex.jiaxu/weimu2",
+                "translation": "还是另寻他法吧。"
+            }
+        ]
+    },
+    "wz26.zuoci.huashen": {
+        "name": "wz26.zuoci.huashen",
+        "lang_name": "化身",
+        "lang_desc": "游戏开始时，你将三张未加入游戏的武将牌扣置于此武将牌一侧，称为“化身 ”，然后亮出其中一张并声明此“化身”的一个技能（主公技、限定技、觉醒技除外），你视为拥有该技能；回合开始时和回合结束后， 你可以更改亮出的“化身”和声明的技能；你的性别和势力视为与亮出的“化身”相同。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zuoci/zuoci/huashen1",
+                "translation": "幻化万千，莫测其变。"
+            },
+            {
+                "url": "generals/zuoci/zuoci/huashen2",
+                "translation": "看我 腾云驾雾，化身万物。"
+            }
+        ]
+    },
+    "wz26.zuoci.xinsheng": {
+        "name": "wz26.zuoci.xinsheng",
+        "lang_name": "新生",
+        "lang_desc": "当你受到 1  点伤害后，你可以将一张未加入游戏的武将牌扣置为“化身”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zuoci/zuoci/xinsheng1",
+                "translation": "浴火重生，造化无穷。"
+            },
+            {
+                "url": "generals/zuoci/zuoci/xinsheng2",
+                "translation": "仙道流转，生生不息。"
+            }
+        ]
+    },
+    "wz26.caiwenji.beijia": {
+        "name": "wz26.caiwenji.beijia",
+        "lang_name": "悲笳",
+        "lang_desc": "锁定技，亮将后，你失去“陈情”或“ 断肠”。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/caiwenji/beijia1",
+                "translation": "笳声悲切，肝肠寸断。"
+            }
+        ]
+    },
+    "wz26.caiwenji.mozhi": {
+        "name": "wz26.caiwenji.mozhi",
+        "lang_name": "默识",
+        "lang_desc": "结束阶段，你可以将一张牌当你本回合出牌阶段使用 过的第一张基本牌或普通锦囊牌使用，然后你可以将一张牌当你本回合出牌阶段使用过的第二张基本牌或普通锦囊牌使用。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/caiwenji/sp.caiwenji/mozhi1",
+                "translation": "背诵默写，过目不忘。"
+            },
+            {
+                "url": "generals/caiwenji/sp.caiwenji/mozhi2",
+                "translation": "承继父志，博古通今。"
+            }
+        ]
+    },
+    "wz26.caiwenji.chenqing": {
+        "name": "wz26.caiwenji.chenqing",
+        "lang_name": "陈情",
+        "lang_desc": "每轮限一次，当一名角色进入濒死状态时，你可以令另一名其他角色摸四张牌，然后弃置四张牌，若其以此法弃置的四张牌花色均不同，其视为对濒死状态的角色使用一张【桃】。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/caiwenji/chenqing1",
+                "translation": "切切陈情，感天动地。"
+            }
+        ]
+    },
+    "wz26.caiwenji.duanchang": {
+        "name": "wz26.caiwenji.duanchang",
+        "lang_name": "断肠",
+        "lang_desc": "锁定技，当你死亡时，杀死你的角色失去所有武将技能。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/caiwenji/duanchang1",
+                "translation": "断肠之音，终成绝响！"
+            }
+        ]
+    },
+    "wz26.mateng.mashu": {
+        "name": "wz26.mateng.mashu",
+        "lang_name": "马术",
+        "lang_desc": "锁定技，你计算与其他角色的距离-1。当你使用坐骑牌或失去装备区里的坐骑牌时，你摸一张牌。",
+        "lang_desc2": "",
+        "audios": []
+    },
+    "wz26.mateng.xiongyi": {
+        "name": "wz26.mateng.xiongyi",
+        "lang_name": "雄异",
+        "lang_desc": "限定技，出牌阶段，你可以与一名其他角色各摸三张牌。若你的体力值为全场唯一最小，你回复1点体力。当你脱离濒死状态后，你复原此技能且删除回复体力的效果。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/mateng/xiongyi1",
+                "translation": "唤聚羌胡，共图大业！"
+            },
+            {
+                "url": "generals/mateng/xiongyi2",
+                "translation": "群雄异起，誓斩国贼！"
+            }
+        ]
+    },
+    "wz26.huaxiong.yaowu": {
+        "name": "wz26.huaxiong.yaowu",
+        "lang_name": "耀武",
+        "lang_desc": "锁定技，当你受到伤害时，若对你造成伤害的牌为红色，伤害来源摸一张牌，否则你摸一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/huaxiong/yaowu1",
+                "translation": "耀武扬威，谁人敢挡！"
+            },
+            {
+                "url": "generals/huaxiong/yaowu2",
+                "translation": "江东鼠辈，不堪一击！"
+            }
+        ]
+    },
+    "wz26.huaxiong.shizhan": {
+        "name": "wz26.huaxiong.shizhan",
+        "lang_name": "势斩",
+        "lang_desc": "出牌阶段限两次，你可以选择一名本回合未被此技能选择过的其他角色，其视为对你使用一张【决斗】。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/huaxiong/shizhan1",
+                "translation": "可敢与我大战三百回合！"
+            },
+            {
+                "url": "generals/huaxiong/shizhan2",
+                "translation": "斩将夺旗，就在今日！"
+            }
+        ]
+    },
+    "wz26.yuanshu.yongsi": {
+        "name": "wz26.yuanshu.yongsi",
+        "lang_name": "庸肆",
+        "lang_desc": "锁定技，摸牌阶段，你摸X张牌(X为全场势力数且至少为3)；弃牌阶段开始时，你弃置一张牌或失去1点体力。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/yuanshu/yongsi1",
+                "translation": "大兴土木，尽显皇家气派！"
+            },
+            {
+                "url": "generals/yuanshu/yongsi2",
+                "translation": "普天之下，莫非王土。"
+            }
+        ]
+    },
+    "wz26.yuanshu.weidi": {
+        "name": "wz26.yuanshu.weidi",
+        "lang_name": "伪帝",
+        "lang_desc": "锁定技，游 戏开始时，你选择其中一项，1.你选择获得主公的一个主公技并抽取一张剩余的四象标记；2.你抽取两张剩余的四象标记。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/yuanshu/weidi1",
+                "translation": "玉玺在手，我便是真命天子！"
+            }
+        ]
+    },
+    "wz26.lijue.langxi": {
+        "name": "wz26.lijue.langxi",
+        "lang_name": "狼袭",
+        "lang_desc": "准备阶段，你可以选择一名体力值不大于你的其他角色，并亮出牌堆顶的一张牌，若此牌点数为：6～9，你对其造成1点伤害；10～K，你对其造成2点伤害；5，你可以重复此流程。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/lijue/langxi1",
+                "translation": "飞熊军，如狼似虎，踏平他们！"
+            },
+            {
+                "url": "generals/lijue/langxi2",
+                "translation": "撕咬吧，直取要害！"
+            }
+        ]
+    },
+    "wz26.lijue.yisuan": {
+        "name": "wz26.lijue.yisuan",
+        "lang_name": "亦算",
+        "lang_desc": "出牌阶段限一次， 当你使用的普通锦囊牌结算结束后进入弃牌堆时，你可以失去1点体力或减1点体力上限，获得之。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/lijue/yisuan1",
+                "translation": "这计策，再来一次又何妨！"
+            },
+            {
+                "url": "generals/lijue/yisuan2",
+                "translation": "如法炮 制，再施一计。"
+            }
+        ]
+    },
+    "wz26.gongsunzan.yicong": {
+        "name": "wz26.gongsunzan.yicong",
+        "lang_name": "义从",
+        "lang_desc": "锁定技，你计算与其他角色的距离-1；若你已损失的体力值不小于2，其他角色计算与你的距离+1。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/gongsunzan/yicong1",
+                "translation": "白马义从，随我破敌！"
+            },
+            {
+                "url": "generals/gongsunzan/yicong2",
+                "translation": "弓马娴熟，来去如风！"
+            }
+        ]
+    },
+    "wz26.gongsunzan.qiaomeng": {
+        "name": "wz26.gongsunzan.qiaomeng",
+        "lang_name": "趫猛",
+        "lang_desc": "当你使用黑色牌指定其他角色为目标后，你可以弃置其中一名目标角色一张牌，若弃置的牌为：武器牌，此牌不能被响应；坐骑牌，你获得之。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/gongsunzan/qiaomeng1",
+                "translation": "趫猛之姿，锐不可当！"
+            },
+            {
+                "url": "generals/gongsunzan/qiaomeng2",
+                "translation": "夺其锋芒，断其退路！"
+            }
+        ]
+    },
+    "wz26.hansui.niluan": {
+        "name": "wz26.hansui.niluan",
+        "lang_name": "逆乱",
+        "lang_desc": "出牌阶段，你可以将一张黑色牌当【杀】使用，若此【杀】未造成过伤害，则此【杀】无次数限制。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/hansui/niluan1",
+                "translation": "起兵抗叛，逆乱中原！"
+            },
+            {
+                "url": "generals/hansui/niluan2",
+                "translation": "西凉边军，岂容小觑！"
+            }
+        ]
+    },
+    "wz26.hansui.weiwu": {
+        "name": "wz26.hansui.weiwu",
+        "lang_name": "违忤",
+        "lang_desc": "出牌阶段限一次，你可以将一张红色牌当无距离限制的【顺手牵羊】使用。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/hansui/weiwu1",
+                "translation": "反叛违忤，自立为王！"
+            },
+            {
+                "url": "generals/hansui/weiwu2",
+                "translation": "这天高皇帝远，我说了算！"
+            }
+        ]
+    },
+    "wz26.hansui.xiaoxi": {
+        "name": "wz26.hansui.xiaoxi",
+        "lang_name": "骁袭",
+        "lang_desc": "体力值大于你的角色的结束阶段，若其本回合使用过【 杀】，你可以将一张黑色牌当【杀】对其使用(有距离限制)。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/hansui/xiaoxi1",
+                "translation": "骁勇奔袭，出其不意！"
+            },
+            {
+                "url": "generals/hansui/xiaoxi2",
+                "translation": "乘虚而入，杀他个措手不及！"
+            }
+        ]
+    },
+    "wz26.gaoshun.xianzhen": {
+        "name": "wz26.gaoshun.xianzhen",
+        "lang_name": "陷阵",
+        "lang_desc": "出牌阶段限一次，你可以与一名角色拼点，若你 ：赢，本回合你无视该角色的防具、对其使用牌无距离次数限制、使用每种牌名的牌第一次对其造成的伤害+1；没赢，本回合你不能使用 【杀】，弃牌阶段开始时，你可以展示任意张【杀】并令这些牌此阶段不计入手牌上限。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/gaoshun/xianzhen1",
+                "translation": "陷阵营，冲锋！"
+            },
+            {
+                "url": "generals/gaoshun/xianzhen2",
+                "translation": "攻无不克，战无不 胜！"
+            }
+        ]
+    },
+    "wz26.gaoshun.jinjiu": {
+        "name": "wz26.gaoshun.jinjiu",
+        "lang_name": "禁酒",
+        "lang_desc": "锁定技，你手牌中的【酒】视为点数K的【杀】；其他角色于你回合内不能使用【酒】。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/gaoshun/jinjiu1",
+                "translation": "治军严整，军中禁酒！"
+            },
+            {
+                "url": "generals/gaoshun/jinjiu2",
+                "translation": "厉兵秣马，何须杯中之物。"
+            }
+        ]
+    },
+    "wz26.liru.juece": {
+        "name": "wz26.liru.juece",
+        "lang_name": "绝策",
+        "lang_desc": "结束阶段，你可以对一名没有手牌的其他角色造成1点伤害。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/liru/juece1",
+                "translation": "斩草除根，绝无后患！"
+            },
+            {
+                "url": "generals/liru/juece2",
+                "translation": "策略已定，你已无路可逃。"
+            }
+        ]
+    },
+    "wz26.liru.mieji": {
+        "name": "wz26.liru.mieji",
+        "lang_name": "灭计",
+        "lang_desc": "出 牌阶段限一次，你可以展示一张武器牌或锦囊牌并置于牌堆顶，然后令一名有手牌的其他角色选择一项：1.交给你一张锦囊牌；2.依次弃 置两张非锦囊牌，若无法弃置第二张牌，则展示所有手牌。（团队模式中修改为“出牌阶段限一次，你可以展示一张黑色锦囊牌并置于牌 堆顶，然后令一名有手牌的其他角色选择一项：1.弃置一张锦囊牌；2.依次弃置两张非锦囊牌，若无法弃置第二张牌，则展示所有手牌” ）",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/liru/mieji1",
+                "translation": "灭其军纪，乱其心智！"
+            },
+            {
+                "url": "generals/liru/mieji2",
+                "translation": "此计一出，尔等安有生路？"
+            }
+        ]
+    },
+    "wz26.liru.fencheng": {
+        "name": "wz26.liru.fencheng",
+        "lang_name": "焚城",
+        "lang_desc": "限定技，出牌阶段，你可以令所有其他角色依次选择一项：1.弃置至少X+1张牌（X为发动此技能时该角色的上家以此法弃置 的牌数）；2.受到你造成的2点火焰伤害。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/liru/fencheng1",
+                "translation": "让这场大火，烧尽洛阳的繁华吧！"
+            },
+            {
+                "url": "generals/liru/fencheng2",
+                "translation": "乱世之中，唯有焦土！"
+            }
+        ]
+    },
+    "wz26.jushou.jianying": {
+        "name": "wz26.jushou.jianying",
+        "lang_name": "渐营",
+        "lang_desc": "当你于出牌阶段使用牌时，若此牌与你于此阶段内使用的上一张牌花色或点数相同，你可以摸一张牌。出牌阶段限一次，你可以指定一种花色，此阶段你使用下一张基本牌或普通锦囊牌视为此花色。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/jushou/jianying1",
+                "translation": "步步为营，连绵不绝。"
+            },
+            {
+                "url": "generals/jushou/jianying2",
+                "translation": "循序渐进，方显连环之势。"
+            }
+        ]
+    },
+    "wz26.jushou.shibei": {
+        "name": "wz26.jushou.shibei",
+        "lang_name": "矢北",
+        "lang_desc": "锁定技，你每回合第一次受到伤害后，回复1点体力。你每回合第二次受到伤害后，失去1点体力。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/jushou/shibei1",
+                "translation": "背水一战，何惧流矢！"
+            },
+            {
+                "url": "generals/jushou/shibei2",
+                "translation": "虽万箭穿身，忠义之志不易！"
+            }
+        ]
+    },
+    "wz26.fuwan.moukui": {
+        "name": "wz26.fuwan.moukui",
+        "lang_name": "谋溃",
+        "lang_desc": "当你使用【杀】指定目标后，你可以选择任意项：1.摸一张牌；2.弃置其中一名目标角色的一张牌。若你选择了两项，此【杀】被无效或抵消 时，你弃置一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/fuwan/moukui1",
+                "translation": "你的死期到了。"
+            },
+            { "url": "generals/fuwan/moukui2", "translation": "同归于尽吧。" }
+        ]
+    },
+    "wz26.sp.machao.zhuiji": {
+        "name": "wz26.sp.machao.zhuiji",
+        "lang_name": "追击",
+        "lang_desc": "锁定技，你计算与体力值不大于你的其他角色的距离视为 1；体力值大于你的角色不能响应你使用的【杀】。当你 使用【杀】指定距离为 1 的其他角色为目标后，其选择一项：1.弃置一张牌；2.重铸装备区里的所有牌。",
+        "lang_desc2": "",
+        "audios": []
+    },
+    "wz26.sp.machao.shichou": {
+        "name": "wz26.sp.machao.shichou",
+        "lang_name": "誓仇",
+        "lang_desc": "当你使用【杀】选择目标后，可以令至多X+1 名角色也成为此【杀】目标（X 为你已损失的体力值）。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/machao/sp.machao/shichou1",
+                "translation": "灭族之恨，不共戴天！"
+            },
+            {
+                "url": "generals/machao/sp.machao/shichou2",
+                "translation": "休想跑！"
+            }
+        ]
+    },
+    "wz26.zhaoyun.longdan": {
+        "name": "wz26.zhaoyun.longdan",
+        "lang_name": "龙胆",
+        "lang_desc": "你可以将一张【闪】当【杀】、【杀 】当【闪】、【酒】当【桃】、【桃】当【酒】使用或打出。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhaoyun/longdan1",
+                "translation": "能进能退，乃真正法器！"
+            },
+            {
+                "url": "generals/zhaoyun/longdan2",
+                "translation": "吾乃常山赵子龙也！"
+            }
+        ]
+    },
+    "wz26.zhaoyun.chongzhen": {
+        "name": "wz26.zhaoyun.chongzhen",
+        "lang_name": "冲阵",
+        "lang_desc": "当你发动“龙胆”使用或打出一张牌时，你可以 立即获得对方的一张手牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhaoyun/sp.zhaoyun/chongzhen1",
+                "translation": "陷阵杀敌，一马当先！"
+            },
+            {
+                "url": "generals/zhaoyun/sp.zhaoyun/chongzhen2",
+                "translation": "贼将休走！可敢与我一战？"
+            }
+        ]
+    },
+    "wz26.zhaoyun.jiuzhu": {
+        "name": "wz26.zhaoyun.jiuzhu",
+        "lang_name": "救主",
+        "lang_desc": "限定技，当一名其他角色进入濒死状态时，你可以失去 “冲阵”并选择一项：1.令其回复1点体力，你获得 “涯角”；2.令一名角色摸三张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhaoyun/3v3.zhaoyun/longdan1",
+                "translation": "子龙在此，主公莫急！"
+            },
+            {
+                "url": "generals/zhaoyun/3v3.zhaoyun/longdan2",
+                "translation": "此处有我抵挡，主公速速撤退。"
+            }
+        ]
+    },
+    "wz26.zhaoyun.yajiao": {
+        "name": "wz26.zhaoyun.yajiao",
+        "lang_name": "涯角",
+        "lang_desc": "当你于回合外使用或打出手牌时，你可以展示牌堆顶的一张牌并交给一名角色。若此牌与你使用或打出的牌类型不同，你弃置一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhaoyun/ex.zhaoyun/yajiao1",
+                "translation": "遍寻天下，但求一败！"
+            },
+            {
+                "url": "generals/zhaoyun/ex.zhaoyun/yajiao2",
+                "translation": "策马驱前，斩敌当先。"
+            }
+        ]
+    },
+    "wz26.quyi.fuqi": {
+        "name": "wz26.quyi.fuqi",
+        "lang_name": "伏骑",
+        "lang_desc": "锁定技，当你使用【杀】或普通锦囊牌时，计算与你距离为2以内的其他角色均不能响应此牌；当你对其他角色造成伤害后，你令其非锁定技于本回合内失效。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/quyi/fuqi1",
+                "translation": "伏骑千骑，听我号令，杀！"
+            },
+            {
+                "url": "generals/quyi/fuqi2",
+                "translation": "白马义从？今生便是你们的死期！"
+            }
+        ]
+    },
+    "wz26.quyi.jiaozi": {
+        "name": "wz26.quyi.jiaozi",
+        "lang_name": "wz26.quyi.jiaozi",
+        "lang_desc": "暂无",
+        "lang_desc2": "暂无",
+        "audios": []
+    },
+    "wz.pangdegong.yinshi": {
+        "name": "wz.pangdegong.yinshi",
+        "lang_name": "隐世",
+        "lang_desc": "锁定技，你跳过判定阶段。",
+        "lang_desc2": "锁定技，判定阶段开始前，你跳过此阶段。",
+        "audios": []
+    },
+    "wz.pangdegong.pingcai": {
+        "name": "wz.pangdegong.pingcai",
+        "lang_name": "评才",
+        "lang_desc": "出牌阶段限一次，你可以展示一张手牌，若此牌花色为：\n方块，你对一名角色造成1点火焰伤害；\n梅花，你令 至多三名角色横置；\n黑桃，你移动场上的一张装备牌；\n红桃，你令一名角色摸一张牌并回复1点体力。",
+        "lang_desc2": "出牌阶段限一次，你可展示一张手牌▶若此牌为：方块，你对一名角色造成1点火焰伤害；梅花，你横置至多三名角色；黑桃，你将一名角色的装备区里的一张牌置入另一名角色的装备区；红桃，你令一名角色摸一张牌，令其回复1点体力。",
+        "audios": [
+            {
+                "url": "generals/pangdegong/pingcai1",
+                "translation": "吾有众好友，分为卧龙、凤雏、水镜、元直。"
+            }
+        ]
+    },
+    "wz26.liubian.shiyuan": {
+        "name": "wz26.liubian.shiyuan",
+        "lang_name": "诗怨",
+        "lang_desc": "每回合每项限一次，当你成为其他角色使用牌的目标后，若该角色的体力值：大于你，你可以摸两张牌；等于你，你可以摸两张牌；小于你，你可以摸一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/liubian/shiyuan1",
+                "translation": "作诗一首，难消心中之怨。"
+            },
+            {
+                "url": "generals/liubian/shiyuan2",
+                "translation": "天道不公，社稷危殆！"
+            }
+        ]
+    },
+    "wz26.liubian.dushi": {
+        "name": "wz26.liubian.dushi",
+        "lang_name": "毒逝",
+        "lang_desc": "锁定技，当你进入濒死状态时，其他角色不能对你使用【 桃】直到此次濒死结算结束。当你脱离濒死状态后或当你死亡时，你失去此技能并令一名其他角色获得之。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/liubian/dushi1",
+                "translation": "鸩酒一杯，天命难违。"
+            }
+        ]
+    },
+    "wz26.duyu.sanchen": {
+        "name": "wz26.duyu.sanchen",
+        "lang_name": "三陈",
+        "lang_desc": "出牌阶段限一次，你可以令一名角色摸三张牌并弃置三张牌。若其未以此法弃置类型相同的牌，则其摸一张牌并令此技能视为未发动过（不能选择此阶段已选择过的角色），然后你于此阶段内获得 “破竹”。（团队模式中增加描述：每回合至多对两名角色发动“三陈”）",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/duyu/sanchen1",
+                "translation": "陈兵三处，以待天时。"
+            },
+            {
+                "url": "generals/duyu/sanchen2",
+                "translation": "上陈谋略，下陈兵势！"
+            }
+        ]
+    },
+    "wz26.duyu.pozhu": {
+        "name": "wz26.duyu.pozhu",
+        "lang_name": "破竹",
+        "lang_desc": "出牌阶段，你可以弃置一张手牌，并展示一名其他角色的手牌，若展示牌与你弃置的牌花色不同 ，你对其造成1点伤害，然后此技能失效。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/duyu/pozhu1",
+                "translation": "势如破竹， 所向披靡！"
+            }
+        ]
+    },
+    "wz26.menghuo.huoshou": {
+        "name": "wz26.menghuo.huoshou",
+        "lang_name": "祸首",
+        "lang_desc": "锁定技，【南蛮入侵】对你无效；其他角色使用【南蛮入侵】指定目标后，你代替其成为此牌伤害来源。出牌阶段结束时，若你有手牌，你须弃置所有手牌并视 为使用一张【南蛮入侵】。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/menghuo/huoshou1",
+                "translation": "南蛮之地，皆由我来 做主！"
+            },
+            {
+                "url": "generals/menghuo/huoshou2",
+                "translation": "蛮兵狂澜，谁敢抵挡！"
+            }
+        ]
+    },
+    "wz26.menghuo.zaiqi": {
+        "name": "wz26.menghuo.zaiqi",
+        "lang_name": "再起",
+        "lang_desc": "弃牌阶段结束时，若你本回合弃置过牌，你可以令至多X名其他角色的依次选择一项(X 为本回合置入弃牌堆的红色牌数且至多为3)：1.令你摸一张牌；2.弃置一张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/menghuo/zaiqi1",
+                "translation": "卷土重来，再战三百回合！"
+            },
+            {
+                "url": "generals/menghuo/zaiqi2",
+                "translation": "不服？那就打到你服为 止！"
+            }
+        ]
+    },
+    "wz26.zhanghe.qiaobian": {
+        "name": "wz26.zhanghe.qiaobian",
+        "lang_name": "巧变",
+        "lang_desc": "你可以弃置一张手牌并跳过你的一个阶段（准备阶段 and 结束阶段除外），若你以此法跳过了：摸牌阶段，你可以获得至多两名其他角色的各一张手牌；出牌阶段，你可以移动场上的一张牌。回合结束时，若你本回合跳过了至少三个阶段，你可以摸两张牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/zhanghe/qiaobian1",
+                "translation": "兵无常势，水无常形，变！"
+            },
+            {
+                "url": "generals/zhanghe/qiaobian2",
+                "translation": "料 敌机先，巧变从容。"
+            }
+        ]
+    },
+    "wz26.yujin.yizhong": {
+        "name": "wz26.yujin.yizhong",
+        "lang_name": "毅重",
+        "lang_desc": "锁定技，若你装备区里没有防具牌，则梅花【杀】对你无效。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/yujin/yujin/yizhong1",
+                "translation": " 不先为备，何以待敌？"
+            },
+            {
+                "url": "generals/yujin/yujin/yizhong2",
+                "translation": "稳重行军，百战不殆！"
+            }
+        ]
+    },
+    "wz26.yujin.zhenjun": {
+        "name": "wz26.yujin.zhenjun",
+        "lang_name": "镇军",
+        "lang_desc": "准备阶段和结束阶段，你可以弃置一名角色的X张牌(X为其手牌数 减体力值且至少为1)，然后选择一项：1.你弃置等同于其中非装备牌数的牌；2.该角色摸等同于其中非装备牌数的牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/yujin/sp.yujin/zhenjun1",
+                "translation": "将怀其威，则镇其军！"
+            },
+            {
+                "url": "generals/yujin/sp.yujin/zhenjun2",
+                "translation": "治军之道，得之于严！"
+            }
+        ]
+    },
+    "wz26.sunhao.canzhu": {
+        "name": "wz26.sunhao.canzhu",
+        "lang_name": "残蚀",
+        "lang_desc": "摸牌阶段，你可以改为摸X张牌（X为已受伤的角色数且至少为4）。若如此做，当你本回合内使用非装备牌时，你弃置一张 牌。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/sunhao/canzhu1",
+                "translation": "难道一切不在朕手中？"
+            },
+            {
+                "url": "generals/sunhao/canzhu2",
+                "translation": "众人与蝼蚁何异？哈哈哈……"
+            }
+        ]
+    },
+    "wz26.sunhao.chouhai": {
+        "name": "wz26.sunhao.chouhai",
+        "lang_name": "仇海",
+        "lang_desc": "锁定技，当你受到伤害时，若你没有手牌，此伤害+1。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/sunhao/chouhai1",
+                "translation": "苍天不容，四海皆仇！"
+            },
+            {
+                "url": "generals/sunhao/chouhai2",
+                "translation": "孤乃大吴皇帝，尔等安 敢欺我！"
+            }
+        ]
+    }
+}

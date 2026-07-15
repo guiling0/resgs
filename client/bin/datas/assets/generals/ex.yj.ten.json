@@ -1,0 +1,164 @@
+{
+    "tenex.lingtong": {
+        "info": {
+            "id": "WU021",
+            "prefix": "界",
+            "version": "新杀",
+            "title": "豪情烈胆",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "聚一工作室",
+                "cv": "清水浊流",
+                "baseUrl": "lingtong/tenex.lingtong",
+                "audios": {
+                    "death": {
+                        "url": "generals/lingtong/tenex.lingtong/death",
+                        "translation": "泉下弟兄，统来也……"
+                    }
+                }
+            }
+        ]
+    },
+    "tenex.chengong": {
+        "info": {
+            "id": "QUN028/YJ002",
+            "prefix": "界",
+            "version": "新杀",
+            "title": "刚直壮烈",
+            "designer": "Kaycent&韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "游歌",
+                "cv": "未知",
+                "baseUrl": "chengong/tenex.chengong",
+                "audios": {
+                    "death": {
+                        "url": "generals/chengong/tenex.chengong/death",
+                        "translation": "一步迟，步步迟啊。"
+                    }
+                }
+            }
+        ]
+    },
+    "tenex.xunyou": {
+        "info": {
+            "id": "WEI020/YJ111",
+            "prefix": "界",
+            "version": "新杀",
+            "title": "曹魏的谋主",
+            "designer": "淬毒",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "柏桦",
+                "cv": "未知",
+                "baseUrl": "xunyou/tenex.xunyou",
+                "audios": {
+                    "death": {
+                        "url": "generals/xunyou/tenex.xunyou/death",
+                        "translation": "再不能替主公出谋了。"
+                    }
+                }
+            }
+        ]
+    },
+    "tenex.wangyi": {
+        "info": {
+            "id": "WEI030/YJ110",
+            "prefix": "界",
+            "version": "新杀",
+            "title": " 决意的巾帼",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "夏季和杨杨",
+                "cv": "周佶",
+                "baseUrl": "wangyi/tenex.wangyi",
+                "audios": {
+                    "death": {
+                        "url": "generals/wangyi/tenex.wangyi/death",
+                        "translation": "秘计不成，此城难守。"
+                    }
+                }
+            }
+        ]
+    },
+    "tenex.guanping": {
+        "info": {
+            "id": "SHU028/YJ208",
+            "prefix": "界",
+            "version": "新杀",
+            "title": "忠臣孝子",
+            "designer": "昂翼天 使",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "君恒文化",
+                "cv": "清水浊流",
+                "baseUrl": "guanping/tenex.guanping",
+                "audios": {
+                    "death": {
+                        "url": "generals/guanping/tenex.guanping/death",
+                        "translation": "黄泉路远，儿愿为父亲牵马执鞭……"
+                    }
+                }
+            }
+        ]
+    },
+    "tenex.liufeng": {
+        "info": {
+            "id": "SHU015",
+            "prefix": "界",
+            "version": "新杀",
+            "title": "骑虎之殇",
+            "designer": "佚名",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "佚名",
+                "cv": "佚名",
+                "baseUrl": "liufeng/tenex.liufeng",
+                "audios": {
+                    "death": {
+                        "url": "liufeng/tenex.liufeng/death",
+                        "translation": "父亲，为什么……"
+                    }
+                }
+            }
+        ]
+    },
+    "tenex.gongsunyuan": {
+        "info": {
+            "id": "QUN025",
+            "title": "狡徒悬海",
+            "designer": "未知",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "未知",
+                "cv": "未知",
+                "audios": {
+                    "death": { "translation": "司马懿…终究还是算漏了一步……" }
+                }
+            }
+        ]
+    }
+}

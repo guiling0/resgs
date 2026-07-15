@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>新神杀RE Wiki</title>
+    <link rel="stylesheet" href="css/wiki.css" />
+</head>
+<body>
+    <div id="app">
+        <!-- 侧边栏导航 -->
+        <nav id="sidebar">
+            <div class="sidebar-brand">
+                <span class="brand-icon">⚔</span>
+                <span class="brand-text">新神杀RE Wiki</span>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="#home" class="nav-link" data-page="home">🏠 首页</a></li>
+                <li><a href="#cards" class="nav-link" data-page="cards">🃏 卡牌</a></li>
+                <li><a href="#card-packs" class="nav-link" data-page="card-packs">📦 卡牌扩展包</a></li>
+                <li><a href="#generals" class="nav-link" data-page="generals">👤 武将</a></li>
+                <li><a href="#general-packs" class="nav-link" data-page="general-packs">📚 武将扩展包</a></li>
+                <li class="sidebar-divider"></li>
+                <li>
+                    <a href="#rules" class="nav-link" data-page="rules" id="rules-nav-link">
+                        <span class="nav-toggle-icon">▶</span> 📖 规则集
+                    </a>
+                    <div id="sidebar-rules-toc" class="sidebar-toc-container" style="display:none"></div>
+                </li>
+                <li class="sidebar-divider"></li>
+                <li><a href="#editor" class="nav-link" data-page="editor">✏ 武将编辑器</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <small>数据来源: shared/datas</small>
+                <small>共 816 张牌 · 710 名武将</small>
+            </div>
+        </nav>
+
+        <!-- 移动端顶部栏 -->
+        <header id="topbar">
+            <button id="menu-toggle" aria-label="菜单">☰</button>
+            <span class="topbar-title">新神杀RE Wiki</span>
+        </header>
+
+        <!-- 移动端遮罩 -->
+        <div id="sidebar-overlay"></div>
+
+        <!-- 主内容区 -->
+        <main id="content"></main>
+    </div>
+
+    <!-- 数据 -->
+    <script src="js/data-cards.js"></script>
+    <script src="js/data-generals.js"></script>
+    <script src="js/data-lang.js"></script>
+    <script src="js/data-rules.js"></script>
+
+    <!-- 应用逻辑 -->
+    <script src="js/wiki.js"></script>
+</body>
+</html>
