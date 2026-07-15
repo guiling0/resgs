@@ -102,6 +102,7 @@ export abstract class EventProcess<T extends EventType = EventType> {
                 await this.room.event.trigger(
                     timing.name as TimingName,
                     this,
+                    true,
                 );
             }
 

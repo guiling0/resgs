@@ -56,15 +56,35 @@ export class EventManager {
     /**
      * 触发一个时机 — 按优先级调度触发效果。
      *
-     * refreshs 在 EventProcess.triggerFunc() 中通过 injectRefreshs 注入，
-     * 此处仅负责 triggerEffects 的调度。
+     * @param skipRefreshs 事件流程中已通过 injectRefreshs 注入到 Timing 中，
+     *   触发时传 true 避免重复分发。独立调用（如 processCompleted）传默认值 false。
      */
     async trigger(
         timingName: TimingName,
         data: EventProcess | Record<string, any>,
+        skipRefreshs: boolean = false,
     ) {
+        if (!skipRefreshs) {
+            const entry = this.room.refreshsByTiming.get(timingName);
+            if (entry) {
+                for (const item of entry.before) {
+                    try { await item.fn(this.room, data); } catch (e) { console.error('[refresh before]', e); }
+                }
+            }
+        }
+
         const timingMap = this.room.triggerEffects.get(timingName);
-        if (!timingMap) return;
+        if (!timingMap) {
+            if (!skipRefreshs) {
+                const entry = this.room.refreshsByTiming.get(timingName);
+                if (entry) {
+                    for (const item of entry.after) {
+                        try { await item.fn(this.room, data); } catch (e) { console.error('[refresh after]', e); }
+                    }
+                }
+            }
+            return;
+        }
 
         const players = this.room.player.sortResponse(this.room.alives);
         const times: Record<string, Record<number, number>> = {};
@@ -93,6 +113,15 @@ export class EventManager {
 
                 // TODO Phase 7: askForSkillInvoke → create UseSkillEvent → exec
                 if (available.length > 0) {
+                }
+            }
+        }
+
+        if (!skipRefreshs) {
+            const entry = this.room.refreshsByTiming.get(timingName);
+            if (entry) {
+                for (const item of entry.after) {
+                    try { await item.fn(this.room, data); } catch (e) { console.error('[refresh after]', e); }
                 }
             }
         }
