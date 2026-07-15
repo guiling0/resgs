@@ -127,9 +127,10 @@ export class Effect implements MarkHost {
     }
 
     hasTag(tag?: SkillTag) {
+        if (!this._jsonData.tag) return false;
         return tag === undefined
-            ? this._jsonData.tag && this._jsonData.tag.length > 0
-            : this._jsonData?.tag.includes(tag);
+            ? this._jsonData.tag.length > 0
+            : this._jsonData.tag.includes(tag);
     }
 
     get isLock() {
@@ -168,12 +169,18 @@ export class Effect implements MarkHost {
             if (this.isLimit && count > 0) return false;
             if (this.isAwake && count > 0) return false;
         }
-        // 主将技/副将技标签检查
+        // 主将技/副将技 标签检查
         if (this.hasTag(SkillTag.Head) && this.player) {
             if (!this.player.hasHead()) return false;
         }
         if (this.hasTag(SkillTag.Deputy) && this.player) {
             if (!this.player.hasDeputy()) return false;
+        }
+        if (this.hasTag(SkillTag.ZhuShuai) && this.player) {
+            // TODO: 主帥检查逻辑待实现
+        }
+        if (this.hasTag(SkillTag.QianFeng) && this.player) {
+            // TODO: 先锋检查逻辑待实现
         }
         return true;
     }

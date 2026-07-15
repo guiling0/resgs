@@ -7,7 +7,8 @@ export const enum Phase {
     Drop,
     End,
 
-    JiaoDiZhu = 8,
-    ConfirmScore = 9,
-    NotScore = 10,
+    // 斗地主等特殊模式专用（避免与基础阶段冲突）
+    JiaoDiZhu = 100,
+    ConfirmScore = 101,
+    NotScore = 102,
 }

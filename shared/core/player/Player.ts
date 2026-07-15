@@ -152,10 +152,10 @@ export class Player implements MarkHost {
     get inturn(): boolean {
         return this.state.inturn;
     }
-    /** 主将 ID（写入时缓存待房间 generals Map 就绪后改为查表） */
+    /** 主将 ID（写入时查找 room.generals 缓存实例） */
     set headId(value: string) {
         this.state.headId = value;
-        this._head = undefined; // TODO: this.room.generals.get(value)
+        this._head = value ? this.room.generals.get(value) : undefined;
     }
     get headId(): string {
         return this.state.headId;
@@ -163,7 +163,7 @@ export class Player implements MarkHost {
     /** 副将 ID */
     set deputyId(value: string) {
         this.state.deputyId = value;
-        this._deputy = undefined; // TODO: this.room.generals.get(value)
+        this._deputy = value ? this.room.generals.get(value) : undefined;
     }
     get deputyId(): string {
         return this.state.deputyId;

@@ -1,9 +1,4 @@
-import {
-    GameCardId,
-    SourceData,
-    VirtualCardData,
-    VirtualSourceData,
-} from '../card/CardTypes';
+import { GameCardId } from '../card/CardTypes';
 import { GameCard } from '../card/GameCard';
 import { VirtualCard } from '../card/VirtualCard';
 import { General } from '../general/General';
@@ -23,12 +18,12 @@ export class GameLogic {
         this.input = input;
     }
 
-    /** 获取卡牌 */
+    /** 获取武将 */
     getGeneral(id: string): General | undefined {
         return this.generals.get(id);
     }
 
-    /** 获取所有卡牌 */
+    /** 获取所有武将 */
     getGenerals(ids: string[]): General[] {
         return ids
             .map((id) => this.getGeneral(id))

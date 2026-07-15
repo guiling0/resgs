@@ -49,9 +49,7 @@ export class VirtualCardManager {
             number: data.number,
             attr: data.attr,
         });
-        for (const key in data.data) {
-            vc.data[key] = data.data[key];
-        }
+        Object.assign(vc.data, data.data);
         this.room.vcards.push(vc);
         return vc;
     }

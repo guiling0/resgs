@@ -133,8 +133,10 @@ export class TurnEvent extends EventProcess<EventType.Turn> {
     // ===== Timing 构建 =====
 
     private _buildTriggers(): void {
-        const T = (name: TimingName, after?: Array<(room: Room, data: TurnEventData) => Promise<void>>) =>
-            ({ name, after } as Timing);
+        const T = (
+            name: TimingName,
+            after?: Array<(room: Room, data: TurnEventData) => Promise<void>>,
+        ) => ({ name, after }) as Timing;
 
         this.eventTriggers = [
             T(TimingName.TurnStartBefore, [this._onTurnStartBefore.bind(this)]),
@@ -191,10 +193,7 @@ export class TurnEvent extends EventProcess<EventType.Turn> {
 
     // ===== TurnEnd 回调 =====
 
-    private async _onTurnEnd(
-        _room: Room,
-        _data: TurnEventData,
-    ): Promise<void> {
+    private async _onTurnEnd(_room: Room, _data: TurnEventData): Promise<void> {
         this.player.inturn = false;
 
         // 规则：酒效果持续到回合结束，全体清零
@@ -250,7 +249,9 @@ export class TurnEvent extends EventProcess<EventType.Turn> {
             const phases = Array.isArray(phase) ? phase : [phase];
             if (
                 phases.length > 0 &&
-                phases.every((v) => v !== undefined && !this.skippedPhases.includes(v))
+                phases.every(
+                    (v) => v !== undefined && !this.skippedPhases.includes(v),
+                )
             ) {
                 this.skippedPhases.push(...phases);
             }
@@ -350,7 +351,7 @@ export class PhaseEvent extends EventProcess<EventType.Phase> {
         const entry = PHASE_TIMING[this.phase];
         if (entry) {
             this.eventTriggers = entry.triggers.map(
-                (name) => ({ name } as Timing),
+                (name) => ({ name }) as Timing,
             );
             this.endTriggers = [{ name: entry.end } as Timing];
         } else {

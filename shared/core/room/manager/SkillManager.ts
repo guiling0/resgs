@@ -147,7 +147,7 @@ export class SkillManager {
                 }
 
                 const priority =
-                    effect._jsonData.priority || PriorityType.General;
+                    effect._jsonData.priority ?? PriorityType.General;
                 let entry = timingMap.get(priority);
                 if (!entry) {
                     entry = { global: [], byPlayer: new Map() };
@@ -196,7 +196,7 @@ export class SkillManager {
                 const timingMap = this.room.triggerEffects.get(timing);
                 if (timingMap) {
                     const priority =
-                        effect._jsonData.priority || PriorityType.General;
+                        effect._jsonData.priority ?? PriorityType.General;
                     const entry = timingMap.get(priority);
                     if (entry) {
                         const remove = (arr: Effect[]) => {

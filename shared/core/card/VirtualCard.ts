@@ -44,7 +44,10 @@ export class VirtualCard implements ICard {
         if (record) {
             this.addSubCards(cards);
         } else {
-            cards.forEach((c) => this.subcards.push(c));
+            for (const c of cards) {
+                this.subcards.push(c);
+                c.vcard = this;
+            }
         }
 
         // 计算默认属性 + 应用覆盖
@@ -53,13 +56,12 @@ export class VirtualCard implements ICard {
 
     addSubCards(cards: GameCard[]) {
         for (const card of cards) {
-            if (!this.subcards.includes(card)) {
-                if (card.vcard) {
-                    card.vcard.delSubCard(card);
-                }
-                this.subcards.push(card);
-                card.vcard = this;
+            if (card.vcard === this) continue;
+            if (card.vcard) {
+                card.vcard.delSubCard(card);
             }
+            this.subcards.push(card);
+            card.vcard = this;
         }
     }
 

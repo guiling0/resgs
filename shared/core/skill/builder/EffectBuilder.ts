@@ -203,7 +203,7 @@ export class EffectBuilder<T extends TimingTrigger = never> {
             settings: { ...this._settings },
             selectors: this._selectors,
             data: this.data,
-            condition: this._condition,
+            condition: this._condition ?? (() => undefined),
             refreshs: this._refreshs,
 
             priority: this.priority,

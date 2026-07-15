@@ -2,6 +2,8 @@
 export type GameCardId = number;
 /** 虚拟牌ID */
 export type VirtualCardId = number;
+/** 牌放置方式 */
+export type CardPut = boolean;
 /** 区域ID */
 export type AreaId = string;
 

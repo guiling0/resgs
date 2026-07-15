@@ -650,7 +650,8 @@ export interface TimingEventMap {
         | EventType.UseCardSpecial;
     [TimingName.UseCardEffectAfter]:
         | EventType.UseCard
-        | EventType.UseCardToCard;
+        | EventType.UseCardToCard
+        | EventType.UseCardSpecial;
     [TimingName.UseCardEnd1]:
         | EventType.UseCard
         | EventType.UseCardToCard

@@ -105,9 +105,10 @@ export class EventManager {
                 const available = effects.filter((e) => {
                     if (!e.check(data)) return false;
                     const t = times[player.playerId]?.[e.id] ?? 0;
-                    const max = e._jsonData.context
-                        ? ((e._jsonData.context.call(e, this.room, player, data) as any)?.maxTimes ?? 1)
-                        : 1;
+                    const max =
+                        typeof e._jsonData.context === 'function'
+                            ? ((e._jsonData.context.call(e, this.room, player, data) as any)?.maxTimes ?? 1)
+                            : 1;
                     return max === -1 || t < max;
                 });
 

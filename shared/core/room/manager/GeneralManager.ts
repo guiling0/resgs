@@ -144,7 +144,8 @@ export class GeneralManager {
                       kingdomOrPlayer.deputy?.kingdom,
                   ].find(
                       (v) => v && v !== 'none' && !v.includes('ye'),
-                  ) as string) || '';
+                  ) ?? '');
+        if (!kingdom) return [];
 
         const result: General[] = [];
         const changed = this.room.changeGenerals;
