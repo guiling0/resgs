@@ -58,13 +58,15 @@ export class UseSkillEvent extends EventProcess<EventType.UseSkill> {
                 this.room.player.sortResponse(ctx.targets);
             }
 
-            // 2. 执行 choose
+            // 2. 执行 choose（无回调时默认为 true——无需选择即可发动）
             if (this.effect._jsonData.choose) {
                 const result = await this.effect._jsonData.choose.call(
                     this.effect, this.room, ctx.from, timingData, ctx,
                 );
                 if (!result) { await this._finalize(); return this; }
                 ctx.choose = result;
+            } else {
+                ctx.choose = true;
             }
 
             // 3. 明置武将牌（非 Secret 标签）
@@ -92,14 +94,15 @@ export class UseSkillEvent extends EventProcess<EventType.UseSkill> {
                 this.effect.player.setMark(`@awake:${this.effect.id}`, '@awake-false');
             }
 
-            // 13. 执行消耗 → 触发 Cost 时机
+            // 13. 执行消耗 → 触发 Cost 时机（无回调时默认 true——旧项目无消耗技模式）
             if (this.effect._jsonData.cost) {
                 costResult = await this.effect._jsonData.cost.call(
                     this.effect, this.room, ctx.from, timingData, ctx,
                 );
+                if (!costResult) { await this._finalize(); return this; }
+            } else {
+                costResult = true;
             }
-
-            if (!costResult) { await this._finalize(); return this; }
 
             ctx.cost = costResult;
             this.eventData.used = true;

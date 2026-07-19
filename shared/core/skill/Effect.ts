@@ -6,7 +6,7 @@ import { Player } from '../player/Player';
 import { Skill } from './Skill';
 import { MarkHost, MarkMethods } from '../mark/MarkTypes';
 import { Room } from '../room/Room';
-import { TimingData, TimingName, TimingTrigger } from '../event/EventTypes';
+import { TimingData, TimingName } from '../event/EventTypes';
 
 export class Effect implements MarkHost {
     readonly id: number;
@@ -87,12 +87,13 @@ export class Effect implements MarkHost {
 
     get isViewAsOrPlayPhase(): boolean {
         if (!this.hasTrigger) return false;
+        const t = this._jsonData.trigger;
         return (
-            this.inTrigger(TimingName.UseCardNeed1) ||
-            this.inTrigger(TimingName.UseCardNeed2) ||
-            this.inTrigger(TimingName.DropCardNeed1) ||
-            this.inTrigger(TimingName.DropCardNeed2) ||
-            this.inTrigger(TimingName.PlayPhase)
+            t === TimingName.UseCardNeed1 ||
+            t === TimingName.UseCardNeed2 ||
+            t === TimingName.DropCardNeed1 ||
+            t === TimingName.DropCardNeed2 ||
+            t === TimingName.PlayPhase
         );
     }
 
@@ -199,7 +200,4 @@ export class Effect implements MarkHost {
         return raw;
     }
 
-    inTrigger(trigger: TimingTrigger) {
-        return this._jsonData.trigger === trigger;
-    }
 }

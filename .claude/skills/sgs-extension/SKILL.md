@@ -322,7 +322,7 @@ export const xuchuSkills = [luoyi.register()];
 
 | 陷阱 | 说明 | 状态 |
 |---|---|---|
-| **无消耗技能不发动** | `UseSkillEvent.exec()` 中 `cost` 回调为空 → `costResult` 为 `undefined` → 直接 `finalize`，`used` 恒为 `false`。无消耗技能暂时无法正确发动。 | ⚠️ B4，M1 修复 |
+| **无消耗技能不发动** | ~~B4~~ 已修复：`choose`/`cost` 回调未提供时默认 `true`，无消耗技能正常走完发动流程。 | ✅ 已修复 |
 | **selectors 无消费方** | `EffectData.selectors` 字段定义了但没有任何代码使用它。 | ⚠️ B7，M1 修复 |
 | **明置走直改** | `UseSkillEvent` 第 3 步直接 `turnTo(true)` 而非通过 `ChangeStateEvent`。 | ⚠️ A2，M1-M2 |
 | **GameStartAfter 缺失** | 游戏开始后时机枚举不存在。 | ⚠️ A1 |

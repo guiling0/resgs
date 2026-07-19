@@ -319,7 +319,7 @@ export interface EffectContext {
     from: Player;
     /** 触发此技能的源事件（技能中可通过它调用 prevent/transfer 等方法） */
     event?: import('../event/EventProcess').EventProcess;
-    cost?: Record<string, any[]>;
+    cost?: any;
     selections?: Record<string, Record<string, any[]>>;
     [key: string]: any;
 }
