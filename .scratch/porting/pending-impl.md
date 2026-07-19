@@ -154,7 +154,7 @@
 ### 实现理念（新旧项目一致）
 
 - 技能（Skill）仅作为 Effect 框架，**Effect 才是技能主体**，分为触发类与状态类
-- 差异：旧项目 TriggerEffect / StateEffect 是两个子类；**新项目设计为触发类和状态类可以共存到一个 Effect 中**（`EffectData` 同时有 trigger 与 stateCallbacks）
+- 差异：旧项目 TriggerEffect / StateEffect 是两个子类；**新项目设计为触发类和状态类**互斥**——EffectBuilder.build() 校验共存时报错**（`EffectData` 同时有 trigger 与 stateCallbacks）
 
 ### 六要素 → 实现映射
 

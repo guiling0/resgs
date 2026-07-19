@@ -25,7 +25,7 @@
 |---|---|---|
 | 事件 | EventProcess | **开发概念**：游戏内一个原子流程类，持有 eventTriggers/endTriggers，`exec()` 逐个消费时机。游戏定义（事件/结算/时机/流程/响应）见 [event-resolution.md](docs/terms/event-resolution.md)。 |
 | 时机 | TimingName | **开发概念**：时机枚举（80+ 成员），`const enum`。游戏定义（时机的语义与顺序）见 [event-resolution.md](docs/terms/event-resolution.md)。 |
-| 效果 | Effect | **开发概念**：技能的具体执行单元类，触发回调与状态回调可共存于一个 Effect。游戏定义（即时类/延时类/状态类效果）见 [skill.md](docs/definitions/skill.md)。 |
+| 效果 | Effect | **开发概念**：技能的具体执行单元类，触发类与状态类**互斥**。游戏定义（即时类/延时类/状态类效果）见 [skill.md](docs/definitions/skill.md)。 |
 | 技能 | Skill | **开发概念**：Effect 的容器类。一个武将技能 = 1 个 Skill + N 个 Effect。游戏定义（状态类/触发类技能、六要素、发动流程）见 [skill.md](docs/definitions/skill.md)。 |
 | 刷新 | refreshs | 效果的 on_refresh 回调，在每次 trigger 的前后执行。用于更新效果内部的临时状态（如计数条件）。 |
 | 区域 | Area | **开发概念**：AreaId = `'{playerId}.{type}'`（玩家私有）或 `'{type}'`（公共），解析见 `parseAreaId`。游戏定义（17 种区域、牌面朝向、特殊规则）见 [zones.md](docs/terms/zones.md)。 |

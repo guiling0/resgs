@@ -63,7 +63,7 @@ git -C old/resgsv1 ls-tree -r HEAD --name-only server/src/extensions/standard/
 
 | 概念 | 旧项目 | 新项目 |
 |---|---|---|
-| Effect 类 | TriggerEffect / StateEffect 独立子类 | 统一 Effect，has_trigger + has_state 双标志 |
+| Effect 类 | TriggerEffect / StateEffect 独立子类 | 统一 Effect，触发/状态互斥（has_trigger \| has_state 二选一） |
 | Skill 定义 | `sgs.define({...})` 全局注册 | `new SkillBuilder('name')` + `.register()` |
 | 触发时机 | `EventTriggers.DamageInflictAfter` 字符串 | `TimingName.DamageInflictAfter` const enum |
 | 上下文类型 | `TriggerEffectContext` 弱类型 `[key:string]:any` | `EffectContext` 接口（仍有 index sig 但有关键字段） |

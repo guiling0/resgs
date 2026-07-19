@@ -52,7 +52,7 @@
 
 ## 二、新框架现状与缺口（对照 skill.md 六要素逐项检查)
 
-新框架已达成的设计改进：触发/状态可共存于同一 Effect（`has_trigger`/`has_state` 双标志 + `stateCallbacks`，SkillManager 双索引注册）；表现字段收拢进 `EffectSettings`；`condition`（非时机条件）与 `can_trigger`（时机条件）拆分；`_currentEffect` 嵌套栈自动为派生事件填 reason/effect；StateEffectType 状态技查询 `getStates` 在位。
+~~触发/状态可共存于同一 Effect（`has_trigger`/`has_state` 双标志 + `stateCallbacks`，SkillManager 双索引注册）~~ **→ 已改为互斥**（2026-07-20）：EffectBuilder.build() 校验共存时报错，SkillManager 以 if/else if 注册，Effect.check() 按类型分叉。其他设计改进：表现字段收拢进 `EffectSettings`；`condition` 与 `can_trigger` 拆分；`_currentEffect` 嵌套栈自动为派生事件填 reason/effect；StateEffectType 状态技查询 `getStates` 在位。
 
 逐要素检查：
 
