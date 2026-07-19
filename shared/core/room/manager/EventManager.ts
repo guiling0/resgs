@@ -1,6 +1,9 @@
 import { RefreshEntry, Room } from '../Room';
 import { Player } from '../../player/Player';
-import { EffectContext, PriorityType, TimingCallback } from '../../skill/SkillTypes';
+import {
+    PriorityType,
+    TimingCallback,
+} from '../../skill/SkillTypes';
 import { Skill } from '../../skill/Skill';
 import { Effect } from '../../skill/Effect';
 import { TimingName } from '../../event/EventTypes';
@@ -515,9 +518,7 @@ export class EventManager {
         timingName: string,
         times: Record<string, Record<number, number>>,
     ): Promise<boolean> {
-        const ctx: EffectContext = effect._jsonData.context
-            ? effect._jsonData.context.call(effect, this.room, player, data)
-            : { from: player };
+        const ctx = effect.buildContext(this.room, player, data);
 
         const useSkill = new UseSkillEvent(this.room, {
             effect,

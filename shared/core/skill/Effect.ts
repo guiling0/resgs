@@ -1,6 +1,6 @@
 import { MapSchema } from '@colyseus/schema';
 import { MarkState } from '../schema/MarkState';
-import { EffectData, EffectOptions, SkillTag } from './SkillTypes';
+import { EffectContext, EffectData, EffectOptions, SkillTag } from './SkillTypes';
 import { EffectState } from '../schema/EffectState';
 import { Player } from '../player/Player';
 import { Skill } from './Skill';
@@ -210,6 +210,20 @@ export class Effect implements MarkHost {
         const sg = this.skill?.sourceGeneral;
         if (sg && !sg.put) return false;
         return true;
+    }
+
+    /**
+     * 构建技能上下文。优先调用 EffectData.context 回调，无回调时返回最小上下文。
+     */
+    buildContext(
+        room: Room,
+        player: Player,
+        data: TimingData<any> | Record<string, any>,
+    ): EffectContext {
+        if (this._jsonData.context) {
+            return this._jsonData.context.call(this, room, player, data);
+        }
+        return { from: player };
     }
 
 }
