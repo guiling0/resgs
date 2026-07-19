@@ -167,23 +167,17 @@ export class Room implements Omit<MarkHost, 'room'> {
     effects: Effect[] = [];
     /** 当前事件栈（正在执行的事件链，不含 Turn/Phase 事件） */
     eventStack: EventProcess[] = [];
-    /** 回合栈（TurnEvent + PhaseEvent 独立维护） */
-    turnStack: (TurnEvent | PhaseEvent)[] = [];
-    /** 当前正在执行的回合事件 */
+    /** 回合栈 */
+    turnStack: TurnEvent[] = [];
+    /** 阶段栈 */
+    phaseStack: PhaseEvent[] = [];
+    /** 当前回合（栈顶） */
     get currentTurn(): TurnEvent | undefined {
-        for (let i = this.turnStack.length - 1; i >= 0; i--) {
-            const e = this.turnStack[i];
-            if (e instanceof TurnEvent) return e;
-        }
-        return undefined;
+        return this.turnStack[this.turnStack.length - 1];
     }
-    /** 当前正在执行的阶段事件 */
+    /** 当前阶段（栈顶） */
     get currentPhase(): PhaseEvent | undefined {
-        for (let i = this.turnStack.length - 1; i >= 0; i--) {
-            const e = this.turnStack[i];
-            if (e instanceof PhaseEvent) return e;
-        }
-        return undefined;
+        return this.phaseStack[this.phaseStack.length - 1];
     }
     /** 延迟明置队列 */
     deferredOpens: EventProcess[] = [];

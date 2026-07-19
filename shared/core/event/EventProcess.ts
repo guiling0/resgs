@@ -78,15 +78,17 @@ export abstract class EventProcess<T extends EventType = EventType> {
 
     // ===== 执行流程 =====
 
-    /** 初始化：设置 source → 推入事件栈。Turn/Phase 事件走 turnStack。 */
+    /** 初始化：设置 source → 推入事件栈。Turn→turnStack, Phase→phaseStack。 */
     protected async init() {
         const isTurnOrPhase =
             this.type === EventType.Turn || this.type === EventType.Phase;
         if (!this.source && !isTurnOrPhase && this.room.eventStack.length > 0) {
             this.source = this.room.eventStack[this.room.eventStack.length - 1];
         }
-        if (isTurnOrPhase) {
+        if (this.type === EventType.Turn) {
             this.room.turnStack.push(this as any);
+        } else if (this.type === EventType.Phase) {
+            this.room.phaseStack.push(this as any);
         } else {
             this.room.eventStack.push(this);
         }
@@ -259,11 +261,12 @@ export abstract class EventProcess<T extends EventType = EventType> {
     /** 事件完成后的清理 */
     async processCompleted() {
         try {
-            const isTurnOrPhase =
-                this.type === EventType.Turn || this.type === EventType.Phase;
-            if (isTurnOrPhase) {
+            if (this.type === EventType.Turn) {
                 const idx = this.room.turnStack.indexOf(this as any);
                 if (idx >= 0) this.room.turnStack.splice(idx, 1);
+            } else if (this.type === EventType.Phase) {
+                const idx = this.room.phaseStack.indexOf(this as any);
+                if (idx >= 0) this.room.phaseStack.splice(idx, 1);
             } else {
                 const idx = this.room.eventStack.indexOf(this);
                 if (idx >= 0) this.room.eventStack.splice(idx, 1);
