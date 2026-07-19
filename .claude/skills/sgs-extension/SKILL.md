@@ -11,7 +11,7 @@ description: 编写三国杀游戏扩展的完整工作流——武将技能、�
 
 **Skill 是容器，Effect 才是逻辑主体。** 一个武将技能（如"裸衣"）= 1 个 `Skill` + N 个 `Effect`。Skill 负责条件检查与可见性，Effect 承载实际的触发逻辑或状态修改。
 
-**同一个 Effect 可以同时是触发类 + 状态类。** 旧项目 `TriggerEffect` 和 `StateEffect` 是两个独立子类；新项目 `EffectData` 通过 `has_trigger` / `has_state` 双标志让一个 Effect 同时拥有触发回调和状态回调。这意味着像"马术"（距离-1）+ "铁骑"（杀指定目标后判定）理论上可以合并到一个 Effect 中——但按惯例保持一个 Effect 一个关注点更清晰。
+**触发类与状态类互斥。** 一个 Effect 要么是触发类（`has_trigger`），要么是状态类（`has_state`），不可兼有。如果需要同时有触发和状态行为（如既有距离修正又有触发时机），拆为两个独立 Effect。EffectBuilder 在 `build()` 时会校验，共存会报错。
 
 **Builder 模式是推荐入口。** `SkillBuilder` + `EffectBuilder` 提供链式 API，比手写 `SkillData` 对象更不易出错。Builder 的 `.register()` / `.build()` 产出纯数据对象，运行时由 `SkillManager` 消费。
 

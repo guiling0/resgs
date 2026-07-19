@@ -132,9 +132,9 @@ export class SkillManager {
         }
     }
 
-    // ===== 效果索引注册（触发 + 状态） =====
+    // ===== 效果索引注册（触发 / 状态，互斥） =====
 
-    /** 注册效果到房间索引：触发效果 → triggerEffects，状态效果 → stateEffects */
+    /** 注册效果到房间索引：触发效果 → triggerEffects，状态效果 → stateEffects。二者互斥。 */
     private registerEffect(effect: Effect) {
         // 触发效果
         if (effect.hasTrigger) {
@@ -169,9 +169,8 @@ export class SkillManager {
                 }
             }
         }
-
-        // 状态效果
-        if (effect.hasState) {
+        // 状态效果（与触发类互斥）
+        else if (effect.hasState) {
             const callbacks = effect._jsonData.stateCallbacks;
             if (callbacks) {
                 for (const key of Object.keys(callbacks)) {
@@ -213,8 +212,8 @@ export class SkillManager {
             }
         }
 
-        // 状态效果
-        if (effect.hasState) {
+        // 状态效果（与触发类互斥）
+        else if (effect.hasState) {
             const callbacks = effect._jsonData.stateCallbacks;
             if (callbacks) {
                 for (const key of Object.keys(callbacks)) {

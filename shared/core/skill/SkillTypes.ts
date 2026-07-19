@@ -197,7 +197,9 @@ export interface SkillData {
 }
 
 export interface EffectData {
+    /** 是否为触发类效果（与 has_state 互斥） */
     has_trigger: boolean;
+    /** 是否为状态类效果（与 has_trigger 互斥） */
     has_state: boolean;
     /** 效果名 */
     name: string;

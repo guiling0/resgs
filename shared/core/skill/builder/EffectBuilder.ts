@@ -201,6 +201,17 @@ export class EffectBuilder<T extends TimingTrigger = never> {
             this._effect
         );
         const isState = Object.keys(this._stateCallbacks).length > 0;
+
+        // ===== 互斥校验：触发类与状态类不可共存 =====
+        if (isTrigger && isState) {
+            throw new Error(
+                `Effect "${fullName}": cannot be both trigger and state. ` +
+                `Trigger is set by: on/can_trigger/context/choose/cost/effect. ` +
+                `State is set by: state()/distanceCorrect()/maxHandCorrect()/etc. ` +
+                `Split into two separate effects.`,
+            );
+        }
+
         return {
             has_trigger: isTrigger,
             has_state: isState,

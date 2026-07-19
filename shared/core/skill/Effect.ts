@@ -86,6 +86,7 @@ export class Effect implements MarkHost {
     }
 
     get isViewAsOrPlayPhase(): boolean {
+        if (!this.hasTrigger) return false;
         return (
             this.inTrigger(TimingName.UseCardNeed1) ||
             this.inTrigger(TimingName.UseCardNeed2) ||
@@ -154,22 +155,23 @@ export class Effect implements MarkHost {
     }
 
     /**
-     * 效果是否可用：
-     * 1) 未被禁用
-     * 2) 关联技能可用
-     * 3) 标签检查（limit/awake 标记）
-     * 4) 标签检查（head/deputy/zhuShuai/qianFeng）
+     * 效果是否可用。
+     * 触发类：需额外检查 limit/awake 标记 + head/deputy 位置。
+     * 状态类：仅检查自身及关联技能未被禁用。
      */
     check(data?: TimingData<any>): boolean {
         if (this.isInvalid) return false;
         if (this.skill && !this.skill.check()) return false;
-        // limit/awake 标记检查（已发动过则不可用）
+
+        // 状态类效果无标签和次数约束
+        if (this.hasState) return true;
+
+        // 触发类效果：标签检查
         if (this.isLimit || this.isAwake) {
             const count = this.player?.countMark(this.name, this.id) ?? 0;
             if (this.isLimit && count > 0) return false;
             if (this.isAwake && count > 0) return false;
         }
-        // 主将技/副将技 标签检查
         if (this.hasTag(SkillTag.Head) && this.player) {
             if (!this.player.hasHead()) return false;
         }
