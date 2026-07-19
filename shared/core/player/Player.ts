@@ -7,7 +7,10 @@ import { Phase } from './PlayerTypes';
 import { MarkHost, MarkMethods } from '../mark/MarkTypes';
 import { General } from '../general/General';
 import { GameCard } from '../card/GameCard';
-import { AreaId, AreaType } from '../card/CardTypes';
+import { AreaId, AreaType, VirtualCardData } from '../card/CardTypes';
+import { VirtualCard } from '../card/VirtualCard';
+import { DamageType, MoveCardOpts } from '../event/EventTypes';
+import { SelectCount, type SelectSession } from '../select/SelectTypes';
 
 export class Player implements MarkHost {
     // ===== 客户端专项属性，服务端不引用 =====
@@ -29,7 +32,20 @@ export class Player implements MarkHost {
         this.state = state;
         this.state.playerId = playerId;
         this.marksMap = state.markStates;
+        // 创建私有区域
+        for (const type of [
+            AreaType.Hand,
+            AreaType.Equip,
+            AreaType.Judge,
+            AreaType.Up,
+            AreaType.Side,
+        ]) {
+            this.room.area.initArea(this.getAreaId(type));
+            this.room.area.initArea(this.getAreaId(type), true);
+        }
     }
+
+    // ===== MarkHost 标记方法（委托到 MarkMethods） =====
 
     // ===== MarkHost 标记方法（委托到 MarkMethods） =====
     setMark = MarkMethods.setMark;
@@ -60,6 +76,13 @@ export class Player implements MarkHost {
     }
     get seat(): number {
         return this.state.seat;
+    }
+    /** 座位标签（游戏开始前用于确认身份，开始后随机分配时可能被修改） */
+    get seattag(): string | undefined {
+        return this.data.seattag;
+    }
+    set seattag(value: string | undefined) {
+        this.data.seattag = value;
     }
     /** 身份（zhugong/zhongchen/fanzei/neijian） */
     set role(value: string) {
@@ -306,5 +329,217 @@ export class Player implements MarkHost {
         if (this.hasHead() && !this.headOpen) generals.push(this.head!);
         if (this.hasDeputy() && !this.deputyOpen) generals.push(this.deputy!);
         return generals;
+    }
+
+    // ===== 事件快捷方法（省略 player 参数，技能中便捷调用）=====
+
+    /** 作为伤害来源对 target 造成伤害 */
+    async damage(
+        target: Player,
+        damageType = 0 as DamageType,
+        number = 1,
+        channel?: VirtualCard | string,
+        isChain?: boolean,
+    ) {
+        return this.room.damage(this, target, damageType, number, channel, isChain);
+    }
+    /** 作为目标受到伤害（source 可为 undefined 表示无来源） */
+    async takeDamage(
+        source: Player | undefined,
+        damageType = 0 as DamageType,
+        number = 1,
+        channel?: VirtualCard | string,
+        isChain?: boolean,
+    ) {
+        return this.room.damage(source, this, damageType, number, channel, isChain);
+    }
+    async loseHp(number = 1) {
+        return this.room.loseHp(this, number);
+    }
+    async reduceHp(number = 1) {
+        return this.room.reduceHp(this, number);
+    }
+    async recover(number = 1) {
+        return this.room.recover(this, number);
+    }
+    /** 将体力恢复到目标值（自动计算回复量，最多到上限），委托到 Room */
+    async recoverTo(targetHp: number) {
+        return this.room.recoverTo(this, targetHp);
+    }
+    async changeMaxHp(number = 1) {
+        return this.room.changeMaxHp(this, number);
+    }
+    async dying() {
+        return this.room.dying(this);
+    }
+    async die(killer?: Player) {
+        return this.room.die(this, killer);
+    }
+
+    // ===== canXxx 检测方法 =====
+
+    canLoseHp(number: number = 1): boolean {
+        return this.room.canLoseHp(this, number);
+    }
+    canRecover(number: number = 1): boolean {
+        return this.room.canRecover(this, number);
+    }
+    canChangeMaxHp(number: number = 1): boolean {
+        return this.room.canChangeMaxHp(this, number);
+    }
+
+    /**
+     * 检测 targetPlayer 指定区域的牌中可被当前玩家弃置的数量是否 ≥ count。
+     * @param targetPlayer 被检者
+     * @param count 需要数量
+     * @param pos 区域（h/e/j/u/s，默认 h）
+     */
+    canDiscard(targetPlayer: Player, count: number = 1, pos: string = 'h'): boolean {
+        if (count <= 0) return false;
+        // TODO Phase 7: 通过 StateEffectType.Prohibit_DropCards 过滤
+        return this._getCardsByPos(targetPlayer, pos).length >= count;
+    }
+
+    /**
+     * 检测 targetPlayer 指定区域的牌中可被当前玩家获得的数量是否 ≥ count。
+     * @param targetPlayer 被检者
+     * @param count 需要数量
+     * @param pos 区域（h/e/j/u/s，默认 h）
+     */
+    canObtain(targetPlayer: Player, count: number = 1, pos: string = 'h'): boolean {
+        if (count <= 0) return false;
+        // TODO Phase 7: 通过 Prohibit_ObtainCards 状态效果过滤
+        return this._getCardsByPos(targetPlayer, pos).length >= count;
+    }
+
+    // ===== 卡牌移动快捷方法（委托到 Room）=====
+
+    async moveCards(
+        cards: GameCard[],
+        toArea: AreaId,
+        opts?: MoveCardOpts,
+    ) {
+        return this.room.moveCards(cards, toArea, { ...opts, player: this });
+    }
+
+    async putTo(cards: GameCard[], toArea: AreaId, opts?: MoveCardOpts) {
+        return this.room.putTo(cards, toArea, { ...opts, player: this });
+    }
+
+    async draw(count: number = 1, pos: 'top' | 'bottom' = 'top', opts?: MoveCardOpts) {
+        return this.room.draw(this, count, pos, opts);
+    }
+
+    async discard(cards: GameCard[], opts?: MoveCardOpts) {
+        return this.room.discard(this, cards, opts);
+    }
+
+    async obtain(cards: GameCard[], opts?: MoveCardOpts) {
+        return this.room.obtain(this, cards, opts);
+    }
+
+    async recast(cards: GameCard[], drawOneAlways: boolean = false, opts?: MoveCardOpts) {
+        return this.room.recast(this, cards, drawOneAlways, opts);
+    }
+
+    async give(toPlayer: Player, cards: GameCard[], opts?: MoveCardOpts) {
+        return this.room.give(this, toPlayer, cards, opts);
+    }
+
+    async swap(cards1: GameCard[], toArea1: AreaId, cards2: GameCard[], toArea2: AreaId, opts?: MoveCardOpts) {
+        return this.room.swap(cards1, toArea1, cards2, toArea2, opts);
+    }
+
+    // ===== 状态改变快捷方法 =====
+
+    /** 明置自己的武将 */
+    async open(generals: General[]) {
+        return this.room.open(this, generals);
+    }
+    /** 暗置自己的武将 */
+    async close(generals: General[]) {
+        return this.room.close(this, generals);
+    }
+    /**
+     * 横置/重置自己。
+     * @param damageType 横置属性（toState=false 时用于解锁动画），默认 None
+     */
+    async chain(toState?: boolean, damageType: DamageType = DamageType.None) {
+        return this.room.chain(this, toState, damageType);
+    }
+    /** 翻面 */
+    async turnOver(toState?: boolean) {
+        return this.room.skip(this, toState);
+    }
+    /** 变更自己的武将 */
+    async change(general: General | 'head' | 'deputy', toGeneral: General) {
+        return this.room.change(this, general, toGeneral);
+    }
+    /** 移除自己的武将 */
+    async remove(general: General) {
+        return this.room.remove(this, general);
+    }
+
+    async judge(
+        isSuccess?: (result: VirtualCardData) => boolean,
+    ) {
+        return this.room.judge(this, isSuccess);
+    }
+
+    async showCards(cards: GameCard[]): Promise<void> {
+        return this.room.showCards(this, cards);
+    }
+
+    async flashCards(cards: GameCard[], opts?: MoveCardOpts) {
+        return this.room.flashCards(this, cards, opts);
+    }
+
+    async removeToReserve(cards: GameCard[], opts?: MoveCardOpts) {
+        return this.room.removeToReserve(cards, opts);
+    }
+
+    // ===== 选择快捷方法（委托到 Room）=====
+
+    async chooseCard(
+        cards: GameCard[],
+        count: SelectCount = 1,
+        opts?: Partial<SelectSession>,
+    ): Promise<GameCard[]> {
+        return this.room.chooseCard(this, cards, count, opts);
+    }
+
+    async choosePlayer(
+        targets: Player[],
+        count: SelectCount = 1,
+        opts?: Partial<SelectSession>,
+    ): Promise<Player[]> {
+        return this.room.choosePlayer(this, targets, count, opts);
+    }
+
+    async chooseGeneral(
+        generals: General[],
+        count: SelectCount = 1,
+        opts?: Partial<SelectSession>,
+    ): Promise<General[]> {
+        return this.room.chooseGeneral(this, generals, count, opts);
+    }
+
+    async chooseOption(
+        options: string[],
+        count: SelectCount = 1,
+        opts?: Partial<SelectSession>,
+    ): Promise<string[]> {
+        return this.room.chooseOption(this, options, count, opts);
+    }
+
+    // ===== 内部辅助 =====
+
+    /** 按位置字符获取目标玩家对应区域的牌 */
+    private _getCardsByPos(targetPlayer: Player, pos: string): GameCard[] {
+        const cards: GameCard[] = [];
+        if (pos.includes('h')) cards.push(...targetPlayer.getHandCards());
+        if (pos.includes('e')) cards.push(...targetPlayer.getEquipCards());
+        if (pos.includes('j')) cards.push(...targetPlayer.getJudgeCards());
+        return cards;
     }
 }

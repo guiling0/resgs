@@ -13,6 +13,12 @@ export class RoomState extends Schema {
     /** 游戏ID */
     @type('string')
     public gameId: string = '';
+    /** 总回合数 */
+    @type('number')
+    public turnCount: number = 0;
+    /** 总轮次数 */
+    @type('number')
+    public roundCount: number = 0;
     /** 玩家状态 */
     @type({ map: PlayerState })
     public players: MapSchema<PlayerState> = new MapSchema();
@@ -37,4 +43,13 @@ export class RoomState extends Schema {
     /** 标记状态 */
     @type({ map: MarkState })
     public markStates: MapSchema<MarkState> = new MapSchema();
+
+    // ===== ArraySchema 工厂（确保 instanceof 检查通过）=====
+
+    createCardArea(): ArraySchema<number> {
+        return new ArraySchema<number>();
+    }
+    createGeneralArea(): ArraySchema<string> {
+        return new ArraySchema<string>();
+    }
 }

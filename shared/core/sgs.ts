@@ -3,6 +3,7 @@ import { GameCardId, GameCardData, CardData } from './card/CardTypes';
 import { GeneralData, GeneralAssetsData } from './general/GeneralType';
 import { CardPackData, GeneralPackData } from './packs/types';
 import { EffectData, SkillAsset, SkillData } from './skill/SkillTypes';
+import { GameMode } from './room/GameMode';
 
 class RESGS {
     private static instance: RESGS;
@@ -36,6 +37,7 @@ class RESGS {
         this.coreLoaded = true;
     }
 
+    public readonly modes: Map<string, GameMode> = new Map();
     public readonly cardpacks: Map<string, CardPackData> = new Map();
     public readonly cards: Map<GameCardId, GameCardData> = new Map();
     public readonly carddatas: Map<string, CardData> = new Map();
@@ -45,6 +47,8 @@ class RESGS {
     public readonly skills: Map<string, SkillData> = new Map();
     public readonly effects: Map<string, EffectData> = new Map();
     public readonly skillsAssets: Map<string, SkillAsset> = new Map();
+    /** 选择器预设（客户端据此渲染 UI） */
+    public readonly selectors: Map<string, any> = new Map();
 
     /** 翻译表 */
     public readonly translations: {

@@ -14,6 +14,21 @@ export function shuffleArray<T>(arr: T[]): T[] {
 }
 
 /**
+ * 解析 AreaId（格式：`playerId.areaType` 或纯 `areaType`）。
+ * @returns { playerId, areaType }，非玩家区域时 playerId 为空字符串
+ */
+export function parseAreaId(areaId: string): { playerId: string; areaType: string } {
+    const dotIdx = areaId.lastIndexOf('.');
+    if (dotIdx >= 0) {
+        return {
+            playerId: areaId.substring(0, dotIdx),
+            areaType: areaId.substring(dotIdx + 1),
+        };
+    }
+    return { playerId: '', areaType: areaId };
+}
+
+/**
  * 从数组中随机采样 count 个不重复元素（部分 Fisher-Yates，不修改原数组）。
  * count >= arr.length 时返回全量打乱副本。
  */

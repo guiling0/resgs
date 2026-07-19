@@ -1,5 +1,20 @@
 import { Room } from '../room/Room';
+import type { GameCard } from '../card/GameCard';
+import { AreaType } from '../card/CardTypes';
+import { parseAreaId } from '../utils';
 import { EventData, EventType, Timing, TimingName } from './EventTypes';
+
+/**
+ * 创建 Timing 对象的便捷工厂。
+ * 供所有 EventProcess 子类使用，避免在每个事件文件中重复定义。
+ */
+export function createTiming(
+    name: TimingName,
+    before?: Array<(room: Room, data: any) => Promise<void>>,
+    after?: Array<(room: Room, data: any) => Promise<void>>,
+): Timing {
+    return { name, before, after } as Timing;
+}
 
 /**
  * 事件执行基类。
@@ -35,6 +50,14 @@ export abstract class EventProcess<T extends EventType = EventType> {
     /** 运行时自定义数据 */
     data: Record<string, any> = {};
 
+    /** 子事件（MoveCardEvent）移动到处理区的牌。processCompleted 中自动清理 */
+    private _processingCards: GameCard[] = [];
+
+    /** 子事件（MoveCardEvent）将牌移动到处理区时回调。基类自动收集，子类无需覆写 */
+    _trackProcessingCard(card: GameCard): void {
+        this._processingCards.push(card);
+    }
+
     constructor(room: Room, type: T, eventData: EventData<T>) {
         this.room = room;
         this.type = type;
@@ -57,57 +80,140 @@ export abstract class EventProcess<T extends EventType = EventType> {
 
     /** 初始化：设置 source → 推入事件栈 */
     protected async init() {
-        if (this.room.eventStack.length > 0) {
+        if (!this.source && this.room.eventStack.length > 0) {
             this.source = this.room.eventStack[this.room.eventStack.length - 1];
         }
         this.room.eventStack.push(this);
+        this.room.logger.debug(
+            `[init] source=${this.source?.type}:${this.source?.id} stackDepth=${this.room.eventStack.length}`,
+            {
+                roomId: this.room.state.roomId,
+                event: `${this.type}:${this.id}.init`,
+            },
+        );
     }
 
     /** 主执行循环 */
     async exec(): Promise<this> {
-        if (!this.check() || this.isComplete || this.isEnd) return this;
+        if (!this.check() || this.isComplete || this.isEnd) {
+            this.room.logger.debug(
+                `[exec] skipped check=${this.check()} isComplete=${this.isComplete} isEnd=${this.isEnd}`,
+                {
+                    roomId: this.room.state.roomId,
+                    event: `${this.type}:${this.id}.exec`,
+                },
+            );
+            return this;
+        }
+
+        this.room.logger.info(
+            `[exec] start eventTriggers=${this.eventTriggers.length} endTriggers=${this.endTriggers.length}`,
+            {
+                roomId: this.room.state.roomId,
+                playerId: (this.eventData as any).player?.playerId,
+                event: `${this.type}:${this.id}.exec`,
+            },
+        );
+
         await this.init();
+        let step = 0;
         while (
             !this.isEnd &&
             !this.isComplete &&
             this.eventTriggers.length > 0
         ) {
-            if (!this.checkEvent()) break;
-            await this.triggerFunc(this.eventTriggers.shift()!);
+            if (!this.checkEvent()) {
+                this.room.logger.debug(`[exec] checkEvent=false, breaking`, {
+                    roomId: this.room.state.roomId,
+                    event: `${this.type}:${this.id}.exec`,
+                });
+                break;
+            }
+            step++;
+            await this.triggerFunc(this.eventTriggers.shift()!, step);
         }
         this.isEnd = true;
         while (!this.isComplete && this.endTriggers.length > 0) {
-            await this.triggerFunc(this.endTriggers.shift()!);
+            step++;
+            await this.triggerFunc(this.endTriggers.shift()!, step);
         }
         this.isComplete = true;
+
+        this.room.logger.info(`[exec] complete totalSteps=${step}`, {
+            roomId: this.room.state.roomId,
+            event: `${this.type}:${this.id}.exec`,
+        });
+
         await this.processCompleted();
         return this;
     }
 
     /** 触发单个时机：注入 refreshs → before → trigger → after */
-    async triggerFunc(timing: Timing) {
+    async triggerFunc(timing: Timing, step?: number) {
+        const stepLabel = step !== undefined ? `[step${step}]` : '';
         try {
             this.trigger = timing.name as TimingName;
             this.triggerable = true;
 
             this.injectRefreshs(timing);
 
+            const beforeCount = timing.before?.length ?? 0;
+            const afterCount = timing.after?.length ?? 0;
+
+            this.room.logger.debug(
+                `${stepLabel} [trigger] ${timing.name} before=${beforeCount} after=${afterCount} triggerNot=${this.triggerNot}`,
+                {
+                    roomId: this.room.state.roomId,
+                    event: `${this.type}:${this.id}.triggerFunc`,
+                },
+            );
+
             if (timing.before) {
                 for (const fn of timing.before) {
+                    const fnName =
+                        (fn as any).__original?.name || fn.name || '<anon>';
+                    this.room.logger.debug(
+                        `${stepLabel}   [before] ${fnName}`,
+                        {
+                            roomId: this.room.state.roomId,
+                            event: `${this.type}:${this.id}.triggerFunc`,
+                        },
+                    );
                     await fn(this.room, this.eventData);
                 }
             }
 
             if (!this.triggerNot && this.triggerable) {
+                this.room.logger.debug(
+                    `${stepLabel}   [fire] → room.event.trigger(${timing.name})`,
+                    {
+                        roomId: this.room.state.roomId,
+                        event: `${this.type}:${this.id}.triggerFunc`,
+                    },
+                );
                 await this.room.event.trigger(
                     timing.name as TimingName,
                     this,
                     true,
                 );
+            } else {
+                this.room.logger.debug(
+                    `${stepLabel}   [skip] triggerNot=${this.triggerNot} triggerable=${this.triggerable}`,
+                    {
+                        roomId: this.room.state.roomId,
+                        event: `${this.type}:${this.id}.triggerFunc`,
+                    },
+                );
             }
 
             if (timing.after) {
                 for (const fn of timing.after) {
+                    const fnName =
+                        (fn as any).__original?.name || fn.name || '<anon>';
+                    this.room.logger.debug(`${stepLabel}   [after] ${fnName}`, {
+                        roomId: this.room.state.roomId,
+                        event: `${this.type}:${this.id}.triggerFunc`,
+                    });
                     await fn(this.room, this.eventData);
                 }
             }
@@ -121,17 +227,26 @@ export abstract class EventProcess<T extends EventType = EventType> {
 
     /** 将 room.refreshsByTiming 中匹配的 refreshs 注入到 Timing 的 before/after */
     private injectRefreshs(timing: Timing) {
-        const entry = this.room.refreshsByTiming.get(
-            timing.name as TimingName,
-        );
+        const entry = this.room.refreshsByTiming.get(timing.name as TimingName);
         if (!entry) return;
-        if (entry.before.length > 0) {
+        const addedBefore = entry.before.length;
+        const addedAfter = entry.after.length;
+        if (addedBefore > 0) {
             if (!timing.before) timing.before = [];
             timing.before.push(...entry.before.map((item) => item.fn));
         }
-        if (entry.after.length > 0) {
+        if (addedAfter > 0) {
             if (!timing.after) timing.after = [];
             timing.after.push(...entry.after.map((item) => item.fn));
+        }
+        if (addedBefore + addedAfter > 0) {
+            this.room.logger.debug(
+                `[injectRefreshs] ${timing.name} +${addedBefore}before +${addedAfter}after`,
+                {
+                    roomId: this.room.state.roomId,
+                    event: `${this.type}:${this.id}.injectRefreshs`,
+                },
+            );
         }
     }
 
@@ -141,15 +256,66 @@ export abstract class EventProcess<T extends EventType = EventType> {
             const idx = this.room.eventStack.indexOf(this);
             if (idx >= 0) this.room.eventStack.splice(idx, 1);
 
+            // ===== 清理处理区中因此事件移入的牌 =====
+            const toDiscard: GameCard[] = [];
+            for (const card of this._processingCards) {
+                const { areaType } = parseAreaId(card.area);
+                if (areaType === AreaType.Processing) {
+                    toDiscard.push(card);
+                }
+            }
+            if (toDiscard.length > 0) {
+                // 直接操作区域，不走 MoveCardEvent（避免递归追踪）
+                for (const card of toDiscard) {
+                    this.room.area.move(
+                        [card.id],
+                        card.area,
+                        AreaType.Discard,
+                        'bottom',
+                    );
+                }
+            }
+            this._processingCards.length = 0;
+
+            this.room.logger.debug(
+                `[cleanup] stackDepth=${this.room.eventStack.length} fuhuos=${this.room.fuhuos.length} deferredOpens=${this.room.deferredOpens.length}`,
+                {
+                    roomId: this.room.state.roomId,
+                    event: `${this.type}:${this.id}.processCompleted`,
+                },
+            );
+
             if (this.room.eventStack.length === 0) {
-                while (this.room.fuhuos.length > 0) {
-                    const fn = this.room.fuhuos.shift()!;
-                    await fn();
+                if (this.room.fuhuos.length > 0) {
+                    this.room.logger.debug(
+                        `[cleanup] draining ${this.room.fuhuos.length} fuhuos`,
+                        {
+                            roomId: this.room.state.roomId,
+                            event: `${this.type}:${this.id}.processCompleted`,
+                        },
+                    );
+                    while (this.room.fuhuos.length > 0) {
+                        const fn = this.room.fuhuos.shift()!;
+                        await fn();
+                    }
                 }
-                while (this.room.deferredOpens.length > 0) {
-                    const open = this.room.deferredOpens.shift()!;
-                    await this.room.event.trigger(TimingName.Open, open);
+                if (this.room.deferredOpens.length > 0) {
+                    this.room.logger.debug(
+                        `[cleanup] processing ${this.room.deferredOpens.length} deferredOpens`,
+                        {
+                            roomId: this.room.state.roomId,
+                            event: `${this.type}:${this.id}.processCompleted`,
+                        },
+                    );
+                    while (this.room.deferredOpens.length > 0) {
+                        const open = this.room.deferredOpens.shift()!;
+                        await this.room.event.trigger(TimingName.Open, open);
+                    }
                 }
+                this.room.logger.debug(`[cleanup] → AllEventEnd`, {
+                    roomId: this.room.state.roomId,
+                    event: `${this.type}:${this.id}.processCompleted`,
+                });
                 await this.room.event.trigger(TimingName.AllEventEnd, this);
             }
         } catch (e) {
@@ -172,11 +338,28 @@ export abstract class EventProcess<T extends EventType = EventType> {
         const wrapped: Timing[] = timings.map((t) =>
             typeof t === 'string' ? { name: t } : t,
         );
+        const names = wrapped.map((t) => t.name).join(',');
         if (appoint) {
             const idx = target.findIndex((t) => t.name === appoint);
-            if (idx >= 0) target.splice(idx + 1, 0, ...wrapped);
+            if (idx >= 0) {
+                target.splice(idx + 1, 0, ...wrapped);
+                this.room.logger.debug(
+                    `[insert] +[${names}] after ${appoint} → ${target.map((t) => t.name).join(' > ')}`,
+                    {
+                        roomId: this.room.state.roomId,
+                        event: `${this.type}:${this.id}.insert`,
+                    },
+                );
+            }
         } else {
             target.unshift(...wrapped);
+            this.room.logger.debug(
+                `[insert] +[${names}] to front → ${target.map((t) => t.name).join(' > ')}`,
+                {
+                    roomId: this.room.state.roomId,
+                    event: `${this.type}:${this.id}.insert`,
+                },
+            );
         }
     }
 
@@ -231,7 +414,7 @@ export abstract class EventProcess<T extends EventType = EventType> {
     }
 
     /** 包装 bind 并标记原始函数引用，便于后续 remove */
-    private bindWithMark(
+    protected bindWithMark(
         fn: Function,
     ): (room: Room, data: any) => Promise<any> {
         const bound = fn.bind(this);

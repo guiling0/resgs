@@ -39,15 +39,19 @@ export interface SelectorLifecycle<T = any> {
 }
 
 export interface SelectorConfig<T = any> {
+    /** 选择器名称 */
+    name: string;
     type: SelectorType;
     count: SelectCount;
-    // 是否自动选择 默认为false
     auto?: boolean;
     selectable: (ctx: SelectorContext) => T[];
     filter?: (item: T, selected: T[], ctx: SelectorContext) => boolean;
     life?: SelectorLifecycle<T>;
     window?: SelectorWindow;
 }
+
+/** 选择步骤：仅 name 必填，其余字段可选（缺失时从 sgs.selectors 预设继承） */
+export type StepConfig = Partial<Omit<SelectorConfig, 'name'>> & { name: string };
 
 export interface SelectorWindow {
     type: string;
@@ -63,9 +67,13 @@ export interface SelectorWindow {
 export interface SelectorContext {
     player: Player;
     room: Room;
-    selections: Record<string, any[]>;
-    windowSelections?: Record<string, string[]>;
+    /** 选择结果（选择完成后由 ChooseManager.respond 填充，key = SelectorConfig.name） */
+    results?: Record<string, any[]>;
+    /** 窗口选择结果 */
+    windowResults?: Record<string, string[]>;
+    /** 触发选择的事件（从事件栈顶获取） */
     eventData?: any;
+    /** 技能名（动态注入，未显式传入且无当前技能时为空） */
     skillName?: string;
     [key: string]: any;
 }
@@ -73,7 +81,8 @@ export interface SelectorContext {
 export interface SelectSession {
     id: string;
     player: string;
-    steps: SelectorConfig[];
+    /** 选择步骤。仅 name 必填，其余字段缺失时从 sgs.selectors 预设继承；额外字段覆盖预设并序列化给客户端 */
+    steps: StepConfig[];
     context: SelectorContext;
 
     /** 提示文本 */
@@ -87,8 +96,10 @@ export interface SelectSession {
     showConfirmButton?: boolean;
     /** 是否显示倒计时 UI */
     showTimer?: boolean;
-    /** 超时时间(ms) */
+    /** 超时时间（秒）。未设置时使用房间 responseTime，仍未设置则默认 15 秒 */
     timeout?: number;
+    /** 多段选择时当前会话的剩余时间（秒），由 ChooseManager 自动计算 */
+    remaining?: number;
     /** 是否自动选择第一个可选项 */
     autoSelectFirst?: boolean;
     /** 是否为出牌阶段询问 */

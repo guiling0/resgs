@@ -1,7 +1,7 @@
 import { Room } from '../room/Room';
 import { Phase } from '../player/PlayerTypes';
 import { Player } from '../player/Player';
-import { EventProcess } from './EventProcess';
+import { EventProcess, createTiming } from './EventProcess';
 import {
     EventType,
     PhaseEventData,
@@ -97,10 +97,10 @@ export class TurnEvent extends EventProcess<EventType.Turn> {
         this.eventData.turnId = v;
     }
 
-    get isExtra(): boolean {
+    get isExtraTurn(): boolean {
         return this.eventData.isExtraTurn;
     }
-    set isExtra(v: boolean) {
+    set isExtraTurn(v: boolean) {
         this.eventData.isExtraTurn = v;
     }
 
@@ -133,19 +133,20 @@ export class TurnEvent extends EventProcess<EventType.Turn> {
     // ===== Timing 构建 =====
 
     private _buildTriggers(): void {
-        const T = (
-            name: TimingName,
-            after?: Array<(room: Room, data: TurnEventData) => Promise<void>>,
-        ) => ({ name, after }) as Timing;
-
         this.eventTriggers = [
-            T(TimingName.TurnStartBefore, [this._onTurnStartBefore.bind(this)]),
-            T(TimingName.TurnStart),
-            T(TimingName.TurnStartAfter, [this._onTurnStarted.bind(this)]),
+            createTiming(TimingName.TurnStartBefore, undefined, [
+                this.bindWithMark(this._onTurnStartBefore),
+            ]),
+            createTiming(TimingName.TurnStart),
+            createTiming(TimingName.TurnStartAfter, undefined, [
+                this.bindWithMark(this._onTurnStarted),
+            ]),
         ];
         this.endTriggers = [
-            T(TimingName.TurnEnd, [this._onTurnEnd.bind(this)]),
-            T(TimingName.TurnEndAfter),
+            createTiming(TimingName.TurnEnd, undefined, [
+                this.bindWithMark(this._onTurnEnd),
+            ]),
+            createTiming(TimingName.TurnEndAfter),
         ];
     }
 
@@ -283,14 +284,8 @@ export class TurnEvent extends EventProcess<EventType.Turn> {
         }
     }
 
-    private _sendTurnLog(text: string): void {
-        this.room.broadcast.sendLog(
-            {
-                text,
-                values: [{ type: 'player', value: this.player.playerId }],
-            },
-            false,
-        );
+    private _sendTurnLog(_text: string): void {
+        // 通讯模块未完成，暂为空
     }
 
     private _findCurrentPhaseEvent(): PhaseEvent | undefined {
@@ -321,9 +316,9 @@ export class PhaseEvent extends EventProcess<EventType.Phase> {
         this._buildTriggers();
     }
 
-    // ===== 便捷访问器 =====
+    // ===== 便捷访问器（名称与 data 属性一致）=====
 
-    get executor(): Player {
+    get player(): Player {
         return this.eventData.player;
     }
 
@@ -331,7 +326,7 @@ export class PhaseEvent extends EventProcess<EventType.Phase> {
         return this.eventData.phase;
     }
 
-    get isExtra(): boolean {
+    get isExtraPhase(): boolean {
         return this.eventData.isExtraPhase;
     }
 
@@ -363,20 +358,20 @@ export class PhaseEvent extends EventProcess<EventType.Phase> {
     // ===== 公共方法 =====
 
     checkEvent(): boolean {
-        return this.executor.alive;
+        return this.player.alive;
     }
 
     async skip(): Promise<this> {
         this.isComplete = true;
         this.triggerable = false;
 
-        if (!this.isExtra && this.room.currentTurn) {
+        if (!this.isExtraPhase && this.room.currentTurn) {
             this.room.currentTurn.skippedPhases.push(this.phase);
         }
         return this;
     }
 
     isExecutor(player: Player, phase: Phase = this.phase): boolean {
-        return this.executor === player && this.phase === phase;
+        return this.player === player && this.phase === phase;
     }
 }

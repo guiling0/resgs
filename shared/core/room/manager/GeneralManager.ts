@@ -1,7 +1,9 @@
 import { Room } from '../Room';
 import { General } from '@shared/core/general/General';
-import { GeneralId } from '@shared/core/general/GeneralType';
+import { GeneralData, GeneralId } from '@shared/core/general/GeneralType';
+import { GeneralState } from '@shared/core/schema/GeneralState';
 import { Player } from '@shared/core/player/Player';
+import { AreaType } from '@shared/core/card/CardTypes';
 import { shuffleArray } from '@shared/core/utils';
 
 /**
@@ -9,6 +11,35 @@ import { shuffleArray } from '@shared/core/utils';
  */
 export class GeneralManager {
     constructor(readonly room: Room) {}
+
+    /**
+     * 创建武将实例并放入区域。
+     * @param sync 是否同步到客户端（initStart 批量为 false）
+     */
+    create(data: GeneralData, sync: boolean = true): General {
+        const state = new GeneralState();
+        const general = new General(data, this.room, state);
+        if (sync) this.room.state.generalStates.set(general.id, state);
+
+        if (data.enable) {
+            this.room.area.add(AreaType.Draw, [general.id]);
+            if (!this.room.generalNames.includes(general.trueName)) {
+                this.room.generalNames.push(general.trueName);
+            }
+        } else {
+            this.room.area.add(AreaType.Granary, [general.id]);
+        }
+        return general;
+    }
+
+    /**
+     * 注册武将到房间索引。
+     * @param sync 是否同步到客户端
+     */
+    build(general: General, sync: boolean = true) {
+        if (sync) this.room.state.generalStates.set(general.id, general.state);
+        this.room.generals.set(general.id, general);
+    }
 
     /** 按 ID 获取武将 */
     get(id: GeneralId): General | undefined {

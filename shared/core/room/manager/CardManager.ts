@@ -1,5 +1,9 @@
 import { CardState } from '@shared/core/schema/CardState';
-import { AreaType, GameCardData, GameCardId } from '@shared/core/card/CardTypes';
+import {
+    AreaType,
+    GameCardData,
+    GameCardId,
+} from '@shared/core/card/CardTypes';
 import { Room } from '../Room';
 import { GameCard } from '@shared/core/card/GameCard';
 
@@ -12,10 +16,9 @@ export class CardManager {
 
     /**
      * 创建实体牌实例并放入区域。
-     * - 有 initArea → 放入指定区域
-     * - 衍生牌 → 府库  /  普通牌 → 牌堆
+     * @param sync 是否同步到客户端（initStart 批量为 false）
      */
-    create(data: GameCardData, initArea?: string): GameCard {
+    create(data: GameCardData, initArea?: string, sync: boolean = true): GameCard {
         const state = new CardState();
         const card = new GameCard(data, this.room, state);
         if (initArea) {
@@ -25,19 +28,18 @@ export class CardManager {
         } else {
             this.room.area.add(AreaType.Draw, [card.id]);
         }
-        this.build(card);
-        // TODO: 通知客户端 build 处理
-        // TODO: 若房间卡牌使用技能未注册该牌名则注册
-        this.room.state.cardStates.set(card.id.toString(), state);
+        if (sync) this.room.state.cardStates.set(card.id.toString(), state);
         return card;
     }
 
     /**
-     * 构建卡牌索引：注册到 room.cards + 更新牌名/类型/副类型索引。
-     * 衍生牌跳过牌名索引。
+     * 注册卡牌到房间索引（cards Map + name/type/subtype）。
+     * 衍生牌跳过牌名索引。initStart 中批量加载后统一调用。
+     * @param sync 是否同步到客户端
      */
-    build(card: GameCard) {
+    build(card: GameCard, sync: boolean = true) {
         if (!card) return;
+        if (sync) this.room.state.cardStates.set(card.id.toString(), card.state);
         this.room.cards.set(card.id, card);
         if (!this.room.cardNames.includes(card.name) && !card.derived) {
             const name = card.name;
@@ -61,5 +63,10 @@ export class CardManager {
     /** 批量获取卡牌（过滤无效 ID） */
     gets(ids: GameCardId[]): GameCard[] {
         return ids.map((id) => this.get(id)).filter(Boolean) as GameCard[];
+    }
+
+    /** 获取卡牌 ID 数组 */
+    getIds(cards: GameCard[]): GameCardId[] {
+        return cards.map((c) => c.id);
     }
 }

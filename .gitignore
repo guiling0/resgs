@@ -1,12 +1,11 @@
 # ===== 本地开发交流 =====
-.claude/
-discuss/
-CLAUDE.md
+.claude/settings.local.json
+.mcp.json
 
 # ===== IDE =====
 .vscode/
 
-# ===== 历史项目（重构完成后删除） =====
+# ===== 历史项目（Phase 8-9 移植完成后删除） =====
 old/
 
 # ===== 依赖 =====

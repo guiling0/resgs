@@ -1,9 +1,0 @@
-{
-    "js.liuyan": {
-        "name": "js.liuyan",
-        "kingdom": "qun",
-        "hp": 3,
-        "skills": ["js.liuyan.tushe", "js.liuyan.limu", "js.liuyan.tongjue"],
-        "lord": true
-    }
-}

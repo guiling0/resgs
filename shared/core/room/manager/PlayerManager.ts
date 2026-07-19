@@ -1,11 +1,33 @@
 import { Player } from '@shared/core/player/Player';
+import { PlayerState } from '@shared/core/schema/PlayerState';
 import { Room } from '../Room';
 
 /**
- * 玩家管理器 — 负责玩家查询、座次排序、响应顺序。
+ * 玩家管理器 — 负责玩家查询、座次排序、响应顺序，以及玩家生命周期。
  */
 export class PlayerManager {
     constructor(readonly room: Room) {}
+
+    /**
+     * 创建玩家实体并注册到 Room。游戏中途也可调用（如 3v3 模式）。
+     */
+    createPlayer(
+        playerId: string,
+        username: string,
+        opts?: { prechooses?: string[]; seattag?: string; controlId?: string },
+    ): Player {
+        const state = new PlayerState();
+        state.playerId = playerId;
+        state.username = username;
+        const player = new Player(playerId, this.room, state);
+        if (opts?.prechooses) player.data.prechooses = opts.prechooses;
+        if (opts?.seattag) player.seattag = opts.seattag;
+        if (opts?.controlId) player.data.controlId = opts.controlId;
+        this.room.players.push(player);
+        this.room.playerMaps.set(playerId, player);
+        this.room.state.players.set(playerId, state);
+        return player;
+    }
 
     /** 按 ID 获取玩家 */
     get(id: string): Player | undefined {

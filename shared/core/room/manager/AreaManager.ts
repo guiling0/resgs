@@ -1,85 +1,184 @@
-import { ArraySchema } from '@colyseus/schema';
+import { ArraySchema, MapSchema } from '@colyseus/schema';
 import { AreaId, GameCardId } from '@shared/core/card/CardTypes';
 import { Room } from '../Room';
 import { GameCard } from '@shared/core/card/GameCard';
+import { General } from '@shared/core/general/General';
+import { GeneralId } from '@shared/core/general/GeneralType';
 import { sampleRandom, shuffleArray } from '@shared/core/utils';
 
 /**
- * 区域管理器 — 卡牌区域的增删查改、洗牌、移动。
- * 数据存储在 RoomState.cardAreas（MapSchema<ArraySchema<number>>）。
+ * 区域 ID 联合类型：GameCardId = number, GeneralId = string
+ */
+type AreaItemId = GameCardId | GeneralId;
+
+/**
+ * 区域管理器 — 卡牌区域和武将区域的增删查改、洗牌、移动。
+ *
+ * 通过泛型自动判断 ID 类型：
+ * - number → 操作 room.state.cardAreas（游戏牌）
+ * - string → 操作 room.state.generalAreas（武将牌）
  */
 export class AreaManager {
     constructor(readonly room: Room) {}
 
-    /**
-     * 向区域添加卡牌 ID 并更新每张牌的 state.area。
-     * @param pos 插入位置：'top' | 'bottom' | 'random' | 精确索引
-     */
-    add(
-        areaId: AreaId,
-        cardIds: GameCardId[],
-        pos: 'top' | 'bottom' | 'random' | number = 'bottom',
-    ) {
-        const cards = this.get(areaId) || new ArraySchema<number>();
-        for (const id of cardIds) {
-            if (cards.includes(id)) continue;
-            cards.splice(this.addIndex(pos, cards.length), 0, id);
-            const card = this.room.cards.get(id);
-            if (card) card.setArea(areaId);
+    /** 初始化区域（若不存在则创建空 ArraySchema）。isGeneral=true 创建武将区域 */
+    initArea(areaId: AreaId, isGeneral: boolean = false): void {
+        const targetMap = isGeneral
+            ? this.room.state.generalAreas
+            : this.room.state.cardAreas;
+        if (!targetMap.get(areaId)) {
+            const schema = isGeneral
+                ? this.room.state.createGeneralArea()
+                : this.room.state.createCardArea();
+            (targetMap as any).$items.set(areaId, schema);
+            (targetMap as any).$indexes.set(areaId, targetMap['$items'].size - 1);
         }
-        this.room.state.cardAreas.set(areaId, cards);
     }
 
-    /** 从区域移除卡牌 ID */
-    remove(areaId: AreaId, cardIds: GameCardId[]) {
-        const cards = this.get(areaId);
+    // ===== 内部：根据 ID 类型自动选择区域 Map =====
+
+    /** 根据单个 ID 的类型返回对应的区域 MapSchema */
+    private _mapFor<T extends AreaItemId>(
+        id: T,
+    ): MapSchema<ArraySchema<T>> {
+        if (typeof id === 'number') {
+            return this.room.state.cardAreas as unknown as MapSchema<
+                ArraySchema<T>
+            >;
+        }
+        return this.room.state.generalAreas as unknown as MapSchema<
+            ArraySchema<T>
+        >;
+    }
+
+    // ===== 添加 =====
+
+    /**
+     * 向区域添加 ID（卡牌或武将），自动判断区域类型。
+     * @param pos 插入位置：'top' | 'bottom' | 'random' | 精确索引
+     */
+    add<T extends AreaItemId>(
+        areaId: AreaId,
+        ids: T[],
+        pos: 'top' | 'bottom' | 'random' | number = 'bottom',
+    ): void {
+        if (ids.length === 0) return;
+        const areaMap = this._mapFor(ids[0]);
+        let cards = areaMap.get(areaId);
+        // Colyseus MapSchema.set() 内部做 instanceof 检查，esbuild 环境下可能失败。
+        // 绕过方式：首次设置时直接写入底层 $items Map，后续操作读出的实例可正常使用。
+        if (!cards) {
+            cards = (typeof ids[0] === 'number'
+                ? this.room.state.createCardArea()
+                : this.room.state.createGeneralArea()) as unknown as ArraySchema<T>;
+            (areaMap as any).$items.set(areaId, cards);
+            (areaMap as any).$indexes.set(areaId, areaMap['$items'].size - 1);
+        }
+        for (const id of ids) {
+            if (cards.includes(id)) continue;
+            const idx = this._addIndex(pos, cards.length);
+            const arr = [...cards];
+            arr.splice(idx, 0, id);
+            cards.splice(0, cards.length);
+            for (const item of arr) cards.push(item);
+            if (typeof id === 'number') {
+                const card = this.room.cards.get(id);
+                if (card) card.setArea(areaId);
+            } else {
+                const general = this.room.generals.get(id);
+                if (general) general.state.area = areaId;
+            }
+        }
+    }
+
+    // ===== 移除 =====
+
+    /** 从区域移除 ID */
+    remove<T extends AreaItemId>(areaId: AreaId, ids: T[]): void {
+        const cards = this._mapFor(ids.length > 0 ? ids[0] : (0 as T)).get(areaId);
         if (cards) {
-            for (const id of cardIds) {
+            for (const id of ids) {
                 const i = cards.indexOf(id);
                 if (i >= 0) cards.splice(i, 1);
             }
         }
     }
 
-    /** 获取区域的卡牌 ID 数组 */
-    get(areaId: AreaId): ArraySchema<number> | undefined {
+    // ===== 获取 =====
+
+    /** 获取卡牌区域的 ID 列表 */
+    get(areaId: AreaId): ArraySchema<number> | undefined;
+    /** 获取武将区域的 ID 列表 */
+    get(areaId: AreaId, isGeneral: true): ArraySchema<string> | undefined;
+    get(
+        areaId: AreaId,
+        isGeneral: boolean = false,
+    ): ArraySchema<number> | ArraySchema<string> | undefined {
+        if (isGeneral) return this.room.state.generalAreas.get(areaId);
         return this.room.state.cardAreas.get(areaId);
     }
 
     /**
-     * 从区域获取 count 张卡牌 ID（不移除）。
+     * 从区域获取 count 个 ID（不移除）。
      * @param pos 'top' | 'bottom' | 'random' | 精确索引
      */
     getCards(
         areaId: AreaId,
         count: number,
+        pos?: 'top' | 'bottom' | 'random' | number,
+    ): number[];
+    getCards(
+        areaId: AreaId,
+        count: number,
+        pos: 'top' | 'bottom' | 'random' | number | undefined,
+        isGeneral: true,
+    ): string[];
+    getCards(
+        areaId: AreaId,
+        count: number,
         pos: 'top' | 'bottom' | 'random' | number = 'top',
-    ): number[] {
-        const cards = this.get(areaId);
+        isGeneral: boolean = false,
+    ): (number | string)[] {
+        const cards = isGeneral
+            ? this.room.state.generalAreas.get(areaId)
+            : this.room.state.cardAreas.get(areaId);
         if (!cards) return [];
+        const arr = [...cards] as (number | string)[];
         if (typeof pos === 'number') {
-            const i = pos < 0 ? cards.length + pos : pos;
-            return i >= 0 && i < cards.length ? [cards[i]] : [];
+            const i = pos < 0 ? arr.length + pos : pos;
+            return i >= 0 && i < arr.length ? [arr[i]] : [];
         }
-        if (cards.length <= count) return [...cards];
-        if (pos === 'top') return cards.slice(0, count);
-        if (pos === 'bottom') return cards.slice(-count);
-        return this.randomPick([...cards], count);
+        if (arr.length <= count) return arr;
+        if (pos === 'top') return arr.slice(0, count);
+        if (pos === 'bottom') return arr.slice(-count);
+        return this._randomPick(arr, count);
     }
 
-    /** 获取单张卡牌 ID */
-    getOneCard(
+    /** 获取单张 ID（卡牌或武将） */
+    getOne(
         areaId: AreaId,
         pos: 'top' | 'bottom' | 'random' | number = 'top',
-    ): number | undefined {
-        return this.getCards(areaId, 1, pos)[0];
+        isGeneral: boolean = false,
+    ): number | string | undefined {
+        const cards = isGeneral
+            ? this.room.state.generalAreas.get(areaId)
+            : this.room.state.cardAreas.get(areaId);
+        if (!cards || cards.length === 0) return undefined;
+        if (typeof pos === 'number') {
+            const i = pos < 0 ? cards.length + pos : pos;
+            return i >= 0 && i < cards.length ? cards[i] : undefined;
+        }
+        if (pos === 'top') return cards[0];
+        if (pos === 'bottom') return cards[cards.length - 1];
+        return cards[Math.floor(Math.random() * cards.length)];
     }
 
+    // ===== 筛选 =====
+
     /**
-     * 按条件筛选卡牌 ID。
-     * @param fn 接收 GameCard 实体，返回是否匹配
+     * 按条件筛选卡牌 ID（仅游戏牌，需要 GameCard 实体）。
      */
-    filter(
+    filterCards(
         areaId: AreaId,
         count: number,
         pos: 'top' | 'bottom' | 'random' | number = 'top',
@@ -92,65 +191,130 @@ export class AreaManager {
                 const card = this.room.cards.get(id);
                 if (card && fn(card)) matched.push(id);
             }
-            if (pos === 'bottom') matched.reverse();
-            if (pos === 'random')
-                matched = this.randomPick(matched, matched.length);
-            if (typeof pos === 'number') {
-                const i = pos < 0 ? matched.length + pos : pos;
-                return i >= 0 && i < matched.length ? [matched[i]] : [];
-            }
+            matched = this._applyPos(matched, pos);
         }
         return matched.slice(0, count);
     }
 
     /** 按条件筛选单张卡牌 ID */
-    filterOne(
+    filterOneCard(
         areaId: AreaId,
         pos: 'top' | 'bottom' | 'random' | number = 'top',
         fn: (card: GameCard) => boolean,
     ): number | undefined {
-        return this.filter(areaId, 1, pos, fn)[0];
-    }
-
-    /** 将卡牌从 from 区域移动到 to 区域 */
-    move(
-        cardIds: GameCardId[],
-        from: AreaId,
-        to: AreaId,
-        pos: 'top' | 'bottom' | 'random' | number = 'bottom',
-    ) {
-        this.remove(from, cardIds);
-        this.add(to, cardIds, pos);
+        return this.filterCards(areaId, 1, pos, fn)[0];
     }
 
     /**
-     * 洗牌。不传 targetIds 时全量 Fisher-Yates 洗牌；
-     * 传 targetIds 时将这些 ID 随机重插入。
+     * 按条件筛选武将 ID。
      */
-    shuffle(areaId: string, targetIds?: number[]) {
-        const cards = this.get(areaId);
+    filterGenerals(
+        areaId: AreaId,
+        count: number,
+        pos: 'top' | 'bottom' | 'random' | number = 'top',
+        fn: (general: General) => boolean,
+    ): string[] {
+        const cards = this.get(areaId, true);
+        let matched: string[] = [];
+        if (cards) {
+            for (const id of cards) {
+                const general = this.room.generals.get(id);
+                if (general && fn(general)) matched.push(id);
+            }
+            matched = this._applyPos(matched, pos);
+        }
+        return matched.slice(0, count);
+    }
+
+    /** 按条件筛选单张武将 ID */
+    filterOneGeneral(
+        areaId: AreaId,
+        pos: 'top' | 'bottom' | 'random' | number = 'top',
+        fn: (general: General) => boolean,
+    ): string | undefined {
+        return this.filterGenerals(areaId, 1, pos, fn)[0];
+    }
+
+    // ===== 移动 =====
+
+    /** 将 ID 从 from 区域移动到 to 区域 */
+    move<T extends AreaItemId>(
+        ids: T[],
+        from: AreaId,
+        to: AreaId,
+        pos: 'top' | 'bottom' | 'random' | number = 'bottom',
+    ): void {
+        this.remove(from, ids);
+        this.add(to, ids, pos);
+    }
+
+    // ===== 洗牌 =====
+
+    /**
+     * 洗牌（卡牌或武将）。
+     * 不传 targetIds 时全量 Fisher-Yates 洗牌；
+     * 传 targetIds 时将这些 ID 随机重插入。
+     * @param isGeneral 是否为武将区域
+     */
+    shuffle(
+        areaId: string,
+        targetIds?: (number | string)[],
+        isGeneral: boolean = false,
+    ): void {
+        // 通过泛型辅助方法操作具体的 ArraySchema 类型
+        if (isGeneral) {
+            this._shuffleImpl(this.room.state.generalAreas.get(areaId), targetIds as string[]);
+        } else {
+            this._shuffleImpl(this.room.state.cardAreas.get(areaId), targetIds as number[]);
+        }
+    }
+
+    /** 洗牌实现（泛型，避免 union 类型冲突） */
+    private _shuffleImpl<T>(
+        cards: ArraySchema<T> | undefined,
+        targetIds?: T[],
+    ): void {
         if (!cards) return;
+        const _rebuild = (arr: T[]) => {
+            cards!.splice(0, cards!.length);
+            for (const item of arr) cards!.push(item);
+        };
         if (targetIds && targetIds.length > 0) {
             for (const id of targetIds) {
                 const i = cards.indexOf(id);
                 if (i >= 0) {
-                    cards.splice(i, 1);
-                    cards.splice(
-                        Math.floor(Math.random() * cards.length),
+                    const arr = [...cards];
+                    arr.splice(i, 1);
+                    arr.splice(
+                        Math.floor(Math.random() * (arr.length + 1)),
                         0,
                         id,
                     );
+                    _rebuild(arr);
                 }
             }
         } else {
             const arr = [...cards];
             shuffleArray(arr);
-            cards.splice(0, cards.length, ...arr);
+            _rebuild(arr);
         }
     }
 
+    // ===== 内部辅助 =====
+
+    /** 按位置参数排序/截取 */
+    private _applyPos<T>(arr: T[], pos: 'top' | 'bottom' | 'random' | number): T[] {
+        if (pos === 'bottom') return arr.reverse();
+        if (pos === 'random') return this._randomPick(arr, arr.length);
+        if (typeof pos === 'number') {
+            const i = pos < 0 ? arr.length + pos : pos;
+            return i >= 0 && i < arr.length ? [arr[i]] : [];
+        }
+        return arr;
+    }
+
     /** 计算插入位置 */
-    private addIndex(
+    private _addIndex(
         pos: 'top' | 'bottom' | 'random' | number,
         len: number,
     ): number {
@@ -161,7 +325,7 @@ export class AreaManager {
     }
 
     /** 从数组中随机取 count 个元素（不修改原数组） */
-    private randomPick<T>(arr: T[], count: number): T[] {
+    private _randomPick<T>(arr: T[], count: number): T[] {
         return sampleRandom(arr, count);
     }
 }

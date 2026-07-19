@@ -6,6 +6,8 @@ import { Player } from '../player/Player';
 import { Phase } from '../player/PlayerTypes';
 import { RichString } from '../RichText';
 import { Room } from '../room/Room';
+import type { EffectContext } from '../skill/SkillTypes';
+import type { Effect } from '../skill/Effect';
 
 // ==================== 时机 ====================
 
@@ -218,6 +220,7 @@ export const enum EventType {
     ChangeMaxHp = 'ChangeMaxHp',
     Dying = 'Dying',
     Death = 'Death',
+    UseSkill = 'UseSkill',
 }
 
 // ==================== 事件数据 ====================
@@ -255,34 +258,70 @@ export interface PhaseEventData {
     drawCount: number;
 }
 
+/** 单条移动数据 — 描述一批卡牌的移动方式 */
+export interface MoveCardData {
+    /** 移动主体 */
+    player?: Player;
+    /** 移动的卡牌 */
+    cards: GameCard[];
+    /** 原区域（自动赋值为卡牌所在区域，提供后仅移动该区域的牌） */
+    fromArea?: AreaId;
+    /** 目标区域 */
+    toArea: AreaId;
+    /** 目标区域存放位置（详见 AreaManager.add 的 pos） */
+    pos?: 'top' | 'bottom' | 'random' | number;
+    /** 移动原因（draw/discard/obtain...，默认 'put'） */
+    reason?: string;
+    /** 移动方式（true=正面朝上, false=背面朝上, 默认卡牌当前放置方式） */
+    moveType?: boolean;
+    /** 放置方式（到目标区域后的放置方式，默认手牌区=false 其他=true） */
+    putType?: boolean;
+    /** 是否播放动画（默认true，仅客户端用） */
+    animation?: boolean;
+    /** 动画可见角色（默认[]=全部可见，仅客户端用） */
+    visiblePlayers?: Player[];
+    /** 移动后牌的可见角色（暂未实现） */
+    cardVisiblePlayers?: Player[];
+    /** 移动后为每张牌执行的操作 */
+    handler?: (card: GameCard) => Promise<void>;
+    /** 标签文本（仅客户端用） */
+    label?: RichString;
+    /** 战报文本（仅客户端用） */
+    log?: RichString;
+    /** 是否同时将log进行提示（仅客户端用） */
+    toast?: boolean;
+    /** 视为信息（仅客户端用） */
+    viewas?: VirtualCardData;
+    /** 自定义数据 */
+    _data?: Record<string, any>;
+}
+
+/** moveCards 快捷方法的可选参数（MoveCardData 除去 cards/toArea/player/fromArea） */
+export interface MoveCardOpts {
+    player?: Player;
+    reason?: string;
+    pos?: 'top' | 'bottom' | 'random' | number;
+    moveType?: boolean;
+    putType?: boolean;
+    animation?: boolean;
+    visiblePlayers?: Player[];
+    cardVisiblePlayers?: Player[];
+    handler?: (card: GameCard) => Promise<void>;
+    label?: RichString;
+    log?: RichString;
+    toast?: boolean;
+    viewas?: VirtualCardData;
+    _data?: Record<string, any>;
+}
+
+/** 移动事件数据 — 可包含多条移动，每条描述一批卡牌的移动方式 */
 export interface MoveEventData {
-    datas: {
-        player: Player;
-        cards: GameCard[];
-        fromArea?: AreaId;
-        toArea?: AreaId;
-        pos?: 'top' | 'bottom' | 'random' | number;
-        reason: string;
-        moveType?: boolean;
-        putType?: boolean;
-        animation?: boolean;
-        //动画可见角色
-        visiblePlayers?: Player[];
-        //卡牌可见角色
-        cardVisiblePlayers?: Player[];
-        //为每张牌执行的事件
-        handler?: (card: GameCard) => Promise<void>;
-        //为每张牌添加的标签文本
-        label?: RichString;
-        //移动时添加日志内容
-        log?: RichString;
-        //是否同时将log进行提示
-        toast?: boolean;
-        //在移动的卡牌上显示视为信息
-        viewas?: VirtualCardData;
-        //自定义数据
-        data: Record<string, any>;
-    }[];
+    /** 移动数据列表 */
+    datas: MoveCardData[];
+    /** 获取移动标签（可由调用方覆盖） */
+    getMoveLabel?: (data: MoveCardData) => RichString;
+    /** 获取战报文本（可由调用方覆盖） */
+    log?: (data: MoveCardData) => RichString;
 }
 
 export interface UseCardEventData {
@@ -397,11 +436,15 @@ export interface PindianEventData {
 export interface OpenEventData {
     player: Player;
     generals: General[];
+    /** true=明置 */
+    toState: true;
 }
 
 export interface CloseEventData {
     player: Player;
     generals: General[];
+    /** false=暗置 */
+    toState: false;
 }
 
 export interface ChainEventData {
@@ -426,6 +469,24 @@ export interface RemoveEventData {
     general: General;
 }
 
+/** ChangeState 六种子类型 */
+export type ChangeStateType =
+    | EventType.Open
+    | EventType.Close
+    | EventType.Chain
+    | EventType.Skip
+    | EventType.Change
+    | EventType.Remove;
+
+/** ChangeState 联合数据类型 */
+export type ChangeStateData =
+    | OpenEventData
+    | CloseEventData
+    | ChainEventData
+    | SkipEventData
+    | ChangeEventData
+    | RemoveEventData;
+
 export interface JudgeEventData {
     player: Player;
     card?: GameCard;
@@ -434,7 +495,7 @@ export interface JudgeEventData {
 }
 
 export interface DamageEventData {
-    player: Player;
+    player?: Player;
     target: Player;
     damageType: DamageType;
     number: number;
@@ -442,8 +503,6 @@ export interface DamageEventData {
     channel?: VirtualCard | string;
     //是否为连环伤害 默认为false
     isChain?: boolean;
-    //是否触发连环伤害 默认为false
-    triggerChain?: boolean;
 }
 
 export interface LoseHpEventData {
@@ -468,11 +527,23 @@ export interface ChangeMaxHpEventData {
 
 export interface DyingEventData {
     player: Player;
+    /** 造成濒死的角色（由 DyingEvent 从伤害链追溯，传递给 DeathEvent） */
+    killer?: Player;
 }
 
 export interface DeathEventData {
     player: Player;
+    /** 击杀者（由 DyingEvent 传入时已有值；未传入时 DeathEvent 自行追溯） */
     killer?: Player;
+}
+
+export interface UseSkillEventData {
+    /** 发动的效果 */
+    effect?: Effect;
+    /** 技能上下文 */
+    context?: EffectContext;
+    /** 是否发动成功 */
+    used?: boolean;
 }
 
 // ==================== 非事件数据 ====================
@@ -566,6 +637,7 @@ export interface EventDataMap {
     [EventType.ChangeMaxHp]: ChangeMaxHpEventData;
     [EventType.Dying]: DyingEventData;
     [EventType.Death]: DeathEventData;
+    [EventType.UseSkill]: UseSkillEventData;
 }
 
 export type EventData<T extends EventType> = EventDataMap[T];
@@ -581,6 +653,11 @@ export interface TimingEventMap {
     [TimingName.GameInitProperty]: EventType.Ready;
     [TimingName.GameStartReady]: EventType.Ready;
     [TimingName.GameInitHandCard]: EventType.Ready;
+    [TimingName.GameStageBefore]: EventType.Ready;
+    [TimingName.GameStage]: EventType.Ready;
+    [TimingName.GameStageAfter]: EventType.Ready;
+    [TimingName.GameStart]: EventType.Ready;
+    [TimingName.GameEnd]: EventType.Ready;
 
     [TimingName.TurnStartBefore]: EventType.Turn;
     [TimingName.TurnStart]: EventType.Turn;
@@ -738,6 +815,9 @@ export interface TimingEventMap {
     [TimingName.Death]: EventType.Death;
     [TimingName.DeathAfter]: EventType.Death;
     [TimingName.DeathEnd]: EventType.Death;
+
+    [TimingName.Cost]: EventType.UseSkill;
+    [TimingName.Effect]: EventType.UseSkill;
 }
 
 export interface TimingDataMap {
@@ -757,8 +837,6 @@ export interface TimingDataMap {
     [TimingName.SkillLose]: {};
     [TimingName.EffectObtain]: {};
     [TimingName.EffectLose]: {};
-    [TimingName.Cost]: {};
-    [TimingName.Effect]: {};
     [TimingName.EventEnd]: {};
     [TimingName.AllEventEnd]: {};
     [key: string]: Record<string, any>;
