@@ -200,4 +200,16 @@ export class Effect implements MarkHost {
         return raw;
     }
 
+    /**
+     * 是否可以自动发动（无需询问玩家）。
+     * 三个条件缺一不可：forced='mute' + selectors 中无 cost + 所属武将牌已明置（若有）。
+     */
+    canAutoExecute(): boolean {
+        if (this._jsonData.settings?.forced !== 'mute') return false;
+        if (this._jsonData.selectors?.cost) return false;
+        const sg = this.skill?.sourceGeneral;
+        if (sg && !sg.put) return false;
+        return true;
+    }
+
 }

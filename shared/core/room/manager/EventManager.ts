@@ -431,45 +431,44 @@ export class EventManager {
                         },
                     );
 
-                    // ===== 分离 mute（锁定技自动发动）与 cost（需确认）=====
-                    const muteEffects = available.filter(
-                        (e) => e._jsonData.settings?.forced !== 'cost',
-                    );
-                    const costEffects = available.filter(
-                        (e) => e._jsonData.settings?.forced === 'cost',
-                    );
-
-                    // 锁定技：逐个自动执行
-                    for (const effect of muteEffects) {
+                    // ===== 唯一效果且可自动发动 → 直接执行 =====
+                    if (
+                        available.length === 1 &&
+                        available[0].canAutoExecute()
+                    ) {
                         await this._invokeSkill(
-                            effect,
+                            available[0],
                             player,
                             data,
                             timingName,
                             times,
                         );
+                        continue; // 重扫描
                     }
-                    if (muteEffects.length > 0) continue; // 重扫描
 
-                    // 普通技：询问玩家选择一个
-                    if (costEffects.length > 0) {
-                        const chosen = await this._askForSkillInvoke(
+                    // ===== 多个效果或需询问 → 全部发送给客户端选择 =====
+                    const chosen = await this._askForSkillInvoke(
+                        player,
+                        available,
+                        timingName,
+                    );
+                    if (chosen) {
+                        const shouldContinue = await this._invokeSkill(
+                            chosen,
                             player,
-                            costEffects,
+                            data,
                             timingName,
+                            times,
                         );
-                        if (chosen) {
-                            const shouldContinue =
-                                await this._invokeSkill(
-                                    chosen,
-                                    player,
-                                    data,
-                                    timingName,
-                                    times,
-                                );
-                            if (!shouldContinue) break; // 时机结束信号
-                            continue; // 重扫描
-                        }
+                        if (!shouldContinue) break; // 时机结束信号
+                        continue; // 重扫描
+                    }
+
+                    // 玩家取消 → 所有效果计数设为最大值（防止死循环）
+                    if (!times[player.playerId]) times[player.playerId] = {};
+                    for (const e of available) {
+                        const max = e.getMaxTimes(this.room, player, data);
+                        times[player.playerId][e.id] = max === -1 ? 999 : max;
                     }
 
                     break; // 无可选 → 下一个优先级
@@ -544,13 +543,16 @@ export class EventManager {
 
     /**
      * 询问玩家选择要发动的技能。
-     * 通过 ChooseManager 发起确认会话，autoSelectFirst+短超时使 headless 模式自动确认。
+     * 若包含可自动发动的技能 → 客户端不能取消（canCancel=false）。
+     * headless 模式通过 autoSelectFirst+短超时自动确认第一个。
      */
     private async _askForSkillInvoke(
         player: Player,
         effects: Effect[],
         timingName: string,
     ): Promise<Effect | null> {
+        const hasAuto = effects.some((e) => e.canAutoExecute());
+
         const session = await this.room.choose.request({
             id: `skill_${player.playerId}_${timingName}_${Date.now()}`,
             player: player.playerId,
@@ -559,11 +561,12 @@ export class EventManager {
                 player,
                 room: this.room,
                 effects: effects.map((e) => e._jsonData.name),
+                hasAutoExecute: hasAuto,
             } as any,
-            canCancel: true,
+            canCancel: !hasAuto, // 有可自动发动的技能时不能取消
             isSkillSelect: true,
-            autoSelectFirst: true, // headless 模式自动确认
-            timeout: 0.5, // 短超时：0.5 秒后自动确认
+            autoSelectFirst: true,
+            timeout: 0.5,
         });
         if (session.cancelled) return null;
         return effects[0];
