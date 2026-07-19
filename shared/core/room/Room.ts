@@ -199,6 +199,10 @@ export class Room implements Omit<MarkHost, 'room'> {
     get isGaming(): boolean {
         return this._gameState === 'gaming';
     }
+    /** 游戏是否正在结束 */
+    get isEnding(): boolean {
+        return this._gameState === 'ending';
+    }
     /** 当前轮次的起始回合 */
     roundStartTurn?: TurnEvent;
     /** 额外回合队列 */
@@ -1006,19 +1010,7 @@ export class Room implements Omit<MarkHost, 'room'> {
         );
         await this.event.trigger(TimingName.GameEnd, { wins, reason });
         this.extraTurns.length = 0;
-        // 清理回合/阶段栈：逐个标记完成并执行清理，避免处理区卡牌泄漏
-        for (const event of this.turnStack) {
-            event.isEnd = true;
-            event.isComplete = true;
-            await event.processCompleted();
-        }
         this.turnStack.length = 0;
-
-        for (const event of this.phaseStack) {
-            event.isEnd = true;
-            event.isComplete = true;
-            await event.processCompleted();
-        }
         this.phaseStack.length = 0;
         // TODO Phase 9: 广播 GameOver 消息 + 战果
     }

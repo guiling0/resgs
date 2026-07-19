@@ -226,4 +226,57 @@ export class Effect implements MarkHost {
         return { from: player };
     }
 
+    // ===== _jsonData 封装方法（禁止外部直接访问 _jsonData.xxx）=====
+
+    /** 时机条件检测 */
+    canTrigger(room: Room, player: Player, data: TimingData<any>): any {
+        if (!this._jsonData.can_trigger) return true;
+        return this._jsonData.can_trigger.call(this, room, player, data);
+    }
+
+    /** 是否有 choose 回调 */
+    get hasChoose(): boolean {
+        return !!this._jsonData.choose;
+    }
+
+    /** 执行发动前选择 */
+    async execChoose(
+        room: Room,
+        player: Player,
+        data: any,
+        ctx: EffectContext,
+    ): Promise<any> {
+        return this._jsonData.choose!.call(this, room, player, data, ctx);
+    }
+
+    /** 是否有 cost 回调 */
+    get hasCost(): boolean {
+        return !!this._jsonData.cost;
+    }
+
+    /** 执行消耗 */
+    async execCost(
+        room: Room,
+        player: Player,
+        data: any,
+        ctx: EffectContext,
+    ): Promise<any> {
+        return this._jsonData.cost!.call(this, room, player, data, ctx);
+    }
+
+    /** 是否有 effect 回调 */
+    get hasEffect(): boolean {
+        return !!this._jsonData.effect;
+    }
+
+    /** 执行效果 */
+    async execEffect(
+        room: Room,
+        player: Player,
+        data: any,
+        ctx: EffectContext,
+    ): Promise<void> {
+        await this._jsonData.effect!.call(this, room, player, data, ctx);
+    }
+
 }

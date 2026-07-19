@@ -59,9 +59,9 @@ export class UseSkillEvent extends EventProcess<EventType.UseSkill> {
             }
 
             // 2. 执行 choose（无回调时默认为 true——无需选择即可发动）
-            if (this.effect._jsonData.choose) {
-                const result = await this.effect._jsonData.choose.call(
-                    this.effect, this.room, ctx.from, timingData, ctx,
+            if (this.effect.hasChoose) {
+                const result = await this.effect.execChoose(
+                    this.room, ctx.from, timingData, ctx,
                 );
                 if (!result) { await this._finalize(); return this; }
                 ctx.choose = result;
@@ -95,9 +95,9 @@ export class UseSkillEvent extends EventProcess<EventType.UseSkill> {
             }
 
             // 13. 执行消耗 → 触发 Cost 时机（无回调时默认 true——旧项目无消耗技模式）
-            if (this.effect._jsonData.cost) {
-                costResult = await this.effect._jsonData.cost.call(
-                    this.effect, this.room, ctx.from, timingData, ctx,
+            if (this.effect.hasCost) {
+                costResult = await this.effect.execCost(
+                    this.room, ctx.from, timingData, ctx,
                 );
                 if (!costResult) { await this._finalize(); return this; }
             } else {
@@ -110,9 +110,9 @@ export class UseSkillEvent extends EventProcess<EventType.UseSkill> {
             await this.room.event.trigger(TimingName.Cost, this);
 
             // 14. 执行效果 → 触发 Effect 时机
-            if (this.effect._jsonData.effect) {
-                await this.effect._jsonData.effect.call(
-                    this.effect, this.room, ctx.from, timingData, ctx,
+            if (this.effect.hasEffect) {
+                await this.effect.execEffect(
+                    this.room, ctx.from, timingData, ctx,
                 );
             }
 

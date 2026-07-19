@@ -126,6 +126,7 @@ export abstract class EventProcess<T extends EventType = EventType> {
         await this.init();
         let step = 0;
         while (
+            !this.room.isEnding &&
             !this.isEnd &&
             !this.isComplete &&
             this.eventTriggers.length > 0
