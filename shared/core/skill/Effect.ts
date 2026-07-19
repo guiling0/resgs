@@ -187,6 +187,18 @@ export class Effect implements MarkHost {
         return true;
     }
 
+    /**
+     * 解析最大发动次数。状态类效果无次数概念，返回默认 1。
+     * number=固定值，function=根据实时数据计算，-1=无限制。
+     */
+    getMaxTimes(room: Room, player: Player, data: any): number {
+        if (this.hasState) return 1;
+        const raw = this._jsonData.times;
+        if (raw == null) return 1;
+        if (typeof raw === 'function') return raw.call(this, room, player, data) ?? 1;
+        return raw;
+    }
+
     inTrigger(trigger: TimingTrigger) {
         return this._jsonData.trigger === trigger;
     }

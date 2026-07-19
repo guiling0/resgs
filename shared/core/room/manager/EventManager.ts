@@ -409,11 +409,7 @@ export class EventManager {
                 const available = effects.filter((e) => {
                     if (!e.check(data)) return false;
                     const t = times[player.playerId]?.[e.id] ?? 0;
-                    const raw = e._jsonData.times;
-                    const max =
-                        raw == null ? 1
-                        : typeof raw === 'function' ? (raw.call(e, this.room, player, data) ?? 1)
-                        : raw;
+                    const max = e.getMaxTimes(this.room, player, data);
                     return max === -1 || t < max;
                 });
 
