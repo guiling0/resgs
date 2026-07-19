@@ -1,5 +1,6 @@
 import { RefreshEntry, Room } from '../Room';
-import { PriorityType, TimingCallback } from '../../skill/SkillTypes';
+import { Player } from '../../player/Player';
+import { EffectContext, PriorityType, TimingCallback } from '../../skill/SkillTypes';
 import { Skill } from '../../skill/Skill';
 import { Effect } from '../../skill/Effect';
 import { TimingName } from '../../event/EventTypes';
@@ -14,6 +15,7 @@ import { RecoverHpEvent, ChangeMaxHpEvent } from '../../event/HpEvent';
 import { MoveCardEvent } from '../../event/MoveCardEvent';
 import { JudgeEvent } from '../../event/JudgeEvent';
 import { ChangeStateEvent } from '../../event/ChangeStateEvent';
+import { UseSkillEvent } from '../../event/UseSkillEvent';
 import type {
     ChangeMaxHpEventData,
     ChangeStateData,
@@ -429,9 +431,48 @@ export class EventManager {
                         },
                     );
 
-                    // TODO Phase 7: askForSkillInvoke → create UseSkillEvent → exec
-                    // 选定技能后：exec → times[player][effect.id]++ → continue while 重新扫描
-                    break; // 工单 04 实现桥接时移除此 break
+                    // ===== 分离 mute（锁定技自动发动）与 cost（需确认）=====
+                    const muteEffects = available.filter(
+                        (e) => e._jsonData.settings?.forced !== 'cost',
+                    );
+                    const costEffects = available.filter(
+                        (e) => e._jsonData.settings?.forced === 'cost',
+                    );
+
+                    // 锁定技：逐个自动执行
+                    for (const effect of muteEffects) {
+                        await this._invokeSkill(
+                            effect,
+                            player,
+                            data,
+                            timingName,
+                            times,
+                        );
+                    }
+                    if (muteEffects.length > 0) continue; // 重扫描
+
+                    // 普通技：询问玩家选择一个
+                    if (costEffects.length > 0) {
+                        const chosen = await this._askForSkillInvoke(
+                            player,
+                            costEffects,
+                            timingName,
+                        );
+                        if (chosen) {
+                            const shouldContinue =
+                                await this._invokeSkill(
+                                    chosen,
+                                    player,
+                                    data,
+                                    timingName,
+                                    times,
+                                );
+                            if (!shouldContinue) break; // 时机结束信号
+                            continue; // 重扫描
+                        }
+                    }
+
+                    break; // 无可选 → 下一个优先级
                 }
             }
         }
@@ -461,6 +502,71 @@ export class EventManager {
                 }
             }
         }
+    }
+
+    // ===== 技能发动桥接 =====
+
+    /**
+     * 创建 UseSkillEvent 并执行。返回 false 表示"时机结束"信号。
+     */
+    private async _invokeSkill(
+        effect: Effect,
+        player: Player,
+        data: EventProcess | Record<string, any>,
+        timingName: string,
+        times: Record<string, Record<number, number>>,
+    ): Promise<boolean> {
+        const ctx: EffectContext = effect._jsonData.context
+            ? effect._jsonData.context.call(effect, this.room, player, data)
+            : { from: player };
+
+        const useSkill = new UseSkillEvent(this.room, {
+            effect,
+            context: ctx,
+        });
+
+        this.room.logger.info(
+            `[trigger] ${timingName} → invoke ${effect.skill?.name}.${effect._jsonData.name}`,
+            this._meta(`trigger:${timingName}`, player.playerId),
+        );
+
+        await useSkill.exec();
+
+        // 计数
+        if (!times[player.playerId]) times[player.playerId] = {};
+        times[player.playerId][effect.id] =
+            (times[player.playerId][effect.id] ?? 0) + 1;
+
+        // 时机结束信号
+        if (useSkill.context.endTiming) return false;
+        return true;
+    }
+
+    /**
+     * 询问玩家选择要发动的技能。
+     * 通过 ChooseManager 发起确认会话，autoSelectFirst+短超时使 headless 模式自动确认。
+     */
+    private async _askForSkillInvoke(
+        player: Player,
+        effects: Effect[],
+        timingName: string,
+    ): Promise<Effect | null> {
+        const session = await this.room.choose.request({
+            id: `skill_${player.playerId}_${timingName}_${Date.now()}`,
+            player: player.playerId,
+            steps: [],
+            context: {
+                player,
+                room: this.room,
+                effects: effects.map((e) => e._jsonData.name),
+            } as any,
+            canCancel: true,
+            isSkillSelect: true,
+            autoSelectFirst: true, // headless 模式自动确认
+            timeout: 0.5, // 短超时：0.5 秒后自动确认
+        });
+        if (session.cancelled) return null;
+        return effects[0];
     }
 
     // ===== 内部辅助 =====
