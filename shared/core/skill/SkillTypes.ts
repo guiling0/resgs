@@ -223,6 +223,11 @@ export interface EffectData {
 
     //==================触发技相关==================
 
+    /**
+     * 最大发动次数。number=固定值，函数=根据实时数据计算（签名同context，用于计数型技能如〖明哲②〗）。
+     * 默认 1，-1 表示无限制。扫描阶段直接读取此字段，不会为获取 maxTimes 而调用 context()。
+     */
+    times?: number | ((this: Effect, room: Room, player: Player, data: any) => number);
     /** 效果优先级 */
     priority: PriorityType;
     trigger?: TimingTrigger;

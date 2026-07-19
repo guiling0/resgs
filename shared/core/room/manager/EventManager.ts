@@ -4,13 +4,16 @@ import { Skill } from '../../skill/Skill';
 import { Effect } from '../../skill/Effect';
 import { TimingName } from '../../event/EventTypes';
 import { EventProcess } from '../../event/EventProcess';
-import { DamageEvent, LoseHpEvent, ReduceHpEvent } from '../../event/DamageEvent';
+import {
+    DamageEvent,
+    LoseHpEvent,
+    ReduceHpEvent,
+} from '../../event/DamageEvent';
 import { DyingEvent, DeathEvent } from '../../event/DyingEvent';
 import { RecoverHpEvent, ChangeMaxHpEvent } from '../../event/HpEvent';
 import { MoveCardEvent } from '../../event/MoveCardEvent';
 import { JudgeEvent } from '../../event/JudgeEvent';
 import { ChangeStateEvent } from '../../event/ChangeStateEvent';
-import { ReadyEvent } from '../../event/ReadyEvent';
 import type {
     ChangeMaxHpEventData,
     ChangeStateData,
@@ -63,7 +66,8 @@ export class EventManager {
         // 自动赋值：当前技能上下文中未显式传入时，使用 _currentEffect
         const eff = opts.effect ?? this._currentEffect;
         if (eff) event.data.effect = eff;
-        event.data.reason = opts.reason ?? eff?.skill?.name ?? event.data.reason;
+        event.data.reason =
+            opts.reason ?? eff?.skill?.name ?? event.data.reason;
 
         this.room.logger.debug(
             `event:${event.type} id=${event.id} created`,
@@ -192,12 +196,6 @@ export class EventManager {
         return this.create(ChangeMaxHpEvent, data, { source, reason, effect });
     }
 
-    /** 创建并执行游戏准备事件。一局仅一次。 */
-    async ready(opts: { source?: EventProcess } = {}): Promise<ReadyEvent> {
-        this.room.logger.info('ready', this._meta('ready'));
-        return this.create(ReadyEvent, {}, opts);
-    }
-
     /** 创建并执行状态改变事件。自动检测子类型。 */
     async changeState(
         opts: ChangeStateData & {
@@ -211,7 +209,11 @@ export class EventManager {
             `changeState player=${(data as any).player?.playerId}`,
             this._meta('changeState', (data as any).player?.playerId),
         );
-        return this.create(ChangeStateEvent as any, data, { source, reason, effect }) as any;
+        return this.create(ChangeStateEvent as any, data, {
+            source,
+            reason,
+            effect,
+        }) as any;
     }
 
     /** 创建并执行判定事件。 */
@@ -332,7 +334,8 @@ export class EventManager {
         data: EventProcess | Record<string, any>,
         skipRefreshs: boolean = false,
     ) {
-        const dataType = data instanceof EventProcess ? `${data.type}:${data.id}` : 'raw';
+        const dataType =
+            data instanceof EventProcess ? `${data.type}:${data.id}` : 'raw';
         this.room.logger.debug(
             `[trigger] ${timingName} data=${dataType} skipRefreshs=${skipRefreshs}`,
             this._meta(`trigger:${timingName}`),
@@ -347,7 +350,11 @@ export class EventManager {
                     this._meta(`trigger:${timingName}`),
                 );
                 for (const item of entry.before) {
-                    try { await item.fn(this.room, data); } catch (e) { console.error('[refresh before]', e); }
+                    try {
+                        await item.fn(this.room, data);
+                    } catch (e) {
+                        console.error('[refresh before]', e);
+                    }
                 }
             }
         }
@@ -363,7 +370,11 @@ export class EventManager {
                 const entry = this.room.refreshsByTiming.get(timingName);
                 if (entry && entry.after.length > 0) {
                     for (const item of entry.after) {
-                        try { await item.fn(this.room, data); } catch (e) { console.error('[refresh after]', e); }
+                        try {
+                            await item.fn(this.room, data);
+                        } catch (e) {
+                            console.error('[refresh after]', e);
+                        }
                     }
                 }
             }
@@ -398,17 +409,21 @@ export class EventManager {
                 const available = effects.filter((e) => {
                     if (!e.check(data)) return false;
                     const t = times[player.playerId]?.[e.id] ?? 0;
+                    const raw = e._jsonData.times;
                     const max =
-                        typeof e._jsonData.context === 'function'
-                            ? ((e._jsonData.context.call(e, this.room, player, data) as any)?.maxTimes ?? 1)
-                            : 1;
+                        raw == null ? 1
+                        : typeof raw === 'function' ? (raw.call(e, this.room, player, data) ?? 1)
+                        : raw;
                     return max === -1 || t < max;
                 });
 
                 if (available.length > 0) {
                     totalAvailable += available.length;
                     playerAvailable.push(
-                        ...available.map((e) => `${e.skill?.name}.${e._jsonData.name}(${this._priorityLabel(priority)})`),
+                        ...available.map(
+                            (e) =>
+                                `${e.skill?.name}.${e._jsonData.name}(${this._priorityLabel(priority)})`,
+                        ),
                     );
                 }
             }
@@ -416,7 +431,11 @@ export class EventManager {
             if (playerAvailable.length > 0) {
                 this.room.logger.debug(
                     `[trigger]   ${player.playerId}: [${playerAvailable.join(', ')}]`,
-                    { roomId: this.room.state.roomId, playerId: player.playerId, event: `EventManager.trigger:${timingName}` },
+                    {
+                        roomId: this.room.state.roomId,
+                        playerId: player.playerId,
+                        event: `EventManager.trigger:${timingName}`,
+                    },
                 );
             }
         }
@@ -439,7 +458,11 @@ export class EventManager {
             const entry = this.room.refreshsByTiming.get(timingName);
             if (entry && entry.after.length > 0) {
                 for (const item of entry.after) {
-                    try { await item.fn(this.room, data); } catch (e) { console.error('[refresh after]', e); }
+                    try {
+                        await item.fn(this.room, data);
+                    } catch (e) {
+                        console.error('[refresh after]', e);
+                    }
                 }
             }
         }
@@ -449,21 +472,31 @@ export class EventManager {
 
     private _orderToPriority(order: number): PriorityType {
         switch (order) {
-            case 1: return PriorityType.General;
-            case 2: return PriorityType.Equip;
-            case 3: return PriorityType.Card;
-            case 6: return PriorityType.Rule;
-            default: return PriorityType.General;
+            case 1:
+                return PriorityType.General;
+            case 2:
+                return PriorityType.Equip;
+            case 3:
+                return PriorityType.Card;
+            case 6:
+                return PriorityType.Rule;
+            default:
+                return PriorityType.General;
         }
     }
 
     private _priorityLabel(p: PriorityType): string {
         switch (p) {
-            case PriorityType.General: return 'General';
-            case PriorityType.Equip: return 'Equip';
-            case PriorityType.Card: return 'Card';
-            case PriorityType.Rule: return 'Rule';
-            default: return '?';
+            case PriorityType.General:
+                return 'General';
+            case PriorityType.Equip:
+                return 'Equip';
+            case PriorityType.Card:
+                return 'Card';
+            case PriorityType.Rule:
+                return 'Rule';
+            default:
+                return '?';
         }
     }
 }

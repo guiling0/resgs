@@ -44,6 +44,8 @@ export class EffectBuilder<T extends TimingTrigger = never> {
     private _refreshs: Array<TimingCallback<any, Effect>> = [];
 
     //==================触发技相关==================
+    /** 最大发动次数（number=固定值，函数=实时计算，-1=无限制，默认1） */
+    private _times?: number | ((this: Effect, room: Room, player: Player, data: any) => number);
     /** 效果优先级 */
     priority: PriorityType = PriorityType.General;
     private _trigger?: T;
@@ -92,6 +94,11 @@ export class EffectBuilder<T extends TimingTrigger = never> {
         fn: (this: Effect, room: Room, ctx?: EffectContext) => any,
     ): this {
         this._condition = fn;
+        return this;
+    }
+
+    times(n: number | ((this: Effect, room: Room, player: Player, data: any) => number)): this {
+        this._times = n;
         return this;
     }
 
@@ -207,6 +214,7 @@ export class EffectBuilder<T extends TimingTrigger = never> {
             refreshs: this._refreshs,
 
             priority: this.priority,
+            times: this._times ?? 1,
             trigger: this._trigger,
             can_trigger: this._can_trigger,
             context: this._context,
