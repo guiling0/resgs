@@ -441,7 +441,7 @@ GameStartBefore → AssignRoles → AdjustSeats → ChooseGeneral → ChooseGene
 → InitProperty → GameStartReady → InitHandCard → GameStarted
 ```
 
-`room.startGame`（`room.ts:567-737`）先做座次（seattag/randomSeat）、`addSkill(this.mode.rules)` 加载模式规则技能、ban 势力，然后 `GameReadyEvent.exec()`，各步骤由挂在对应时机上的**规则技能**（`PriorityType.GlobalRule`）完成；身份模式规则集合 `game_role_rules`＋`mode_role = sgs.GameMode({ name: 'role', rules: game_role_rules })`（`standard/index.ts:318-327、1073-1078`）。`AdjustSeats/GameStartReady` 两个时机在身份模式无监听者（空转）。
+`room.startGame`（`room.ts:567-737`）先做座次（seattag/randomSeat）、`addSkill(this.mode.rules)` 加载模式规则技能、ban 势力，然后 `GameReadyEvent.exec()`，各步骤由挂在对应时机上的**规则技能**（旧 `PriorityType.GlobalRule`，已于新项目中删除——GlobalRule 合并入 Rule）完成；身份模式规则集合 `game_role_rules`＋`mode_role = sgs.GameMode({ name: 'role', rules: game_role_rules })`（`standard/index.ts:318-327、1073-1078`）。`AdjustSeats/GameStartReady` 两个时机在身份模式无监听者（空转）。
 
 **新实现**：`GameMode.beforeStart(room)`（`shared/core/room/GameMode.ts:40`，**必须提供**）按 setup 文档顺序化处理；`Room.startGame`（`Room.ts:873-888`）：取模式 → `beforeStart` → `_mainProcess`。当前只有测试桩（`shared/test/game-flow.test.ts:99`：`sgs.modes.set('test', { beforeStart: async () => {} })`），身份模式本体未实现。`EventType.Ready`/`ReadyEventData`/`GameStartBefore`/`GameStart` 枚举已定义但没有 ReadyEvent 类——按文档裁定这是**有意简化**（时机驱动 → 函数顺序驱动），移植时把旧的各 GlobalRule 效果改写为 beforeStart 内的顺序步骤，仅保留 `GameStart(Before)` 等需要供技能挂载的时机触发。
 

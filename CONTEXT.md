@@ -66,7 +66,7 @@ Room ──has──▶ 9 个 Manager (card/player/general/skill/event/choose/br
 技能在时机触发时的调度顺序（PriorityType）：
 
 ```
-None → General(武将技) → Equip(装备技) → Card(卡牌技) → Rule(规则技) → GlobalRule(全局规则)
+General(武将技) → Equip(装备技) → Card(卡牌技) → Rule(规则技)
 ```
 
 同一优先级内按响应顺序（从当前回合玩家顺时针）遍历。

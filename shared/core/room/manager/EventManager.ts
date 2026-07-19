@@ -381,7 +381,9 @@ export class EventManager {
             return;
         }
 
-        // ===== 3. 遍历玩家，按优先级检查可用效果 =====
+        // ===== 3. 逐玩家 → 逐优先级 → 同优先级重试 =====
+        // 顺序：当前回合角色逆时针，每名角色从武将技→装备技→卡牌技→规则技，
+        // 每发动一个技能后同玩家同优先级重新扫描（技能可能改变其他效果的条件）。
         const players = this.room.player.sortResponse(this.room.alives);
         const times: Record<string, Record<number, number>> = {};
         let totalAvailable = 0;
@@ -392,47 +394,45 @@ export class EventManager {
         );
 
         for (const player of players) {
-            const playerAvailable: string[] = [];
-
             for (let order = 1; order <= 6; order++) {
+                // order 4/5 = 使用卡牌/同时使用卡牌，保留待 M2 裁定
                 if (order === 4 || order === 5) continue;
 
                 const priority = this._orderToPriority(order);
-                const entry = timingMap.get(priority);
-                const effects = entry
-                    ? [
-                          ...(entry.byPlayer.get(player.playerId) ?? []),
-                          ...entry.global,
-                      ]
-                    : [];
 
-                const available = effects.filter((e) => {
-                    if (!e.check(data)) return false;
-                    const t = times[player.playerId]?.[e.id] ?? 0;
-                    const max = e.getMaxTimes(this.room, player, data);
-                    return max === -1 || t < max;
-                });
+                // 同玩家同优先级内循环重试
+                while (true) {
+                    const entry = timingMap.get(priority);
+                    const effects = entry
+                        ? [
+                              ...(entry.byPlayer.get(player.playerId) ?? []),
+                              ...entry.global,
+                          ]
+                        : [];
 
-                if (available.length > 0) {
+                    const available = effects.filter((e) => {
+                        if (!e.check(data)) return false;
+                        const t = times[player.playerId]?.[e.id] ?? 0;
+                        const max = e.getMaxTimes(this.room, player, data);
+                        return max === -1 || t < max;
+                    });
+
+                    if (available.length === 0) break;
+
                     totalAvailable += available.length;
-                    playerAvailable.push(
-                        ...available.map(
-                            (e) =>
-                                `${e.skill?.name}.${e._jsonData.name}(${this._priorityLabel(priority)})`,
-                        ),
+                    this.room.logger.debug(
+                        `[trigger]   ${player.playerId}: [${available.map((e) => `${e.skill?.name}.${e._jsonData.name}(${this._priorityLabel(priority)})`).join(', ')}]`,
+                        {
+                            roomId: this.room.state.roomId,
+                            playerId: player.playerId,
+                            event: `EventManager.trigger:${timingName}`,
+                        },
                     );
-                }
-            }
 
-            if (playerAvailable.length > 0) {
-                this.room.logger.debug(
-                    `[trigger]   ${player.playerId}: [${playerAvailable.join(', ')}]`,
-                    {
-                        roomId: this.room.state.roomId,
-                        playerId: player.playerId,
-                        event: `EventManager.trigger:${timingName}`,
-                    },
-                );
+                    // TODO Phase 7: askForSkillInvoke → create UseSkillEvent → exec
+                    // 选定技能后：exec → times[player][effect.id]++ → continue while 重新扫描
+                    break; // 工单 04 实现桥接时移除此 break
+                }
             }
         }
 
@@ -441,7 +441,6 @@ export class EventManager {
                 `[trigger] ${timingName} → ${totalAvailable} effect(s) available across players`,
                 this._meta(`trigger:${timingName}`),
             );
-            // TODO Phase 7: askForSkillInvoke → create UseSkillEvent → exec
         } else {
             this.room.logger.debug(
                 `[trigger] ${timingName} → no available effects`,
