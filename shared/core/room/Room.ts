@@ -29,7 +29,7 @@ import { TimingName } from '../event/EventTypes';
 import { Skill } from '../skill/Skill';
 import { Effect } from '../skill/Effect';
 import { PriorityType, StateEffectType } from '../skill/SkillTypes';
-import { TurnEvent } from '../event/TurnEvent';
+import { TurnEvent, PhaseEvent } from '../event/TurnEvent';
 import { Phase } from '../player/PlayerTypes';
 import type { GameMode } from './GameMode';
 import { RoomOption } from './GameMode';
@@ -165,10 +165,26 @@ export class Room implements Omit<MarkHost, 'room'> {
     skills: Skill[] = [];
     /** 所有运行时效果实例 */
     effects: Effect[] = [];
-    /** 当前事件栈（正在执行的事件链） */
+    /** 当前事件栈（正在执行的事件链，不含 Turn/Phase 事件） */
     eventStack: EventProcess[] = [];
+    /** 回合栈（TurnEvent + PhaseEvent 独立维护） */
+    turnStack: (TurnEvent | PhaseEvent)[] = [];
     /** 当前正在执行的回合事件 */
-    currentTurn?: TurnEvent;
+    get currentTurn(): TurnEvent | undefined {
+        for (let i = this.turnStack.length - 1; i >= 0; i--) {
+            const e = this.turnStack[i];
+            if (e instanceof TurnEvent) return e;
+        }
+        return undefined;
+    }
+    /** 当前正在执行的阶段事件 */
+    get currentPhase(): PhaseEvent | undefined {
+        for (let i = this.turnStack.length - 1; i >= 0; i--) {
+            const e = this.turnStack[i];
+            if (e instanceof PhaseEvent) return e;
+        }
+        return undefined;
+    }
     /** 延迟明置队列 */
     deferredOpens: EventProcess[] = [];
     /** 复活回调队列 */
@@ -944,7 +960,6 @@ export class Room implements Omit<MarkHost, 'room'> {
                 }
             }
 
-            this.currentTurn = turn;
             this.logger.info(
                 `turn id=${turn.id} player=${turn.player.playerId} round=${this.roundCount}`,
             );
@@ -997,7 +1012,7 @@ export class Room implements Omit<MarkHost, 'room'> {
         );
         await this.event.trigger(TimingName.GameEnd, { wins, reason });
         this.extraTurns.length = 0;
-        this.currentTurn = undefined;
+        this.turnStack.length = 0;
         // TODO Phase 9: 广播 GameOver 消息 + 战果
     }
 

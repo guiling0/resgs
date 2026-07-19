@@ -170,8 +170,9 @@ export class TurnEvent extends EventProcess<EventType.Turn> {
             }
         }
 
-        // 翻面逻辑
+        // 翻面逻辑：跳过当前回合，翻回正面，mainProcess 自动进入下一回合
         if (player.skip) {
+            player.skip = false;
             this._skipTurn('#TurnSkip');
             return;
         }
@@ -289,13 +290,7 @@ export class TurnEvent extends EventProcess<EventType.Turn> {
     }
 
     private _findCurrentPhaseEvent(): PhaseEvent | undefined {
-        for (let i = this.room.eventStack.length - 1; i >= 0; i--) {
-            const event = this.room.eventStack[i];
-            if (event instanceof PhaseEvent) {
-                return event;
-            }
-        }
-        return undefined;
+        return this.room.currentPhase;
     }
 }
 

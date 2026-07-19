@@ -78,12 +78,18 @@ export abstract class EventProcess<T extends EventType = EventType> {
 
     // ===== 执行流程 =====
 
-    /** 初始化：设置 source → 推入事件栈 */
+    /** 初始化：设置 source → 推入事件栈。Turn/Phase 事件走 turnStack。 */
     protected async init() {
-        if (!this.source && this.room.eventStack.length > 0) {
+        const isTurnOrPhase =
+            this.type === EventType.Turn || this.type === EventType.Phase;
+        if (!this.source && !isTurnOrPhase && this.room.eventStack.length > 0) {
             this.source = this.room.eventStack[this.room.eventStack.length - 1];
         }
-        this.room.eventStack.push(this);
+        if (isTurnOrPhase) {
+            this.room.turnStack.push(this as any);
+        } else {
+            this.room.eventStack.push(this);
+        }
         this.room.logger.debug(
             `[init] source=${this.source?.type}:${this.source?.id} stackDepth=${this.room.eventStack.length}`,
             {
@@ -253,8 +259,15 @@ export abstract class EventProcess<T extends EventType = EventType> {
     /** 事件完成后的清理 */
     async processCompleted() {
         try {
-            const idx = this.room.eventStack.indexOf(this);
-            if (idx >= 0) this.room.eventStack.splice(idx, 1);
+            const isTurnOrPhase =
+                this.type === EventType.Turn || this.type === EventType.Phase;
+            if (isTurnOrPhase) {
+                const idx = this.room.turnStack.indexOf(this as any);
+                if (idx >= 0) this.room.turnStack.splice(idx, 1);
+            } else {
+                const idx = this.room.eventStack.indexOf(this);
+                if (idx >= 0) this.room.eventStack.splice(idx, 1);
+            }
 
             // ===== 清理处理区中因此事件移入的牌 =====
             const toDiscard: GameCard[] = [];
