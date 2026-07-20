@@ -1,10 +1,27 @@
 import _ from 'lodash';
-import { GameCardId, GameCardData, CardData } from './card/CardTypes';
-import { GeneralData, GeneralAssetsData } from './general/GeneralType';
+import {
+    GameCardId,
+    GameCardData,
+    CardData,
+    CardAttr,
+    CardSuit,
+    CardNumber,
+    CardColor,
+    CardType,
+    CardSubType,
+    EquipSubType,
+    AreaType,
+} from './card/CardTypes';
+import { GeneralData, GeneralAssetsData, Gender } from './general/GeneralType';
 import { CardPackData, GeneralPackData } from './packs/types';
-import { EffectData, SkillAsset, SkillData } from './skill/SkillTypes';
+import { EffectData, SkillAsset, SkillData, PriorityType, SkillTag, StateEffectType } from './skill/SkillTypes';
 import { GameMode } from './room/GameMode';
-import { CardUseData } from './event/EventTypes';
+import { CardUseData, TimingName, EventType, DamageType } from './event/EventTypes';
+import { Phase } from './player/PlayerTypes';
+import { SelectorType, PlayPhaseResult } from './select/SelectTypes';
+import { SkillBuilder } from './skill/builder/SkillBuilder';
+import { EffectBuilder } from './skill/builder/EffectBuilder';
+import { registerCore } from './register';
 
 class RESGS {
     private static instance: RESGS;
@@ -18,6 +35,35 @@ class RESGS {
 
     private constructor() {}
 
+    // ===== 核心枚举（由 registerCore 在 init() 中注入） =====
+    // 事件
+    public TimingName!: typeof TimingName;
+    public EventType!: typeof EventType;
+    public DamageType!: typeof DamageType;
+    // 技能
+    public PriorityType!: typeof PriorityType;
+    public SkillTag!: typeof SkillTag;
+    public StateEffectType!: typeof StateEffectType;
+    // 卡牌
+    public CardAttr!: typeof CardAttr;
+    public CardSuit!: typeof CardSuit;
+    public CardNumber!: typeof CardNumber;
+    public CardColor!: typeof CardColor;
+    public CardType!: typeof CardType;
+    public CardSubType!: typeof CardSubType;
+    public EquipSubType!: typeof EquipSubType;
+    public AreaType!: typeof AreaType;
+    // 玩家
+    public Phase!: typeof Phase;
+    // 选择
+    public SelectorType!: typeof SelectorType;
+    public PlayPhaseResult!: typeof PlayPhaseResult;
+    // 武将
+    public Gender!: typeof Gender;
+    // Builder 类
+    public SkillBuilder!: typeof SkillBuilder;
+    public EffectBuilder!: typeof EffectBuilder;
+
     public workSpace: 'server' | 'client' | 'preview' = 'preview';
     public lang: string = 'zh_CN';
 
@@ -29,12 +75,12 @@ class RESGS {
 
     public async init(workSpace: 'server' | 'client' | 'preview') {
         if (this.coreLoaded) {
-            // logger.error('The core library has already been initialized');
             return;
         }
         globalThis.sgs = this;
         globalThis.lodash = _;
         this.workSpace = workSpace;
+        registerCore(this);
         this.coreLoaded = true;
     }
 

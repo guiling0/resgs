@@ -12,7 +12,7 @@ import { TurnEvent } from './TurnEvent';
 
 // ==================== 时机 ====================
 
-export const enum TimingName {
+export enum TimingName {
     // ==================== 游戏流程 ====================
     GameStageBefore = 'game_stage_before', // 登场前
     GameStage = 'game_stage', // 登场时
@@ -190,7 +190,7 @@ export type TimingTrigger = TimingName | string;
 
 // ==================== 事件类型 ====================
 
-export const enum EventType {
+export enum EventType {
     Ready = 'Ready',
     Turn = 'Turn',
     Phase = 'Phase',
@@ -853,7 +853,7 @@ export interface Timing<T extends TimingTrigger = 'none'> {
 }
 
 // ==================== 其他类型定义 ====================
-export const enum DamageType {
+export enum DamageType {
     None = 0,
     Fire,
     Thunder,

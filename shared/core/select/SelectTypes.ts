@@ -11,7 +11,7 @@ import { Room } from '../room/Room';
  */
 export type SelectCount = number | [number, number];
 
-export const enum SelectorType {
+export enum SelectorType {
     Card = 'Card',
     Player = 'Player',
     General = 'General',
@@ -132,7 +132,7 @@ export interface SelectResult {
     skillName?: string;
 }
 
-export const enum PlayPhaseResult {
+export enum PlayPhaseResult {
     None,
     /** 使用牌 */
     UseCard,

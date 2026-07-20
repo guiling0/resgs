@@ -80,7 +80,7 @@ export interface GeneralAssetsData {
 }
 
 /** 性别 */
-export const enum Gender {
+export enum Gender {
     /** 无性别 */
     None = 0,
     /** 男 */

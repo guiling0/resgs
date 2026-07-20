@@ -1,4 +1,4 @@
-export const enum Phase {
+export enum Phase {
     None = 0,
     Ready,
     Judge,

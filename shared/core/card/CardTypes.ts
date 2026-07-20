@@ -85,7 +85,7 @@ export interface VirtualCardData {
 }
 
 /** 卡牌属性 */
-export const enum CardAttr {
+export enum CardAttr {
     /** 火属性 杀专属*/
     Fire = 1,
     /** 雷属性 杀专属*/
@@ -102,7 +102,7 @@ export const enum CardAttr {
 }
 
 /** 卡牌花色 */
-export const enum CardSuit {
+export enum CardSuit {
     None = 0,
     /** 黑桃 */
     Spade,
@@ -115,7 +115,7 @@ export const enum CardSuit {
 }
 
 /** 卡牌点数 */
-export const enum CardNumber {
+export enum CardNumber {
     None = -1,
     JOKER_BLACK = 0,
     A = 1,
@@ -135,7 +135,7 @@ export const enum CardNumber {
 }
 
 /** 卡牌颜色 */
-export const enum CardColor {
+export enum CardColor {
     None = 0,
     /** 红色 */
     Red,
@@ -144,7 +144,7 @@ export const enum CardColor {
 }
 
 /** 卡牌类别 */
-export const enum CardType {
+export enum CardType {
     None = 0,
     /** 基本牌 */
     Basic = 1,
@@ -155,7 +155,7 @@ export const enum CardType {
 }
 
 /** 装备牌副类别 */
-export const enum EquipSubType {
+export enum EquipSubType {
     None = 0,
     /** 武器 */
     Weapon = 31,
@@ -172,7 +172,7 @@ export const enum EquipSubType {
 }
 
 /** 卡牌副类别 */
-export const enum CardSubType {
+export enum CardSubType {
     None = 0,
     /** 基本牌 */
     Basic = 1,
@@ -194,7 +194,7 @@ export const enum CardSubType {
     Treasure = 36,
 }
 
-export const enum AreaType {
+export enum AreaType {
     Unknown = 'unknown',
     /** 牌堆 */
     Draw = 'draw',

@@ -56,7 +56,7 @@ export interface EffectOptions {
     refreshs?: Array<TimingCallback<any, Effect>>;
 }
 
-export const enum PriorityType {
+export enum PriorityType {
     /** 武将技能 */
     General = 1,
     /** 装备技能 */
@@ -67,7 +67,7 @@ export const enum PriorityType {
     Rule,
 }
 
-export const enum SkillTag {
+export enum SkillTag {
     None = 0,
     /** 锁定技 */
     Lock,
