@@ -40,9 +40,8 @@ description: 编写三国杀游戏扩展的完整工作流——武将技能、�
 ### 步骤 1：确定技能元数据
 
 ```typescript
-import { SkillBuilder } from '@shared/core/skill/builder/SkillBuilder';
-
-const skill = new SkillBuilder('general_name.skill_name');
+// 扩展代码通过 sgs 全局对象访问——不 import 核心模块
+const skill = new sgs.SkillBuilder('general_name.skill_name');
 // 命名约定：'{武将名}.{技能名}'，如 'xuchu.luoyi'、'guanyu.wusheng'
 // 装备技能：'{装备名}.{技能名}'，如 'qinggangjian.passive'
 ```
@@ -71,8 +70,10 @@ effect.maxHandCorrect((player) => 1);       // 手牌上限+1
 ### 步骤 5：注册并导出
 
 ```typescript
-export const skillData = skill.register();
-// 类型为 SkillData，放入扩展包的 skills 数组
+const skillData = skill.register();
+// SkillData 由 builder 返回。注意：SkillBuilder.register() 当前仅返回数据，
+// 调用方需手动 sgs.skills.set(name, skillData) 写入全局注册表。
+// GeneralBuilder/CardBuilder/ModeBuilder 的 .register() 自动写入对应 sgs.* 表。
 ```
 
 ### 步骤 6：编写测试
@@ -86,13 +87,13 @@ export const skillData = skill.register();
 最常见的技能类型——时机到达时询问玩家是否发动，执行消耗后产生效果。
 
 ```typescript
-const skill = new SkillBuilder('xiahoudun.ganglie');
+const skill = new sgs.SkillBuilder('xiahoudun.ganglie');
 
 skill.addEffect('damage')
-    .tag([])                                    // 无特殊标签
-    .settings({ forced: 'cost' })               // 需要询问确认
-    .on(TimingName.DamageInflictAfter)           // 受到伤害后
-    .priority(PriorityType.General)              // 武将技优先级
+    .tag([])
+    .settings({ forced: 'cost' })
+    .on(sgs.TimingName.DamageInflictAfter)     // 受到伤害后
+    .priority(sgs.PriorityType.General)         // 武将技优先级
     .can_trigger(function (room, player, data) {
         // 时机条件：data 是事件数据，player 是技能拥有者
         // 返回任意真值 = 此效果"可以发动"，进入询问流程
@@ -130,9 +131,9 @@ skill.addEffect('damage')
 
 ```typescript
 effect
-    .tag([SkillTag.Lock])          // 锁定技标签
-    .settings({ forced: 'mute' })  // 静默发动，不询问玩家
-    .on(TimingName.DamageInflictAfter)
+    .tag([sgs.SkillTag.Lock])        // 锁定技标签
+    .settings({ forced: 'mute' })    // 静默发动，不询问玩家
+    .on(sgs.TimingName.DamageInflictAfter)
     // 锁定技无需 choose/cost，直接在 effect 中执行逻辑
     .effect(async function (room, player, data, ctx) {
         await player.drawCards(1);
@@ -153,10 +154,10 @@ effect
 状态类效果没有时机、不询问，始终生效。用于距离修正、手牌上限、禁止使用/打出等被动修改。
 
 ```typescript
-const skill = new SkillBuilder('general.mashu');
+const skill = new sgs.SkillBuilder('general.mashu');
 
 skill.addEffect('mounted')
-    .tag([SkillTag.Lock])
+    .tag([sgs.SkillTag.Lock])
     // 无需 .on()、.can_trigger() 等触发类配置
     .distanceCorrect(function (from, to) {
         return -1;  // 计算 from→to 距离时 -1
@@ -268,7 +269,6 @@ shared/test/equip-qinggang.test.ts # 装备技能测试
 
 ```typescript
 import { setupIntegrationTest } from './setup';
-import { TimingName } from '@shared/core/event/EventTypes';
 
 describe('许褚-裸衣', () => {
     it('发动后额定摸牌数-1', async () => {
@@ -298,28 +298,149 @@ npx tsx shared/test/xuchu-luoyi.test.ts
 
 ## 代码组织
 
+### 扩展文件结构
+
 ```
-shared/datas/skills/          # 技能数据注册
-├── wei/                      # 魏（按势力分组）
-│   ├── xuchu.ts
-│   └── index.ts              # 汇总导出
-├── shu/                      # 蜀
-├── wu/                       # 吴
-├── qun/                      # 群
-└── equip/                    # 装备技能
+extension/<name>/
+  index.ts              ← JSDoc 元数据 + side-effect import（导入即注册）
+  generals/             ← 武将定义（GeneralBuilder）
+  skills/               ← 技能定义（SkillBuilder + EffectBuilder）
+  cards/                ← 卡牌定义（CardBuilder）
+  modes/                ← 模式定义（ModeBuilder）
+  assets/               ← 资源文件（图片、音频）
+  .agent/               ← AI 编码指引
 ```
 
-每个技能文件导出 `SkillData[]`：
+### 扩展入口文件
 
 ```typescript
-// shared/datas/skills/wei/xuchu.ts
-import { SkillBuilder } from '@shared/core/skill/builder/SkillBuilder';
+/**
+ * @name standard
+ * @description 身份局标准版扩展包
+ * @author ddgl
+ * @version 1.0.0
+ */
+export const meta = {
+    name: 'standard',
+    description: '身份局标准版扩展包',
+    author: 'ddgl',
+    version: '1.0.0',
+};
 
-const luoyi = new SkillBuilder('xuchu.luoyi');
-// ... 配置效果 ...
-
-export const xuchuSkills = [luoyi.register()];
+// 导入即注册——副作用文件
+import './generals/caocao';
+import './skills/jianxiong';
+import './cards/sha';
+import './modes/standard';
 ```
+
+### 武将定义文件
+
+```typescript
+// 扩展代码通过 sgs.* 全局对象访问——不 import 核心模块
+new sgs.GeneralBuilder('caocao')
+    .kingdom('wei')
+    .hp(4)
+    .gender(sgs.Gender.Male)
+    .skills(['jianxiong'])
+    .lord(true)
+    .register();  // 自动写入 sgs.generals，幂等
+```
+
+### 技能定义文件
+
+```typescript
+const builder = new sgs.SkillBuilder('jianxiong');
+builder.addEffect('trigger')
+    .on(sgs.TimingName.DamageStart)
+    .effect(async (room, player) => { /* ... */ });
+builder.register();
+```
+
+### 卡牌定义文件
+
+```typescript
+new sgs.CardBuilder('sha')
+    .type(sgs.CardType.Basic)
+    .subtype(sgs.CardSubType.Basic)
+    .suit(sgs.CardSuit.Spade)
+    .number(sgs.CardNumber.A)
+    .damage(true)
+    .register();  // → sgs.carddatas（类型）+ sgs.cards（实例）
+```
+
+### 模式定义文件
+
+```typescript
+new sgs.ModeBuilder('standard')
+    .maxPlayer(8)
+    .isTeamMode(false)
+    .settings({ enableLuckyCard: [] })
+    .beforeStart(async (room) => { /* 分配身份、选将、发起始手牌 */ })
+    .register();  // → sgs.modes
+```
+
+## 注册约束
+
+- `.register()` **幂等**——重复调用不重复注册，返回已有数据
+- `GeneralBuilder`/`CardBuilder`/`ModeBuilder` 的 `.register()` **自动写入** `sgs.*` 注册表
+- `SkillBuilder.register()` 当前仅返回数据，调用方需手动 `sgs.skills.set()`
+- 扩展通过 `sgs.TimingName.DamageStart` 访问枚举值，无需 import 核心模块
+
+## 代码/数据分离
+
+官方扩展可拆分为两个独立扩展包：
+
+```
+extension/
+  standard/              ← 代码扩展（开发者维护——git 管理）
+    index.ts / generals/ / skills/ / cards/ / modes/
+  standard-data/         ← 数据扩展（协作者维护——文件传输）
+    index.ts
+    data/
+      generals.ts        ← GeneralAssetsData（皮肤、称号等）
+      translations.ts    ← 翻译表
+    assets/
+      generals/          ← 插画、配音文件
+```
+
+运行时两个扩展独立加载，通过武将名/技能名自动匹配资源和翻译。
+
+## 资源路径约定
+
+所有资源路径统一遵循：
+
+```
+{cdn}/generals/{baseUrl}/{filename}.{ext}
+```
+
+| 资源 | 路径模板 | 示例 |
+|---|---|---|
+| 插画 | `{cdn}/generals/{baseUrl}/{image}.png` | `general/caocao/image.png` |
+| 技能配音 | `{cdn}/{url}.mp3` | `general/caocao/jianxiong1.mp3` |
+
+特殊规则：路径含 `/` 时忽略 baseUrl，直接拼接 `{cdn}/generals/{xxx}.{ext}`。
+
+## 构建与发布
+
+```bash
+# 生成类型声明供扩展开发者使用
+npx tsx scripts/build-types.ts
+
+# 扫描扩展目录，生成 extension/registry.ts
+npx tsx scripts/build-registry.ts
+
+# 打包单个扩展为 IIFE（浏览器可加载）
+npx tsx scripts/build-extension.ts <extension-name>
+
+# 发布扩展——打包 + 上传 assets 到 CDN
+npx tsx scripts/publish-extension.ts <extension-name>
+```
+
+发布流程：
+1. `build-extension` → 产出 `extension/<name>/dist/<name>.js`
+2. `publish-extension` → 打包 + 上传 `assets/` 到 CDN（阿里云 OSS）
+3. 第三方开发者暂需通过服务器中转上传资源（STS 临时授权方案评估中）
 
 ---
 

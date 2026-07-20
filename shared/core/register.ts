@@ -8,6 +8,8 @@ import { PriorityType, SkillTag, StateEffectType } from './skill/SkillTypes';
 import { SkillBuilder } from './skill/builder/SkillBuilder';
 import { EffectBuilder } from './skill/builder/EffectBuilder';
 import { GeneralBuilder } from './general/builder/GeneralBuilder';
+import { CardBuilder } from './card/builder/CardBuilder';
+import { ModeBuilder } from './room/builder/ModeBuilder';
 import {
     CardAttr,
     CardSuit,
@@ -56,5 +58,7 @@ export function registerCore(target: Record<string, any>): void {
         SkillBuilder,
         EffectBuilder,
         GeneralBuilder,
+        CardBuilder,
+        ModeBuilder,
     });
 }

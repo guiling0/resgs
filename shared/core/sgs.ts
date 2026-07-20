@@ -22,6 +22,8 @@ import { SelectorType, PlayPhaseResult } from './select/SelectTypes';
 import { SkillBuilder } from './skill/builder/SkillBuilder';
 import { EffectBuilder } from './skill/builder/EffectBuilder';
 import { GeneralBuilder } from './general/builder/GeneralBuilder';
+import { CardBuilder } from './card/builder/CardBuilder';
+import { ModeBuilder } from './room/builder/ModeBuilder';
 import { registerCore } from './register';
 
 class RESGS {
@@ -65,6 +67,8 @@ class RESGS {
     public SkillBuilder!: typeof SkillBuilder;
     public EffectBuilder!: typeof EffectBuilder;
     public GeneralBuilder!: typeof GeneralBuilder;
+    public CardBuilder!: typeof CardBuilder;
+    public ModeBuilder!: typeof ModeBuilder;
 
     public workSpace: 'server' | 'client' | 'preview' = 'preview';
     public lang: string = 'zh_CN';
