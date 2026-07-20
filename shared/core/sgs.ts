@@ -4,6 +4,7 @@ import { GeneralData, GeneralAssetsData } from './general/GeneralType';
 import { CardPackData, GeneralPackData } from './packs/types';
 import { EffectData, SkillAsset, SkillData } from './skill/SkillTypes';
 import { GameMode } from './room/GameMode';
+import { CardUseData } from './event/EventTypes';
 
 class RESGS {
     private static instance: RESGS;
@@ -49,6 +50,8 @@ class RESGS {
     public readonly skillsAssets: Map<string, SkillAsset> = new Map();
     /** 选择器预设（客户端据此渲染 UI） */
     public readonly selectors: Map<string, any> = new Map();
+    /** 牌的默认使用方式定义（牌名 → CardUseData） */
+    public readonly carduses: Map<string, CardUseData> = new Map();
 
     /** 翻译表 */
     public readonly translations: {

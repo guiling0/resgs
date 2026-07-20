@@ -12,7 +12,7 @@ import {
     CardType,
     VirtualCardData,
 } from '../card/CardTypes';
-import { DamageType, MoveCardOpts, MoveCardData } from '../event/EventTypes';
+import { CardUseData, DamageType, MoveCardOpts, MoveCardData } from '../event/EventTypes';
 import { CardManager } from './manager/CardManager';
 import { AreaManager } from './manager/AreaManager';
 import { VirtualCardManager } from './manager/VirtualCardManager';
@@ -25,11 +25,12 @@ import { ChooseManager } from './manager/ChooseManager';
 import { General } from '../general/General';
 import { GeneralId } from '../general/GeneralType';
 import { EventProcess } from '../event/EventProcess';
-import { TimingName } from '../event/EventTypes';
+import { TimingName, UseCardEventData } from '../event/EventTypes';
 import { Skill } from '../skill/Skill';
 import { Effect } from '../skill/Effect';
 import { PriorityType, StateEffectType } from '../skill/SkillTypes';
 import { TurnEvent, PhaseEvent } from '../event/TurnEvent';
+import { UseCardEvent } from '../event/UseCardEvent';
 import { Phase } from '../player/PlayerTypes';
 import type { GameMode } from './GameMode';
 import { RoomOption } from './GameMode';
@@ -145,6 +146,8 @@ export class Room implements Omit<MarkHost, 'room'> {
     cardNamesToSubType: Map<CardSubType, Set<string>> = new Map();
     /** 所有虚拟牌 */
     vcards: VirtualCard[] = [];
+    /** 牌的默认使用方式（牌名 → CardUseData）。从 sgs.carduses 惰性复制 */
+    carduses: Map<string, CardUseData> = new Map();
     /** 所有武将实例（ID → 实体） */
     generals: Map<GeneralId, General> = new Map();
     /** 所有武将真名列表 */
@@ -341,6 +344,103 @@ export class Room implements Omit<MarkHost, 'room'> {
         if (!player.alive) return false;
         if (number < 0 && player.maxhp + number <= 0) return false;
         return number !== 0;
+    }
+
+    // ---- 使用牌 ----
+
+    /**
+     * 使用牌——双签名入口。
+     *
+     * 签名 1（直接触发）：传入 card + targets，创建 UseCardEvent 并执行。
+     * 签名 2（发起询问）：传入 cardNames/skills，通过 ChooseManager 选牌→选目标→回调签名 1。
+     */
+    async useCard(
+        player: Player,
+        cardOrOpts: VirtualCard | { cardNames?: string[] },
+        targets?: Player[],
+    ): Promise<UseCardEvent | null> {
+        // 签名 1：直接触发
+        if (cardOrOpts instanceof VirtualCard) {
+            const card = cardOrOpts;
+            const data: UseCardEventData = {
+                player,
+                targets: targets ?? [],
+                card,
+            };
+            return this.event.create(UseCardEvent, data, { reason: 'use' });
+        }
+
+        // 签名 2：发起使用牌询问（M3 补全 need2 技能列表）
+        const cardName = cardOrOpts.cardNames?.[0];
+        if (!cardName) return null;
+
+        // 选择实体牌 → 创建 VirtualCard → 选目标 → 调用签名 1
+        const cardUse = this.carduses.get(cardName);
+        if (!cardUse) return null;
+
+        const handCards = player.getHandCards();
+        const candidates = handCards.filter((c) => c.name === cardName);
+        if (candidates.length === 0) return null;
+
+        const chosen: GameCard[] = await this.chooseCard(player, candidates, 1);
+        if (!chosen.length) return null;
+
+        const vc = this.vcard.createByName(cardName, chosen);
+        const validTargets = cardUse.target(this, player, vc);
+        const chosenTargets = await this.choosePlayer(player, validTargets, 1);
+        if (!chosenTargets.length) {
+            this.vcard.destroy(vc);
+            return null;
+        }
+
+        return this.useCard(player, vc, chosenTargets);
+    }
+
+    /**
+     * 使用牌合法性检测（三关）。
+     * 1. Prohibit_UseCard StateEffect
+     * 2. 使用次数（杀在出牌阶段空闲时间点）
+     * 3. 合法目标数 ≥ 额定下限 ≠ 0
+     */
+    canUseCard(
+        player: Player,
+        cardNameOrVC: string | VirtualCard,
+        target?: Player,
+    ): boolean {
+        const cardName =
+            typeof cardNameOrVC === 'string'
+                ? cardNameOrVC
+                : cardNameOrVC.name;
+
+        const cardUse = this.carduses.get(cardName);
+        if (!cardUse) return false;
+
+        // 1. 额外使用条件（如桃需体力不满）
+        if (cardUse.canUse) {
+            const vc =
+                typeof cardNameOrVC === 'string'
+                    ? this.vcard.createByEmpty(cardName)
+                    : cardNameOrVC;
+            if (!cardUse.canUse(this, player, vc)) {
+                if (typeof cardNameOrVC === 'string') this.vcard.destroy(vc);
+                return false;
+            }
+            if (typeof cardNameOrVC === 'string') this.vcard.destroy(vc);
+        }
+
+        // 2. 目标数检测
+        if (target) {
+            const vc =
+                typeof cardNameOrVC === 'string'
+                    ? this.vcard.createByEmpty(cardName)
+                    : cardNameOrVC;
+            const validTargets = cardUse.target(this, player, vc);
+            if (typeof cardNameOrVC === 'string') this.vcard.destroy(vc);
+            if (validTargets.length === 0) return false;
+            if (target && !validTargets.includes(target)) return false;
+        }
+
+        return true;
     }
 
     // ---- 卡牌移动快捷方法 ----
@@ -867,6 +967,7 @@ export class Room implements Omit<MarkHost, 'room'> {
         for (const card of this.cards.values()) {
             this.card.build(card, false);
         }
+        this.card.initCardUses();
 
         // ===== 5. 加载武将（不同步到客户端） =====
         const soldierIds = ['default.shibingn', 'default.shibingv'];

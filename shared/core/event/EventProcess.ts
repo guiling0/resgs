@@ -50,12 +50,12 @@ export abstract class EventProcess<T extends EventType = EventType> {
     /** 运行时自定义数据 */
     data: Record<string, any> = {};
 
-    /** 子事件（MoveCardEvent）移动到处理区的牌。processCompleted 中自动清理 */
-    private _processingCards: GameCard[] = [];
+    /** 子事件（MoveCardEvent）移动到处理区的牌及其原因。processCompleted 中通过 MoveCardEvent 清理 */
+    private _processingCards: { card: GameCard; reason: string }[] = [];
 
     /** 子事件（MoveCardEvent）将牌移动到处理区时回调。基类自动收集，子类无需覆写 */
-    _trackProcessingCard(card: GameCard): void {
-        this._processingCards.push(card);
+    _trackProcessingCard(card: GameCard, reason: string): void {
+        this._processingCards.push({ card, reason });
     }
 
     constructor(room: Room, type: T, eventData: EventData<T>) {
@@ -274,21 +274,20 @@ export abstract class EventProcess<T extends EventType = EventType> {
             }
 
             // ===== 清理处理区中因此事件移入的牌 =====
-            const toDiscard: GameCard[] = [];
-            for (const card of this._processingCards) {
-                const { areaType } = parseAreaId(card.area);
-                if (areaType === AreaType.Processing) {
-                    toDiscard.push(card);
+            if (this._processingCards.length > 0) {
+                // 按原原因分组，每组创建一个 MoveCardData，原因为 {reason}.clear
+                const byReason = new Map<string, GameCard[]>();
+                for (const entry of this._processingCards) {
+                    const { areaType } = parseAreaId(entry.card.area);
+                    if (areaType !== AreaType.Processing) continue;
+                    const group = byReason.get(entry.reason) || [];
+                    group.push(entry.card);
+                    byReason.set(entry.reason, group);
                 }
-            }
-            if (toDiscard.length > 0) {
-                // 直接操作区域，不走 MoveCardEvent（避免递归追踪）
-                for (const card of toDiscard) {
-                    this.room.area.move(
-                        [card.id],
-                        card.area,
-                        AreaType.Discard,
-                        'bottom',
+                for (const [reason, cards] of byReason) {
+                    await this.room.event.moveCards(
+                        [{ cards, toArea: AreaType.Discard, reason: `${reason}.clear` }],
+                        { source: this },
                     );
                 }
             }

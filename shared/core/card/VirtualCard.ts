@@ -32,6 +32,7 @@ export class VirtualCard implements ICard {
         overrides?: Partial<SourceData>,
         record: boolean = true,
     ) {
+        this.name = name;
         this.sourceData = {
             name,
             suit: CardSuit.None,

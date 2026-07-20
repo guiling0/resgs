@@ -6,6 +6,7 @@ import {
 } from '@shared/core/card/CardTypes';
 import { Room } from '../Room';
 import { GameCard } from '@shared/core/card/GameCard';
+import { TimingName, CardUseData } from '../../event/EventTypes';
 
 /**
  * 卡牌管理器 — 负责卡牌实例创建、索引构建与查询。
@@ -18,9 +19,10 @@ export class CardManager {
      * 创建实体牌实例并放入区域。
      * @param sync 是否同步到客户端（initStart 批量为 false）
      */
-    create(data: GameCardData, initArea?: string, sync: boolean = true): GameCard {
+    create(data: GameCardData, initArea?: string): GameCard {
         const state = new CardState();
         const card = new GameCard(data, this.room, state);
+        this.room.state.cardStates.set(card.id.toString(), state);
         if (initArea) {
             this.room.area.add(initArea, [card.id]);
         } else if (data.derived) {
@@ -28,7 +30,6 @@ export class CardManager {
         } else {
             this.room.area.add(AreaType.Draw, [card.id]);
         }
-        if (sync) this.room.state.cardStates.set(card.id.toString(), state);
         return card;
     }
 
@@ -39,7 +40,6 @@ export class CardManager {
      */
     build(card: GameCard, sync: boolean = true) {
         if (!card) return;
-        if (sync) this.room.state.cardStates.set(card.id.toString(), card.state);
         this.room.cards.set(card.id, card);
         if (!this.room.cardNames.includes(card.name) && !card.derived) {
             const name = card.name;
@@ -68,5 +68,43 @@ export class CardManager {
     /** 获取卡牌 ID 数组 */
     getIds(cards: GameCard[]): GameCardId[] {
         return cards.map((c) => c.id);
+    }
+
+    /** 注册牌的使用方式定义（从 sgs.carduses 拷贝到 room.carduses） */
+    initCardUses(): void {
+        // 确保基本牌定义已在 sgs 中注册
+        if (!sgs.carduses.has('sha')) {
+            sgs.carduses.set('sha', {
+                name: 'sha',
+                timing: TimingName.PlayPhase,
+                target: (_room, player, _card) => {
+                    return _room.alives.filter(
+                        (p) => p !== player,
+                    );
+                },
+                effect: async (room, target, _event) => {
+                    await room.damage(_event.player, target, 0, 1);
+                },
+            });
+        }
+        if (!sgs.carduses.has('tao')) {
+            sgs.carduses.set('tao', {
+                name: 'tao',
+                timing: TimingName.PlayPhase,
+                target: (_room, _player, _card) => {
+                    return _room.alives;
+                },
+                canUse: (_room, player, _card) => {
+                    return player.losshp > 0;
+                },
+                effect: async (room, target, _event) => {
+                    await room.recover(target, 1);
+                },
+            });
+        }
+
+        for (const [name, data] of sgs.carduses) {
+            this.room.carduses.set(name, { ...data });
+        }
     }
 }

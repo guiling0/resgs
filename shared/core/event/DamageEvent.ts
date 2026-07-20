@@ -391,7 +391,7 @@ export class ReduceHpEvent extends EventProcess<EventType.ReduceHp> {
         this.eventTriggers = [
             createTiming(TimingName.ReduceHpStart),
             createTiming(TimingName.ReduceHp),
-            createTiming(TimingName.ReduceHpAfter, undefined, [
+            createTiming(TimingName.ReduceHpAfter, [
                 this.bindWithMark(this._onReduceHpAfter),
             ]),
         ];

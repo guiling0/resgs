@@ -8,22 +8,16 @@ import { RichString } from '../RichText';
 import { Room } from '../room/Room';
 import type { EffectContext } from '../skill/SkillTypes';
 import type { Effect } from '../skill/Effect';
+import { TurnEvent } from './TurnEvent';
 
 // ==================== 时机 ====================
 
 export const enum TimingName {
     // ==================== 游戏流程 ====================
-    GameStartBefore = 'game_start_before', // 游戏开始前
-    GameAssignRoles = 'game_assign_roles', // 分配角色
-    GameAdjustSeats = 'game_adjust_seats', // 调整座位
-    GameChooseGeneral = 'game_choose_general', // 选择武将
-    GameChooseGeneralAfter = 'game_choose_general_after', // 选择武将后
-    GameInitProperty = 'game_init_property',
-    GameStartReady = 'game_start_ready', // 游戏开始准备
-    GameInitHandCard = 'game_init_hand_card', // 初始化手牌
     GameStageBefore = 'game_stage_before', // 登场前
     GameStage = 'game_stage', // 登场时
     GameStageAfter = 'game_stage_after', // 登场后
+    GameStartBefore = 'game_start_before', // 游戏开始前
     GameStart = 'game_start', // 游戏开始
     GameEnd = 'game_end', // 游戏结束
 
@@ -324,82 +318,114 @@ export interface MoveEventData {
     log?: (data: MoveCardData) => RichString;
 }
 
+// ===== 使用牌事件：目标条目 =====
+
+export interface TargetEntry {
+    /** 自增 ID——仅用于同玩家时稳定排序，不回写 */
+    index: number;
+    /** 目标角色 */
+    target: Player;
+    /** 借刀子目标（不进目标列表、不触发 assign/become 时机） */
+    subTargets?: Player[];
+    /** 此牌对此目标无效（跳过生效时机） */
+    invalid?: boolean;
+    /** 抵消此牌的事件（闪/无懈 → 使用流程结束，M3 接线） */
+    offset?: any;
+    /** 生效次数（默认取事件的 effectTimes，可单独修改） */
+    effectTimes?: number;
+    /** 已结算次数 */
+    settleCount?: number;
+}
+
+// ===== 使用牌事件数据 =====
+
+/** 统一的使用牌事件数据（替代旧三子类） */
 export interface UseCardEventData {
+    /** 使用者 */
     player: Player;
+    /** 目标角色列表 */
     targets: Player[];
+    /** 使用的虚拟牌 */
     card: VirtualCard;
-    //不播放指向线
+    /** 不播放指向线 */
     noPlayDirectLine?: boolean;
-    //强制播放卡牌语音
+    /** 强制播放卡牌语音 */
     forcePlayCardVoice?: boolean;
-    //是否自动排序目标角色 默认为true
+    /** 是否自动排序目标角色 默认为true */
     autoSort?: boolean;
-    //采用顺时针结算 默认为true
+    /** 采用顺时针结算 默认为false（逆时针） */
     clockwise?: boolean;
-    //对卡牌效果进行修正 未实现
+    /** 对卡牌效果进行修正 未实现 */
     effectCorrection?: any;
 
-    //结算次数
+    /** 每个目标的默认生效次数（默认 1） */
+    effectTimes?: number;
+    /** 结算次数 */
     settleCount?: number;
-    //伤害值基数
+    /** 伤害值基数 */
     damageBase?: number;
-    //回复值基数
+    /** 回复值基数 */
     recoverBase?: number;
 
-    //是否为第一个目标
+    /** 是否为第一个目标 */
     isFirstTarget?: boolean;
-    //目标角色对应关系
-    targetList?: {
-        index: number;
-        target: Player;
-        subTargets?: Player[];
-        generator: TimingTrigger;
-        invalid?: boolean;
-        offset?: any; //任何一个事件
-        wushuang?: Player[];
-        settleCount?: number;
-    }[];
-    //当前结算目标
+    /** 目标角色对应关系 */
+    targetList?: TargetEntry[];
+    /** 当前结算目标索引 */
     settleTarget?: number;
 }
 
+/** @deprecated 统一为 UseCardEventData + TargetEntry；M3 实现时删除 */
 export interface UseCardToCardEventData {
     player: Player;
     targets: VirtualCard;
     card: VirtualCard;
-    //强制播放卡牌语音
     forcePlayCardVoice?: boolean;
-    //对卡牌效果进行修正 未实现
     effectCorrection?: any;
-
-    //目标角色对应关系
-    targetList?: {
-        index: number;
-        target: VirtualCard;
-        invalid?: boolean;
-        offset?: any; //任何一个事件
-    }[];
-    //当前结算目标 只能为0
+    targetList?: TargetEntry[];
     settleTarget?: number;
 }
 
+/** @deprecated 统一为 UseCardEventData + TargetEntry；M4 实现时删除 */
 export interface UseCardSpecialEventData {
     targets: Player;
     card: VirtualCard;
-
-    //目标角色对应关系
-    targetList?: {
-        index: number;
-        target: Player;
-        subTargets?: Player[];
-        generator: TimingTrigger;
-        invalid?: boolean;
-        offset?: any; //任何一个事件
-        wushuang?: Player[];
-        settleCount?: number;
-    }[];
-    //当前结算目标 只能为0
+    targetList?: TargetEntry[];
     settleTarget?: number;
+}
+
+// ===== 使用牌：CardUse 定义 =====
+
+/** 牌的默认使用方式定义 */
+export interface CardUseData {
+    /** 牌名（如 'sha', 'tao'） */
+    name: string;
+    /** 默认使用时机（每种使用方法只在一个默认时机） */
+    timing: TimingName;
+    /** 合法目标选择器 */
+    target: (room: Room, player: Player, card: VirtualCard) => Player[];
+    /** 距离条件 */
+    distanceCondition?: (room: Room, player: Player, target: Player, card: VirtualCard) => boolean;
+    /** 牌面效果 */
+    effect: (room: Room, target: Player, event: UseCardEventData) => Promise<void>;
+    /** 额外使用条件（如桃需体力不满） */
+    canUse?: (room: Room, player: Player, card: VirtualCard) => boolean;
+    /** 使用次数条件（默认无限制） */
+    timesCondition?: (room: Room, player: Player) => number;
+}
+
+/** 使用牌时的修正器（临时优先于状态效果） */
+export interface UseModifiers {
+    /** 无次数限制 */
+    unlimitedTimes?: boolean;
+    /** 无距离限制 */
+    unlimitedDistance?: boolean;
+    /** 不计入次数 */
+    noCount?: boolean;
+    /** 是否可使用技能 */
+    canUseSkill?: boolean;
+    /** 借刀子目标（不进 targetList） */
+    subTarget?: Player;
 }
 
 export interface DropCardEventData {
@@ -619,8 +645,10 @@ export interface EventDataMap {
     [EventType.Phase]: PhaseEventData;
     [EventType.Move]: MoveEventData;
     [EventType.UseCard]: UseCardEventData;
-    [EventType.UseCardToCard]: UseCardToCardEventData;
-    [EventType.UseCardSpecial]: UseCardSpecialEventData;
+    /** @deprecated 统一为 EventType.UseCard */
+    [EventType.UseCardToCard]: UseCardEventData;
+    /** @deprecated 统一为 EventType.UseCard */
+    [EventType.UseCardSpecial]: UseCardEventData;
     [EventType.DropCard]: DropCardEventData;
     [EventType.Pindian]: PindianEventData;
     [EventType.Open]: OpenEventData;
@@ -646,18 +674,7 @@ export type EventData<T extends EventType> = EventDataMap[T];
 
 export interface TimingEventMap {
     [TimingName.GameStartBefore]: EventType.Ready;
-    [TimingName.GameAssignRoles]: EventType.Ready;
-    [TimingName.GameAdjustSeats]: EventType.Ready;
-    [TimingName.GameChooseGeneral]: EventType.Ready;
-    [TimingName.GameChooseGeneralAfter]: EventType.Ready;
-    [TimingName.GameInitProperty]: EventType.Ready;
-    [TimingName.GameStartReady]: EventType.Ready;
-    [TimingName.GameInitHandCard]: EventType.Ready;
-    [TimingName.GameStageBefore]: EventType.Ready;
-    [TimingName.GameStage]: EventType.Ready;
-    [TimingName.GameStageAfter]: EventType.Ready;
     [TimingName.GameStart]: EventType.Ready;
-    [TimingName.GameEnd]: EventType.Ready;
 
     [TimingName.TurnStartBefore]: EventType.Turn;
     [TimingName.TurnStart]: EventType.Turn;
@@ -698,49 +715,23 @@ export interface TimingEventMap {
     [TimingName.MoveCardAfter2]: EventType.Move;
     [TimingName.MoveCardEnd]: EventType.Move;
 
-    [TimingName.UseCardDeclare]: EventType.UseCard | EventType.UseCardToCard;
-    [TimingName.UseCardDeclareAfter]:
-        | EventType.UseCard
-        | EventType.UseCardToCard;
+    [TimingName.UseCardDeclare]: EventType.UseCard;
+    [TimingName.UseCardDeclareAfter]: EventType.UseCard;
     [TimingName.UseCardChooseTarget]: EventType.UseCard;
-    [TimingName.UseCardUsed]: EventType.UseCard | EventType.UseCardToCard;
+    [TimingName.UseCardUsed]: EventType.UseCard;
     [TimingName.UseCardAssignTarget]: EventType.UseCard;
     [TimingName.UseCardBecomeTarget]: EventType.UseCard;
     [TimingName.UseCardAssignTargetAfter]: EventType.UseCard;
     [TimingName.UseCardBecomeTargetAfter]: EventType.UseCard;
-    [TimingName.UseCardReady]: EventType.UseCard | EventType.UseCardToCard;
-    [TimingName.UseCardEffectStart]:
-        | EventType.UseCard
-        | EventType.UseCardToCard
-        | EventType.UseCardSpecial;
-    [TimingName.UseCardEffectBefore]:
-        | EventType.UseCard
-        | EventType.UseCardToCard
-        | EventType.UseCardSpecial;
-    [TimingName.UseCardOffset]:
-        | EventType.UseCard
-        | EventType.UseCardToCard
-        | EventType.UseCardSpecial;
-    [TimingName.UseCardEffect]:
-        | EventType.UseCard
-        | EventType.UseCardToCard
-        | EventType.UseCardSpecial;
-    [TimingName.UseCardEffectAfter]:
-        | EventType.UseCard
-        | EventType.UseCardToCard
-        | EventType.UseCardSpecial;
-    [TimingName.UseCardEnd1]:
-        | EventType.UseCard
-        | EventType.UseCardToCard
-        | EventType.UseCardSpecial;
-    [TimingName.UseCardEnd2]:
-        | EventType.UseCard
-        | EventType.UseCardToCard
-        | EventType.UseCardSpecial;
-    [TimingName.UseCardEnd3]:
-        | EventType.UseCard
-        | EventType.UseCardToCard
-        | EventType.UseCardSpecial;
+    [TimingName.UseCardReady]: EventType.UseCard;
+    [TimingName.UseCardEffectStart]: EventType.UseCard;
+    [TimingName.UseCardEffectBefore]: EventType.UseCard;
+    [TimingName.UseCardOffset]: EventType.UseCard;
+    [TimingName.UseCardEffect]: EventType.UseCard;
+    [TimingName.UseCardEffectAfter]: EventType.UseCard;
+    [TimingName.UseCardEnd1]: EventType.UseCard;
+    [TimingName.UseCardEnd2]: EventType.UseCard;
+    [TimingName.UseCardEnd3]: EventType.UseCard;
 
     [TimingName.DropCardDeclare]: EventType.DropCard;
     [TimingName.DropCardDroped]: EventType.DropCard;
@@ -822,11 +813,13 @@ export interface TimingEventMap {
 
 export interface TimingDataMap {
     [TimingName.GameStageBefore]: StageData;
+    [TimingName.GameStage]: StageData;
     [TimingName.GameStageAfter]: StageData;
+    [TimingName.GameStartBefore]: {};
     [TimingName.GameStart]: {};
     [TimingName.GameEnd]: {};
-    [TimingName.RoundStart]: { round: number };
-    [TimingName.RoundEnd]: { round: number };
+    [TimingName.RoundStart]: { round: number; turn: TurnEvent };
+    [TimingName.RoundEnd]: { round: number; turn: TurnEvent };
     [TimingName.RestStart]: { player: Player };
     [TimingName.RestEnd]: { player: Player };
     [TimingName.UseCardNeed1]: NeedUseCardData;

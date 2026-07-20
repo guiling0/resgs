@@ -325,12 +325,22 @@ export class PhaseEvent extends EventProcess<EventType.Phase> {
         return this.eventData.isExtraPhase;
     }
 
+    /** draw_start1 归零后锁定，阻止 draw_start2 再修改 */
+    private _drawCountLocked: boolean = false;
+
     get drawCount(): number {
         return this.eventData.drawCount;
     }
     set drawCount(value: number) {
+        if (this._drawCountLocked) return;
         if (value < 0) value = 0;
         this.eventData.drawCount = value;
+    }
+
+    /** draw_start1 类效果：额定摸牌数改为 0，锁定后续 draw_start2 修改 */
+    zeroDrawCount(): void {
+        this.eventData.drawCount = 0;
+        this._drawCountLocked = true;
     }
 
     times: Record<string, Record<number, number>> = {};

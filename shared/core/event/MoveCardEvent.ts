@@ -1,12 +1,7 @@
 import { Room } from '../room/Room';
 import { Player } from '../player/Player';
 import { GameCard } from '../card/GameCard';
-import {
-    AreaId,
-    AreaType,
-    CardSubType,
-    CardType,
-} from '../card/CardTypes';
+import { AreaId, AreaType, CardSubType, CardType } from '../card/CardTypes';
 import { RichString } from '../RichText';
 import { parseAreaId } from '../utils';
 import { EventProcess, createTiming } from './EventProcess';
@@ -87,9 +82,7 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
             ]),
             createTiming(TimingName.MoveCardAfter2),
         ];
-        this.endTriggers = [
-            createTiming(TimingName.MoveCardEnd),
-        ];
+        this.endTriggers = [createTiming(TimingName.MoveCardEnd)];
     }
 
     // ===== 生命周期 =====
@@ -140,7 +133,10 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
 
                 // 移动到处理区时通知父事件追踪
                 if (this.source && areaTypeOf(toArea) === AreaType.Processing) {
-                    this.source._trackProcessingCard(card);
+                    this.source._trackProcessingCard(
+                        card,
+                        data.reason || 'put',
+                    );
                 }
 
                 // 设置放置方式
@@ -220,10 +216,7 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
                 card.vcard.refresh({}, true);
             }
             // 移出处理区和判定区：删除虚拟牌
-            if (
-                toType !== AreaType.Processing &&
-                toType !== AreaType.Judge
-            ) {
+            if (toType !== AreaType.Processing && toType !== AreaType.Judge) {
                 this.room.vcard.destroy(card.vcard);
             }
             return;
@@ -342,7 +335,7 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
                 if (idx >= 0) old.cards.splice(idx, 1);
             }
             this.move_datas.push({
-                ...old ?? {},
+                ...(old ?? {}),
                 ...newData,
                 cards: [newCards[i] ?? card],
                 fromArea: undefined,
@@ -361,113 +354,6 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
     /** 本次移动中是否包含指定牌的移动 */
     has(card: GameCard): boolean {
         return !!this.get(card);
-    }
-
-    /**
-     * 获取一名玩家在此次移动中会失去的牌的数据。
-     * @param player 目标玩家
-     * @param pos 检测位置（h=手牌, e=装备, j=判定, u=牌上, s=牌旁）
-     */
-    getLoseDatas(player: Player, pos: string = 'he'): MoveCardData[] {
-        return this.filter((d, c) => {
-            const fromType = areaTypeOf(d.fromArea!);
-            const toType = areaTypeOf(d.toArea);
-            const fromPlayer = playerOf(d.fromArea!, this.room);
-            if (fromPlayer !== player) return false;
-
-            // 手牌区 → 非手牌区/装备区
-            if (
-                pos.includes('h') &&
-                fromType === AreaType.Hand &&
-                toType !== AreaType.Hand &&
-                toType !== AreaType.Equip
-            ) {
-                return true;
-            }
-            // 装备区 → 非手牌区/装备区
-            if (
-                pos.includes('e') &&
-                fromType === AreaType.Equip &&
-                toType !== AreaType.Hand &&
-                toType !== AreaType.Equip
-            ) {
-                return true;
-            }
-            // 判定区
-            if (pos.includes('j') && fromType === AreaType.Judge) {
-                return true;
-            }
-            // 武将牌上
-            if (pos.includes('u') && fromType === AreaType.Up) {
-                return true;
-            }
-            // 武将牌旁
-            if (pos.includes('s') && fromType === AreaType.Side) {
-                return true;
-            }
-            return false;
-        });
-    }
-
-    /** 移动中是否包含一名角色失去牌的数据 */
-    hasLose(player: Player, pos: string = 'he'): boolean {
-        return this.getLoseDatas(player, pos).length > 0;
-    }
-
-    /**
-     * 获取一名玩家此次移动中会失去的牌。
-     * @param player 目标玩家
-     * @param pos 检测位置（h=手牌, e=装备, j=判定, u=牌上, s=牌旁）
-     */
-    getLoseCards(player: Player, pos: string = 'he'): GameCard[] {
-        const cards: GameCard[] = [];
-        for (const d of this.getLoseDatas(player, pos)) {
-            cards.push(...d.cards);
-        }
-        return cards;
-    }
-
-    /**
-     * 获取一名玩家此次移动中会获得的牌的数据。
-     * （原区域不为该玩家手牌区，且目标区域为该玩家的手牌区视为获得）
-     */
-    getObtainDatas(player: Player): MoveCardData[] {
-        const handArea = player.getAreaId(AreaType.Hand);
-        return this.filter((d, c) => {
-            if (d.toArea !== handArea) return false;
-            const fromPlayer = d.fromArea
-                ? playerOf(d.fromArea, this.room)
-                : undefined;
-            return fromPlayer !== player;
-        });
-    }
-
-    /** 移动中是否包含一名角色获得牌的数据 */
-    hasObtain(player: Player): boolean {
-        return this.getObtainDatas(player).length > 0;
-    }
-
-    /**
-     * 获取一名玩家此次移动中会获得的牌。
-     * （原区域不为该玩家手牌区，且目标区域为该玩家的手牌区视为获得）
-     */
-    getObtainCards(player: Player): GameCard[] {
-        const cards: GameCard[] = [];
-        for (const d of this.getObtainDatas(player)) {
-            cards.push(...d.cards);
-        }
-        return cards;
-    }
-
-    /** 获取本次移动中所有失去和获得牌的数据 */
-    getRelatedDatas(player: Player, pos: string = 'he'): {
-        lose: MoveCardData[];
-        obtain: MoveCardData[];
-    } {
-        return {
-            lose: this.getLoseDatas(player, pos),
-            obtain: this.getObtainDatas(player),
-        };
     }
 
     /** 获取本次移动中符合条件的牌 */
@@ -500,9 +386,7 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
     filter(
         filter: (data: MoveCardData, card: GameCard) => boolean,
     ): MoveCardData[] {
-        return this.move_datas.filter((v) =>
-            v.cards.find((c) => filter(v, c)),
-        );
+        return this.move_datas.filter((v) => v.cards.find((c) => filter(v, c)));
     }
 
     /** 移动中是否包含符合条件的数据 */
@@ -530,18 +414,47 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
 
     /**
      * 获取某玩家因指定原因会失去的牌的数据。
-     * （仅当原区域属于该玩家时视为"失去"）
+     * 失去 = 原区域是该玩家的手牌/装备区，目标区域不是该玩家的手牌/装备区。
      */
-    getLoseByReason(player: Player, reason: string, pos: string = 'he'): MoveCardData[] {
+    getLoseByReason(
+        player: Player,
+        reason: string,
+        pos: string = 'he',
+    ): MoveCardData[] {
         return this.filter((d, _c) => {
             if (d.reason !== reason) return false;
-            const fromPlayer = d.fromArea ? playerOf(d.fromArea, this.room) : undefined;
-            return fromPlayer === player;
+            if (!d.fromArea) return false;
+            const fromPlayer = playerOf(d.fromArea, this.room);
+            if (fromPlayer !== player) return false;
+
+            const fromType = areaTypeOf(d.fromArea);
+            const toType = areaTypeOf(d.toArea);
+            const toPlayer = playerOf(d.toArea, this.room);
+
+            // 原区域是该玩家的手牌/装备区
+            if (pos.includes('h') && fromType === AreaType.Hand) {
+                // 目标区域不是该玩家的手牌/装备区
+                return !(
+                    (toType === AreaType.Hand || toType === AreaType.Equip) &&
+                    toPlayer === player
+                );
+            }
+            if (pos.includes('e') && fromType === AreaType.Equip) {
+                return !(
+                    (toType === AreaType.Hand || toType === AreaType.Equip) &&
+                    toPlayer === player
+                );
+            }
+            return false;
         });
     }
 
     /** getLoseByReason 的 GameCard[] 版本 */
-    getLoseCardsByReason(player: Player, reason: string, pos: string = 'he'): GameCard[] {
+    getLoseCardsByReason(
+        player: Player,
+        reason: string,
+        pos: string = 'he',
+    ): GameCard[] {
         const cards: GameCard[] = [];
         for (const d of this.getLoseByReason(player, reason, pos)) {
             cards.push(...d.cards);
@@ -550,21 +463,30 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
     }
 
     /** 是否有因指定原因失去牌的数据 */
-    hasLoseByReason(player: Player, reason: string, pos: string = 'he'): boolean {
+    hasLoseByReason(
+        player: Player,
+        reason: string,
+        pos: string = 'he',
+    ): boolean {
         return this.getLoseByReason(player, reason, pos).length > 0;
     }
 
     /**
      * 获取某玩家因指定原因会获得的牌的数据。
-     * （仅当目标区域为该玩家手牌区且原区域不属于该玩家时视为"获得"）
+     * 获得 = 原区域不是该玩家的手牌区，目标区域是该玩家的手牌区。
      */
     getObtainByReason(player: Player, reason: string): MoveCardData[] {
         const handArea = player.getAreaId(AreaType.Hand);
         return this.filter((d, _c) => {
             if (d.reason !== reason) return false;
             if (d.toArea !== handArea) return false;
-            const fromPlayer = d.fromArea ? playerOf(d.fromArea, this.room) : undefined;
-            return fromPlayer !== player;
+            // 原区域不是该玩家的手牌区
+            if (!d.fromArea) return true;
+            const fromType = areaTypeOf(d.fromArea);
+            const fromPlayer = playerOf(d.fromArea, this.room);
+            if (fromType === AreaType.Hand && fromPlayer === player)
+                return false;
+            return true;
         });
     }
 
@@ -591,10 +513,7 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
      * @param cards 要取消移动的牌。不提供则等同于 preventMove()
      * @param prevent 取消后若所有牌都被取消，是否自动阻止事件
      */
-    async cancel(
-        cards?: GameCard[],
-        prevent: boolean = true,
-    ): Promise<this> {
+    async cancel(cards?: GameCard[], prevent: boolean = true): Promise<this> {
         if (
             this.trigger !== TimingName.MoveCardBefore1 &&
             this.trigger !== TimingName.MoveCardBefore2
@@ -610,9 +529,7 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
         for (const v of this.move_datas) {
             v.cards = v.cards.filter((c) => !cancelSet.has(c));
         }
-        this.move_datas = this.move_datas.filter(
-            (v) => v.cards.length > 0,
-        );
+        this.move_datas = this.move_datas.filter((v) => v.cards.length > 0);
 
         if (this.move_datas.length === 0 && prevent) {
             await this.preventMove();
