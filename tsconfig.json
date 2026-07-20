@@ -1,9 +1,11 @@
 {
     "compilerOptions": {
+        "noEmit": true,
         "baseUrl": ".",
         "target": "ESNext",
         "module": "CommonJS",
         "moduleResolution": "node",
+        "types": ["node"],
         "strict": true,
         "allowJs": true,
         "esModuleInterop": true,
@@ -18,5 +20,5 @@
             "lodash": ["./server/node_modules/@types/lodash"]
         }
     },
-    "include": ["shared/**/*"]
+    "include": ["shared/**/*", "scripts/**/*"]
 }

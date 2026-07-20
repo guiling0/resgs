@@ -65,5 +65,5 @@ metadata:
 
 ## 关联
 
-- [[adr-0001-client-pixi-vite]] — 客户端选型
+- [[adr-0001-client-layaair]] — 客户端选型
 - [[.scratch/ai/spec]] — AI 详细设计 spec

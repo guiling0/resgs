@@ -17,7 +17,7 @@
 /
 ├── CONTEXT.md
 ├── docs/adr/
-│   ├── 0001-client-pixi-vite.md
+│   ├── 0001-client-layaair.md
 │   └── 0002-ai-utility-rules.md
 ├── shared/
 ├── server/

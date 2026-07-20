@@ -13,7 +13,7 @@
 | [events-move-judge-state.md](events-move-judge-state.md) | 移动/判定/拼点/状态改变/技能使用 | B5 getLoseDatas('h') 漏判交给；B6 处理区清理不产生时机；拼点 11 项移植清单；settleResults 修复旧版多目标覆写缺陷 |
 | [terms.md](terms.md) | 8 个操作用语技能例 + 7 个 room 操作入口对比 | recoverTo/check 缩减基准不一致；damage 缺 transfer；give 洗混未覆盖 |
 | [skill-framework.md](skill-framework.md) | 旧技能框架逐例拆解 + 新框架六要素缺口 + 8 条修改方向 | B4 无消耗技能恒不发动；B7 selectors/autoRemove 无消费方；触发主循环补全为首位任务 |
-| [architecture.md](architecture.md) | 旧整体架构 13 个冲突点 + 新重构方案（核心/服务端/客户端），对齐 M1-M8 | 双通道同步废弃、GameRoom 薄适配层、客户端 PixiJS+Vite 架构原则（具体实现后续讨论） |
+| [architecture.md](architecture.md) | 旧整体架构 13 个冲突点 + 新重构方案（核心/服务端/客户端），对齐 M1-M8 | 双通道同步废弃、GameRoom 薄适配层、客户端 LayaAir 3.4.0 架构原则（具体实现见 .scratch/client/design.md） |
 
 ## 与其他文档的关系
 

@@ -19,6 +19,10 @@ dist/
 build/
 *.js.map
 
+# ===== 类型生成临时文件 =====
+.tmp-dts-out/
+.tsconfig.build-types.json
+
 # ===== OS =====
 .DS_Store
 Thumbs.db

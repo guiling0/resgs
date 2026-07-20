@@ -4,8 +4,8 @@
 
 **Blocked by:** None — can start immediately.
 
-**Status:** ready-for-agent
+**Status:** resolved
 
-- [ ] `TurnEvent` 跳过回合流程：检测 `skip=true` → 跳过当前回合时机 → 执行 `player.skip = false`（翻回正面）
-- [ ] 跳过回合后正确进入下一回合的"回合开始后❶"
-- [ ] `shared/test/turn-event.test.ts` 新增测试：翻面角色跳过一回合 → 下回合正常进行
+- [x] `TurnEvent` 跳过回合流程：检测 `skip=true` → 跳过当前回合时机 → 执行 `player.skip = false`（翻回正面）
+- [x] 跳过回合后正确进入下一回合的"回合开始后❶"
+- [x] `shared/test/turn-event.test.ts` 新增测试：翻面角色跳过一回合 → 下回合正常进行

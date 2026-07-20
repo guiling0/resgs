@@ -4,10 +4,10 @@
 
 **Blocked by:** None — can start immediately.
 
-**Status:** ready-for-agent
+**Status:** resolved
 
-- [ ] `EffectData` 接口新增 `maxTimes?: number` 字段（默认 1，-1 表示无限制）
-- [ ] `EffectBuilder` 新增 `.maxTimes(n: number)` 方法
-- [ ] `EventManager.trigger()` 扫描阶段：`max` 取值改为 `e._jsonData.maxTimes ?? 1`，不再调用 `context()` 回调
-- [ ] `context()` 回调调用时机延迟到 askForSkillInvoke 阶段（由 04 工单消费）
-- [ ] 现有 87 个测试全部通过（行为不变）
+- [x] `EffectData` 接口新增 `maxTimes?: number` 字段（默认 1，-1 表示无限制）
+- [x] `EffectBuilder` 新增 `.maxTimes(n: number)` 方法
+- [x] `EventManager.trigger()` 扫描阶段：`max` 取值改为 `e._jsonData.maxTimes ?? 1`，不再调用 `context()` 回调
+- [x] `context()` 回调调用时机延迟到 askForSkillInvoke 阶段（由 04 工单消费）
+- [x] 现有 87 个测试全部通过（行为不变）

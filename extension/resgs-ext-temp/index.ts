@@ -1,17 +1,19 @@
 /**
  * @name resgs-ext-temp
- * @description 最简测试扩展——验证 GeneralBuilder 端到端注册
+ * @description 扩展模板——标准包示例
  * @author ddgl
  * @version 0.1.0
  */
 
 export const meta = {
     name: 'resgs-ext-temp',
-    description: '最简测试扩展——验证 GeneralBuilder 端到端注册',
+    description: '扩展模板——标准包示例',
     author: 'ddgl',
     version: '0.1.0',
 };
 
-// 导入即注册——副作用文件
-import './generals/caocao';
-import './skills/jianxiong';
+// 扩展上下文——registerCards 自动使用此名作为 ID 前缀
+sgs.setExtensionContext(meta.name);
+
+// 导入即加载——pkg/index.ts 组织所有扩展包的加载顺序
+import './pkg';

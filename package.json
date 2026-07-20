@@ -1,0 +1,36 @@
+{
+    "name": "resgs",
+    "version": "1.0.0",
+    "description": "。",
+    "homepage": "https://github.com/guiling0/resgs#readme",
+    "bugs": {
+        "url": "https://github.com/guiling0/resgs/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/guiling0/resgs.git"
+    },
+    "type": "commonjs",
+    "main": "index.js",
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "typecheck": "tsc --noEmit",
+        "test": "bash scripts/test-all.sh",
+        "test:file": "npx tsx",
+        "build:types": "npx tsx scripts/build-types.ts",
+        "build:registry": "npx tsx scripts/build-registry.ts",
+        "build:extension": "npx tsx scripts/build-extension.ts",
+        "publish:extension": "npx tsx scripts/publish-extension.ts"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^29.0.3",
+        "@rollup/plugin-node-resolve": "^16.0.3",
+        "@rollup/plugin-terser": "^1.0.0",
+        "@rollup/plugin-typescript": "^12.3.0",
+        "@types/node": "^26.1.1",
+        "rollup": "^4.62.2",
+        "typescript": "^7.0.2"
+    }
+}

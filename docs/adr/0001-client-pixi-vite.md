@@ -1,59 +1,89 @@
 ---
-name: adr-0001-client-pixi-vite
-description: 客户端选型 PixiJS + Vite（弃 LayaAir）
+name: adr-0001-client-layaair
+description: 客户端选型 LayaAir 3.4（替代 PixiJS + Vite）
 metadata:
   type: adr
 ---
 
-# ADR-0001：客户端采用 PixiJS + Vite
+# ADR-0001：客户端采用 LayaAir 3.4
 
-**日期**：2026-07-18
-**状态**：已决定
+**日期**：2026-07-19（修订）
+**状态**：已决定（替代 2026-07-18 的 PixiJS + Vite 决定）
 
-## 上下文
+## 修订背景
 
-项目需要选择客户端渲染技术。旧项目使用 LayaAir 3.3.0，存在以下问题：
+2026-07-18 决定采用 PixiJS + Vite 方案，主要原因是对 LayaAir 引擎体积大、IDE 绑定、学习成本高的担忧。
 
-1. **与 shared/ 的集成成本高**：旧项目通过 Windows 绝对路径 symlink 共享 `server/src/core/` ，项目移入 `old/` 后已断链。LayaAir IDE 的编译流程与标准 TypeScript 工具链割裂。
-2. **对卡牌游戏过度**：80% 引擎功能（物理、3D、粒子）用不到，引擎包体积 ~5MB。
-3. **IDE 绑定**：LayaAir IDE 与 VSCode 工作流割裂，热更新体验差，调试困难。
-4. **个人项目规模不匹配**：学习曲线陡峭，社区小，人才难招。
+经过进一步调研和 IDE MCP 工具配置后，发现：
 
-三国杀是卡牌 + UI 密集型游戏，核心需求：卡牌渲染、动画、UI 面板交互。不需要物理引擎、碰撞检测、3D 场景。
+1. **旧项目就是 LayaAir 客户端**：`old/resgsv1/clientv0/` 是一个完整的、经过验证的 LayaAir 三国杀客户端。其架构模式（场景管理、消息驱动渲染、Dirty Flag、对象池、录像回放）可直接继承，大幅降低设计风险。
+2. **IDE MCP 消除 IDE 绑定问题**：LayaAir IDE MCP 服务器已配置，可通过 AI 工具操作场景/预制体的创建和编辑，不再需要手工在 IDE 中完成所有操作。
+3. **内置系统减少自建工作量**：UI 系统（GBox/GButton/GLabel/GList/GPanel）、补间动画（Tween）、骨骼动画（Spine）、音效管理（SoundManager）、资源加载（Loader）均为引擎内置。PixiJS 方案需要从零自建所有这些系统。
+4. **渲染分工问题被消除**：PixiJS 方案需要 PixiJS Canvas + Vue 3 DOM 双栈分离，LayaAir 的 UI2 系统可以同时承载游戏渲染和 UI 面板，技术栈单一。
 
 ## 决策
 
-**采用 PixiJS + Vite 作为客户端技术栈。**
+**采用 LayaAir 3.4 + Colyseus SDK 作为客户端技术栈。**
 
-- 渲染：PixiJS 8.x（WebGL/WebGPU 2D 渲染，轻量 ~500KB）
-- UI 层：DOM + CSS（设置面板、对话框等重排版 UI）
-- 构建：Vite（快速 HMR，原生 TS 支持）
-- 网络：Colyseus 客户端 SDK
-- 动画：GSAP 或自建补间系统
+- 渲染 + UI：LayaAir 3.4（新版 UI `ui2`：GBox/GButton/GLabel/GImage/GList/GPanel）
+- 网络：Colyseus 客户端 SDK（`colyseus.js`）
+- 动效：LayaAir 内置（Tween + FrameAnimation + Spine）
+- 音效：LayaAir SoundManager
+- 存储：LayaAir LocalStorage + IndexedDB（录像）
+- 设计分辨率：1920×1080，`showall`，横屏
 
-## 替代方案
+## 核心架构决策
 
-### LayaAir 3.4.0（已弃）
+1. **Prefab 优先**：UI 通过 LayaAir IDE 搭建 .ls/.lh 资源文件，代码只负责逻辑
+2. **Schema 驱动渲染**：Colyseus Schema onChange → Dirty Flag → UI 更新
+3. **消息驱动回放**：录像 = 游戏消息日志 + 定期快照（完全继承旧项目模式）
+4. **对象池**：CardItem、Toast 等频繁对象使用 Laya.Pool 管理
+5. **场景层级**：场景内容 → 弹窗栈 → 提示层 → 确认层 → 加载层
 
-- 优点：内置时间轴编辑器、UI 编辑器、微信小游戏官方支持
-- 缺点：IDE 绑定、编译慢、引擎体量大、学习成本高、与 shared/ 集成的路径映射脆弱
-- 何时重新考虑：若确定发布微信小游戏且现有方案不满足性能需求
+## 与旧决定的差异
 
-### HTML Canvas + DOM（已弃）
-
-- 优点：零依赖、首屏 <2MB、Chrome DevTools 一流
-- 缺点：动画需手写（但卡牌游戏模式固定，可复用）；粒子/骨骼无内置支持
-- 此方案亦可行，但 PixiJS 在 2D 渲染上提供更好的抽象
+| 维度 | PixiJS 方案（弃） | LayaAir 方案（当前） |
+|---|---|---|
+| 渲染引擎 | PixiJS 8.x | LayaAir 内置 Sprite/Scene |
+| UI 系统 | Vue 3 DOM overlay | LayaAir UI2（GBox/GButton/...） |
+| 场景管理 | 单 Canvas + Container 树 | LayaAir Scene.open/close |
+| 动画 | 自建补间系统 | LayaAir Tween + FrameAnimation + Spine |
+| 资源加载 | 自建加载器 | LayaAir Loader |
+| 音效 | 自建 AudioContext | LayaAir SoundManager |
+| 构建 | Vite | LayaAir IDE 编译 |
+| UI 编辑 | 手写 Vue 模板 | IDE 可视化 + .ls/.lh 资源文件 |
 
 ## 影响
 
-- `client/` 目录需从零搭建（旧 LayaAir 客户端代码已全部删除）
-- 卡牌渲染、动画、交互系统需自行实现
-- 无需 LayaAir IDE 许可证，全部在 VSCode 中开发
-- shared/ 可直接 import，实现全栈类型安全
-- 后续如需移植微信小游戏，渲染层可独立替换
+- `client/` 从 LayaAir IDE 项目开始搭建（非 Vite 项目）
+- 旧项目 `old/resgsv1/clientv0/` 中 ~70% 的架构模式和组件设计可直接迁移
+- 卡牌渲染、动画、UI 使用引擎内置系统，开发效率更高
+- 需要 LayaAir IDE 进行场景/预制体编辑（通过 MCP 自动化）
+- shared/ 作为纯 TypeScript 引入，`@shared/*` 别名，不影响构建
+- 新版 UI（`ui2`）组件名前缀为 `G`，旧项目代码中使用经典 UI 的部分需要适配
+
+## 旧项目可迁移清单
+
+| 旧项目模块 | 迁移程度 | 说明 |
+|---|---|---|
+| 场景管理（Main.ts） | 重构后复用 | API 对齐新版 |
+| Dirty Flag 渲染（PlayerComp.ts） | 基本复用 | 核心模式不变 |
+| 录像回放（Replay.ts） | 基本复用 | IndexedDB + Pako |
+| 对象池（EntityTypeEnum） | 直接迁移 | Laya.Pool API |
+| 选择 UI（ChooseCards 等） | 重构后复用 | 适配新 SelectorConfig |
+| 游戏桌面（RoomGameComp.ts） | 重构后复用 | 适配 Schema onChange |
+| 全局动效（GameAniComp.ts） | 基本复用 | Spine/Tween 调用 |
+| 场景布局（config.ts） | 直接迁移 | 座位坐标等 |
+| 资源映射（urlmap.ts） | 直接迁移 | 卡牌素材路由 |
+| 武将动效（effects/*） | 基本复用 | 动画脚本 |
+
+## 风险
+
+1. IDE 构建流程与 CI/CD 的集成需要确认
+2. 旧项目 LayaAir 版本（约 3.3）与新版本（3.4）有 API 差异，迁移时需逐项检查
+3. 需确认新版 UI（`ui2`）与旧项目使用的经典 UI 组件的兼容性
 
 ## 关联
 
 - [[adr-0002-ai-utility-rules]] — AI 方案 ADR
-- 客户端具体实现方案将在 `.scratch/client/` 中单独设计
+- 客户端完整方案详见 `.scratch/client/design.md`

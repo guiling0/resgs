@@ -33,7 +33,7 @@
 | # | 问题 | 位置 / 证据 | 冲突的规则 / 决策 |
 |---|---|---|---|
 | CL1 | **绝对路径 symlink 共享核心代码**：LayaAir 工程用 Windows 绝对路径 symlink 引 `server/src/core/`，项目移入 `old/` 后即断链，不可移植 | ADR-0001 上下文 1 | ADR-0001（已裁定弃 LayaAir）；CLAUDE.md 共享代码须经 `@shared/*` 别名解析 |
-| CL2 | **引擎与工具链错配**：LayaAir 3.x 的 3D/物理/粒子对卡牌游戏过度（~5MB 包体），IDE 与 VSCode/标准 TS 工具链割裂 | ADR-0001 上下文 2-4 | ADR-0001 决策：PixiJS 8 + Vite + DOM UI |
+| CL2 | **引擎与工具链错配**：LayaAir 3.x 的 3D/物理/粒子对卡牌游戏过度（~5MB 包体），IDE 与 VSCode/标准 TS 工具链割裂 | ADR-0001 上下文 2-4 | ADR-0001 2026-07-19 修订：改回 LayaAir 3.4.0（IDE MCP 消除工具链问题、旧项目经验复用、内置系统减少自建工作量） |
 | CL3 | **状态恢复依赖消息重放**：客户端通过 `getMessage` 拉取历史消息重放恢复界面，而非订阅 Schema 状态 | `game.ts:52`（`onMessage('getMessage', ...)`） | map.md M7：重连应基于 Colyseus Schema 同步；重放机制脆弱且与录像/旁观需求纠缠（Fog 项） |
 | CL4 | **规则校验落在客户端**："武器/坐骑当其他牌使用时不能同时享受其技能"由客户端将装备**暂时置灰失效**实现，服务端无对应校验 | `docs/terms/cards.md` 装备特殊定义（旧实现记录于 pending-impl.md） | 规则执行必须服务端权威；客户端只做表现（新选择系统需服务端防"边用边享受"） |
 
@@ -74,15 +74,16 @@
 4. **分层**：认证/大厅最小实现独立于对局房间；DB 持久化走 handlers/services（已有 `GameEndHandler` 雏形），房间类不再直接 new DB 服务（避免旧 S4）；断线重连基于 Schema 重同步 + reconnectToken（不做消息重放）。
 5. **录像/旁观**：Schema 同步架构下的设计单独出 ADR（map.md Fog 项），不预先实现。
 
-### 2.3 客户端（client = PixiJS + Vite）
+### 2.3 客户端（client = LayaAir 3.4.0）
 
-归属 M8，**具体实现后续讨论**（ADR-0001：方案在 `.scratch/client/` 单独设计）。此处仅锁定架构原则：
+归属 M8，**具体实现见 `.scratch/client/design.md`**（ADR-0001 修订为 LayaAir 3.4.0）。此处仅锁定架构原则：
 
-- **技术栈**（ADR-0001 已裁定）：PixiJS 8（牌桌/卡牌/动画渲染）+ DOM/CSS（面板类 UI）+ Vite 构建 + Colyseus 客户端 SDK。
-- **状态驱动渲染**：订阅 RoomState Schema 变化驱动视图，不依赖消息重放（解决 CL3）；交互经 choice_request/response 协议回传。
+- **技术栈**（ADR-0001 2026-07-19 修订）：LayaAir 3.4.0（新版 UI `ui2`：GBox/GButton/GLabel/GImage/GList/GPanel）+ Colyseus 客户端 SDK。
+- **状态驱动渲染**：订阅 RoomState Schema 变化驱动 Dirty Flag 更新，不依赖消息重放（解决 CL3）；交互经 choice_request/response 协议回传。
 - **共享代码直连**：经 `@shared/*` 别名 import，全栈类型安全（解决 CL1，不再 symlink）。
 - **只做表现不做裁决**：所有规则校验以服务端为权威，客户端置灰/高亮仅为提示（CL4 教训）。
-- 待讨论项：场景/组件结构、动画系统（GSAP vs 自建补间）、资源管线、是否支持单机模式（headless Room + 本地 IPlayerInput 跑在浏览器，map.md Fog 项）。
+- **Prefab 优先**：UI 通过 LayaAir IDE 搭建 .ls/.lh 资源文件，代码只负责逻辑。
+- 待讨论项：是否支持单机模式（headless Room + 本地 IPlayerInput 跑在浏览器，map.md Fog 项）。
 
 ---
 

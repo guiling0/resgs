@@ -25,14 +25,16 @@
 | **M5 AI + 自动对战** | AI Phase A（[spec](../ai/spec.md)）+ seeded RNG + headless 自动对战 | N 局自动对战无异常、胜负分布合理 |
 | **M6 标准包内容完备** | 27 武将技能流水线移植（每武将一 issue，测试驱动，开工时建单） | 27 武将全部可用，技能测试全绿 |
 | **M7 联机** | 修复重写 server GameRoom（当前 import 断链）+ BroadcastManager + 最小认证/大厅 + 断线重连（Schema 天然支持）；录像/旁观设计出 ADR | 真实连接打完一局（临时 CLI/调试客户端） |
-| **M8 客户端** | LayaAir 3.4.0，方案见 `.scratch/client/design.md`，本路线图不展开 | — |
-| **→ C0 项目骨架** | LayaAir IDE 项目创建 + shared/ 引入 + 入口场景搭建。M4 后启动，与 M5 并行 | 加载界面可见 |
-| **→ C1 场景+UI骨架** | 全部场景 .ls 搭建 + 核心 Prefab .lh 创建 + 场景切换流 | 场景切换：Load→Entry→Lobby→Room→Game |
-| **→ C2 网络+大厅** | Colyseus SDK 集成 + 登录/大厅/房间 Schema 绑定 | 能进入房间、看到其他玩家 |
-| **→ C3 游戏桌面渲染** | GameScene 完整渲染：座位/手牌/武将/装备/体力（Schema onChange → Dirty Flag → UI） | Schema 驱动 UI 正确更新 |
-| **→ C4 交互系统** | 选牌/选将/选目标 UI + 技能按钮 + 出牌操作 | 可完成一局游戏操作 |
-| **→ C5 动画+音效** | 飞牌/伤害/恢复动画 + BGM/音效（LayaAir Tween/Spine/SoundManager） | 游戏动起来 |
-| **→ C6 录像回放** | IndexedDB + 快照 + 消息驱动回放 + 进度条拖拽（继承旧项目 Replay 方案） | 拖拽回放 |
+| **M8 客户端** | C4-C6（完整体验）。方案见 `.scratch/client/design-dom.md` | — |
+| **→ C0 项目骨架** | Vite + HTML + 加载器 + 自适应缩放 + 图集构建。**M2 后启动** | 加载界面可见 |
+| **→ C1 对局渲染** | 座位/手牌/装备/武将/体力框静态布局。**M3 后启动** | 对局页面静态可见 |
+| **→ C2 交互系统** | 选牌/选将/选目标 UI + 技能按钮 + Colyseus 对接。**M4 后启动** | 可完成一局操作 |
+| **→ C3 动画+音效** | 发牌/飞牌/伤害数字 + 武将语音。**M6 后启动** | 游戏动起来 |
+| **→ C4 完整体验** | 大厅/房间/聊天/断线重连/观战。**M7 后启动** | 完整联机体验 |
+| **→ C5 武将动效** | Spine 动画 + 出场/技能特效。**M8 后启动** | 武将个性化 |
+| **→ C6 录像回放** | IndexedDB + 快照 + 回放控制条。**M8 后启动** | 拖拽回放 |
+
+> 客户端方案从 LayaAir 改为纯 DOM（Vite + CSS + spine-canvas）。详见 `.scratch/client/design-dom.md`。LayaAir 方案保留在 `design.md`。
 
 ### 旧项目资源（old/ 删除前抢救清单）
 
