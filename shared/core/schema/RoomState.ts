@@ -22,9 +22,9 @@ export class RoomState extends Schema {
     /** 玩家状态 */
     @type({ map: PlayerState })
     public players: MapSchema<PlayerState> = new MapSchema();
-    /** 卡牌区域数据 */
-    @type({ map: ['number'] })
-    public cardAreas: MapSchema<ArraySchema<number>> = new MapSchema();
+    /** 卡牌区域数据——存 GameCardId（string） */
+    @type({ map: ['string'] })
+    public cardAreas: MapSchema<ArraySchema<string>> = new MapSchema();
     /** 卡牌状态 */
     @type({ map: CardState })
     public cardStates: MapSchema<CardState> = new MapSchema();
@@ -46,8 +46,8 @@ export class RoomState extends Schema {
 
     // ===== ArraySchema 工厂（确保 instanceof 检查通过）=====
 
-    createCardArea(): ArraySchema<number> {
-        return new ArraySchema<number>();
+    createCardArea(): ArraySchema<string> {
+        return new ArraySchema<string>();
     }
     createGeneralArea(): ArraySchema<string> {
         return new ArraySchema<string>();

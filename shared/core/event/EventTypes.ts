@@ -405,9 +405,18 @@ export interface CardUseData {
     /** 合法目标选择器 */
     target: (room: Room, player: Player, card: VirtualCard) => Player[];
     /** 距离条件 */
-    distanceCondition?: (room: Room, player: Player, target: Player, card: VirtualCard) => boolean;
+    distanceCondition?: (
+        room: Room,
+        player: Player,
+        target: Player,
+        card: VirtualCard,
+    ) => boolean;
     /** 牌面效果 */
-    effect: (room: Room, target: Player, event: UseCardEventData) => Promise<void>;
+    effect: (
+        room: Room,
+        target: Player,
+        event: UseCardEventData,
+    ) => Promise<void>;
     /** 额外使用条件（如桃需体力不满） */
     canUse?: (room: Room, player: Player, card: VirtualCard) => boolean;
     /** 使用次数条件（默认无限制） */
@@ -835,10 +844,10 @@ export interface TimingDataMap {
     [key: string]: Record<string, any>;
 }
 
-export type TimingData<T extends TimingTrigger> = T extends keyof TimingDataMap
-    ? TimingDataMap[T]
-    : T extends keyof TimingEventMap
-      ? EventDataMap[TimingEventMap[T]]
+export type TimingData<T extends TimingTrigger> = T extends keyof TimingEventMap
+    ? EventDataMap[TimingEventMap[T]]
+    : T extends keyof TimingDataMap
+      ? TimingDataMap[T]
       : Record<string, any>;
 
 // ==================== 时机 ====================

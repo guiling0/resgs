@@ -23,6 +23,10 @@ import {
 import { Phase } from './player/PlayerTypes';
 import { SelectorType, PlayPhaseResult } from './select/SelectTypes';
 import { Gender } from './general/GeneralType';
+import {
+    General, CardConfig, GameCard, GameMode, Skill, Effect,
+    registerCards, CardPackage, GeneralPackage, setExtensionContext,
+} from './factories';
 
 /**
  * 将核心枚举和 Builder 一次性挂载到目标对象。
@@ -60,5 +64,16 @@ export function registerCore(target: Record<string, any>): void {
         GeneralBuilder,
         CardBuilder,
         ModeBuilder,
+        // 直接创建方法
+        General,
+        CardConfig,
+        GameCard,
+        GameMode,
+        Skill,
+        Effect,
+        registerCards,
+        CardPackage,
+        GeneralPackage,
+        setExtensionContext,
     });
 }

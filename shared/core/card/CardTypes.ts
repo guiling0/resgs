@@ -1,5 +1,5 @@
-/** 实体牌ID */
-export type GameCardId = number;
+/** 实体牌ID——格式：{扩展名}.{自增序号}，保证跨扩展不冲突 */
+export type GameCardId = string;
 /** 虚拟牌ID */
 export type VirtualCardId = number;
 /** 牌放置方式 */

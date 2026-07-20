@@ -12,8 +12,8 @@ export class SkillState extends Schema {
     showui: string = 'none';
     @type('string')
     sourceGeneral?: string;
-    @type('number')
-    sourceEquip?: number;
+    @type('string')
+    sourceEquip?: string;
     @type('number')
     sourceEffect?: number;
     @type(['string'])

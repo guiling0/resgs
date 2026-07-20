@@ -169,7 +169,7 @@ export class Effect implements MarkHost {
 
         // 触发类效果：标签检查
         if (this.isLimit || this.isAwake) {
-            const count = this.player?.countMark(this.name, this.id) ?? 0;
+            const count = (this.player?.countMark(this.name, this.id) ?? 0) as number;
             if (this.isLimit && count > 0) return false;
             if (this.isAwake && count > 0) return false;
         }

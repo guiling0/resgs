@@ -57,7 +57,5 @@ try {
 
 /** 生成 IIFE 全局变量名 */
 function toIIFEName(name: string): string {
-    return name
-        .replace(/[^a-zA-Z0-9]/g, '_')
-        .replace(/^(\d)/, '_$1');
+    return name.replace(/[^a-zA-Z0-9]/g, '_').replace(/^(\d)/, '_$1');
 }

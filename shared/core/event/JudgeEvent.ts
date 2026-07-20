@@ -65,8 +65,9 @@ export class JudgeEvent extends EventProcess<EventType.Judge> {
             createTiming(TimingName.JudgeCard),
             createTiming(TimingName.JudgeResult1),
             createTiming(TimingName.JudgeResult2),
-            // TODO Phase 9: JudgeResultAfter1 Before 广播判定结果动画
-            createTiming(TimingName.JudgeResultAfter1),
+            createTiming(TimingName.JudgeResultAfter1, [
+                this.bindWithMark(this._onJudgeResultAfter1Before),
+            ]),
             createTiming(TimingName.JudgeResultAfter2),
         ];
         this.endTriggers = [
@@ -96,6 +97,14 @@ export class JudgeEvent extends EventProcess<EventType.Judge> {
             // TODO Phase 9: await this.room.delay(0.6)
         }
         this.room.event.insertHistory(this);
+    }
+
+    /** JudgeResultAfter1 Before：广播判定结果动画 */
+    private async _onJudgeResultAfter1Before(
+        _room: Room,
+        _data: JudgeEventData,
+    ): Promise<void> {
+        // TODO Phase 9: 广播判定成功/失败动画 + 战报
     }
 
     // ===== 操作方法 =====

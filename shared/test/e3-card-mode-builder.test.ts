@@ -1,13 +1,12 @@
 /**
- * E3 验收测试：CardBuilder + ModeBuilder
+ * E3 验收测试：CardBuilder + ModeBuilder + sgs.CardConfig + registerCards
  *
  * 验证：
- * 1. CardBuilder 写入 sgs.carddatas（类型定义）
- * 2. CardBuilder 写入 sgs.cards（实体牌实例，含花色点数）
- * 3. CardBuilder .register() 幂等
- * 4. ModeBuilder 写入 sgs.modes
- * 5. ModeBuilder .register() 幂等
- * 6. sgs.CardBuilder / sgs.ModeBuilder 全局可用
+ * 1. sgs.CardConfig() 写入 sgs.carddatas（卡牌类型信息，增量覆盖）
+ * 2. CardBuilder.build() 构建实体牌数据（不负责注册）
+ * 3. sgs.GameCard() 构建单张实体牌（全部可选，不注册）
+ * 4. sgs.registerCards() 批量分配 ID（扩展名自动注入）
+ * 5. ModeBuilder 写入 sgs.modes，幂等
  */
 
 import { assert, describe, summary } from './setup';
@@ -16,156 +15,97 @@ import { registerCore } from '../core/register';
 // ===== 模拟 sgs 环境 =====
 
 (globalThis as any).sgs = (globalThis as any).sgs ?? {
-    skills: new Map(),
-    effects: new Map(),
-    skillsAssets: new Map(),
-    selectors: new Map(),
-    modes: new Map(),
-    cards: new Map(),
-    carddatas: new Map(),
-    generals: new Map(),
-    generalAssets: new Map(),
-    translations: new Map(),
-    carduses: new Map(),
+    skills: new Map(), effects: new Map(), skillsAssets: new Map(),
+    selectors: new Map(), modes: new Map(), cards: new Map(),
+    carddatas: new Map(), generals: new Map(), generalAssets: new Map(),
+    translations: new Map(), carduses: new Map(),
 };
 
 const sgs = (globalThis as any).sgs;
 registerCore(sgs);
 
-// ===== 测试 1: CardBuilder 注册卡牌类型定义 =====
+// ===== 测试 1: sgs.CardConfig() → sgs.carddatas，增量覆盖 =====
 
-async function test_cardBuilder_typeOnly(): Promise<void> {
-    const { carddata, card } = new sgs.CardBuilder('sha')
-        .type(sgs.CardType.Basic)
-        .subtype(sgs.CardSubType.Basic)
-        .damage(true)
-        .register();
+async function test_cardConfig(): Promise<void> {
+    // 首次注册
+    sgs.CardConfig({ name: 'sha', type: sgs.CardType.Basic, damage: true });
+    assert(sgs.carddatas.get('sha').damage === true, 'damage = true');
+    assert(sgs.carddatas.get('sha').recover === false, 'recover 默认 false');
 
-    assert(carddata.name === 'sha', 'carddata name 正确');
-    assert(carddata.type === sgs.CardType.Basic, 'carddata type = Basic');
-    assert(carddata.subtype === sgs.CardSubType.Basic, 'carddata subtype = Basic');
-    assert(carddata.damage === true, 'carddata damage = true');
-    assert(carddata.recover === false, 'carddata recover 默认 false');
-    assert(sgs.carddatas.has('sha'), 'sgs.carddatas 包含 sha');
+    // 增量覆盖
+    sgs.CardConfig({ name: 'sha', recover: true, damage: false });
+    assert(sgs.carddatas.get('sha').recover === true, '增量覆盖：recover → true');
+    assert(sgs.carddatas.get('sha').damage === false, '增量覆盖：damage → false');
+    assert(sgs.carddatas.get('sha').type === sgs.CardType.Basic, '未传入字段保留');
 
-    // 无花色点数 → 不生成实体牌实例
-    assert(card === undefined, '无花色点数时不生成实体牌实例');
-
-    console.log('  ✅ CardBuilder 类型定义注册正确');
+    console.log('  ✅ sgs.CardConfig 增量覆盖正确');
 }
 
-// ===== 测试 2: CardBuilder 含花色点数——同时注册实体牌实例 =====
+// ===== 测试 2: CardBuilder.build() + registerCards =====
 
-async function test_cardBuilder_withSuitNumber(): Promise<void> {
-    const { carddata, card } = new sgs.CardBuilder('sha.spade.a')
-        .type(sgs.CardType.Basic)
-        .subtype(sgs.CardSubType.Basic)
-        .suit(sgs.CardSuit.Spade)
-        .number(sgs.CardNumber.A)
-        .damage(true)
-        .register();
+async function test_builder_and_registerCards(): Promise<void> {
+    sgs.setExtensionContext('standard');
 
-    assert(carddata.name === 'sha.spade.a', 'carddata name 正确');
-    assert(sgs.carddatas.has('sha.spade.a'), 'sgs.carddatas 包含 sha.spade.a');
+    const cards = [
+        sgs.CardBuilder('sha').suit(sgs.CardSuit.Spade).number(sgs.CardNumber.A).build(),
+        sgs.CardBuilder('sha').suit(sgs.CardSuit.Heart).number(sgs.CardNumber.Number2).build(),
+    ];
 
-    // 含花色点数 → 同时生成实体牌实例
-    assert(card !== undefined, '含花色点数时生成实体牌实例');
-    assert(card!.suit === sgs.CardSuit.Spade, '实体牌 suit = Spade');
-    assert(card!.number === sgs.CardNumber.A, '实体牌 number = A');
-    assert(card!.color === sgs.CardColor.Black, '黑桃花色 → 颜色 Black');
-    assert(typeof card!.id === 'number', '实体牌 id 为数字');
-    assert(sgs.cards.has(card!.id), 'sgs.cards 包含实体牌');
+    sgs.registerCards(cards);
 
-    console.log('  ✅ CardBuilder 实体牌实例注册正确');
+    assert(cards[0].id === 'standard.1', 'ID = standard.1');
+    assert(cards[1].id === 'standard.2', 'ID = standard.2');
+    assert(sgs.cards.has('standard.1'), 'sgs.cards 包含 standard.1');
+
+    // 不同扩展独立计数
+    sgs.setExtensionContext('promo');
+    const promo = [sgs.CardBuilder('sha').suit(sgs.CardSuit.Club).number(sgs.CardNumber.Number3).build()];
+    sgs.registerCards(promo);
+    assert(promo[0].id === 'promo.1', '独立计数：promo.1');
+
+    console.log('  ✅ CardBuilder.build() + registerCards 正确');
 }
 
-// ===== 测试 3: CardBuilder 幂等 =====
+// ===== 测试 3: sgs.GameCard() 构建不注册 =====
 
-async function test_cardBuilder_idempotent(): Promise<void> {
-    const b = new sgs.CardBuilder('tao')
-        .type(sgs.CardType.Basic)
-        .subtype(sgs.CardSubType.Basic)
-        .recover(true)
-        .suit(sgs.CardSuit.Heart)
-        .number(sgs.CardNumber.Number2);
+async function test_gameCard_noRegister(): Promise<void> {
+    const card = sgs.GameCard({ name: 'shan', suit: sgs.CardSuit.Diamond, number: sgs.CardNumber.K });
+    assert(card.name === 'shan', 'name 正确');
+    assert(card.suit === sgs.CardSuit.Diamond, 'suit 正确');
+    assert(card.id === '', '不分配 id（由 registerCards 分配）');
+    assert(!sgs.cards.has(''), '未注册到 sgs.cards');
 
-    const r1 = b.register();
-    const r2 = b.register();
+    // 全部可选，默认 name = 'sha'
+    const card2 = sgs.GameCard();
+    assert(card2.name === 'sha', '默认 name = sha');
 
-    assert(r1.carddata === r2.carddata, '重复 register 返回同一 carddata');
-    assert(sgs.carddatas.has('tao'), 'sgs.carddatas 包含 tao');
-
-    console.log('  ✅ CardBuilder 幂等正确');
+    console.log('  ✅ sgs.GameCard 构建不注册');
 }
 
-// ===== 测试 4: ModeBuilder 注册游戏模式 =====
+// ===== 测试 4: ModeBuilder =====
 
-async function test_modeBuilder_register(): Promise<void> {
-    const mode = new sgs.ModeBuilder('test.standard')
-        .maxPlayer(8)
-        .isTeamMode(false)
-        .settings({ enableLuckyCard: [] })
-        .rules('standard_rules')
-        .beforeStart(async (_room: any) => { /* 标准初始化 */ })
-        .register();
-
+async function test_modeBuilder(): Promise<void> {
+    const mode = sgs.ModeBuilder('test.standard')
+        .maxPlayer(8).beforeStart(async (_r: any) => {}).register();
     assert(mode.name === 'test.standard', 'mode name 正确');
-    assert(mode.maxPlayer === 8, 'mode maxPlayer = 8');
-    assert(mode.isTeamMode === false, 'mode isTeamMode = false');
-    assert(mode.rules === 'standard_rules', 'mode rules 正确');
-    assert(typeof mode.beforeStart === 'function', 'mode beforeStart 是函数');
-    assert(sgs.modes.has('test.standard'), 'sgs.modes 包含 test.standard');
+    assert(sgs.modes.has('test.standard'), 'sgs.modes 包含');
 
-    console.log('  ✅ ModeBuilder 注册正确');
+    // 幂等
+    const m2 = sgs.ModeBuilder('test.standard').maxPlayer(4).register();
+    assert(m2.maxPlayer === 8, '幂等：仍为 8');
+
+    console.log('  ✅ ModeBuilder 正确');
 }
 
-// ===== 测试 5: ModeBuilder 幂等 =====
-
-async function test_modeBuilder_idempotent(): Promise<void> {
-    const b = new sgs.ModeBuilder('test.idempotent')
-        .maxPlayer(4);
-
-    const m1 = b.register();
-    b.maxPlayer(6);
-    const m2 = b.register();
-
-    assert(m1 === m2, '重复 register 返回同一对象');
-    assert(m2.maxPlayer === 4, '幂等拦截：maxPlayer 仍为 4');
-
-    console.log('  ✅ ModeBuilder 幂等正确');
-}
-
-// ===== 测试 6: sgs 全局可用 =====
-
-async function test_sgs_Builders_available(): Promise<void> {
-    assert(typeof sgs.CardBuilder === 'function', 'sgs.CardBuilder 是构造函数');
-    assert(typeof sgs.ModeBuilder === 'function', 'sgs.ModeBuilder 是构造函数');
-
-    const cb = new sgs.CardBuilder('shan');
-    assert(cb.name === 'shan', 'CardBuilder 实例正确');
-
-    const mb = new sgs.ModeBuilder('test.mode');
-    assert(mb.name === 'test.mode', 'ModeBuilder 实例正确');
-
-    console.log('  ✅ sgs.CardBuilder / sgs.ModeBuilder 全局可用');
-}
-
-// ===== 运行全部测试 =====
+// ===== 运行 =====
 
 async function main(): Promise<void> {
-    describe('E3 — CardBuilder + ModeBuilder');
-
-    await test_cardBuilder_typeOnly();
-    await test_cardBuilder_withSuitNumber();
-    await test_cardBuilder_idempotent();
-    await test_modeBuilder_register();
-    await test_modeBuilder_idempotent();
-    await test_sgs_Builders_available();
-
+    describe('E3 — CardBuilder + ModeBuilder + sgs.CardConfig + registerCards');
+    await test_cardConfig();
+    await test_builder_and_registerCards();
+    await test_gameCard_noRegister();
+    await test_modeBuilder();
     summary();
 }
 
-main().catch((err) => {
-    console.error('测试执行失败:', err);
-    process.exit(1);
-});
+main().catch((err) => { console.error('测试失败:', err); process.exit(1); });

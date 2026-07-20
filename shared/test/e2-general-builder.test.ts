@@ -32,7 +32,7 @@ registerCore(sgs);
 // ===== 测试 1: GeneralBuilder 基础 API =====
 
 async function test_generalBuilder_basicAPI(): Promise<void> {
-    const data = new sgs.GeneralBuilder('test.lubu')
+    const data = sgs.GeneralBuilder('test.lubu')
         .kingdom('qun')
         .hp(4)
         .gender(sgs.Gender.Male)
@@ -53,7 +53,7 @@ async function test_generalBuilder_basicAPI(): Promise<void> {
 // ===== 测试 2: .register() 写入 sgs.generals =====
 
 async function test_generalBuilder_registersToSgs(): Promise<void> {
-    new sgs.GeneralBuilder('test.guanyu')
+    sgs.GeneralBuilder('test.guanyu')
         .kingdom('shu')
         .hp(4)
         .gender(sgs.Gender.Male)
@@ -72,7 +72,7 @@ async function test_generalBuilder_registersToSgs(): Promise<void> {
 // ===== 测试 3: .register() 幂等——重复调用不重复注册 =====
 
 async function test_generalBuilder_idempotent(): Promise<void> {
-    const b = new sgs.GeneralBuilder('test.zhaoyun')
+    const b = sgs.GeneralBuilder('test.zhaoyun')
         .kingdom('shu')
         .hp(3)
         .gender(sgs.Gender.Male)
@@ -97,7 +97,7 @@ async function test_generalBuilder_idempotent(): Promise<void> {
 async function test_sgs_GeneralBuilder_available(): Promise<void> {
     assert(typeof sgs.GeneralBuilder === 'function', 'sgs.GeneralBuilder 是构造函数');
 
-    const b = new sgs.GeneralBuilder('test.zhangfei');
+    const b = sgs.GeneralBuilder('test.zhangfei');
     assert(b.name === 'test.zhangfei', '通过 sgs.GeneralBuilder 创建的实例 name 正确');
 
     console.log('  ✅ sgs.GeneralBuilder 全局可用');
@@ -107,7 +107,7 @@ async function test_sgs_GeneralBuilder_available(): Promise<void> {
 
 async function test_generalBuilder_defaults(): Promise<void> {
     // 最简调用——仅 name + register
-    const data = new sgs.GeneralBuilder('test.minimal').register();
+    const data = sgs.GeneralBuilder('test.minimal').register();
 
     assert(data.kingdom === 'qun', '默认 kingdom = qun');
     assert(data.hp === 3, '默认 hp = 3');
@@ -124,14 +124,14 @@ async function test_generalBuilder_defaults(): Promise<void> {
 // ===== 测试 6: HP 数组形式（[初始,上限] 和 [初始,上限,护盾]） =====
 
 async function test_generalBuilder_hpArray(): Promise<void> {
-    const d1 = new sgs.GeneralBuilder('test.hp1')
+    const d1 = sgs.GeneralBuilder('test.hp1')
         .hp([3, 4])
         .register();
 
     assert(Array.isArray(d1.hp) && d1.hp[0] === 3 && d1.hp[1] === 4,
         'hp [3,4] 正确存储');
 
-    const d2 = new sgs.GeneralBuilder('test.hp2')
+    const d2 = sgs.GeneralBuilder('test.hp2')
         .hp([3, 4, 1])
         .register();
 

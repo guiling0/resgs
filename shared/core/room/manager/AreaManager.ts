@@ -7,7 +7,7 @@ import { GeneralId } from '@shared/core/general/GeneralType';
 import { sampleRandom, shuffleArray } from '@shared/core/utils';
 
 /**
- * 区域 ID 联合类型：GameCardId = number, GeneralId = string
+ * 区域 ID 联合类型：GameCardId = string, GeneralId = string
  */
 type AreaItemId = GameCardId | GeneralId;
 
@@ -37,11 +37,11 @@ export class AreaManager {
 
     // ===== 内部：根据 ID 类型自动选择区域 Map =====
 
-    /** 根据单个 ID 的类型返回对应的区域 MapSchema */
+    /** 根据 ID 格式返回对应的区域 MapSchema——卡牌 ID 匹配 {扩展名}.{数字} */
     private _mapFor<T extends AreaItemId>(
         id: T,
     ): MapSchema<ArraySchema<T>> {
-        if (typeof id === 'number') {
+        if (typeof id === 'string' && /\.\d+$/.test(id)) {
             return this.room.state.cardAreas as unknown as MapSchema<
                 ArraySchema<T>
             >;
@@ -68,7 +68,7 @@ export class AreaManager {
         // Colyseus MapSchema.set() 内部做 instanceof 检查，esbuild 环境下可能失败。
         // 绕过方式：首次设置时直接写入底层 $items Map，后续操作读出的实例可正常使用。
         if (!cards) {
-            cards = (typeof ids[0] === 'number'
+            cards = (typeof ids[0] === 'string' && /\.\d+$/.test(ids[0])
                 ? this.room.state.createCardArea()
                 : this.room.state.createGeneralArea()) as unknown as ArraySchema<T>;
             (areaMap as any).$items.set(areaId, cards);
@@ -81,11 +81,11 @@ export class AreaManager {
             arr.splice(idx, 0, id);
             cards.splice(0, cards.length);
             for (const item of arr) cards.push(item);
-            if (typeof id === 'number') {
-                const card = this.room.cards.get(id);
+            if (/\.\d+$/.test(id as string)) {
+                const card = this.room.cards.get(id as string);
                 if (card) card.setArea(areaId);
             } else {
-                const general = this.room.generals.get(id);
+                const general = this.room.generals.get(id as string);
                 if (general) general.state.area = areaId;
             }
         }
@@ -95,7 +95,7 @@ export class AreaManager {
 
     /** 从区域移除 ID */
     remove<T extends AreaItemId>(areaId: AreaId, ids: T[]): void {
-        const cards = this._mapFor(ids.length > 0 ? ids[0] : (0 as T)).get(areaId);
+        const cards = this._mapFor(ids.length > 0 ? ids[0] : ('' as T)).get(areaId);
         if (cards) {
             for (const id of ids) {
                 const i = cards.indexOf(id);
@@ -106,14 +106,8 @@ export class AreaManager {
 
     // ===== 获取 =====
 
-    /** 获取卡牌区域的 ID 列表 */
-    get(areaId: AreaId): ArraySchema<number> | undefined;
-    /** 获取武将区域的 ID 列表 */
-    get(areaId: AreaId, isGeneral: true): ArraySchema<string> | undefined;
-    get(
-        areaId: AreaId,
-        isGeneral: boolean = false,
-    ): ArraySchema<number> | ArraySchema<string> | undefined {
+    /** 获取卡牌/武将区域的 ID 列表（均为 string[]） */
+    get(areaId: AreaId, isGeneral?: boolean): ArraySchema<string> | undefined {
         if (isGeneral) return this.room.state.generalAreas.get(areaId);
         return this.room.state.cardAreas.get(areaId);
     }
@@ -126,24 +120,13 @@ export class AreaManager {
         areaId: AreaId,
         count: number,
         pos?: 'top' | 'bottom' | 'random' | number,
-    ): number[];
-    getCards(
-        areaId: AreaId,
-        count: number,
-        pos: 'top' | 'bottom' | 'random' | number | undefined,
-        isGeneral: true,
-    ): string[];
-    getCards(
-        areaId: AreaId,
-        count: number,
-        pos: 'top' | 'bottom' | 'random' | number = 'top',
-        isGeneral: boolean = false,
-    ): (number | string)[] {
+        isGeneral?: boolean,
+    ): string[] {
         const cards = isGeneral
             ? this.room.state.generalAreas.get(areaId)
             : this.room.state.cardAreas.get(areaId);
         if (!cards) return [];
-        const arr = [...cards] as (number | string)[];
+        const arr = [...cards];
         if (typeof pos === 'number') {
             const i = pos < 0 ? arr.length + pos : pos;
             return i >= 0 && i < arr.length ? [arr[i]] : [];
@@ -183,9 +166,9 @@ export class AreaManager {
         count: number,
         pos: 'top' | 'bottom' | 'random' | number = 'top',
         fn: (card: GameCard) => boolean,
-    ): number[] {
+    ): string[] {
         const cards = this.get(areaId);
-        let matched: number[] = [];
+        let matched: string[] = [];
         if (cards) {
             for (const id of cards) {
                 const card = this.room.cards.get(id);
@@ -201,7 +184,7 @@ export class AreaManager {
         areaId: AreaId,
         pos: 'top' | 'bottom' | 'random' | number = 'top',
         fn: (card: GameCard) => boolean,
-    ): number | undefined {
+    ): string | undefined {
         return this.filterCards(areaId, 1, pos, fn)[0];
     }
 
@@ -265,7 +248,7 @@ export class AreaManager {
         if (isGeneral) {
             this._shuffleImpl(this.room.state.generalAreas.get(areaId), targetIds as string[]);
         } else {
-            this._shuffleImpl(this.room.state.cardAreas.get(areaId), targetIds as number[]);
+            this._shuffleImpl(this.room.state.cardAreas.get(areaId), targetIds as string[]);
         }
     }
 

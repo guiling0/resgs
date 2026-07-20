@@ -157,7 +157,7 @@ async function test_eventStack(): Promise<void> {
 // ===== 测试 6: check() 合法性校验 =====
 
 async function test_check(): Promise<void> {
-    console.log('\n  ▶ 测试 6: 目标已死亡 → check() 返回 false，事件不执行');
+    console.log('\n  ▶ 测试 6: 目标初始已死亡 → check()=false，不启动事件（checkEvent 只检查 number>0）');
 
     const room = createRoom({ roomId: 'r6' });
     const playerA = createPlayer(room, 'pA', { hp: 4, maxhp: 4, seat: 1 });

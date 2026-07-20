@@ -5,25 +5,39 @@ import { Skill } from '../Skill';
 import { SkillData, TimingCallback } from '../SkillTypes';
 import { EffectBuilder } from './EffectBuilder';
 
-export class SkillBuilder {
-    /** 技能名称 等同于技能id */
+/** SkillBuilder 实例接口 */
+export interface SkillBuilder {
     name: string;
-    /** 自定义数据 */
-    data: Record<string, any> = {};
-    /** 是否为规则技能 */
-    is_rule: boolean = false;
-    /** 是否为主公技能 */
-    is_lord: boolean = false;
-    /** 哪个装备的技能 */
+    data: Record<string, any>;
+    is_rule: boolean;
+    is_lord: boolean;
     attached_equip?: string;
-    /** 哪些势力可以获得该技能，仅用于势力技 */
     attached_kingdom?: string;
 
-    /** 基础技能条件 */
+    addEffect(effect: string | EffectBuilder): EffectBuilder;
+    ai(config: any): this;
+    condition(fn: (this: Skill, room: Room) => boolean): this;
+    visible(fn: (this: Skill, room: Room) => boolean): this;
+    global(fn: (this: Skill, room: Room, player: Player) => boolean): this;
+    refresh<U extends TimingTrigger>(data: TimingCallback<U, Skill>): this;
+    register(): SkillData;
+}
+
+/** SkillBuilder 工厂——无需 new */
+export function SkillBuilder(name: string): SkillBuilder {
+    return new _SkillBuilder(name);
+}
+
+class _SkillBuilder implements SkillBuilder {
+    name: string;
+    data: Record<string, any> = {};
+    is_rule: boolean = false;
+    is_lord: boolean = false;
+    attached_equip?: string;
+    attached_kingdom?: string;
+
     private _condition?: (this: Skill, room: Room) => boolean;
-    /** 是否可见 */
     private _visible?: (this: Skill, room: Room) => boolean;
-    /** 全局技能哪些玩家显示按钮 */
     private _global?: (this: Skill, room: Room, player: Player) => boolean;
     private _effects: EffectBuilder[] = [];
     private _refreshs: Array<TimingCallback<any, Skill>> = [];
@@ -35,13 +49,17 @@ export class SkillBuilder {
 
     addEffect(effect: string | EffectBuilder): EffectBuilder {
         if (typeof effect === 'string') {
-            const builder = new EffectBuilder(effect);
+            // 已注册则直接返回，避免重复创建
+            const existing = this._effects.find((e) => e.name === effect);
+            if (existing) return existing;
+            const builder = EffectBuilder(effect);
             this._effects.push(builder);
             return builder;
-        } else {
-            this._effects.push(effect);
-            return effect;
         }
+        const existing = this._effects.find((e) => e.name === effect.name);
+        if (existing) return existing;
+        this._effects.push(effect);
+        return effect;
     }
 
     ai(config: any) {
@@ -70,7 +88,7 @@ export class SkillBuilder {
     }
 
     register(): SkillData {
-        return {
+        const data: SkillData = {
             name: this.name,
             data: this.data,
             is_rule: this.is_rule,
@@ -80,8 +98,14 @@ export class SkillBuilder {
             condition: this._condition ?? (() => true),
             visible: this._visible ?? (() => true),
             global: this._global ?? (() => true),
-            effects: this._effects.map((builder) => builder.build(this.name)),
+            effects: this._effects.map((builder) => builder.register(this.name)),
             ai: this._ai,
         };
+        if (sgs.skills.has(this.name)) {
+            console.warn(`[SkillBuilder] 技能 "${this.name}" 已存在——跳过重复注册`);
+            return sgs.skills.get(this.name)!;
+        }
+        sgs.skills.set(this.name, data);
+        return data;
     }
 }

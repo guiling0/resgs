@@ -137,7 +137,7 @@ export class Room implements Omit<MarkHost, 'room'> {
     /** playerId → Player 快速索引 */
     playerMaps: Map<string, Player> = new Map();
     /** 所有卡牌实例（ID → 实体） */
-    cards: Map<number, GameCard> = new Map();
+    cards: Map<string, GameCard> = new Map();
     /** 非衍生牌名列表 */
     cardNames: string[] = [];
     /** 牌名 → 卡牌类型 索引 */

@@ -1,8 +1,8 @@
 import { MapSchema, Schema, type } from '@colyseus/schema';
 import { MarkState } from './MarkState';
 export class CardState extends Schema {
-    @type('number')
-    id: number = 0;
+    @type('string')
+    id: string = '';
     @type('string')
     area: string = '';
     @type('boolean')

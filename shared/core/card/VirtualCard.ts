@@ -86,7 +86,7 @@ export class VirtualCard implements ICard {
     }
 
     /** 实体牌 ID 列表 */
-    get cardIds(): number[] {
+    get cardIds(): string[] {
         return this.subcards.map((c) => c.id);
     }
 

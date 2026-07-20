@@ -93,7 +93,7 @@ export class Skill implements MarkHost {
 
     set sourceEquip(value: GameCard) {
         this._sourceEquip = value;
-        this.state.sourceEquip = value?.id ?? 0;
+        this.state.sourceEquip = value?.id ?? '';
     }
 
     get sourceEquip(): GameCard | undefined {

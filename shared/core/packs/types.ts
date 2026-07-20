@@ -1,4 +1,5 @@
-import { GameCardData } from '../card/CardTypes.js';
+import type { GameCardData } from '../card/CardTypes';
+import type { GeneralData } from '../general/GeneralType';
 
 export interface CardPackData {
     name: string;
@@ -8,9 +9,11 @@ export interface CardPackData {
 export interface GeneralPackData {
     name: string;
     subpacks: {
+        /** 子包名（通常为大包.子包，如 standard.wei） */
         name: string;
-        json: string[];
-        icon: string;
-        generals: string[];
+        /** 角标图片名，按 {cdn}/image/icon/{icon}.png 查找 */
+        icon?: string;
+        /** 包内武将数据 */
+        generals: GeneralData[];
     }[];
 }

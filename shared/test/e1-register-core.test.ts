@@ -70,7 +70,7 @@ async function test_buildersAreConstructors(): Promise<void> {
     assert(typeof target.SkillBuilder === 'function', 'SkillBuilder 是构造函数');
     assert(typeof target.EffectBuilder === 'function', 'EffectBuilder 是构造函数');
 
-    const builder = new target.SkillBuilder('test.skill');
+    const builder = target.SkillBuilder('test.skill');
     assert(builder.name === 'test.skill', '通过挂载的 SkillBuilder 创建实例');
     console.log('  ✅ Builder 类可正常使用');
 }

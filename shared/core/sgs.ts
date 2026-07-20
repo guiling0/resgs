@@ -15,7 +15,7 @@ import {
 import { GeneralData, GeneralAssetsData, Gender } from './general/GeneralType';
 import { CardPackData, GeneralPackData } from './packs/types';
 import { EffectData, SkillAsset, SkillData, PriorityType, SkillTag, StateEffectType } from './skill/SkillTypes';
-import { GameMode } from './room/GameMode';
+import type { GameMode as GameModeData } from './room/GameMode';
 import { CardUseData, TimingName, EventType, DamageType } from './event/EventTypes';
 import { Phase } from './player/PlayerTypes';
 import { SelectorType, PlayPhaseResult } from './select/SelectTypes';
@@ -24,6 +24,10 @@ import { EffectBuilder } from './skill/builder/EffectBuilder';
 import { GeneralBuilder } from './general/builder/GeneralBuilder';
 import { CardBuilder } from './card/builder/CardBuilder';
 import { ModeBuilder } from './room/builder/ModeBuilder';
+import {
+    General, CardConfig, GameCard, GameMode, Skill, Effect,
+    registerCards, CardPackage, GeneralPackage, setExtensionContext,
+} from './factories';
 import { registerCore } from './register';
 
 class RESGS {
@@ -69,6 +73,17 @@ class RESGS {
     public GeneralBuilder!: typeof GeneralBuilder;
     public CardBuilder!: typeof CardBuilder;
     public ModeBuilder!: typeof ModeBuilder;
+    // 直接创建方法
+    public General!: typeof General;
+    public CardConfig!: typeof CardConfig;
+    public GameCard!: typeof GameCard;
+    public GameMode!: typeof GameMode;
+    public Skill!: typeof Skill;
+    public Effect!: typeof Effect;
+    public registerCards!: typeof registerCards;
+    public CardPackage!: typeof CardPackage;
+    public GeneralPackage!: typeof GeneralPackage;
+    public setExtensionContext!: typeof setExtensionContext;
 
     public workSpace: 'server' | 'client' | 'preview' = 'preview';
     public lang: string = 'zh_CN';
@@ -90,7 +105,7 @@ class RESGS {
         this.coreLoaded = true;
     }
 
-    public readonly modes: Map<string, GameMode> = new Map();
+    public readonly modes: Map<string, GameModeData> = new Map();
     public readonly cardpacks: Map<string, CardPackData> = new Map();
     public readonly cards: Map<GameCardId, GameCardData> = new Map();
     public readonly carddatas: Map<string, CardData> = new Map();

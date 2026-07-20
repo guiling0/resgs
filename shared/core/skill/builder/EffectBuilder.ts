@@ -15,84 +15,105 @@ import {
     TimingCallback,
 } from '../SkillTypes';
 
-export class EffectBuilder<T extends TimingTrigger = never> {
-    /** 自定义数据 */
-    data: Record<string, any> = {};
-    /** 拥有效果时显示的标记 */
+/** EffectBuilder 实例接口 */
+export interface EffectBuilder<T extends TimingTrigger = never> {
+    readonly name: string;
+    data: Record<string, any>;
     mark?: string | string[];
-    /** 技能标签 */
-    tag: SkillTag[] = [];
+    tag: SkillTag[];
+    priority: PriorityType;
 
-    private _name: string;
-    /** 效果设置 */
+    condition(fn: (this: Effect, room: Room, ctx?: EffectContext) => any): this;
+    times(n: number | ((this: Effect, room: Room, player: Player, data: any) => number)): this;
+    on<U extends TimingTrigger>(trigger: U): EffectBuilder<U>;
+    can_trigger(fn: (this: Effect, room: Room, player: Player, data: TimingData<T>) => any): this;
+    context(fn: (this: Effect, room: Room, player: Player, data: TimingData<T>) => EffectContext): this;
+    choose(fn: (this: Effect, room: Room, player: Player, data: TimingData<T>, ctx: EffectContext) => any): this;
+    cost(fn: (this: Effect, room: Room, player: Player, data: TimingData<T>, ctx: EffectContext) => any): this;
+    effect(fn: (this: Effect, room: Room, player: Player, data: TimingData<T>, ctx: EffectContext) => any): this;
+    select(name: string, ...configs: SelectorConfig[]): this;
+    state<U extends StateEffectType>(type: U, fn: StateCallbackMap[U]): this;
+    refresh<U extends TimingTrigger>(data: TimingCallback<U, Effect>): this;
+    settings(config: Partial<EffectSettings>): this;
+    register(skillName: string): EffectData;
+
+    // 状态类效果便捷方法
+    distanceCorrect(fn: StateCallbackMap[StateEffectType.Distance_Correct]): this;
+    distanceFixed(fn: StateCallbackMap[StateEffectType.Distance_Fixed]): this;
+    notCalcSeat(fn: StateCallbackMap[StateEffectType.NotCalcSeat]): this;
+    notCalcDistance(fn: StateCallbackMap[StateEffectType.NotCalcDistance]): this;
+    maxHandInitial(fn: StateCallbackMap[StateEffectType.MaxHand_Initial]): this;
+    maxHandCorrect(fn: StateCallbackMap[StateEffectType.MaxHand_Correct]): this;
+    maxHandFixed(fn: StateCallbackMap[StateEffectType.MaxHand_Fixed]): this;
+    maxHandExclude(fn: StateCallbackMap[StateEffectType.MaxHand_Exclude]): this;
+    prohibitOpen(fn: StateCallbackMap[StateEffectType.Prohibit_Open]): this;
+    prohibitClose(fn: StateCallbackMap[StateEffectType.Prohibit_Close]): this;
+    prohibitDiscards(fn: StateCallbackMap[StateEffectType.Prohibit_Discards]): this;
+    prohibitObtainCards(fn: StateCallbackMap[StateEffectType.Prohibit_ObtainCards]): this;
+    prohibitRecoverHp(fn: StateCallbackMap[StateEffectType.Prohibit_RecoverHp]): this;
+    prohibitLoseHp(fn: StateCallbackMap[StateEffectType.Prohibit_LoseHp]): this;
+    prohibitUseCard(fn: StateCallbackMap[StateEffectType.Prohibit_UseCard]): this;
+    prohibitDropCard(fn: StateCallbackMap[StateEffectType.Prohibit_DropCard]): this;
+    prohibitPindian(fn: StateCallbackMap[StateEffectType.Prohibit_Pindian]): this;
+    rangeInitial(fn: StateCallbackMap[StateEffectType.Range_Initial]): this;
+    rangeCorrect(fn: StateCallbackMap[StateEffectType.Range_Correct]): this;
+    rangeFixed(fn: StateCallbackMap[StateEffectType.Range_Fixed]): this;
+    rangeWithin(fn: StateCallbackMap[StateEffectType.Range_Within]): this;
+    rangeWithout(fn: StateCallbackMap[StateEffectType.Range_Without]): this;
+    regardCardData(fn: StateCallbackMap[StateEffectType.Regard_CardData]): this;
+    regardOnlyBig(fn: StateCallbackMap[StateEffectType.Regard_OnlyBig]): this;
+    regardOnlyBigFixed(fn: StateCallbackMap[StateEffectType.Regard_OnlyBig_Fixed]): this;
+    regardKindom(fn: StateCallbackMap[StateEffectType.Regard_Kingdom]): this;
+    targetModPassTimeCheck(fn: StateCallbackMap[StateEffectType.TargetMod_PassTimeCheck]): this;
+    targetModPassCountingTime(fn: StateCallbackMap[StateEffectType.TargetMod_PassCountingTime]): this;
+    targetModCorrectTime(fn: StateCallbackMap[StateEffectType.TargetMod_CorrectTime]): this;
+    targetModPassDistanceCheck(fn: StateCallbackMap[StateEffectType.TargetMod_PassDistanceCheck]): this;
+    targetModCardLimitChooseCount(fn: StateCallbackMap[StateEffectType.TargetMod_CardLimit_ChooseCount]): this;
+    targetModCardLimitDistance(fn: StateCallbackMap[StateEffectType.TargetMod_CardLimit_Distance]): this;
+    skillInvalidity(fn: StateCallbackMap[StateEffectType.Skill_Invalidity]): this;
+    likeHandToUse(fn: StateCallbackMap[StateEffectType.LikeHandToUse]): this;
+    likeHandToDrop(fn: StateCallbackMap[StateEffectType.LikeHandToDrop]): this;
+    ignoreHeadAndDeputy(fn: StateCallbackMap[StateEffectType.IgnoreHeadAndDeputy]): this;
+    fieldCardEyes(fn: StateCallbackMap[StateEffectType.FieldCardEyes]): this;
+    regardArrayCondition(fn: StateCallbackMap[StateEffectType.Regard_ArrayCondition]): this;
+    regardPindianResult(fn: StateCallbackMap[StateEffectType.Regard_PindianResult]): this;
+}
+
+/** EffectBuilder 工厂——无需 new */
+export function EffectBuilder<T extends TimingTrigger = never>(name: string): EffectBuilder<T> {
+    return new _EffectBuilder<T>(name);
+}
+
+class _EffectBuilder<T extends TimingTrigger = never> implements EffectBuilder<T> {
+    readonly name: string;
+    data: Record<string, any> = {};
+    mark?: string | string[];
+    tag: SkillTag[] = [];
     private _settings: EffectSettings = {
-        forced: 'mute',
-        audios: 'extends',
-        temp: false,
-        ani: 'text',
-        log: true,
-        toast: true,
-        sort: true,
-        directline: 1,
-        limitAni: true,
-        awakeAni: true,
-        viewas: true,
-        global: false,
+        forced: 'mute', audios: 'extends', temp: false, ani: 'text',
+        log: true, toast: true, sort: true, directline: 1,
+        limitAni: true, awakeAni: true, viewas: true, global: false,
     };
     private _selectors: EffectSelectors = {};
     private _condition?: (this: Effect, room: Room, ctx?: EffectContext) => any;
     private _refreshs: Array<TimingCallback<any, Effect>> = [];
 
-    //==================触发技相关==================
-    /** 最大发动次数（number=固定值，函数=实时计算，-1=无限制，默认1） */
     private _times?: number | ((this: Effect, room: Room, player: Player, data: any) => number);
-    /** 效果优先级 */
     priority: PriorityType = PriorityType.General;
     private _trigger?: T;
-    private _can_trigger?: (
-        this: Effect,
-        room: Room,
-        player: Player,
-        data: TimingData<T>,
-    ) => any;
-    private _context?: (
-        this: Effect,
-        room: Room,
-        player: Player,
-        data: any,
-    ) => EffectContext;
-    private _choose?: (
-        this: Effect,
-        room: Room,
-        player: Player,
-        data: any,
-        ctx: EffectContext,
-    ) => any;
-    private _cost?: (
-        this: Effect,
-        room: Room,
-        player: Player,
-        data: any,
-        ctx: EffectContext,
-    ) => any;
-    private _effect?: (
-        this: Effect,
-        room: Room,
-        player: Player,
-        data: any,
-        ctx: EffectContext,
-    ) => any;
+    private _can_trigger?: (this: Effect, room: Room, player: Player, data: TimingData<T>) => any;
+    private _context?: (this: Effect, room: Room, player: Player, data: any) => EffectContext;
+    private _choose?: (this: Effect, room: Room, player: Player, data: any, ctx: EffectContext) => any;
+    private _cost?: (this: Effect, room: Room, player: Player, data: any, ctx: EffectContext) => any;
+    private _effect?: (this: Effect, room: Room, player: Player, data: any, ctx: EffectContext) => any;
 
-    //==================状态技相关==================
     private _stateCallbacks: Partial<StateCallbackMap> = {};
 
     constructor(name: string) {
-        this._name = name;
+        this.name = name;
     }
 
-    condition(
-        fn: (this: Effect, room: Room, ctx?: EffectContext) => any,
-    ): this {
+    condition(fn: (this: Effect, room: Room, ctx?: EffectContext) => any): this {
         this._condition = fn;
         return this;
     }
@@ -107,65 +128,27 @@ export class EffectBuilder<T extends TimingTrigger = never> {
         return this as any;
     }
 
-    can_trigger(
-        fn: (
-            this: Effect,
-            room: Room,
-            player: Player,
-            data: TimingData<T>,
-        ) => any,
-    ): this {
+    can_trigger(fn: (this: Effect, room: Room, player: Player, data: TimingData<T>) => any): this {
         this._can_trigger = fn;
         return this;
     }
 
-    context(
-        fn: (
-            this: Effect,
-            room: Room,
-            player: Player,
-            data: TimingData<T>,
-        ) => EffectContext,
-    ): this {
+    context(fn: (this: Effect, room: Room, player: Player, data: TimingData<T>) => EffectContext): this {
         this._context = fn;
         return this;
     }
 
-    choose(
-        fn: (
-            this: Effect,
-            room: Room,
-            player: Player,
-            data: TimingData<T>,
-            ctx: EffectContext,
-        ) => any,
-    ): this {
+    choose(fn: (this: Effect, room: Room, player: Player, data: TimingData<T>, ctx: EffectContext) => any): this {
         this._choose = fn;
         return this;
     }
 
-    cost(
-        fn: (
-            this: Effect,
-            room: Room,
-            player: Player,
-            data: TimingData<T>,
-            ctx: EffectContext,
-        ) => any,
-    ): this {
+    cost(fn: (this: Effect, room: Room, player: Player, data: TimingData<T>, ctx: EffectContext) => any): this {
         this._cost = fn;
         return this;
     }
 
-    effect(
-        fn: (
-            this: Effect,
-            room: Room,
-            player: Player,
-            data: TimingData<T>,
-            ctx: EffectContext,
-        ) => any,
-    ): this {
+    effect(fn: (this: Effect, room: Room, player: Player, data: TimingData<T>, ctx: EffectContext) => any): this {
         this._effect = fn;
         return this;
     }
@@ -190,29 +173,22 @@ export class EffectBuilder<T extends TimingTrigger = never> {
         return this;
     }
 
-    build(skillName: string): EffectData {
-        const fullName = `${skillName}.${this._name}`;
+    register(skillName: string): EffectData {
+        const fullName = `${skillName}.${this.name}`;
         const isTrigger = !!(
-            this._trigger ||
-            this._can_trigger ||
-            this._context ||
-            this._choose ||
-            this._cost ||
-            this._effect
+            this._trigger || this._can_trigger || this._context ||
+            this._choose || this._cost || this._effect
         );
         const isState = Object.keys(this._stateCallbacks).length > 0;
 
-        // ===== 互斥校验：触发类与状态类不可共存 =====
         if (isTrigger && isState) {
             throw new Error(
                 `Effect "${fullName}": cannot be both trigger and state. ` +
-                `Trigger is set by: on/can_trigger/context/choose/cost/effect. ` +
-                `State is set by: state()/distanceCorrect()/maxHandCorrect()/etc. ` +
                 `Split into two separate effects.`,
             );
         }
 
-        return {
+        const data: EffectData = {
             has_trigger: isTrigger,
             has_state: isState,
             name: fullName,
@@ -223,7 +199,6 @@ export class EffectBuilder<T extends TimingTrigger = never> {
             data: this.data,
             condition: this._condition ?? (() => undefined),
             refreshs: this._refreshs,
-
             priority: this.priority,
             times: this._times ?? 1,
             trigger: this._trigger,
@@ -234,210 +209,53 @@ export class EffectBuilder<T extends TimingTrigger = never> {
             effect: this._effect,
             stateCallbacks: this._stateCallbacks,
         };
+        if (sgs.effects.has(fullName)) {
+            console.warn(`[EffectBuilder] 效果 "${fullName}" 已存在——跳过重复注册`);
+            return sgs.effects.get(fullName)!;
+        }
+        sgs.effects.set(fullName, data);
+        return data;
     }
 
-    //==================状态技相关==================
-    distanceCorrect(
-        fn: StateCallbackMap[StateEffectType.Distance_Correct],
-    ): this {
-        return this.state(StateEffectType.Distance_Correct, fn);
-    }
+    // ===== 状态类效果便捷方法 =====
 
-    distanceFixed(fn: StateCallbackMap[StateEffectType.Distance_Fixed]): this {
-        return this.state(StateEffectType.Distance_Fixed, fn);
-    }
-
-    notCalcSeat(fn: StateCallbackMap[StateEffectType.NotCalcSeat]): this {
-        return this.state(StateEffectType.NotCalcSeat, fn);
-    }
-
-    notCalcDistance(
-        fn: StateCallbackMap[StateEffectType.NotCalcDistance],
-    ): this {
-        return this.state(StateEffectType.NotCalcDistance, fn);
-    }
-
-    maxHandInitial(
-        fn: StateCallbackMap[StateEffectType.MaxHand_Initial],
-    ): this {
-        return this.state(StateEffectType.MaxHand_Initial, fn);
-    }
-
-    maxHandCorrect(
-        fn: StateCallbackMap[StateEffectType.MaxHand_Correct],
-    ): this {
-        return this.state(StateEffectType.MaxHand_Correct, fn);
-    }
-
-    maxHandFixed(fn: StateCallbackMap[StateEffectType.MaxHand_Fixed]): this {
-        return this.state(StateEffectType.MaxHand_Fixed, fn);
-    }
-
-    maxHandExclude(
-        fn: StateCallbackMap[StateEffectType.MaxHand_Exclude],
-    ): this {
-        return this.state(StateEffectType.MaxHand_Exclude, fn);
-    }
-
-    prohibitOpen(fn: StateCallbackMap[StateEffectType.Prohibit_Open]): this {
-        return this.state(StateEffectType.Prohibit_Open, fn);
-    }
-
-    prohibitClose(fn: StateCallbackMap[StateEffectType.Prohibit_Close]): this {
-        return this.state(StateEffectType.Prohibit_Close, fn);
-    }
-
-    prohibitDiscards(
-        fn: StateCallbackMap[StateEffectType.Prohibit_Discards],
-    ): this {
-        return this.state(StateEffectType.Prohibit_Discards, fn);
-    }
-
-    prohibitObtainCards(
-        fn: StateCallbackMap[StateEffectType.Prohibit_ObtainCards],
-    ): this {
-        return this.state(StateEffectType.Prohibit_ObtainCards, fn);
-    }
-
-    prohibitRecoverHp(
-        fn: StateCallbackMap[StateEffectType.Prohibit_RecoverHp],
-    ): this {
-        return this.state(StateEffectType.Prohibit_RecoverHp, fn);
-    }
-
-    prohibitLoseHp(
-        fn: StateCallbackMap[StateEffectType.Prohibit_LoseHp],
-    ): this {
-        return this.state(StateEffectType.Prohibit_LoseHp, fn);
-    }
-
-    prohibitUseCard(
-        fn: StateCallbackMap[StateEffectType.Prohibit_UseCard],
-    ): this {
-        return this.state(StateEffectType.Prohibit_UseCard, fn);
-    }
-
-    prohibitDropCard(
-        fn: StateCallbackMap[StateEffectType.Prohibit_DropCard],
-    ): this {
-        return this.state(StateEffectType.Prohibit_DropCard, fn);
-    }
-
-    prohibitPindian(
-        fn: StateCallbackMap[StateEffectType.Prohibit_Pindian],
-    ): this {
-        return this.state(StateEffectType.Prohibit_Pindian, fn);
-    }
-
-    rangeInitial(fn: StateCallbackMap[StateEffectType.Range_Initial]): this {
-        return this.state(StateEffectType.Range_Initial, fn);
-    }
-
-    rangeCorrect(fn: StateCallbackMap[StateEffectType.Range_Correct]): this {
-        return this.state(StateEffectType.Range_Correct, fn);
-    }
-
-    rangeFixed(fn: StateCallbackMap[StateEffectType.Range_Fixed]): this {
-        return this.state(StateEffectType.Range_Fixed, fn);
-    }
-
-    rangeWithin(fn: StateCallbackMap[StateEffectType.Range_Within]): this {
-        return this.state(StateEffectType.Range_Within, fn);
-    }
-
-    rangeWithout(fn: StateCallbackMap[StateEffectType.Range_Without]): this {
-        return this.state(StateEffectType.Range_Without, fn);
-    }
-
-    regardCardData(
-        fn: StateCallbackMap[StateEffectType.Regard_CardData],
-    ): this {
-        return this.state(StateEffectType.Regard_CardData, fn);
-    }
-
-    regardOnlyBig(fn: StateCallbackMap[StateEffectType.Regard_OnlyBig]): this {
-        return this.state(StateEffectType.Regard_OnlyBig, fn);
-    }
-
-    regardOnlyBigFixed(
-        fn: StateCallbackMap[StateEffectType.Regard_OnlyBig_Fixed],
-    ): this {
-        return this.state(StateEffectType.Regard_OnlyBig_Fixed, fn);
-    }
-
-    regardKindom(fn: StateCallbackMap[StateEffectType.Regard_Kingdom]): this {
-        return this.state(StateEffectType.Regard_Kingdom, fn);
-    }
-
-    targetModPassTimeCheck(
-        fn: StateCallbackMap[StateEffectType.TargetMod_PassTimeCheck],
-    ): this {
-        return this.state(StateEffectType.TargetMod_PassTimeCheck, fn);
-    }
-
-    targetModPassCountingTime(
-        fn: StateCallbackMap[StateEffectType.TargetMod_PassCountingTime],
-    ): this {
-        return this.state(StateEffectType.TargetMod_PassCountingTime, fn);
-    }
-
-    targetModCorrectTime(
-        fn: StateCallbackMap[StateEffectType.TargetMod_CorrectTime],
-    ): this {
-        return this.state(StateEffectType.TargetMod_CorrectTime, fn);
-    }
-
-    targetModPassDistanceCheck(
-        fn: StateCallbackMap[StateEffectType.TargetMod_PassDistanceCheck],
-    ): this {
-        return this.state(StateEffectType.TargetMod_PassDistanceCheck, fn);
-    }
-
-    targetModCardLimitChooseCount(
-        fn: StateCallbackMap[StateEffectType.TargetMod_CardLimit_ChooseCount],
-    ): this {
-        return this.state(StateEffectType.TargetMod_CardLimit_ChooseCount, fn);
-    }
-
-    targetModCardLimitDistance(
-        fn: StateCallbackMap[StateEffectType.TargetMod_CardLimit_Distance],
-    ): this {
-        return this.state(StateEffectType.TargetMod_CardLimit_Distance, fn);
-    }
-
-    skillInvalidity(
-        fn: StateCallbackMap[StateEffectType.Skill_Invalidity],
-    ): this {
-        return this.state(StateEffectType.Skill_Invalidity, fn);
-    }
-
-    likeHandToUse(fn: StateCallbackMap[StateEffectType.LikeHandToUse]): this {
-        return this.state(StateEffectType.LikeHandToUse, fn);
-    }
-
-    likeHandToDrop(fn: StateCallbackMap[StateEffectType.LikeHandToDrop]): this {
-        return this.state(StateEffectType.LikeHandToDrop, fn);
-    }
-
-    ignoreHeadAndDeputy(
-        fn: StateCallbackMap[StateEffectType.IgnoreHeadAndDeputy],
-    ): this {
-        return this.state(StateEffectType.IgnoreHeadAndDeputy, fn);
-    }
-
-    fieldCardEyes(fn: StateCallbackMap[StateEffectType.FieldCardEyes]): this {
-        return this.state(StateEffectType.FieldCardEyes, fn);
-    }
-
-    regardArrayCondition(
-        fn: StateCallbackMap[StateEffectType.Regard_ArrayCondition],
-    ): this {
-        return this.state(StateEffectType.Regard_ArrayCondition, fn);
-    }
-
-    regardPindianResult(
-        fn: StateCallbackMap[StateEffectType.Regard_PindianResult],
-    ): this {
-        return this.state(StateEffectType.Regard_PindianResult, fn);
-    }
+    distanceCorrect(fn: StateCallbackMap[StateEffectType.Distance_Correct]): this { return this.state(StateEffectType.Distance_Correct, fn); }
+    distanceFixed(fn: StateCallbackMap[StateEffectType.Distance_Fixed]): this { return this.state(StateEffectType.Distance_Fixed, fn); }
+    notCalcSeat(fn: StateCallbackMap[StateEffectType.NotCalcSeat]): this { return this.state(StateEffectType.NotCalcSeat, fn); }
+    notCalcDistance(fn: StateCallbackMap[StateEffectType.NotCalcDistance]): this { return this.state(StateEffectType.NotCalcDistance, fn); }
+    maxHandInitial(fn: StateCallbackMap[StateEffectType.MaxHand_Initial]): this { return this.state(StateEffectType.MaxHand_Initial, fn); }
+    maxHandCorrect(fn: StateCallbackMap[StateEffectType.MaxHand_Correct]): this { return this.state(StateEffectType.MaxHand_Correct, fn); }
+    maxHandFixed(fn: StateCallbackMap[StateEffectType.MaxHand_Fixed]): this { return this.state(StateEffectType.MaxHand_Fixed, fn); }
+    maxHandExclude(fn: StateCallbackMap[StateEffectType.MaxHand_Exclude]): this { return this.state(StateEffectType.MaxHand_Exclude, fn); }
+    prohibitOpen(fn: StateCallbackMap[StateEffectType.Prohibit_Open]): this { return this.state(StateEffectType.Prohibit_Open, fn); }
+    prohibitClose(fn: StateCallbackMap[StateEffectType.Prohibit_Close]): this { return this.state(StateEffectType.Prohibit_Close, fn); }
+    prohibitDiscards(fn: StateCallbackMap[StateEffectType.Prohibit_Discards]): this { return this.state(StateEffectType.Prohibit_Discards, fn); }
+    prohibitObtainCards(fn: StateCallbackMap[StateEffectType.Prohibit_ObtainCards]): this { return this.state(StateEffectType.Prohibit_ObtainCards, fn); }
+    prohibitRecoverHp(fn: StateCallbackMap[StateEffectType.Prohibit_RecoverHp]): this { return this.state(StateEffectType.Prohibit_RecoverHp, fn); }
+    prohibitLoseHp(fn: StateCallbackMap[StateEffectType.Prohibit_LoseHp]): this { return this.state(StateEffectType.Prohibit_LoseHp, fn); }
+    prohibitUseCard(fn: StateCallbackMap[StateEffectType.Prohibit_UseCard]): this { return this.state(StateEffectType.Prohibit_UseCard, fn); }
+    prohibitDropCard(fn: StateCallbackMap[StateEffectType.Prohibit_DropCard]): this { return this.state(StateEffectType.Prohibit_DropCard, fn); }
+    prohibitPindian(fn: StateCallbackMap[StateEffectType.Prohibit_Pindian]): this { return this.state(StateEffectType.Prohibit_Pindian, fn); }
+    rangeInitial(fn: StateCallbackMap[StateEffectType.Range_Initial]): this { return this.state(StateEffectType.Range_Initial, fn); }
+    rangeCorrect(fn: StateCallbackMap[StateEffectType.Range_Correct]): this { return this.state(StateEffectType.Range_Correct, fn); }
+    rangeFixed(fn: StateCallbackMap[StateEffectType.Range_Fixed]): this { return this.state(StateEffectType.Range_Fixed, fn); }
+    rangeWithin(fn: StateCallbackMap[StateEffectType.Range_Within]): this { return this.state(StateEffectType.Range_Within, fn); }
+    rangeWithout(fn: StateCallbackMap[StateEffectType.Range_Without]): this { return this.state(StateEffectType.Range_Without, fn); }
+    regardCardData(fn: StateCallbackMap[StateEffectType.Regard_CardData]): this { return this.state(StateEffectType.Regard_CardData, fn); }
+    regardOnlyBig(fn: StateCallbackMap[StateEffectType.Regard_OnlyBig]): this { return this.state(StateEffectType.Regard_OnlyBig, fn); }
+    regardOnlyBigFixed(fn: StateCallbackMap[StateEffectType.Regard_OnlyBig_Fixed]): this { return this.state(StateEffectType.Regard_OnlyBig_Fixed, fn); }
+    regardKindom(fn: StateCallbackMap[StateEffectType.Regard_Kingdom]): this { return this.state(StateEffectType.Regard_Kingdom, fn); }
+    targetModPassTimeCheck(fn: StateCallbackMap[StateEffectType.TargetMod_PassTimeCheck]): this { return this.state(StateEffectType.TargetMod_PassTimeCheck, fn); }
+    targetModPassCountingTime(fn: StateCallbackMap[StateEffectType.TargetMod_PassCountingTime]): this { return this.state(StateEffectType.TargetMod_PassCountingTime, fn); }
+    targetModCorrectTime(fn: StateCallbackMap[StateEffectType.TargetMod_CorrectTime]): this { return this.state(StateEffectType.TargetMod_CorrectTime, fn); }
+    targetModPassDistanceCheck(fn: StateCallbackMap[StateEffectType.TargetMod_PassDistanceCheck]): this { return this.state(StateEffectType.TargetMod_PassDistanceCheck, fn); }
+    targetModCardLimitChooseCount(fn: StateCallbackMap[StateEffectType.TargetMod_CardLimit_ChooseCount]): this { return this.state(StateEffectType.TargetMod_CardLimit_ChooseCount, fn); }
+    targetModCardLimitDistance(fn: StateCallbackMap[StateEffectType.TargetMod_CardLimit_Distance]): this { return this.state(StateEffectType.TargetMod_CardLimit_Distance, fn); }
+    skillInvalidity(fn: StateCallbackMap[StateEffectType.Skill_Invalidity]): this { return this.state(StateEffectType.Skill_Invalidity, fn); }
+    likeHandToUse(fn: StateCallbackMap[StateEffectType.LikeHandToUse]): this { return this.state(StateEffectType.LikeHandToUse, fn); }
+    likeHandToDrop(fn: StateCallbackMap[StateEffectType.LikeHandToDrop]): this { return this.state(StateEffectType.LikeHandToDrop, fn); }
+    ignoreHeadAndDeputy(fn: StateCallbackMap[StateEffectType.IgnoreHeadAndDeputy]): this { return this.state(StateEffectType.IgnoreHeadAndDeputy, fn); }
+    fieldCardEyes(fn: StateCallbackMap[StateEffectType.FieldCardEyes]): this { return this.state(StateEffectType.FieldCardEyes, fn); }
+    regardArrayCondition(fn: StateCallbackMap[StateEffectType.Regard_ArrayCondition]): this { return this.state(StateEffectType.Regard_ArrayCondition, fn); }
+    regardPindianResult(fn: StateCallbackMap[StateEffectType.Regard_PindianResult]): this { return this.state(StateEffectType.Regard_PindianResult, fn); }
 }

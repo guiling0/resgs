@@ -16,10 +16,10 @@ export class GeneralManager {
      * 创建武将实例并放入区域。
      * @param sync 是否同步到客户端（initStart 批量为 false）
      */
-    create(data: GeneralData, sync: boolean = true): General {
+    create(data: GeneralData): General {
         const state = new GeneralState();
         const general = new General(data, this.room, state);
-        if (sync) this.room.state.generalStates.set(general.id, state);
+        this.room.state.generalStates.set(general.id, state);
 
         if (data.enable) {
             this.room.area.add(AreaType.Draw, [general.id]);
@@ -37,7 +37,6 @@ export class GeneralManager {
      * @param sync 是否同步到客户端
      */
     build(general: General, sync: boolean = true) {
-        if (sync) this.room.state.generalStates.set(general.id, general.state);
         this.room.generals.set(general.id, general);
     }
 
@@ -171,9 +170,7 @@ export class GeneralManager {
                       kingdomOrPlayer.kingdom,
                       kingdomOrPlayer.head?.kingdom,
                       kingdomOrPlayer.deputy?.kingdom,
-                  ].find(
-                      (v) => v && v !== 'none' && !v.includes('ye'),
-                  ) ?? '');
+                  ].find((v) => v && v !== 'none' && !v.includes('ye')) ?? '');
         if (!kingdom) return [];
 
         const result: General[] = [];

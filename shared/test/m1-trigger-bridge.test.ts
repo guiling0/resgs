@@ -41,7 +41,7 @@ function registerTestSkill(
         times?: number;
     },
 ) {
-    const builder = new SkillBuilder(name);
+    const builder = SkillBuilder(name);
     const effect = builder.addEffect('trigger');
     if (config.tag?.length) effect.tag = config.tag;
     if (config.forced) effect.settings({ forced: config.forced });
@@ -56,13 +56,8 @@ function registerTestSkill(
     effect.context(function (this: any, _room: any, player: any) {
         return { from: player };
     });
-    const data = builder.register();
-    sgs.skills.set(name, data);
-    // 效果数据也需注册到 sgs.effects
-    for (const edata of data.effects) {
-        sgs.effects.set(edata.name, edata);
-    }
-    return data;
+    // .register() 自动写入 sgs.skills + sgs.effects
+    return builder.register();
 }
 
 // ===== 测试 1: 锁定技自动发动 =====
@@ -188,7 +183,7 @@ async function test_priorityOrder(): Promise<void> {
     const priorities: number[] = [];
 
     // 装备技（优先级 Equip=2）
-    const equipSkill = new SkillBuilder('equip.test_eq');
+    const equipSkill = SkillBuilder('equip.test_eq');
     const eqEff = equipSkill.addEffect('trigger');
     eqEff.tag = [SkillTag.Lock];
     eqEff.settings({ forced: 'mute' });
@@ -198,11 +193,7 @@ async function test_priorityOrder(): Promise<void> {
         return { from: player };
     });
     eqEff.effect(async function () { priorities.push(2); });
-    const eqData = equipSkill.register();
-    sgs.skills.set('equip.test_eq', eqData);
-    for (const edata of eqData.effects) {
-        sgs.effects.set(edata.name, edata);
-    }
+    equipSkill.register(); // 自动写入 sgs.skills + sgs.effects
 
     // 武将技（优先级 General=1）
     registerTestSkill('general.test_gen', {
