@@ -21,6 +21,7 @@ import { Phase } from './player/PlayerTypes';
 import { SelectorType, PlayPhaseResult } from './select/SelectTypes';
 import { SkillBuilder } from './skill/builder/SkillBuilder';
 import { EffectBuilder } from './skill/builder/EffectBuilder';
+import { GeneralBuilder } from './general/builder/GeneralBuilder';
 import { registerCore } from './register';
 
 class RESGS {
@@ -63,6 +64,7 @@ class RESGS {
     // Builder 类
     public SkillBuilder!: typeof SkillBuilder;
     public EffectBuilder!: typeof EffectBuilder;
+    public GeneralBuilder!: typeof GeneralBuilder;
 
     public workSpace: 'server' | 'client' | 'preview' = 'preview';
     public lang: string = 'zh_CN';

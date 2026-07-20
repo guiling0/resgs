@@ -7,6 +7,7 @@ import { TimingName, EventType, DamageType } from './event/EventTypes';
 import { PriorityType, SkillTag, StateEffectType } from './skill/SkillTypes';
 import { SkillBuilder } from './skill/builder/SkillBuilder';
 import { EffectBuilder } from './skill/builder/EffectBuilder';
+import { GeneralBuilder } from './general/builder/GeneralBuilder';
 import {
     CardAttr,
     CardSuit,
@@ -54,5 +55,6 @@ export function registerCore(target: Record<string, any>): void {
         // Builder 类
         SkillBuilder,
         EffectBuilder,
+        GeneralBuilder,
     });
 }
