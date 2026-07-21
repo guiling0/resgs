@@ -59,7 +59,8 @@ trigger(Dying)
 | `shared/core/event/UseCardEvent.ts` | **修改** | "目标是牌"分支（responseTo 路由） |
 | `shared/core/event/DropCardEvent.ts` | **新增** | 打出牌事件类 |
 | `shared/core/room/Room.ts` | **修改** | canUseCard 参数改为 VirtualCardData |
-| `shared/core/room/manager/CardManager.ts` | **修改** | 注册闪 CardUse；VirtualCardData 构造工具 |
+| `shared/core/room/manager/VirtualCardManager.ts` | **修改** | `createData()` 工具方法 |
+| `shared/core/room/manager/CardManager.ts` | **修改** | 注册闪/桃 CardUse |
 | `shared/test/m3-response.test.ts` | **新增** | M3 验收测试 |
 
 ### D2: trigger 中的 needUseCard 流程
@@ -75,10 +76,10 @@ trigger(timing):
      c. 对每个合法玩家：
         - 调用 trigger(need1) → 标准触发技询问
         - 若已有玩家使用 → 结束
-        - 检测 need2 可用技能（按钮式）
-        - 发送"使用牌询问"（ChooseManager session，携带可用技能列表）
+        - 发送"使用牌询问"（ChooseManager session）
         - 玩家选择 → 验证合法性 → 创建 UseCardEvent
         - 若玩家取消 → 继续下一个
+     注：need2 按钮式技能（武圣/丈八）为 M4 范围
   3. [现有] refreshs-after
 ```
 
@@ -145,6 +146,20 @@ DropCardEvent extends EventProcess<EventType.DropCard>
 }
 ```
 
+### D6b: 桃 CardUse 注册（Dying 时）
+
+桃在 Dying 时作为使用牌的注册——与出牌阶段主动吃桃是独立的 CardUse 条目。
+
+```typescript
+{
+    name: 'tao',
+    timing: TimingName.Dying,
+    target: (room, player, card) => [dyingPlayer],  // 目标是濒死角色
+    effect: (room, target, event) => {},             // 桃虽有效果，但脱离濒死由 DyingEvent 响应侧处理
+    canUse: (room, player, card) => room.eventStack.some(e => e.type === EventType.Dying),
+}
+```
+
 ### D7: M3 不修改 M2 已验证路径
 
 - 出杀→掉血的无响应路径不变
@@ -170,7 +185,7 @@ DropCardEvent extends EventProcess<EventType.DropCard>
 5. **闪抵消杀后 UseCardOffset 时机生成**：验证 offset 时机
 6. **闪作为使用（目标是牌）不经过 AssignTarget 段**：验证 targetList 无玩家
 7. **canUseCard 接受 VirtualCardData**：构造数据 → 正确返回布尔
-8. **DropCardEvent 打出闪**：实体牌入处理区 → 虚拟牌消失
+8. **DropCardEvent 打出杀**（M4 南蛮/决斗场景）：实体牌入处理区 → 虚拟牌消失
 
 ### 参考现有测试
 
@@ -195,5 +210,5 @@ DropCardEvent extends EventProcess<EventType.DropCard>
 
 - 旧项目参考：`old/resgsv1/server/src/core/event/event.play.ts`、`old/resgsv1/server/src/core/room/room.choose.ts`
 - 设计决策权威来源：`docs/events/drop-card.md`、`docs/events/use-card.md`、`docs/events/dying-death.md`
-- **闪和濒死桃都是使用，不是打出**
+- **闪、桃、无懈都是使用（UseCardEvent），不是打出（DropCardEvent）。打出是南蛮/决斗等强制响应场景（M4）**
 - **EffectBefore 和 Dying 不需要显式接线**——trigger 的核心循环自动处理

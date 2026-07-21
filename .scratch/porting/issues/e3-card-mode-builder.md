@@ -4,12 +4,12 @@
 
 **Blocked by:** E1（可与 E2 并行）
 
-**Status:** ready-for-agent
+**Status:** ✅ completed
 
-- [ ] `CardBuilder` 类：`.name()`、`.type()`、`.subtype()`、`.suit()`、`.number()`、`.damage()`、`.recover()`、`.register()` → 写入 `sgs.cards` + `sgs.carddatas`
-- [ ] `.register()` 幂等
-- [ ] `ModeBuilder` 类：`.name()`、`.cards(extNames[])`、`.generals(extNames[])`、`.settings()`、`.register()` → 写入 `sgs.modes`
-- [ ] `.register()` 幂等
-- [ ] `registerCore` 中暴露 `CardBuilder` + `ModeBuilder`
-- [ ] 验证：Builder → register → `sgs.carddatas.get('sha')` 非空 + `sgs.modes.get('standard')` 非空
-- [ ] 现有测试无回归
+- [x] `CardBuilder` 类：`.name()`、`.type()`、`.subtype()`、`.suit()`、`.number()`、`.damage()`、`.recover()`、`.register()` → 写入 `sgs.cards` + `sgs.carddatas`
+- [x] `.register()` 幂等
+- [x] `ModeBuilder` 类：`.name()`、`.cards(extNames[])`、`.generals(extNames[])`、`.settings()`、`.register()` → 写入 `sgs.modes`
+- [x] `.register()` 幂等
+- [x] `registerCore` 中暴露 `CardBuilder` + `ModeBuilder`
+- [x] 验证：Builder → register → `sgs.carddatas.get('sha')` 非空 + `sgs.modes.get('standard')` 非空
+- [x] 现有测试无回归

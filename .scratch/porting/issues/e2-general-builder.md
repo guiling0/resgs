@@ -4,13 +4,13 @@
 
 **Blocked by:** E1
 
-**Status:** ready-for-agent
+**Status:** ✅ completed
 
-- [ ] `GeneralBuilder` 类：`.name()`、`.kingdom()`、`.hp()`、`.gender()`、`.skills()`、`.lord()`、`.register()` → 写入 `sgs.generals`
-- [ ] `.register()` 幂等——重复调用不重复注册
-- [ ] `registerCore` 中暴露 `GeneralBuilder`
-- [ ] 创建 `extension/resgs-ext-temp/index.ts`：JSDoc 元数据 + `export const meta`
-- [ ] 创建 `extension/resgs-ext-temp/generals/caocao.ts`：`new GeneralBuilder('caocao').hp(4).skills(['jianxiong']).register()`
-- [ ] 创建 `extension/resgs-ext-temp/generals/jianxiong.ts`：`new SkillBuilder('jianxiong').register()`
-- [ ] 服务端 `import '../extension/resgs-ext-temp'` → `sgs.generals.has('caocao')` 为 true
-- [ ] 现有测试无回归
+- [x] `GeneralBuilder` 类：`.name()`、`.kingdom()`、`.hp()`、`.gender()`、`.skills()`、`.lord()`、`.register()` → 写入 `sgs.generals`
+- [x] `.register()` 幂等——重复调用不重复注册
+- [x] `registerCore` 中暴露 `GeneralBuilder`
+- [x] 创建 `extension/resgs-ext-temp/index.ts`：JSDoc 元数据 + `export const meta`
+- [x] 创建 `extension/resgs-ext-temp/generals/caocao.ts`：`new GeneralBuilder('caocao').hp(4).skills(['jianxiong']).register()`
+- [x] 创建 `extension/resgs-ext-temp/generals/jianxiong.ts`：`new SkillBuilder('jianxiong').register()`
+- [x] 服务端 `import '../extension/resgs-ext-temp'` → `sgs.generals.has('caocao')` 为 true
+- [x] 现有测试无回归

@@ -16,23 +16,16 @@
 
 ### 里程碑
 
-| 里程碑 | 范围 | 验收标准 |
-|---|---|---|
-| **M1 触发技闭环** | trigger→askForSkillInvoke→UseSkillEvent 桥接（搁置的"Phase 7 Step 2"）。只依赖已有事件。 | 测试技能"受伤摸一张牌"经 mock 确认后自动发动，锁定技自动发动 |
-| **M2 使用牌骨架** | UseCardEvent 完整时序骨架 + targetList 完整结构（offset/无双/effectTimes 字段与方法一次到位）；杀/桃 CardUse 定义；**无响应路径** | 出杀→目标掉血；出桃→自己回血 |
-| **M3 响应闭环** | DropCardEvent（打出）；NeedUseCard/NeedPlayCard 触发层（旧 trigger Level 4/5）；闪响应；濒死求桃 | headless 完整回合：摸→出杀→响应闪→伤害→濒死→桃救→弃牌 |
-| **M4 身份局最小可玩** | standard 模式（身份分配/胜负判定）；PindianEvent；StateEffect 接线（距离/范围/Prohibit→canUseCard/maxhand）；锦囊 + 装备（含军争牌，跟随旧包合并牌堆）；无懈/借刀等交互路径激活 | headless 8 人身份局用 mock 输入从开局跑到分出胜负 |
-| **M5 AI + 自动对战** | AI Phase A（[spec](../ai/spec.md)）+ seeded RNG + headless 自动对战 | N 局自动对战无异常、胜负分布合理 |
-| **M6 标准包内容完备** | 27 武将技能流水线移植（每武将一 issue，测试驱动，开工时建单） | 27 武将全部可用，技能测试全绿 |
-| **M7 联机** | 修复重写 server GameRoom（当前 import 断链）+ BroadcastManager + 最小认证/大厅 + 断线重连（Schema 天然支持）；录像/旁观设计出 ADR | 真实连接打完一局（临时 CLI/调试客户端） |
-| **M8 客户端** | C4-C6（完整体验）。方案见 `.scratch/client/design-dom.md` | — |
-| **→ C0 项目骨架** | Vite + HTML + 加载器 + 自适应缩放 + 图集构建。**M2 后启动** | 加载界面可见 |
-| **→ C1 对局渲染** | 座位/手牌/装备/武将/体力框静态布局。**M3 后启动** | 对局页面静态可见 |
-| **→ C2 交互系统** | 选牌/选将/选目标 UI + 技能按钮 + Colyseus 对接。**M4 后启动** | 可完成一局操作 |
-| **→ C3 动画+音效** | 发牌/飞牌/伤害数字 + 武将语音。**M6 后启动** | 游戏动起来 |
-| **→ C4 完整体验** | 大厅/房间/聊天/断线重连/观战。**M7 后启动** | 完整联机体验 |
-| **→ C5 武将动效** | Spine 动画 + 出场/技能特效。**M8 后启动** | 武将个性化 |
-| **→ C6 录像回放** | IndexedDB + 快照 + 回放控制条。**M8 后启动** | 拖拽回放 |
+| 里程 | 服务端 | 客户端（并行） | 验收 |
+|---|---|---|---|
+| **M1** | 触发技闭环：trigger→UseSkillEvent 桥接 | — | 锁定技自动发动 |
+| **M2** | 使用牌骨架：UseCardEvent + 杀/桃 CardUse（无响应） | — | 出杀→掉血 |
+| **M3** | 响应闭环：闪/桃 needUseCard 触发层 + DropCardEvent 骨架 | — | headless 完整回合 |
+| **M4 + C0 + C1 + C2** | 身份局最小可玩：standard 模式 + 锦囊/装备 + StateEffect 接线 | C0 项目骨架（Vite + 自适应）+ C1 静态布局 + C2 交互系统 | headless 8 人对战 + 客户端可操作 |
+| **M5 + C3** | AI + 自动对战 | 动画/音效（发牌/飞牌/武将语音） | N 局无异常 + 客户端动起来 |
+| **M6** | 27 武将技能流水线移植 | — | 武将全可用 |
+| **M7 + C4** | 联机：GameRoom 修复 + 大厅 + 断线重连 | 完整体验（大厅/房间/聊天/观战） | 真实联机一局 |
+| **M8 + C5 + C6** | 录像/旁观 | 武将 Spine 动效 + 录像回放 | 完整游戏 |
 
 > 客户端方案从 LayaAir 改为纯 DOM（Vite + CSS + spine-canvas）。详见 `.scratch/client/design-dom.md`。LayaAir 方案保留在 `design.md`。
 
