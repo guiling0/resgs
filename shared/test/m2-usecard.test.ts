@@ -28,10 +28,25 @@ import { AreaType, CardSuit, CardNumber } from '../core/card/CardTypes';
     cards: new Map(),
     generals: new Map(),
     translations: new Map(),
-    carduses: new Map(),
+    carduses: [],
 };
 
 const sgs = (globalThis as any).sgs;
+
+// 注册 CardUse 定义（杀/桃——基础扩展迁移前暂驻测试）
+sgs.carduses.push({
+    name: 'sha',
+    timing: 31, // TimingName.PlayPhase
+    target: (_room: any, player: any, _card: any) => _room.alives.filter((p: any) => p !== player),
+    effect: async (room: any, target: any, _event: any) => { await room.damage(_event.player, target, 0, 1); },
+});
+sgs.carduses.push({
+    name: 'tao',
+    timing: 31, // TimingName.PlayPhase
+    target: (_room: any, _player: any, _card: any) => _room.alives,
+    canUse: (_room: any, player: any, _card: any) => player.losshp > 0,
+    effect: async (room: any, target: any, _event: any) => { await room.recover(target, 1); },
+});
 
 // 注册卡牌元数据（供 GameCard.type 查询）
 if (!sgs.carddatas) sgs.carddatas = new Map();
@@ -42,7 +57,7 @@ sgs.carddatas.set('tao', { name: 'tao', type: 1, subtype: 1, damage: false, reco
 
 function createShaCard(room: any) {
     const card = room.card.create(
-        { id: 100, name: 'sha', suit: CardSuit.Spade, number: CardNumber.A, attr: [], derived: false },
+        { id: 'test.100', name: 'sha', suit: CardSuit.Spade, number: CardNumber.A, attr: [], derived: false },
         room.players[0].getAreaId(AreaType.Hand),
     );
     room.card.build(card, false);
@@ -51,7 +66,7 @@ function createShaCard(room: any) {
 
 function createTaoCard(room: any) {
     const card = room.card.create(
-        { id: 200, name: 'tao', suit: CardSuit.Heart, number: CardNumber.Number2, attr: [], derived: false },
+        { id: 'test.200', name: 'tao', suit: CardSuit.Heart, number: CardNumber.Number2, attr: [], derived: false },
         room.players[0].getAreaId(AreaType.Hand),
     );
     room.card.build(card, false);

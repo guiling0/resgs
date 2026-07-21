@@ -1,9 +1,10 @@
 /**
  * sgs 全局类型声明（全量）。
  * 由 scripts/build-types.ts 自动生成——勿手动编辑。
- * 生成时间：2026-07-20T18:31:08.627Z
+ * 生成时间：2026-07-21T04:21:45.887Z
  * 源文件：55 个 .d.ts
  */
+
 
 /** CardBuilder 实例接口——构建实体牌数据，不负责注册 */
 declare interface CardBuilder {
@@ -16,7 +17,8 @@ declare interface CardBuilder {
     build(): GameCardData;
 }
 /** CardBuilder 工厂——无需 new */
-declare function CardBuilder(name: string): CardBuilder;
+declare declare function CardBuilder(name: string): CardBuilder;
+
 
 declare interface ICard {
     name: string;
@@ -40,7 +42,7 @@ declare function isOffensiveMount(this: ICard): boolean;
 declare function isSpecialMount(this: ICard): boolean;
 declare function isTreasure(this: ICard): boolean;
 declare function isMount(this: ICard): boolean;
-declare const CardMethods: {
+declare declare const CardMethods: {
     hasAttr: typeof hasAttr;
     isCommonSha: typeof isCommonSha;
     isDamageCard: typeof isDamageCard;
@@ -58,9 +60,7 @@ declare const CardMethods: {
     isTreasure: typeof isTreasure;
     isMount: typeof isMount;
 };
-declare;
-{
-}
+declare {};
 
 /** 实体牌ID——格式：{扩展名}.{自增序号}，保证跨扩展不冲突 */
 declare type GameCardId = string;
@@ -143,7 +143,7 @@ declare interface VirtualCardData {
     data: Record<string, any>;
 }
 /** 卡牌属性 */
-declare enum CardAttr {
+declare declare enum CardAttr {
     /** 火属性 杀专属*/
     Fire = 1,
     /** 雷属性 杀专属*/
@@ -155,10 +155,10 @@ declare enum CardAttr {
     /** 可合纵 */
     Transferable = 5,
     /** 鏖战 */
-    Aozhan = 6,
+    Aozhan = 6
 }
 /** 卡牌花色 */
-declare enum CardSuit {
+declare declare enum CardSuit {
     None = 0,
     /** 黑桃 */
     Spade = 1,
@@ -167,10 +167,10 @@ declare enum CardSuit {
     /** 梅花 */
     Club = 3,
     /** 方片 */
-    Diamond = 4,
+    Diamond = 4
 }
 /** 卡牌点数 */
-declare enum CardNumber {
+declare declare enum CardNumber {
     None = -1,
     JOKER_BLACK = 0,
     A = 1,
@@ -186,28 +186,28 @@ declare enum CardNumber {
     J = 11,
     Q = 12,
     K = 13,
-    JOKER_RED = 14,
+    JOKER_RED = 14
 }
 /** 卡牌颜色 */
-declare enum CardColor {
+declare declare enum CardColor {
     None = 0,
     /** 红色 */
     Red = 1,
     /** 黑色 */
-    Black = 2,
+    Black = 2
 }
 /** 卡牌类别 */
-declare enum CardType {
+declare declare enum CardType {
     None = 0,
     /** 基本牌 */
     Basic = 1,
     /** 锦囊牌 */
     Scroll = 2,
     /** 装备牌 */
-    Equip = 3,
+    Equip = 3
 }
 /** 装备牌副类别 */
-declare enum EquipSubType {
+declare declare enum EquipSubType {
     None = 0,
     /** 武器 */
     Weapon = 31,
@@ -220,10 +220,10 @@ declare enum EquipSubType {
     /** 特殊坐骑 */
     SpecialMount = 35,
     /** 宝物 */
-    Treasure = 36,
+    Treasure = 36
 }
 /** 卡牌副类别 */
-declare enum CardSubType {
+declare declare enum CardSubType {
     None = 0,
     /** 基本牌 */
     Basic = 1,
@@ -242,54 +242,43 @@ declare enum CardSubType {
     /** 特殊坐骑 */
     SpecialMount = 35,
     /** 宝物 */
-    Treasure = 36,
+    Treasure = 36
 }
-declare enum AreaType {
-    Unknown = 'unknown',
+declare declare enum AreaType {
+    Unknown = "unknown",
     /** 牌堆 */
-    Draw = 'draw',
+    Draw = "draw",
     /** 弃牌堆 */
-    Discard = 'discard',
+    Discard = "discard",
     /** 处理区 */
-    Processing = 'processing',
+    Processing = "processing",
     /** 仓廪 */
-    Granary = 'granary',
+    Granary = "granary",
     /** 府库 */
-    Treasury = 'treasury',
+    Treasury = "treasury",
     /** 后备区 */
-    Reserve = 'reserve',
+    Reserve = "reserve",
     /** 手牌区 */
-    Hand = 'hand',
+    Hand = "hand",
     /** 装备区 */
-    Equip = 'equip',
+    Equip = "equip",
     /** 判定区 */
-    Judge = 'judge',
+    Judge = "judge",
     /** 武将牌上 */
-    Up = 'up',
+    Up = "up",
     /** 武将牌旁 */
-    Side = 'side',
+    Side = "side"
 }
 /** 根据花色获取颜色 */
-declare function getColorBySuit(suit: CardSuit): CardColor;
+declare declare function getColorBySuit(suit: CardSuit): CardColor;
 /** 获取卡牌类别 */
-declare function getCardType(
-    name: string,
-): CardType.Basic | CardType.Scroll | CardType.Equip;
+declare declare function getCardType(name: string): CardType.Basic | CardType.Scroll | CardType.Equip;
 /** 获取卡牌副类别 */
-declare function getCardSubType(
-    name: string,
-):
-    | CardSubType.Basic
-    | CardSubType.InstantScroll
-    | CardSubType.DelayedScroll
-    | CardSubType.Weapon
-    | CardSubType.Armor
-    | CardSubType.DefensiveMount
-    | CardSubType.OffensiveMount
-    | CardSubType.SpecialMount
-    | CardSubType.Treasure;
+declare declare function getCardSubType(name: string): CardSubType.Basic | CardSubType.InstantScroll | CardSubType.DelayedScroll | CardSubType.Weapon | CardSubType.Armor | CardSubType.DefensiveMount | CardSubType.OffensiveMount | CardSubType.SpecialMount | CardSubType.Treasure;
 
-declare class GameCard implements MarkHost, ICard {
+
+
+declare declare class GameCard implements MarkHost, ICard {
     readonly id: GameCardId;
     readonly room: Room;
     readonly _jsonData: GameCardData;
@@ -307,53 +296,21 @@ declare class GameCard implements MarkHost, ICard {
     };
     vcard?: VirtualCard;
     constructor(data: GameCardData, room: Room, state: CardState);
-    setMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        value: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
+    setMark: <T>(this: MarkHost, rawKey: string, value: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
     getMark: <T>(this: MarkHost, rawKey: string) => T | undefined;
     removeMark: (this: MarkHost, rawKey: string) => void;
     hasMark: (this: MarkHost, rawKey: string) => boolean;
-    countMark: (
-        this: MarkHost,
-        rawKey: string,
-        value: number,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
-    pushMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        item: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
-    unpushMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        item: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
+    countMark: (this: MarkHost, rawKey: string, value: number, options?: import("../mark/MarkTypes").MarkOptions) => void;
+    pushMark: <T>(this: MarkHost, rawKey: string, item: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
+    unpushMark: <T>(this: MarkHost, rawKey: string, item: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
     clearMark: (this: MarkHost, tag?: string) => void;
     get name(): string;
     get suit(): CardSuit;
     get color(): CardColor;
     get number(): CardNumber;
     get attr(): CardAttr[];
-    get type():
-        | import('./CardTypes').CardType.Basic
-        | import('./CardTypes').CardType.Scroll
-        | import('./CardTypes').CardType.Equip;
-    get subtype():
-        | import('./CardTypes').CardSubType.Basic
-        | import('./CardTypes').CardSubType.InstantScroll
-        | import('./CardTypes').CardSubType.DelayedScroll
-        | import('./CardTypes').CardSubType.Weapon
-        | import('./CardTypes').CardSubType.Armor
-        | import('./CardTypes').CardSubType.DefensiveMount
-        | import('./CardTypes').CardSubType.OffensiveMount
-        | import('./CardTypes').CardSubType.SpecialMount
-        | import('./CardTypes').CardSubType.Treasure;
+    get type(): import("./CardTypes").CardType.Basic | import("./CardTypes").CardType.Scroll | import("./CardTypes").CardType.Equip;
+    get subtype(): import("./CardTypes").CardSubType.Basic | import("./CardTypes").CardSubType.InstantScroll | import("./CardTypes").CardSubType.DelayedScroll | import("./CardTypes").CardSubType.Weapon | import("./CardTypes").CardSubType.Armor | import("./CardTypes").CardSubType.DefensiveMount | import("./CardTypes").CardSubType.OffensiveMount | import("./CardTypes").CardSubType.SpecialMount | import("./CardTypes").CardSubType.Treasure;
     get derived(): boolean;
     get area(): AreaId;
     get put(): boolean;
@@ -379,7 +336,9 @@ declare class GameCard implements MarkHost, ICard {
     formatVirtualCardData(source?: boolean): VirtualCardData;
 }
 
-declare class VirtualCard implements ICard {
+
+
+declare declare class VirtualCard implements ICard {
     readonly name: string;
     readonly sourceData: VirtualSourceData;
     readonly subcards: GameCard[];
@@ -390,12 +349,7 @@ declare class VirtualCard implements ICard {
     transform: any;
     /** 使用或打出的来源 */
     usefrom: any;
-    constructor(
-        name: string,
-        cards?: GameCard[],
-        overrides?: Partial<SourceData>,
-        record?: boolean,
-    );
+    constructor(name: string, cards?: GameCard[], overrides?: Partial<SourceData>, record?: boolean);
     addSubCards(cards: GameCard[]): void;
     delSubCard(card: GameCard): void;
     clearSubCards(): void;
@@ -406,29 +360,14 @@ declare class VirtualCard implements ICard {
     get color(): CardColor;
     get number(): CardNumber;
     get attr(): CardAttr[];
-    get type():
-        | import('./CardTypes').CardType.Basic
-        | import('./CardTypes').CardType.Scroll
-        | import('./CardTypes').CardType.Equip;
-    get subtype():
-        | import('./CardTypes').CardSubType.Basic
-        | import('./CardTypes').CardSubType.InstantScroll
-        | import('./CardTypes').CardSubType.DelayedScroll
-        | import('./CardTypes').CardSubType.Weapon
-        | import('./CardTypes').CardSubType.Armor
-        | import('./CardTypes').CardSubType.DefensiveMount
-        | import('./CardTypes').CardSubType.OffensiveMount
-        | import('./CardTypes').CardSubType.SpecialMount
-        | import('./CardTypes').CardSubType.Treasure;
+    get type(): import("./CardTypes").CardType.Basic | import("./CardTypes").CardType.Scroll | import("./CardTypes").CardType.Equip;
+    get subtype(): import("./CardTypes").CardSubType.Basic | import("./CardTypes").CardSubType.InstantScroll | import("./CardTypes").CardSubType.DelayedScroll | import("./CardTypes").CardSubType.Weapon | import("./CardTypes").CardSubType.Armor | import("./CardTypes").CardSubType.DefensiveMount | import("./CardTypes").CardSubType.OffensiveMount | import("./CardTypes").CardSubType.SpecialMount | import("./CardTypes").CardSubType.Treasure;
     /**
      * 设置虚拟牌属性
      * @param param0 需要修改的属性
      * @param update 未提供的属性是否更新默认属性
      */
-    refresh(
-        { suit, color, number, attr }?: Omit<Partial<SourceData>, 'name'>,
-        update?: boolean,
-    ): void;
+    refresh({ suit, color, number, attr }?: Omit<Partial<SourceData>, 'name'>, update?: boolean): void;
     protected defaultSuit(): CardSuit;
     protected defaultColor(): CardColor;
     protected defaultNumber(): -1 | CardNumber;
@@ -451,6 +390,8 @@ declare class VirtualCard implements ICard {
     toData(): VirtualCardData;
 }
 
+
+
 /**
  * 根据数据形状推断 ChangeState 的子类型。
  *
@@ -461,7 +402,7 @@ declare class VirtualCard implements ICard {
  * - `toState` + `generals` → Open/Close（toState=true→Open, false→Close）
  * - `toState` 单独存在     → Skip
  */
-declare function detectChangeStateType(data: ChangeStateData): ChangeStateType;
+declare declare function detectChangeStateType(data: ChangeStateData): ChangeStateType;
 /**
  * 牌/武将状态改变事件。统一处理 6 种状态变更：
  *   Open（明置）、Close（暗置）、Chain（横置）、Skip（翻面）、Change（变更）、Remove（移除）
@@ -470,13 +411,10 @@ declare function detectChangeStateType(data: ChangeStateData): ChangeStateType;
  *   ChangeState → ChangeStateAfter → ChangeStateEnd（公共）
  *   Open 额外在 _onChangeStateAfter 中将事件推入 room.deferredOpens
  */
-declare class ChangeStateEvent extends EventProcess<ChangeStateType> {
-    constructor(
-        room: Room,
-        data: ChangeStateData & {
-            _type?: ChangeStateType;
-        },
-    );
+declare declare class ChangeStateEvent extends EventProcess<ChangeStateType> {
+    constructor(room: Room, data: ChangeStateData & {
+        _type?: ChangeStateType;
+    });
     get player(): Player;
     private _buildTriggers;
     check(): boolean;
@@ -495,6 +433,8 @@ declare class ChangeStateEvent extends EventProcess<ChangeStateType> {
     private _setPlayerGeneral;
 }
 
+
+
 /**
  * 伤害事件。
  *
@@ -502,7 +442,7 @@ declare class ChangeStateEvent extends EventProcess<ChangeStateType> {
  *   DamageStart → DamageCause1 → DamageCause2 → DamageInflict1 → DamageInflict2
  *   → DamageInflict3 → DamageCauseAfter（扣减体力）→ DamageInflictAfter → DamageEnd
  */
-declare class DamageEvent extends EventProcess<EventType.Damage> {
+declare declare class DamageEvent extends EventProcess<EventType.Damage> {
     constructor(room: Room, data: DamageEventData);
     /** 伤害来源 */
     get player(): Player;
@@ -546,7 +486,7 @@ declare class DamageEvent extends EventProcess<EventType.Damage> {
  * 执行流程：
  *   LoseHpStart → LoseHp → LoseHpEnd
  */
-declare class LoseHpEvent extends EventProcess<EventType.LoseHp> {
+declare declare class LoseHpEvent extends EventProcess<EventType.LoseHp> {
     constructor(room: Room, data: LoseHpEventData);
     /** 失去体力的角色 */
     get player(): Player;
@@ -577,7 +517,7 @@ declare class LoseHpEvent extends EventProcess<EventType.LoseHp> {
  * ReduceHpAfter 中实际修改 HP、护盾，并向客户端广播动画。
  * 扣减后若 inthp ≤ 0，触发濒死事件。
  */
-declare class ReduceHpEvent extends EventProcess<EventType.ReduceHp> {
+declare declare class ReduceHpEvent extends EventProcess<EventType.ReduceHp> {
     constructor(room: Room, data: ReduceHpEventData);
     /** 扣减体力的角色 */
     get player(): Player;
@@ -608,6 +548,8 @@ declare class ReduceHpEvent extends EventProcess<EventType.ReduceHp> {
     private _getLoseHp;
 }
 
+
+
 /**
  * 濒死事件。
  *
@@ -615,7 +557,7 @@ declare class ReduceHpEvent extends EventProcess<EventType.ReduceHp> {
  *   DyingEntry → DyingEntryAfter → Dying（求桃）→ DyingEnd
  *   → 若 hp 仍 ≤0 则创建 DeathEvent（包含 killer）
  */
-declare class DyingEvent extends EventProcess<EventType.Dying> {
+declare declare class DyingEvent extends EventProcess<EventType.Dying> {
     constructor(room: Room, data: DyingEventData);
     get player(): Player;
     /** 造成濒死的角色 */
@@ -641,7 +583,7 @@ declare class DyingEvent extends EventProcess<EventType.Dying> {
  * 执行流程：
  *   DeathBefore → DeathConfirmRole → Death → DeathAfter → DeathEnd
  */
-declare class DeathEvent extends EventProcess<EventType.Death> {
+declare declare class DeathEvent extends EventProcess<EventType.Death> {
     constructor(room: Room, data: DeathEventData);
     get player(): Player;
     /** 击杀者（优先使用 DyingEvent 传入的值） */
@@ -659,21 +601,19 @@ declare class DeathEvent extends EventProcess<EventType.Death> {
     private _deathLog;
 }
 
+
+
 /**
  * 创建 Timing 对象的便捷工厂。
  * 供所有 EventProcess 子类使用，避免在每个事件文件中重复定义。
  */
-declare function createTiming(
-    name: TimingName,
-    before?: Array<(room: Room, data: any) => Promise<void>>,
-    after?: Array<(room: Room, data: any) => Promise<void>>,
-): Timing;
+declare declare function createTiming(name: TimingName, before?: Array<(room: Room, data: any) => Promise<void>>, after?: Array<(room: Room, data: any) => Promise<void>>): Timing;
 /**
  * 事件执行基类。
  * 子类在构造函数中填充 eventTriggers / endTriggers（Timing[]），
  * exec() 按顺序执行各时机，before → trigger → after。
  */
-declare abstract class EventProcess<T extends EventType = EventType> {
+declare declare abstract class EventProcess<T extends EventType = EventType> {
     /** 所属房间 */
     readonly room: Room;
     /** 事件类型 */
@@ -730,25 +670,17 @@ declare abstract class EventProcess<T extends EventType = EventType> {
      * 若该时机不存在则自动创建。
      * @param fn 回调函数，this 指向当前事件实例
      */
-    registerBefore(
-        timingName: string,
-        fn: (room: Room, data: any) => Promise<any>,
-    ): void;
+    registerBefore(timingName: string, fn: (room: Room, data: any) => Promise<any>): void;
     /**
      * 在指定时机的 after 列表中注册回调。
      * 若该时机不存在则自动创建。
      * @param fn 回调函数，this 指向当前事件实例
      */
-    registerAfter(
-        timingName: string,
-        fn: (room: Room, data: any) => Promise<any>,
-    ): void;
+    registerAfter(timingName: string, fn: (room: Room, data: any) => Promise<any>): void;
     /** 从 before/after 中移除指定回调（需传入原始未 bind 的函数引用） */
     removeCallback(timingName: string, fn: (...args: any[]) => any): void;
     /** 包装 bind 并标记原始函数引用，便于后续 remove */
-    protected bindWithMark(
-        fn: Function,
-    ): (room: Room, data: any) => Promise<any>;
+    protected bindWithMark(fn: Function): (room: Room, data: any) => Promise<any>;
     /** 查找或创建一个 Timing（优先查 eventTriggers，再查 endTriggers） */
     private findOrCreate;
     end(): Promise<this>;
@@ -756,162 +688,165 @@ declare abstract class EventProcess<T extends EventType = EventType> {
     complete(): Promise<this>;
 }
 
-declare enum TimingName {
-    GameStageBefore = 'game_stage_before', // 登场前
-    GameStage = 'game_stage', // 登场时
-    GameStageAfter = 'game_stage_after', // 登场后
-    GameStartBefore = 'game_start_before', // 游戏开始前
-    GameStart = 'game_start', // 游戏开始
-    GameEnd = 'game_end', // 游戏结束
-    RoundStart = 'round_start', // 轮次开始
-    RoundEnd = 'round_end', // 轮次结束
-    RestStart = 'rest_start', // 休整开始
-    RestEnd = 'rest_end', // 休整结束
-    TurnStartBefore = 'turn_start_before', // 回合开始前
-    TurnStart = 'turn_start', // 回合开始
-    TurnStartAfter = 'turn_start_after', // 回合开始后
-    TurnEnd = 'turn_end', // 回合结束
-    TurnEndAfter = 'turn_end_after', // 回合结束后
-    ReadyPhaseStartBefore = 'ready_start_before', // 准备阶段开始前
-    ReadyPhaseStart = 'ready_start', // 准备阶段开始
-    ReadyPhase = 'ready_phase', // 准备阶段
-    ReadyPhaseEnd = 'ready_end', // 准备阶段结束
-    JudgePhaseStartBefore = 'judge_start_before', // 判定阶段开始前
-    JudgePhaseStart = 'judge_start', // 判定阶段开始
-    JudgePhase = 'judge_phase', // 判定阶段
-    JudgePhaseEnd = 'judge_phase_end', // 判定阶段结束
-    DrawPhaseStartBefore = 'draw_start_before', // 摸牌阶段开始前
-    DrawPhaseStart1 = 'draw_start1', // 摸牌阶段开始1
-    DrawPhaseStart2 = 'draw_start2', // 摸牌阶段开始2
-    DrawPhase = 'draw_phase', // 摸牌阶段
-    DrawPhaseEnd = 'draw_end', // 摸牌阶段结束
-    PlayPhaseStartBefore = 'play_start_before', // 出牌阶段开始前
-    PlayPhaseStart = 'play_start', // 出牌阶段开始
-    PlayPhase = 'play_phase', // 出牌阶段
-    PlayPhaseEnd = 'play_end', // 出牌阶段结束
-    DiscardPhaseStartBefore = 'discard_start_before', // 弃牌阶段开始前
-    DiscardPhaseStart = 'discard_start', // 弃牌阶段开始
-    DiscardPhase = 'discard_phase', // 弃牌阶段
-    DiscardPhaseEnd = 'discard_end', // 弃牌阶段结束
-    EndPhaseStartBefore = 'end_start_before', // 结束阶段开始前
-    EndPhaseStart = 'end_start', // 结束阶段开始
-    EndPhase = 'end_phase', // 结束阶段
-    EndPhaseEnd = 'end_end', // 结束阶段结束
-    MoveCardFixed = 'movecard_fixed', // 固定移动牌
-    MoveCardBefore1 = 'movecard_before1', // 移动牌前1
-    MoveCardBefore2 = 'movecard_before2', // 移动牌前2
-    MoveCardAfter1 = 'movecard_after1', // 移动牌后1
-    MoveCardAfter2 = 'movecard_after2', // 移动牌后2
-    MoveCardEnd = 'movecard_end', // 移动牌结束
-    UseCardNeed1 = 'usecard_need1', // 需要使用牌1
-    UseCardNeed2 = 'usecard_need2', // 需要使用牌2
-    UseCardDeclare = 'usecard_declare', // 声明使用牌
-    UseCardDeclareAfter = 'usecard_declare_after', // 声明使用牌后
-    UseCardChooseTarget = 'usecard_choose_target', // 选择使用牌目标
-    UseCardUsed = 'usecard_used', // 牌被使用时
-    UseCardAssignTarget = 'usecard_assign_target', // 指定目标时
-    UseCardBecomeTarget = 'usecard_become_target', // 成为目标时
-    UseCardAssignTargetAfter = 'usecard_assign_target_after', // 指定目标后
-    UseCardBecomeTargetAfter = 'usecard_become_target_after', // 成为目标后
-    UseCardReady = 'usecard_ready', // 使用结算准备工作结束时
-    UseCardEffectStart = 'usecard_effect_start', // 对当前目标结算开始时
-    UseCardEffectBefore = 'usecard_effect_before', // 对当前目标生效前
-    UseCardOffset = 'usecard_offset', // 被抵消后
-    UseCardEffect = 'usecard_effect', // 对当前目标生效时
-    UseCardEffectAfter = 'usecard_effect_after', // 对当前目标生效后
-    UseCardEnd1 = 'usecard_end1', // 使用结算结束后1
-    UseCardEnd2 = 'usecard_end2', // 使用结算结束后2
-    UseCardEnd3 = 'usecard_end3', // 使用结算结束后3
-    DropCardNeed1 = 'dropcard_need1', // 需要打出牌时1
-    DropCardNeed2 = 'dropcard_need2', // 需要打出牌时2
-    DropCardDeclare = 'dropcard_declare', // 声明打出牌
-    DropCardDroped = 'dropcard_droped', // 打出牌后
-    DropCardEnd = 'dropcard_end', // 打出牌结束
-    Pindian = 'pindian', // 拼点时
-    PindianCardShow = 'pindian_card_show', //拼点牌被亮出时
-    PindianResult = 'pindian_result', //拼点结果确定后
-    PindianEnd = 'pindian_end', //拼点结算结束后
-    ChangeState = 'change_state', // 牌状态改变时
-    ChangeStateAfter = 'change_state_after', // 牌状态改变后
-    Open = 'open', // 明置后
-    Judge = 'judge', // 判定时
-    JudgeCard = 'judge_card', // 成为判定牌后
-    JudgeResult1 = 'judge_result1', // 判定结果确定前1
-    JudgeResult2 = 'judge_result2', // 判定结果确定前2
-    JudgeResultAfter1 = 'judge_result_after1', // 判定结果确定后1
-    JudgeResultAfter2 = 'judge_result_after2', // 判定结果确定后2
-    JudgeEnd = 'judge_end', // 判定结算结束后
-    DamageStart = 'damage_start', // 伤害开始
-    DamageCause1 = 'damage_cause1', // 造成伤害时1
-    DamageCause2 = 'damage_cause2', // 造成伤害时2
-    DamageInflict1 = 'damage_inflict1', // 受到伤害时1
-    DamageInflict2 = 'damage_inflict2', // 受到伤害时2
-    DamageInflict3 = 'damage_inflict3', // 受到伤害时3
-    DamageCauseAfter = 'damage_cause_after', // 造成伤害后
-    DamageInflictAfter = 'damage_inflict_after', // 受到伤害后
-    DamageEnd = 'damage_end', // 伤害结算结束后
-    LoseHpStart = 'losehp_start', // 失去体力开始
-    LoseHp = 'losehp', // 失去体力时
-    LoseHpAfter = 'losehp_after', // 失去体力后
-    LoseHpEnd = 'losehp_end', // 失去体力结束
-    ReduceHpStart = 'reducehp_start', // 扣减体力开始
-    ReduceHp = 'reducehp', // 扣减体力时
-    ReduceHpAfter = 'reducehp_after', // 扣减体力后
-    ReduceHpEnd = 'reducehp_end', // 扣减体力结束
-    RecoverHpStart = 'recoverhp_start', // 回复体力开始
-    RecoverHp = 'recoverhp', // 回复体力时
-    RecoverHpAfter = 'recoverhp_after', // 回复体力后
-    RecoverHpEnd = 'recoverhp_end', // 回复体力结束
-    ChangeMaxHpStart = 'change_maxhp_start', // 体力上限改变开始
-    ChangeMaxHp = 'change_maxhp', // 体力上限改变时
-    ChangeMaxHpAfter = 'change_maxhp_after', // 体力上限改变后
-    ChangeMaxHpEnd = 'change_maxhp_end', // 体力上限改变结束
-    DyingEntry = 'dying_entry', // 进入濒死状态时
-    DyingEntryAfter = 'dying_entry_after', // 进入濒死状态后
-    Dying = 'dying', // (连续若干个)处于濒死状态时
-    DyingEnd = 'dying_end', // 濒死结束
-    DeathBefore = 'death_before', // 死亡前
-    DeathConfirmRole = 'death_confirm_role', // 确认死亡角色
-    Death = 'death', // 死亡时
-    DeathAfter = 'death_after', // 死亡后
-    DeathEnd = 'death_end', // 死亡结束
-    SkillObtain = 'skill_obtain', // 获得技能时
-    SkillLose = 'skill_lose', // 失去技能时
-    EffectObtain = 'effect_obtain', // 获得效果时
-    EffectLose = 'effect_lose', // 失去效果时
-    Cost = 'cost', // 执行消耗后
-    Effect = 'effect', // 发动技能后
-    EventEnd = 'event_end', // 事件结束
-    AllEventEnd = 'all_event_end',
+
+
+declare declare enum TimingName {
+    GameStageBefore = "game_stage_before",// 登场前
+    GameStage = "game_stage",// 登场时
+    GameStageAfter = "game_stage_after",// 登场后
+    GameStartBefore = "game_start_before",// 游戏开始前
+    GameStart = "game_start",// 游戏开始
+    GameEnd = "game_end",// 游戏结束
+    RoundStart = "round_start",// 轮次开始
+    RoundEnd = "round_end",// 轮次结束
+    RestStart = "rest_start",// 休整开始
+    RestEnd = "rest_end",// 休整结束
+    TurnStartBefore = "turn_start_before",// 回合开始前
+    TurnStart = "turn_start",// 回合开始
+    TurnStartAfter = "turn_start_after",// 回合开始后
+    TurnEnd = "turn_end",// 回合结束
+    TurnEndAfter = "turn_end_after",// 回合结束后
+    ReadyPhaseStartBefore = "ready_start_before",// 准备阶段开始前
+    ReadyPhaseStart = "ready_start",// 准备阶段开始
+    ReadyPhase = "ready_phase",// 准备阶段
+    ReadyPhaseEnd = "ready_end",// 准备阶段结束
+    JudgePhaseStartBefore = "judge_start_before",// 判定阶段开始前
+    JudgePhaseStart = "judge_start",// 判定阶段开始
+    JudgePhase = "judge_phase",// 判定阶段
+    JudgePhaseEnd = "judge_phase_end",// 判定阶段结束
+    DrawPhaseStartBefore = "draw_start_before",// 摸牌阶段开始前
+    DrawPhaseStart1 = "draw_start1",// 摸牌阶段开始1
+    DrawPhaseStart2 = "draw_start2",// 摸牌阶段开始2
+    DrawPhase = "draw_phase",// 摸牌阶段
+    DrawPhaseEnd = "draw_end",// 摸牌阶段结束
+    PlayPhaseStartBefore = "play_start_before",// 出牌阶段开始前
+    PlayPhaseStart = "play_start",// 出牌阶段开始
+    PlayPhase = "play_phase",// 出牌阶段
+    PlayPhaseEnd = "play_end",// 出牌阶段结束
+    DiscardPhaseStartBefore = "discard_start_before",// 弃牌阶段开始前
+    DiscardPhaseStart = "discard_start",// 弃牌阶段开始
+    DiscardPhase = "discard_phase",// 弃牌阶段
+    DiscardPhaseEnd = "discard_end",// 弃牌阶段结束
+    EndPhaseStartBefore = "end_start_before",// 结束阶段开始前
+    EndPhaseStart = "end_start",// 结束阶段开始
+    EndPhase = "end_phase",// 结束阶段
+    EndPhaseEnd = "end_end",// 结束阶段结束
+    MoveCardFixed = "movecard_fixed",// 固定移动牌
+    MoveCardBefore1 = "movecard_before1",// 移动牌前1
+    MoveCardBefore2 = "movecard_before2",// 移动牌前2
+    MoveCardAfter1 = "movecard_after1",// 移动牌后1
+    MoveCardAfter2 = "movecard_after2",// 移动牌后2
+    MoveCardEnd = "movecard_end",// 移动牌结束
+    UseCardNeed1 = "usecard_need1",// 需要使用牌1
+    UseCardNeed2 = "usecard_need2",// 需要使用牌2
+    UseCardDeclare = "usecard_declare",// 声明使用牌
+    UseCardDeclareAfter = "usecard_declare_after",// 声明使用牌后
+    UseCardChooseTarget = "usecard_choose_target",// 选择使用牌目标
+    UseCardUsed = "usecard_used",// 牌被使用时
+    UseCardAssignTarget = "usecard_assign_target",// 指定目标时
+    UseCardBecomeTarget = "usecard_become_target",// 成为目标时
+    UseCardAssignTargetAfter = "usecard_assign_target_after",// 指定目标后
+    UseCardBecomeTargetAfter = "usecard_become_target_after",// 成为目标后
+    UseCardReady = "usecard_ready",// 使用结算准备工作结束时
+    UseCardEffectStart = "usecard_effect_start",// 对当前目标结算开始时
+    UseCardEffectBefore = "usecard_effect_before",// 对当前目标生效前
+    UseCardOffset = "usecard_offset",// 被抵消后
+    UseCardEffect = "usecard_effect",// 对当前目标生效时
+    UseCardEffectAfter = "usecard_effect_after",// 对当前目标生效后
+    UseCardEnd1 = "usecard_end1",// 使用结算结束后1
+    UseCardEnd2 = "usecard_end2",// 使用结算结束后2
+    UseCardEnd3 = "usecard_end3",// 使用结算结束后3
+    DropCardNeed1 = "dropcard_need1",// 需要打出牌时1
+    DropCardNeed2 = "dropcard_need2",// 需要打出牌时2
+    DropCardDeclare = "dropcard_declare",// 声明打出牌
+    DropCardDroped = "dropcard_droped",// 打出牌后
+    DropCardEnd = "dropcard_end",// 打出牌结束
+    Pindian = "pindian",// 拼点时
+    PindianCardShow = "pindian_card_show",//拼点牌被亮出时
+    PindianResult = "pindian_result",//拼点结果确定后
+    PindianEnd = "pindian_end",//拼点结算结束后
+    ChangeState = "change_state",// 牌状态改变时
+    ChangeStateAfter = "change_state_after",// 牌状态改变后
+    Open = "open",// 明置后
+    Judge = "judge",// 判定时
+    JudgeCard = "judge_card",// 成为判定牌后
+    JudgeResult1 = "judge_result1",// 判定结果确定前1
+    JudgeResult2 = "judge_result2",// 判定结果确定前2
+    JudgeResultAfter1 = "judge_result_after1",// 判定结果确定后1
+    JudgeResultAfter2 = "judge_result_after2",// 判定结果确定后2
+    JudgeEnd = "judge_end",// 判定结算结束后
+    DamageStart = "damage_start",// 伤害开始
+    DamageCause1 = "damage_cause1",// 造成伤害时1
+    DamageCause2 = "damage_cause2",// 造成伤害时2
+    DamageInflict1 = "damage_inflict1",// 受到伤害时1
+    DamageInflict2 = "damage_inflict2",// 受到伤害时2
+    DamageInflict3 = "damage_inflict3",// 受到伤害时3
+    DamageCauseAfter = "damage_cause_after",// 造成伤害后
+    DamageInflictAfter = "damage_inflict_after",// 受到伤害后
+    DamageEnd = "damage_end",// 伤害结算结束后
+    LoseHpStart = "losehp_start",// 失去体力开始
+    LoseHp = "losehp",// 失去体力时
+    LoseHpAfter = "losehp_after",// 失去体力后
+    LoseHpEnd = "losehp_end",// 失去体力结束
+    ReduceHpStart = "reducehp_start",// 扣减体力开始
+    ReduceHp = "reducehp",// 扣减体力时
+    ReduceHpAfter = "reducehp_after",// 扣减体力后
+    ReduceHpEnd = "reducehp_end",// 扣减体力结束
+    RecoverHpStart = "recoverhp_start",// 回复体力开始
+    RecoverHp = "recoverhp",// 回复体力时
+    RecoverHpAfter = "recoverhp_after",// 回复体力后
+    RecoverHpEnd = "recoverhp_end",// 回复体力结束
+    ChangeMaxHpStart = "change_maxhp_start",// 体力上限改变开始
+    ChangeMaxHp = "change_maxhp",// 体力上限改变时
+    ChangeMaxHpAfter = "change_maxhp_after",// 体力上限改变后
+    ChangeMaxHpEnd = "change_maxhp_end",// 体力上限改变结束
+    DyingEntry = "dying_entry",// 进入濒死状态时
+    DyingEntryAfter = "dying_entry_after",// 进入濒死状态后
+    Dying = "dying",// (连续若干个)处于濒死状态时
+    DyingEnd = "dying_end",// 濒死结束
+    DeathBefore = "death_before",// 死亡前
+    DeathConfirmRole = "death_confirm_role",// 确认死亡角色
+    Death = "death",// 死亡时
+    DeathAfter = "death_after",// 死亡后
+    DeathEnd = "death_end",// 死亡结束
+    SkillObtain = "skill_obtain",// 获得技能时
+    SkillLose = "skill_lose",// 失去技能时
+    EffectObtain = "effect_obtain",// 获得效果时
+    EffectLose = "effect_lose",// 失去效果时
+    Cost = "cost",// 执行消耗后
+    Effect = "effect",// 发动技能后
+    EventEnd = "event_end",// 事件结束
+    AllEventEnd = "all_event_end"
 }
 declare type TimingTrigger = TimingName | string;
-declare enum EventType {
-    Ready = 'Ready',
-    Turn = 'Turn',
-    Phase = 'Phase',
-    Move = 'Move',
-    UseCard = 'UseCard',
-    UseCardToCard = 'UseCardToCard',
-    UseCardSpecial = 'UseCardSpecial',
-    DropCard = 'DropCard',
-    Pindian = 'Pindian',
-    Open = 'Open',
-    Close = 'Close',
-    Chain = 'Chain',
-    Skip = 'Skip',
-    Change = 'Change',
-    Remove = 'Remove',
-    Judge = 'Judge',
-    Damage = 'Damage',
-    LoseHp = 'LoseHp',
-    ReduceHp = 'ReduceHp',
-    RecoverHp = 'RecoverHp',
-    ChangeMaxHp = 'ChangeMaxHp',
-    Dying = 'Dying',
-    Death = 'Death',
-    UseSkill = 'UseSkill',
+declare declare enum EventType {
+    Ready = "Ready",
+    Turn = "Turn",
+    Phase = "Phase",
+    Move = "Move",
+    UseCard = "UseCard",
+    UseCardToCard = "UseCardToCard",
+    UseCardSpecial = "UseCardSpecial",
+    DropCard = "DropCard",
+    Pindian = "Pindian",
+    Open = "Open",
+    Close = "Close",
+    Chain = "Chain",
+    Skip = "Skip",
+    Change = "Change",
+    Remove = "Remove",
+    Judge = "Judge",
+    Damage = "Damage",
+    LoseHp = "LoseHp",
+    ReduceHp = "ReduceHp",
+    RecoverHp = "RecoverHp",
+    ChangeMaxHp = "ChangeMaxHp",
+    Dying = "Dying",
+    Death = "Death",
+    UseSkill = "UseSkill"
 }
-declare interface ReadyEventData {}
+declare interface ReadyEventData {
+}
 declare interface TurnEventData {
     turnId: number;
     player: Player;
@@ -1071,18 +1006,9 @@ declare interface CardUseData {
     /** 合法目标选择器 */
     target: (room: Room, player: Player, card: VirtualCard) => Player[];
     /** 距离条件 */
-    distanceCondition?: (
-        room: Room,
-        player: Player,
-        target: Player,
-        card: VirtualCard,
-    ) => boolean;
+    distanceCondition?: (room: Room, player: Player, target: Player, card: VirtualCard) => boolean;
     /** 牌面效果 */
-    effect: (
-        room: Room,
-        target: Player,
-        event: UseCardEventData,
-    ) => Promise<void>;
+    effect: (room: Room, target: Player, event: UseCardEventData) => Promise<void>;
     /** 额外使用条件（如桃需体力不满） */
     canUse?: (room: Room, player: Player, card: VirtualCard) => boolean;
     /** 使用次数条件（默认无限制） */
@@ -1115,13 +1041,10 @@ declare interface PindianEventData {
     settleTarget?: Player;
     settleWinner?: Player;
     settleLoser?: Player[];
-    settleResults?: Map<
-        Player,
-        {
-            winner?: Player;
-            loser?: Player[];
-        }
-    >;
+    settleResults?: Map<Player, {
+        winner?: Player;
+        loser?: Player[];
+    }>;
 }
 declare interface OpenEventData {
     player: Player;
@@ -1154,21 +1077,9 @@ declare interface RemoveEventData {
     general: General;
 }
 /** ChangeState 六种子类型 */
-declare type ChangeStateType =
-    | EventType.Open
-    | EventType.Close
-    | EventType.Chain
-    | EventType.Skip
-    | EventType.Change
-    | EventType.Remove;
+declare type ChangeStateType = EventType.Open | EventType.Close | EventType.Chain | EventType.Skip | EventType.Change | EventType.Remove;
 /** ChangeState 联合数据类型 */
-declare type ChangeStateData =
-    | OpenEventData
-    | CloseEventData
-    | ChainEventData
-    | SkipEventData
-    | ChangeEventData
-    | RemoveEventData;
+declare type ChangeStateData = OpenEventData | CloseEventData | ChainEventData | SkipEventData | ChangeEventData | RemoveEventData;
 declare interface JudgeEventData {
     player: Player;
     card?: GameCard;
@@ -1348,20 +1259,8 @@ declare interface TimingEventMap {
     [TimingName.PindianCardShow]: EventType.Pindian;
     [TimingName.PindianResult]: EventType.Pindian;
     [TimingName.PindianEnd]: EventType.Pindian;
-    [TimingName.ChangeState]:
-        | EventType.Open
-        | EventType.Close
-        | EventType.Chain
-        | EventType.Skip
-        | EventType.Change
-        | EventType.Remove;
-    [TimingName.ChangeStateAfter]:
-        | EventType.Open
-        | EventType.Close
-        | EventType.Chain
-        | EventType.Skip
-        | EventType.Change
-        | EventType.Remove;
+    [TimingName.ChangeState]: EventType.Open | EventType.Close | EventType.Chain | EventType.Skip | EventType.Change | EventType.Remove;
+    [TimingName.ChangeStateAfter]: EventType.Open | EventType.Close | EventType.Chain | EventType.Skip | EventType.Change | EventType.Remove;
     [TimingName.Open]: EventType.Open;
     [TimingName.Judge]: EventType.Judge;
     [TimingName.JudgeCard]: EventType.Judge;
@@ -1440,12 +1339,7 @@ declare interface TimingDataMap {
     [TimingName.AllEventEnd]: {};
     [key: string]: Record<string, any>;
 }
-declare type TimingData<T extends TimingTrigger> =
-    T extends keyof TimingEventMap
-        ? EventDataMap[TimingEventMap[T]]
-        : T extends keyof TimingDataMap
-          ? TimingDataMap[T]
-          : Record<string, any>;
+declare type TimingData<T extends TimingTrigger> = T extends keyof TimingEventMap ? EventDataMap[TimingEventMap[T]] : T extends keyof TimingDataMap ? TimingDataMap[T] : Record<string, any>;
 /** 时机定义：名称 + before/after 回调 */
 declare interface Timing<T extends TimingTrigger = 'none'> {
     name: TimingTrigger;
@@ -1454,11 +1348,13 @@ declare interface Timing<T extends TimingTrigger = 'none'> {
     /** 在 eventManager.trigger 之后执行 */
     after?: Array<(room: Room, data: TimingData<T>) => Promise<any>>;
 }
-declare enum DamageType {
+declare declare enum DamageType {
     None = 0,
     Fire = 1,
-    Thunder = 2,
+    Thunder = 2
 }
+
+
 
 /**
  * 回复体力事件。
@@ -1466,7 +1362,7 @@ declare enum DamageType {
  * 执行流程：
  *   RecoverHpStart → RecoverHpAfter（实际回复）→ RecoverHpEnd
  */
-declare class RecoverHpEvent extends EventProcess<EventType.RecoverHp> {
+declare declare class RecoverHpEvent extends EventProcess<EventType.RecoverHp> {
     constructor(room: Room, data: RecoverHpEventData);
     get player(): Player;
     get number(): number;
@@ -1485,7 +1381,7 @@ declare class RecoverHpEvent extends EventProcess<EventType.RecoverHp> {
  *
  * 上限降至 ≤0 时触发死亡。
  */
-declare class ChangeMaxHpEvent extends EventProcess<EventType.ChangeMaxHp> {
+declare declare class ChangeMaxHpEvent extends EventProcess<EventType.ChangeMaxHp> {
     constructor(room: Room, data: ChangeMaxHpEventData);
     get player(): Player;
     /** 变化值（正=增加，负=减少） */
@@ -1495,6 +1391,8 @@ declare class ChangeMaxHpEvent extends EventProcess<EventType.ChangeMaxHp> {
     checkEvent(): boolean;
     private _onChangeMaxHpAfter;
 }
+
+
 
 /**
  * 判定事件。
@@ -1508,7 +1406,7 @@ declare class ChangeMaxHpEvent extends EventProcess<EventType.ChangeMaxHp> {
  * - JudgeResultAfter1 Before：广播判定结果动画
  * - JudgeEnd After：将所有因此事件置入处理区的牌移回弃牌堆
  */
-declare class JudgeEvent extends EventProcess<EventType.Judge> {
+declare declare class JudgeEvent extends EventProcess<EventType.Judge> {
     constructor(room: Room, data: JudgeEventData);
     get player(): Player;
     get card(): GameCard | undefined;
@@ -1535,6 +1433,8 @@ declare class JudgeEvent extends EventProcess<EventType.Judge> {
     resetSuccess(): void;
 }
 
+
+
 /**
  * 移动卡牌事件。
  *
@@ -1544,7 +1444,7 @@ declare class JudgeEvent extends EventProcess<EventType.Judge> {
  *
  * 在 MoveCardBefore1/2 期间可调用 cancel()/preventMove() 来取消或阻止移动。
  */
-declare class MoveCardEvent extends EventProcess<EventType.Move> {
+declare declare class MoveCardEvent extends EventProcess<EventType.Move> {
     /** 分类后的移动数据 */
     move_datas: MoveCardData[];
     /** 移动标签生成函数（可由调用方覆盖） */
@@ -1571,11 +1471,7 @@ declare class MoveCardEvent extends EventProcess<EventType.Move> {
      *   2. 延时锦囊 — 离开/进入判定区时更新判定记录
      *   3. 移动到非处理区 ─ 切断/删除虚拟牌关联
      */
-    protected handleVirtualCard(
-        card: GameCard,
-        fromArea: AreaId,
-        toArea: AreaId,
-    ): Promise<void>;
+    protected handleVirtualCard(card: GameCard, fromArea: AreaId, toArea: AreaId): Promise<void>;
     /**
      * 对移动数据分类赋默认值并归类。
      *
@@ -1597,21 +1493,13 @@ declare class MoveCardEvent extends EventProcess<EventType.Move> {
     /** 本次移动中是否包含指定牌的移动 */
     has(card: GameCard): boolean;
     /** 获取本次移动中符合条件的牌 */
-    getCards(
-        filter?: (data: MoveCardData, card: GameCard) => boolean,
-    ): GameCard[];
+    getCards(filter?: (data: MoveCardData, card: GameCard) => boolean): GameCard[];
     /** 获取本次移动中符合条件的牌（返回第一张，短路查找） */
-    getCard(
-        filter?: (data: MoveCardData, card: GameCard) => boolean,
-    ): GameCard | undefined;
+    getCard(filter?: (data: MoveCardData, card: GameCard) => boolean): GameCard | undefined;
     /** 获取符合条件的移动数据 */
-    filter(
-        filter: (data: MoveCardData, card: GameCard) => boolean,
-    ): MoveCardData[];
+    filter(filter: (data: MoveCardData, card: GameCard) => boolean): MoveCardData[];
     /** 移动中是否包含符合条件的数据 */
-    has_filter(
-        filter: (data: MoveCardData, card: GameCard) => boolean,
-    ): boolean;
+    has_filter(filter: (data: MoveCardData, card: GameCard) => boolean): boolean;
     /** 获取移动的总牌数 */
     getMoveCount(): number;
     /** 判断一张牌的上一次移动是否为此移动事件 */
@@ -1620,17 +1508,9 @@ declare class MoveCardEvent extends EventProcess<EventType.Move> {
      * 获取某玩家因指定原因会失去的牌的数据。
      * 失去 = 原区域是该玩家的手牌/装备区，目标区域不是该玩家的手牌/装备区。
      */
-    getLoseByReason(
-        player: Player,
-        reason: string,
-        pos?: string,
-    ): MoveCardData[];
+    getLoseByReason(player: Player, reason: string, pos?: string): MoveCardData[];
     /** getLoseByReason 的 GameCard[] 版本 */
-    getLoseCardsByReason(
-        player: Player,
-        reason: string,
-        pos?: string,
-    ): GameCard[];
+    getLoseCardsByReason(player: Player, reason: string, pos?: string): GameCard[];
     /** 是否有因指定原因失去牌的数据 */
     hasLoseByReason(player: Player, reason: string, pos?: string): boolean;
     /**
@@ -1658,6 +1538,8 @@ declare class MoveCardEvent extends EventProcess<EventType.Move> {
     preventMove(): Promise<this>;
 }
 
+
+
 /**
  * 回合事件。
  *
@@ -1666,7 +1548,7 @@ declare class MoveCardEvent extends EventProcess<EventType.Move> {
  *     → [各阶段 PhaseEvent 依次执行]
  *   TurnEnd → TurnEndAfter
  */
-declare class TurnEvent extends EventProcess<EventType.Turn> {
+declare declare class TurnEvent extends EventProcess<EventType.Turn> {
     constructor(room: Room, data: TurnEventData);
     get player(): Player;
     set player(v: Player);
@@ -1702,7 +1584,7 @@ declare class TurnEvent extends EventProcess<EventType.Turn> {
  *
  * 摸牌阶段的 DrawPhaseStart1/Start2 提供两次修正摸牌数的时机。
  */
-declare class PhaseEvent extends EventProcess<EventType.Phase> {
+declare declare class PhaseEvent extends EventProcess<EventType.Phase> {
     constructor(room: Room, data: PhaseEventData);
     get player(): Player;
     get phase(): Phase;
@@ -1719,6 +1601,8 @@ declare class PhaseEvent extends EventProcess<EventType.Phase> {
     skip(): Promise<this>;
     isExecutor(player: Player, phase?: Phase): boolean;
 }
+
+
 
 /**
  * 牌的使用事件（统一类，替代旧项目三子类）。
@@ -1739,7 +1623,7 @@ declare class PhaseEvent extends EventProcess<EventType.Phase> {
  *     - 否则 → Effect → EffectAfter
  *   结束后固定段：End1 → End2 → End3（虚拟牌消失）
  */
-declare class UseCardEvent extends EventProcess<EventType.UseCard> {
+declare declare class UseCardEvent extends EventProcess<EventType.UseCard> {
     /** 目标自增 ID——仅用于同玩家时稳定排序，不回写 */
     private _targetId;
     /** 各目标已完成的目标扩展阶段（index → 已完成时机名集合） */
@@ -1803,6 +1687,8 @@ declare class UseCardEvent extends EventProcess<EventType.UseCard> {
     offsetTarget(target: Player, offsetEvent: EventProcess): void;
 }
 
+
+
 /**
  * 技能使用事件。
  *
@@ -1811,7 +1697,7 @@ declare class UseCardEvent extends EventProcess<EventType.UseCard> {
  *   → 5-11. 动画/战报/标记（TODO 通讯模块）
  *   → 12. cost → 触发 Cost 时机 → 13. effect → 触发 Effect 时机
  */
-declare class UseSkillEvent extends EventProcess<EventType.UseSkill> {
+declare declare class UseSkillEvent extends EventProcess<EventType.UseSkill> {
     constructor(room: Room, data: UseSkillEventData);
     get effect(): Effect;
     get context(): EffectContext;
@@ -1827,38 +1713,33 @@ declare class UseSkillEvent extends EventProcess<EventType.UseSkill> {
  * Input 类型 = Partial<Data> & Pick<Data, 必填键>，字段增减时自动跟随。
  */
 
-declare function setExtensionContext(name: string): void;
+declare declare function setExtensionContext(name: string): void;
 /**
  * 为实体牌分配 ID（{扩展名}.{自增序号}）并批量注册到 sgs.cards。
  * 扩展名自动注入——加载器在导入扩展前调用 setExtensionContext()。
  * 不同扩展独立计数，不依赖加载顺序。
  */
-declare function registerCards(cards: GameCardData[]): GameCardData[];
+declare declare function registerCards(cards: GameCardData[]): GameCardData[];
 /** 注册卡牌扩展包——内部调用 registerCards + sgs.cardpacks.set */
-declare function CardPackage(name: string, cards: GameCardData[]): CardPackData;
+declare declare function CardPackage(name: string, cards: GameCardData[]): CardPackData;
 /** 注册武将扩展包 → sgs.generalpacks */
-declare function GeneralPackage(
-    name: string,
-    subpacks: GeneralPackData['subpacks'],
-): GeneralPackData;
+declare declare function GeneralPackage(name: string, subpacks: GeneralPackData['subpacks']): GeneralPackData;
 declare type CardConfigInput = Partial<CardData> & Pick<CardData, 'name'>;
-declare function CardConfig(input: CardConfigInput): CardData;
+declare declare function CardConfig(input: CardConfigInput): CardData;
 declare type GameCardInput = Partial<GameCardData>;
-declare function GameCard(input?: GameCardInput): GameCardData;
+declare declare function GameCard(input?: GameCardInput): GameCardData;
 declare type GeneralInput = Partial<GeneralData> & Pick<GeneralData, 'name'>;
-declare function General(input: GeneralInput): GeneralData;
+declare declare function General(input: GeneralInput): GeneralData;
 declare type GameModeInput = Partial<GameMode> & Pick<GameMode, 'name'>;
-declare function GameMode(input: GameModeInput): GameMode;
+declare declare function GameMode(input: GameModeInput): GameMode;
 declare type SkillInput = Partial<SkillData> & Pick<SkillData, 'name'>;
-declare function Skill(input: SkillInput): SkillData;
-declare type EffectInput = Pick<
-    Partial<EffectData>,
-    'tag' | 'priority' | 'condition'
-> & {
+declare declare function Skill(input: SkillInput): SkillData;
+declare type EffectInput = Pick<Partial<EffectData>, 'tag' | 'priority' | 'condition'> & {
     name: string;
     skillName: string;
 };
-declare function Effect(input: EffectInput): EffectData;
+declare declare function Effect(input: EffectInput): EffectData;
+
 
 /** GeneralBuilder 实例接口 */
 declare interface GeneralBuilder {
@@ -1875,9 +1756,11 @@ declare interface GeneralBuilder {
     register(): GeneralData;
 }
 /** GeneralBuilder 工厂——无需 new */
-declare function GeneralBuilder(name: string): GeneralBuilder;
+declare declare function GeneralBuilder(name: string): GeneralBuilder;
 
-declare class General implements MarkHost {
+
+
+declare declare class General implements MarkHost {
     readonly id: GeneralId;
     readonly room: Room;
     readonly _jsondata: GeneralData;
@@ -1903,33 +1786,13 @@ declare class General implements MarkHost {
         source: GeneralData;
     };
     constructor(data: GeneralData, room: Room, state: GeneralState);
-    setMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        value: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
+    setMark: <T>(this: MarkHost, rawKey: string, value: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
     getMark: <T>(this: MarkHost, rawKey: string) => T | undefined;
     removeMark: (this: MarkHost, rawKey: string) => void;
     hasMark: (this: MarkHost, rawKey: string) => boolean;
-    countMark: (
-        this: MarkHost,
-        rawKey: string,
-        value: number,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
-    pushMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        item: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
-    unpushMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        item: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
+    countMark: (this: MarkHost, rawKey: string, value: number, options?: import("../mark/MarkTypes").MarkOptions) => void;
+    pushMark: <T>(this: MarkHost, rawKey: string, item: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
+    unpushMark: <T>(this: MarkHost, rawKey: string, item: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
     clearMark: (this: MarkHost, tag?: string) => void;
     get name(): string;
     get trueName(): string;
@@ -1953,10 +1816,7 @@ declare class General implements MarkHost {
     isLord(): boolean;
     isShibing(): boolean;
     isYexinjia(): boolean;
-    getAssetsUrl(
-        type: 'image' | 'dual_image' | 'self_image' | 'death',
-        skinName?: string,
-    ): string;
+    getAssetsUrl(type: 'image' | 'dual_image' | 'self_image' | 'death', skinName?: string): string;
     private getSkinData;
 }
 
@@ -2043,7 +1903,7 @@ declare interface GeneralAssetsData {
     }[];
 }
 /** 性别 */
-declare enum Gender {
+declare declare enum Gender {
     /** 无性别 */
     None = 0,
     /** 男 */
@@ -2051,7 +1911,7 @@ declare enum Gender {
     /** 女 */
     Female = 2,
     /** 双性 */
-    Doublesex = 9,
+    Doublesex = 9
 }
 
 declare interface LogMeta {
@@ -2067,6 +1927,8 @@ declare interface ILogger {
     error(message: string, extra?: LogMeta): void;
 }
 
+
+
 declare interface MarkOptions {
     /** 来源 */
     source?: string;
@@ -2075,16 +1937,7 @@ declare interface MarkOptions {
     /** 仅针对string类型标记，动态显示内容会根据此对象进行解析 */
     values?: Record<string, RichStringValue>;
     /** 解析类型 */
-    parseType?:
-        | 'img'
-        | 'card'
-        | 'general'
-        | 'command'
-        | 'prompt'
-        | 'suit'
-        | 'color'
-        | 'card_number'
-        | 'area';
+    parseType?: 'img' | 'card' | 'general' | 'command' | 'prompt' | 'suit' | 'color' | 'card_number' | 'area';
     ref?: {
         area: string;
         mark: string;
@@ -2100,35 +1953,15 @@ declare function parseKey(rawKey: string): {
     originalKey: string;
     tags: string[];
 };
-declare function setMark<T>(
-    this: MarkHost,
-    rawKey: string,
-    value: T,
-    options?: MarkOptions,
-): void;
+declare function setMark<T>(this: MarkHost, rawKey: string, value: T, options?: MarkOptions): void;
 declare function getMark<T>(this: MarkHost, rawKey: string): T | undefined;
 declare function removeMark(this: MarkHost, rawKey: string): void;
 declare function hasMark(this: MarkHost, rawKey: string): boolean;
-declare function countMark(
-    this: MarkHost,
-    rawKey: string,
-    value: number,
-    options?: MarkOptions,
-): void;
-declare function pushMark<T>(
-    this: MarkHost,
-    rawKey: string,
-    item: T,
-    options?: MarkOptions,
-): void;
-declare function unpushMark<T>(
-    this: MarkHost,
-    rawKey: string,
-    item: T,
-    options?: MarkOptions,
-): void;
+declare function countMark(this: MarkHost, rawKey: string, value: number, options?: MarkOptions): void;
+declare function pushMark<T>(this: MarkHost, rawKey: string, item: T, options?: MarkOptions): void;
+declare function unpushMark<T>(this: MarkHost, rawKey: string, item: T, options?: MarkOptions): void;
 declare function clearMark(this: MarkHost, tag?: string): void;
-declare const MarkMethods: {
+declare declare const MarkMethods: {
     parseKey: typeof parseKey;
     setMark: typeof setMark;
     getMark: typeof getMark;
@@ -2139,9 +1972,9 @@ declare const MarkMethods: {
     unpushMark: typeof unpushMark;
     clearMark: typeof clearMark;
 };
-declare;
-{
-}
+declare {};
+
+
 
 declare interface CardPackData {
     name: string;
@@ -2159,7 +1992,9 @@ declare interface GeneralPackData {
     }[];
 }
 
-declare class Player implements MarkHost {
+
+
+declare declare class Player implements MarkHost {
     /** 是否是自己（客户端 UI 标识） */
     isSelf: boolean;
     /** 所属房间 */
@@ -2173,33 +2008,13 @@ declare class Player implements MarkHost {
     /** 标记 key→内容集合 索引（MarkHost） */
     readonly _markKeyMap: Map<string, Set<string>>;
     constructor(playerId: string, room: Room, state: PlayerState);
-    setMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        value: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
+    setMark: <T>(this: MarkHost, rawKey: string, value: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
     getMark: <T>(this: MarkHost, rawKey: string) => T | undefined;
     removeMark: (this: MarkHost, rawKey: string) => void;
     hasMark: (this: MarkHost, rawKey: string) => boolean;
-    countMark: (
-        this: MarkHost,
-        rawKey: string,
-        value: number,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
-    pushMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        item: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
-    unpushMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        item: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
+    countMark: (this: MarkHost, rawKey: string, value: number, options?: import("../mark/MarkTypes").MarkOptions) => void;
+    pushMark: <T>(this: MarkHost, rawKey: string, item: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
+    unpushMark: <T>(this: MarkHost, rawKey: string, item: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
     clearMark: (this: MarkHost, tag?: string) => void;
     /** 唯一玩家ID */
     get playerId(): string;
@@ -2308,39 +2123,17 @@ declare class Player implements MarkHost {
     /** 获取所有暗置的武将 */
     getCloseGenerals(): General[];
     /** 作为伤害来源对 target 造成伤害 */
-    damage(
-        target: Player,
-        damageType?: DamageType,
-        number?: number,
-        channel?: VirtualCard | string,
-        isChain?: boolean,
-    ): Promise<import('../event/DamageEvent').DamageEvent>;
+    damage(target: Player, damageType?: DamageType, number?: number, channel?: VirtualCard | string, isChain?: boolean): Promise<import("../event/DamageEvent").DamageEvent>;
     /** 作为目标受到伤害（source 可为 undefined 表示无来源） */
-    takeDamage(
-        source: Player | undefined,
-        damageType?: DamageType,
-        number?: number,
-        channel?: VirtualCard | string,
-        isChain?: boolean,
-    ): Promise<import('../event/DamageEvent').DamageEvent>;
-    loseHp(
-        number?: number,
-    ): Promise<import('../event/DamageEvent').LoseHpEvent>;
-    reduceHp(
-        number?: number,
-    ): Promise<import('../event/DamageEvent').ReduceHpEvent>;
-    recover(
-        number?: number,
-    ): Promise<import('../event/HpEvent').RecoverHpEvent>;
+    takeDamage(source: Player | undefined, damageType?: DamageType, number?: number, channel?: VirtualCard | string, isChain?: boolean): Promise<import("../event/DamageEvent").DamageEvent>;
+    loseHp(number?: number): Promise<import("../event/DamageEvent").LoseHpEvent>;
+    reduceHp(number?: number): Promise<import("../event/DamageEvent").ReduceHpEvent>;
+    recover(number?: number): Promise<import("../event/HpEvent").RecoverHpEvent>;
     /** 将体力恢复到目标值（自动计算回复量，最多到上限），委托到 Room */
-    recoverTo(
-        targetHp: number,
-    ): Promise<import('../event/HpEvent').RecoverHpEvent>;
-    changeMaxHp(
-        number?: number,
-    ): Promise<import('../event/HpEvent').ChangeMaxHpEvent>;
-    dying(): Promise<import('../event/DyingEvent').DyingEvent>;
-    die(killer?: Player): Promise<import('../event/DyingEvent').DeathEvent>;
+    recoverTo(targetHp: number): Promise<import("../event/HpEvent").RecoverHpEvent>;
+    changeMaxHp(number?: number): Promise<import("../event/HpEvent").ChangeMaxHpEvent>;
+    dying(): Promise<import("../event/DyingEvent").DyingEvent>;
+    die(killer?: Player): Promise<import("../event/DyingEvent").DeathEvent>;
     canLoseHp(number?: number): boolean;
     canRecover(number?: number): boolean;
     canChangeMaxHp(number?: number): boolean;
@@ -2358,109 +2151,42 @@ declare class Player implements MarkHost {
      * @param pos 区域（h/e/j/u/s，默认 h）
      */
     canObtain(targetPlayer: Player, count?: number, pos?: string): boolean;
-    moveCards(
-        cards: GameCard[],
-        toArea: AreaId,
-        opts?: MoveCardOpts,
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
-    putTo(
-        cards: GameCard[],
-        toArea: AreaId,
-        opts?: MoveCardOpts,
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
-    draw(
-        count?: number,
-        pos?: 'top' | 'bottom',
-        opts?: MoveCardOpts,
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
-    discard(
-        cards: GameCard[],
-        opts?: MoveCardOpts,
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
-    obtain(
-        cards: GameCard[],
-        opts?: MoveCardOpts,
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
-    recast(
-        cards: GameCard[],
-        drawOneAlways?: boolean,
-        opts?: MoveCardOpts,
-    ): Promise<void>;
-    give(
-        toPlayer: Player,
-        cards: GameCard[],
-        opts?: MoveCardOpts,
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
-    swap(
-        cards1: GameCard[],
-        toArea1: AreaId,
-        cards2: GameCard[],
-        toArea2: AreaId,
-        opts?: MoveCardOpts,
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
+    moveCards(cards: GameCard[], toArea: AreaId, opts?: MoveCardOpts): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
+    putTo(cards: GameCard[], toArea: AreaId, opts?: MoveCardOpts): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
+    draw(count?: number, pos?: 'top' | 'bottom', opts?: MoveCardOpts): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
+    discard(cards: GameCard[], opts?: MoveCardOpts): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
+    obtain(cards: GameCard[], opts?: MoveCardOpts): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
+    recast(cards: GameCard[], drawOneAlways?: boolean, opts?: MoveCardOpts): Promise<void>;
+    give(toPlayer: Player, cards: GameCard[], opts?: MoveCardOpts): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
+    swap(cards1: GameCard[], toArea1: AreaId, cards2: GameCard[], toArea2: AreaId, opts?: MoveCardOpts): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
     /** 明置自己的武将 */
-    open(
-        generals: General[],
-    ): Promise<import('../event/ChangeStateEvent').ChangeStateEvent>;
+    open(generals: General[]): Promise<import("../event/ChangeStateEvent").ChangeStateEvent>;
     /** 暗置自己的武将 */
-    close(
-        generals: General[],
-    ): Promise<import('../event/ChangeStateEvent').ChangeStateEvent>;
+    close(generals: General[]): Promise<import("../event/ChangeStateEvent").ChangeStateEvent>;
     /**
      * 横置/重置自己。
      * @param damageType 横置属性（toState=false 时用于解锁动画），默认 None
      */
-    chain(
-        toState?: boolean,
-        damageType?: DamageType,
-    ): Promise<import('../event/ChangeStateEvent').ChangeStateEvent>;
+    chain(toState?: boolean, damageType?: DamageType): Promise<import("../event/ChangeStateEvent").ChangeStateEvent>;
     /** 翻面 */
-    turnOver(
-        toState?: boolean,
-    ): Promise<import('../event/ChangeStateEvent').ChangeStateEvent>;
+    turnOver(toState?: boolean): Promise<import("../event/ChangeStateEvent").ChangeStateEvent>;
     /** 变更自己的武将 */
-    change(
-        general: General | 'head' | 'deputy',
-        toGeneral: General,
-    ): Promise<import('../event/ChangeStateEvent').ChangeStateEvent>;
+    change(general: General | 'head' | 'deputy', toGeneral: General): Promise<import("../event/ChangeStateEvent").ChangeStateEvent>;
     /** 移除自己的武将 */
-    remove(
-        general: General,
-    ): Promise<import('../event/ChangeStateEvent').ChangeStateEvent>;
-    judge(
-        isSuccess?: (result: VirtualCardData) => boolean,
-    ): Promise<import('../event/JudgeEvent').JudgeEvent>;
+    remove(general: General): Promise<import("../event/ChangeStateEvent").ChangeStateEvent>;
+    judge(isSuccess?: (result: VirtualCardData) => boolean): Promise<import("../event/JudgeEvent").JudgeEvent>;
     showCards(cards: GameCard[]): Promise<void>;
     flashCards(cards: GameCard[], opts?: MoveCardOpts): Promise<void>;
-    removeToReserve(
-        cards: GameCard[],
-        opts?: MoveCardOpts,
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
-    chooseCard(
-        cards: GameCard[],
-        count?: SelectCount,
-        opts?: Partial<SelectSession>,
-    ): Promise<GameCard[]>;
-    choosePlayer(
-        targets: Player[],
-        count?: SelectCount,
-        opts?: Partial<SelectSession>,
-    ): Promise<Player[]>;
-    chooseGeneral(
-        generals: General[],
-        count?: SelectCount,
-        opts?: Partial<SelectSession>,
-    ): Promise<General[]>;
-    chooseOption(
-        options: string[],
-        count?: SelectCount,
-        opts?: Partial<SelectSession>,
-    ): Promise<string[]>;
+    removeToReserve(cards: GameCard[], opts?: MoveCardOpts): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
+    chooseCard(cards: GameCard[], count?: SelectCount, opts?: Partial<SelectSession>): Promise<GameCard[]>;
+    choosePlayer(targets: Player[], count?: SelectCount, opts?: Partial<SelectSession>): Promise<Player[]>;
+    chooseGeneral(generals: General[], count?: SelectCount, opts?: Partial<SelectSession>): Promise<General[]>;
+    chooseOption(options: string[], count?: SelectCount, opts?: Partial<SelectSession>): Promise<string[]>;
     /** 按位置字符获取目标玩家对应区域的牌 */
     private _getCardsByPos;
 }
 
-declare enum Phase {
+declare declare enum Phase {
     None = 0,
     Ready = 1,
     Judge = 2,
@@ -2470,7 +2196,7 @@ declare enum Phase {
     End = 6,
     JiaoDiZhu = 100,
     ConfirmScore = 101,
-    NotScore = 102,
+    NotScore = 102
 }
 
 /**
@@ -2481,51 +2207,40 @@ declare enum Phase {
  * 将核心枚举和 Builder 一次性挂载到目标对象。
  * 幂等——重复调用不重复赋值（Object.assign 天然覆盖幂等）。
  */
-declare function registerCore(target: Record<string, any>): void;
+declare declare function registerCore(target: Record<string, any>): void;
 
-declare type RichString =
-    | string
-    | {
-          text: string;
-          values: Record<string, RichStringValue>;
-      };
-declare type RichStringValue =
-    | {
-          player: string;
-      }
-    | {
-          players: string[];
-      }
-    | {
-          card: string;
-      }
-    | {
-          cards: string[];
-      }
-    | {
-          number: number;
-      }
-    | {
-          text: RichString;
-      }
-    | {
-          texts: RichString[];
-      }
-    | {
-          cardData: string;
-      }
-    | {
-          cardDatas: string[];
-      }
-    | {
-          vcard: VirtualCardData;
-      }
-    | {
-          vcards: VirtualCardData[];
-      }
-    | {
-          area: string;
-      };
+
+declare type RichString = string | {
+    text: string;
+    values: Record<string, RichStringValue>;
+};
+declare type RichStringValue = {
+    player: string;
+} | {
+    players: string[];
+} | {
+    card: string;
+} | {
+    cards: string[];
+} | {
+    number: number;
+} | {
+    text: RichString;
+} | {
+    texts: RichString[];
+} | {
+    cardData: string;
+} | {
+    cardDatas: string[];
+} | {
+    vcard: VirtualCardData;
+} | {
+    vcards: VirtualCardData[];
+} | {
+    area: string;
+};
+
+
 
 /** ModeBuilder 实例接口 */
 declare interface ModeBuilder {
@@ -2535,13 +2250,13 @@ declare interface ModeBuilder {
     settings(s: Record<string, string[]>): this;
     rules(r: string): this;
     beforeStart(fn: (room: Room) => Promise<void>): this;
-    mainProcess(
-        fn: (room: Room, turn: TurnEvent, last?: TurnEvent) => Promise<void>,
-    ): this;
+    mainProcess(fn: (room: Room, turn: TurnEvent, last?: TurnEvent) => Promise<void>): this;
     register(): GameMode;
 }
 /** ModeBuilder 工厂——无需 new */
-declare function ModeBuilder(name: string): ModeBuilder;
+declare declare function ModeBuilder(name: string): ModeBuilder;
+
+
 
 /** 房间创建选项 */
 declare interface RoomOption {
@@ -2587,12 +2302,9 @@ declare interface GameMode {
      * 你需要在内部实现中对turn参数的数据进行修改
      * 关于额外回合：主流程逻辑表示游戏中的每个额定回合如何确定，无需考虑额外回合的实现。
      */
-    mainProcess?: (
-        room: Room,
-        turn: TurnEvent,
-        last?: TurnEvent,
-    ) => Promise<void>;
+    mainProcess?: (room: Room, turn: TurnEvent, last?: TurnEvent) => Promise<void>;
 }
+
 
 /**
  * 玩家输入接口。
@@ -2607,6 +2319,8 @@ declare interface IPlayerInput {
     requestChoice(playerId: string, session: SelectSession): Promise<void>;
 }
 
+
+
 /**
  * 区域 ID 联合类型：GameCardId = string, GeneralId = string
  */
@@ -2618,7 +2332,7 @@ type AreaItemId = GameCardId | GeneralId;
  * - number → 操作 room.state.cardAreas（游戏牌）
  * - string → 操作 room.state.generalAreas（武将牌）
  */
-declare class AreaManager {
+declare declare class AreaManager {
     readonly room: Room;
     constructor(room: Room);
     /** 初始化区域（若不存在则创建空 ArraySchema）。isGeneral=true 创建武将区域 */
@@ -2629,11 +2343,7 @@ declare class AreaManager {
      * 向区域添加 ID（卡牌或武将），自动判断区域类型。
      * @param pos 插入位置：'top' | 'bottom' | 'random' | 精确索引
      */
-    add<T extends AreaItemId>(
-        areaId: AreaId,
-        ids: T[],
-        pos?: 'top' | 'bottom' | 'random' | number,
-    ): void;
+    add<T extends AreaItemId>(areaId: AreaId, ids: T[], pos?: 'top' | 'bottom' | 'random' | number): void;
     /** 从区域移除 ID */
     remove<T extends AreaItemId>(areaId: AreaId, ids: T[]): void;
     /** 获取卡牌/武将区域的 ID 列表（均为 string[]） */
@@ -2642,66 +2352,30 @@ declare class AreaManager {
      * 从区域获取 count 个 ID（不移除）。
      * @param pos 'top' | 'bottom' | 'random' | 精确索引
      */
-    getCards(
-        areaId: AreaId,
-        count: number,
-        pos?: 'top' | 'bottom' | 'random' | number,
-        isGeneral?: boolean,
-    ): string[];
+    getCards(areaId: AreaId, count: number, pos?: 'top' | 'bottom' | 'random' | number, isGeneral?: boolean): string[];
     /** 获取单张 ID（卡牌或武将） */
-    getOne(
-        areaId: AreaId,
-        pos?: 'top' | 'bottom' | 'random' | number,
-        isGeneral?: boolean,
-    ): number | string | undefined;
+    getOne(areaId: AreaId, pos?: 'top' | 'bottom' | 'random' | number, isGeneral?: boolean): number | string | undefined;
     /**
      * 按条件筛选卡牌 ID（仅游戏牌，需要 GameCard 实体）。
      */
-    filterCards(
-        areaId: AreaId,
-        count: number,
-        pos: 'top' | 'bottom' | 'random' | number,
-        fn: (card: GameCard) => boolean,
-    ): string[];
+    filterCards(areaId: AreaId, count: number, pos: 'top' | 'bottom' | 'random' | number, fn: (card: GameCard) => boolean): string[];
     /** 按条件筛选单张卡牌 ID */
-    filterOneCard(
-        areaId: AreaId,
-        pos: 'top' | 'bottom' | 'random' | number,
-        fn: (card: GameCard) => boolean,
-    ): string | undefined;
+    filterOneCard(areaId: AreaId, pos: 'top' | 'bottom' | 'random' | number, fn: (card: GameCard) => boolean): string | undefined;
     /**
      * 按条件筛选武将 ID。
      */
-    filterGenerals(
-        areaId: AreaId,
-        count: number,
-        pos: 'top' | 'bottom' | 'random' | number,
-        fn: (general: General) => boolean,
-    ): string[];
+    filterGenerals(areaId: AreaId, count: number, pos: 'top' | 'bottom' | 'random' | number, fn: (general: General) => boolean): string[];
     /** 按条件筛选单张武将 ID */
-    filterOneGeneral(
-        areaId: AreaId,
-        pos: 'top' | 'bottom' | 'random' | number,
-        fn: (general: General) => boolean,
-    ): string | undefined;
+    filterOneGeneral(areaId: AreaId, pos: 'top' | 'bottom' | 'random' | number, fn: (general: General) => boolean): string | undefined;
     /** 将 ID 从 from 区域移动到 to 区域 */
-    move<T extends AreaItemId>(
-        ids: T[],
-        from: AreaId,
-        to: AreaId,
-        pos?: 'top' | 'bottom' | 'random' | number,
-    ): void;
+    move<T extends AreaItemId>(ids: T[], from: AreaId, to: AreaId, pos?: 'top' | 'bottom' | 'random' | number): void;
     /**
      * 洗牌（卡牌或武将）。
      * 不传 targetIds 时全量 Fisher-Yates 洗牌；
      * 传 targetIds 时将这些 ID 随机重插入。
      * @param isGeneral 是否为武将区域
      */
-    shuffle(
-        areaId: string,
-        targetIds?: (number | string)[],
-        isGeneral?: boolean,
-    ): void;
+    shuffle(areaId: string, targetIds?: (number | string)[], isGeneral?: boolean): void;
     /** 洗牌实现（泛型，避免 union 类型冲突） */
     private _shuffleImpl;
     /** 按位置参数排序/截取 */
@@ -2711,9 +2385,9 @@ declare class AreaManager {
     /** 从数组中随机取 count 个元素（不修改原数组） */
     private _randomPick;
 }
-declare;
-{
-}
+declare {};
+
+
 
 /**
  * 通讯管理器 — 向客户端发送消息。
@@ -2728,7 +2402,7 @@ declare;
  *
  * 当前为桩实现，Phase 9（网络层）补充。
  */
-declare class BroadcastManager {
+declare declare class BroadcastManager {
     readonly room: Room;
     constructor(room: Room);
     /**
@@ -2754,18 +2428,16 @@ declare class BroadcastManager {
     /** 播放指向线动画 */
     playDirectLine(from: Player, to: Player | Player[]): void;
     /** 播放动画（脸谱动画、特效等） */
-    playAnimation(
-        type: string,
-        player: Player | Player[],
-        data?: Record<string, any>,
-    ): void;
+    playAnimation(type: string, player: Player | Player[], data?: Record<string, any>): void;
 }
+
+
 
 /**
  * 卡牌管理器 — 负责卡牌实例创建、索引构建与查询。
  * 区域移动见 AreaManager，虚拟牌操作见 VirtualCardManager。
  */
-declare class CardManager {
+declare declare class CardManager {
     readonly room: Room;
     constructor(room: Room);
     /**
@@ -2789,13 +2461,15 @@ declare class CardManager {
     initCardUses(): void;
 }
 
+
+
 /**
  * 选择管理器 — 玩家交互选择的运行时。
  *
  * 管理选择会话的完整生命周期：发起 → 等待 → 响应/超时/取消。
  * 同一玩家同一时间只能有一个进行中的选择，新请求会自动取消旧会话。
  */
-declare class ChooseManager {
+declare declare class ChooseManager {
     readonly room: Room;
     constructor(room: Room);
     /** sessionId → 等待中的选择 */
@@ -2819,11 +2493,7 @@ declare class ChooseManager {
      * @param totalTimeoutSec 总超时（秒），默认取自 room.options.responseTime ?? 15
      * @returns 按顺序排列的选择结果数组
      */
-    multiStep(
-        playerId: string,
-        sessions: SelectSession[],
-        totalTimeoutSec?: number,
-    ): Promise<SelectResult[]>;
+    multiStep(playerId: string, sessions: SelectSession[], totalTimeoutSec?: number): Promise<SelectResult[]>;
     /**
      * 玩家响应选择结果。
      * 将结果写入 ctx.results / ctx.windowResults，通常在网络层收到客户端消息时调用。
@@ -2858,10 +2528,12 @@ declare class ChooseManager {
     private _cleanup;
 }
 
+
+
 /**
  * 事件管理器 — 事件创建、触发调度、历史记录、复活队列。
  */
-declare class EventManager {
+declare declare class EventManager {
     readonly room: Room;
     constructor(room: Room);
     /** 当前正在执行的 Effect（UseSkillEvent 执行 cost/effect 期间设置） */
@@ -2871,98 +2543,73 @@ declare class EventManager {
      * 泛型事件工厂：创建事件 → 注入元数据 → 执行 → 返回。
      * 若存在 _currentEffect 且未显式传入 reason/effect，则自动填充。
      */
-    create<T extends EventProcess>(
-        EventClass: new (room: Room, data: any) => T,
-        eventData: Record<string, any>,
-        opts?: {
-            source?: EventProcess;
-            reason?: string;
-            effect?: Effect;
-        },
-    ): Promise<T>;
+    create<T extends EventProcess>(EventClass: new (room: Room, data: any) => T, eventData: Record<string, any>, opts?: {
+        source?: EventProcess;
+        reason?: string;
+        effect?: Effect;
+    }): Promise<T>;
     /** 创建并执行伤害事件。 */
-    damage(
-        opts: DamageEventData & {
-            source?: EventProcess;
-            reason?: string;
-            effect?: Effect;
-        },
-    ): Promise<DamageEvent>;
+    damage(opts: DamageEventData & {
+        source?: EventProcess;
+        reason?: string;
+        effect?: Effect;
+    }): Promise<DamageEvent>;
     /** 创建并执行失去体力事件。 */
-    loseHp(
-        opts: LoseHpEventData & {
-            source?: EventProcess;
-            reason?: string;
-            effect?: Effect;
-        },
-    ): Promise<LoseHpEvent>;
+    loseHp(opts: LoseHpEventData & {
+        source?: EventProcess;
+        reason?: string;
+        effect?: Effect;
+    }): Promise<LoseHpEvent>;
     /** 创建并执行扣减体力事件。 */
-    reduceHp(
-        opts: ReduceHpEventData & {
-            source?: EventProcess;
-            reason?: string;
-            effect?: Effect;
-        },
-    ): Promise<ReduceHpEvent>;
+    reduceHp(opts: ReduceHpEventData & {
+        source?: EventProcess;
+        reason?: string;
+        effect?: Effect;
+    }): Promise<ReduceHpEvent>;
     /** 创建并执行濒死事件。 */
-    dying(
-        opts: DyingEventData & {
-            source?: EventProcess;
-            reason?: string;
-            effect?: Effect;
-        },
-    ): Promise<DyingEvent>;
+    dying(opts: DyingEventData & {
+        source?: EventProcess;
+        reason?: string;
+        effect?: Effect;
+    }): Promise<DyingEvent>;
     /** 创建并执行死亡事件。killer 由 DyingEvent 传入，未传时 DeathEvent 自行追溯。 */
-    die(
-        opts: DeathEventData & {
-            source?: EventProcess;
-            reason?: string;
-            effect?: Effect;
-        },
-    ): Promise<DeathEvent>;
+    die(opts: DeathEventData & {
+        source?: EventProcess;
+        reason?: string;
+        effect?: Effect;
+    }): Promise<DeathEvent>;
     /** 创建并执行回复体力事件。 */
-    recover(
-        opts: RecoverHpEventData & {
-            source?: EventProcess;
-            reason?: string;
-            effect?: Effect;
-        },
-    ): Promise<RecoverHpEvent>;
+    recover(opts: RecoverHpEventData & {
+        source?: EventProcess;
+        reason?: string;
+        effect?: Effect;
+    }): Promise<RecoverHpEvent>;
     /** 创建并执行体力上限改变事件。 */
-    changeMaxHp(
-        opts: ChangeMaxHpEventData & {
-            source?: EventProcess;
-            reason?: string;
-            effect?: Effect;
-        },
-    ): Promise<ChangeMaxHpEvent>;
+    changeMaxHp(opts: ChangeMaxHpEventData & {
+        source?: EventProcess;
+        reason?: string;
+        effect?: Effect;
+    }): Promise<ChangeMaxHpEvent>;
     /** 创建并执行状态改变事件。自动检测子类型。 */
-    changeState(
-        opts: ChangeStateData & {
-            source?: EventProcess;
-            reason?: string;
-            effect?: Effect;
-        },
-    ): Promise<ChangeStateEvent>;
+    changeState(opts: ChangeStateData & {
+        source?: EventProcess;
+        reason?: string;
+        effect?: Effect;
+    }): Promise<ChangeStateEvent>;
     /** 创建并执行判定事件。 */
-    judge(
-        opts: JudgeEventData & {
-            source?: EventProcess;
-            reason?: string;
-            effect?: Effect;
-        },
-    ): Promise<JudgeEvent>;
+    judge(opts: JudgeEventData & {
+        source?: EventProcess;
+        reason?: string;
+        effect?: Effect;
+    }): Promise<JudgeEvent>;
     /** 创建并执行移动卡牌事件。 */
-    moveCards(
-        datas: MoveCardData[],
-        opts?: {
-            source?: EventProcess;
-            reason?: string;
-            effect?: Effect;
-            getMoveLabel?: (data: MoveCardData) => any;
-            log?: (data: MoveCardData) => any;
-        },
-    ): Promise<MoveCardEvent>;
+    moveCards(datas: MoveCardData[], opts?: {
+        source?: EventProcess;
+        reason?: string;
+        effect?: Effect;
+        getMoveLabel?: (data: MoveCardData) => any;
+        log?: (data: MoveCardData) => any;
+    }): Promise<MoveCardEvent>;
     /** 将事件记录到历史日志（委托到 Room）。 */
     insertHistory(event: EventProcess): void;
     /**
@@ -2971,26 +2618,16 @@ declare class EventManager {
      */
     drainFuhuos(): Promise<void>;
     /** 注册技能/效果的 refreshs 到房间索引 */
-    registerRefreshs<T extends Skill | Effect>(
-        source: T,
-        refreshs: Array<TimingCallback<any, T>> | undefined,
-    ): void;
+    registerRefreshs<T extends Skill | Effect>(source: T, refreshs: Array<TimingCallback<any, T>> | undefined): void;
     /** 注销技能/效果的 refreshs */
-    unregisterRefreshs<T extends Skill | Effect>(
-        source: T,
-        refreshs: Array<TimingCallback<any, T>> | undefined,
-    ): void;
+    unregisterRefreshs<T extends Skill | Effect>(source: T, refreshs: Array<TimingCallback<any, T>> | undefined): void;
     /**
      * 触发一个时机 — 按优先级调度触发效果。
      *
      * @param skipRefreshs 事件流程中已通过 injectRefreshs 注入到 Timing 中，
      *   触发时传 true 避免重复分发。独立调用（如 processCompleted）传默认值 false。
      */
-    trigger(
-        timingName: TimingName,
-        data: EventProcess | Record<string, any>,
-        skipRefreshs?: boolean,
-    ): Promise<void>;
+    trigger(timingName: TimingName, data: EventProcess | Record<string, any>, skipRefreshs?: boolean): Promise<void>;
     /**
      * 创建 UseSkillEvent 并执行。返回 false 表示"时机结束"信号。
      */
@@ -3005,10 +2642,12 @@ declare class EventManager {
     private _priorityLabel;
 }
 
+
+
 /**
  * 武将管理器 — 武将查询、选将分配、变更。
  */
-declare class GeneralManager {
+declare declare class GeneralManager {
     readonly room: Room;
     constructor(room: Room);
     /**
@@ -3056,30 +2695,25 @@ declare class GeneralManager {
      * @param kingdomOrPlayer 势力字符串或 Player 实例
      * @param count 需要数量
      */
-    getChangeGeneral(
-        kingdomOrPlayer: string | Player,
-        count?: number,
-    ): General[];
+    getChangeGeneral(kingdomOrPlayer: string | Player, count?: number): General[];
 }
+
+
 
 /**
  * 玩家管理器 — 负责玩家查询、座次排序、响应顺序，以及玩家生命周期。
  */
-declare class PlayerManager {
+declare declare class PlayerManager {
     readonly room: Room;
     constructor(room: Room);
     /**
      * 创建玩家实体并注册到 Room。游戏中途也可调用（如 3v3 模式）。
      */
-    createPlayer(
-        playerId: string,
-        username: string,
-        opts?: {
-            prechooses?: string[];
-            seattag?: string;
-            controlId?: string;
-        },
-    ): Player;
+    createPlayer(playerId: string, username: string, opts?: {
+        prechooses?: string[];
+        seattag?: string;
+        controlId?: string;
+    }): Player;
     /** 按 ID 获取玩家 */
     get(id: string): Player | undefined;
     /** 批量按 ID 获取玩家 */
@@ -3102,27 +2736,20 @@ declare class PlayerManager {
     sortClockwise(players?: Player[]): Player[];
 }
 
+
+
 /**
  * 技能管理器 — 技能/效果生命周期、效果索引、状态技查询。
  */
-declare class SkillManager {
+declare declare class SkillManager {
     readonly room: Room;
     constructor(room: Room);
     /** 为玩家添加技能并创建所有关联 Effect */
-    addSkill(
-        skillName: string,
-        player: Player | undefined,
-        options?: SkillOptions,
-    ): Skill | undefined;
+    addSkill(skillName: string, player: Player | undefined, options?: SkillOptions): Skill | undefined;
     /** 移除技能及所有关联效果 */
     removeSkill(skill: Skill): Promise<void>;
     /** 创建效果并注册索引 */
-    addEffect(
-        effectName: string,
-        player: Player | undefined,
-        options?: EffectOptions,
-        fromSkill?: Skill,
-    ): Effect | undefined;
+    addEffect(effectName: string, player: Player | undefined, options?: EffectOptions, fromSkill?: Skill): Effect | undefined;
     /** 移除效果：注销索引 → 从列表移除 */
     removeEffect(effect: Effect, removeSkill?: boolean): Promise<void>;
     /** 注册效果到房间索引：触发效果 → triggerEffects，状态效果 → stateEffects。二者互斥。 */
@@ -3135,28 +2762,25 @@ declare class SkillManager {
     getStates<T extends StateEffectType>(type: T, ...args: any[]): any[];
 }
 
+
+
 /**
  * 虚拟牌管理器 — 虚拟牌的生命周期（创建/销毁/切断/清空）。
  */
-declare class VirtualCardManager {
+declare declare class VirtualCardManager {
     readonly room: Room;
     constructor(room: Room);
     /** 按名称+子牌创建虚拟牌 */
-    createByName(
-        name: string,
-        cards: GameCard[],
-        overrides?: Partial<VirtualSourceData>,
-    ): VirtualCard;
+    createByName(name: string, cards: GameCard[], overrides?: Partial<VirtualSourceData>): VirtualCard;
+    /**
+     * 从牌名+子牌构造 VirtualCardData（不创建 VirtualCard 实例）。
+     * 供客户端/技能检测使用——无需持有 VirtualCard 即可构造检测数据。
+     */
+    createData(name: string, cards: GameCard[]): VirtualCardData;
     /** 创建无子牌的虚拟牌 */
-    createByEmpty(
-        name: string,
-        overrides?: Partial<VirtualSourceData>,
-    ): VirtualCard;
+    createByEmpty(name: string, overrides?: Partial<VirtualSourceData>): VirtualCard;
     /** 以单张实体牌为子牌创建虚拟牌 */
-    createFromCard(
-        card: GameCard,
-        overrides?: Partial<VirtualSourceData>,
-    ): VirtualCard;
+    createFromCard(card: GameCard, overrides?: Partial<VirtualSourceData>): VirtualCard;
     /** 从 VirtualCardData 数据恢复虚拟牌 */
     createFromData(data: VirtualCardData): VirtualCard;
     /** 销毁虚拟牌：断子牌链接 → 标记销毁 → 移除 */
@@ -3167,12 +2791,14 @@ declare class VirtualCardManager {
     clear(): void;
 }
 
+
+
 /** refreshs 回调条目（fn 已 bind，this 指向 source） */
 declare interface RefreshEntry {
     source: Skill | Effect;
     fn: (room: Room, data: any) => Promise<any>;
 }
-declare class Room implements Omit<MarkHost, 'room'> {
+declare declare class Room implements Omit<MarkHost, 'room'> {
     private _input;
     /** 玩家输入接口（ChooseManager 通过此接口与客户端通信） */
     get input(): IPlayerInput;
@@ -3185,33 +2811,13 @@ declare class Room implements Omit<MarkHost, 'room'> {
     readonly marksMap: MapSchema<MarkState>;
     /** 标记 key→内容集合 索引 */
     readonly _markKeyMap: Map<string, Set<string>>;
-    setMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        value: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
+    setMark: <T>(this: MarkHost, rawKey: string, value: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
     getMark: <T>(this: MarkHost, rawKey: string) => T | undefined;
     removeMark: (this: MarkHost, rawKey: string) => void;
     hasMark: (this: MarkHost, rawKey: string) => boolean;
-    countMark: (
-        this: MarkHost,
-        rawKey: string,
-        value: number,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
-    pushMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        item: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
-    unpushMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        item: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
+    countMark: (this: MarkHost, rawKey: string, value: number, options?: import("../mark/MarkTypes").MarkOptions) => void;
+    pushMark: <T>(this: MarkHost, rawKey: string, item: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
+    unpushMark: <T>(this: MarkHost, rawKey: string, item: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
     clearMark: (this: MarkHost, tag?: string) => void;
     /** 区域操作 */
     area: AreaManager;
@@ -3298,16 +2904,10 @@ declare class Room implements Omit<MarkHost, 'room'> {
     /**
      * 触发效果索引：TimingName → PriorityType → { global, byPlayer }
      */
-    triggerEffects: Map<
-        TimingName,
-        Map<
-            PriorityType,
-            {
-                global: Effect[];
-                byPlayer: Map<string, Effect[]>;
-            }
-        >
-    >;
+    triggerEffects: Map<TimingName, Map<PriorityType, {
+        global: Effect[];
+        byPlayer: Map<string, Effect[]>;
+    }>>;
     /**
      * 状态效果索引：StateEffectType → 拥有该状态回调的效果列表
      */
@@ -3315,13 +2915,10 @@ declare class Room implements Omit<MarkHost, 'room'> {
     /**
      * refreshs 回调索引：TimingName → before/after 回调列表
      */
-    refreshsByTiming: Map<
-        TimingName,
-        {
-            before: Array<RefreshEntry>;
-            after: Array<RefreshEntry>;
-        }
-    >;
+    refreshsByTiming: Map<TimingName, {
+        before: Array<RefreshEntry>;
+        after: Array<RefreshEntry>;
+    }>;
     /** 存活玩家列表 */
     get alives(): Player[];
     set turnCount(value: number);
@@ -3335,39 +2932,14 @@ declare class Room implements Omit<MarkHost, 'room'> {
      * @param showProgressBar 是否让所有玩家显示等待进度条
      */
     delay(seconds: number, showProgressBar?: boolean): Promise<void>;
-    damage(
-        player: Player | undefined,
-        target: Player,
-        damageType?: DamageType,
-        number?: number,
-        channel?: VirtualCard | string,
-        isChain?: boolean,
-    ): Promise<import('../event/DamageEvent').DamageEvent>;
-    loseHp(
-        player: Player,
-        number?: number,
-    ): Promise<import('../event/DamageEvent').LoseHpEvent>;
-    reduceHp(
-        player: Player,
-        number?: number,
-    ): Promise<import('../event/DamageEvent').ReduceHpEvent>;
-    recover(
-        player: Player,
-        number?: number,
-    ): Promise<import('../event/HpEvent').RecoverHpEvent>;
-    recoverTo(
-        player: Player,
-        targetHp: number,
-    ): Promise<import('../event/HpEvent').RecoverHpEvent>;
-    changeMaxHp(
-        player: Player,
-        number?: number,
-    ): Promise<import('../event/HpEvent').ChangeMaxHpEvent>;
-    dying(player: Player): Promise<import('../event/DyingEvent').DyingEvent>;
-    die(
-        player: Player,
-        killer?: Player,
-    ): Promise<import('../event/DyingEvent').DeathEvent>;
+    damage(player: Player | undefined, target: Player, damageType?: DamageType, number?: number, channel?: VirtualCard | string, isChain?: boolean): Promise<import("../event/DamageEvent").DamageEvent>;
+    loseHp(player: Player, number?: number): Promise<import("../event/DamageEvent").LoseHpEvent>;
+    reduceHp(player: Player, number?: number): Promise<import("../event/DamageEvent").ReduceHpEvent>;
+    recover(player: Player, number?: number): Promise<import("../event/HpEvent").RecoverHpEvent>;
+    recoverTo(player: Player, targetHp: number): Promise<import("../event/HpEvent").RecoverHpEvent>;
+    changeMaxHp(player: Player, number?: number): Promise<import("../event/HpEvent").ChangeMaxHpEvent>;
+    dying(player: Player): Promise<import("../event/DyingEvent").DyingEvent>;
+    die(player: Player, killer?: Player): Promise<import("../event/DyingEvent").DeathEvent>;
     /** 检测 loseHp 是否可执行：体力值 ≥ number 且存活 */
     canLoseHp(player: Player, number?: number): boolean;
     /** 检测 recover 是否可执行：计算实际回复量（不超过已损失体力值）> 0 */
@@ -3380,191 +2952,91 @@ declare class Room implements Omit<MarkHost, 'room'> {
      * 签名 1（直接触发）：传入 card + targets，创建 UseCardEvent 并执行。
      * 签名 2（发起询问）：传入 cardNames/skills，通过 ChooseManager 选牌→选目标→回调签名 1。
      */
-    useCard(
-        player: Player,
-        cardOrOpts:
-            | VirtualCard
-            | {
-                  cardNames?: string[];
-              },
-        targets?: Player[],
-    ): Promise<UseCardEvent | null>;
+    useCard(player: Player, cardOrOpts: VirtualCard | {
+        cardNames?: string[];
+    }, targets?: Player[]): Promise<UseCardEvent | null>;
     /**
      * 使用牌合法性检测（三关）。
      * 1. Prohibit_UseCard StateEffect
      * 2. 使用次数（杀在出牌阶段空闲时间点）
      * 3. 合法目标数 ≥ 额定下限 ≠ 0
      */
-    canUseCard(
-        player: Player,
-        cardNameOrVC: string | VirtualCard,
-        target?: Player,
-    ): boolean;
+    canUseCard(player: Player, cardNameOrVCData: string | VirtualCardData, target?: Player): boolean;
     /** 移动卡牌。cards 第一参数，toArea 第二参数 */
-    moveCards(
-        cards: GameCard[],
-        toArea: AreaId,
-        opts?: MoveCardOpts,
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
+    moveCards(cards: GameCard[], toArea: AreaId, opts?: MoveCardOpts): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
     /** 移动卡牌（完整数据数组）。供复杂移动场景使用 */
-    moveCardsRaw(
-        datas: MoveCardData[],
-        opts?: {
-            getMoveLabel?: (data: MoveCardData) => any;
-            log?: (data: MoveCardData) => any;
-        },
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
+    moveCardsRaw(datas: MoveCardData[], opts?: {
+        getMoveLabel?: (data: MoveCardData) => any;
+        log?: (data: MoveCardData) => any;
+    }): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
     /**
      * 从牌堆获取 N 张牌。不足时自动洗牌（弃牌堆→牌堆），仍不够则平局。
      */
     getNCards(count: number, pos?: 'top' | 'bottom'): Promise<GameCard[]>;
     /** 置于牌：将牌直接移动到目标区域（委托到 moveCards，reason 默认 'put'） */
-    putTo(
-        cards: GameCard[],
-        toArea: AreaId,
-        opts?: MoveCardOpts,
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
+    putTo(cards: GameCard[], toArea: AreaId, opts?: MoveCardOpts): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
     /**
      * 洗牌：将弃牌堆洗混后通过 MoveCardEvent 置入牌堆底部（原牌堆顺序不变）。
      */
     shuffleDiscardToDraw(): Promise<void>;
     /** 摸牌：从牌堆摸 count 张到 player 的手牌。原因 draw */
-    draw(
-        player: Player,
-        count?: number,
-        pos?: 'top' | 'bottom',
-        opts?: MoveCardOpts,
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
+    draw(player: Player, count?: number, pos?: 'top' | 'bottom', opts?: MoveCardOpts): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
     /** 弃牌：将牌移动到弃牌堆。原因 discard */
-    discard(
-        player: Player,
-        cards: GameCard[],
-        opts?: MoveCardOpts,
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
+    discard(player: Player, cards: GameCard[], opts?: MoveCardOpts): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
     /** 获得牌：将牌移动到操作者手牌区。原因 obtain */
-    obtain(
-        player: Player,
-        cards: GameCard[],
-        opts?: MoveCardOpts,
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
+    obtain(player: Player, cards: GameCard[], opts?: MoveCardOpts): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
     /** 重铸：①将牌置入弃牌堆 → ②摸等量牌。drawOneAlways 为 true 时固定摸 1 张 */
-    recast(
-        player: Player,
-        cards: GameCard[],
-        drawOneAlways?: boolean,
-        opts?: MoveCardOpts,
-    ): Promise<void>;
+    recast(player: Player, cards: GameCard[], drawOneAlways?: boolean, opts?: MoveCardOpts): Promise<void>;
     /** 交给牌：将 fromPlayer 的牌移动到 toPlayer 的手牌区。原因 give */
-    give(
-        fromPlayer: Player,
-        toPlayer: Player,
-        cards: GameCard[],
-        opts?: MoveCardOpts,
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
+    give(fromPlayer: Player, toPlayer: Player, cards: GameCard[], opts?: MoveCardOpts): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
     /**
      * 交换牌：将 cards1 和 cards2 同时置入处理区，再分别移动到对方区域。
      * 原因 swap.put / swap
      */
-    swap(
-        cards1: GameCard[],
-        toArea1: AreaId,
-        cards2: GameCard[],
-        toArea2: AreaId,
-        opts?: MoveCardOpts,
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
+    swap(cards1: GameCard[], toArea1: AreaId, cards2: GameCard[], toArea2: AreaId, opts?: MoveCardOpts): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
     /** 展示牌：通知客户端显示卡牌（无实际区域移动）。TODO Phase 9: 可见性 */
     showCards(player: Player | undefined, cards: GameCard[]): Promise<void>;
     /** 亮出牌：牌堆里的牌 → 处理区(put)；其他牌 → 等同于展示 */
-    flashCards(
-        player: Player | undefined,
-        cards: GameCard[],
-        opts?: MoveCardOpts,
-    ): Promise<void>;
+    flashCards(player: Player | undefined, cards: GameCard[], opts?: MoveCardOpts): Promise<void>;
     /** 明置武将 */
-    open(
-        player: Player,
-        generals: General[],
-    ): Promise<import('../event/ChangeStateEvent').ChangeStateEvent>;
+    open(player: Player, generals: General[]): Promise<import("../event/ChangeStateEvent").ChangeStateEvent>;
     /** 暗置武将 */
-    close(
-        player: Player,
-        generals: General[],
-    ): Promise<import('../event/ChangeStateEvent').ChangeStateEvent>;
+    close(player: Player, generals: General[]): Promise<import("../event/ChangeStateEvent").ChangeStateEvent>;
     /**
      * 横置/重置武将。
      * @param damageType 横置属性（toState=false 时用于解锁动画），默认 None
      */
-    chain(
-        player: Player,
-        toState?: boolean,
-        damageType?: DamageType,
-    ): Promise<import('../event/ChangeStateEvent').ChangeStateEvent>;
+    chain(player: Player, toState?: boolean, damageType?: DamageType): Promise<import("../event/ChangeStateEvent").ChangeStateEvent>;
     /** 翻面 */
-    skip(
-        player: Player,
-        toState?: boolean,
-    ): Promise<import('../event/ChangeStateEvent').ChangeStateEvent>;
+    skip(player: Player, toState?: boolean): Promise<import("../event/ChangeStateEvent").ChangeStateEvent>;
     /** 变更武将（替换为主将或副将） */
-    change(
-        player: Player,
-        general: General | 'head' | 'deputy',
-        toGeneral: General,
-    ): Promise<import('../event/ChangeStateEvent').ChangeStateEvent>;
+    change(player: Player, general: General | 'head' | 'deputy', toGeneral: General): Promise<import("../event/ChangeStateEvent").ChangeStateEvent>;
     /** 移除武将 */
-    remove(
-        player: Player,
-        general: General,
-    ): Promise<import('../event/ChangeStateEvent').ChangeStateEvent>;
+    remove(player: Player, general: General): Promise<import("../event/ChangeStateEvent").ChangeStateEvent>;
     /** 判定：对玩家执行一次判定流程 */
-    judge(
-        player: Player,
-        isSuccess?: (result: VirtualCardData) => boolean,
-    ): Promise<import('../event/JudgeEvent').JudgeEvent>;
+    judge(player: Player, isSuccess?: (result: VirtualCardData) => boolean): Promise<import("../event/JudgeEvent").JudgeEvent>;
     /** 移存牌：将牌移动到后备区。原因 remove */
-    removeToReserve(
-        cards: GameCard[],
-        opts?: MoveCardOpts,
-    ): Promise<import('../event/MoveCardEvent').MoveCardEvent>;
+    removeToReserve(cards: GameCard[], opts?: MoveCardOpts): Promise<import("../event/MoveCardEvent").MoveCardEvent>;
     /**
      * 请求玩家选择卡牌。
      * @returns 选中的卡牌数组，取消/超时返回空数组
      */
-    chooseCard(
-        player: Player,
-        cards: GameCard[],
-        count?: SelectCount,
-        opts?: Partial<SelectSession>,
-    ): Promise<GameCard[]>;
+    chooseCard(player: Player, cards: GameCard[], count?: SelectCount, opts?: Partial<SelectSession>): Promise<GameCard[]>;
     /**
      * 请求玩家选择目标玩家。
      * @returns 选中的玩家数组，取消/超时返回空数组
      */
-    choosePlayer(
-        player: Player,
-        targets: Player[],
-        count?: SelectCount,
-        opts?: Partial<SelectSession>,
-    ): Promise<Player[]>;
+    choosePlayer(player: Player, targets: Player[], count?: SelectCount, opts?: Partial<SelectSession>): Promise<Player[]>;
     /**
      * 请求玩家选择武将。
      * @returns 选中的武将数组，取消/超时返回空数组
      */
-    chooseGeneral(
-        player: Player,
-        generals: General[],
-        count?: SelectCount,
-        opts?: Partial<SelectSession>,
-    ): Promise<General[]>;
+    chooseGeneral(player: Player, generals: General[], count?: SelectCount, opts?: Partial<SelectSession>): Promise<General[]>;
     /**
      * 请求玩家从选项列表中选择。
      * @returns 选中的选项 key 数组，取消/超时返回空数组
      */
-    chooseOption(
-        player: Player,
-        options: string[],
-        count?: SelectCount,
-        opts?: Partial<SelectSession>,
-    ): Promise<string[]>;
+    chooseOption(player: Player, options: string[], count?: SelectCount, opts?: Partial<SelectSession>): Promise<string[]>;
     /** 通用的单项选择实现 */
     private _choose;
     /** 创建 SelectorContext，自动填充 eventData/skillName */
@@ -3581,15 +3053,13 @@ declare class Room implements Omit<MarkHost, 'room'> {
      * 初始化游戏：创建区域、玩家、卡牌、武将。
      * TODO Phase 6: 加载卡牌/武将数据
      */
-    initStart(
-        playerDatas?: {
-            playerId: string;
-            username: string;
-            prechooses?: string[];
-            seattag?: string;
-            controlId?: string;
-        }[],
-    ): Promise<void>;
+    initStart(playerDatas?: {
+        playerId: string;
+        username: string;
+        prechooses?: string[];
+        seattag?: string;
+        controlId?: string;
+    }[]): Promise<void>;
     /**
      * 开始游戏：获取模式 → beforeStart → 主循环。
      */
@@ -3610,21 +3080,13 @@ declare class Room implements Omit<MarkHost, 'room'> {
     /** 记录事件到历史 */
     insertHistory(event: EventProcess): void;
     /** 查询最后一个指定类型的历史事件 */
-    getLastOneHistory<T extends EventProcess>(
-        type: string,
-        filter?: (event: T) => boolean,
-    ): T | undefined;
-    constructor(
-        roomId: string,
-        gameId: string,
-        options: RoomOption,
-        state: RoomState,
-        input: IPlayerInput,
-        logger: ILogger,
-    );
+    getLastOneHistory<T extends EventProcess>(type: string, filter?: (event: T) => boolean): T | undefined;
+    constructor(roomId: string, gameId: string, options: RoomOption, state: RoomState, input: IPlayerInput, logger: ILogger);
 }
 
-declare class CardState extends Schema {
+
+
+declare declare class CardState extends Schema {
     id: string;
     area: string;
     put: boolean;
@@ -3633,7 +3095,9 @@ declare class CardState extends Schema {
     markStates: MapSchema<MarkState>;
 }
 
-declare class EffectState extends Schema {
+
+
+declare declare class EffectState extends Schema {
     id: number;
     skillId: number;
     playerId: string;
@@ -3643,7 +3107,9 @@ declare class EffectState extends Schema {
     audios: ArraySchema<string>;
 }
 
-declare class GeneralState extends Schema {
+
+
+declare declare class GeneralState extends Schema {
     id: string;
     area: string;
     put: boolean;
@@ -3652,7 +3118,8 @@ declare class GeneralState extends Schema {
     markStates: MapSchema<MarkState>;
 }
 
-declare class MarkState extends Schema {
+
+declare declare class MarkState extends Schema {
     key: string;
     value: string;
     source: string;
@@ -3664,7 +3131,9 @@ declare class MarkState extends Schema {
     refMark: string;
 }
 
-declare class PlayerState extends Schema {
+
+
+declare declare class PlayerState extends Schema {
     /** 唯一玩家ID */
     playerId: string;
     /** 玩家名字 */
@@ -3707,7 +3176,9 @@ declare class PlayerState extends Schema {
     markStates: MapSchema<MarkState>;
 }
 
-declare class RoomState extends Schema {
+
+
+declare declare class RoomState extends Schema {
     /** 房间ID */
     roomId: string;
     /** 游戏ID */
@@ -3736,7 +3207,9 @@ declare class RoomState extends Schema {
     createGeneralArea(): ArraySchema<string>;
 }
 
-declare class SkillState extends Schema {
+
+
+declare declare class SkillState extends Schema {
     id: number;
     playerId: string;
     /** 标记状态 */
@@ -3749,6 +3222,8 @@ declare class SkillState extends Schema {
     preshow: boolean;
 }
 
+
+
 /**
  * 选择数量约束
  * @type number 只能选择这个数量
@@ -3756,29 +3231,18 @@ declare class SkillState extends Schema {
  * 其中[0]若小于0则会改为0，[1]若小于0则会改为其能选择的最大数量
  */
 declare type SelectCount = number | [number, number];
-declare enum SelectorType {
-    Card = 'Card',
-    Player = 'Player',
-    General = 'General',
-    Option = 'Option',
-    Command = 'Command',
-    Confirm = 'Confirm',
+declare declare enum SelectorType {
+    Card = "Card",
+    Player = "Player",
+    General = "General",
+    Option = "Option",
+    Command = "Command",
+    Confirm = "Confirm"
 }
 declare interface SelectorLifecycle<T = any> {
-    onInit?: (
-        ctx: SelectorContext,
-        validCandidates: T[],
-    ) => Partial<SelectorConfig>;
-    onSelect?: (
-        item: T,
-        selected: T[],
-        ctx: SelectorContext,
-    ) => Partial<SelectorConfig>;
-    onDeselect?: (
-        item: T,
-        selected: T[],
-        ctx: SelectorContext,
-    ) => Partial<SelectorConfig>;
+    onInit?: (ctx: SelectorContext, validCandidates: T[]) => Partial<SelectorConfig>;
+    onSelect?: (item: T, selected: T[], ctx: SelectorContext) => Partial<SelectorConfig>;
+    onDeselect?: (item: T, selected: T[], ctx: SelectorContext) => Partial<SelectorConfig>;
     onComplete?: (selected: T[], ctx: SelectorContext) => boolean;
 }
 declare interface SelectorConfig<T = any> {
@@ -3799,11 +3263,7 @@ declare type StepConfig = Partial<Omit<SelectorConfig, 'name'>> & {
 declare interface SelectorWindow {
     type: string;
     options?: any;
-    filter?: (
-        item: string,
-        selected: string[],
-        ctx: SelectorContext,
-    ) => boolean;
+    filter?: (item: string, selected: string[], ctx: SelectorContext) => boolean;
     isAllShow?: boolean;
 }
 declare interface SelectorContext {
@@ -3870,7 +3330,7 @@ declare interface SelectResult {
     /** 选中的技能名 */
     skillName?: string;
 }
-declare enum PlayPhaseResult {
+declare declare enum PlayPhaseResult {
     None = 0,
     /** 使用牌 */
     UseCard = 1,
@@ -3882,8 +3342,10 @@ declare enum PlayPhaseResult {
     OpenHead = 4,
     OpenDeputy = 5,
     /** 结束 */
-    End = 6,
+    End = 6
 }
+
+
 
 declare class RESGS {
     private static instance;
@@ -3953,29 +3415,23 @@ declare class RESGS {
             [key: string]: string;
         };
     };
-    loadTranslation(
-        ts?: {
-            [key: string]: string;
-        },
-        lang?: string,
-    ): void;
+    loadTranslation(ts?: {
+        [key: string]: string;
+    }, lang?: string): void;
     getTranslation(source?: string, lang?: string): string;
-    loadConcept(
-        ts?: {
-            [key: string]: string;
-        },
-        lang?: string,
-    ): void;
+    loadConcept(ts?: {
+        [key: string]: string;
+    }, lang?: string): void;
     getConcept(source: string, lang?: string): string;
 }
-declare const sgs: RESGS;
+declare declare const sgs: RESGS;
 declare global {
     var sgs: RESGS;
     var lodash: typeof _;
 }
-declare;
-{
-}
+declare {};
+
+
 
 /** EffectBuilder 实例接口 */
 declare interface EffectBuilder<T extends TimingTrigger = never> {
@@ -3985,93 +3441,35 @@ declare interface EffectBuilder<T extends TimingTrigger = never> {
     tag: SkillTag[];
     priority: PriorityType;
     condition(fn: (this: Effect, room: Room, ctx?: EffectContext) => any): this;
-    times(
-        n:
-            | number
-            | ((this: Effect, room: Room, player: Player, data: any) => number),
-    ): this;
+    times(n: number | ((this: Effect, room: Room, player: Player, data: any) => number)): this;
     on<U extends TimingTrigger>(trigger: U): EffectBuilder<U>;
-    can_trigger(
-        fn: (
-            this: Effect,
-            room: Room,
-            player: Player,
-            data: TimingData<T>,
-        ) => any,
-    ): this;
-    context(
-        fn: (
-            this: Effect,
-            room: Room,
-            player: Player,
-            data: TimingData<T>,
-        ) => EffectContext,
-    ): this;
-    choose(
-        fn: (
-            this: Effect,
-            room: Room,
-            player: Player,
-            data: TimingData<T>,
-            ctx: EffectContext,
-        ) => any,
-    ): this;
-    cost(
-        fn: (
-            this: Effect,
-            room: Room,
-            player: Player,
-            data: TimingData<T>,
-            ctx: EffectContext,
-        ) => any,
-    ): this;
-    effect(
-        fn: (
-            this: Effect,
-            room: Room,
-            player: Player,
-            data: TimingData<T>,
-            ctx: EffectContext,
-        ) => any,
-    ): this;
+    can_trigger(fn: (this: Effect, room: Room, player: Player, data: TimingData<T>) => any): this;
+    context(fn: (this: Effect, room: Room, player: Player, data: TimingData<T>) => EffectContext): this;
+    choose(fn: (this: Effect, room: Room, player: Player, data: TimingData<T>, ctx: EffectContext) => any): this;
+    cost(fn: (this: Effect, room: Room, player: Player, data: TimingData<T>, ctx: EffectContext) => any): this;
+    effect(fn: (this: Effect, room: Room, player: Player, data: TimingData<T>, ctx: EffectContext) => any): this;
     select(name: string, ...configs: SelectorConfig[]): this;
     state<U extends StateEffectType>(type: U, fn: StateCallbackMap[U]): this;
     refresh<U extends TimingTrigger>(data: TimingCallback<U, Effect>): this;
     settings(config: Partial<EffectSettings>): this;
     register(skillName: string): EffectData;
-    distanceCorrect(
-        fn: StateCallbackMap[StateEffectType.Distance_Correct],
-    ): this;
+    distanceCorrect(fn: StateCallbackMap[StateEffectType.Distance_Correct]): this;
     distanceFixed(fn: StateCallbackMap[StateEffectType.Distance_Fixed]): this;
     notCalcSeat(fn: StateCallbackMap[StateEffectType.NotCalcSeat]): this;
-    notCalcDistance(
-        fn: StateCallbackMap[StateEffectType.NotCalcDistance],
-    ): this;
+    notCalcDistance(fn: StateCallbackMap[StateEffectType.NotCalcDistance]): this;
     maxHandInitial(fn: StateCallbackMap[StateEffectType.MaxHand_Initial]): this;
     maxHandCorrect(fn: StateCallbackMap[StateEffectType.MaxHand_Correct]): this;
     maxHandFixed(fn: StateCallbackMap[StateEffectType.MaxHand_Fixed]): this;
     maxHandExclude(fn: StateCallbackMap[StateEffectType.MaxHand_Exclude]): this;
     prohibitOpen(fn: StateCallbackMap[StateEffectType.Prohibit_Open]): this;
     prohibitClose(fn: StateCallbackMap[StateEffectType.Prohibit_Close]): this;
-    prohibitDiscards(
-        fn: StateCallbackMap[StateEffectType.Prohibit_Discards],
-    ): this;
-    prohibitObtainCards(
-        fn: StateCallbackMap[StateEffectType.Prohibit_ObtainCards],
-    ): this;
-    prohibitRecoverHp(
-        fn: StateCallbackMap[StateEffectType.Prohibit_RecoverHp],
-    ): this;
+    prohibitDiscards(fn: StateCallbackMap[StateEffectType.Prohibit_Discards]): this;
+    prohibitObtainCards(fn: StateCallbackMap[StateEffectType.Prohibit_ObtainCards]): this;
+    prohibitRecoverHp(fn: StateCallbackMap[StateEffectType.Prohibit_RecoverHp]): this;
     prohibitLoseHp(fn: StateCallbackMap[StateEffectType.Prohibit_LoseHp]): this;
-    prohibitUseCard(
-        fn: StateCallbackMap[StateEffectType.Prohibit_UseCard],
-    ): this;
-    prohibitDropCard(
-        fn: StateCallbackMap[StateEffectType.Prohibit_DropCard],
-    ): this;
-    prohibitPindian(
-        fn: StateCallbackMap[StateEffectType.Prohibit_Pindian],
-    ): this;
+    prohibitUseCard(fn: StateCallbackMap[StateEffectType.Prohibit_UseCard]): this;
+    prohibitDropCard(fn: StateCallbackMap[StateEffectType.Prohibit_DropCard]): this;
+    prohibitPindian(fn: StateCallbackMap[StateEffectType.Prohibit_Pindian]): this;
     rangeInitial(fn: StateCallbackMap[StateEffectType.Range_Initial]): this;
     rangeCorrect(fn: StateCallbackMap[StateEffectType.Range_Correct]): this;
     rangeFixed(fn: StateCallbackMap[StateEffectType.Range_Fixed]): this;
@@ -4079,48 +3477,26 @@ declare interface EffectBuilder<T extends TimingTrigger = never> {
     rangeWithout(fn: StateCallbackMap[StateEffectType.Range_Without]): this;
     regardCardData(fn: StateCallbackMap[StateEffectType.Regard_CardData]): this;
     regardOnlyBig(fn: StateCallbackMap[StateEffectType.Regard_OnlyBig]): this;
-    regardOnlyBigFixed(
-        fn: StateCallbackMap[StateEffectType.Regard_OnlyBig_Fixed],
-    ): this;
+    regardOnlyBigFixed(fn: StateCallbackMap[StateEffectType.Regard_OnlyBig_Fixed]): this;
     regardKindom(fn: StateCallbackMap[StateEffectType.Regard_Kingdom]): this;
-    targetModPassTimeCheck(
-        fn: StateCallbackMap[StateEffectType.TargetMod_PassTimeCheck],
-    ): this;
-    targetModPassCountingTime(
-        fn: StateCallbackMap[StateEffectType.TargetMod_PassCountingTime],
-    ): this;
-    targetModCorrectTime(
-        fn: StateCallbackMap[StateEffectType.TargetMod_CorrectTime],
-    ): this;
-    targetModPassDistanceCheck(
-        fn: StateCallbackMap[StateEffectType.TargetMod_PassDistanceCheck],
-    ): this;
-    targetModCardLimitChooseCount(
-        fn: StateCallbackMap[StateEffectType.TargetMod_CardLimit_ChooseCount],
-    ): this;
-    targetModCardLimitDistance(
-        fn: StateCallbackMap[StateEffectType.TargetMod_CardLimit_Distance],
-    ): this;
-    skillInvalidity(
-        fn: StateCallbackMap[StateEffectType.Skill_Invalidity],
-    ): this;
+    targetModPassTimeCheck(fn: StateCallbackMap[StateEffectType.TargetMod_PassTimeCheck]): this;
+    targetModPassCountingTime(fn: StateCallbackMap[StateEffectType.TargetMod_PassCountingTime]): this;
+    targetModCorrectTime(fn: StateCallbackMap[StateEffectType.TargetMod_CorrectTime]): this;
+    targetModPassDistanceCheck(fn: StateCallbackMap[StateEffectType.TargetMod_PassDistanceCheck]): this;
+    targetModCardLimitChooseCount(fn: StateCallbackMap[StateEffectType.TargetMod_CardLimit_ChooseCount]): this;
+    targetModCardLimitDistance(fn: StateCallbackMap[StateEffectType.TargetMod_CardLimit_Distance]): this;
+    skillInvalidity(fn: StateCallbackMap[StateEffectType.Skill_Invalidity]): this;
     likeHandToUse(fn: StateCallbackMap[StateEffectType.LikeHandToUse]): this;
     likeHandToDrop(fn: StateCallbackMap[StateEffectType.LikeHandToDrop]): this;
-    ignoreHeadAndDeputy(
-        fn: StateCallbackMap[StateEffectType.IgnoreHeadAndDeputy],
-    ): this;
+    ignoreHeadAndDeputy(fn: StateCallbackMap[StateEffectType.IgnoreHeadAndDeputy]): this;
     fieldCardEyes(fn: StateCallbackMap[StateEffectType.FieldCardEyes]): this;
-    regardArrayCondition(
-        fn: StateCallbackMap[StateEffectType.Regard_ArrayCondition],
-    ): this;
-    regardPindianResult(
-        fn: StateCallbackMap[StateEffectType.Regard_PindianResult],
-    ): this;
+    regardArrayCondition(fn: StateCallbackMap[StateEffectType.Regard_ArrayCondition]): this;
+    regardPindianResult(fn: StateCallbackMap[StateEffectType.Regard_PindianResult]): this;
 }
 /** EffectBuilder 工厂——无需 new */
-declare function EffectBuilder<T extends TimingTrigger = never>(
-    name: string,
-): EffectBuilder<T>;
+declare declare function EffectBuilder<T extends TimingTrigger = never>(name: string): EffectBuilder<T>;
+
+
 
 /** SkillBuilder 实例接口 */
 declare interface SkillBuilder {
@@ -4139,9 +3515,11 @@ declare interface SkillBuilder {
     register(): SkillData;
 }
 /** SkillBuilder 工厂——无需 new */
-declare function SkillBuilder(name: string): SkillBuilder;
+declare declare function SkillBuilder(name: string): SkillBuilder;
 
-declare class Effect implements MarkHost {
+
+
+declare declare class Effect implements MarkHost {
     readonly id: number;
     readonly room: Room;
     readonly skill?: Skill;
@@ -4152,42 +3530,14 @@ declare class Effect implements MarkHost {
     readonly _markKeyMap: Map<string, Set<string>>;
     readonly options: EffectOptions;
     readonly audios: string[];
-    constructor(
-        id: number,
-        player: Player | undefined,
-        data: EffectData,
-        room: Room,
-        state: EffectState,
-        options: EffectOptions,
-        fromSkill?: Skill,
-    );
-    setMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        value: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
+    constructor(id: number, player: Player | undefined, data: EffectData, room: Room, state: EffectState, options: EffectOptions, fromSkill?: Skill);
+    setMark: <T>(this: MarkHost, rawKey: string, value: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
     getMark: <T>(this: MarkHost, rawKey: string) => T | undefined;
     removeMark: (this: MarkHost, rawKey: string) => void;
     hasMark: (this: MarkHost, rawKey: string) => boolean;
-    countMark: (
-        this: MarkHost,
-        rawKey: string,
-        value: number,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
-    pushMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        item: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
-    unpushMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        item: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
+    countMark: (this: MarkHost, rawKey: string, value: number, options?: import("../mark/MarkTypes").MarkOptions) => void;
+    pushMark: <T>(this: MarkHost, rawKey: string, item: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
+    unpushMark: <T>(this: MarkHost, rawKey: string, item: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
     clearMark: (this: MarkHost, tag?: string) => void;
     set player(value: Player | undefined);
     get player(): Player | undefined;
@@ -4228,43 +3578,26 @@ declare class Effect implements MarkHost {
     /**
      * 构建技能上下文。优先调用 EffectData.context 回调，无回调时返回最小上下文。
      */
-    buildContext(
-        room: Room,
-        player: Player,
-        data: TimingData<any> | Record<string, any>,
-    ): EffectContext;
+    buildContext(room: Room, player: Player, data: TimingData<any> | Record<string, any>): EffectContext;
     /** 时机条件检测 */
     canTrigger(room: Room, player: Player, data: TimingData<any>): any;
     /** 是否有 choose 回调 */
     get hasChoose(): boolean;
     /** 执行发动前选择 */
-    execChoose(
-        room: Room,
-        player: Player,
-        data: any,
-        ctx: EffectContext,
-    ): Promise<any>;
+    execChoose(room: Room, player: Player, data: any, ctx: EffectContext): Promise<any>;
     /** 是否有 cost 回调 */
     get hasCost(): boolean;
     /** 执行消耗 */
-    execCost(
-        room: Room,
-        player: Player,
-        data: any,
-        ctx: EffectContext,
-    ): Promise<any>;
+    execCost(room: Room, player: Player, data: any, ctx: EffectContext): Promise<any>;
     /** 是否有 effect 回调 */
     get hasEffect(): boolean;
     /** 执行效果 */
-    execEffect(
-        room: Room,
-        player: Player,
-        data: any,
-        ctx: EffectContext,
-    ): Promise<void>;
+    execEffect(room: Room, player: Player, data: any, ctx: EffectContext): Promise<void>;
 }
 
-declare class Skill implements MarkHost {
+
+
+declare declare class Skill implements MarkHost {
     readonly id: number;
     readonly room: Room;
     readonly _jsonData: SkillData;
@@ -4279,41 +3612,14 @@ declare class Skill implements MarkHost {
     private _sourceGeneral?;
     private _sourceEquip?;
     private _sourceEffect?;
-    constructor(
-        id: number,
-        player: Player | undefined,
-        data: SkillData,
-        room: Room,
-        state: SkillState,
-        options: SkillOptions,
-    );
-    setMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        value: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
+    constructor(id: number, player: Player | undefined, data: SkillData, room: Room, state: SkillState, options: SkillOptions);
+    setMark: <T>(this: MarkHost, rawKey: string, value: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
     getMark: <T>(this: MarkHost, rawKey: string) => T | undefined;
     removeMark: (this: MarkHost, rawKey: string) => void;
     hasMark: (this: MarkHost, rawKey: string) => boolean;
-    countMark: (
-        this: MarkHost,
-        rawKey: string,
-        value: number,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
-    pushMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        item: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
-    unpushMark: <T>(
-        this: MarkHost,
-        rawKey: string,
-        item: T,
-        options?: import('../mark/MarkTypes').MarkOptions,
-    ) => void;
+    countMark: (this: MarkHost, rawKey: string, value: number, options?: import("../mark/MarkTypes").MarkOptions) => void;
+    pushMark: <T>(this: MarkHost, rawKey: string, item: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
+    unpushMark: <T>(this: MarkHost, rawKey: string, item: T, options?: import("../mark/MarkTypes").MarkOptions) => void;
     clearMark: (this: MarkHost, tag?: string) => void;
     set player(value: Player | undefined);
     get player(): Player | undefined;
@@ -4341,6 +3647,8 @@ declare class Skill implements MarkHost {
     getGlobalAvatarAsset(): void;
 }
 
+
+
 declare type SkillId = number;
 declare type EffectId = number;
 declare type TimingCallback<T extends TimingTrigger, This> = {
@@ -4353,16 +3661,8 @@ declare type AutoRemoveCallback<T extends TimingTrigger, This> = {
     position: 'before' | 'after';
     fn: (this: This, room: Room, data: TimingData<T>) => boolean;
 };
-declare function autoRemove<T extends TimingTrigger, This>(
-    trigger: T,
-    position: 'before' | 'after',
-    fn: (this: This, room: Room, data: TimingData<T>) => boolean,
-): AutoRemoveCallback<T, This>;
-declare function refresh<T extends TimingTrigger, This>(
-    trigger: T,
-    position: 'before' | 'after',
-    fn: (this: This, room: Room, data: TimingData<T>) => Promise<any>,
-): TimingCallback<T, This>;
+declare declare function autoRemove<T extends TimingTrigger, This>(trigger: T, position: 'before' | 'after', fn: (this: This, room: Room, data: TimingData<T>) => boolean): AutoRemoveCallback<T, This>;
+declare declare function refresh<T extends TimingTrigger, This>(trigger: T, position: 'before' | 'after', fn: (this: This, room: Room, data: TimingData<T>) => Promise<any>): TimingCallback<T, This>;
 declare interface SkillOptions {
     source?: string;
     showui?: 'none' | 'default' | 'other' | 'mark' | 'card';
@@ -4378,7 +3678,7 @@ declare interface EffectOptions {
     autoRemove?: Array<AutoRemoveCallback<any, Effect>>;
     refreshs?: Array<TimingCallback<any, Effect>>;
 }
-declare enum PriorityType {
+declare declare enum PriorityType {
     /** 武将技能 */
     General = 1,
     /** 装备技能 */
@@ -4386,9 +3686,9 @@ declare enum PriorityType {
     /** 卡牌技能 */
     Card = 3,
     /** 规则技能 */
-    Rule = 4,
+    Rule = 4
 }
-declare enum SkillTag {
+declare declare enum SkillTag {
     None = 0,
     /** 锁定技 */
     Lock = 1,
@@ -4411,9 +3711,9 @@ declare enum SkillTag {
     /** 使命技 */
     Mission = 10,
     ZhuShuai = 11,
-    QianFeng = 12,
+    QianFeng = 12
 }
-declare enum StateEffectType {
+declare declare enum StateEffectType {
     Distance_Correct = 1,
     Distance_Fixed = 2,
     NotCalcSeat = 3,
@@ -4471,7 +3771,7 @@ declare enum StateEffectType {
     /** 拼点结果视为 */
     Regard_PindianResult = 38,
     /** 视为某势力 */
-    Regard_Kingdom = 39,
+    Regard_Kingdom = 39
 }
 declare interface SkillAsset {
     name: string;
@@ -4542,49 +3842,24 @@ declare interface EffectData {
      * 最大发动次数。number=固定值，函数=根据实时数据计算（签名同context，用于计数型技能如〖明哲②〗）。
      * 默认 1，-1 表示无限制。扫描阶段直接读取此字段，不会为获取 maxTimes 而调用 context()。
      */
-    times?:
-        | number
-        | ((this: Effect, room: Room, player: Player, data: any) => number);
+    times?: number | ((this: Effect, room: Room, player: Player, data: any) => number);
     /** 效果优先级 */
     priority: PriorityType;
     trigger?: TimingTrigger;
     /** 触发条件。返回任意真值即为可以发动 */
     can_trigger?: (this: Effect, room: Room, player: Player, data: any) => any;
     /** 在执行消耗和选择之前执行。可以在这里定义本次发动上下文的内容 */
-    context?: (
-        this: Effect,
-        room: Room,
-        player: Player,
-        data: any,
-    ) => EffectContext;
+    context?: (this: Effect, room: Room, player: Player, data: any) => EffectContext;
     /** 技能选择 注：晚于selector中的cost定义 。该函数返回任意真值，才会发动技能。紧接着会处理明置，动画，log。然后才会执行技能消耗。
      * 对于需要明置的模式，消耗前的选择应该尽量在cost和这里完成，以保证合法的发动技能并且亮将
      * 但需要注意，最好不要对相关的selector的thinkprompt进行赋值，该方法里的选择询问不会自动处理暗将信息。
      * 如果该函数返回任意假值，技能视为未发动过
      */
-    choose?: (
-        this: Effect,
-        room: Room,
-        player: Player,
-        data: any,
-        ctx: EffectContext,
-    ) => Promise<any>;
+    choose?: (this: Effect, room: Room, player: Player, data: any, ctx: EffectContext) => Promise<any>;
     /** 技能消耗 */
-    cost?: (
-        this: Effect,
-        room: Room,
-        player: Player,
-        data: any,
-        context: EffectContext,
-    ) => Promise<any>;
+    cost?: (this: Effect, room: Room, player: Player, data: any, context: EffectContext) => Promise<any>;
     /** 技能效果 */
-    effect?: (
-        this: Effect,
-        room: Room,
-        player: Player,
-        data: any,
-        context: EffectContext,
-    ) => Promise<any>;
+    effect?: (this: Effect, room: Room, player: Player, data: any, context: EffectContext) => Promise<any>;
     stateCallbacks?: Partial<StateCallbackMap>;
 }
 declare interface EffectSelectors {
@@ -4643,11 +3918,7 @@ declare interface StateCallbackMap {
      * @returns 修正值
      * @description 所有修正值会累计到最终距离，但无论经过怎样的计算，与自己的距离始终为0，与其他角色的距离最小为1
      */
-    [StateEffectType.Distance_Correct]: (
-        this: Effect,
-        from: Player,
-        to: Player,
-    ) => number;
+    [StateEffectType.Distance_Correct]: (this: Effect, from: Player, to: Player) => number;
     /**
      * 距离终值
      * @param from 计算距离的起始玩家
@@ -4655,11 +3926,7 @@ declare interface StateCallbackMap {
      * @returns 终值 返回undefined无用
      * @description 计算距离时会直接返回终值，但无论经过怎样的计算，与自己的距离始终为0，与其他角色的距离最小为1
      */
-    [StateEffectType.Distance_Fixed]: (
-        this: Effect,
-        from: Player,
-        to: Player,
-    ) => number;
+    [StateEffectType.Distance_Fixed]: (this: Effect, from: Player, to: Player) => number;
     /** 不计入座次计算 */
     [StateEffectType.NotCalcSeat]: (this: Effect, from: Player) => boolean;
     /** 不计入距离限制 */
@@ -4692,11 +3959,7 @@ declare interface StateCallbackMap {
      * @returns 布尔值 指定卡牌是否不计入手牌上限
      * @description 不计入手牌上限的牌在弃牌阶段计算需要弃置多少张牌时视为该牌不存在，同时弃牌时也不能选中该牌
      */
-    [StateEffectType.MaxHand_Exclude]: (
-        this: Effect,
-        from: Player,
-        card: GameCard,
-    ) => boolean;
+    [StateEffectType.MaxHand_Exclude]: (this: Effect, from: Player, card: GameCard) => boolean;
     /**
      * 不能明置
      * @param player 进行明置的角色
@@ -4704,12 +3967,7 @@ declare interface StateCallbackMap {
      * @param reason 明置的原因
      * @returns
      */
-    [StateEffectType.Prohibit_Open]: (
-        this: Effect,
-        player: Player,
-        generals: General[],
-        reason: string,
-    ) => boolean;
+    [StateEffectType.Prohibit_Open]: (this: Effect, player: Player, generals: General[], reason: string) => boolean;
     /**
      * 不能暗置
      * @param player 进行明置的角色
@@ -4717,12 +3975,7 @@ declare interface StateCallbackMap {
      * @param reason 暗置的原因
      * @returns
      */
-    [StateEffectType.Prohibit_Close]: (
-        this: Effect,
-        player: Player,
-        generals: General[],
-        reason: string,
-    ) => boolean;
+    [StateEffectType.Prohibit_Close]: (this: Effect, player: Player, generals: General[], reason: string) => boolean;
     /**
      * 不能弃置
      * @param player 弃牌的角色
@@ -4730,12 +3983,7 @@ declare interface StateCallbackMap {
      * @param reason 弃置的原因
      * @returns
      */
-    [StateEffectType.Prohibit_Discards]: (
-        this: Effect,
-        player: Player,
-        card: GameCard,
-        reason: string,
-    ) => boolean;
+    [StateEffectType.Prohibit_Discards]: (this: Effect, player: Player, card: GameCard, reason: string) => boolean;
     /**
      * 不能获得
      * @param player 弃牌的角色
@@ -4743,26 +3991,11 @@ declare interface StateCallbackMap {
      * @param reason 弃置的原因
      * @returns
      */
-    [StateEffectType.Prohibit_ObtainCards]: (
-        this: Effect,
-        player: Player,
-        card: GameCard,
-        reason: string,
-    ) => boolean;
+    [StateEffectType.Prohibit_ObtainCards]: (this: Effect, player: Player, card: GameCard, reason: string) => boolean;
     /** 不能回复体力 */
-    [StateEffectType.Prohibit_RecoverHp]: (
-        this: Effect,
-        player: Player,
-        number: number,
-        reason: string,
-    ) => boolean;
+    [StateEffectType.Prohibit_RecoverHp]: (this: Effect, player: Player, number: number, reason: string) => boolean;
     /** 不能失去体力 */
-    [StateEffectType.Prohibit_LoseHp]: (
-        this: Effect,
-        player: Player,
-        number: number,
-        reason: string,
-    ) => boolean;
+    [StateEffectType.Prohibit_LoseHp]: (this: Effect, player: Player, number: number, reason: string) => boolean;
     /**
      * 不能使用卡牌
      * @param from 使用者
@@ -4772,14 +4005,7 @@ declare interface StateCallbackMap {
      * @param reason 使用原因
      * @returns
      */
-    [StateEffectType.Prohibit_UseCard]: (
-        this: Effect,
-        from: Player,
-        card: VirtualCard,
-        target: Player | VirtualCard,
-        response: VirtualCard | undefined,
-        reason: string,
-    ) => boolean;
+    [StateEffectType.Prohibit_UseCard]: (this: Effect, from: Player, card: VirtualCard, target: Player | VirtualCard, response: VirtualCard | undefined, reason: string) => boolean;
     /**
      * 不能打出卡牌
      * @param from 打出者
@@ -4788,13 +4014,7 @@ declare interface StateCallbackMap {
      * @param reason 打出的原因
      * @returns
      */
-    [StateEffectType.Prohibit_DropCard]: (
-        this: Effect,
-        from: Player,
-        card: VirtualCard,
-        response: VirtualCard | undefined,
-        reason: string,
-    ) => boolean;
+    [StateEffectType.Prohibit_DropCard]: (this: Effect, from: Player, card: VirtualCard, response: VirtualCard | undefined, reason: string) => boolean;
     /**
      * 不能拼点
      * @param player 拼点发起者
@@ -4802,12 +4022,7 @@ declare interface StateCallbackMap {
      * @param reason 拼点的原因
      * @returns
      */
-    [StateEffectType.Prohibit_Pindian]: (
-        this: Effect,
-        player: Player,
-        targets: Player[],
-        reason: string,
-    ) => boolean;
+    [StateEffectType.Prohibit_Pindian]: (this: Effect, player: Player, targets: Player[], reason: string) => boolean;
     /**
      * 攻击范围初始值
      * @param from 计算攻击范围的玩家
@@ -4837,11 +4052,7 @@ declare interface StateCallbackMap {
      * @returns 布尔值 to是否视为在from的攻击范围内
      * @description 如果返回true则不进行距离检测，to必定在from的攻击范围内
      */
-    [StateEffectType.Range_Within]: (
-        this: Effect,
-        from: Player,
-        to: Player,
-    ) => boolean;
+    [StateEffectType.Range_Within]: (this: Effect, from: Player, to: Player) => boolean;
     /**
      * 视为不在攻击范围内
      * @param from 计算攻击范围的玩家
@@ -4849,107 +4060,39 @@ declare interface StateCallbackMap {
      * @returns 布尔值 to是否视为在from的攻击范围内
      * @description 如果返回true则不进行距离检测，to必定不在from的攻击范围内，当此效果与一个攻击范围状态的within冲突时，以without(本函数)为准。
      */
-    [StateEffectType.Range_Without]: (
-        this: Effect,
-        from: Player,
-        to: Player,
-    ) => boolean;
-    [StateEffectType.Regard_CardData]: (
-        this: Effect,
-        card: GameCard,
-        property: string,
-        source: any,
-    ) => any;
+    [StateEffectType.Range_Without]: (this: Effect, from: Player, to: Player) => boolean;
+    [StateEffectType.Regard_CardData]: (this: Effect, card: GameCard, property: string, source: any) => any;
     [StateEffectType.Regard_OnlyBig]: (this: Effect, player: Player) => boolean;
-    [StateEffectType.Regard_OnlyBig_Fixed]: (
-        this: Effect,
-        player: Player,
-        result: string[],
-    ) => boolean;
+    [StateEffectType.Regard_OnlyBig_Fixed]: (this: Effect, player: Player, result: string[]) => boolean;
     /** 视为某势力 */
     [StateEffectType.Regard_Kingdom]: (this: Effect, player: Player) => string;
     /** 无次数限制 */
-    [StateEffectType.TargetMod_PassTimeCheck]: (
-        this: Effect,
-        from: Player,
-        card: VirtualCard,
-        target: Player,
-    ) => boolean;
+    [StateEffectType.TargetMod_PassTimeCheck]: (this: Effect, from: Player, card: VirtualCard, target: Player) => boolean;
     /** 不计入次数的限制 */
-    [StateEffectType.TargetMod_PassCountingTime]: (
-        this: Effect,
-        from: Player,
-        card: VirtualCard,
-        target: Player,
-    ) => boolean;
+    [StateEffectType.TargetMod_PassCountingTime]: (this: Effect, from: Player, card: VirtualCard, target: Player) => boolean;
     /** 修改次数限制 */
-    [StateEffectType.TargetMod_CorrectTime]: (
-        this: Effect,
-        from: Player,
-        card: VirtualCard,
-        target: Player,
-    ) => number;
+    [StateEffectType.TargetMod_CorrectTime]: (this: Effect, from: Player, card: VirtualCard, target: Player) => number;
     /** 无距离限制 */
-    [StateEffectType.TargetMod_PassDistanceCheck]: (
-        this: Effect,
-        from: Player,
-        card: VirtualCard,
-        target: Player,
-    ) => boolean;
+    [StateEffectType.TargetMod_PassDistanceCheck]: (this: Effect, from: Player, card: VirtualCard, target: Player) => boolean;
     /** 修改卡牌的选择数量限制 */
-    [StateEffectType.TargetMod_CardLimit_ChooseCount]: (
-        this: Effect,
-        from: Player,
-        card: VirtualCard,
-    ) => SelectCount;
-    [StateEffectType.TargetMod_CardLimit_Distance]: (
-        this: Effect,
-        from: Player,
-        card: VirtualCard,
-    ) => number;
+    [StateEffectType.TargetMod_CardLimit_ChooseCount]: (this: Effect, from: Player, card: VirtualCard) => SelectCount;
+    [StateEffectType.TargetMod_CardLimit_Distance]: (this: Effect, from: Player, card: VirtualCard) => number;
     /** 技能失效 */
-    [StateEffectType.Skill_Invalidity]: (
-        this: Effect,
-        effect: Effect,
-    ) => boolean;
+    [StateEffectType.Skill_Invalidity]: (this: Effect, effect: Effect) => boolean;
     /** 如手牌般使用 */
-    [StateEffectType.LikeHandToUse]: (
-        this: Effect,
-        from: Player,
-        card: GameCard,
-    ) => boolean;
+    [StateEffectType.LikeHandToUse]: (this: Effect, from: Player, card: GameCard) => boolean;
     /** 如手牌般打出 */
-    [StateEffectType.LikeHandToDrop]: (
-        this: Effect,
-        from: Player,
-        card: GameCard,
-    ) => boolean;
+    [StateEffectType.LikeHandToDrop]: (this: Effect, from: Player, card: GameCard) => boolean;
     /** 忽略主副将技标签的条件 */
-    [StateEffectType.IgnoreHeadAndDeputy]: (
-        this: Effect,
-        effect: Effect,
-    ) => boolean;
+    [StateEffectType.IgnoreHeadAndDeputy]: (this: Effect, effect: Effect) => boolean;
     /** 指定卡牌对某玩家可见 */
-    [StateEffectType.FieldCardEyes]: (
-        this: Effect,
-        from: Player,
-        card: GameCard,
-    ) => boolean;
+    [StateEffectType.FieldCardEyes]: (this: Effect, from: Player, card: GameCard) => boolean;
     /** 视为满足阵法条件 */
-    [StateEffectType.Regard_ArrayCondition]: (
-        this: Effect,
-        from: Player,
-        to: Player,
-        type: 'quene' | 'siege_from' | 'siege_to',
-    ) => boolean;
+    [StateEffectType.Regard_ArrayCondition]: (this: Effect, from: Player, to: Player, type: 'quene' | 'siege_from' | 'siege_to') => boolean;
     /** 拼点结果视为
      * @returns 若为数组，则表示没赢的角色，不在数组内的为赢的角色；若不为数组则表示赢的角色，不为该角色均没赢
      */
-    [StateEffectType.Regard_PindianResult]: (
-        this: Effect,
-        cards: Map<Player, GameCard>,
-        reason: string,
-    ) => Player | Player[];
+    [StateEffectType.Regard_PindianResult]: (this: Effect, cards: Map<Player, GameCard>, reason: string) => Player | Player[];
 }
 
 /**
@@ -4958,12 +4101,12 @@ declare interface StateCallbackMap {
 /**
  * Fisher-Yates 原地洗牌，返回原数组引用。
  */
-declare function shuffleArray<T>(arr: T[]): T[];
+declare declare function shuffleArray<T>(arr: T[]): T[];
 /**
  * 解析 AreaId（格式：`playerId.areaType` 或纯 `areaType`）。
  * @returns { playerId, areaType }，非玩家区域时 playerId 为空字符串
  */
-declare function parseAreaId(areaId: string): {
+declare declare function parseAreaId(areaId: string): {
     playerId: string;
     areaType: string;
 };
@@ -4971,7 +4114,8 @@ declare function parseAreaId(areaId: string): {
  * 从数组中随机采样 count 个不重复元素（部分 Fisher-Yates，不修改原数组）。
  * count >= arr.length 时返回全量打乱副本。
  */
-declare function sampleRandom<T>(arr: readonly T[], count: number): T[];
+declare declare function sampleRandom<T>(arr: readonly T[], count: number): T[];
+
 
 // ===== sgs 全局对象 =====
 
@@ -5010,17 +4154,11 @@ declare var sgs: {
     registerCards: typeof registerCards;
     setExtensionContext: typeof setExtensionContext;
 
-    skills: Map<string, any>;
-    effects: Map<string, any>;
-    generals: Map<string, any>;
-    generalAssets: Map<string, any>;
-    cards: Map<string, any>;
-    carddatas: Map<string, any>;
-    cardpacks: Map<string, any>;
-    generalpacks: Map<string, any>;
-    modes: Map<string, any>;
-    selectors: Map<string, any>;
-    carduses: Map<string, any>;
-    skillsAssets: Map<string, any>;
+    skills: Map<string, any>; effects: Map<string, any>;
+    generals: Map<string, any>; generalAssets: Map<string, any>;
+    cards: Map<string, any>; carddatas: Map<string, any>;
+    cardpacks: Map<string, any>; generalpacks: Map<string, any>;
+    modes: Map<string, any>; selectors: Map<string, any>;
+    carduses: Map<string, any>; skillsAssets: Map<string, any>;
     translations: Record<string, Record<string, string>>;
 };

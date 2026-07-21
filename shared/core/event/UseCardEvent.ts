@@ -93,16 +93,25 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
     // ===== Timing 预构建（固定段）=====
 
     private _buildTriggers(): void {
-        this.eventTriggers = [
-            createTiming(TimingName.UseCardDeclare, [
-                this.bindWithMark(this._onUseCardDeclare),
-            ]),
-            createTiming(TimingName.UseCardDeclareAfter),
-            createTiming(TimingName.UseCardChooseTarget),
-            createTiming(TimingName.UseCardUsed, [
-                this.bindWithMark(this._onUseCardUsed),
-            ]),
-        ];
+        if (this.eventData.responseTo) {
+            // 响应路径（目标是牌）：仅 UseCardUsed（前置 Declare 移动卡牌）
+            this.eventTriggers = [
+                createTiming(TimingName.UseCardUsed, [
+                    this.bindWithMark(this._onUseCardDeclare),
+                ]),
+            ];
+        } else {
+            this.eventTriggers = [
+                createTiming(TimingName.UseCardDeclare, [
+                    this.bindWithMark(this._onUseCardDeclare),
+                ]),
+                createTiming(TimingName.UseCardDeclareAfter),
+                createTiming(TimingName.UseCardChooseTarget),
+                createTiming(TimingName.UseCardUsed, [
+                    this.bindWithMark(this._onUseCardUsed),
+                ]),
+            ];
+        }
 
         this.endTriggers = [
             createTiming(TimingName.UseCardEnd1),
@@ -113,6 +122,10 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
         ];
     }
 
+    // ===== 当前正在结算的目标（供 needUseCard 确定响应者）=====
+
+    private _settlingTarget?: Player;
+
     // ===== 生命周期 =====
 
     protected async init(): Promise<void> {
@@ -120,10 +133,14 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
     }
 
     check(): boolean {
+        if (this.eventData.responseTo) {
+            return !!this.card && !this.card.destroyed;
+        }
         return this.targetList.length > 0 && !!this.card && !this.card.destroyed;
     }
 
     checkEvent(): boolean {
+        if (this.eventData.responseTo) return !this.room.isEnding;
         return !this.room.isEnding && this.targetList.length > 0;
     }
 
@@ -132,6 +149,14 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
     async exec(): Promise<this> {
         if (!this.check()) return this;
         await this.init();
+
+        // ===== 响应路径（目标是牌）=====
+        if (this.eventData.responseTo) {
+            await this._runFixedTriggers();
+            if (this.isEnd || this.isComplete) return this._finish();
+            await this._applyResponse();
+            return this._finish();
+        }
 
         // ===== Part 1: 预结算固定段 =====
         await this._runFixedTriggers();
@@ -293,8 +318,10 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
             return;
         }
 
-        // EffectBefore（响应窗口）
+        // EffectBefore（响应窗口）—— needUseCard 通过 _settlingTarget 确定响应者
+        this._settlingTarget = entry.target;
         await this._runTiming(createTiming(TimingName.UseCardEffectBefore));
+        this._settlingTarget = undefined;
 
         // EffectBefore 期间被 offset
         if (entry.offset) {
@@ -353,6 +380,29 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
         this.eventData.targetList = this.targetList.filter((e) => e.target.alive);
         if (this.targetList.length > 0) {
             this._sortTargets();
+        }
+    }
+
+    /**
+     * 响应路径：对被响应的牌设置 offset。
+     * 在 eventStack 中找到被响应的 UseCardEvent → 通过 _settlingTarget 定位当前结算条目。
+     */
+    private async _applyResponse(): Promise<void> {
+        const responseTo = this.eventData.responseTo!;
+        for (let i = this.room.eventStack.length - 1; i >= 0; i--) {
+            const ev = this.room.eventStack[i];
+            if (
+                ev instanceof UseCardEvent &&
+                ev !== this &&
+                ev.card === responseTo
+            ) {
+                // _settlingTarget 由 _settleOneTarget 在 EffectBefore 前设置
+                const settlingTarget = (ev as any)._settlingTarget as Player | undefined;
+                if (settlingTarget) {
+                    ev.offsetTarget(settlingTarget, this);
+                }
+                return;
+            }
         }
     }
 

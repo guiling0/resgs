@@ -1,6 +1,6 @@
 import { GameCard } from '@shared/core/card/GameCard';
 import { Room } from '@shared/core/room/Room';
-import { VirtualCardData, VirtualSourceData } from '@shared/core/card/CardTypes';
+import { VirtualCardData, VirtualSourceData, CardSuit, CardColor, CardNumber } from '@shared/core/card/CardTypes';
 import { VirtualCard } from '@shared/core/card/VirtualCard';
 
 /**
@@ -18,6 +18,22 @@ export class VirtualCardManager {
         const vc = new VirtualCard(name, cards, overrides);
         this.room.vcards.push(vc);
         return vc;
+    }
+
+    /**
+     * 从牌名+子牌构造 VirtualCardData（不创建 VirtualCard 实例）。
+     * 供客户端/技能检测使用——无需持有 VirtualCard 即可构造检测数据。
+     */
+    createData(name: string, cards: GameCard[]): VirtualCardData {
+        return {
+            name,
+            suit: cards.length === 1 ? cards[0].suit : CardSuit.None,
+            color: cards.length === 1 ? cards[0].color : CardColor.None,
+            number: cards.length === 1 ? cards[0].number : (-1 as CardNumber),
+            attr: cards.length === 1 ? [...cards[0].attr] : [],
+            subcards: cards.map((c) => c.id),
+            data: {},
+        };
     }
 
     /** 创建无子牌的虚拟牌 */

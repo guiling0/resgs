@@ -211,7 +211,6 @@ export class ChooseManager {
         if (session.autoSelectFirst) {
             const result = this._autoSelect(session);
             result.id = sessionId;
-            result.timeout = true;
             this._cleanup(sessionId, pending);
             pending.resolve(result);
         } else {

@@ -6,11 +6,11 @@
 
 **Status:** ready-for-agent
 
-- [ ] `EventManager.trigger(timing)` 增加 needUseCard 步骤：遍历 carduses → 检测合法性 → 创建 UseCardEvent
-- [ ] 闪 CardUse 注册：`{ name: 'shan', timing: EffectBefore, target: [] }`
-- [ ] `UseCardEvent` 新增 `responseTo?: VirtualCard` 字段，非空时跳过 DeclareAfter~BecomeTargetAfter + 目标列表为空
-- [ ] 闪的效果 = offset 被响应的杀（UseCardOffset 时机生成）
-- [ ] 验证：出杀→目标出闪→杀被 offset→无伤害
-- [ ] 验证：出杀→目标不出闪→正常掉血（无响应路径不变）
-- [ ] 验证：闪作为使用（目标是牌）不经过 AssignTarget 段
-- [ ] M2 杀/桃验收测试无回归
+- [x] `EventManager.trigger(timing)` 增加 needUseCard 步骤：遍历 carduses → 检测合法性 → 创建 UseCardEvent
+- [x] 闪 CardUse 注册：`{ name: 'shan', timing: EffectBefore, target: [] }`
+- [x] `UseCardEvent` 新增 `responseTo?: VirtualCard` 字段，非空时跳过 DeclareAfter~BecomeTargetAfter + 目标列表为空
+- [x] 闪的效果 = offset 被响应的杀（UseCardOffset 时机生成）
+- [x] 验证：出杀→目标出闪→杀被 offset→无伤害
+- [x] 验证：出杀→目标不出闪→正常掉血（无响应路径不变）
+- [x] 验证：闪作为使用（目标是牌）不经过 AssignTarget 段
+- [x] M2 杀/桃验收测试无回归

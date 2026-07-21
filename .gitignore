@@ -1,3 +1,6 @@
+# ===== 审查临时文件 =====
+*.diff
+
 # ===== 本地开发交流 =====
 .claude/settings.local.json
 .mcp.json

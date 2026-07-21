@@ -6,8 +6,10 @@ import {
 } from '../../skill/SkillTypes';
 import { Skill } from '../../skill/Skill';
 import { Effect } from '../../skill/Effect';
-import { TimingName } from '../../event/EventTypes';
+import { TimingName, CardUseData } from '../../event/EventTypes';
 import { EventProcess } from '../../event/EventProcess';
+import { UseCardEvent } from '../../event/UseCardEvent';
+import { VirtualCard } from '../../card/VirtualCard';
 import {
     DamageEvent,
     LoseHpEvent,
@@ -364,32 +366,12 @@ export class EventManager {
             }
         }
 
-        // ===== 2. 检查是否有注册的触发效果 =====
-        const timingMap = this.room.triggerEffects.get(timingName);
-        if (!timingMap) {
-            this.room.logger.debug(
-                `[trigger] no registered effects`,
-                this._meta(`trigger:${timingName}`),
-            );
-            if (!skipRefreshs) {
-                const entry = this.room.refreshsByTiming.get(timingName);
-                if (entry && entry.after.length > 0) {
-                    for (const item of entry.after) {
-                        try {
-                            await item.fn(this.room, data);
-                        } catch (e) {
-                            console.error('[refresh after]', e);
-                        }
-                    }
-                }
-            }
-            return;
-        }
-
-        // ===== 3. 逐玩家 → 逐优先级 → 同优先级重试 =====
         // 顺序：当前回合角色逆时针，每名角色从武将技→装备技→卡牌技→规则技，
         // 每发动一个技能后同玩家同优先级重新扫描（技能可能改变其他效果的条件）。
         const players = this.room.player.sortResponse(this.room.alives);
+
+        // ===== 3. 逐玩家 → 逐优先级 → 同优先级重试 =====
+        // 即使无注册技能也进入循环——玩家使用牌后可能触发后续技能
         const times: Record<string, Record<number, number>> = {};
         let totalAvailable = 0;
 
@@ -400,14 +382,23 @@ export class EventManager {
 
         for (const player of players) {
             for (let order = 1; order <= 6; order++) {
-                // order 4/5 = 使用卡牌/同时使用卡牌，保留待 M2 裁定
-                if (order === 4 || order === 5) continue;
+                // order 4 = 能使用的卡牌, order 5 = 同时使用的卡牌（M4）
+                if (order === 5) continue;
+
+                if (order === 4) {
+                    const used = await this._needUseCard(timingName, data, [player]);
+                    // Dying 用了牌 → 留在 order=4 继续询问（可能多人出桃）
+                    if (used && timingName === TimingName.Dying) continue;
+                    // 无论是否使用，进入下一 order
+                    order++;
+                    continue;
+                }
 
                 const priority = this._orderToPriority(order);
 
                 // 同玩家同优先级内循环重试
                 while (true) {
-                    const entry = timingMap.get(priority);
+                    const entry = this.room.triggerEffects.get(timingName)?.get(priority);
                     const effects = entry
                         ? [
                               ...(entry.byPlayer.get(player.playerId) ?? []),
@@ -504,6 +495,112 @@ export class EventManager {
                 }
             }
         }
+    }
+
+    // ===== needUseCard：响应牌检测 =====
+
+    /**
+     * 检测当前时机可用的卡牌，询问玩家是否使用。
+     * 从 room.carduses 查找匹配 timing 的卡牌 → canUseCard 过滤 → 单次多步会话。
+     * @returns true 如果有牌被使用
+     */
+    private async _needUseCard(
+        timingName: TimingName,
+        data: EventProcess | Record<string, any>,
+        players: Player[],
+    ): Promise<boolean> {
+        const candidates = this.room.cardusesByTiming.get(timingName);
+        if (!candidates || candidates.length === 0) return false;
+
+        for (const player of players) {
+            // trigger need1 → 响应技询问（护驾/激将等，M4 激活）
+            await this.trigger(TimingName.UseCardNeed1, data, true);
+
+            const vc = await this._askForCardUse(player, candidates, data);
+            if (!vc) continue;
+
+            // 创建并执行 UseCardEvent
+            const cardUse = this.room.carduses.get(vc.name);
+            const validTargets = cardUse?.target(this.room, player, vc) ?? [];
+            const responseTo =
+                validTargets.length === 0 && data instanceof UseCardEvent
+                    ? data.card
+                    : undefined;
+            const useCardEv = new UseCardEvent(this.room, {
+                player,
+                targets: validTargets,
+                card: vc,
+                responseTo,
+            });
+            await useCardEv.exec();
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 单次多步会话：选牌 → 选目标 → 确定使用 / 取消不用。
+     * 后续出牌阶段复用同一流程。
+     */
+    private async _askForCardUse(
+        player: Player,
+        candidates: CardUseData[],
+        _data: EventProcess | Record<string, any>,
+    ): Promise<VirtualCard | null> {
+        // 过滤：canUseCard 通过
+        const available = candidates.filter((c) =>
+            this.room.canUseCard(player, c.name),
+        );
+        if (available.length === 0) return null;
+
+        // 构建多步会话：Step 1 选牌 → Step 2 选目标
+        const steps: any[] = [];
+
+        // Step 1: 选牌（从手牌中选出同名实体牌组成虚拟牌）
+        const handCards = player.getHandCards();
+        const selectableCards = handCards.filter((c) =>
+            available.some((a) => a.name === c.name),
+        );
+        if (selectableCards.length === 0) return null;
+        steps.push({
+            name: 'card',
+            type: 'card' as any,
+            count: 1,
+            selectable: () => selectableCards.map((c) => c.id),
+        });
+
+        // Step 2: 选目标（若卡牌需要目标）
+        // 在客户端选择完牌后，服务端根据 cardUse.target 确定合法目标
+        // M3 阶段简化：headless 自动通过
+
+        const session = await this.room.choose.request({
+            id: `carduse_${player.playerId}_${Date.now()}`,
+            player: player.playerId,
+            steps,
+            context: {
+                player,
+                room: this.room,
+                cardNames: available.map((a) => a.name),
+            } as any,
+            canCancel: true,
+            autoSelectFirst: true,
+            timeout: 0.5,
+        });
+        if (session.cancelled || !session.results?.card?.length) return null;
+
+        const chosenCards = this.room.card.gets(session.results.card);
+        if (!chosenCards.length) return null;
+
+        const cardName = chosenCards[0].name;
+        const cardUse = this.room.carduses.get(cardName);
+        if (!cardUse) return null;
+
+        const vc = this.room.vcard.createByName(cardName, chosenCards);
+
+        // Step 2: 选目标（M4 出牌阶段复用此流程时激活）
+        // responseTo 路径 target=[]，跳过目标选择
+
+        return vc;
     }
 
     // ===== 技能发动桥接 =====

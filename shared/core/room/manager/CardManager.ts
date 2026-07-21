@@ -6,7 +6,7 @@ import {
 } from '@shared/core/card/CardTypes';
 import { Room } from '../Room';
 import { GameCard } from '@shared/core/card/GameCard';
-import { TimingName, CardUseData } from '../../event/EventTypes';
+import { CardUseData } from '../../event/EventTypes';
 
 /**
  * 卡牌管理器 — 负责卡牌实例创建、索引构建与查询。
@@ -70,41 +70,39 @@ export class CardManager {
         return cards.map((c) => c.id);
     }
 
-    /** 注册牌的使用方式定义（从 sgs.carduses 拷贝到 room.carduses） */
+    /**
+     * 注册牌的使用方式定义（从 sgs.carduses 拷贝到 room）。
+     * 1. 按时机索引 cardusesByTiming：timing → CardUseData[]
+     * 2. 按牌名索引 carduses：首个同名用 name，后续用 name.timing
+     */
     initCardUses(): void {
-        // 确保基本牌定义已在 sgs 中注册
-        if (!sgs.carduses.has('sha')) {
-            sgs.carduses.set('sha', {
-                name: 'sha',
-                timing: TimingName.PlayPhase,
-                target: (_room, player, _card) => {
-                    return _room.alives.filter(
-                        (p) => p !== player,
-                    );
-                },
-                effect: async (room, target, _event) => {
-                    await room.damage(_event.player, target, 0, 1);
-                },
-            });
-        }
-        if (!sgs.carduses.has('tao')) {
-            sgs.carduses.set('tao', {
-                name: 'tao',
-                timing: TimingName.PlayPhase,
-                target: (_room, _player, _card) => {
-                    return _room.alives;
-                },
-                canUse: (_room, player, _card) => {
-                    return player.losshp > 0;
-                },
-                effect: async (room, target, _event) => {
-                    await room.recover(target, 1);
-                },
-            });
+        // 先按 name 分组，确定各组首个
+        const byName = new Map<string, CardUseData[]>();
+        for (const data of sgs.carduses) {
+            let list = byName.get(data.name);
+            if (!list) {
+                list = [];
+                byName.set(data.name, list);
+            }
+            list.push(data);
         }
 
-        for (const [name, data] of sgs.carduses) {
-            this.room.carduses.set(name, { ...data });
+        for (const data of sgs.carduses) {
+            // 按时机注册
+            let timingList = this.room.cardusesByTiming.get(data.timing);
+            if (!timingList) {
+                timingList = [];
+                this.room.cardusesByTiming.set(data.timing, timingList);
+            }
+            timingList.push({ ...data });
+
+            // 按牌名注册
+            const sameName = byName.get(data.name)!;
+            if (sameName[0] === data) {
+                this.room.carduses.set(data.name, { ...data });
+            } else {
+                this.room.carduses.set(`${data.name}.${data.timing}`, { ...data });
+            }
         }
     }
 }

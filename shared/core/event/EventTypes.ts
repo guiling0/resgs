@@ -371,6 +371,8 @@ export interface UseCardEventData {
     isFirstTarget?: boolean;
     /** 目标角色对应关系 */
     targetList?: TargetEntry[];
+    /** 被响应的牌（闪响应杀、无懈响应锦囊时设置） */
+    responseTo?: VirtualCard;
     /** 当前结算目标索引 */
     settleTarget?: number;
 }

@@ -31,6 +31,7 @@ import { Effect } from '../skill/Effect';
 import { PriorityType, StateEffectType } from '../skill/SkillTypes';
 import { TurnEvent, PhaseEvent } from '../event/TurnEvent';
 import { UseCardEvent } from '../event/UseCardEvent';
+import { DropCardEvent } from '../event/DropCardEvent';
 import { Phase } from '../player/PlayerTypes';
 import type { GameMode } from './GameMode';
 import { RoomOption } from './GameMode';
@@ -146,8 +147,10 @@ export class Room implements Omit<MarkHost, 'room'> {
     cardNamesToSubType: Map<CardSubType, Set<string>> = new Map();
     /** 所有虚拟牌 */
     vcards: VirtualCard[] = [];
-    /** 牌的默认使用方式（牌名 → CardUseData）。从 sgs.carduses 惰性复制 */
+    /** 牌的默认使用方式（牌名 → CardUseData）。从 sgs.carduses 惰性复制，同名取首个 */
     carduses: Map<string, CardUseData> = new Map();
+    /** 牌的默认使用方式（时机 → CardUseData[]）。供 needUseCard 按时机查找 */
+    cardusesByTiming: Map<TimingName, CardUseData[]> = new Map();
     /** 所有武将实例（ID → 实体） */
     generals: Map<GeneralId, General> = new Map();
     /** 所有武将真名列表 */
@@ -404,43 +407,66 @@ export class Room implements Omit<MarkHost, 'room'> {
      */
     canUseCard(
         player: Player,
-        cardNameOrVC: string | VirtualCard,
+        cardNameOrVCData: string | VirtualCardData,
         target?: Player,
     ): boolean {
         const cardName =
-            typeof cardNameOrVC === 'string'
-                ? cardNameOrVC
-                : cardNameOrVC.name;
+            typeof cardNameOrVCData === 'string'
+                ? cardNameOrVCData
+                : cardNameOrVCData.name;
 
         const cardUse = this.carduses.get(cardName);
         if (!cardUse) return false;
 
+        // 辅助：创建临时 VirtualCard 供回调使用。
+        // 不入 room.vcards，不绑定子牌——纯属性壳，用完即弃。
+        const _makeVC = (): VirtualCard => {
+            if (typeof cardNameOrVCData === 'string') {
+                return new VirtualCard(cardName, [], undefined, false);
+            }
+            const data = cardNameOrVCData;
+            const vc = new VirtualCard(
+                data.name,
+                [],
+                { suit: data.suit, color: data.color, number: data.number, attr: data.attr },
+                false,
+            );
+            Object.assign(vc.data, data.data);
+            return vc;
+        };
+        const _cleanVC = (vc: VirtualCard) => vc.clearSubCards();
+
         // 1. 额外使用条件（如桃需体力不满）
         if (cardUse.canUse) {
-            const vc =
-                typeof cardNameOrVC === 'string'
-                    ? this.vcard.createByEmpty(cardName)
-                    : cardNameOrVC;
-            if (!cardUse.canUse(this, player, vc)) {
-                if (typeof cardNameOrVC === 'string') this.vcard.destroy(vc);
-                return false;
-            }
-            if (typeof cardNameOrVC === 'string') this.vcard.destroy(vc);
+            const vc = _makeVC();
+            const ok = cardUse.canUse(this, player, vc);
+            _cleanVC(vc);
+            if (!ok) return false;
         }
 
         // 2. 目标数检测
         if (target) {
-            const vc =
-                typeof cardNameOrVC === 'string'
-                    ? this.vcard.createByEmpty(cardName)
-                    : cardNameOrVC;
+            const vc = _makeVC();
             const validTargets = cardUse.target(this, player, vc);
-            if (typeof cardNameOrVC === 'string') this.vcard.destroy(vc);
+            _cleanVC(vc);
             if (validTargets.length === 0) return false;
-            if (target && !validTargets.includes(target)) return false;
+            if (!validTargets.includes(target)) return false;
         }
 
         return true;
+    }
+
+    // ---- 打出牌 ----
+
+    /**
+     * 打出牌——直接触发 DropCardEvent。
+     * M4 南蛮/决斗等场景中接入 needDropCard 询问。
+     */
+    async dropCard(
+        player: Player,
+        card: VirtualCard,
+    ): Promise<DropCardEvent> {
+        return this.event.create(DropCardEvent, { player, card }, { reason: 'drop' });
     }
 
     // ---- 卡牌移动快捷方法 ----

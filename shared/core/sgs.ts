@@ -117,8 +117,8 @@ class RESGS {
     public readonly skillsAssets: Map<string, SkillAsset> = new Map();
     /** 选择器预设（客户端据此渲染 UI） */
     public readonly selectors: Map<string, any> = new Map();
-    /** 牌的默认使用方式定义（牌名 → CardUseData） */
-    public readonly carduses: Map<string, CardUseData> = new Map();
+    /** 牌的默认使用方式定义（同名可能有多个，按时机区分） */
+    public readonly carduses: CardUseData[] = [];
 
     /** 翻译表 */
     public readonly translations: {

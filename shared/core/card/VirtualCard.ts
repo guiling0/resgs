@@ -47,7 +47,6 @@ export class VirtualCard implements ICard {
         } else {
             for (const c of cards) {
                 this.subcards.push(c);
-                c.vcard = this;
             }
         }
 
