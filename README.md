@@ -8,7 +8,7 @@
 |---|---|
 | 共享逻辑 | TypeScript（`shared/`，服务端/客户端共用） |
 | 服务端 | Node.js + Colyseus 0.17 |
-| 客户端 | LayaAir 3.4.0 |
+| 客户端 | Web 前端（Vite + TypeScript + CSS 渲染） |
 | 数据库 | MongoDB |
 
 ## 目录结构

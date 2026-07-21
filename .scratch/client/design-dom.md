@@ -1,8 +1,8 @@
-# 客户端设计决策（2026-07-20 纯 DOM 方案）
+# 客户端设计决策（2026-07-20 Web 前端渲染方案）
 
 ## 方案说明
 
-基于 LayaAir 方案与纯 DOM 方案的全面对比，决定采用**纯 DOM（Vite + TypeScript + CSS）**。
+基于对渲染方案的全面对比，决定采用 **Web 前端渲染方案（Vite + TypeScript + CSS 渲染 + spine-canvas）**。
 
 核心理由：
 1. **扩展增量**：协作者改皮肤 = 丢图到 `assets/`，无需 IDE。客户端扩展 JS 可直接操作 DOM/CSS
@@ -21,7 +21,7 @@
 |---|---|
 | 构建 | Vite（HMR + 生产构建） |
 | 语言 | TypeScript |
-| 渲染 | 纯 DOM + CSS |
+| 渲染 | DOM + CSS |
 | 骨骼动画 | spine-canvas（局部 `<canvas>`，用于武将技能/受击动画） |
 | 图集 | TexturePacker / spritesmith → CSS `background-position` |
 | 网络 | Colyseus 客户端 SDK（`colyseus.js`） |
@@ -232,8 +232,8 @@ class DirtyUpdater {
 DOM 布局
 ├── 武将框   → mini <canvas>（Spine 骨架）
 ├── 卡牌     → mini <canvas>（判定动画）
-├── 手牌     → 纯 DOM（静态）
-└── 战报框   → 纯 DOM（自定义滚动条）
+├── 手牌     → Web 前端渲染（静态）
+└── 战报框   → Web 前端渲染（自定义滚动条）
 ```
 
 每个 `<canvas>` 独立管理自己的 Spine 实例，CSS 控制位置和 z-index。
@@ -296,7 +296,7 @@ client/
 
 ## 十一、与 LayaAir 方案的关键差异
 
-| 维度 | LayaAir | 纯 DOM |
+| 维度 | LayaAir | Web 前端 |
 |---|---|---|
 | 渲染 | Canvas（引擎） | DOM + CSS |
 | UI 编辑 | IDE 可视化 | 手写 HTML/CSS |

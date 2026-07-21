@@ -7,8 +7,10 @@ metadata:
 
 # ADR-0001：客户端采用 LayaAir 3.4
 
+> ⚠️ **2026-07-21 再次修订**：本 ADR 的 LayaAir 方案已被 **Web 前端渲染方案（Vite + TypeScript + CSS + spine-canvas）** 取代。详见 `.scratch/client/design-dom.md`。本 ADR 保留作为决策历史，LayaAir 方案不再执行。
+
 **日期**：2026-07-19（修订）
-**状态**：已决定（替代 2026-07-18 的 PixiJS + Vite 决定）
+**状态**：已替代（2026-07-21 Web 前端渲染方案替代）
 
 ## 修订背景
 

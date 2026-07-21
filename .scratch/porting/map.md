@@ -21,7 +21,7 @@
 | **M1** | 触发技闭环：trigger→UseSkillEvent 桥接 | 锁定技自动发动 |
 | **M2** | 使用牌骨架：UseCardEvent + 杀/桃 CardUse（无响应） | 出杀→掉血 |
 | **M3** | 响应闭环：闪/桃 needUseCard + DropCardEvent 骨架 | headless 完整回合 |
-| **C0** | 客户端项目骨架：Vite + LayaAir + 自适应 | 启动→加载场景 |
+| **C0** | 客户端项目骨架：Vite + TypeScript + CSS 渲染 + 自适应 | 启动→加载场景 |
 | **C1** | 加载→登录：加载界面 + 登录/注册 UI + 服务端账号 API | 注册→登录→进大厅 |
 | **C2** | 大厅：房间列表 + 创建/加入 + 服务端房间管理 | 创建房间→加入→进房 |
 | **C3** | 房间→游戏：等待界面 + 选将 + 游戏 UI 模板 + 动画测试 | 选将→开始→可操作 |
@@ -34,7 +34,7 @@
 | **M7 + C4** | 联机：GameRoom 修复 + 大厅 + 断线重连 | 完整体验（大厅/房间/聊天/观战） | 真实联机一局 |
 | **M8 + C5 + C6** | 录像/旁观 | 武将 Spine 动效 + 录像回放 | 完整游戏 |
 
-> 客户端方案从 LayaAir 改为纯 DOM（Vite + CSS + spine-canvas）。详见 `.scratch/client/design-dom.md`。LayaAir 方案保留在 `design.md`。
+> 客户端采用 Web 前端渲染方案（Vite + TypeScript + CSS + spine-canvas）。详见 `.scratch/client/design-dom.md`。早期 LayaAir 方案保留在 `design.md`。
 
 ### 旧项目资源（old/ 删除前抢救清单）
 
@@ -53,14 +53,14 @@
 6. **军争牌堆**：跟随旧 standard 包合并牌堆（酒/藤甲/火攻等），不做纯标准版拆分
 7. **GameRoom 断链修复归 M7**：headless 阶段（M1-M6）不依赖 server 编译
 8. **事件/用语/定义权威由用户口述**：trigger_note.md 废弃；基础定义落 `docs/definitions/`、事件→时机定义落 `docs/events/`（每事件一档）、技能用语落 `docs/terms/`（每类型一档），`CONTEXT.md` 做索引并随迁移瘦身。实现事件与技能以这些文档为准（2026-07-18）
-9. **客户端架构（2026-07-19 修订：LayaAir 3.4.0）**：
-   - 纯 Colyseus Schema 同步（唯一通道），动画/音频由服务端事件触发
-   - 录像：eventId + 定期快照 + 事件日志（继承旧项目 IndexedDB + Pako 方案）
-   - LayaAir UI2 统一承载游戏渲染 + UI 面板（不再分离 PixiJS/Vue）
-   - Schema onChange → Dirty Flag → UI 更新（继承旧项目 PlayerComp 模式）
-   - 卡牌 = Prefab 预制体（CardItem.lh）+ 对象池（Laya.Pool）管理
-   - 场景 = LayaAir Scene.open/close 切换 + 层级叠加
-   - 客户端里程碑 C0-C6 嵌入路线图（M4 后启动，与 M5-M7 并行）
+9. **客户端架构（2026-07-21 修订：Web 前端渲染方案）**：
+   - Vite + TypeScript + CSS 渲染 + spine-canvas（局部 Canvas）
+   - Colyseus Schema 同步（唯一通道），动画/音频由服务端事件触发
+   - 录像：eventId + 定期快照 + 事件日志（IndexedDB + Pako 方案）
+   - Schema onChange → Dirty Flag → DOM/CSS 更新
+   - 卡牌 = CSS background-position 图集切片 + DOM 节点对象池
+   - 自适应：`transform: scale()` 等比缩放，设计分辨率 1920×1080
+   - 客户端里程碑 C0-C3 优先于核心 M4-M6，之后逐 M 适配客户端
 10. **使用/打出链路重设计（2026-07-19 拷问确认）**：26 条决策已写入 use-card-and-need.md §5
 
 ## Fog

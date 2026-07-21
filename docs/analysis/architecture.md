@@ -74,11 +74,11 @@
 4. **分层**：认证/大厅最小实现独立于对局房间；DB 持久化走 handlers/services（已有 `GameEndHandler` 雏形），房间类不再直接 new DB 服务（避免旧 S4）；断线重连基于 Schema 重同步 + reconnectToken（不做消息重放）。
 5. **录像/旁观**：Schema 同步架构下的设计单独出 ADR（map.md Fog 项），不预先实现。
 
-### 2.3 客户端（client = LayaAir 3.4.0）
+### 2.3 客户端（Web 前端渲染方案）
 
-归属 M8，**具体实现见 `.scratch/client/design.md`**（ADR-0001 修订为 LayaAir 3.4.0）。此处仅锁定架构原则：
+归属 C0-C3，**具体实现见 `.scratch/client/design-dom.md`**。此处仅锁定架构原则：
 
-- **技术栈**（ADR-0001 2026-07-19 修订）：LayaAir 3.4.0（新版 UI `ui2`：GBox/GButton/GLabel/GImage/GList/GPanel）+ Colyseus 客户端 SDK。
+- **技术栈**（2026-07-21 修订）：Vite + TypeScript + CSS 渲染 + spine-canvas（局部 Canvas）+ Colyseus 客户端 SDK。
 - **状态驱动渲染**：订阅 RoomState Schema 变化驱动 Dirty Flag 更新，不依赖消息重放（解决 CL3）；交互经 choice_request/response 协议回传。
 - **共享代码直连**：经 `@shared/*` 别名 import，全栈类型安全（解决 CL1，不再 symlink）。
 - **只做表现不做裁决**：所有规则校验以服务端为权威，客户端置灰/高亮仅为提示（CL4 教训）。
