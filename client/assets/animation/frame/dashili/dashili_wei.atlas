@@ -1,0 +1,143 @@
+{
+  "frames": {
+    "0.png": {
+      "frame": {
+        "idx": 0,
+        "x": 83,
+        "y": 0,
+        "w": 38,
+        "h": 40
+      },
+      "sourceSize": {
+        "w": 40,
+        "h": 40
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 0
+      }
+    },
+    "1.png": {
+      "frame": {
+        "idx": 0,
+        "x": 42,
+        "y": 0,
+        "w": 39,
+        "h": 39
+      },
+      "sourceSize": {
+        "w": 40,
+        "h": 40
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "2.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 0,
+        "w": 40,
+        "h": 40
+      },
+      "sourceSize": {
+        "w": 40,
+        "h": 40
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "3.png": {
+      "frame": {
+        "idx": 0,
+        "x": 42,
+        "y": 41,
+        "w": 39,
+        "h": 39
+      },
+      "sourceSize": {
+        "w": 40,
+        "h": 40
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "4.png": {
+      "frame": {
+        "idx": 0,
+        "x": 83,
+        "y": 42,
+        "w": 38,
+        "h": 40
+      },
+      "sourceSize": {
+        "w": 40,
+        "h": 40
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    "5.png": {
+      "frame": {
+        "idx": 0,
+        "x": 40,
+        "y": 82,
+        "w": 37,
+        "h": 40
+      },
+      "sourceSize": {
+        "w": 40,
+        "h": 40
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 0
+      }
+    },
+    "6.png": {
+      "frame": {
+        "idx": 0,
+        "x": 123,
+        "y": 0,
+        "w": 37,
+        "h": 40
+      },
+      "sourceSize": {
+        "w": 40,
+        "h": 40
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 0
+      }
+    },
+    "7.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 42,
+        "w": 38,
+        "h": 40
+      },
+      "sourceSize": {
+        "w": 40,
+        "h": 40
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 0
+      }
+    }
+  },
+  "meta": {
+    "scale": 1
+  }
+}

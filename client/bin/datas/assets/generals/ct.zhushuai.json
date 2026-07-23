@@ -1,0 +1,18 @@
+{
+    "ct.caocao": {
+        "info": {
+            "id": "TY01-213",
+            "title": "魏武帝",
+            "designer": "KayaK",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "KayaK",
+                "cv": "木成",
+                "audios": { "death": { "translation": "霸业未成，未成啊……" } }
+            }
+        ]
+    }
+}

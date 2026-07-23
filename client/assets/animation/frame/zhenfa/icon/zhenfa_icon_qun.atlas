@@ -1,0 +1,143 @@
+{
+  "frames": {
+    "zf_g_qun_00000.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 0,
+        "w": 170,
+        "h": 90
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 90
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "zf_g_qun_00001.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 92,
+        "w": 170,
+        "h": 90
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 90
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "zf_g_qun_00002.png": {
+      "frame": {
+        "idx": 0,
+        "x": 172,
+        "y": 0,
+        "w": 170,
+        "h": 90
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 90
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "zf_g_qun_00003.png": {
+      "frame": {
+        "idx": 0,
+        "x": 172,
+        "y": 184,
+        "w": 168,
+        "h": 90
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 90
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "zf_g_qun_00004.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 276,
+        "w": 168,
+        "h": 90
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 90
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "zf_g_qun_00005.png": {
+      "frame": {
+        "idx": 0,
+        "x": 170,
+        "y": 276,
+        "w": 168,
+        "h": 90
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 90
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "zf_g_qun_00006.png": {
+      "frame": {
+        "idx": 0,
+        "x": 172,
+        "y": 92,
+        "w": 170,
+        "h": 90
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 90
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "zf_g_qun_00007.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 184,
+        "w": 170,
+        "h": 90
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 90
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "meta": {
+    "scale": 1
+  }
+}

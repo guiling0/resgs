@@ -1,0 +1,242 @@
+{
+    "wars.simayi_jin": {
+        "name": "wars.simayi_jin",
+        "kingdom": "jin",
+        "hp": 2,
+        "skills": ["wars.simayi_jin.yingshi", "wars.simayi_jin.shunfu"],
+        "isWars": true,
+        "rs": ["wars.zhangchunhua_jin", "wars.baifuren"]
+    },
+    "wars.zhangchunhua_jin": {
+        "name": "wars.zhangchunhua_jin",
+        "kingdom": "jin",
+        "hp": 1.5,
+        "gender": 2,
+        "skills": [
+            "wars.zhangchunhua_jin.ejue",
+            "wars.zhangchunhua_jin.shangshi"
+        ],
+        "isWars": true,
+        "rs": ["wars.simayi_jin"]
+    },
+    "wars.simashi": {
+        "name": "wars.simashi",
+        "kingdom": "jin",
+        "hp": 2,
+        "skills": ["wars.simashi.yimie", "wars.simashi.ruilue"],
+        "isWars": true,
+        "rs": ["wars.yanghuiyu"]
+    },
+    "wars.simazhao": {
+        "name": "wars.simazhao",
+        "kingdom": "jin",
+        "hp": 1.5,
+        "skills": ["wars.simazhao.zhaoran", "wars.simazhao.beiluan"],
+        "isWars": true,
+        "rs": ["wars.wangyuanji"]
+    },
+    "wars.simazhou": {
+        "name": "wars.simazhou",
+        "kingdom": "jin",
+        "hp": 2,
+        "skills": ["wars.simazhou.pojing"],
+        "isWars": true
+    },
+    "wars.simaliang": {
+        "name": "wars.simaliang",
+        "kingdom": "jin",
+        "hp": 2,
+        "skills": ["wars.simaliang.gongzhi", "wars.simaliang.sheju"],
+        "isWars": true
+    },
+    "wars.simalun": {
+        "name": "wars.simalun",
+        "kingdom": "jin",
+        "hp": 2,
+        "skills": ["wars.simalun.zhulan", "wars.simalun.luanchang"],
+        "isWars": true,
+        "rs": ["wars.sunxiu_jin"]
+    },
+    "wars.shibao": {
+        "name": "wars.shibao",
+        "kingdom": "jin",
+        "hp": 2,
+        "skills": ["wars.shibao.zhuosheng"],
+        "isWars": true
+    },
+    "wars.yanghuiyu": {
+        "name": "wars.yanghuiyu",
+        "kingdom": "jin",
+        "hp": 1.5,
+        "gender": 2,
+        "skills": ["wars.yanghuiyu.ciwei", "wars.yanghuiyu.caiyuan"],
+        "isWars": true,
+        "rs": ["wras.simashi"]
+    },
+    "wars.wangyuanji": {
+        "name": "wars.wangyuanji",
+        "kingdom": "jin",
+        "hp": 1.5,
+        "gender": 2,
+        "skills": ["wars.wangyuanji.yanxi", "wars.wangyuanji.shiren"],
+        "isWars": true,
+        "rs": ["wars.simazhao"]
+    },
+    "wars.weiguan": {
+        "name": "wars.weiguan",
+        "kingdom": "jin",
+        "hp": 1.5,
+        "skills": ["wars.weiguan.chengxi", "wars.weiguan.jiantong"],
+        "isWars": true
+    },
+    "wars.jiachong": {
+        "name": "wars.jiachong",
+        "kingdom": "jin",
+        "hp": 1.5,
+        "skills": ["wars.jiachong.chujue", "wars.jiachong.jianzhi"],
+        "isWars": true,
+        "rs": ["郭槐"]
+    },
+    "wars.guohuai_jin": {
+        "name": "wars.guohuai_jin",
+        "kingdom": "jin",
+        "hp": 1.5,
+        "gender": 2,
+        "skills": ["wars.guohuai_jin.zhefu", "wars.guohuai_jin.weidu"],
+        "isWars": true,
+        "rs": ["wars.jiachong"]
+    },
+    "wars.wangjun": {
+        "name": "wars.wangjun",
+        "kingdom": "jin",
+        "hp": 2,
+        "skills": ["wars.wangjun.chengliu"],
+        "isWars": true
+    },
+    "wars.malong": {
+        "name": "wars.malong",
+        "kingdom": "jin",
+        "hp": 2,
+        "skills": ["wars.malong.zhuanzhan", "wars.malong.xunji"],
+        "isWars": true
+    },
+    "wars.yanghu": {
+        "name": "wars.yanghu",
+        "kingdom": "jin",
+        "hp": 2,
+        "skills": ["wars.yanghu.huaiyuan", "wars.yanghu.fushou"],
+        "isWars": true,
+        "rs": ["wars.duyu"]
+    },
+    "wars.duyu": {
+        "name": "wars.duyu",
+        "kingdom": "jin",
+        "hp": 2,
+        "skills": ["wars.duyu.sanchen", "wars.duyu.pozhu"],
+        "isWars": true,
+        "rs": ["wars.yanghu"]
+    },
+    "wars.zhanghuyuechen": {
+        "name": "wars.zhanghuyuechen",
+        "kingdom": "jin",
+        "hp": 2,
+        "skills": [
+            "wars.zhanghuyuechen.xijue",
+            "wars.zhanghuyuechen.lvxian",
+            "wars.zhanghuyuechen.yingwei",
+            "#wars.zhanghuyuechen.tuxi",
+            "#wars.zhanghuyuechen.xiaoguo"
+        ],
+        "isWars": true
+    },
+    "wars.wenyang": {
+        "name": "wars.wenyang",
+        "kingdom": "jin",
+        "hp": 2.5,
+        "skills": ["wars.wenyang.duanqiu"],
+        "isWars": true
+    },
+    "wars.baifuren": {
+        "name": "wars.baifuren",
+        "kingdom": "jin",
+        "hp": 1.5,
+        "gender": 2,
+        "skills": ["wars.baifuren.limeng", "wars.baifuren.xiace"],
+        "isWars": true,
+        "rs": ["wars.simayi_jin"]
+    },
+    "wars.wangxiang": {
+        "name": "wars.wangxiang",
+        "kingdom": "jin",
+        "hp": 1.5,
+        "skills": ["wars.wangxiang.bingxin"],
+        "isWars": true
+    },
+    "wars.yangjun": {
+        "name": "wars.yangjun",
+        "kingdom": "jin",
+        "hp": 2,
+        "skills": ["wars.yangjun.neiji"],
+        "isWars": true
+    },
+    "wars.sunxiu_jin": {
+        "name": "wars.sunxiu_jin",
+        "kingdom": "jin",
+        "hp": 1.5,
+        "skills": ["wars.sunxiu_jin.xiejian", "wars.sunxiu_jin.yinsha"],
+        "isWars": true,
+        "rs": ["wars.simalun"]
+    },
+    "wars.lord_simayi": {
+        "name": "wars.lord_simayi",
+        "kingdom": "jin",
+        "hp": 2,
+        "skills": [
+            "wars.lord_simayi.jiaping",
+            "#wars.lord_simayi.bahuangsishiling",
+            "wars.lord_simayi.guikuang",
+            "wars.lord_simayi.shujuan",
+            "#wars.lord_simayi.shunfu",
+            "#wars.lord_simayi.fengying",
+            "#wars.lord_simayi.jianglue",
+            "#wars.lord_simayi.yongjin",
+            "#wars.lord_simayi.luanwu"
+        ],
+        "lord": true,
+        "enable": false,
+        "isWars": true
+    },
+    "wars.jiananfeng": {
+        "name": "wars.jiananfeng",
+        "kingdom": "jin",
+        "hp": 1.5,
+        "gender": 2,
+        "skills": ["wars.jiananfeng.shanzheng", "wars.jiananfeng.liedu"],
+        "isWars": true
+    },
+    "wars.xiahouhui": {
+        "name": "wars.xiahouhui",
+        "kingdom": "jin",
+        "hp": 1.5,
+        "gender": 2,
+        "skills": ["wars.xiahouhui.yishi", "wars.xiahouhui.shidu"],
+        "isWars": true
+    },
+    "wars.wanghun": {
+        "name": "wars.wanghun",
+        "kingdom": "jin",
+        "hp": 2,
+        "skills": ["wars.wanghun.fuxun", "wars.wanghun.chenya"],
+        "isWars": true,
+        "rs": ["wars.zhongyan"]
+    },
+    "wars.zhongyan": {
+        "name": "wars.zhongyan",
+        "kingdom": "jin",
+        "hp": 1.5,
+        "gender": 2,
+        "skills": ["wars.zhongyan.guangu", "wars.zhongyan.xiaoyong"],
+        "isWars": true,
+        "rs": ["wars.wanghun"]
+    }
+}

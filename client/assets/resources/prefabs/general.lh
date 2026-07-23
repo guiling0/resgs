@@ -1,0 +1,379 @@
+{
+  "_$ver": 1,
+  "_$id": "zel1hjy1",
+  "_$runtime": "res://b27da05f-bcf7-4b18-b65d-1ef589beeb5c",
+  "_$type": "GWidget",
+  "name": "general",
+  "width": 140,
+  "height": 195,
+  "anchorX": 0.5,
+  "anchorY": 0.5,
+  "_$child": [
+    {
+      "_$id": "q77nlp9f",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "img",
+      "x": -15,
+      "y": 2,
+      "width": 250,
+      "height": 292,
+      "scaleX": 0.66,
+      "scaleY": 0.66,
+      "mask": {
+        "_$ref": "qjucwp34"
+      },
+      "src": "res://f1f2e807-9f21-4610-9fc8-145805d8d69b",
+      "_isDemo": true,
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "qjucwp34",
+          "_$type": "Sprite",
+          "name": "mask",
+          "x": 25,
+          "y": -3,
+          "width": 206,
+          "height": 295,
+          "cacheAs": "bitmap",
+          "_gcmds": [
+            {
+              "_$type": "DrawRectCmd",
+              "fillColor": "#ffffff"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "r54ex6uj",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "pkgname",
+      "y": 165,
+      "width": 140,
+      "height": 30,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "rgba(0,0,0,0.5882352941176471)"
+      },
+      "text": "版本",
+      "_isDemo": true,
+      "font": "res://e8dea0d1-ab73-4e8c-8fbc-f582b520a5e0",
+      "fontSize": 25,
+      "color": "rgba(255, 255, 255, 1)",
+      "fitContent": 2,
+      "align": "center",
+      "valign": "middle",
+      "letterSpacing": 0,
+      "strokeColor": "rgba(255,255,255,0.5882352941176471)"
+    },
+    {
+      "_$id": "mx9vi63e",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "border",
+      "width": 140,
+      "height": 195,
+      "src": "res://48c1a18f-91dd-481d-8189-5367924a1455",
+      "autoSize": false
+    },
+    {
+      "_$id": "kojhjmpw",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "kingdom",
+      "width": 47,
+      "height": 49,
+      "_mouseState": 2,
+      "src": "res://86a67f32-dd04-4d86-8c53-bc43b0767709",
+      "_isDemo": true
+    },
+    {
+      "_$id": "ehynnre1",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "kingdom2",
+      "x": 18,
+      "y": 17,
+      "width": 47,
+      "height": 49,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "_mouseState": 2,
+      "src": "res://7d24728e-b193-4040-97b3-c43c112a3538",
+      "_isDemo": true
+    },
+    {
+      "_$id": "0bhoik20",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "general_name",
+      "y": 33,
+      "width": 35,
+      "height": 129,
+      "text": "[color=#f2ff00]{prefix=}[/color]{name=孙策}",
+      "font": "res://650643dd-42b3-43d5-b3f6-d23108173672",
+      "fontSize": 30,
+      "color": "#ffffff",
+      "ubb": true,
+      "templateVars": true,
+      "align": "center",
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 0,
+      "letterSpacing": 0,
+      "stroke": 2
+    },
+    {
+      "_$id": "qu0s14tp",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "shield",
+      "x": 110,
+      "y": 3,
+      "width": 46,
+      "height": 49,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "visible": false,
+      "src": "res://b2341938-9a13-4b76-a90b-bef9a83432e8",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "re1kh3x9",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "shield_label",
+          "y": -6,
+          "width": 46,
+          "height": 49,
+          "text": "0",
+          "font": "res://e8dea0d1-ab73-4e8c-8fbc-f582b520a5e0",
+          "fontSize": 40,
+          "color": "#FFFFFF",
+          "bold": true,
+          "align": "center",
+          "valign": "middle",
+          "letterSpacing": 0,
+          "stroke": 3
+        }
+      ]
+    },
+    {
+      "_$id": "o3ygm2ql",
+      "_$var": true,
+      "_$type": "GList",
+      "name": "hps",
+      "x": 38,
+      "y": 3,
+      "width": 90,
+      "height": 26,
+      "layout": {
+        "type": 2
+      },
+      "_templateNode": {
+        "_$ref": "bl2qt33v",
+        "_$tmpl": "itemTemplate"
+      },
+      "_initItemNum": 4,
+      "_isDemo": true,
+      "_$child": [
+        {
+          "_$id": "bl2qt33v",
+          "_$type": "GImage",
+          "name": "hp",
+          "width": 22,
+          "height": 27,
+          "src": "res://c2e6fb91-ca35-4fef-8b8b-ca52f794f666"
+        }
+      ]
+    },
+    {
+      "_$id": "gyfrxzlq",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "hp_label",
+      "x": 57,
+      "y": 3,
+      "width": 48,
+      "height": 27,
+      "visible": false,
+      "text": "4/4",
+      "_isDemo": true,
+      "font": "res://877a4e81-543d-40b8-ba3c-7376c518ca6c",
+      "fontSize": 25,
+      "color": "#FFFFFF",
+      "fitContent": 1,
+      "align": "center",
+      "valign": "middle",
+      "letterSpacing": 0,
+      "padding": [
+        0,
+        5,
+        0,
+        5
+      ],
+      "stroke": 3
+    },
+    {
+      "_$id": "74pp8dpn",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "pkg_icon",
+      "x": 100,
+      "y": 155,
+      "width": 40,
+      "height": 40,
+      "src": "",
+      "autoSize": false
+    },
+    {
+      "_$id": "qg8zboxe",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "zhulian",
+      "x": 1,
+      "y": 134,
+      "width": 94,
+      "height": 42,
+      "scaleX": 1.45,
+      "scaleY": 1.45,
+      "visible": false,
+      "src": "res://70fdf8de-067a-40bd-bf82-5fe3175390f9",
+      "_isDemo": true,
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "io96hevt",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "zhulian_zi",
+          "y": 14,
+          "width": 95,
+          "height": 15,
+          "src": "res://2d20766c-a8d7-4005-a5ad-5c245b956598",
+          "_isDemo": true,
+          "autoSize": false
+        }
+      ]
+    },
+    {
+      "_$id": "q7jlg3fh",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "zhulian_selected0",
+      "x": 24,
+      "y": 103,
+      "width": 92,
+      "height": 92,
+      "visible": false,
+      "src": "res://3b2abd86-143d-462b-b305-e2d5cd3ada58"
+    },
+    {
+      "_$id": "6w1mh3c7",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "zhulian_selected1",
+      "x": 24,
+      "y": 103,
+      "width": 92,
+      "height": 92,
+      "visible": false,
+      "src": "res://ee2f4a54-cd74-42ca-92f4-47f984fe788a"
+    },
+    {
+      "_$id": "r2hses1g",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "back",
+      "width": 140,
+      "height": 195,
+      "visible": false,
+      "src": "res://d22e2fb9-247d-4811-b91f-6ea1ff906f1a",
+      "autoSize": false
+    },
+    {
+      "_$id": "z5dw0knc",
+      "_$var": true,
+      "_$type": "GList",
+      "name": "marks",
+      "y": 4,
+      "width": 67,
+      "height": 188,
+      "layout": {
+        "type": 1,
+        "rowGap": -5,
+        "valign": 2,
+        "minChildSize": 5
+      },
+      "_templateNode": {
+        "_$ref": "s3ngf4qh",
+        "_$tmpl": "itemTemplate"
+      },
+      "_initItemNum": 5,
+      "_isDemo": true,
+      "_$child": [
+        {
+          "_$id": "s3ngf4qh",
+          "_$type": "GImage",
+          "name": "mark",
+          "width": 67,
+          "height": 29,
+          "src": "res://26b3f5a9-c135-47ac-a6f1-67cfcbdecede",
+          "_$child": [
+            {
+              "_$id": "gm1kz5f5",
+              "_$type": "GTextField",
+              "name": "markText",
+              "y": 1,
+              "width": 90,
+              "height": 25,
+              "text": "三个字",
+              "font": "res://e8dea0d1-ab73-4e8c-8fbc-f582b520a5e0",
+              "fontSize": 20,
+              "color": "#ffffff",
+              "overflow": "ellipsis",
+              "letterSpacing": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "1rvglymi",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "isSelected",
+      "x": 38,
+      "y": 163,
+      "width": 63,
+      "height": 26,
+      "visible": false,
+      "src": "res://7ead2471-08da-4e4c-a0b1-4ee17686c718"
+    },
+    {
+      "_$id": "03ua4qnv",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "label",
+      "x": 8,
+      "y": 113,
+      "width": 124,
+      "height": 79,
+      "text": "提示文本",
+      "_isDemo": true,
+      "font": "res://da76ec8c-61b0-4487-aaa7-53a003b7a096",
+      "fontSize": 22,
+      "color": "#ffffff",
+      "bold": true,
+      "ubb": true,
+      "align": "center",
+      "valign": "bottom",
+      "overflow": "shrink",
+      "wordWrap": true,
+      "letterSpacing": 0,
+      "stroke": 3
+    }
+  ]
+}

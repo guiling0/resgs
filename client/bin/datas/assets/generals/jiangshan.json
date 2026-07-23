@@ -1,0 +1,19 @@
+{
+    "js.liuyan": {
+        "info": {
+            "id": "QUN068",
+            "title": "裂土之宗",
+            "prefix": "起",
+            "designer": "桃花僧",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "心中一凛",
+                "cv": "金垚",
+                "audios": { "death": { "translation": "背疮难治，世子难继。" } }
+            }
+        ]
+    }
+}

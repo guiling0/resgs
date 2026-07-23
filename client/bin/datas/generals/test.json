@@ -1,0 +1,37 @@
+{
+    "default.shibingn": {
+        "name": "default.shibingn",
+        "kingdom": "qun",
+        "hp": 2,
+        "skills": [],
+        "enable": false,
+        "hidden": true,
+        "isWars": true
+    },
+    "default.shibingv": {
+        "name": "default.shibingv",
+        "kingdom": "qun",
+        "hp": 2,
+        "gender": 2,
+        "skills": [],
+        "enable": false,
+        "hidden": true,
+        "isWars": true
+    },
+    "default.white_sunce": {
+        "name": "default.white_sunce",
+        "kingdom": "qun",
+        "hp": 1,
+        "skills": [],
+        "enable": false,
+        "hidden": true
+    },
+    "default.white_mifuren": {
+        "name": "default.white_mifuren",
+        "kingdom": "qun",
+        "hp": 1,
+        "skills": [],
+        "enable": false,
+        "hidden": true
+    }
+}

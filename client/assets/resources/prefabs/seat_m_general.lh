@@ -1,0 +1,87 @@
+{
+  "_$ver": 1,
+  "_$id": "o1cw6ww2",
+  "_$runtime": "res://401a0c47-66e8-42f0-ab22-ddaa03c2fd66",
+  "_$type": "GWidget",
+  "name": "seat_m_general",
+  "width": 175,
+  "height": 233,
+  "_$child": [
+    {
+      "_$id": "t7xydtl5",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "img",
+      "x": -2,
+      "y": 5,
+      "width": 250,
+      "height": 292,
+      "scaleX": 0.8,
+      "scaleY": 0.8,
+      "mask": {
+        "_$ref": "osjiv7m2"
+      },
+      "src": "res://60d28adb-26a9-40b9-93bd-309b4d35af59",
+      "_isDemo": true,
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "osjiv7m2",
+          "_$type": "GWidget",
+          "name": "mask",
+          "x": 41,
+          "y": 1,
+          "width": 174,
+          "height": 277,
+          "cacheAs": "bitmap",
+          "background": {
+            "_$type": "DrawRoundRectCmd",
+            "lt": 8,
+            "rt": 8,
+            "lb": 8,
+            "rb": 8,
+            "fillColor": "#ffffff"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "cg1kfiwa",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "lock",
+      "x": 49,
+      "y": 64,
+      "width": 100,
+      "height": 122,
+      "visible": false,
+      "src": "res://7a1eb429-da91-4ee6-83cc-6a7ad67f4386"
+    },
+    {
+      "_$id": "ujsuw5l3",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "qianfu",
+      "x": 31,
+      "y": 6,
+      "width": 139,
+      "height": 223,
+      "visible": false,
+      "src": "res://0d7dbf67-5277-47ad-b830-61885fb4a5ef",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "1fluuc5h",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "single_qianfu_icon",
+          "x": 52,
+          "y": 101,
+          "width": 35,
+          "height": 21,
+          "src": "res://2d3fa70e-e057-4c5f-9c71-b7950bf36e20"
+        }
+      ]
+    }
+  ]
+}

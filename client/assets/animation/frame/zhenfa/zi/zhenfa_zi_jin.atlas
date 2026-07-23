@@ -1,0 +1,143 @@
+{
+  "frames": {
+    "jinzi_00000.png": {
+      "frame": {
+        "idx": 0,
+        "x": 160,
+        "y": 0,
+        "w": 57,
+        "h": 55
+      },
+      "sourceSize": {
+        "w": 88,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 16,
+        "y": 17
+      }
+    },
+    "jinzi_00001.png": {
+      "frame": {
+        "idx": 0,
+        "x": 88,
+        "y": 0,
+        "w": 70,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 88,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 10,
+        "y": 11
+      }
+    },
+    "jinzi_00002.png": {
+      "frame": {
+        "idx": 0,
+        "x": 86,
+        "y": 85,
+        "w": 81,
+        "h": 77
+      },
+      "sourceSize": {
+        "w": 88,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 6
+      }
+    },
+    "jinzi_00003.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 85,
+        "w": 84,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 88,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 4
+      }
+    },
+    "jinzi_00004.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 0,
+        "w": 86,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 88,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 3
+      }
+    },
+    "jinzi_00005.png": {
+      "frame": {
+        "idx": 0,
+        "x": 152,
+        "y": 164,
+        "w": 62,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 88,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 15
+      }
+    },
+    "jinzi_00006.png": {
+      "frame": {
+        "idx": 0,
+        "x": 86,
+        "y": 164,
+        "w": 64,
+        "h": 61
+      },
+      "sourceSize": {
+        "w": 88,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 13,
+        "y": 14
+      }
+    },
+    "jinzi_00007.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 168,
+        "w": 64,
+        "h": 61
+      },
+      "sourceSize": {
+        "w": 88,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 13,
+        "y": 14
+      }
+    }
+  },
+  "meta": {
+    "scale": 1
+  }
+}

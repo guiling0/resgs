@@ -1,5 +1,6 @@
 import { ObjectId } from 'mongodb';
 
+/** 武将统计 */
 export interface GeneralStat {
     _id: ObjectId;
     generalId: string;
@@ -9,9 +10,6 @@ export interface GeneralStat {
     wins: number;
     losses: number;
     winRate: number;
-
-    banCount: number;
-    pickCount: number;
 
     extraStats: Record<string, number>;
 

@@ -1,0 +1,433 @@
+{
+    "wars.god_guanyu.wushen": {
+        "name": "wars.god_guanyu.wushen",
+        "lang_name": "武神",
+        "lang_desc": "锁定技，你的红桃手牌视为【杀】；你使用红桃【杀】无距离限制。",
+        "lang_desc2": "①锁定技，你的红桃手牌的牌名视为【杀】且此【杀】为普【杀】。②锁定技，你使 用红桃【杀】无距离关系的限制。",
+        "audios": [
+            {
+                "url": "generals/guanyu/god.guanyu/wushen1",
+                "translation": "取汝狗头，犹如探囊取物。"
+            },
+            {
+                "url": "generals/guanyu/god.guanyu/wushen2",
+                "translation": "还不速速领死！"
+            }
+        ]
+    },
+    "wars.god_guanyu.wuhun": {
+        "name": "wars.god_guanyu.wuhun",
+        "lang_name": "武魂",
+        "lang_desc": "锁定技，当你受到1点伤害后，你令伤害来源获得1枚“梦魇”；当你死亡时， 你令拥有最多“梦魇”的一名其他角色进行判定：若结果不为【桃】或【桃园结义】，其死亡。",
+        "lang_desc2": "①锁定技，当你受到1点伤害后，你令来源获得1枚“梦魇”。②锁定技，当你死亡时，你令所有存活的其他角色中“梦魇”数最大且大于0的一名判定▶若结果不 为【桃】或【桃园结义】，其死亡。",
+        "audios": [
+            {
+                "url": "generals/guanyu/god.guanyu/wuhun1",
+                "translation": "拿命来！"
+            },
+            {
+                "url": "generals/guanyu/god.guanyu/wuhun2",
+                "translation": "谁来与我同去？！"
+            }
+        ]
+    },
+    "wars.god_lvmeng.shelie": {
+        "name": "wars.god_lvmeng.shelie",
+        "lang_name": "涉猎",
+        "lang_desc": "摸牌阶段，你可以改为亮出牌堆顶的五张牌，然后获得其中每种花色的牌各一张。",
+        "lang_desc2": "摸牌阶段开始时❷，你可令额定摸牌数改为0 ▶ 你亮出牌堆顶的五张牌，获得其中每种花色的牌各一张，将其余牌置入弃牌堆。",
+        "audios": [
+            {
+                "url": "generals/lvmeng/god.lvmeng/shelie1",
+                "translation": "略懂，略懂。"
+            },
+            {
+                "url": "generals/lvmeng/god.lvmeng/shelie2",
+                "translation": "什么都略懂一点，生活更多彩一些。"
+            }
+        ]
+    },
+    "wars.god_lvmeng.gongxin": {
+        "name": "wars.god_lvmeng.gongxin",
+        "lang_name": "攻心",
+        "lang_desc": "出牌阶段限一次，你可以观看一名其他角色的手牌，然后你可以展示其中的一张红桃牌并选择一项：1.弃置此牌；2.将此牌置于牌堆顶。",
+        "lang_desc2": "出牌阶段限一次，你可{观看一名其他角色的手牌并可展示其中的一张红桃牌} ▶ 你 选择：1.弃置你以此法展示的牌；2.将你以此法展示的牌置于牌堆顶。",
+        "audios": [
+            {
+                "url": "generals/lvmeng/god.lvmeng/gongxin1",
+                "translation": "我替施主把把脉。"
+            },
+            {
+                "url": "generals/lvmeng/god.lvmeng/gongxin2",
+                "translation": "攻城为下，攻心为上。"
+            }
+        ]
+    },
+    "wars.god_zhouyu.qinyin": {
+        "name": "wars.god_zhouyu.qinyin",
+        "lang_name": "琴音",
+        "lang_desc": "弃牌阶段结束时，若你于此阶段内弃置 过你的至少两张手牌，你可以选择一项：1.令所有角色各回复1点体力；2.令所有角色各失去1点体力。",
+        "lang_desc2": "弃牌阶段结束时 ，若你于此阶段内弃置过你的至少两张手牌，你可获得1枚“琴”并选择所有角色▶你选择：1.令这些角色各回复1点体力；2.令这些角色 各失去1点体力。",
+        "audios": [
+            {
+                "url": "generals/zhouyu/god.zhouyu/qinyin1",
+                "translation": "（舒缓的琴声）"
+            },
+            {
+                "url": "generals/zhouyu/god.zhouyu/qinyin2",
+                "translation": "（急促的琴声、燃烧声）"
+            }
+        ]
+    },
+    "wars.god_zhouyu.yeyan": {
+        "name": "wars.god_zhouyu.yeyan",
+        "lang_name": "业炎",
+        "lang_desc": "限定技，出牌阶段，你可以选择至多三名角色，对这些角色造成共计至多3点火焰伤害，若你将对 一名角色造成至少2点火焰伤害，你须先弃置四张花色各不相同的手牌并失去3点体力。",
+        "lang_desc2": "限定技，出牌阶段，你可选择：1.获得1枚“业”并选择至多三名角色▶你对这些角色各造成1点火焰伤害；2.弃置四张花色各不相同的手牌并选择一名角色▶你失去3点体 力，对其造成2点火焰伤害；3.弃置四张花色各不相同的手牌并选择一名角色▶你失去3点体力，对其造成3点火焰伤害；4.弃置四张花色各不相同的手牌并选择两名角色A和B▶你失去3点体力，对A造成1点火焰伤害，对B造成2点火焰伤害；5.弃置四张花色各不相同的手牌并选择两名角色A和B▶你失去3点体力，对A造成2点火焰伤害，对B造成1点火焰伤害。",
+        "audios": [
+            {
+                "url": "generals/zhouyu/god.zhouyu/yeyan1",
+                "translation": "（燃烧声）让这熊熊业火，焚尽你的罪恶！\t"
+            },
+            {
+                "url": "generals/zhouyu/god.zhouyu/yeyan2",
+                "translation": "（燃烧声）聆听吧，这献给你的镇魂曲！"
+            }
+        ]
+    },
+    "wars.god_zhugeliang.qixing": {
+        "name": "wars.god_zhugeliang.qixing",
+        "lang_name": "七 星",
+        "lang_desc": "你的首个回合开时，将牌堆顶的七张牌置于你的武将牌上，称为“星”；摸牌阶段结束时，你可以用任意张手牌替换等量的“星”。",
+        "lang_desc2": "①回合开始后❸，若你未发动过此技能，你将牌堆顶的七张牌扣置于武将牌上（称为“星”）▶你可选择 至少一张“星”和你等量的手牌，将你以此法选择的手牌扣置于武将牌上（称为“星”），获得你以此法选择的“星”。\n②摸牌阶段结 束时，你可选择至少一张“星”和你等量的手牌▶你将你以此法选择的手牌扣置于武将牌上（称为“星”），获得你以此法选择的“星” 。",
+        "audios": [
+            {
+                "url": "generals/zhugeliang/god.zhugeliang/qixing1",
+                "translation": "祈星辰之力，佑我蜀汉！"
+            },
+            {
+                "url": "generals/zhugeliang/god.zhugeliang/qixing2",
+                "translation": "伏望天恩，誓讨汉贼！"
+            }
+        ]
+    },
+    "wars.god_zhugeliang.kuangfeng": {
+        "name": "wars.god_zhugeliang.kuangfeng",
+        "lang_name": "狂风",
+        "lang_desc": "结束阶段，你可以移去一张“星”并选择一名角色，然后直到你的下 回合开始之前，当该角色受到火焰伤害时，此伤害+1。",
+        "lang_desc2": "结束阶段开始时，你可将一张“星”置入弃牌堆并选择一名角色 ▶（→）当其于你的下回合开始之前受到火焰伤害时❷，你令伤害值+1。",
+        "audios": [
+            {
+                "url": "generals/zhugeliang/god.zhugeliang/kuangfeng1",
+                "translation": "风~~起~~"
+            },
+            {
+                "url": "generals/zhugeliang/god.zhugeliang/kuangfeng2",
+                "translation": "万事俱备，只欠 业火。"
+            }
+        ]
+    },
+    "wars.god_zhugeliang.dawu": {
+        "name": "wars.god_zhugeliang.dawu",
+        "lang_name": "大雾",
+        "lang_desc": "结束阶段，你可以移去任意张“星”并选择等量的角色，然后直到你的下回合开始之前，当这些角色受到非雷电伤害时，防止此伤害。",
+        "lang_desc2": "结 束阶段开始时，你可将至少一张“星”置入弃牌堆并选择等量的角色▶（→）当其于你的下回合开始之前受到不为雷电伤害的伤害结算开 始时[7]，你防止此伤害。",
+        "audios": [
+            {
+                "url": "generals/zhugeliang/god.zhugeliang/dawu1",
+                "translation": "此计可保你一时平安。"
+            },
+            {
+                "url": "generals/zhugeliang/god.zhugeliang/dawu2",
+                "translation": "此非万全之策，唯惧天雷。"
+            }
+        ]
+    },
+    "wars.god_caocao.guixin": {
+        "name": "wars.god_caocao.guixin",
+        "lang_name": "归心",
+        "lang_desc": "结束阶段，你可以选择一项：1.获得不在场或已死亡的君主对应的君主技；2.令一名其他角色将势力改为野心家。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/caocao/god.caocao/guixin1",
+                "translation": "山不厌高，海不厌深。"
+            },
+            {
+                "url": "generals/caocao/god.caocao/guixin2",
+                "translation": "周公吐哺，天下归心。"
+            }
+        ]
+    },
+    "wars.god_caocao.feiying": {
+        "name": "wars.god_caocao.feiying",
+        "lang_name": "飞影",
+        "lang_desc": "锁定技，其他角色计算与你的距离+1 。",
+        "lang_desc2": "锁定技，其他角色至你的距离+1。",
+        "audios": []
+    },
+    "wars.god_lvbu.kuangbao": {
+        "name": "wars.god_lvbu.kuangbao",
+        "lang_name": "狂暴",
+        "lang_desc": "锁定技，当你造成或受到1点伤害后，你获得1枚“暴怒”。",
+        "lang_desc2": "锁定技，当你造成或受 到1点伤害后，你获得1枚“暴怒”标记。",
+        "audios": [
+            {
+                "url": "generals/lvbu/god.lvbu/kuangbao1",
+                "translation": "哼！"
+            },
+            { "url": "generals/lvbu/god.lvbu/kuangbao2", "translation": "啊……" }
+        ]
+    },
+    "wars.god_lvbu.wumou": {
+        "name": "wars.god_lvbu.wumou",
+        "lang_name": "无谋",
+        "lang_desc": "锁定技，当你使用普通锦囊牌时，你选择一项：1.弃1枚“暴怒”；2.失去1点体力。",
+        "lang_desc2": "锁定技， 当普通锦囊牌被使用时，若使用者为你，你选择：1.弃置1枚“暴怒”标记；2.失去1点体力。",
+        "audios": [
+            {
+                "url": "generals/lvbu/god.lvbu/wumou1",
+                "translation": "不管这些啦！"
+            },
+            {
+                "url": "generals/lvbu/god.lvbu/wumou2",
+                "translation": "哪个说我有勇无谋？"
+            }
+        ]
+    },
+    "wars.god_lvbu.wuqian": {
+        "name": "wars.god_lvbu.wuqian",
+        "lang_name": "无前",
+        "lang_desc": "出牌阶段，你可以弃2枚“暴怒”并选择一名角色，直到回合结束，你拥有〖无双〗且该角色的防具技能无效。",
+        "lang_desc2": "出牌阶段，你可弃置2枚“暴怒”标记并选择一名你于此回合内未以此法选择过的其他角色▶你于此回合内拥有〖无双〗且其防具技能于此回合内无效。",
+        "audios": [
+            {
+                "url": "generals/lvbu/god.lvbu/wuqian1",
+                "translation": "天王老子也保不住你！"
+            },
+            {
+                "url": "generals/lvbu/god.lvbu/wuqian2",
+                "translation": "看我神威 ，无坚不摧！"
+            }
+        ]
+    },
+    "wars.god_lvbu.shenfen": {
+        "name": "wars.god_lvbu.shenfen",
+        "lang_name": "神愤",
+        "lang_desc": "出牌阶段限一次，你可以弃6枚“暴怒”并选择所有其他角色，对这些角色各造成1点伤害，然后这些角色先各弃置其装备区里的所有牌，再各弃置四张手牌 ，最后你翻面。",
+        "lang_desc2": "出牌阶段限一次，你可弃置6枚“暴怒”标记并选择所有其他角色▶你对这些角色各造成1点伤害。这些 角色各弃置装备区里的所有牌，再各弃置四张手牌。最后你翻面。",
+        "audios": [
+            {
+                "url": "generals/lvbu/god.lvbu/shenfen1",
+                "translation": "凡人们，颤抖吧！这是神之怒火！"
+            },
+            {
+                "url": "generals/lvbu/god.lvbu/shenfen2",
+                "translation": "这，才是活生生的地狱！"
+            }
+        ]
+    },
+    "#wars.god_lvbu.wushuang": {
+        "name": "#wars.god_lvbu.wushuang",
+        "lang_name": "无双",
+        "lang_desc": "锁定技，当你使用【杀】指定一 名角色为目标后，其需依次使用两张【闪】才能抵消此【杀】；当你使用【决斗】指定一名角色为目标后，或成为一名角色使用【决斗】 的目标后，其每次响应此【决斗】需依次打出两张【杀】。",
+        "lang_desc2": "①锁定技，当【杀】指定目标后，若使用者为你，其抵消此 【杀】需依次使用两张【闪】。\n②锁定技，当你使用【决斗】或成为【决斗】的目标后，对方响应此【决斗】需依次打出两张【杀】。",
+        "audios": [
+            {
+                "url": "generals/lvbu/god.lvbu/wushuang1",
+                "translation": "承受天神的怒火吧！"
+            },
+            {
+                "url": "generals/lvbu/god.lvbu/wushuang2",
+                "translation": "盖世无双，何人能挡？"
+            }
+        ]
+    },
+    "wars.god_zhaoyun.juejing": {
+        "name": "wars.god_zhaoyun.juejing",
+        "lang_name": "绝境",
+        "lang_desc": "锁定技，你的手牌始终为4。（你以此法于一局游戏中至多摸20张牌）",
+        "lang_desc2": "锁定技，当你的手牌数 发生变化后，若你的手牌数不等于4且你以此法于此局游戏中摸牌的总数小于20，你摸牌或弃置手牌直到你的手牌数为4。",
+        "audios": [
+            {
+                "url": "generals/zhaoyun/god.zhaoyun/juejing1",
+                "translation": "背水一战，不胜便死！"
+            },
+            {
+                "url": "generals/zhaoyun/god.zhaoyun/juejing2",
+                "translation": "置于死地，方能后生！"
+            }
+        ]
+    },
+    "wars.god_zhaoyun.longhun": {
+        "name": "wars.god_zhaoyun.longhun",
+        "lang_name": "龙魂",
+        "lang_desc": "你可以将花色相同的X张牌按以下规则使用或打出：红桃当【桃】；方块当火【杀】；梅花当【闪】；黑桃当【无 懈可击】（X为你的体力值且至少为1）。",
+        "lang_desc2": "当你需要使用或打出对应的牌时❸，你可使用/打出对应的实体牌为你的X张同 花色牌（X=max{1,你的体力值}）：\n1.红桃当【桃】；\n2.方块当火【杀】；\n3.梅花当【闪】；\n4.黑桃当普【无懈可击】。",
+        "audios": [
+            {
+                "url": "generals/zhaoyun/god.zhaoyun/longhun1",
+                "translation": "常山赵子龙在此！"
+            },
+            {
+                "url": "generals/zhaoyun/god.zhaoyun/longhun2",
+                "translation": "能屈能伸，才是大丈夫！"
+            }
+        ]
+    },
+    "wars.god_zhaoyun.zhanjiang": {
+        "name": "wars.god_zhaoyun.zhanjiang",
+        "lang_name": "斩将",
+        "lang_desc": "准备阶段，若场上有【青釭剑】，你可以获得之。",
+        "lang_desc2": "准备阶段开始时，若场上（包括其 他角色的装备区及弃牌堆）有【青釭剑】，你可获得之。",
+        "audios": [
+            {
+                "url": "generals/zhaoyun/god.zhaoyun/zhanjiang1",
+                "translation": "吾有此剑，何愁不破敌军！"
+            }
+        ]
+    },
+    "wars.god_simayi.renjie": {
+        "name": "wars.god_simayi.renjie",
+        "lang_name": "忍戒",
+        "lang_desc": "锁定技，当你受到伤害后/于弃牌阶段内弃置手牌后，你获得伤害值枚/弃置手牌数枚“忍”。",
+        "lang_desc2": "锁定技，当你受到伤害后/于弃牌阶段内因弃置而失去手牌后❷，你获得X枚“忍”标记（X为伤害值/你弃置的手牌数）。",
+        "audios": [
+            {
+                "url": "generals/simayi/god.simayi/renjie1",
+                "translation": "忍一时，风平浪静。"
+            },
+            {
+                "url": "generals/simayi/god.simayi/renjie2",
+                "translation": "退一 步，海阔天空。"
+            }
+        ]
+    },
+    "wars.god_simayi.baiyin": {
+        "name": "wars.god_simayi.baiyin",
+        "lang_name": "拜印",
+        "lang_desc": "觉醒技，准备阶段，若“忍”数大于3，你减1点体力上限，然后获得〖极略〗。",
+        "lang_desc2": "觉醒技，准备阶段开始时，若你拥有的“忍”标记数 大于3，你减1点体力上限▶你获得技能〖极略〗。",
+        "audios": [
+            {
+                "url": "generals/simayi/god.simayi/baiyin1",
+                "translation": "老骥伏枥，志在千里！"
+            },
+            {
+                "url": "generals/simayi/god.simayi/baiyin2",
+                "translation": "烈士暮年，壮心不已！"
+            }
+        ]
+    },
+    "wars.god_simayi.lianpo": {
+        "name": "wars.god_simayi.lianpo",
+        "lang_name": "连破",
+        "lang_desc": "你杀死过角色的回合结束后，你可以获得一个额外回合。",
+        "lang_desc2": "一名角色的回合结束前❶，若你于此回合内杀死过角色，你可获得一个额外回合。",
+        "audios": [
+            {
+                "url": "generals/simayi/god.simayi/lianpo1",
+                "translation": "一鼓作气，破敌致胜！"
+            },
+            {
+                "url": "generals/simayi/god.simayi/lianpo2",
+                "translation": "受命于天，既寿永昌！"
+            }
+        ]
+    },
+    "wars.god_simayi.jilve": {
+        "name": "wars.god_simayi.jilve",
+        "lang_name": "极略",
+        "lang_desc": "你可以弃1 枚“忍”，发动下列一项技能：“鬼才”、“放逐”、“集智”、“制衡”或“完杀”。",
+        "lang_desc2": "",
+        "audios": []
+    },
+    "#wars.god_simayi.guicai": {
+        "name": "#wars.god_simayi.guicai",
+        "lang_name": "鬼才",
+        "lang_desc": "当一名角色的判定牌生效前，你可以打出一张 牌代替之。",
+        "lang_desc2": "当一名角色的判定牌生效前，你可打出一张牌代替此判定牌。",
+        "audios": [
+            {
+                "url": "generals/simayi/god.simayi/guicai",
+                "translation": "老夫，即是天命！"
+            }
+        ]
+    },
+    "#wars.god_simayi.fangzhu": {
+        "name": "#wars.god_simayi.fangzhu",
+        "lang_name": "放逐",
+        "lang_desc": "当你受到伤害后，你可以令一名其他角色选择一项：1摸X张牌（X为你已损失的体力值），2.弃置一张牌并失去1点体力。然后该角色叠置。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/simayi/god.simayi/fangzhu",
+                "translation": "赦你死罪，你去吧！"
+            }
+        ]
+    },
+    "#wars.god_simayi.jizhi": {
+        "name": "#wars.god_simayi.jizhi",
+        "lang_name": "集智",
+        "lang_desc": "当你使用非转化的普通锦囊牌时，你可以摸一张牌。",
+        "lang_desc2": "当你使用非转化的普通锦囊牌时，你可摸一张牌。",
+        "audios": [
+            {
+                "url": "generals/simayi/god.simayi/jizhi",
+                "translation": "顺应天意，得道多助。"
+            }
+        ]
+    },
+    "#wars.god_simayi.wansha": {
+        "name": "#wars.god_simayi.wansha",
+        "lang_name": "完杀",
+        "lang_desc": "锁定技，你的回合内，若有角色处于濒死状态，只有你和处于濒死状态的角色才能使用【桃】。",
+        "lang_desc2": "",
+        "audios": [
+            {
+                "url": "generals/simayi/god.simayi/wansha",
+                "translation": "天要亡你，谁人能救？"
+            }
+        ]
+    },
+    "wars.god_diaochan.meihun": {
+        "name": "wars.god_diaochan.meihun",
+        "lang_name": "魅魂",
+        "lang_desc": "结束阶段或当你成为【杀】的目标后，你可以令一名其他角色交给你一张你声明的花色的牌，若其没有，则你观看其手牌，然后弃置其中一张牌。",
+        "lang_desc2": "结束阶段开始时或你 成为【杀】的目标后，你可选择一名有牌的其他角色并选择一种花色▶若其：有此花色的牌，其交给你一张此花色的牌；没有此花色的牌 ，你观看其手牌并弃置其中的一张。",
+        "audios": [
+            {
+                "url": "generals/diaochan/god.diaochan/meihun1",
+                "translation": "将军还记得那晚的话么？弄疼人家，要赔不是哦~"
+            },
+            {
+                "url": "generals/diaochan/god.diaochan/meihun2",
+                "translation": "让我看看，将军这次会为我心软，还是耳根子软~"
+            },
+            {
+                "url": "generals/diaochan/god.diaochan/meihun3",
+                "translation": "眼前皆是身外物，将军所在，即吾心归处。"
+            },
+            {
+                "url": "generals/diaochan/god.diaochan/meihun4",
+                "translation": "既然你说我是魔鬼中的天使，那我就再任性一次。"
+            }
+        ]
+    },
+    "wars.god_diaochan.huoxin": {
+        "name": "wars.god_diaochan.huoxin",
+        "lang_name": "惑心",
+        "lang_desc": "出牌阶段限一次，你可以展示两张花 色相同的手牌并分别交给两名其他角色，然后令这两名角色拼点，没赢的角色获得1个“魅惑”标记。拥有2个或更多“魅惑”的角色回合 即将开始时，该角色移去其所有“魅惑”，此回合改为由你操控。",
+        "lang_desc2": "①出牌阶段限一次，你可选择一名其他角色A和一名是A拼点的合法目标的其他角色并展示两张花色相同的手牌▶你将其中的一张交给A，将另一张交给B。A与B拼点。拼点未赢的角色获得1枚“ 魅惑”。\n②一名其他角色的回合开始后❼，若其“魅惑”数大于1，其弃所有“魅惑”▶操控其的玩家于此回合内或游戏结束的条件被满足前改为操控你的玩家。",
+        "audios": [
+            {
+                "url": "generals/diaochan/god.diaochan/huoxin1",
+                "translation": "今天下大乱，就不能摒弃儿女私情，挺身而出吗？！"
+            },
+            {
+                "url": "generals/diaochan/god.diaochan/huoxin2",
+                "translation": "谁怜九州难救天下人，我有一心只付 将军身。"
+            }
+        ]
+    }
+}

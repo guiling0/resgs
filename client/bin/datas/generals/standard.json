@@ -1,0 +1,190 @@
+{
+    "caocao": {
+        "name": "caocao",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["caocao.jianxiong", "caocao.hujia"],
+        "lord": true
+    },
+    "simayi": {
+        "name": "simayi",
+        "kingdom": "wei",
+        "hp": 3,
+        "skills": ["simayi.fankui", "simayi.guicai"]
+    },
+    "xiahoudun": {
+        "name": "xiahoudun",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["xiahoudun.ganglie"]
+    },
+    "zhangliao": {
+        "name": "zhangliao",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["zhangliao.tuxi"]
+    },
+    "xuchu": {
+        "name": "xuchu",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["xuchu.luoyi"]
+    },
+    "guojia": {
+        "name": "guojia",
+        "kingdom": "wei",
+        "hp": 3,
+        "skills": ["guojia.tiandu", "guojia.yiji"]
+    },
+    "zhenji": {
+        "name": "zhenji",
+        "kingdom": "wei",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["zhenji.luoshen", "zhenji.qingguo"]
+    },
+    "yangxiu": {
+        "name": "yangxiu",
+        "kingdom": "wei",
+        "hp": 3,
+        "skills": ["yangxiu.danlao", "yangxiu.jilei"]
+    },
+    "liubei": {
+        "name": "liubei",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["liubei.rende", "liubei.jijiang"],
+        "lord": true
+    },
+    "guanyu": {
+        "name": "guanyu",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["guanyu.wusheng"]
+    },
+    "zhangfei": {
+        "name": "zhangfei",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["zhangfei.paoxiao"]
+    },
+    "zhugeliang": {
+        "name": "zhugeliang",
+        "kingdom": "shu",
+        "hp": 3,
+        "skills": ["zhugeliang.guanxing", "zhugeliang.kongcheng"]
+    },
+    "zhaoyun": {
+        "name": "zhaoyun",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["zhaoyun.longdan"]
+    },
+    "machao": {
+        "name": "machao",
+        "kingdom": "shu",
+        "hp": 4,
+        "skills": ["machao.mashu", "machao.tieqi"]
+    },
+    "huangyueying": {
+        "name": "huangyueying",
+        "kingdom": "shu",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["huangyueying.jizhi", "huangyueying.qicai"]
+    },
+    "yiji": {
+        "name": "yiji",
+        "kingdom": "shu",
+        "hp": 3,
+        "skills": ["yiji.jijie", "yiji.jiyuan"]
+    },
+    "sunquan": {
+        "name": "sunquan",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": ["sunquan.zhiheng", "sunquan.jiuyuan"],
+        "lord": true
+    },
+    "ganning": {
+        "name": "ganning",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": ["ganning.qixi"]
+    },
+    "lvmeng": {
+        "name": "lvmeng",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": ["lvmeng.keji"]
+    },
+    "huanggai": {
+        "name": "huanggai",
+        "kingdom": "wu",
+        "hp": 4,
+        "skills": ["huanggai.kurou"]
+    },
+    "zhouyu": {
+        "name": "zhouyu",
+        "kingdom": "wu",
+        "hp": 3,
+        "skills": ["zhouyu.yingzi", "zhouyu.fanjian"]
+    },
+    "daqiao": {
+        "name": "daqiao",
+        "kingdom": "wu",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["daqiao.guose", "daqiao.liuli"]
+    },
+    "luxun": {
+        "name": "luxun",
+        "kingdom": "wu",
+        "hp": 3,
+        "skills": ["luxun.qianxun", "luxun.lianying"]
+    },
+    "sunshangxiang": {
+        "name": "sunshangxiang",
+        "kingdom": "wu",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["sunshangxiang.jieyin", "sunshangxiang.xiaoji"]
+    },
+    "huatuo": {
+        "name": "huatuo",
+        "kingdom": "qun",
+        "hp": 3,
+        "skills": ["huatuo.jijiu", "huatuo.qingnang"]
+    },
+    "lvbu": {
+        "name": "lvbu",
+        "kingdom": "qun",
+        "hp": 4,
+        "skills": ["lvbu.wushuang"]
+    },
+    "diaochan": {
+        "name": "diaochan",
+        "kingdom": "qun",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["diaochan.lijian", "diaochan.biyue"]
+    },
+    "huaxiong": {
+        "name": "huaxiong",
+        "kingdom": "qun",
+        "hp": 6,
+        "skills": ["huaxiong.yaowu"]
+    },
+    "yuanshu": {
+        "name": "yuanshu",
+        "kingdom": "qun",
+        "hp": 4,
+        "skills": ["yuanshu.wangzun", "yuanshu.tongji"]
+    },
+    "gongsunzan": {
+        "name": "gongsunzan",
+        "kingdom": "qun",
+        "hp": 4,
+        "skills": ["gongsunzan.yicong"]
+    }
+}

@@ -1,0 +1,144 @@
+{
+    "ex.yujin": {
+        "info": {
+            "id": "WEI024",
+            "title": "讨暴坚垒",
+            "prefix": "界",
+            "designer": "Virgopaladin",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "biou09",
+                "cv": "张恒",
+                "cv_designer": "Loun老萌",
+                "audios": {
+                    "death": {
+                        "translation": "如今临危处难，却负丞相三十年之赏识，哎……"
+                    }
+                }
+            }
+        ]
+    },
+    "ex.fazheng": {
+        "info": {
+            "id": "SHU024",
+            "prefix": "界",
+            "version": "手杀",
+            "title": "蜀汉的 辅翼",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "L",
+                "cv": "彭博",
+                "baseUrl": "fazheng/ex.fazheng",
+                "audios": {
+                    "death": {
+                        "url": "generals/fazheng/ex.fazheng/death",
+                        "translation": "汉室复兴，我，是看不到了……"
+                    }
+                }
+            }
+        ]
+    },
+    "ex.wangyi": {
+        "info": {
+            "id": "WEI030/YJ110",
+            "prefix": "界",
+            "version": "手杀",
+            "title": "决意的巾帼",
+            "designer": "韩旭",
+            "script": "归 零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "团扇子大人",
+                "cv": "周佶",
+                "baseUrl": "wangyi/ex.wangyi",
+                "audios": {
+                    "death": {
+                        "url": "generals/wangyi/ex.wangyi/death",
+                        "translation": "月儿，不要责怪你爹爹！"
+                    }
+                }
+            }
+        ]
+    },
+    "ex.bulianshi": {
+        "info": {
+            "id": "WU026/YJ101",
+            "prefix": "界",
+            "version": "手杀",
+            "title": "无冕之后",
+            "designer": "秋山辽君&傅轶钧",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "凡果",
+                "cv": "水原",
+                "baseUrl": "bulianshi/ex.bulianshi",
+                "audios": {
+                    "death": {
+                        "url": "generals/bulianshi/ex.bulianshi/death",
+                        "translation": "今生先君逝，来世……再侍君……"
+                    }
+                }
+            }
+        ]
+    },
+    "ex.manchong": {
+        "info": {
+            "id": "WEI033/YJ208",
+            "prefix": " 界",
+            "version": "手杀",
+            "title": "政法兵谋",
+            "designer": "Virgopaladin(罗森)",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "YanBai",
+                "cv": "贾志超",
+                "baseUrl": "manchong/ex.manchong",
+                "audios": {
+                    "death": {
+                        "url": "generals/manchong/ex.manchong/death",
+                        "translation": "宠一生为公，无愧忠俭之节……"
+                    }
+                }
+            }
+        ]
+    },
+    "ex.yufan": {
+        "info": {
+            "id": "WU030/YJ210",
+            "prefix": "界",
+            "version": " 手杀",
+            "title": "狂直之士",
+            "designer": "幻岛",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "YanBai",
+                "cv": "李杨",
+                "baseUrl": "yufan/ex.yufan",
+                "audios": {
+                    "death": {
+                        "url": "generals/yufan/ex.yufan/death",
+                        "translation": "唉，主公不能容我啊！"
+                    }
+                }
+            }
+        ]
+    }
+}

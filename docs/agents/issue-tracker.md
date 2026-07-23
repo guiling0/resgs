@@ -10,6 +10,12 @@
 - 分诊状态记录在每个 issue 文件顶部附近的 `Status:` 行
 - 评论与讨论历史追加到文件底部的 `## Comments` 标题下
 
+### 里程碑组织
+
+- 按里程碑拆分子目录：`.scratch/<feature-slug>/issues/<milestone>/`（如 `l0/`、`l1/`、`l2/`）
+- 各里程碑的 spec 也存入对应的 issues 子目录：`.scratch/<feature-slug>/issues/<milestone>/spec-<milestone>.md`
+- 工单编号以里程碑前缀开头：`l0-01-xxx.md`、`l1-03-xxx.md`
+
 ## 当技能要求"publish to the issue tracker"
 
 在 `.scratch/<feature-slug>/` 下创建新文件（目录不存在则先创建）。

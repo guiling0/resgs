@@ -1,37 +1,38 @@
 import { ObjectId } from 'mongodb';
 
-export interface User {
+/** 用户基础字段 */
+export interface DbUser {
     _id?: ObjectId;
 
-    username: string;
+    username: string; // 唯一索引
+    passwordHash: string; // bcrypt
     nickname: string;
-    passwordHash: string;
-    avatarUrl: string;
+    avatar: string;
     registerIp: string;
     registerTime: Date;
     lastLoginTime: Date;
 
-    reputaionScore: number;
+    reputaionScore: number; // 默认 100，范围 0-110
     escapes: number;
     cumulativeEscapes: number;
 
     banned: {
         isBanned: boolean;
-        reason: string;
         until: Date | null;
-        bannedBy: string;
+        reason: string;
+        by: string;
     };
     muted: {
         isMuted: boolean;
-        reason: string;
         until: Date | null;
-        mutedBy: string;
+        reason: string;
+        by: string;
     };
     gameBanned: {
         isGameBanned: boolean;
-        reason: string;
         until: Date | null;
-        gameBannedBy: string;
+        reason: string;
+        by: string;
     };
 
     titles: string[];
@@ -39,17 +40,16 @@ export interface User {
 
     role: 'player' | 'admin' | 'childAdmin' | 'tester';
 
-    recentGames: RecentGame[];
+    recentGames: {
+        gameId: string;
+        mode: string;
+        generals: string[]; //使用的武将
+        won: number; //0平局 1获胜 2失败
+        time: number; //游戏时长
+    }[]; //最多保存10局
 }
 
-export interface RecentGame {
-    gameId: string;
-    mode: string;
-    generals: string[]; //使用的武将
-    won: number; //0平局 1获胜 2失败
-    gameTime: number; //游戏时长
-}
-
+/** 用户模式统计 */
 export interface UserModeStat {
     _id: ObjectId;
     userId: ObjectId;
@@ -65,6 +65,7 @@ export interface UserModeStat {
     updateAt: Date;
 }
 
+/** 用户趣味统计 */
 export interface UserFunStat {
     _id: ObjectId;
     userId: ObjectId;

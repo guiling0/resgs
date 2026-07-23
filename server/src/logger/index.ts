@@ -2,7 +2,7 @@ import winston from 'winston';
 import DailyRotateFile from 'winston-daily-rotate-file';
 import path from 'path';
 import fs from 'fs';
-import { ILogger, LogMeta } from '../core/ILogger';
+import { ILogger, LogMeta } from '@shared/core/ILogger';
 
 const logDir = process.env.LOG_DIR || path.join(process.cwd(), 'logs');
 if (!fs.existsSync(logDir)) {

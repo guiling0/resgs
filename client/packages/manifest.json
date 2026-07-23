@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "com.layabox.layaidea": "0.7.5",
+    "com.layabox.layamcp": "1.1.1"
+  }
+}

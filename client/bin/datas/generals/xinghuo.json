@@ -1,0 +1,91 @@
+{
+    "liuqi": {
+        "name": "liuqi",
+        "kingdom": "qun",
+        "hp": 3,
+        "skills": ["liuqi.wenji", "liuqi.tunjiang"]
+    },
+    "fuwan": {
+        "name": "fuwan",
+        "kingdom": "qun",
+        "hp": 4,
+        "skills": ["fuwan.moukui"]
+    },
+    "maliang": {
+        "name": "maliang",
+        "kingdom": "shu",
+        "hp": 3,
+        "skills": ["maliang.zishu", "maliang.yingyuan"]
+    },
+    "caoang": {
+        "name": "caoang",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["caoang.kangkai"]
+    },
+    "zhangxingcai": {
+        "name": "zhangxingcai",
+        "kingdom": "shu",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["zhangxingcai.shenxian", "zhangxingcai.qiangwu"]
+    },
+    "liuxie": {
+        "name": "liuxie",
+        "kingdom": "qun",
+        "hp": 3,
+        "skills": ["liuxie.tianming", "liuxie.mizhao"]
+    },
+    "dongyun": {
+        "name": "dongyun",
+        "kingdom": "shu",
+        "hp": 3,
+        "skills": ["dongyun.bingzheng", "dongyun.sheyan"]
+    },
+    "liuyan": {
+        "name": "liuyan",
+        "kingdom": "qun",
+        "hp": 3,
+        "skills": ["liuyan.tushe", "liuyan.limu"]
+    },
+    "xizhicai": {
+        "name": "xizhicai",
+        "kingdom": "wei",
+        "hp": 3,
+        "skills": ["xizhicai.tiandu", "xizhicai.xianfu", "xizhicai.chouce"]
+    },
+    "sp.pangtong": {
+        "name": "sp.pangtong",
+        "kingdom": "wu",
+        "hp": 3,
+        "skills": [
+            "sp.pangtong.guolun",
+            "sp.pangtong.songsang",
+            "#sp.pangtong.zhanji"
+        ]
+    },
+    "sp.machao": {
+        "name": "sp.machao",
+        "kingdom": "qun",
+        "hp": 4,
+        "skills": ["sp.machao.zhuiji", "sp.machao.shichou"]
+    },
+    "wenpin": {
+        "name": "wenpin",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["wenpin.zhenwei"]
+    },
+    "mizhu": {
+        "name": "mizhu",
+        "kingdom": "shu",
+        "hp": 3,
+        "skills": ["mizhu.ziyuan", "mizhu.jugu"]
+    },
+    "zhoufang": {
+        "name": "zhoufang",
+        "kingdom": "wu",
+        "hp": 3,
+        "skills": ["zhoufang.duanfa", "zhoufang.youdi"]
+    }
+}

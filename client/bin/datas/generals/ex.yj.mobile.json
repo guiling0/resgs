@@ -1,0 +1,40 @@
+{
+    "ex.yujin": {
+        "name": "ex.yujin",
+        "kingdom": "wei",
+        "hp": 4,
+        "skills": ["ex.yujin.jieyue"]
+    },
+    "ex.fazheng": {
+        "name": "ex.fazheng",
+        "kingdom": "shu",
+        "hp": 3,
+        "skills": ["ex.fazheng.enyuan", "ex.fazheng.xuanhuo"]
+    },
+    "ex.wangyi": {
+        "name": "ex.wangyi",
+        "kingdom": "wei",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["ex.wangyi.zhenlie", "ex.wangyi.miji"]
+    },
+    "ex.bulianshi": {
+        "name": "ex.bulianshi",
+        "kingdom": "wu",
+        "hp": 3,
+        "gender": 2,
+        "skills": ["ex.bulianshi.anxu", "ex.bulianshi.zhuiyi"]
+    },
+    "ex.manchong": {
+        "name": "ex.manchong",
+        "kingdom": "wei",
+        "hp": 3,
+        "skills": ["ex.manchong.junxing", "ex.manchong.yuce"]
+    },
+    "ex.yufan": {
+        "name": "ex.yufan",
+        "kingdom": "wu",
+        "hp": 3,
+        "skills": ["ex.yufan.zongxuan", "ex.yufan.zhiyan"]
+    }
+}

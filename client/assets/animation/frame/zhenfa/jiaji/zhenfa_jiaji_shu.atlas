@@ -1,0 +1,143 @@
+{
+  "frames": {
+    "jiaji_shu_00000.png": {
+      "frame": {
+        "idx": 0,
+        "x": 151,
+        "y": 0,
+        "w": 147,
+        "h": 174
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 3
+      }
+    },
+    "jiaji_shu_00001.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 176,
+        "w": 147,
+        "h": 172
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 4
+      }
+    },
+    "jiaji_shu_00002.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 0,
+        "w": 149,
+        "h": 174
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 3
+      }
+    },
+    "jiaji_shu_00003.png": {
+      "frame": {
+        "idx": 0,
+        "x": 149,
+        "y": 176,
+        "w": 147,
+        "h": 170
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 5
+      }
+    },
+    "jiaji_shu_00004.png": {
+      "frame": {
+        "idx": 0,
+        "x": 298,
+        "y": 176,
+        "w": 146,
+        "h": 168
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 6
+      }
+    },
+    "jiaji_shu_00005.png": {
+      "frame": {
+        "idx": 0,
+        "x": 298,
+        "y": 346,
+        "w": 145,
+        "h": 169
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 6
+      }
+    },
+    "jiaji_shu_00006.png": {
+      "frame": {
+        "idx": 0,
+        "x": 149,
+        "y": 348,
+        "w": 145,
+        "h": 168
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 6
+      }
+    },
+    "jiaji_shu_00007.png": {
+      "frame": {
+        "idx": 0,
+        "x": 300,
+        "y": 0,
+        "w": 146,
+        "h": 168
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 6
+      }
+    }
+  },
+  "meta": {
+    "scale": 1
+  }
+}

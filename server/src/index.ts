@@ -8,13 +8,30 @@
  * See: https://docs.colyseus.io/server
  */
 import { listen } from '@colyseus/tools';
-import { createGameLogger, logger } from './logger/index';
-import { sgs } from '@shared/core/sgs';
-import { DataManager } from './DataManager';
+import app from './app.config';
+import { connectDb, closeDb } from './db';
+import { logger } from './logger';
 
-sgs.init('server');
+async function bootstrap() {
+    await connectDb();
+    await listen(app, 12699);
+    logger.info('[Server]Server is running on port 12699');
+}
 
-DataManager.load();
+bootstrap().catch((err) => {
+    logger.error('[Server]Error in bootstrap', err);
+    process.exit(1);
+});
+
+process.on('SIGINT', async () => {
+    await closeDb();
+    process.exit(0);
+});
+
+process.on('SIGTERM', async () => {
+    await closeDb();
+    process.exit(0);
+});
 
 // Import Colyseus config
 // import app from "./app.config.js";

@@ -1,0 +1,67 @@
+{
+  "isFirstRun": false,
+  "currentTab": "dashboard",
+  "wizard": {
+    "active": false,
+    "currentStep": 2,
+    "config": {
+      "serverPort": 18188,
+      "autoStart": true
+    }
+  },
+  "server": {
+    "port": 18188,
+    "autoStart": true
+  },
+  "setup": {
+    "selectedIdeForPreview": "cursor",
+    "_tokenError": ""
+  },
+  "ides": [
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "isInstalled": false,
+      "isConfigured": false,
+      "isRuleSaved": false,
+      "selected": false
+    },
+    {
+      "id": "claude-desktop",
+      "name": "Claude Desktop",
+      "isInstalled": false,
+      "isConfigured": false,
+      "isRuleSaved": false,
+      "selected": false
+    },
+    {
+      "id": "claude-cli",
+      "name": "Claude Code",
+      "isInstalled": true,
+      "isConfigured": true,
+      "isRuleSaved": true,
+      "selected": true
+    },
+    {
+      "id": "codex-cli",
+      "name": "Codex",
+      "isInstalled": false,
+      "isConfigured": false,
+      "isRuleSaved": false,
+      "selected": false
+    },
+    {
+      "id": "trae",
+      "name": "Trae",
+      "isInstalled": true,
+      "isConfigured": true,
+      "isRuleSaved": true,
+      "selected": true,
+      "path": "C:\\Users\\74734\\AppData\\Local\\Programs\\Trae CN"
+    }
+  ],
+  "ui": {
+    "consoleExpanded": true,
+    "helpModalOpen": false
+  }
+}

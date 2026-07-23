@@ -1,0 +1,89 @@
+{
+  "_$ver": 1,
+  "_$id": "ds3dl4n9",
+  "_$runtime": "res://18748365-fb62-4e60-9c01-c58d2e45f535",
+  "_$type": "GWidget",
+  "name": "seat_m_dual_general",
+  "width": 125,
+  "height": 234,
+  "_$child": [
+    {
+      "_$id": "yyyt068r",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "img",
+      "x": -34,
+      "y": 5,
+      "width": 250,
+      "height": 292,
+      "scaleX": 0.8,
+      "scaleY": 0.8,
+      "mask": {
+        "_$ref": "d02ldaen"
+      },
+      "src": "res://7da25c5a-07b0-498c-be3f-fbc65354bfe3",
+      "_isDemo": true,
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "d02ldaen",
+          "_$type": "GWidget",
+          "name": "mask",
+          "x": 81,
+          "y": 1,
+          "width": 87,
+          "height": 277,
+          "cacheAs": "bitmap",
+          "background": {
+            "_$type": "DrawRoundRectCmd",
+            "lt": 8,
+            "rt": 8,
+            "lb": 8,
+            "rb": 8,
+            "fillColor": "#ffffff"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "xwem15ud",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "lock",
+      "x": 32,
+      "y": 80,
+      "width": 100,
+      "height": 122,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "visible": false,
+      "src": "res://7a1eb429-da91-4ee6-83cc-6a7ad67f4386"
+    },
+    {
+      "_$id": "9o49uydb",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "qianfu",
+      "x": 31,
+      "y": 6,
+      "width": 68,
+      "height": 222,
+      "visible": false,
+      "src": "res://0d7dbf67-5277-47ad-b830-61885fb4a5ef",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "tgah42w5",
+          "_$var": true,
+          "_$type": "GImage",
+          "name": "qianfu_icon",
+          "x": 16,
+          "y": 100,
+          "width": 35,
+          "height": 21,
+          "src": "res://2d3fa70e-e057-4c5f-9c71-b7950bf36e20"
+        }
+      ]
+    }
+  ]
+}

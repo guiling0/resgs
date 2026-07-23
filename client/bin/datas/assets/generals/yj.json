@@ -1,0 +1,303 @@
+{
+    "yujin": {
+        "info": {
+            "id": "WEI024/YJ010",
+            "title": "魏武之刚",
+            "designer": "许坦（城管无畏）",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Yi章",
+                "cv": "黑曜石",
+                "baseUrl": "yujin/yujin",
+                "audios": {
+                    "death": {
+                        "url": "generals/yujin/death",
+                        "translation": "我，无颜面对丞相了……"
+                    }
+                }
+            }
+        ]
+    },
+    "zhangchunhua": {
+        "info": {
+            "id": "WEI027/YJ011",
+            "title": "冷血皇后",
+            "designer": "JZHIEI",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "樱花闪乱",
+                "cv": "未知",
+                "audios": { "death": { "translation": "怎能如此对我……" } }
+            }
+        ]
+    },
+    "fazheng": {
+        "info": {
+            "id": "SHU024",
+            "title": "蜀汉的辅翼",
+            "designer": "Michael_Lee",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "雷没才",
+                "cv": "烈の流星",
+                "baseUrl": "fazheng/fazheng",
+                "audios": {
+                    "death": {
+                        "url": "fazheng/fazheng/death",
+                        "translation": "蜀翼既折，蜀汉哀矣。"
+                    }
+                }
+            }
+        ]
+    },
+    "lingtong": {
+        "info": {
+            "id": "WU021/YJ005",
+            "title": "豪情烈胆",
+            "designer": "ShadowLee",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "绵Myan",
+                "cv": "黑曜石",
+                "baseUrl": "lingtong/lingtong",
+                "audios": {
+                    "death": {
+                        "url": "lingtong/lingtong/death",
+                        "translation": "大丈夫不惧死亡……"
+                    }
+                }
+            }
+        ]
+    },
+    "chengong": {
+        "info": {
+            "id": "QUN028/YJ002",
+            "title": "刚直壮烈",
+            "designer": "Kaycent",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "黑月乱",
+                "cv": "烈の流星",
+                "audios": { "death": { "translation": "请出就戮！" } }
+            }
+        ]
+    },
+    "xunyou": {
+        "info": {
+            "id": "WEI020/YJ111",
+            "title": "曹魏的谋主",
+            "designer": "淬毒",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "魔鬼鱼",
+                "cv": "未知",
+                "baseUrl": "xunyou/xunyou",
+                "audios": {
+                    "death": { "translation": "主公，臣下……先行告退……" }
+                }
+            }
+        ]
+    },
+    "liaohua": {
+        "info": {
+            "id": "SHU027/YJ107",
+            "title": "历尽沧桑",
+            "designer": "桃花僧",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "天空之城",
+                "cv": "未知",
+                "audios": { "death": { "translation": "今后，就靠你们啦……" } }
+            }
+        ]
+    },
+    "bulianshi": {
+        "info": {
+            "id": "WU026/YJ101",
+            "title": "无冕之后",
+            "designer": "秋山辽君&傅轶钧",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "勺子妞",
+                "cv": "凌寒君",
+                "audios": { "death": { "translation": "江之永矣，不可方思。" } }
+            }
+        ]
+    },
+    "handang": {
+        "info": {
+            "id": "WU028/YJ105",
+            "title": "石城侯",
+            "designer": "ByArt",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "DH",
+                "cv": "肿圆",
+                "audios": { "death": { "translation": "今后，只能靠你了……" } }
+            }
+        ]
+    },
+    "manchong": {
+        "info": {
+            "id": "WEI033/YJ208",
+            "title": "政法兵谋",
+            "designer": "Virgopaladin(罗森)",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Aimer彩三（暴力色彩）",
+                "cv": "刘以嘉",
+                "audios": { "death": { "translation": "援军，为何迟迟未到……" } }
+            }
+        ]
+    },
+    "liufeng": {
+        "info": {
+            "id": "SHU030/YJ207",
+            "title": "骑虎之殇",
+            "designer": "香蒲神殇（神壕）",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Thinking",
+                "cv": "清水浊流",
+                "audios": { "death": { "translation": "父亲，为什么……" } }
+            }
+        ]
+    },
+    "zhangsong": {
+        "info": {
+            "id": "SHU032/YJ309",
+            "title": "怀璧待凤仪",
+            "designer": "冷王无双（铁血冥剑）",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "尼乐小丑",
+                "cv": "未知",
+                "audios": {
+                    "death": { "translation": "皇叔不听吾谏言，悔时晚矣！" }
+                }
+            }
+        ]
+    },
+    "jushou": {
+        "info": {
+            "id": "QUN034/YJ306",
+            "title": "监军谋国",
+            "designer": "精精神神（梦三）",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "酱油之神",
+                "cv": "马洋",
+                "audios": { "death": { "translation": "智士凋亡，河北哀矣……" } }
+            }
+        ]
+    },
+    "caorui": {
+        "info": {
+            "id": "WEI037/YJ401",
+            "title": "天姿的明君",
+            "designer": "Ptolemy_M7",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Thinking",
+                "cv": "花少关",
+                "audios": {
+                    "death": { "translation": "悔不该，耽于逸乐止于今日……" }
+                }
+            }
+        ]
+    },
+    "zhongyao": {
+        "info": {
+            "id": "WEI039/YJ410",
+            "title": "正楷萧曹",
+            "designer": "怀墨",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "eshao111",
+                "cv": "贾志超",
+                "audios": { "death": { "translation": "墨尽，岁终。" } }
+            }
+        ]
+    },
+    "sundeng": {
+        "info": {
+            "id": "WU039",
+            "title": "才高德茂",
+            "designer": "过客",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "DH",
+                "cv": "未知",
+                "audios": {
+                    "death": { "translation": "愿陛下留意英才，臣虽死犹生。" }
+                }
+            }
+        ]
+    },
+    "qinmi": {
+        "info": {
+            "id": "SHU065/YC104",
+            "title": "彻天之舌",
+            "designer": "凌天翼",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Thinking",
+                "cv": "REAL-Jason（曹真）",
+                "audios": {
+                    "death": { "translation": "我竟然，也百口莫辩了……" }
+                }
+            }
+        ]
+    }
+}

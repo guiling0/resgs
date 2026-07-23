@@ -7,21 +7,26 @@ metadata:
 
 # ADR-0001：客户端采用 LayaAir 3.4
 
-> ⚠️ **2026-07-21 再次修订**：本 ADR 的 LayaAir 方案已被 **Web 前端渲染方案（Vite + TypeScript + CSS + spine-canvas）** 取代。详见 `.scratch/client/design-dom.md`。本 ADR 保留作为决策历史，LayaAir 方案不再执行。
+> 决策历程：PixiJS + Vite（2026-07-18，已弃）→ LayaAir 3.4（2026-07-19，首次）→ Web 前端渲染（2026-07-20，尝试一天后放弃）→ **LayaAir 3.4（2026-07-21，最终）**。Web 前端方案见 `design-dom.md`（历史记录）。
 
-**日期**：2026-07-19（修订）
-**状态**：已替代（2026-07-21 Web 前端渲染方案替代）
+**日期**：2026-07-21（最终修订）
+**状态**：已决定 — LayaAir 3.4
 
-## 修订背景
+## 决策历程
 
-2026-07-18 决定采用 PixiJS + Vite 方案，主要原因是对 LayaAir 引擎体积大、IDE 绑定、学习成本高的担忧。
+| 日期 | 方案 | 结果 |
+|---|---|---|
+| 2026-07-18 | PixiJS + Vue 3 + Vite | 弃用：自建工作量大，渲染双栈复杂 |
+| 2026-07-19 | LayaAir 3.4 | 首次选定 |
+| 2026-07-20 | Web 前端渲染（Vite + CSS + spine-canvas） | 尝试一天后放弃：npm 权限问题 + 全部系统需自建 |
+| **2026-07-21** | **LayaAir 3.4（最终）** | **当前方案** |
 
-经过进一步调研和 IDE MCP 工具配置后，发现：
+## 选定理由
 
 1. **旧项目就是 LayaAir 客户端**：`old/resgsv1/clientv0/` 是一个完整的、经过验证的 LayaAir 三国杀客户端。其架构模式（场景管理、消息驱动渲染、Dirty Flag、对象池、录像回放）可直接继承，大幅降低设计风险。
 2. **IDE MCP 消除 IDE 绑定问题**：LayaAir IDE MCP 服务器已配置，可通过 AI 工具操作场景/预制体的创建和编辑，不再需要手工在 IDE 中完成所有操作。
-3. **内置系统减少自建工作量**：UI 系统（GBox/GButton/GLabel/GList/GPanel）、补间动画（Tween）、骨骼动画（Spine）、音效管理（SoundManager）、资源加载（Loader）均为引擎内置。PixiJS 方案需要从零自建所有这些系统。
-4. **渲染分工问题被消除**：PixiJS 方案需要 PixiJS Canvas + Vue 3 DOM 双栈分离，LayaAir 的 UI2 系统可以同时承载游戏渲染和 UI 面板，技术栈单一。
+3. **内置系统减少自建工作量**：UI 系统（GBox/GButton/GLabel/GList/GPanel）、补间动画（Tween）、骨骼动画（Spine）、音效管理（SoundManager）、资源加载（Loader）均为引擎内置。Web 前端方案需要从零自建所有这些系统，工作量 3-5 倍。
+4. **单一技术栈**：LayaAir UI2 系统同时承载游戏渲染和 UI 面板，无需双栈分离。
 
 ## 决策
 

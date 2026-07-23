@@ -1,0 +1,143 @@
+{
+  "frames": {
+    "shuzi_00000.png": {
+      "frame": {
+        "idx": 0,
+        "x": 114,
+        "y": 42,
+        "w": 38,
+        "h": 29
+      },
+      "sourceSize": {
+        "w": 88,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 23,
+        "y": 30
+      }
+    },
+    "shuzi_00001.png": {
+      "frame": {
+        "idx": 0,
+        "x": 106,
+        "y": 90,
+        "w": 43,
+        "h": 33
+      },
+      "sourceSize": {
+        "w": 88,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 20,
+        "y": 28
+      }
+    },
+    "shuzi_00002.png": {
+      "frame": {
+        "idx": 0,
+        "x": 55,
+        "y": 90,
+        "w": 49,
+        "h": 37
+      },
+      "sourceSize": {
+        "w": 88,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 17,
+        "y": 26
+      }
+    },
+    "shuzi_00003.png": {
+      "frame": {
+        "idx": 0,
+        "x": 60,
+        "y": 0,
+        "w": 53,
+        "h": 40
+      },
+      "sourceSize": {
+        "w": 88,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 24
+      }
+    },
+    "shuzi_00004.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 46,
+        "w": 55,
+        "h": 42
+      },
+      "sourceSize": {
+        "w": 88,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 23
+      }
+    },
+    "shuzi_00005.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 0,
+        "w": 58,
+        "h": 44
+      },
+      "sourceSize": {
+        "w": 88,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 22
+      }
+    },
+    "shuzi_00006.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 90,
+        "w": 53,
+        "h": 40
+      },
+      "sourceSize": {
+        "w": 88,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 24
+      }
+    },
+    "shuzi_00007.png": {
+      "frame": {
+        "idx": 0,
+        "x": 57,
+        "y": 46,
+        "w": 55,
+        "h": 42
+      },
+      "sourceSize": {
+        "w": 88,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 23
+      }
+    }
+  },
+  "meta": {
+    "scale": 1
+  }
+}
