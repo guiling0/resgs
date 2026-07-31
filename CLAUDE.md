@@ -25,7 +25,7 @@
 - **不存在 `discuss/` 目录**——不保留讨论类文档，不记录会话日志
 - 新会话开始时，先读取 `CONTEXT.md` 了解领域术语，按需读取 `docs/adr/` 中的相关决策，通过 `git log` 了解最新进展
 - **不要**在新会话中加载全部文档，根据当前需求按需读取
-- **当前工作焦点**（2026-07-22）：shared/ 引擎从零重构。入口：`.scratch/porting/map.md`（路线图 L0-L6）
+- **当前工作焦点**（2026-07-27）：客户端 DOM 方案 L0-L1 完成（加载/登录/大厅/等待房间）。下一步：预制体 UI（卡牌、武将、局内玩家框、动画）。入口：`.scratch/porting/map.md`
 
 ### Skill & Extension 学习义务
 
@@ -38,20 +38,18 @@
 
 ### Development Workflow
 
-- **核心原则**：除非用户明确要求 Claude 编写代码或测试，否则**不允许修改工作区的任何代码文件**
-- **用户提出实现/完成某功能时**：不修改代码，告知步骤 + 具体修改内容（文件、行号、代码）。改动多时输出到 `*.tmp.ts` 临时文件
-- **代码优化/审查**：用户主动提出时才执行，**仅检查不修改代码**
-- **测试**：用户要求测试时，编写测试用例 + 运行 + 输出全部控制台内容。只跑相关套件，不全量
-- **提交**：阶段完成后使用 `/conventional-commits`，用户确认后清理临时文件
-- **写码前**（Claude 自己被要求写码时）：`git status --short` 确保工作区干净
+- **写码职责**：所有代码由 Claude 编写并保证编译通过，用户负责测试验证
+- **写码前**：`git status --short` 确保工作区干净，让用户明确知道新增/修改了什么
+- **阶段提交**：完成一个阶段后使用 `/conventional-commits` 提交
+- **代码优化/审查**：用户主动提出时才执行。**先审查不修改**，将所有问题列出后由用户逐条决定是否修改
+- **测试**：用户要求时编写测试用例并运行，只跑相关套件不全量
 
 ### Code Comments
 
 - 代码文件中的注释遵循：
   - **JSDoc**（`/** ... */`）：类、方法、属性的公开 API 说明
   - **流程说明**（`// ===== 1. xxx =====`）：函数内关键步骤的行内注释
-- **禁止**写：旧项目对比、实现方案讨论、设计决策辩护
-- **注意**：输出到 `*.tmp.ts` 的临时代码不受上述注释规范约束
+- **禁止**写：旧项目对比、实现方案讨论、设计决策辩护、修改前后差异
 
 ### Code Architecture
 
@@ -84,7 +82,7 @@
 |---|---|
 | 共享逻辑 | TypeScript（`shared/`，服务端/客户端共用，纯 TypeScript 无网络依赖） |
 | 服务端 | Node.js + Colyseus 0.17 |
-| 客户端 | LayaAir 3.4（TypeScript + UI2 组件 + Colyseus SDK） |
+| 客户端 | Vite + TypeScript + 纯 DOM/CSS（无框架，零 LayaAir 依赖） |
 | 数据库 | MongoDB |
 | 资料站 | 纯 HTML/CSS/JS（`wiki/`） |
 
@@ -96,13 +94,18 @@ shared/      共享代码（纯 TypeScript，核心引擎/事件/技能/实体/�
   datas/       JSON 数据（卡牌、武将、技能、翻译）
   test/        测试用例
 server/      服务端（Colyseus 房间、数据库、API、日志）
+client/      客户端（Vite + TS + DOM/CSS + Colyseus SDK）
+  src/
+    ui/         场景 UI 模板（Widget 建造器）
+    pages/      场景交互逻辑
+    components/ 可复用组件
 scripts/     Run & Debug 脚本（.sh）
 wiki/        资料站（纯前端卡牌/武将资料库，CDN 资源）
 docs/        正式文档 + 架构决策记录
   agents/      Agent 指引
   adr/         架构决策记录
 .scratch/    进行中工作的 spec 与 issue
-old/         旧项目（Phase 8-9 移植完成后删除）
+old/         旧项目存档（LayaAir 客户端）
 ```
 
 ## 共享代码
