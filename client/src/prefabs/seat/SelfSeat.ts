@@ -1,6 +1,6 @@
 import { SelfSeatBase } from './SelfSeat.generated';
 import { ISeat } from './ISeat';
-import { Player } from '@shared/core/player/Player';
+import { Player } from '@shared/core/player';
 
 const { regClass } = Laya;
 

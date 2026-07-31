@@ -70,7 +70,7 @@ export class Load extends LoadBase {
         }
 
         // ===== 场景资源 =====
-        this.txt.setVar('text', '场景资源').setVar('max', 1);
+        this.txt.setVar('text', '场景资源').setVar('max', SCENE_URLS.length);
         loaded = 0;
         for (const url of SCENE_URLS) {
             try {

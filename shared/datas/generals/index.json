@@ -1,0 +1,1606 @@
+{
+    "orders": [
+        "TestGenerals",
+        "StandardGenerals",
+        "ShenHuaGenerals",
+        "YJGenerals",
+        "XingHuoGenerals",
+        "MobileGenerals",
+        "OLGenerals",
+        "TenGenerals",
+        "ExStandardGenerals",
+        "ExShenHuaGenerals",
+        "ExYJGenerals",
+        "CatGenerals",
+        "OffLineGenerals",
+        "WangZhanGenerals",
+        "WarsStandardGenerals",
+        "WarsPowerGenerals",
+        "WarsJinGenerals",
+        "WarsXLGenerals",
+        "1v1Generals",
+        "3v3Generals",
+        "ChengTianZhiYiGenerals"
+    ],
+    "packs": {
+        "TestGenerals": {
+            "name": "TestGenerals",
+            "subpacks": [
+                {
+                    "name": "TestGenerals",
+                    "json": ["test"],
+                    "generals": [
+                        "default.shibingn",
+                        "default.shibingv",
+                        "default.white_sunce",
+                        "default.white_mifuren"
+                    ]
+                }
+            ]
+        },
+        "StandardGenerals": {
+            "name": "StandardGenerals",
+            "subpacks": [
+                {
+                    "name": "StandardGenerals.Wei",
+                    "json": ["standard"],
+                    "icon": "StandardGenerals",
+                    "generals": [
+                        "caocao",
+                        "simayi",
+                        "xiahoudun",
+                        "zhangliao",
+                        "xuchu",
+                        "guojia",
+                        "zhenji",
+                        "yangxiu"
+                    ]
+                },
+                {
+                    "name": "StandardGenerals.Shu",
+                    "json": ["standard"],
+                    "icon": "StandardGenerals",
+                    "generals": [
+                        "liubei",
+                        "guanyu",
+                        "zhangfei",
+                        "zhugeliang",
+                        "zhaoyun",
+                        "machao",
+                        "huangyueying",
+                        "yiji"
+                    ]
+                },
+                {
+                    "name": "StandardGenerals.Wu",
+                    "json": ["standard"],
+                    "icon": "StandardGenerals",
+                    "generals": [
+                        "sunquan",
+                        "ganning",
+                        "lvmeng",
+                        "huanggai",
+                        "zhouyu",
+                        "daqiao",
+                        "luxun",
+                        "sunshangxiang"
+                    ]
+                },
+                {
+                    "name": "StandardGenerals.Qun",
+                    "json": ["standard"],
+                    "icon": "StandardGenerals",
+                    "generals": [
+                        "huatuo",
+                        "lvbu",
+                        "diaochan",
+                        "huaxiong",
+                        "yuanshu",
+                        "gongsunzan"
+                    ]
+                }
+            ]
+        },
+        "ShenHuaGenerals": {
+            "name": "ShenHuaGenerals",
+            "subpacks": [
+                {
+                    "name": "ShenHuaGenerals.Feng",
+                    "json": ["shenhua"],
+                    "icon": "ShenHua.Feng",
+                    "generals": [
+                        "xiahouyuan",
+                        "caoren",
+                        "huangzhong",
+                        "weiyan",
+                        "xiaoqiao",
+                        "zhoutai",
+                        "zhangjiao",
+                        "yuji"
+                    ]
+                },
+                {
+                    "name": "ShenHuaGenerals.Huo",
+                    "json": ["shenhua"],
+                    "icon": "ShenHua.Huo",
+                    "generals": [
+                        "xunyu",
+                        "dianwei",
+                        "pangtong",
+                        "wolong",
+                        "taishici",
+                        "yuanshao",
+                        "yanliangwenchou",
+                        "pangde"
+                    ]
+                },
+                {
+                    "name": "ShenHuaGenerals.Lin",
+                    "json": ["shenhua"],
+                    "icon": "ShenHua.Lin",
+                    "generals": [
+                        "caopi",
+                        "xuhuang",
+                        "menghuo",
+                        "zhurong",
+                        "sunjian",
+                        "lusu",
+                        "dongzhuo",
+                        "jiaxu"
+                    ]
+                },
+                {
+                    "name": "ShenHuaGenerals.Shan",
+                    "json": ["shenhua"],
+                    "icon": "ShenHua.Shan",
+                    "generals": [
+                        "zhanghe",
+                        "dengai",
+                        "liushan",
+                        "jiangwei",
+                        "sunce",
+                        "zhangzhaozhanghong",
+                        "zuoci",
+                        "caiwenji"
+                    ]
+                },
+                {
+                    "name": "ShenHuaGenerals.God",
+                    "json": ["shenhua"],
+                    "icon": "ShenHua.Shen",
+                    "generals": [
+                        "god_guanyu",
+                        "god_lvmeng",
+                        "god_zhouyu",
+                        "god_zhugeliang",
+                        "god_caocao",
+                        "god_lvbu",
+                        "god_zhaoyun",
+                        "god_simayi",
+                        "god_diaochan"
+                    ]
+                }
+            ]
+        },
+        "YJGenerals": {
+            "name": "YJGenerals",
+            "subpacks": [
+                {
+                    "name": "YJGenerals.2011",
+                    "json": ["yj"],
+                    "icon": "YJ.2011",
+                    "generals": [
+                        "caozhi",
+                        "yujin",
+                        "zhangchunhua",
+                        "zhonghui",
+                        "fazheng",
+                        "masu",
+                        "xushu",
+                        "lingtong",
+                        "wuguotai",
+                        "xusheng",
+                        "chengong",
+                        "gaoshun"
+                    ]
+                },
+                {
+                    "name": "YJGenerals.2012",
+                    "json": ["yj"],
+                    "icon": "YJ.2012",
+                    "generals": [
+                        "caozhang",
+                        "xunyou",
+                        "wangyi",
+                        "madai",
+                        "liaohua",
+                        "guanxingzhangbao",
+                        "bulianshi",
+                        "chengpu",
+                        "handang",
+                        "liubiao",
+                        "yj.huaxiong"
+                    ]
+                },
+                {
+                    "name": "YJGenerals.2013",
+                    "json": ["yj"],
+                    "icon": "YJ.2013",
+                    "generals": [
+                        "caochong",
+                        "guohuai",
+                        "manchong",
+                        "liufeng",
+                        "jianyong",
+                        "guanxing",
+                        "panzhangmazhong",
+                        "yufan",
+                        "zhuran",
+                        "fuhuanghou",
+                        "liru"
+                    ]
+                },
+                {
+                    "name": "YJGenerals.2014",
+                    "json": ["yj"],
+                    "icon": "YJ.2014",
+                    "generals": [
+                        "caozhen",
+                        "chenqun",
+                        "hanhaoshihuan",
+                        "wuyi",
+                        "zhangsong",
+                        "zhoucang",
+                        "guyong",
+                        "sunluban",
+                        "zhuhuan",
+                        "caifurn",
+                        "jushou"
+                    ]
+                },
+                {
+                    "name": "YJGenerals.2015",
+                    "json": ["yj"],
+                    "icon": "YJ.2015",
+                    "generals": [
+                        "caorui",
+                        "caoxiu",
+                        "zhongyao",
+                        "liuchen",
+                        "xiahoushi",
+                        "zhangyi2",
+                        "sunxiu",
+                        "quancong",
+                        "zhuzhi",
+                        "gongsunyuan",
+                        "guotupangji"
+                    ]
+                },
+                {
+                    "name": "YJGenerals.2016",
+                    "json": ["yj"],
+                    "icon": "YJ.2016",
+                    "generals": [
+                        "guohuanghou",
+                        "sunziliufang",
+                        "liyan",
+                        "huanghao",
+                        "sundeng",
+                        "cenhun",
+                        "liuyu",
+                        "zhangrang"
+                    ]
+                },
+                {
+                    "name": "YJGenerals.2017",
+                    "json": ["yj"],
+                    "icon": "YJ.2017",
+                    "generals": [
+                        "xinxianying",
+                        "jikang",
+                        "wuxian",
+                        "qinmi",
+                        "xushi",
+                        "xuezong",
+                        "caojie",
+                        "caiyong"
+                    ]
+                }
+            ]
+        },
+        "XingHuoGenerals": {
+            "name": "XingHuoGenerals",
+            "subpacks": [
+                {
+                    "name": "XingHuoGenerals.Yin",
+                    "json": ["shenhua"],
+                    "icon": "ShenHua.Yin",
+                    "generals": [
+                        "wangji",
+                        "kuailiangkuaiyue",
+                        "yanyan",
+                        "wangping",
+                        "luji",
+                        "sunliang",
+                        "xuyou",
+                        "luzhi"
+                    ]
+                },
+                {
+                    "name": "XingHuoGenerals.Lei",
+                    "json": ["shenhua"],
+                    "icon": "ShenHua.Lei",
+                    "generals": [
+                        "haozhao",
+                        "guanqiujian",
+                        "chendao",
+                        "zhugezhan",
+                        "lukang",
+                        "zhoufei",
+                        "lei.yuanshu",
+                        "zhangxiu"
+                    ]
+                },
+                {
+                    "name": "XingHuoGenerals.God",
+                    "json": ["shenhua"],
+                    "icon": "ShenHua.Shen",
+                    "generals": [
+                        "god_liubei",
+                        "god_luxun",
+                        "god_zhangliao",
+                        "god_ganning"
+                    ]
+                },
+                {
+                    "name": "XingHuoGenerals.TianJi",
+                    "json": ["xinghuo"],
+                    "icon": "XingHuo.TianJi",
+                    "generals": ["liuqi", "fuwan"]
+                },
+                {
+                    "name": "XingHuoGenerals.TianQuan",
+                    "json": ["xinghuo"],
+                    "icon": "XingHuo.TianQuan",
+                    "generals": ["maliang"]
+                },
+                {
+                    "name": "XingHuoGenerals.TianFu",
+                    "json": ["xinghuo"],
+                    "icon": "XingHuo.TianFu",
+                    "generals": ["caoang", "zhangxingcai", "liuxie"]
+                },
+                {
+                    "name": "XingHuoGenerals.TianLiang",
+                    "json": ["xinghuo"],
+                    "icon": "XingHuo.TianLiang",
+                    "generals": ["dongyun", "liuyan"]
+                },
+                {
+                    "name": "XingHuoGenerals.TianJiN",
+                    "json": ["xinghuo"],
+                    "icon": "XingHuo.JiN",
+                    "generals": ["xizhicai"]
+                },
+                {
+                    "name": "XingHuoGenerals.TianTong",
+                    "json": ["xinghuo"],
+                    "icon": "XingHuo.TianTong",
+                    "generals": ["sp.pangtong", "sp.machao"]
+                },
+                {
+                    "name": "XingHuoGenerals.TianXiang",
+                    "json": ["xinghuo"],
+                    "icon": "XingHuo.TianXiang",
+                    "generals": ["wenpin", "mizhu", "zhoufang"]
+                }
+            ]
+        },
+        "ExStandardGenerals": {
+            "name": "ExStandardGenerals",
+            "subpacks": [
+                {
+                    "name": "ExStandardGenerals.2018",
+                    "json": ["ex.standard"],
+                    "icon": "Ex",
+                    "generals": [
+                        "ex.caocao",
+                        "ex.simayi",
+                        "ex.xiahoudun",
+                        "ex.zhangliao",
+                        "ex.xuchu",
+                        "ex.guojia",
+                        "ex.zhenji",
+                        "lidian",
+                        "ex.liubei",
+                        "ex.guanyu",
+                        "olex.zhangfei",
+                        "ex.zhugeliang",
+                        "ex.zhaoyun",
+                        "ex.machao",
+                        "ex.huangyueying",
+                        "ex.xushu",
+                        "ex.sunquan",
+                        "ex.ganning",
+                        "ex.lvmeng",
+                        "ex.huanggai",
+                        "ex.zhouyu",
+                        "ex.daqiao",
+                        "ex.luxun",
+                        "ex.sunshangxiang",
+                        "ex.huatuo",
+                        "ex.lvbu",
+                        "ex.diaochan",
+                        "ex.gongsunzan"
+                    ]
+                },
+                {
+                    "name": "ExStandardGenerals.OL",
+                    "json": ["ol"],
+                    "icon": "Ex",
+                    "generals": ["olex.lidian"]
+                }
+            ]
+        },
+        "ExShenHuaGenerals": {
+            "name": "ExShenHuaGenerals",
+            "subpacks": [
+                {
+                    "name": "ExShenHuaGenerals.Mobile.Feng",
+                    "json": ["ex.shenhua.mobile"],
+                    "icon": "ShenHua.Feng",
+                    "generals": [
+                        "ex.xiahouyuan",
+                        "ex.caoren",
+                        "ex.huangzhong",
+                        "ex.weiyan",
+                        "ex.xiaoqiao",
+                        "ex.zhoutai",
+                        "ex.zhangjiao",
+                        "ex.yuji"
+                    ]
+                },
+                {
+                    "name": "ExShenHuaGenerals.Mobile.Huo",
+                    "json": ["ex.shenhua.mobile"],
+                    "icon": "ShenHua.Huo",
+                    "generals": [
+                        "ex.xunyu",
+                        "ex.dianwei",
+                        "ex.pangtong",
+                        "ex.wolong",
+                        "ex.taishici",
+                        "ex.yuanshao",
+                        "ex.yanliangwenchou",
+                        "ex.pangde"
+                    ]
+                },
+                {
+                    "name": "ExShenHuaGenerals.Mobile.Lin",
+                    "json": ["ex.shenhua.mobile"],
+                    "icon": "ShenHua.Lin",
+                    "generals": []
+                },
+                {
+                    "name": "ExShenHuaGenerals.Mobile.Shan",
+                    "json": ["ex.shenhua.mobile"],
+                    "icon": "ShenHua.Shan",
+                    "generals": [
+                        "ex.zhanghe",
+                        "ex.dengai",
+                        "ex.liushan",
+                        "ex.jiangwei",
+                        "ex.sunce",
+                        "ex.zhangzhaozhanghong",
+                        "ex.zuoci",
+                        "ex.caiwenji"
+                    ]
+                },
+                {
+                    "name": "ExShenHuaGenerals.OL.Feng",
+                    "json": ["ex.shenhua.ol"],
+                    "icon": "ShenHua.Feng",
+                    "generals": ["olex.xiahouyuan"]
+                },
+                {
+                    "name": "ExShenHuaGenerals.OL.Huo",
+                    "json": ["ex.shenhua.ol"],
+                    "icon": "ShenHua.Huo",
+                    "generals": ["olex.dianwei"]
+                },
+                {
+                    "name": "ExShenHuaGenerals.OL.Lin",
+                    "json": ["ex.shenhua.ol"],
+                    "icon": "ShenHua.Lin",
+                    "generals": ["olex.sunjian", "olex.jiaxu"]
+                },
+                {
+                    "name": "ExShenHuaGenerals.OL.Shan",
+                    "json": ["ex.shenhua.ol"],
+                    "icon": "ShenHua.Shan",
+                    "generals": ["olex.jiangwei"]
+                }
+            ]
+        },
+        "ExYJGenerals": {
+            "name": "ExYJGenerals",
+            "subpacks": [
+                {
+                    "name": "ExYJGenerals.Mobile.2011",
+                    "json": ["ex.yj.mobile"],
+                    "icon": "YJ.2011",
+                    "generals": ["ex.yujin", "ex.fazheng"]
+                },
+                {
+                    "name": "ExYJGenerals.Mobile.2012",
+                    "json": ["ex.yj.mobile"],
+                    "icon": "YJ.2012",
+                    "generals": ["ex.wangyi", "ex.bulianshi"]
+                },
+                {
+                    "name": "ExYJGenerals.Mobile.2013",
+                    "json": ["ex.yj.mobile"],
+                    "icon": "YJ.2013",
+                    "generals": ["ex.manchong", "ex.yufan"]
+                },
+                {
+                    "name": "ExYJGenerals.OL.2011",
+                    "json": ["ex.yj.ol"],
+                    "icon": "YJ.2011",
+                    "generals": ["olex.fazheng", "olex.xusheng"]
+                },
+                {
+                    "name": "ExYJGenerals.Ten.2011",
+                    "json": ["ex.yj.ten"],
+                    "icon": "YJ.2011",
+                    "generals": ["tenex.lingtong", "tenex.chengong"]
+                },
+                {
+                    "name": "ExYJGenerals.Ten.2012",
+                    "json": ["ex.yj.ten"],
+                    "icon": "YJ.2012",
+                    "generals": ["tenex.xunyou", "tenex.wangyi"]
+                },
+                {
+                    "name": "ExYJGenerals.Ten.2013",
+                    "json": ["ex.yj.ten"],
+                    "icon": "YJ.2013",
+                    "generals": ["tenex.guanping", "tenex.liufeng"]
+                },
+                {
+                    "name": "ExYJGenerals.Ten.2014",
+                    "json": ["ex.yj.ten"],
+                    "icon": "YJ.2014",
+                    "generals": ["tenex.gongsunyuan"]
+                }
+            ]
+        },
+        "TenGenerals": {
+            "name": "TenGenerals",
+            "subpacks": [
+                {
+                    "name": "TenGenerals.Exclusive.WuMiao",
+                    "json": ["ten"],
+                    "icon": "TenExclusive.WuMiao",
+                    "generals": [
+                        "wumiao.huangfusong",
+                        "wumiao.guanyu",
+                        "wumiao.zhugeliang",
+                        "wumiao.luxun",
+                        "wumiao.lukang"
+                    ]
+                },
+                {
+                    "name": "TenGenerals.Activity.DunJiaTianShu",
+                    "json": ["ten"],
+                    "icon": "TenActivity.DunJiaTianShu",
+                    "generals": ["jianggan"]
+                },
+                {
+                    "name": "TenGenerals.Activity.ShiLuJinZhong",
+                    "json": ["ten"],
+                    "icon": "TenActivity.ShiLuJinZhong",
+                    "generals": ["shamoke"]
+                },
+                {
+                    "name": "TenGenerals.LieZhuan.XiaoHuBeiGe",
+                    "json": ["ten"],
+                    "icon": "TenLieZhuan.XiaoHuBeiGe",
+                    "generals": ["yanrou"]
+                },
+                {
+                    "name": "TenGenerals.QunYing.WuShuangShangJiang",
+                    "json": ["ten"],
+                    "icon": "TenQunYing.WuShuangShangJiang",
+                    "generals": ["panfeng"]
+                },
+                {
+                    "name": "TenGenerals.QunYing.WangZheKeJian",
+                    "json": ["ten"],
+                    "icon": "TenQunYing.WangZheKeJian",
+                    "generals": ["sp.zhaoyun", "spsunce"]
+                },
+                {
+                    "name": "TenGenerals.QunYing.JiJiangAnChu",
+                    "json": ["ten"],
+                    "icon": "TenQunYing.JiJiangAnChu",
+                    "generals": ["tianfeng"]
+                },
+                {
+                    "name": "TenGenerals.QunYing.YiJunTuQi",
+                    "json": ["ten"],
+                    "icon": "TenQunYing.YiJunTuQi",
+                    "generals": ["mateng"]
+                },
+                {
+                    "name": "TenGenerals.QunYing.BiSheRuChuang",
+                    "json": ["ten"],
+                    "icon": "TenQunYing.BiSheRuChuang",
+                    "generals": ["zhugeke"]
+                }
+            ]
+        },
+        "MobileGenerals": {
+            "name": "MobileGenerals",
+            "subpacks": [
+                {
+                    "name": "MobileGenerals.BingShi.Zheng",
+                    "json": ["mobile"],
+                    "icon": "MobileBs.Zheng",
+                    "generals": ["shi.taishici", "shi.guoyuan"]
+                },
+                {
+                    "name": "MobileGenerals.BingShi.Shi",
+                    "json": ["mobile"],
+                    "icon": "MobileBs.Shi",
+                    "generals": ["shi.weiyan"]
+                },
+                {
+                    "name": "MobileGenerals.YunChouWeiWo.Zhi",
+                    "json": ["mobile"],
+                    "icon": "YunChouWeiwo.Zhi",
+                    "generals": ["luotong"]
+                },
+                {
+                    "name": "MobileGenerals.YunChouWeiWo.Yong",
+                    "json": ["mobile"],
+                    "icon": "YunChouWeiwo.Yong",
+                    "generals": ["gaolan"]
+                },
+                {
+                    "name": "MobileGenerals.YunChouWeiWo.Yan",
+                    "json": ["mobile"],
+                    "icon": "YunChouWeiwo.Yan",
+                    "generals": ["cuiyan", "jiangqin"]
+                },
+                {
+                    "name": "MobileGenerals.Exclusive.LongXuan",
+                    "json": ["mobile"],
+                    "icon": "MobileExclusive.LongXuan",
+                    "generals": ["caomao"]
+                },
+                {
+                    "name": "MobileGenerals.Exclusive.XiuLiQianKun",
+                    "json": ["mobile"],
+                    "icon": "MobileExclusive.XiuLiQianKun",
+                    "generals": [
+                        "lifeng",
+                        "liuzan",
+                        "lingcao",
+                        "sunru",
+                        "shichangshi",
+                        "cs_zhangrang",
+                        "cs_zhaozhong",
+                        "cs_sunzhang",
+                        "cs_bilan",
+                        "cs_xiayun",
+                        "cs_hankui",
+                        "cs_lisong",
+                        "cs_duangui",
+                        "cs_guosheng",
+                        "cs_gaowang"
+                    ]
+                },
+                {
+                    "name": "MobileGenerals.Exclusive.JiangXing",
+                    "json": ["mobile"],
+                    "icon": "MobileExclusive.JiangXing",
+                    "generals": ["sp.xuhuang"]
+                },
+                {
+                    "name": "MobileGenerals.SP",
+                    "json": ["mobile"],
+                    "icon": "MobileExclusive.Sp",
+                    "generals": ["maojie", "qiaozhou", "zhangyi"]
+                }
+            ]
+        },
+        "OLGenerals": {
+            "name": "OLGenerals",
+            "subpacks": [
+                {
+                    "name": "OLGenerals.CuiCan.HuBen",
+                    "json": ["ol"],
+                    "icon": "MobileBs.Zheng",
+                    "generals": [
+                        "luzhi_wei",
+                        "ol.lingcao",
+                        "tianchou",
+                        "ol.zhuling"
+                    ]
+                },
+                {
+                    "name": "OLGenerals.SP",
+                    "json": ["ol"],
+                    "icon": "SP",
+                    "generals": ["xsp.caoren"]
+                }
+            ]
+        },
+        "CatGenerals": {
+            "name": "CatGenerals",
+            "subpacks": [
+                {
+                    "name": "CatGenerals.Default",
+                    "json": ["cat"],
+                    "icon": "",
+                    "generals": ["cat.zhuhuan"]
+                }
+            ]
+        },
+        "OffLineGenerals": {
+            "name": "OffLineGenerals",
+            "subpacks": [
+                {
+                    "name": "OffLineGenerals.JiangShan.Qi",
+                    "json": ["jiangshan"],
+                    "icon": "Jiangshan.Qi",
+                    "generals": ["js.liuyan"]
+                }
+            ]
+        },
+        "WangZhanGenerals": {
+            "name": "WangZhanGenerals",
+            "subpacks": [
+                {
+                    "name": "WangZhanGenerals.2025",
+                    "json": ["wangzhan"],
+                    "icon": "WangZhan",
+                    "generals": [
+                        "wz.simayi",
+                        "wz.huangyueying",
+                        "wz.ganning",
+                        "wz.zhouyu",
+                        "wz.zhurong",
+                        "wz.maliang",
+                        "wz.wenyang",
+                        "wz.mizhu",
+                        "wz.sunluyu"
+                    ]
+                },
+                {
+                    "name": "WangZhanGenerals.2026.Role",
+                    "json": [
+                        "wangzhan",
+                        "mobile",
+                        "ol",
+                        "ten",
+                        "cat",
+                        "shenhua",
+                        "yj",
+                        "xinghuo",
+                        "ex.standard",
+                        "ex.shenhua.ol",
+                        "ex.yj.ol",
+                        "ex.yj.ten"
+                    ],
+                    "icon": "WangZhan",
+                    "generals": [
+                        "wz26.caocao",
+                        "caopi",
+                        "caorui",
+                        "wz26.liubei",
+                        "wz26.liushan",
+                        "wz26.sunquan",
+                        "wz26.sunce",
+                        "wz26.sunjian",
+                        "wz26.lord.sunhao",
+                        "wz26.lord.liuxie",
+                        "wz26.simayi",
+                        "wz26.xiahoudun",
+                        "wz26.zhangliao",
+                        "wz26.xuchu",
+                        "wz26.guojia",
+                        "wz.zhenji",
+                        "olex.xiahouyuan",
+                        "wz26.xuhuang",
+                        "xsp.caoren",
+                        "olex.dianwei",
+                        "wz26.xunyu",
+                        "wz26.dengai",
+                        "olex.lidian",
+                        "wz26.wenpin",
+                        "tenex.xunyou",
+                        "wz26.maojie",
+                        "wz26.zhangchunhua",
+                        "wz26.zhonghui",
+                        "tenex.wangyi",
+                        "wz26.caochong",
+                        "re.chenqun",
+                        "wz26.caoang",
+                        "wz26.zhugedan",
+                        "wz26.jiangwei",
+                        "wz26.wangji",
+                        "ol.zhuling",
+                        "haozhao",
+                        "luzhi",
+                        "wz26.jianggan",
+                        "yanrou",
+                        "wz26.guanyu",
+                        "wz26.zhangfei",
+                        "wz26.machao",
+                        "wz26.huangyueying",
+                        "wz26.huangzhong",
+                        "wz26.weiyan",
+                        "wz26.pangtong",
+                        "olex.jiangwei",
+                        "wz26.zhurong",
+                        "shamoke",
+                        "wz26.masu",
+                        "wangping",
+                        "olex.fazheng",
+                        "wz26.guanxingzhangbao",
+                        "tenex.guanping",
+                        "tenex.liufeng",
+                        "wz26.wuyi",
+                        "wz26.zhangsong",
+                        "wz26.liuchen",
+                        "wz26.xiahoushi",
+                        "wz26.xiahouba",
+                        "zhangxingcai",
+                        "wz26.maliang",
+                        "wz26.mizhu",
+                        "dongyun",
+                        "wz26.huangquan",
+                        "wz26.zhangyi",
+                        "qinmi",
+                        "zhugezhan",
+                        "qiaozhou",
+                        "wz26.ganning",
+                        "wz26.lvmeng",
+                        "ex.huanggai",
+                        "wz26.zhouyu",
+                        "wz26.daqiao",
+                        "wz26.luxun",
+                        "wz26.sunshangxiang",
+                        "wz26.taishici",
+                        "wz26.lusu",
+                        "wz26.zhangzhaozhanghong",
+                        "wz26.dingfeng",
+                        "jiangqin",
+                        "wz26.zhugejin",
+                        "wz26.xusheng",
+                        "wz.lingtong",
+                        "wz26.bulianshi",
+                        "wz26.handang",
+                        "cat.zhuhuan",
+                        "wz26.cenhun",
+                        "zhugeke",
+                        "wz26.buzhi",
+                        "wz26.sp.pangtong",
+                        "wz26.zhoufang",
+                        "wz26.sunru",
+                        "wz26.lingcao",
+                        "liuzan",
+                        "wz26.tangzi",
+                        "wz26.wenyang",
+                        "wz26.lvbu",
+                        "wz26.diaochan",
+                        "wz26.yuanshao",
+                        "wz26.jiaxu",
+                        "wz26.zuoci",
+                        "wz26.caiwenji",
+                        "wz26.mateng",
+                        "panfeng",
+                        "wz26.huaxiong",
+                        "wz26.yuanshu",
+                        "wz26.lijue",
+                        "wz26.gongsunzan",
+                        "wz26.hansui",
+                        "wz26.gaoshun",
+                        "wz26.liru",
+                        "wz26.jushou",
+                        "tenex.gongsunzan",
+                        "wz26.fuwan",
+                        "wz26.sp.machao",
+                        "wz26.zhaoyun",
+                        "wz26.quyi",
+                        "wz.pangdegong",
+                        "liuqi",
+                        "gaolan",
+                        "wz26.liubian",
+                        "wz26.duyu",
+                        "wz26.menghuo",
+                        "wz26.zhanghe",
+                        "wz26.yujin",
+                        "wz26.sunhao",
+                        "liuxie"
+                    ]
+                },
+                {
+                    "name": "WangZhanGenerals.2026.XueZhan",
+                    "json": ["wangzhan"],
+                    "icon": "WangZhan",
+                    "generals": []
+                }
+            ]
+        },
+        "WarsStandardGenerals": {
+            "name": "WarsStandardGenerals",
+            "subpacks": [
+                {
+                    "name": "WarsStandardGenerals.Wei",
+                    "json": ["wars"],
+                    "icon": "WarsStandardGenerals",
+                    "generals": [
+                        "wars.caocao",
+                        "wars.simayi",
+                        "wars.xiahoudun",
+                        "wars.zhangliao",
+                        "wars.xuchu",
+                        "wars.guojia",
+                        "wars.zhenji",
+                        "wars.xiahouyuan",
+                        "wars.zhanghe",
+                        "wars.xuhuang",
+                        "wars.caoren",
+                        "wars.dianwei",
+                        "wars.xunyu",
+                        "wars.caopi",
+                        "wars.yuejin"
+                    ]
+                },
+                {
+                    "name": "WarsStandardGenerals.Shu",
+                    "json": ["wars"],
+                    "icon": "WarsStandardGenerals",
+                    "generals": [
+                        "wars.liubei",
+                        "wars.guanyu",
+                        "wars.zhangfei",
+                        "wars.zhugeliang",
+                        "wars.zhaoyun",
+                        "wars.machao",
+                        "wars.v2025.huangzhong",
+                        "wars.huangyueying",
+                        "wars.weiyan",
+                        "wars.pangtong",
+                        "wars.wolong",
+                        "wars.liushan",
+                        "wars.ganfuren",
+                        "wars.menghuo",
+                        "wars.zhurong"
+                    ]
+                },
+                {
+                    "name": "WarsStandardGenerals.Wu",
+                    "json": ["wars"],
+                    "icon": "WarsStandardGenerals",
+                    "generals": [
+                        "wars.sunquan",
+                        "wars.ganning",
+                        "wars.lvmeng",
+                        "wars.huanggai",
+                        "wars.zhouyu",
+                        "wars.daqiao",
+                        "wars.v2025.luxun",
+                        "wars.sunshangxiang",
+                        "wars.sunjian",
+                        "wars.xiaoqiao",
+                        "wars.taishici",
+                        "wars.zhoutai",
+                        "wars.lusu",
+                        "wars.zhangzhaozhanghong",
+                        "wars.dingfeng"
+                    ]
+                },
+                {
+                    "name": "WarsStandardGenerals.Qun",
+                    "json": ["wars"],
+                    "icon": "WarsStandardGenerals",
+                    "generals": [
+                        "wars.huatuo",
+                        "wars.lvbu",
+                        "wars.diaochan",
+                        "wars.yuanshao",
+                        "wars.yanliangwenchou",
+                        "wars.jiaxu",
+                        "wars.pangde",
+                        "wars.zhangjiao",
+                        "wars.caiwenji",
+                        "wars.mateng",
+                        "wars.kongrong",
+                        "wars.v2025.jiling",
+                        "wars.v2025.tianfeng",
+                        "wars.v2025.panfeng",
+                        "wars.zoushi"
+                    ]
+                },
+                {
+                    "name": "WarsStandardGenerals.2019",
+                    "json": ["wars"],
+                    "icon": "WarsStandardGenerals",
+                    "generals": [
+                        "wars.huangzhong",
+                        "wars.luxun",
+                        "wars.jiling",
+                        "wars.panfeng",
+                        "wars.tianfeng"
+                    ]
+                }
+            ]
+        },
+        "WarsPowerGenerals": {
+            "name": "WarsPowerGenerals",
+            "subpacks": [
+                {
+                    "name": "WarsPowerGenerals.Zhen",
+                    "json": ["wars"],
+                    "icon": "WarsPower.Zhen",
+                    "generals": [
+                        "wars.caohong",
+                        "wars.dengai",
+                        "wars.jiangwei",
+                        "wars.jiangwanfeiyi",
+                        "wars.jiangqin",
+                        "wars.xusheng",
+                        "wars.hetaihou",
+                        "wars.yuji",
+                        "wars.lord_liubei"
+                    ]
+                },
+                {
+                    "name": "WarsPowerGenerals.Shi",
+                    "json": ["wars"],
+                    "icon": "WarsPower.Shi",
+                    "generals": [
+                        "wars.lidian",
+                        "wars.zangba",
+                        "wars.madai",
+                        "wars.mifuren",
+                        "wars.sunce",
+                        "wars.chenwudongxi",
+                        "wars.dongzhuo",
+                        "wars.zhangren",
+                        "wars.lord_zhangjiao"
+                    ]
+                },
+                {
+                    "name": "WarsPowerGenerals.Bian",
+                    "json": ["wars"],
+                    "icon": "WarsPower.Bian",
+                    "generals": [
+                        "wars.xunyou",
+                        "wars.bianfuren",
+                        "wars.masu",
+                        "wars.shamoke",
+                        "wars.lvfan",
+                        "wars.lingtong",
+                        "wars.zuoci",
+                        "wars.lijueguosi",
+                        "wars.lord_sunquan"
+                    ]
+                },
+                {
+                    "name": "WarsPowerGenerals.Quan",
+                    "json": ["wars"],
+                    "icon": "WarsPower.Quan",
+                    "generals": [
+                        "wars.yujin",
+                        "wars.cuiyanmaojie",
+                        "wars.fazheng",
+                        "wars.wangping",
+                        "wars.wuguotai",
+                        "wars.lukang",
+                        "wars.yuanshu",
+                        "wars.zhangxiu",
+                        "wars.lord_caocao"
+                    ]
+                },
+                {
+                    "name": "WarsPowerGenerals.SP",
+                    "json": ["wars"],
+                    "icon": "WarsPower.SP",
+                    "generals": [
+                        "wars.tianyu",
+                        "wars.caozhen",
+                        "wars.liaohua",
+                        "wars.xianglang",
+                        "wars.zhugejin",
+                        "wars.taohuang",
+                        "wars.beimihu",
+                        "wars.maxiumatie"
+                    ]
+                },
+                {
+                    "name": "WarsPowerGenerals.EX",
+                    "json": ["wars"],
+                    "icon": "WarsPower.Ex",
+                    "generals": ["wars.zhonghui"]
+                },
+                {
+                    "name": "WarsPowerGenerals.ZongHeng",
+                    "json": ["wars"],
+                    "icon": "WarsSp.ZongHeng",
+                    "generals": [
+                        "wars.yanghu_wei",
+                        "wars.huaxin",
+                        "wars.zongyu",
+                        "wars.dengzhi",
+                        "wars.fengxi",
+                        "wars.luyusheng",
+                        "wars.miheng",
+                        "wars.xunchen"
+                    ]
+                },
+                {
+                    "name": "WarsPowerGenerals.God",
+                    "json": ["wars.god"],
+                    "icon": "ShenHua.Shen",
+                    "generals": [
+                        "wars.god_guanyu",
+                        "wars.god_lvmeng",
+                        "wars.god_zhouyu",
+                        "wars.god_zhugeliang",
+                        "wars.god_caocao",
+                        "wars.god_lvbu",
+                        "wars.god_zhaoyun",
+                        "wars.god_simayi",
+                        "wars.god_diaochan"
+                    ]
+                }
+            ]
+        },
+        "WarsJinGenerals": {
+            "name": "WarsJinGenerals",
+            "subpacks": [
+                {
+                    "name": "WarsJinGenerals.Standard",
+                    "json": ["wars.jin"],
+                    "icon": "WarsStandardGenerals",
+                    "generals": [
+                        "wars.simayi_jin",
+                        "wars.zhangchunhua_jin",
+                        "wars.simashi",
+                        "wars.simazhao",
+                        "wars.simazhou",
+                        "wars.simaliang",
+                        "wars.simalun",
+                        "wars.shibao",
+                        "wars.yanghuiyu",
+                        "wars.wangyuanji",
+                        "wars.weiguan",
+                        "wars.jiachong",
+                        "wars.guohuai_jin",
+                        "wars.wangjun",
+                        "wars.malong"
+                    ]
+                },
+                {
+                    "name": "WarsJinGenerals.Power",
+                    "json": ["wars.jin"],
+                    "icon": "",
+                    "generals": [
+                        "wars.yanghu",
+                        "wars.duyu",
+                        "wars.zhanghuyuechen",
+                        "wars.wenyang",
+                        "wars.baifuren",
+                        "wars.wangxiang",
+                        "wars.yangjun",
+                        "wars.sunxiu_jin",
+                        "wars.lord_simayi"
+                    ]
+                },
+                {
+                    "name": "WarsJinGenerals.Other",
+                    "json": ["wars.jin"],
+                    "icon": "",
+                    "generals": [
+                        "wars.jiananfeng",
+                        "wars.xiahouhui",
+                        "wars.wanghun",
+                        "wars.zhongyan"
+                    ]
+                }
+            ]
+        },
+        "WarsXLGenerals": {
+            "name": "WarsXLGenerals",
+            "subpacks": [
+                {
+                    "name": "WarsXLGenerals.Standard",
+                    "json": ["wars.xl"],
+                    "icon": "WarsStandardGenerals",
+                    "generals": [
+                        "xl.simayan",
+                        "xl.simazhao",
+                        "xl.wangyuanji",
+                        "xl.wenyang",
+                        "xl.simafu",
+                        "xl.simawang",
+                        "xl.zhanghua",
+                        "xl.peixiu",
+                        "xl.wangjun",
+                        "xl.hufen",
+                        "xl.xiahouhui",
+                        "xl.wanghun",
+                        "xl.zhongyan",
+                        "xl.tangbin",
+                        "xl.huliehuyuan"
+                    ]
+                },
+                {
+                    "name": "WarsXLGenerals.Power",
+                    "json": ["wars.xl"],
+                    "icon": "",
+                    "generals": [
+                        "xl.yanghu",
+                        "xl.duyu",
+                        "xl.weiguan",
+                        "xl.zhouzhi",
+                        "xl.shantao",
+                        "xl.malong",
+                        "xl.simashi",
+                        "xl.yanghuiyu",
+                        "xl.jishao"
+                    ]
+                },
+                {
+                    "name": "WarsXLGenerals.Heng",
+                    "json": ["wars.xl"],
+                    "icon": "WarsSp.Heng",
+                    "generals": [
+                        "xl.caoang",
+                        "xl.zhangchunhua",
+                        "xl.xushu",
+                        "xl.shitao",
+                        "xl.chengpu",
+                        "xl.guyong",
+                        "xl.liru",
+                        "xl.gongsunzan",
+                        "xl.shibao",
+                        "xl.chenqian",
+                        "xl.lord_simayan"
+                    ]
+                },
+                {
+                    "name": "WarsXLGenerals.Yang",
+                    "json": ["wars.xl"],
+                    "icon": "WarsSp.Yang",
+                    "generals": [
+                        "xl.guohuai",
+                        "xl.chengyu",
+                        "xl.maliang",
+                        "xl.chendao",
+                        "wars.zhugejin",
+                        "xl.quancong",
+                        "xl.huangfusong",
+                        "xl.chendeng",
+                        "xl.xunxu",
+                        "xl.simayou"
+                    ]
+                },
+                {
+                    "name": "WarsXLGenerals.Zhi",
+                    "json": ["wars.xl"],
+                    "icon": "WarsSp.Zhi",
+                    "generals": [
+                        "xl.caozhang",
+                        "wars.tianyu",
+                        "xl.wangyi",
+                        "wars.liaohua",
+                        "xl.guanyinping",
+                        "xl.yiji",
+                        "xl.sunhuan",
+                        "xl.zhuhuan",
+                        "xl.sunluban",
+                        "xl.chengong",
+                        "wars.liufuren",
+                        "xl.duanwei",
+                        "xl.jiachong",
+                        "xl.xinxianying",
+                        "xl.zhouchu"
+                    ]
+                },
+                {
+                    "name": "WarsXLGenerals.KangLi",
+                    "json": ["wars.xl"],
+                    "icon": "WarsSp.KangLi",
+                    "generals": [
+                        "xl.caozhi",
+                        "xl.cuifei",
+                        "xl.guansuo",
+                        "xl.wangtaowangyue",
+                        "xl.zhuju",
+                        "xl.sunluyu",
+                        "xl.zhangze",
+                        "xl.chenhuiqian",
+                        "xl.shichong",
+                        "xl.lvzhu"
+                    ]
+                }
+            ]
+        },
+        "1v1Generals": {
+            "name": "1v1Generals",
+            "subpacks": [
+                {
+                    "name": "1v1Generals.Wei",
+                    "json": ["1v1"],
+                    "icon": "1v1",
+                    "generals": [
+                        "1v1.caocao",
+                        "1v1.simayi",
+                        "1v1.xiahoudun",
+                        "1v1.zhangliao",
+                        "1v1.xuchu",
+                        "1v1.guojia",
+                        "1v1.zhenji",
+                        "1v1.xiahouyuan",
+                        "1v1.xuhuang",
+                        "1v1.caoren",
+                        "1v1.dianwei",
+                        "1v1.niujin"
+                    ]
+                },
+                {
+                    "name": "1v1Generals.Shu",
+                    "json": ["1v1"],
+                    "icon": "1v1",
+                    "generals": [
+                        "1v1.liubei",
+                        "1v1.guanyu",
+                        "1v1.zhangfei",
+                        "1v1.zhugeliang",
+                        "1v1.zhaoyun",
+                        "1v1.machao",
+                        "1v1.huangyueying",
+                        "1v1.huangzhong",
+                        "1v1.weiyan",
+                        "1v1.jiangwei",
+                        "1v1.menghuo",
+                        "1v1.zhurong",
+                        "1v1.xiangchong"
+                    ]
+                },
+                {
+                    "name": "1v1Generals.Wu",
+                    "json": ["1v1"],
+                    "icon": "1v1",
+                    "generals": [
+                        "1v1.sunquan",
+                        "1v1.ganning",
+                        "1v1.lvmeng",
+                        "1v1.huanggai",
+                        "1v1.zhouyu",
+                        "1v1.daqiao",
+                        "1v1.luxun",
+                        "1v1.sunshangxiang",
+                        "1v1.sunjian",
+                        "1v1.xiaoqiao",
+                        "1v1.zhoutai",
+                        "1v1.sunyi"
+                    ]
+                },
+                {
+                    "name": "1v1Generals.Qun",
+                    "json": ["1v1"],
+                    "icon": "1v1",
+                    "generals": [
+                        "1v1.huatuo",
+                        "1v1.lvbu",
+                        "1v1.diaochan",
+                        "1v1.yanliangwenchou",
+                        "1v1.pangde",
+                        "1v1.zhangjiao",
+                        "1v1.hejin",
+                        "1v1.hansui"
+                    ]
+                }
+            ]
+        },
+        "3v3Generals": {
+            "name": "3v3Generals",
+            "subpacks": [
+                {
+                    "name": "3v3Generals.2010",
+                    "json": ["standard", "shenhua"],
+                    "icon": "3v3",
+                    "generals": [
+                        "caocao",
+                        "simayi",
+                        "xiahoudun",
+                        "zhangliao",
+                        "xuchu",
+                        "guojia",
+                        "zhenji",
+                        "xiahouyuan",
+                        "caoren",
+                        "liubei",
+                        "guanyu",
+                        "zhangfei",
+                        "zhugeliang",
+                        "zhaoyun",
+                        "machao",
+                        "huangyueying",
+                        "huangzhong",
+                        "weiyan",
+                        "sunquan",
+                        "ganning",
+                        "lvmeng",
+                        "huanggai",
+                        "zhouyu",
+                        "daqiao",
+                        "luxun",
+                        "sunshangxiang",
+                        "xiaoqiao",
+                        "zhoutai",
+                        "huatuo",
+                        "lvbu",
+                        "diaochan",
+                        "zhangjiao"
+                    ]
+                },
+                {
+                    "name": "3v3Generals.2012",
+                    "json": ["standard", "shenhua", "3v3"],
+                    "icon": "3v3",
+                    "generals": [
+                        "caocao",
+                        "simayi",
+                        "zhangliao",
+                        "xuchu",
+                        "guojia",
+                        "zhenji",
+                        "xiahouyuan",
+                        "xuhuang",
+                        "liubei",
+                        "guanyu",
+                        "zhangfei",
+                        "zhugeliang",
+                        "zhaoyun",
+                        "machao",
+                        "huangyueying",
+                        "huangzhong",
+                        "menghuo",
+                        "sunquan",
+                        "ganning",
+                        "huanggai",
+                        "zhouyu",
+                        "daqiao",
+                        "luxun",
+                        "sunshangxiang",
+                        "sunjian",
+                        "xiaoqiao",
+                        "zhoutai",
+                        "3v3.zhugejin",
+                        "huatuo",
+                        "lvbu",
+                        "diaochan",
+                        "pangde"
+                    ]
+                },
+                {
+                    "name": "3v3Generals.2014",
+                    "json": ["standard", "shenhua", "3v3"],
+                    "icon": "3v3",
+                    "generals": [
+                        "caocao",
+                        "simayi",
+                        "3v3s3.xiahoudun",
+                        "zhangliao",
+                        "guojia",
+                        "zhenji",
+                        "xiahouyuan",
+                        "xuhuang",
+                        "3v3s3.wenpin",
+                        "liubei",
+                        "3v3s3.guanyu",
+                        "zhangfei",
+                        "zhugeliang",
+                        "3v3s3.zhaoyun",
+                        "machao",
+                        "huangyueying",
+                        "jiangwei",
+                        "sunquan",
+                        "ganning",
+                        "huanggai",
+                        "zhouyu",
+                        "daqiao",
+                        "sunshangxiang",
+                        "sunjian",
+                        "sunce",
+                        "xiaoqiao",
+                        "3v3.zhugejin",
+                        "huatuo",
+                        "3v3s3.lvbu",
+                        "diaochan",
+                        "jiaxu",
+                        "pangde"
+                    ]
+                },
+                {
+                    "name": "3v3Generals.2025",
+                    "json": [
+                        "3v3",
+                        "ex.standard",
+                        "yj",
+                        "wangzhan",
+                        "ex.yj.mobile"
+                    ],
+                    "icon": "3v3",
+                    "generals": [
+                        "3v3.caocao",
+                        "3v3.simayi",
+                        "3v3.xiahoudun",
+                        "3v3.zhangliao",
+                        "3v3.zhenji",
+                        "lidian",
+                        "3v3.wenpin",
+                        "3v3.liubei",
+                        "3v3.guanyu",
+                        "3v3.zhangfei",
+                        "3v3.zhugeliang",
+                        "3v3.machao",
+                        "ex.huangyueying",
+                        "3v3.jiangwei",
+                        "3v3.fazheng",
+                        "liufeng",
+                        "3v3.dongyun",
+                        "3v3.huangquan",
+                        "3v3.huoyi",
+                        "3v3.sunquan",
+                        "wz.ganning",
+                        "3v3.zhouyu",
+                        "ex.daqiao",
+                        "sunshangxiang",
+                        "3v3.sunce",
+                        "3v3.lusu",
+                        "lingtong",
+                        "3v3.xusheng",
+                        "handang",
+                        "ex.yufan",
+                        "sundeng",
+                        "3v3.zhugejin",
+                        "ol.lingcao",
+                        "3v3.guyong",
+                        "ex.huatuo",
+                        "3v3.lvbu",
+                        "ex.diaochan",
+                        "3v3.mateng",
+                        "3v3.kongrong",
+                        "3v3.fuwan"
+                    ]
+                }
+            ]
+        },
+        "ChengTianZhiYiGenerals": {
+            "name": "ChengTianZhiYiGenerals",
+            "subpacks": [
+                {
+                    "name": "ChengTianZhiYiGenerals.BuJiangWeiZi.ZhuShuai",
+                    "json": ["ct.zhushuai"],
+                    "icon": "",
+                    "generals": ["ct.caocao"]
+                },
+                {
+                    "name": "ChengTianZhiYiGenerals.BuJiangWeiZi.Retinue",
+                    "json": ["ct.retinue"],
+                    "icon": "",
+                    "generals": ["ctre.dianwei", "ctre.simayi"]
+                }
+            ]
+        }
+    }
+}

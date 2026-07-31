@@ -1,6 +1,6 @@
 import { SeatMoBase } from './SeatMo.generated';
 import { ISeat } from './ISeat';
-import { Player } from '@shared/core/player/Player';
+import { Player } from '@shared/core/player';
 
 const { regClass } = Laya;
 

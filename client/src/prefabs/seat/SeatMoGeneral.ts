@@ -1,6 +1,6 @@
 import { SeatMoGeneralBase } from './SeatMoGeneral.generated';
 import { ISeatGeneral } from './ISeatGeneral';
-import { General } from '@shared/core/general/General';
+import { General } from '@shared/core/general';
 
 const { regClass } = Laya;
 

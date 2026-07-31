@@ -1,4 +1,4 @@
-import { General } from '@shared/core/general/General';
+import { General } from '@shared/core/general';
 
 /**
  * 座位内武将展示组件的公共接口。

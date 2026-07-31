@@ -1,8 +1,7 @@
 {
     "compilerOptions": {
-        "baseUrl": ".",
-        "module": "es6",
-        "target": "es6",
+        "module": "ESNext",
+        "target": "ESNext",
         "lib": ["ESNext", "DOM"],
         "strict": true,
         "strictNullChecks": false,
@@ -11,13 +10,13 @@
         "sourceMap": false,
         "experimentalDecorators": true,
         "skipLibCheck": true,
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "allowSyntheticDefaultImports": true,
-        "ignoreDeprecations": "6.0",
         "paths": {
             "~/packages/*": ["./library/packages/*"],
             "@shared/*": ["../shared/*"],
-            "@colyseus/schema": ["./node_modules/@colyseus/schema"]
+            "@colyseus/schema": ["./node_modules/@colyseus/schema"],
+            "*": ["./*"]
         }
     },
     "include": ["./assets", "./src", "./engine", "../shared"]

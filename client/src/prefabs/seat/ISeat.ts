@@ -1,4 +1,4 @@
-import { Player } from '@shared/core/player/Player';
+import { Player } from '@shared/core/player';
 
 /**
  * 座位组件的公共接口。

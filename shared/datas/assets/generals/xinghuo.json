@@ -1,0 +1,253 @@
+{
+    "liuqi": {
+        "info": {
+            "id": "QUN072",
+            "title": "居外而安",
+            "designer": "千幻",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "NOVART",
+                "cv": "戴超行",
+                "audios": { "death": { "translation": "父亲，孩儿来见你了。" } }
+            }
+        ]
+    },
+    "fuwan": {
+        "info": {
+            "id": "QUN039",
+            "title": "沉毅的国丈",
+            "designer": "嘉言懿行",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "游漫美绘",
+                "cv": "未知",
+                "audios": { "death": { "translation": "后会有期……" } }
+            }
+        ]
+    },
+    "maliang": {
+        "info": {
+            "id": "SHU043",
+            "title": "白眉智士",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "LiuHeng",
+                "cv": "马洋",
+                "audios": { "death": { "translation": "我的使命 完成了吗……" } }
+            }
+        ]
+    },
+    "caoang": {
+        "info": {
+            "id": "WEI049",
+            "title": "取义成仁",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "Zero",
+                "cv": "未知",
+                "audios": { "death": { "translation": "典将军，还是你赢了……" } }
+            }
+        ]
+    },
+    "zhangxingcai": {
+        "info": {
+            "id": "SHU026",
+            "title": "敬哀皇后",
+            "designer": "未知",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "未知",
+                "cv": "未知",
+                "audios": {
+                    "death": { "translation": "大汉气数，终究难续吗……" }
+                }
+            }
+        ]
+    },
+    "liuxie": {
+        "info": {
+            "id": "QUN040",
+            "title": "受困天子",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "LiuHeng",
+                "cv": "未知",
+                "audios": {
+                    "death": {
+                        "translation": "为什么，不把复兴汉室的权力交给我……"
+                    }
+                }
+            }
+        ]
+    },
+    "dongyun": {
+        "info": {
+            "id": "SHU048",
+            "title": "骨鲠良相",
+            "designer": "未知",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "玖等仁品",
+                "cv": "小思无邪强",
+                "audios": {
+                    "death": { "translation": "大汉，要亡于宦官之手了。" }
+                }
+            }
+        ]
+    },
+    "liuyan": {
+        "info": {
+            "id": "QUN068",
+            "title": "裂土之宗",
+            "designer": "桃花僧",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "心中一凛",
+                "cv": "金垚",
+                "audios": { "death": { "translation": "背疮难治，世子难继。" } }
+            }
+        ]
+    },
+    "xizhicai": {
+        "info": {
+            "id": "WEI055",
+            "title": "负俗的夭才",
+            "designer": "荼蘼",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "眉毛子",
+                "cv": "REAL-Jason(曹真）",
+                "audios": {
+                    "death": { "translation": "臣家火起，请离席救之。" }
+                }
+            }
+        ]
+    },
+    "sp.pangtong": {
+        "info": {
+            "id": "WU051",
+            "title": "南州士冠",
+            "prefix": "SP",
+            "designer": "Loun老萌",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "兴游",
+                "cv": "Aaron_Bo",
+                "baseUrl": "pangtong/sp.pangtong",
+                "audios": {
+                    "death": {
+                        "url": "pangtong/sp.pangtong/death",
+                        "translation": "我终究……不得东吴赏识。"
+                    }
+                }
+            }
+        ]
+    },
+    "sp.machao": {
+        "info": {
+            "id": "QUN042",
+            "title": "西凉的猛狮",
+            "prefix": "SP",
+            "designer": "凌天翼",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "天空之城",
+                "cv": "清水浊流",
+                "baseUrl": "machao/sp.machao",
+                "audios": {
+                    "death": {
+                        "url": "machao/sp.machao/death",
+                        "translation": "西凉，回不去了。"
+                    }
+                }
+            }
+        ]
+    },
+    "wenpin": {
+        "info": {
+            "id": "WEI019",
+            "title": "坚城宿将",
+            "designer": "韩旭",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "木美人",
+                "cv": "孟 祥龙",
+                "baseUrl": "wenpin/3v3.wenpin",
+                "audios": { "death": { "translation": "终于……也守不住了……" } }
+            }
+        ]
+    },
+    "mizhu": {
+        "info": {
+            "id": "SHU046",
+            "title": "挥金追义",
+            "designer": "千幻",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "瞎子Ghe",
+                "cv": "钟 健_JJ",
+                "audios": { "death": { "translation": "劣弟背主，我之罪也。" } }
+            }
+        ]
+    },
+    "zhoufang": {
+        "info": {
+            "id": "WU053",
+            "title": "下发载义",
+            "designer": "千幻&半缘修道",
+            "script": "归零"
+        },
+        "skins": [
+            {
+                "name": "default",
+                "painter": "黑白画谱",
+                "cv": "贾志超",
+                "audios": {
+                    "death": { "translation": "功亏一篑，功亏一篑啊。" }
+                }
+            }
+        ]
+    }
+}

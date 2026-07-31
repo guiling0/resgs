@@ -1,23 +1,23 @@
 {
     "compilerOptions": {
         "noEmit": true,
-        "baseUrl": ".",
         "target": "ESNext",
         "module": "CommonJS",
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "types": ["node"],
         "strict": true,
         "allowJs": true,
         "esModuleInterop": true,
         "experimentalDecorators": true,
         "skipLibCheck": true,
+        "ignoreDeprecations": "6.0",
         "forceConsistentCasingInFileNames": true,
         "useDefineForClassFields": false,
-        "ignoreDeprecations": "6.0",
         "paths": {
             "@shared/*": ["./shared/*"],
             "@colyseus/schema": ["./server/node_modules/@colyseus/schema"],
-            "lodash": ["./server/node_modules/@types/lodash"]
+            "lodash": ["./server/node_modules/@types/lodash"],
+            "*": ["./*"]
         }
     },
     "include": ["shared/**/*", "scripts/**/*"]

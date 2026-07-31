@@ -1,7 +1,7 @@
 import { SeatSelfGeneralBase } from './SeatSelfGeneral.generated';
 import { ISeatGeneral } from './ISeatGeneral';
-import { General } from '@shared/core/general/General';
-import { Player } from '@shared/core/player/Player';
+import { General } from '@shared/core/general';
+import { Player } from '@shared/core/player';
 
 const { regClass } = Laya;
 
