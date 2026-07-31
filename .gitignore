@@ -31,3 +31,7 @@ build/
 Thumbs.db
 *.swp
 *.swo
+
+# ===== 遗留原型与 Claude 记忆 =====
+client-dom/
+memory/
