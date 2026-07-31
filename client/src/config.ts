@@ -24,6 +24,23 @@ export const CDN_BASE = 'http://res.resgs.com';
 
 type SeatPosition = { x: number; y: number; scale: number };
 
+export const TABLE_SEAT_POSITIONS: Record<string, SeatPosition[]> = {
+    default: [
+        { x: 0, y: 0, scale: 0.8 },
+        { x: 258, y: 0, scale: 0.8 },
+        { x: 517, y: 0, scale: 0.8 },
+        { x: 775, y: 0, scale: 0.8 },
+        { x: 0, y: 353, scale: 0.8 },
+        { x: 258, y: 353, scale: 0.8 },
+        { x: 517, y: 353, scale: 0.8 },
+        { x: 775, y: 353, scale: 0.8 },
+        { x: 0, y: 706, scale: 0.8 },
+        { x: 258, y: 706, scale: 0.8 },
+        { x: 517, y: 706, scale: 0.8 },
+        { x: 775, y: 706, scale: 0.8 },
+    ],
+};
+
 /** 座位坐标（设计分辨率 1920×1080）。仅包含其他玩家座位，自己座位见 SELF_SEAT_POS */
 export const SEAT_POSITIONS: Record<number, SeatPosition[]> = {
     2: [{ x: 959, y: 150, scale: 1.5 }],

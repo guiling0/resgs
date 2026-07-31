@@ -1,0 +1,453 @@
+{
+  "_$ver": 1,
+  "_$id": "odibuqkx",
+  "_$runtime": "res://9749e118-bae8-4afa-8f28-e6087833e6c8",
+  "_$type": "GWidget",
+  "name": "table",
+  "width": 1920,
+  "height": 1080,
+  "_$child": [
+    {
+      "_$id": "z801ttim",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "img",
+      "width": 1920,
+      "height": 1080,
+      "src": "res://2e3d3dbd-f943-429b-b66e-0edef0d87207",
+      "autoSize": false
+    },
+    {
+      "_$id": "auvidlcv",
+      "_$var": true,
+      "_$type": "GWidget",
+      "name": "players",
+      "x": 450,
+      "y": 12,
+      "width": 1019,
+      "height": 1047
+    },
+    {
+      "_$id": "jltjpiit",
+      "_$type": "GImage",
+      "name": "infobg",
+      "x": 1514,
+      "y": -2,
+      "width": 406,
+      "height": 678,
+      "src": "res://ac4e848f-5225-49a3-b988-73c067b05d34",
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "ivq83pzl",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "roomname",
+          "y": 19,
+          "width": 406,
+          "height": 34,
+          "text": "[{roomId=10000}]{roomName=房间名字}",
+          "_isDemo": true,
+          "fontSize": 25,
+          "color": "#ffffff",
+          "templateVars": true,
+          "align": "center",
+          "overflow": "ellipsis",
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "sxrjlrtv",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "roominfo",
+          "x": 8,
+          "y": 115,
+          "width": 388,
+          "height": 397,
+          "text": "{mode=role}\n密码：{password=无}\n响应时间：{responseTime=15}\n选将时间：{chooseGeneralTime=15}\n选将数量：{chooseGeneralCount=5}\n手气卡：{luckyCardCount=0}",
+          "_isDemo": true,
+          "fontSize": 25,
+          "color": "#ffffff",
+          "templateVars": true,
+          "letterSpacing": 0
+        }
+      ]
+    },
+    {
+      "_$id": "b58byxnm",
+      "_$type": "GImage",
+      "name": "btnbg",
+      "x": 1514,
+      "y": 672,
+      "width": 406,
+      "height": 408,
+      "src": "res://69fe1cc7-8ebd-4879-a4b6-d7484b9a6795",
+      "_$child": [
+        {
+          "_$id": "sm9hmnae",
+          "_$var": true,
+          "_$type": "GButton",
+          "name": "btn_start",
+          "x": 117,
+          "y": 65,
+          "width": 170,
+          "height": 194,
+          "controllers": {
+            "_$type": "Record",
+            "button": {
+              "_$type": "Controller",
+              "pages": [
+                "up",
+                "down",
+                "over",
+                "selectedOver"
+              ]
+            }
+          },
+          "_$child": [
+            {
+              "_$id": "g09yf8rg",
+              "_$type": "GImage",
+              "name": "img",
+              "width": 170,
+              "height": 194,
+              "gears": [
+                {
+                  "_$type": "GearDisplay",
+                  "controller": {
+                    "_$ref": "sm9hmnae",
+                    "_$ctrl": "button"
+                  },
+                  "pages": [
+                    0
+                  ]
+                }
+              ],
+              "src": "res://536fb592-fed1-431d-8438-7d34f78ea6cb"
+            },
+            {
+              "_$id": "j4bex057",
+              "_$type": "GImage",
+              "name": "img_1",
+              "width": 170,
+              "height": 194,
+              "gears": [
+                {
+                  "_$type": "GearDisplay",
+                  "controller": {
+                    "_$ref": "sm9hmnae",
+                    "_$ctrl": "button"
+                  },
+                  "pages": [
+                    2
+                  ]
+                }
+              ],
+              "src": "res://48bb4912-d2c8-4b3a-b440-fd1d908fcc3e"
+            },
+            {
+              "_$id": "166jd0pk",
+              "_$type": "GImage",
+              "name": "img_2",
+              "width": 170,
+              "height": 194,
+              "gears": [
+                {
+                  "_$type": "GearDisplay",
+                  "controller": {
+                    "_$ref": "sm9hmnae",
+                    "_$ctrl": "button"
+                  },
+                  "pages": [
+                    1,
+                    3
+                  ]
+                }
+              ],
+              "src": "res://ef082086-97be-48d6-8fa3-080bced06faa"
+            }
+          ]
+        },
+        {
+          "_$id": "s68fwx0x",
+          "_$var": true,
+          "_$type": "GButton",
+          "name": "btn_unready",
+          "x": 117,
+          "y": 65,
+          "width": 170,
+          "height": 194,
+          "controllers": {
+            "_$type": "Record",
+            "button": {
+              "_$type": "Controller",
+              "pages": [
+                "up",
+                "down",
+                "over",
+                "selectedOver"
+              ]
+            }
+          },
+          "_$child": [
+            {
+              "_$id": "71lhf1fk",
+              "_$type": "GImage",
+              "name": "img",
+              "width": 170,
+              "height": 194,
+              "gears": [
+                {
+                  "_$type": "GearDisplay",
+                  "controller": {
+                    "_$ref": "s68fwx0x",
+                    "_$ctrl": "button"
+                  },
+                  "pages": [
+                    0
+                  ]
+                }
+              ],
+              "src": "res://7c0a135e-2014-4dab-b888-5b94bfc84a42"
+            },
+            {
+              "_$id": "tvuycygc",
+              "_$type": "GImage",
+              "name": "img_1",
+              "width": 170,
+              "height": 194,
+              "gears": [
+                {
+                  "_$type": "GearDisplay",
+                  "controller": {
+                    "_$ref": "s68fwx0x",
+                    "_$ctrl": "button"
+                  },
+                  "pages": [
+                    2
+                  ]
+                }
+              ],
+              "src": "res://fdfcb874-a7b2-407c-a3d0-cc388f9c8d55"
+            },
+            {
+              "_$id": "pqjley4t",
+              "_$type": "GImage",
+              "name": "img_2",
+              "width": 170,
+              "height": 194,
+              "gears": [
+                {
+                  "_$type": "GearDisplay",
+                  "controller": {
+                    "_$ref": "s68fwx0x",
+                    "_$ctrl": "button"
+                  },
+                  "pages": [
+                    1,
+                    3
+                  ]
+                }
+              ],
+              "src": "res://bc28b8e4-265a-46cf-b754-fbe58fbea9a4"
+            }
+          ]
+        },
+        {
+          "_$id": "djbvjz57",
+          "_$var": true,
+          "_$type": "GButton",
+          "name": "btn_ready",
+          "x": 117,
+          "y": 65,
+          "width": 170,
+          "height": 194,
+          "controllers": {
+            "_$type": "Record",
+            "button": {
+              "_$type": "Controller",
+              "pages": [
+                "up",
+                "down",
+                "over",
+                "selectedOver"
+              ]
+            }
+          },
+          "_$child": [
+            {
+              "_$id": "rxazr0ig",
+              "_$type": "GImage",
+              "name": "img",
+              "width": 170,
+              "height": 194,
+              "gears": [
+                {
+                  "_$type": "GearDisplay",
+                  "controller": {
+                    "_$ref": "djbvjz57",
+                    "_$ctrl": "button"
+                  },
+                  "pages": [
+                    0
+                  ]
+                }
+              ],
+              "src": "res://008643ee-4c59-4f3b-939f-c8d9134be942"
+            },
+            {
+              "_$id": "56ku2xfs",
+              "_$type": "GImage",
+              "name": "img_1",
+              "width": 170,
+              "height": 194,
+              "gears": [
+                {
+                  "_$type": "GearDisplay",
+                  "controller": {
+                    "_$ref": "djbvjz57",
+                    "_$ctrl": "button"
+                  },
+                  "pages": [
+                    2
+                  ]
+                }
+              ],
+              "src": "res://6b997936-d26a-4fc6-a12b-8229fb3698b1"
+            },
+            {
+              "_$id": "deflojkv",
+              "_$type": "GImage",
+              "name": "img_2",
+              "width": 170,
+              "height": 194,
+              "gears": [
+                {
+                  "_$type": "GearDisplay",
+                  "controller": {
+                    "_$ref": "djbvjz57",
+                    "_$ctrl": "button"
+                  },
+                  "pages": [
+                    1,
+                    3
+                  ]
+                }
+              ],
+              "src": "res://bf38cf70-4429-41ee-a806-f297d7bee169"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "ppd5i1f3",
+      "_$prefab": "cd55bdd9-9f66-4410-8f49-3be94bd29e64",
+      "_$var": true,
+      "name": "btn_generals",
+      "active": true,
+      "x": 1780,
+      "y": 508,
+      "visible": true,
+      "width": 140,
+      "height": 55,
+      "title": "查看将池",
+      "titleFontSize": 25
+    },
+    {
+      "_$id": "pqoq4qlg",
+      "_$prefab": "cd55bdd9-9f66-4410-8f49-3be94bd29e64",
+      "_$var": true,
+      "name": "btn_hanren",
+      "active": true,
+      "x": 1780,
+      "y": 564,
+      "visible": true,
+      "width": 140,
+      "height": 55,
+      "title": "一键喊话",
+      "titleFontSize": 25
+    },
+    {
+      "_$id": "ilrw6xum",
+      "_$prefab": "cd55bdd9-9f66-4410-8f49-3be94bd29e64",
+      "_$var": true,
+      "name": "btn_update_setting",
+      "active": true,
+      "x": 1643,
+      "y": 564,
+      "visible": true,
+      "width": 140,
+      "height": 55,
+      "title": "修改设置",
+      "titleFontSize": 25
+    },
+    {
+      "_$id": "50bio03k",
+      "_$prefab": "cd55bdd9-9f66-4410-8f49-3be94bd29e64",
+      "_$var": true,
+      "name": "btn_exit",
+      "active": true,
+      "x": 1529,
+      "y": 619,
+      "visible": true,
+      "width": 390,
+      "height": 55,
+      "title": "          退出房间          ",
+      "titleFontSize": 25
+    },
+    {
+      "_$id": "x14ybjo2",
+      "_$prefab": "cd55bdd9-9f66-4410-8f49-3be94bd29e64",
+      "_$var": true,
+      "name": "btn_addai",
+      "active": true,
+      "x": 1531,
+      "y": 564,
+      "visible": true,
+      "width": 115,
+      "height": 55,
+      "title": "添加AI",
+      "titleFontSize": 25
+    },
+    {
+      "_$id": "7n7nwk4d",
+      "_$prefab": "cd55bdd9-9f66-4410-8f49-3be94bd29e64",
+      "_$var": true,
+      "name": "btn_cards",
+      "active": true,
+      "x": 1643,
+      "y": 508,
+      "visible": true,
+      "width": 140,
+      "height": 55,
+      "title": "查看牌堆",
+      "titleFontSize": 25
+    },
+    {
+      "_$id": "d7vo7uh8",
+      "_$prefab": "cd55bdd9-9f66-4410-8f49-3be94bd29e64",
+      "_$var": true,
+      "name": "btn_watch",
+      "active": true,
+      "x": 1531,
+      "y": 508,
+      "visible": true,
+      "width": 115,
+      "height": 55,
+      "title": " 旁观 ",
+      "titleFontSize": 25
+    },
+    {
+      "_$id": "518yv8tj",
+      "_$prefab": "547a67be-3549-44ec-b46d-49eb957d5b14",
+      "_$var": true,
+      "name": "chat_panle",
+      "active": true,
+      "x": 17,
+      "y": 16,
+      "height": 1028,
+      "visible": true
+    }
+  ]
+}

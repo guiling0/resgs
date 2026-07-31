@@ -28,7 +28,7 @@ authRouter.post('/login', async (req: Request, res: Response) => {
             ip,
         });
         const token = signToken({ userId: user.userId, username });
-
+        logger.info(`[Auth]login success:`, { userId: user.userId, username });
         res.json({
             token,
             user: {

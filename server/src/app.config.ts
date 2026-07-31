@@ -1,12 +1,4 @@
-import {
-    defineServer,
-    defineRoom,
-    monitor,
-    playground,
-    createRouter,
-    createEndpoint,
-    LobbyRoom,
-} from 'colyseus';
+import { defineServer, defineRoom, monitor, playground } from 'colyseus';
 import express from 'express';
 /**
  * Import your Room files
@@ -14,13 +6,15 @@ import express from 'express';
 import { GameRoom } from './rooms/GameRoom.js';
 import { authRouter } from './auth/routes.js';
 import { statusRouter } from './routes/status.js';
+import { CustomLobbyRoom } from './rooms/LobbyRoom.js';
 
 const server = defineServer({
     /**
      * Define your room handlers:
      */
     rooms: {
-        lobby: defineRoom(LobbyRoom),
+        lobby: defineRoom(CustomLobbyRoom),
+        game: defineRoom(GameRoom).enableRealtimeListing(),
     },
 
     /**

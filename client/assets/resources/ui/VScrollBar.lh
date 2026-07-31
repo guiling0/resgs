@@ -24,8 +24,6 @@
       "name": "bar",
       "width": 12,
       "height": 400,
-      "src": "res://c58ebd03-cc82-4b9a-9eaf-548e38ca7e7a",
-      "autoSize": false,
       "relations": [
         {
           "_$type": "Relation",
@@ -37,7 +35,9 @@
             0
           ]
         }
-      ]
+      ],
+      "src": "res://c58ebd03-cc82-4b9a-9eaf-548e38ca7e7a",
+      "autoSize": false
     },
     {
       "_$id": "vsb_grip",
@@ -45,7 +45,6 @@
       "name": "grip",
       "width": 12,
       "height": 40,
-      "mode": 0,
       "_$child": [
         {
           "_$id": "vsb_grip_img",
@@ -53,8 +52,6 @@
           "name": "img",
           "width": 12,
           "height": 40,
-          "src": "res://0f7bea31-5c2d-48f8-9d69-204b8db5a4e3",
-          "autoSize": false,
           "relations": [
             {
               "_$type": "Relation",
@@ -68,7 +65,9 @@
                 0
               ]
             }
-          ]
+          ],
+          "src": "res://0f7bea31-5c2d-48f8-9d69-204b8db5a4e3",
+          "autoSize": false
         }
       ]
     },
@@ -78,7 +77,6 @@
       "name": "up",
       "width": 12,
       "height": 12,
-      "mode": 0,
       "_$child": [
         {
           "_$id": "vsb_up_img",
@@ -95,10 +93,9 @@
       "_$id": "vsb_down",
       "_$type": "GButton",
       "name": "down",
+      "y": 388,
       "width": 12,
       "height": 12,
-      "y": 388,
-      "mode": 0,
       "relations": [
         {
           "_$type": "Relation",
@@ -106,7 +103,7 @@
             "_$ref": "vsb001"
           },
           "data": [
-            2,
+            16,
             0
           ]
         }

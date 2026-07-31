@@ -1,0 +1,124 @@
+{
+  "_$ver": 1,
+  "_$id": "vyw1wujw",
+  "_$runtime": "res://6fe30c3d-da2f-4406-b9c2-2cdd59319fed",
+  "_$type": "GWidget",
+  "name": "general_avatar",
+  "width": 146,
+  "height": 146,
+  "_$child": [
+    {
+      "_$id": "ehec8bzx",
+      "_$type": "GImage",
+      "name": "border",
+      "width": 146,
+      "height": 146,
+      "src": "res://4d3576b3-fce2-44dd-9c3c-cf7b4256b8c5"
+    },
+    {
+      "_$id": "b8r1po00",
+      "_$var": true,
+      "_$type": "Sprite",
+      "name": "selected",
+      "x": 5,
+      "y": 3,
+      "width": 137,
+      "height": 138,
+      "visible": false,
+      "_gcmds": [
+        {
+          "_$type": "DrawRoundRectCmd",
+          "lineWidth": 5,
+          "lineColor": "rgba(255,204,0,0.44313725490196076)"
+        }
+      ]
+    },
+    {
+      "_$id": "vvrko4yl",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "img",
+      "x": -7,
+      "y": 3,
+      "width": 250,
+      "height": 292,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "mask": {
+        "_$ref": "9z94ri40"
+      },
+      "src": "res://7da25c5a-07b0-498c-be3f-fbc65354bfe3",
+      "_$child": [
+        {
+          "_$id": "9z94ri40",
+          "_$type": "Sprite",
+          "name": "mask",
+          "x": 25,
+          "y": 5,
+          "width": 219,
+          "height": 219,
+          "cacheAs": "bitmap",
+          "_gcmds": [
+            {
+              "_$type": "DrawRoundRectCmd",
+              "lt": 8,
+              "rt": 8,
+              "lb": 8,
+              "rb": 8,
+              "fillColor": "#ffffff"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "2u0h75n5",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "general_name",
+      "x": 8,
+      "y": 115,
+      "width": 131,
+      "height": 23,
+      "background": {
+        "_$type": "DrawRoundRectCmd",
+        "lt": 0,
+        "rt": 0,
+        "fillColor": "rgba(0,0,0,0.6274509803921569)"
+      },
+      "text": "[color=#f2ff00]{prefix=}[/color]{name=未知武将}",
+      "font": "res://e8dea0d1-ab73-4e8c-8fbc-f582b520a5e0",
+      "fontSize": 20,
+      "color": "rgba(255, 255, 255, 1)",
+      "ubb": true,
+      "templateVars": true,
+      "align": "center",
+      "valign": "middle",
+      "letterSpacing": 0,
+      "padding": [
+        2,
+        0,
+        0,
+        0
+      ],
+      "strokeColor": "rgba(255,255,255,0.5882352941176471)"
+    },
+    {
+      "_$id": "dtg40kj6",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "dead",
+      "x": -12,
+      "y": 22,
+      "width": 241,
+      "height": 263,
+      "scaleX": 0.5,
+      "scaleY": 0.5,
+      "skewX": 21,
+      "skewY": -21,
+      "visible": false,
+      "src": "res://a1604750-4d62-434f-8fe2-8deec242a554",
+      "autoSize": false
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "_$ver": 1,
+  "_$id": "9p8r9hmz",
+  "_$runtime": "res://a79fc7d2-a71a-4aa0-a867-ecf6d208d391",
+  "_$type": "GWidget",
+  "name": "table_seat",
+  "width": 298,
+  "height": 416,
+  "_$child": [
+    {
+      "_$id": "i4m8dat1",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "img",
+      "width": 298,
+      "height": 416,
+      "src": "res://ed133943-bf3c-40b4-a80b-975dd1d7805d"
+    },
+    {
+      "_$id": "5ux8mq8z",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "avatar",
+      "x": -14,
+      "y": 17,
+      "width": 250,
+      "height": 292,
+      "scaleX": 1.3,
+      "scaleY": 1.3,
+      "mask": {
+        "_$ref": "imx7n8jw"
+      },
+      "src": "res://f1f2e807-9f21-4610-9fc8-145805d8d69b",
+      "_isDemo": true,
+      "autoSize": false,
+      "_$child": [
+        {
+          "_$id": "imx7n8jw",
+          "_$type": "GWidget",
+          "name": "mask",
+          "x": 28,
+          "y": 3,
+          "width": 195,
+          "height": 287,
+          "cacheAs": "bitmap",
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#ffffff"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "bq26bm6d",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "playername",
+      "x": 6,
+      "y": 4,
+      "width": 286,
+      "height": 31,
+      "background": {
+        "_$type": "DrawRoundRectCmd",
+        "lb": 0,
+        "rb": 0,
+        "fillColor": "rgba(0,0,0,0.5882352941176471)"
+      },
+      "text": "玩家名字",
+      "_isDemo": true,
+      "fontSize": 25,
+      "color": "rgba(255, 255, 255, 1)",
+      "align": "center",
+      "valign": "middle",
+      "overflow": "ellipsis",
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "edsieas3",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "info",
+      "x": 21,
+      "y": 262,
+      "width": 256,
+      "height": 134,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "rgba(0,0,0,0.5882352941176471)"
+      },
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "9p8r9hmz"
+          },
+          "data": [
+            16,
+            0
+          ]
+        }
+      ],
+      "text": "text\ntext\ntext\ntext",
+      "_isDemo": true,
+      "font": "res://e8dea0d1-ab73-4e8c-8fbc-f582b520a5e0",
+      "fontSize": 30,
+      "color": "#ffffff",
+      "fitContent": 2,
+      "templateVars": true,
+      "valign": "bottom",
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "ncv14ykv",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "state",
+      "x": 206,
+      "y": 302,
+      "width": 88,
+      "height": 106,
+      "src": "res://e8ad0f84-f2d6-44ae-8595-cd17c52aee88",
+      "autoSize": false
+    },
+    {
+      "_$id": "391km0x9",
+      "_$type": "GImage",
+      "name": "seat_tag",
+      "x": 243,
+      "y": 4,
+      "width": 50,
+      "height": 52,
+      "visible": false,
+      "src": "res://f1dba6a1-c813-4c68-8523-52dc6ccf19eb"
+    },
+    {
+      "_$id": "5dygotmd",
+      "_$type": "GImage",
+      "name": "paopao",
+      "x": -22,
+      "y": 20,
+      "width": 342,
+      "height": 216,
+      "visible": false,
+      "src": "res://57b78ed7-19db-46d4-8c0f-2f25f203a22c"
+    },
+    {
+      "_$id": "98rnivxs",
+      "_$var": true,
+      "_$type": "GImage",
+      "name": "countdown",
+      "x": 14,
+      "y": 47,
+      "width": 270,
+      "height": 192,
+      "visible": false,
+      "src": "res://64e34eb7-345c-4dca-abb2-289be6329d0f",
+      "_$child": [
+        {
+          "_$id": "yojotnvv",
+          "_$var": true,
+          "_$type": "GTextField",
+          "name": "countdown_txt",
+          "x": 75,
+          "y": 76,
+          "width": 121,
+          "height": 115,
+          "text": "10",
+          "font": "res://c694cf74-6289-440e-bc77-9ea1a255213a",
+          "fontSize": 100,
+          "color": "#ffffff",
+          "align": "center",
+          "valign": "middle",
+          "letterSpacing": 0,
+          "stroke": 5,
+          "strokeColor": "#ff0000"
+        }
+      ]
+    },
+    {
+      "_$id": "hqbked77",
+      "_$type": "GWidget",
+      "name": "handlers",
+      "width": 298,
+      "height": 416,
+      "visible": false,
+      "_$child": [
+        {
+          "_$id": "ecu2a584",
+          "_$prefab": "cd55bdd9-9f66-4410-8f49-3be94bd29e64",
+          "name": "btn_tick",
+          "active": true,
+          "x": 89,
+          "y": 214,
+          "visible": true,
+          "width": 120,
+          "height": 50,
+          "title": "踢出房间"
+        },
+        {
+          "_$id": "r018kfb7",
+          "_$prefab": "cd55bdd9-9f66-4410-8f49-3be94bd29e64",
+          "name": "btn_swap",
+          "active": true,
+          "x": 89,
+          "y": 167,
+          "visible": true,
+          "width": 120,
+          "height": 50,
+          "title": "交换座位"
+        }
+      ]
+    }
+  ]
+}

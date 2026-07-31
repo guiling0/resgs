@@ -1,0 +1,138 @@
+{
+  "_$ver": 1,
+  "_$id": "5263bd3n",
+  "_$type": "GButton",
+  "name": "Root",
+  "width": 78,
+  "height": 26,
+  "controllers": {
+    "_$type": "Record",
+    "button": {
+      "_$type": "Controller",
+      "pages": [
+        "up",
+        "down",
+        "over",
+        "selectedOver"
+      ]
+    }
+  },
+  "relations": [
+    {
+      "_$type": "Relation",
+      "target": {
+        "_$ref": "f2i76dm2"
+      },
+      "data": [
+        1,
+        0,
+        2,
+        0
+      ]
+    }
+  ],
+  "titleWidget": {
+    "_$ref": "f2i76dm2"
+  },
+  "mode": 1,
+  "_$child": [
+    {
+      "_$id": "itq9a5q5",
+      "_$type": "GImage",
+      "name": "img",
+      "y": 2,
+      "width": 21,
+      "height": 21,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "5263bd3n",
+            "_$ctrl": "button"
+          },
+          "pages": [
+            0,
+            2
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "5263bd3n"
+          },
+          "data": [
+            2,
+            0,
+            3,
+            0,
+            10,
+            0,
+            13,
+            0
+          ]
+        }
+      ],
+      "src": "res://9252075c-94f3-4f18-a55f-630bbf41f584",
+      "autoSize": false
+    },
+    {
+      "_$id": "02nv51d8",
+      "_$type": "GImage",
+      "name": "img",
+      "y": 2,
+      "width": 21,
+      "height": 21,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "5263bd3n",
+            "_$ctrl": "button"
+          },
+          "pages": [
+            1,
+            3
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "5263bd3n"
+          },
+          "data": [
+            2,
+            0,
+            3,
+            0,
+            10,
+            0,
+            13,
+            0
+          ]
+        }
+      ],
+      "src": "res://479c32bc-7fa4-4ea5-b152-0fab9a17e4ba",
+      "autoSize": false
+    },
+    {
+      "_$id": "f2i76dm2",
+      "_$type": "GTextField",
+      "name": "title",
+      "x": 18,
+      "y": -5,
+      "width": 64,
+      "height": 40,
+      "text": "文本",
+      "fontSize": 30,
+      "color": "#ffffff",
+      "fitContent": 1,
+      "valign": "middle",
+      "overflow": "hidden",
+      "letterSpacing": 0
+    }
+  ]
+}

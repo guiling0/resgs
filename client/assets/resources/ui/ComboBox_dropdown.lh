@@ -1,0 +1,124 @@
+{
+  "_$ver": 1,
+  "_$id": "x6j6r96b",
+  "_$type": "GWidget",
+  "width": 400,
+  "height": 400,
+  "_$child": [
+    {
+      "_$id": "ps63hhkn",
+      "_$type": "GImage",
+      "name": "bg",
+      "width": 400,
+      "height": 400,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "x6j6r96b"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://91820280-ebe6-4f4c-be59-b6bc6f84ca05",
+      "autoSize": false
+    },
+    {
+      "_$id": "9xmkz47l",
+      "_$type": "GList",
+      "name": "list",
+      "x": 4,
+      "y": 4,
+      "width": 392,
+      "height": 392,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "x6j6r96b"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "layout": {
+        "type": 1,
+        "stretchX": 1
+      },
+      "_templateNode": {
+        "_$ref": "c37v7bsd",
+        "_$tmpl": "itemTemplate"
+      },
+      "_initItemNum": 4,
+      "_isDemo": true,
+      "_itemData": [],
+      "_$child": [
+        {
+          "_$id": "c37v7bsd",
+          "_$type": "GButton",
+          "name": "Root",
+          "width": 120,
+          "height": 37,
+          "controllers": {
+            "_$type": "Record",
+            "button": {
+              "_$type": "Controller",
+              "pages": [
+                "up",
+                "down",
+                "over",
+                "selectedOver"
+              ]
+            }
+          },
+          "titleColor": "#ffffff",
+          "titleFontSize": 25,
+          "titleWidget": {
+            "_$ref": "gdv3ee0j"
+          },
+          "mode": 2,
+          "_$child": [
+            {
+              "_$id": "gdv3ee0j",
+              "_$type": "GTextField",
+              "name": "title",
+              "x": 4,
+              "y": 4,
+              "width": 112,
+              "height": 39,
+              "relations": [
+                {
+                  "_$type": "Relation",
+                  "target": {
+                    "_$ref": "c37v7bsd"
+                  },
+                  "data": [
+                    1,
+                    0,
+                    2,
+                    0
+                  ]
+                }
+              ],
+              "text": "Title",
+              "fontSize": 25,
+              "color": "#ffffff",
+              "valign": "middle",
+              "overflow": "hidden",
+              "letterSpacing": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

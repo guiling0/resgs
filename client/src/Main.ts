@@ -20,6 +20,26 @@ const SCENE_CONFIGS: Record<string, SceneConfig> = {
         },
         onExit: async (scene) => {
             console.log('[Main] entry exited');
+            const el = document.getElementById('page-entry');
+            if (el) el.innerHTML = '';
+        },
+    },
+    lobby: {
+        prefabUrl: 'resources/scenes/Lobby.lh',
+        onEnter: async (scene) => {
+            console.log('[Main] lobby entered');
+        },
+        onExit: async (scene) => {
+            console.log('[Main] lobby exited');
+        },
+    },
+    table: {
+        prefabUrl: 'resources/scenes/Table.lh',
+        onEnter: async (scene) => {
+            console.log('[Main] table entered');
+        },
+        onExit: async (scene) => {
+            console.log('[Main] table exited');
         },
     },
 };
@@ -46,6 +66,8 @@ export class Main extends Laya.Script {
         const body = document.body;
         body.style.margin = '0';
         body.style.padding = '0';
+        body.style.position = 'fixed';
+        body.style.inset = '0';
         body.style.backgroundImage = 'url("resources/background/frameBg.jpg")';
         body.style.backgroundSize = 'cover';
         body.style.backgroundPosition = 'center';

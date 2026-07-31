@@ -1,0 +1,102 @@
+{
+  "_$ver": 1,
+  "_$id": "g0u9qzwx",
+  "_$type": "GComboBox",
+  "name": "Root",
+  "width": 120,
+  "height": 30,
+  "controllers": {
+    "_$type": "Record",
+    "button": {
+      "_$type": "Controller",
+      "pages": [
+        "up",
+        "down",
+        "over",
+        "selectedOver"
+      ]
+    }
+  },
+  "titleWidget": {
+    "_$ref": "ig8qoefe"
+  },
+  "dropdownRes": {
+    "_$uuid": "c55add5c-05a8-41f4-8e7f-150961ae7454",
+    "_$type": "Prefab"
+  },
+  "_$child": [
+    {
+      "_$id": "kr1fej7u",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 120,
+      "height": 30,
+      "gears": [
+        {
+          "_$type": "GearDisplay",
+          "controller": {
+            "_$ref": "g0u9qzwx",
+            "_$ctrl": "button"
+          },
+          "pages": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "g0u9qzwx"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "src": "res://f62ac673-3a95-44d1-893c-7654e87533a7",
+      "autoSize": false
+    },
+    {
+      "_$id": "ig8qoefe",
+      "_$type": "GTextField",
+      "name": "title",
+      "x": 4,
+      "y": 3,
+      "width": 112,
+      "height": 30,
+      "relations": [
+        {
+          "_$type": "Relation",
+          "target": {
+            "_$ref": "g0u9qzwx"
+          },
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ]
+        }
+      ],
+      "text": "文本",
+      "fontSize": 25,
+      "color": "#ffffff",
+      "valign": "middle",
+      "overflow": "hidden",
+      "letterSpacing": 0,
+      "padding": [
+        0,
+        0,
+        0,
+        2
+      ]
+    }
+  ]
+}

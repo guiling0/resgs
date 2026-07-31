@@ -14,28 +14,6 @@
       "height": 1080,
       "src": "res://2e3d3dbd-f943-429b-b66e-0edef0d87207",
       "autoSize": false
-    },
-    {
-      "_$id": "9zo3cbkj",
-      "_$prefab": "5ee76cf6-2e36-4f36-b94f-bc81d425853b",
-      "name": "seat",
-      "active": true,
-      "x": 406,
-      "y": 370,
-      "scaleX": 1.5,
-      "scaleY": 1.5,
-      "visible": true
-    },
-    {
-      "_$id": "y4j4swfx",
-      "_$prefab": "e391b984-b74d-4ff2-9ac1-4f60a1b5ab13",
-      "name": "seat.m",
-      "active": true,
-      "x": 545,
-      "y": 226,
-      "scaleX": 1.2,
-      "scaleY": 1.2,
-      "visible": true
     }
   ]
 }

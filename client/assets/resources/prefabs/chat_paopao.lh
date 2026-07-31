@@ -1,0 +1,38 @@
+{
+  "_$ver": 1,
+  "_$id": "1sneohgb",
+  "_$runtime": "res://b1eb136f-2e9c-4028-856b-16038f5a442c",
+  "_$type": "GWidget",
+  "name": "chat_paopao",
+  "width": 342,
+  "height": 216,
+  "_$child": [
+    {
+      "_$id": "q0vj6yjy",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 342,
+      "height": 216,
+      "src": "res://57b78ed7-19db-46d4-8c0f-2f25f203a22c"
+    },
+    {
+      "_$id": "vwgrp4fa",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "txt",
+      "x": 19,
+      "y": 25,
+      "width": 300,
+      "height": 164,
+      "text": "",
+      "_isDemo": true,
+      "fontSize": 30,
+      "color": "#ffffff",
+      "align": "center",
+      "valign": "middle",
+      "overflow": "ellipsis",
+      "wordWrap": true,
+      "letterSpacing": 0
+    }
+  ]
+}

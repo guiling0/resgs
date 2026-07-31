@@ -1,5 +1,7 @@
 import { ColyseusSDK } from '@colyseus/sdk';
 import { SERVER_CONFIG } from 'src/config';
+import { RoomOption } from '@shared/core/room/RoomTypes';
+import { SchemaConstructor } from 'node_modules/@colyseus/sdk/build/serializer/SchemaSerializer';
 
 export interface LoginResult {
     token: string;
@@ -67,6 +69,42 @@ class ApiClient {
     async getStatus(): Promise<StatusResult> {
         const res = await this._sdk.http.get('/status');
         return res.data;
+    }
+
+    // ===== Room =====
+
+    joinLobby() {
+        const token = this.token;
+        return this._sdk.joinOrCreate('lobby', {
+            accessToken: token,
+        });
+    }
+
+    create<State>(
+        roomType: string,
+        options?: RoomOption,
+        rootSchema?: SchemaConstructor<State>,
+    ) {
+        const token = this.token;
+        return this._sdk.create(
+            roomType,
+            {
+                accessToken: token,
+                ...options,
+            },
+            rootSchema,
+        );
+    }
+
+    join<State>(roomId: string, rootSchema?: SchemaConstructor<State>) {
+        const token = this.token;
+        return this._sdk.joinById(
+            roomId,
+            {
+                accessToken: token,
+            },
+            rootSchema,
+        );
     }
 }
 

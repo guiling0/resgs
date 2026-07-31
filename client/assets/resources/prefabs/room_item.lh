@@ -1,0 +1,161 @@
+{
+  "_$ver": 1,
+  "_$id": "i03ijswb",
+  "_$runtime": "res://436ea808-cd4c-4d0d-9760-85a08548bbd4",
+  "_$type": "GWidget",
+  "name": "roomitem",
+  "width": 1830,
+  "height": 64,
+  "_$child": [
+    {
+      "_$id": "nsge8qf8",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "roomid",
+      "x": 3,
+      "y": 13,
+      "width": 128,
+      "height": 40,
+      "text": "[10000]",
+      "fontSize": 30,
+      "color": "#ffffff",
+      "ubb": true,
+      "valign": "middle",
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "u0w7cvqo",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "modename",
+      "x": 136,
+      "y": 18,
+      "width": 90,
+      "height": 31,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "rgba(0,0,0,0.47058823529411764)"
+      },
+      "text": "斗地主",
+      "font": "res://e8dea0d1-ab73-4e8c-8fbc-f582b520a5e0",
+      "fontSize": 30,
+      "color": "#ffffff",
+      "fitContent": 1,
+      "ubb": true,
+      "valign": "middle",
+      "letterSpacing": 0,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "_$id": "0u7wp7nr",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "roomname",
+      "x": 232,
+      "y": 13,
+      "width": 598,
+      "height": 40,
+      "text": "房间名字[img]resources/lobby/texture/hall_room_jinyan_mark.png[/img] [img]resources/lobby/texture/hall_room_yaoshi.png[/img]",
+      "fontSize": 30,
+      "color": "#ffffff",
+      "ubb": true,
+      "valign": "middle",
+      "overflow": "ellipsis",
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "4dbo4p1i",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "playercount",
+      "x": 835,
+      "y": 13,
+      "width": 137,
+      "height": 40,
+      "text": "10/10(10)",
+      "fontSize": 30,
+      "color": "#ffffff",
+      "ubb": true,
+      "valign": "middle",
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "xclfeg2p",
+      "_$var": true,
+      "_$type": "GTextField",
+      "name": "roomstate",
+      "x": 990,
+      "y": 13,
+      "width": 131,
+      "height": 40,
+      "text": "等待中",
+      "fontSize": 30,
+      "color": "#fff000",
+      "ubb": true,
+      "valign": "middle",
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "q3f05hjh",
+      "_$prefab": "cd55bdd9-9f66-4410-8f49-3be94bd29e64",
+      "_$var": true,
+      "name": "join",
+      "active": true,
+      "x": 1096,
+      "y": 9,
+      "visible": true,
+      "width": 90,
+      "height": 55,
+      "title": "进入",
+      "titleFontSize": 25
+    },
+    {
+      "_$id": "jtszyakw",
+      "_$prefab": "cd55bdd9-9f66-4410-8f49-3be94bd29e64",
+      "_$var": true,
+      "name": "watch",
+      "active": true,
+      "x": 1185,
+      "y": 9,
+      "visible": true,
+      "width": 90,
+      "height": 55,
+      "title": "旁观",
+      "titleFontSize": 25
+    },
+    {
+      "_$id": "olp4zfn3",
+      "_$prefab": "cd55bdd9-9f66-4410-8f49-3be94bd29e64",
+      "_$var": true,
+      "name": "info",
+      "active": true,
+      "x": 1275,
+      "y": 9,
+      "visible": true,
+      "width": 140,
+      "height": 55,
+      "title": "查看信息",
+      "titleFontSize": 25
+    },
+    {
+      "_$id": "hupb70sw",
+      "_$type": "Sprite",
+      "name": "selected",
+      "width": 1830,
+      "height": 64,
+      "visible": false,
+      "_gcmds": [
+        {
+          "_$type": "DrawRoundRectCmd",
+          "lineWidth": 4,
+          "lineColor": "rgba(255,204,0,0.5019607843137255)"
+        }
+      ]
+    }
+  ]
+}
