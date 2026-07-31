@@ -67,11 +67,35 @@ export const PREFAB_URLS: string[] = [
     //baseui
     'resources/ui/LoadingSpinner.lh',
     'resources/ui/VScrollBar.lh',
+    'resources/ui/ComboBox.lh',
+    'resources/ui/ComboBox_dropdown.lh',
     //gameui
     'resources/prefabs/OptionButton.lh',
+    //lobby
+    'resources/prefabs/room_item.lh',
+    //table
+    'resources/prefabs/table_seat.lh',
+    //game
+    'resources/prefabs/card.lh',
+    'resources/prefabs/general.lh',
+    'resources/prefabs/general_avatar.lh',
+    'resources/prefabs/seat.lh',
+    'resources/prefabs/seat_general.lh',
+    'resources/prefabs/seat_dual_general.lh',
+    'resources/prefabs/seat_m.lh',
+    'resources/prefabs/seat_m_general.lh',
+    'resources/prefabs/seat_m_dual_general.lh',
+    'resources/prefabs/selfseat.lh',
+    'resources/prefabs/selfseat_general.lh',
+    //chat
+    'resources/prefabs/chat_panle.lh',
+    'resources/prefabs/chat_paopao.lh',
 ];
 
 export const SCENE_URLS: string[] = [
     'resources/scenes/Load.lh',
     'resources/scenes/Entry.lh',
+    'resources/scenes/Lobby.lh',
+    'resources/scenes/Room.lh',
+    'resources/scenes/Game.lh',
 ];

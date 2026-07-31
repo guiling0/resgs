@@ -1,4 +1,11 @@
+import { CDN_BASE } from './config';
+
 export class ResManager {
+    static join(base: 'resources' | 'animation' | 'cdn', url: string) {
+        if (base === 'cdn') base = CDN_BASE as 'cdn';
+        return `${base}/${url}`;
+    }
+
     private static _refs: Map<string, number> = new Map();
 
     // ===== 加载 =====
@@ -36,7 +43,12 @@ export class ResManager {
             if (r.status === 'fulfilled') {
                 ok.set(urls[i], r.value);
             } else {
-                fail.set(urls[i], r.reason instanceof Error ? r.reason : new Error(String(r.reason)));
+                fail.set(
+                    urls[i],
+                    r.reason instanceof Error
+                        ? r.reason
+                        : new Error(String(r.reason)),
+                );
             }
         }
 
@@ -66,6 +78,7 @@ export class ResManager {
         if (image.src) {
             this.release(image.src);
         }
+        if (!url || url === '') return;
         await this.load(url);
         image.src = url;
         onComplete?.();

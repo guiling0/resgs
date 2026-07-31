@@ -1,12 +1,11 @@
 {
-  "dependencies": {
-    "@colyseus/sdk": "^0.17.43",
-    "lodash": "^4.18.1",
-    "pako": "^3.0.0"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.17.24",
-    "@types/node": "^26.1.0",
-    "@types/pako": "^2.0.4"
-  }
+    "dependencies": {
+        "@colyseus/sdk": "^0.17.43",
+        "pako": "^3.0.0"
+    },
+    "devDependencies": {
+        "@types/lodash": "^4.17.24",
+        "@types/node": "^26.1.0",
+        "@types/pako": "^2.0.4"
+    }
 }

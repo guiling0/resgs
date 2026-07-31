@@ -25,6 +25,7 @@
     "laya.ui": "ui2"
   },
   "splash": {
+    "enabled": false,
     "fit": "center"
   },
   "vConsole": true,

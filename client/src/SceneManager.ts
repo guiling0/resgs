@@ -1,4 +1,7 @@
-export type SceneEnterCallback = (scene: Laya.Sprite) => void | Promise<void>;
+export type SceneEnterCallback = (
+    scene: Laya.Sprite,
+    entryData?: any,
+) => void | Promise<void>;
 export type SceneExitCallback = (scene: Laya.Sprite) => void | Promise<void>;
 
 export interface SceneConfig {
@@ -60,7 +63,7 @@ export class SceneManager {
         await Promise.all(tasks);
     }
 
-    static async enter(name: string): Promise<Laya.Sprite> {
+    static async enter(name: string, entryData?: any): Promise<Laya.Sprite> {
         if (this._currentName === name) {
             return this._records.get(name)!.instance!;
         }
@@ -83,7 +86,11 @@ export class SceneManager {
         this._currentName = name;
 
         if (record.config.onEnter) {
-            await record.config.onEnter(record.instance);
+            await record.config.onEnter(record.instance, entryData);
+        }
+
+        if ((record.instance as any).onEntry) {
+            await (record.instance as any).onEntry(entryData);
         }
 
         return record.instance;
@@ -100,6 +107,10 @@ export class SceneManager {
 
         if (record.config.onExit && record.instance) {
             await record.config.onExit(record.instance);
+        }
+
+        if ((record.instance as any).onExit) {
+            await (record.instance as any).onExit();
         }
 
         if (record.instance && record.instance.parent) {

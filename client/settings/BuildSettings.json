@@ -1,5 +1,6 @@
 {
-  "name": "LayaIdeaTemplate",
+  "name": "RESGS",
+  "icon": "res://345daf59-e034-4f63-abd3-85e4d1faf647",
   "minifyJS": true,
   "sourcemap": true,
   "sourcesContent": true,
@@ -12,5 +13,10 @@
       "x86-64": false
     },
     "exportFormat": "APK"
+  },
+  "ios": {
+    "bundleIdentifier": "com.resgs.game",
+    "screenOrientation": "landscape",
+    "exportMethod": "release-testing"
   }
 }

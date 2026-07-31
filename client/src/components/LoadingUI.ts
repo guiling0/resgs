@@ -1,65 +1,31 @@
+/**
+ * 加载遮罩组件（原生 DOM）。
+ * 半透明遮罩 + spinner 旋转动画。
+ */
 export class LoadingUI {
-    private static _root: Laya.Sprite;
-    private static _mask: Laya.Sprite;
-    private static _spinner: Laya.Sprite;
-    private static _prefab: Laya.Prefab;
+    private static _el: HTMLElement | null = null;
     private static _showing: boolean = false;
 
-    static async show(): Promise<void> {
+    private static _getEl(): HTMLElement {
+        if (!this._el) {
+            this._el = document.getElementById('loading-overlay')!;
+        }
+        return this._el;
+    }
+
+    static show(): void {
         if (this._showing) return;
         this._showing = true;
-
-        if (!this._root) {
-            this._root = Laya.stage.addChild(new Laya.Sprite()) as Laya.Sprite;
-            this._root.zOrder = 99999;
-            this._root.name = 'LoadingUI';
-
-            this._mask = new Laya.Sprite();
-            this._mask.graphics.drawRect(0, 0, 1, 1, 'rgba(0,0,0,0.4)');
-            this._mask.mouseThrough = false;
-            this._mask.width = Laya.stage.width;
-            this._mask.height = Laya.stage.height;
-            this._mask.on(Laya.Event.RESIZE, this, this._onResize);
-            this._root.addChild(this._mask);
-
-            if (!this._prefab) {
-                this._prefab = await Laya.loader.load(
-                    'resources/prefabs/LoadingSpinner.lh',
-                );
-            }
-            if (!this._showing) return;
-
-            this._spinner = this._prefab.create() as Laya.Sprite;
-            this._spinner.x = (Laya.stage.width - this._spinner.width) / 2;
-            this._spinner.y = (Laya.stage.height - this._spinner.height) / 2;
-            this._root.addChild(this._spinner);
-        }
-
-        this._root.active = true;
-        this._root.visible = true;
+        this._getEl().classList.add('show');
     }
 
     static hide(): void {
         if (!this._showing) return;
         this._showing = false;
-        if (this._root) {
-            this._root.active = false;
-            this._root.visible = false;
-        }
+        this._getEl().classList.remove('show');
     }
 
     static get isShowing(): boolean {
         return this._showing;
-    }
-
-    private static _onResize(): void {
-        if (this._mask) {
-            this._mask.width = Laya.stage.width;
-            this._mask.height = Laya.stage.height;
-        }
-        if (this._spinner) {
-            this._spinner.x = (Laya.stage.width - this._spinner.width) / 2;
-            this._spinner.y = (Laya.stage.height - this._spinner.height) / 2;
-        }
     }
 }
