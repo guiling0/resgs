@@ -25,7 +25,7 @@
 - **不存在 `discuss/` 目录**——不保留讨论类文档，不记录会话日志
 - 新会话开始时，先读取 `CONTEXT.md` 了解领域术语，按需读取 `docs/adr/` 中的相关决策，通过 `git log` 了解最新进展
 - **不要**在新会话中加载全部文档，根据当前需求按需读取
-- **当前工作焦点**（2026-07-27）：客户端 DOM 方案 L0-L1 完成（加载/登录/大厅/等待房间）。下一步：预制体 UI（卡牌、武将、局内玩家框、动画）。入口：`.scratch/porting/map.md`
+- **当前工作焦点**（2026-08-01）：项目重构重启——shared 全量重写（纯消息同步 + 装饰器自动化，方案见 `.scratch/porting/map.md`）。下一步：I0 状态层（core/state/ + @sync 装饰器）。
 
 ### Skill & Extension 学习义务
 
@@ -38,11 +38,22 @@
 
 ### Development Workflow
 
-- **写码职责**：所有代码由 Claude 编写并保证编译通过，用户负责测试验证
+- **写码职责**：**用户自行编码，代码掌控权在用户**。Claude 不直接修改 `shared/` 代码，只输出完整代码内容到 `.tmp/out/` 文件供用户复制拼装（CLI 复制不便，不在对话正文贴大段代码）。编译检查（`tsc --noEmit`）属于开发流程，可直接在 Bash 执行
 - **写码前**：`git status --short` 确保工作区干净，让用户明确知道新增/修改了什么
 - **阶段提交**：完成一个阶段后使用 `/conventional-commits` 提交
 - **代码优化/审查**：用户主动提出时才执行。**先审查不修改**，将所有问题列出后由用户逐条决定是否修改
 - **测试**：用户要求时编写测试用例并运行，只跑相关套件不全量
+
+#### 重构阶段工作流程（I0 起，每单元循环）
+
+1. **保证工作区干净**：`git status --short` 确认无未提交变更（有则先提交）
+2. **Claude 按里程碑建议需求**：Claude 依据 `.scratch/porting/map.md` 增量表建议下一个最小单元的需求与内容
+3. **用户主动提出需求**：用户确认或提出需求后，Claude 才开始输出代码
+4. **输出代码到 `.tmp/out/`**：Claude 将完整代码写入 `.tmp/out/<单元名>.ts`（该目录已 gitignore），附简短说明（角色/接口/依赖/与旧实现差异），对话正文不贴大段代码
+5. **用户自行编码**：用户从 `.tmp/out/` 复制拼装进 `shared/` 实际文件，完成后跑 `tsc --noEmit` 验证（可请 Claude 代跑）
+6. **提交并进入下一单元**：验证通过后 `/conventional-commits` 提交，用户确认后清理 `.tmp/out/` 临时文件，回到步骤 1
+
+> 代码实现参考优先级：**old/resgsv1（旧项目）> .tmp/shared-backup（备份）> 自行思考**；与旧实现冲突时以自行思考（map.md 新方案）为准。
 
 ### Code Comments
 
@@ -82,7 +93,7 @@
 |---|---|
 | 共享逻辑 | TypeScript（`shared/`，服务端/客户端共用，纯 TypeScript 无网络依赖） |
 | 服务端 | Node.js + Colyseus 0.17 |
-| 客户端 | Vite + TypeScript + 纯 DOM/CSS（无框架，零 LayaAir 依赖） |
+| 客户端 | LayaAir 3.4（`client/`，UI2 系统 + 引擎内置渲染/动效/音效）+ Colyseus SDK |
 | 数据库 | MongoDB |
 | 资料站 | 纯 HTML/CSS/JS（`wiki/`） |
 
@@ -94,11 +105,11 @@ shared/      共享代码（纯 TypeScript，核心引擎/事件/技能/实体/�
   datas/       JSON 数据（卡牌、武将、技能、翻译）
   test/        测试用例
 server/      服务端（Colyseus 房间、数据库、API、日志）
-client/      客户端（Vite + TS + DOM/CSS + Colyseus SDK）
+client/      客户端（LayaAir 3.4 IDE 项目 + Colyseus SDK）
   src/
-    ui/         场景 UI 模板（Widget 建造器）
-    pages/      场景交互逻辑
-    components/ 可复用组件
+    scenes/      Laya 场景（.lh + 场景脚本）
+    ui/          UI 建造器（Widget）与界面模板
+    components/  可复用组件
 scripts/     Run & Debug 脚本（.sh）
 wiki/        资料站（纯前端卡牌/武将资料库，CDN 资源）
 docs/        正式文档 + 架构决策记录
