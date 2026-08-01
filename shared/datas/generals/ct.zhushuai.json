@@ -1,8 +1,0 @@
-{
-    "ct.caocao": {
-        "name": "ct.caocao",
-        "kingdom": "wei",
-        "level": 5,
-        "skills": ["ct.caocao.skill"]
-    }
-}
