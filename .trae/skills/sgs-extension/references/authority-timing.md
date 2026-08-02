@@ -1,6 +1,6 @@
 # 时机参考（权威定义摘录）
 
-> 来源：`docs/events/turn.md`、`docs/events/phase.md`、`docs/events/damage.md`。
+> 来源：`docs/domain/events/turn.md`、`docs/domain/events/phase.md`、`docs/domain/events/damage.md`。
 > **已剔除各时机下可发动的技能穷举**——该穷举由技能实现后反向登记，不应作为编写技能的参考。
 > 各时机的含义、规则约束和实现映射保留完整。
 

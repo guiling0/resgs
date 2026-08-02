@@ -36,4 +36,4 @@
 
 武将牌之间的一种关系：武将姓名被标注在一张武将牌 A 的技能描述框的上方的武将牌 B，即与武将牌 A 存在珠联璧合关系。
 
-实现：`GeneralData.rs?: string[]`（珠联璧合表，类型字段已存在）；运行时访问与逻辑**未实现**（见 `.scratch/porting/pending-impl.md`）。
+实现：`GeneralData.rs?: string[]`（珠联璧合表，类型字段已存在）；运行时访问与逻辑**未实现**（重构排期见 `docs/planning/plans/porting-map.md`）。

@@ -1,6 +1,6 @@
 # 游戏用语权威定义（API 查找用）
 
-> 来源：`docs/terms/` 目录下的 card-operations.md、event-resolution.md、game-flow.md、general-operations.md、values.md、zones.md。
+> 来源：`docs/domain/terms/` 目录下的 card-operations.md、event-resolution.md、game-flow.md、general-operations.md、values.md、zones.md。
 > **已剔除纯描述层内容**，保留规则定义和实现映射，用于从游戏用语快速定位 API。
 
 ---

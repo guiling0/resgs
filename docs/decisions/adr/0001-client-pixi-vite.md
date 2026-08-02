@@ -93,4 +93,3 @@ metadata:
 ## 关联
 
 - [[adr-0002-ai-utility-rules]] — AI 方案 ADR
-- 客户端完整方案详见 `.scratch/client/design.md`

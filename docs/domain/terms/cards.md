@@ -55,7 +55,7 @@
 - 角色**拥有**其装备区里的装备牌的装备技能
 - 特殊点：后续扩展中，装备的使用目标不再固定为自己
 - 特殊定义：◆当角色将武器牌/坐骑牌当其他牌使用，或移动武器牌/坐骑牌作为发动技能的消耗时，**不能同时用到此牌提供的攻击范围或武器/坐骑技能**
-- 实现：`CardSubType` 与 `EquipType` 定义。特殊定义已在旧项目实现（实现参考见 `.scratch/porting/pending-impl.md`）
+- 实现：`CardSubType` 与 `EquipType` 定义。特殊定义已在旧项目实现，重构实现参考 `docs/planning/plans/porting-map.md`
 
 ## 8. 锦囊牌
 

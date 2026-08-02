@@ -2,11 +2,14 @@
 *.diff
 
 # ===== 本地开发交流 =====
-.claude/settings.local.json
 .mcp.json
+
+# ===== 记忆（本机私有，不入库） =====
+memory/
 
 # ===== IDE =====
 .vscode/
+client/.trae/
 
 # ===== 历史项目（Phase 8-9 移植完成后删除） =====
 old/
@@ -32,9 +35,8 @@ Thumbs.db
 *.swp
 *.swo
 
-# ===== 遗留原型与 Claude 记忆 =====
+# ===== 遗留原型 =====
 client-dom/
-memory/
 
-# ===== 重构交付临时代码（Claude 输出供用户复制，不入库） =====
+# ===== 交付临时代码（不入库） =====
 .tmp/out/

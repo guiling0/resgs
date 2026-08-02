@@ -16,7 +16,7 @@
 |---|---|---|
 | **I0 状态层** | `core/state/`：StateStore / StateMap / StateArray / StateNode / decorators（@sync/@syncMap/@syncArray）+ 11 状态类纯 TS 化 + **StatePatch 基础类型**（subscribe 即消息通道雏形） | tsc；冒烟脚本：装饰器 setter→flush→apply 回放一致 + 事务批次原子性（本增量无 UI，验证即冒烟） |
 | **I1 对局骨架（端到端 v0）** | Room 重写（新构造签名）+ 8 Manager + 实体 + MarkHost 通用化 + select(autoSelect) + sgs/register 重写 + EventProcess/EventTypes/EventManager + Turn/Phase/MoveCard；**LocalTransport 最小版 + codec（serialize/deserialize）+ GameClient v0**（snapshot/patches 应用 + event 路由）；**观察台 v0**（Laya UI：座位面板 + 日志流 + 消息流视图） | 全 AI 对局跑完一局：回合六阶段流转 / 摸牌 2 张 / 弃牌超上限 / game.over 正常；**客户端监听 game.start → 构建座位 UI**，回合/血量/手牌变化（patches）实时更新；日志显示事件序列 |
-| **I2 战斗生死（端到端）** | UseCard/DropCard/Damage/Hp/Dying/Death 按 docs/events 实现 + 击杀奖惩；**协议新增**：choice / face.ani / toast 等消息 + 客户端监听（血量变化+掉血参数、濒死求桃、死亡离场） | 全 AI 对局出现：杀/闪响应 → 伤害扣血 → 濒死求桃 → 死亡离场 → 奖惩；观察台血量动画、濒死/死亡弹窗、日志完整事件链 |
+| **I2 战斗生死（端到端）** | UseCard/DropCard/Damage/Hp/Dying/Death 按 docs/domain/events 实现 + 击杀奖惩；**协议新增**：choice / face.ani / toast 等消息 + 客户端监听（血量变化+掉血参数、濒死求桃、死亡离场） | 全 AI 对局出现：杀/闪响应 → 伤害扣血 → 濒死求桃 → 死亡离场 → 奖惩；观察台血量动画、濒死/死亡弹窗、日志完整事件链 |
 | **I3 判定技能（端到端）** | Judge / UseSkill + 技能框架 + 标准武将 2-3 个（曹操奸雄、关羽武圣、刘备仁德）+ 标记系统（@syncMap）；**协议新增**：judge 结果、技能 choice 消息 + 客户端监听（判定结果展示、技能发动提示、标记显示） | 全 AI 对局触发判定（延时锦囊/技能判定）、技能发动、标记显示在座位；观察台判定结果、技能日志 |
 | **I4 单机闭环** | 内置身份模式（standard-mode-setup）+ SoloInputHub + AutoInput + 选择 UI + GameView 完备 + 单机入口；**同步完备性验证**：LocalTransport snapshot/patches 回放一致 + 事件消息顺序（状态先于业务消息）；同步修复 client/ 与 server/ 引用 | **人类 vs AI 完整一局**（选将→出牌→伤害→濒死→死亡→胜负）；观察台验证「询问前状态先行」「扣血+动画同批次原子」 |
 | **I5+ 扩展增量** | 按扩展内容增量：拼点、明置与势力（change-state 全档）、连环传导、更多标准武将、扩展包（resgs-ext-temp）接入——**每项同样 = 逻辑 + 协议消息 + 客户端监听** | 每增量完成即可视化验证：新增玩法在人类 vs AI 对局中可复现，日志正确 |
@@ -85,7 +85,7 @@ client→host：{kind:'event', seq, event}
 3. 装饰器自动化：@sync/@syncMap/@syncArray，字段声明即同步
 4. 发送时机：帧级 flush（60fps）+ 事务批次（beginBatch/endBatch）+ 关键点显式 flush
 5. 单机测试 = 客户端本地直跑 Room（host 在浏览器内）；**I1 起即走完整消息通道**（LocalTransport 直投 serialize 副本，客户端 apply 镜像，不共享引用）
-6. 事件系统调度语义保留（docs/events 为验收标准），实现重写
+6. 事件系统调度语义保留（docs/domain/events 为验收标准），实现重写
 7. sgs 注册表 API 面逐项不变（扩展包 extension/resgs-ext-temp 兼容硬约束）
 8. 全部状态类实现 toJSON/fromJSON（snapshot 与子对象快照用）
 9. 开发模式 = **端到端功能增量**：每增量 = 逻辑 + 协议消息 + 客户端监听/UI，完成即可视化验证通过 → 下一增量
@@ -121,14 +121,14 @@ client→host：{kind:'event', seq, event}
 - shared/core/event/EventManager.ts — trigger 调度锚点（自 room/ 迁至 event/）
 - [shared/core/sgs.ts](shared/core/sgs.ts) + register.ts — 扩展包 API 兼容契约
 - client-dom/src/pages/game.ts — UI 资产参考（座位布局/卡牌交互设计；DOM 试作仅参考不复用）
-- docs/events/ 14 档 — 事件实现验收标准
+- docs/domain/events/ 14 档 — 事件实现验收标准
 - extension/resgs-ext-temp/types/global.d.ts — sgs 公共 API 契约
 - old/resgsv1/server/src/core/ — 追平目标（60 文件完整核心，功能/体验参照）
 - .tmp/shared-backup/ — 重写素材（12 事件类/15 room 文件/11 状态类/19 测试）
 
 ## 风险与对策
 
-1. **全量重写回归风险（最高）**：无自动化测试。对策：功能增量制——每增量完成即人类+AI 对局回归；观察台日志作为行为证据；docs/events 逐档对照
+1. **全量重写回归风险（最高）**：无自动化测试。对策：功能增量制——每增量完成即人类+AI 对局回归；观察台日志作为行为证据；docs/domain/events 逐档对照
 2. **装饰器实现细节**：legacy 属性装饰器 + 类字段初始化顺序（useDefineForClassFields:false 下装饰器先于字段赋值？）——I0 先用最小原型验证（一个 @sync 字段 + 一个 @syncMap 容器冒烟），再铺开 11 个状态类
 3. **patch 时序**：帧 flush 的 tick 与事务批次交错。对策：帧 tick 遇 batch 跳过、endBatch 强制 flush；关键点（发业务消息前）显式 flush；I1 起消息流观察台验证
 4. **SelectSession 序列化边界**：toWire/fromWire 是正确性关键，步骤级联（multiStep 已选列表回传）在 wire 层保住（I2 选择会话随 choice 消息落地，I4 完整）
