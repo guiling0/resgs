@@ -8,7 +8,7 @@
 
 1. **判定**：JudgeEvent 五时机 + 判定牌确定/改判 + 判定结果=虚拟牌数据（见 [judge.md](../../domain/events/judge.md)）；延时锦囊（乐不思蜀/闪电）进判定阶段
 2. **技能使用**：UseSkillEvent（声明/选目标/消耗同时性、消耗原子性、效果过滤、Cost/Effect 时机，见 [use-skill.md](../../domain/events/use-skill.md)）
-3. **技能框架**：SkillBuilder/EffectBuilder 完善（触发效果：trigger/can_trigger/condition/choose/cost/effect/forced；状态效果互斥）；SkillManager 索引与优先级调度；refreshs 回调
+3. **技能框架**：SkillBuilder/EffectBuilder 完善（触发效果：trigger/can_trigger/condition/choose/cost/effect/forced；状态效果互斥）；SkillManager 索引与优先级调度；refreshs 回调；**状态类 Effect 纯查询约束**（[ADR 0004](../../decisions/adr/0004-entity-layering.md)：只读已同步状态、无副作用，客户端可独立运行以本地计算派生值）
 4. **标记系统**：MarkHost + `@syncMap` 自动同步，标记显示在座位 UI
 5. **标准武将样例**：曹操（奸雄）、关羽（武圣）、刘备（仁德）——奸雄已存在于 resgs-ext-temp，武圣/仁德按同一形态补充
 6. **协议新增**：judge 结果、技能发动 choice + 客户端监听（判定结果展示、技能发动提示、标记显示）

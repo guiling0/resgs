@@ -9,7 +9,7 @@
 1. **Room 重写**：新构造签名（`Room(roomId, options)`），持有 9 个 Manager（card/player/general/skill/event/choose/broadcast/area/vcard）+ GameState
 2. **Turn / Phase**：回合六阶段流转（开始→判定→摸牌→出牌→弃牌→结束），Phase 事件全时机（见 [phase.md](../../domain/events/phase.md)、[turn.md](../../domain/events/turn.md)）
 3. **MoveCard 与区域管理**：手牌区/装备区/判定区/处理区/牌堆/弃牌堆，移动事件五时机（见 [move-card.md](../../domain/events/move-card.md)）
-4. **GameClient v0**：snapshot/patches 应用 + event 路由（收到 `kind:'snapshot'|'patches'|'event'` 分发处理）
+4. **GameClient v0**：snapshot/patches 应用 + event 路由（收到 `kind:'snapshot'|'patches'|'event'` 分发处理）；客户端形态 = **RoomView**（Room 状态树 + query 纯查询运行时），按 [ADR 0004](../../decisions/adr/0004-entity-layering.md) 不含 logic/（无 RoomEngine），派生值（losshp/距离/手牌上限）经 query 本地计算
 5. **传输层落地**：LocalTransport 直投（serialize 副本、apply 镜像、不共享引用）+ codec + messages.ts 基础消息（snapshot/patches/log/game.start/game.over）
 6. **观察台 v0**（Laya UI）：座位面板（座位/血量/手牌数/牌堆/弃牌堆，收 game.start 构建）+ 日志流 + 消息流视图 + 控制按钮（开始/重开/AI 速度）
 7. **AutoInput 初版**：AI 摸牌/弃牌/结束阶段的自动决策

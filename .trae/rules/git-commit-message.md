@@ -1,4 +1,6 @@
 ---
+alwaysApply: false
+description: 
 scene: git_message
 ---
 # Git 提交文案规范

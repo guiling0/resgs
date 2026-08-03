@@ -135,6 +135,7 @@ client→host：{kind:'event', seq, event}
 15. **参考起点**：以 `.tmp/shared-backup/`（= `old/shared-backup-2026-08-01/`，上一轮已做 Manager 拆分/Builder/强类型等优化的中间产物）为架构起点，逐文件对照 `old/resgsv1/server/src/core/` 核对逻辑一致性，兼顾复用优化成果与逻辑不偏
 16. **Bug 裁定权归用户**：审查旧代码发现疑似 bug 时，**不自行判断修复**，优先询问用户是否为「逻辑 bug」——核心游戏规则存在大量反直觉逻辑，是否修复由用户裁定；确认后按其指示处理并记录差异
 17. **FreeKill 同类参考**：FreeKill（新月杀）作为横向参考，借鉴点与落点见 [ADR 0003](../../decisions/adr/0003-freekill-reference.md)；效果类型以旧项目 StateEffectType（30+ 细分）为准、次数限制用 maxTimes、附加技能/私人牌堆用旧项目等价机制——均不照搬 FreeKill
+18. **实体分层**：实体不区分 Server/Client 双类，只写一份（状态 + 纯派生 getter）；能力层分层——`entity/`（状态+getter，两端）、`query/`（纯查询运行时，两端）、`registry/`（静态注册表，两端）、`logic/`（RoomEngine + 事件/触发副作用，**仅权威端**）；客户端产物不含 logic/，类型层面隔离；权威结算与客户端显示走同一查询函数；状态类 Effect 必须纯查询（只读已同步状态）。详见 [ADR 0004](../../decisions/adr/0004-entity-layering.md)
 
 ## 追平验收清单（R4/R6/R8/R10 各阶段勾选，每项以实际对局+日志确认）
 
