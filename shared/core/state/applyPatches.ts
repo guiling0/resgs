@@ -67,7 +67,7 @@ export function applyPatches(root: object, patches: StatePatch[]): void {
                 // 仅实体集合本身（path 即实体段）按 id 创建实体实例；嵌套容器存普通值
                 const info = entityInfo(segs);
                 if (info?.ctor && segs.length === 1) {
-                    container.set(patch.key, new info.ctor(patch.key, root));
+                    container.set(patch.key, new info.ctor(root, patch.key));
                 } else {
                     container.set(patch.key, patch.value);
                 }

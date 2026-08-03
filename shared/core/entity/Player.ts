@@ -17,9 +17,10 @@ export class Player extends Mark {
     /** 手牌（元素仅简单类型：牌 id） */
     @syncArray() hand: StateArray<string> = new StateArray();
 
-    constructor(playerId: string, room: Room) {
+    constructor(room: Room, playerId: string) {
         super();
         this.playerId = playerId;
         this.room = room;
+        this.room.logger.debug('创建玩家', { roomId: room.roomId, playerId });
     }
 }

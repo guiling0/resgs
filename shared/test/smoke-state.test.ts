@@ -36,7 +36,7 @@ function newRoom(): Room {
 
 {
     const room = newRoom();
-    const p1 = new Player('p1', room);
+    const p1 = new Player(room, 'p1');
     room.players.set('p1', p1);
     const m = room.store.flush()[0] as { kind: string; path: string; key: string };
     check(m.kind === 'map.add' && m.path === 'player' && m.key === 'p1', '玩家加入：map.add path=player key=p1');
@@ -62,7 +62,7 @@ function newRoom(): Room {
     const b = new LocalTransport();
     a.connect(b);
     const room = new Room('r1', { responseTime: 1000 }, a);
-    const p3 = new Player('p3', room);
+    const p3 = new Player(room, 'p3');
     room.players.set('p3', p3);
     a.flush();
 
@@ -84,7 +84,7 @@ function newRoom(): Room {
 
 {
     const room = newRoom();
-    const p4 = new Player('p4', room);
+    const p4 = new Player(room, 'p4');
     room.players.set('p4', p4);
     room.store.flush();
 
@@ -126,7 +126,7 @@ function newRoom(): Room {
         }
     });
 
-    const pa = new Player('pa', src);
+    const pa = new Player(src, 'pa');
     src.players.set('pa', pa);
     a.flush();
     pa.hp = 3;
@@ -163,7 +163,7 @@ function newRoom(): Room {
 
 {
     const room = newRoom();
-    const p6 = new Player('p6', room);
+    const p6 = new Player(room, 'p6');
     room.players.set('p6', p6);
     room.store.flush();
     p6.hand.push('x');

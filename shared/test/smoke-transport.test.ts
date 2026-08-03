@@ -61,7 +61,7 @@ function check(cond: boolean, msg: string): void {
     const received: Message[] = [];
     b.onMessage((m) => received.push(m));
 
-    const p = new Player('p1', room);
+    const p = new Player(room, 'p1');
     room.players.set('p1', p);
     a.flush();
     p.hp = 3;
@@ -80,7 +80,7 @@ function check(cond: boolean, msg: string): void {
     a.connect(b);
     const room = new Room('r1', { responseTime: 1000 }, a);
 
-    const p = new Player('p2', room);
+    const p = new Player(room, 'p2');
     room.players.set('p2', p);
     a.flush(); // 清空 map.add（注册接收之前）
 

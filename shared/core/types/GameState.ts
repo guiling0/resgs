@@ -1,5 +1,6 @@
-export const enum GameState {
-  Waiting = 'waiting',
-  Playing = 'playing',
-  Over = 'over',
+/** 房间游戏状态 */
+export enum GameState {
+    Waiting = 'waiting',
+    Playing = 'playing',
+    Over = 'over',
 }
