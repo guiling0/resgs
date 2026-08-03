@@ -2,7 +2,7 @@
     "compilerOptions": {
         "noEmit": true,
         "target": "ESNext",
-        "module": "CommonJS",
+        "module": "ESNext",
         "moduleResolution": "bundler",
         "types": ["node"],
         "strict": true,
@@ -10,7 +10,6 @@
         "esModuleInterop": true,
         "experimentalDecorators": true,
         "skipLibCheck": true,
-        "ignoreDeprecations": "6.0",
         "forceConsistentCasingInFileNames": true,
         "useDefineForClassFields": false,
         "paths": {
