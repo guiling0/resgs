@@ -10,7 +10,7 @@
 - **颜色**：游戏牌按颜色分为红色、黑色两种。红桃或方块花色的牌的颜色为**红色**，黑桃或梅花花色的牌的颜色为**黑色**
 - **点数**：游戏牌左上角的一个数字或字母。数字 2~10 代表点数 2~10；字母 A、J、Q、K 分别代表点数 **1、11、12、13**
 
-实现：`CardSuit`（Spade/Heart/Club/Diamond）、`CardColor`（Red/Black，由花色转换函数派生）、`CardNumber`（1~13），见 `shared/core/card/CardTypes.ts`。
+实现：`CardSuit`（Spade/Heart/Club/Diamond）、`CardColor`（Red/Black，由花色转换函数派生）、`CardNumber`（1~13），见 `shared/core/types/CardTypes.ts`。
 
 ## 2. 姓名
 

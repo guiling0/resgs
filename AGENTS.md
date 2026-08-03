@@ -39,6 +39,25 @@
 | 数据库 | MongoDB |
 | 资料站 | 纯 HTML/CSS/JS（`wiki/`） |
 
+## 资源与素材
+
+- `.tmp/resgs-assets/` 存放当前 CDN 上的全部素材，仅作素材源（参考/迁移用），不参与构建
+- 动态资源按名称注册（牌名/武将真名/技能真名），未配置字段走默认路径模板（见 `shared/core/utils/AssetsUtils.ts`）；注册入口见 `sgs.registerCardAssets` / `sgs.registerGeneralAssets`
+- 写卡牌/武将扩展时，需同步配置资源信息（CardAssets/GeneralAssets），并将 `.tmp` 中对应素材移动到资源目录，命名与路径符合默认值约定：
+
+| 资源 | 默认路径 |
+|---|---|
+| 牌图 | `image/cards/{牌名}.png` |
+| 卡牌配音 | `audio/card/{male\|female}/{牌名}.mp3` |
+| 武将插画 | `generals/{武将真名}/{皮肤名}/image.png` |
+| 他人视角插画 | `generals/{武将真名}/{皮肤名}/image_dual.png` |
+| 自己视角插画 | `generals/{武将真名}/{皮肤名}/image_dual_self.png` |
+| 阵亡语音 | `generals/{武将真名}/{皮肤名}/death.mp3` |
+| 技能语音 | `generals/{武将真名}/{皮肤名}/{技能真名}{序号}.mp3` |
+
+- 旧 CDN 素材为平铺结构（如 `generals/{name}/image.png`、技能语音 `pozhu1.mp3` 直接平铺），迁移到新默认值需补皮肤层级（`{name}/{skin}/...`）并按上述约定归位
+- 皮肤配置基于武将真名共享；同名武将不同版本仅默认皮肤不同（`GeneralData.defaultSkin`）
+
 ## 共享代码约定
 
 - `shared/` 内模块引用使用别名 `@shared/*`（如 `import { GameCard } from '@shared/core/card/GameCard'`）
