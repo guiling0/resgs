@@ -1,5 +1,5 @@
 import type { StatePatch } from './StateTypes';
-import { Room } from '../room/Room';
+import { Room } from '../entity/Room';
 
 /** 实体段配置条目 */
 type EntitySegInfo = (typeof Room)['entitySegments'][string];

@@ -1,8 +1,8 @@
 import { LocalTransport } from '../core/transport/LocalTransport';
 import { serialize, deserialize } from '../core/transport/codec';
 import { MessageType } from '../core/transport/messages';
-import { Room } from '../core/room/Room';
-import { Player } from '../core/player/Player';
+import { Room } from '../core/entity/Room';
+import { Player } from '../core/entity/Player';
 import type { Message } from '../core/transport/messages';
 
 /** 冒烟测试：传输层（codec / LocalTransport 通道 / 事务批次混合载荷 / 帧 tick） */

@@ -1,5 +1,5 @@
-import { Room } from '../core/room/Room';
-import { Player } from '../core/player/Player';
+import { Room } from '../core/entity/Room';
+import { Player } from '../core/entity/Player';
 import { LocalTransport } from '../core/transport/LocalTransport';
 import { applyPatches } from '../core/state/applyPatches';
 import type { StatePatch } from '../core/state/StateTypes';

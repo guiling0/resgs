@@ -1,17 +1,18 @@
-import type { RoomOptions } from './RoomOptions';
+import type { RoomOptions } from '../types/RoomOptions';
+import { Mark } from './Mark';
 import { sync, syncMap } from '../state/decorators';
 import { StateMap } from '../state/StateMap';
 import { StateStore } from '../state/StateStore';
 import type { ITransport } from '../transport/ITransport';
 import type { ILogger } from '../ILogger';
 import { consoleLogger } from '../ConsoleLogger';
-import { Player } from '../player/Player';
+import { Player } from './Player';
 
 /**
  * 房间——状态宿主（StateStore）与传输层（ITransport）的组合根。
  * path 以 Room 为根，如 `turnCount`、`player/p1/hp`。
  */
-export class Room {
+export class Room extends Mark {
     /** 实体段 → 集合字段与实体构造器（镜像端 path 解析与实体创建用） */
     static entitySegments: Record<string, { field: string; ctor?: new (...args: any[]) => object }> = {
         player: { field: 'players', ctor: Player },
@@ -47,6 +48,7 @@ export class Room {
         transport: ITransport,
         logger: ILogger = consoleLogger,
     ) {
+        super();
         this.store = new StateStore(logger);
         this.transport = transport;
         this.logger = logger;

@@ -175,7 +175,7 @@ client→host：{kind:'event', seq, event}
 
 ## 关键文件
 
-- [shared/core/room/Room.ts](shared/core/room/Room.ts) — 改造源：Room 职责全集、新构造签名、game 兜底 hack 消除点
+- [shared/core/entity/Room.ts](shared/core/entity/Room.ts) — 改造源：Room 职责全集、新构造签名、game 兜底 hack 消除点
 - shared/core/state/decorators.ts（新建）— @sync/@syncMap/@syncArray 自动化核心
 - shared/core/state/StateStore.ts（新建）— 帧 flush + 事务批次 + apply 枢纽
 - shared/core/event/EventManager.ts — trigger 调度锚点（自 room/ 迁至 event/）
