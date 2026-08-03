@@ -1,10 +1,6 @@
 import type { StateStoreHost } from './StateTypes';
 
-/**
- * 同步节点基类。
- * 挂载（attach）后注入宿主 `_store` 与自身完整 path `_path`，
- * 字段变化经装饰器 setter 委托宿主收集补丁；未挂载时赋值静默（不产生脏记录）。
- */
+/** 同步节点基类（挂载后注入宿主 `_store` 与自身完整 path `_path`） */
 export class StateNode {
     /** 节点标记（isSyncNode 判定用） */
     readonly __isSyncNode = true;

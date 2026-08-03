@@ -4,7 +4,7 @@ import type { Primitive } from './StateTypes';
 
 /**
  * 数组同步容器（@syncArray 的运行时形态），元素仅限简单类型（number/string/boolean 或联合类型）。
- * insert/remove/replace 产生 arr.insert / arr.remove / arr.replace 补丁（索引级增量传输）。
+ * insert/remove/replace 产生 arr.insert / arr.remove / arr.replace 补丁。
  */
 export class StateArray<T extends Primitive> extends StateNode {
     private _arr: T[] = [];

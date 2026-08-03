@@ -1,9 +1,11 @@
 import { Room } from '../core/room/Room';
 import { Player } from '../core/player/Player';
+import { LocalTransport } from '../core/transport/LocalTransport';
 import { applyPatches } from '../core/state/applyPatches';
 import type { StatePatch } from '../core/state/StateTypes';
+import type { Message } from '../core/transport/messages';
 
-/** 冒烟测试：Room 基础 StateStore（装饰器 + flush + 事务 + path + apply 回放） */
+/** 冒烟测试：Room 基础 StateStore（装饰器 + path + apply 回放，经传输层 flush/事务驱动） */
 
 let failed = 0;
 function check(cond: boolean, msg: string): void {
@@ -15,7 +17,7 @@ function check(cond: boolean, msg: string): void {
 }
 
 function newRoom(): Room {
-    return new Room('r1', { responseTime: 1000 });
+    return new Room('r1', { responseTime: 1000 }, new LocalTransport());
 }
 
 // ===== 1. @sync 字段 set → flush 产 set patch（Room 根字段） =====
@@ -53,26 +55,29 @@ function newRoom(): Room {
     );
 }
 
-// ===== 3. 事务批次：批内多字段 = 一条消息多 patch；批中 flush 不产出 =====
+// ===== 3. 传输层事务批次：批内多字段变化 = 一条消息 =====
 
 {
-    const room = newRoom();
+    const a = new LocalTransport();
+    const b = new LocalTransport();
+    a.connect(b);
+    const room = new Room('r1', { responseTime: 1000 }, a);
     const p3 = new Player('p3', room);
     room.players.set('p3', p3);
-    room.store.flush();
+    a.flush();
 
-    let messages: StatePatch[][] = [];
-    room.store.onFlush = (ps) => messages.push(ps);
+    const received: Message[] = [];
+    b.onMessage((m) => received.push(m));
 
-    room.store.beginBatch();
+    a.beginBatch();
     p3.hp = 2;
     p3.maxhp = 3;
     room.turnCount = 1;
-    check(room.store.flush().length === 0, '批次开启中 flush 不产出');
-    room.store.endBatch();
-    check(messages.length === 1, 'endBatch 强制产出一条消息');
-    check(messages[0].length === 3, '批内 3 个变化合并为一条消息 3 个 patch');
-    room.store.onFlush = undefined;
+    a.endBatch();
+
+    check(received.length === 1, 'endBatch 强制产出一条消息');
+    const m = received[0] as { kind: string; patches: unknown[] };
+    check(m.kind === 'patches' && m.patches.length === 3, '批内 3 个变化合并为一条消息 3 个 patch');
 }
 
 // ===== 4. @syncMap / @syncArray 容器补丁 =====
@@ -104,46 +109,54 @@ function newRoom(): Room {
     check(d.kind === 'map.remove' && d.key === 'sha_times', 'marks：map.remove key=sha_times');
 }
 
-// ===== 5. 镜像端 apply 回放一致 =====
+// ===== 5. 镜像端 apply 回放一致（经 LocalTransport 传输） =====
 
 {
-    const src = newRoom();
-    const mirror = newRoom();
+    const a = new LocalTransport();
+    const b = new LocalTransport();
+    a.connect(b);
+    const src = new Room('r1', { responseTime: 1000 }, a);
+    const mirror = new Room('r1', { responseTime: 1000 }, b);
     const collected: StatePatch[] = [];
-    src.store.onFlush = (ps) => {
-        collected.push(...ps);
-        applyPatches(mirror, ps);
-    };
+    b.onMessage((m) => {
+        if (m.kind === 'patches' || m.kind === 'batch') {
+            const ps = m.patches ?? [];
+            collected.push(...ps);
+            applyPatches(mirror, ps);
+        }
+    });
 
     const pa = new Player('pa', src);
     src.players.set('pa', pa);
-    src.store.flush();
+    a.flush();
     pa.hp = 3;
     pa.seat = 1;
-    src.store.flush();
+    a.flush();
     pa.marks.set('m1', 5);
-    src.store.flush();
+    a.flush();
     pa.hand.push('c1');
     pa.hand.push('c2');
-    src.store.flush();
-    src.store.beginBatch();
+    a.flush();
+    a.beginBatch();
     pa.maxhp = 2;
     pa.hp = 4;
-    src.store.endBatch();
+    a.endBatch();
 
     const mp = mirror.players.get('pa') as unknown as {
-        hp: number; seat: number; maxhp: number;
+        hp: number;
+        seat: number;
+        maxhp: number;
         marks: { get: (k: string) => number | undefined };
         hand: { toArray: () => string[] };
     };
     check(mp !== undefined, '镜像端实体已创建');
-    check(mp.hp === 4, `镜像 hp=4（事务内变化回放一致）`);
+    check(mp.hp === 4, '镜像 hp=4（事务内变化回放一致）');
     check(mp.seat === 1, '镜像 seat=1');
     check(mp.maxhp === 2, '镜像 maxhp=2');
     check(mp.marks.get('m1') === 5, '镜像 marks.m1=5');
     check(mp.hand.toArray().join(',') === 'c1,c2', '镜像 hand=[c1,c2]');
     check(mirror.turnCount === 0, '镜像 turnCount=0（无未应用变化）');
-    check(collected.length > 0, 'host 端全部变化均已通过 onFlush 送达');
+    check(collected.length > 0, 'host 端全部变化均已传输到镜像端');
 }
 
 // ===== 6. 嵌套挂载：容器字段随实体自动挂载 =====

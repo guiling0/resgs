@@ -20,10 +20,7 @@ function attachToHost(host: object, node: StateNode, segment: string): void {
     }
 }
 
-/**
- * @sync 简单字段（number/string/boolean）。
- * 挂载后赋值产生 `set` 补丁；未挂载时赋值静默（避免字段初始化刷屏）。
- */
+/** @sync 简单字段（number/string/boolean）；挂载后赋值产生 set 补丁 */
 export function sync(): PropertyDecorator {
     return (target: object, propertyKey: string | symbol) => {
         const key = String(propertyKey);

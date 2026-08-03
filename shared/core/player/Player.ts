@@ -4,10 +4,7 @@ import { sync, syncMap, syncArray } from '../state/decorators';
 import { StateMap } from '../state/StateMap';
 import { StateArray } from '../state/StateArray';
 
-/**
- * 玩家实体（挂载到 Room.players，path = `player/{playerId}`）。
- * 字段变化经 @sync 装饰器产生 set 补丁，如 `player/p1/hp`。
- */
+/** 玩家实体（挂载到 Room.players，path = `player/{playerId}`） */
 export class Player extends StateNode {
     readonly room: Room;
     /** 玩家 id（path 段用，不同步） */

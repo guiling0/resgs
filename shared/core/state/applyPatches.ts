@@ -1,7 +1,7 @@
 import type { StatePatch } from './StateTypes';
 import { Room } from '../room/Room';
 
-/** 实体段信息（Room.entitySegments 条目） */
+/** 实体段配置条目 */
 type EntitySegInfo = (typeof Room)['entitySegments'][string];
 
 /** 取 path 首段的实体段配置（命中即实体集合路径） */

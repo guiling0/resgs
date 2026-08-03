@@ -1,6 +1,6 @@
 /**
  * 状态同步基础类型：补丁联合、宿主接口、path 工具、快照序列化。
- * path 以 Room 为根，如 `player/p1/hp`、`player/p1/marks/guanxing`。
+ * path 形如 `player/p1/hp`、`player/p1/marks/guanxing`。
  */
 
 import type { StateNode } from './StateNode';
@@ -28,7 +28,7 @@ export interface SyncFieldMeta {
     segment: string;
 }
 
-/** 状态存储宿主（Room 内嵌实现） */
+/** 状态存储宿主接口 */
 export interface StateStoreHost {
     /** 挂载节点：注入宿主与 path，递归挂载已有容器字段 */
     attach(node: StateNode, path: string): void;
