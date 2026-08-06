@@ -67,6 +67,11 @@ export class Area {
         return !!this.player;
     }
 
+    /** 是否为玩家角色区域（手牌/装备/判定区） */
+    get isPlayer(): boolean {
+        return this.isPrivate && [AreaType.Hand, AreaType.Equip, AreaType.Judge].includes(this.type);
+    }
+
     /** 向区域加入牌（默认置底；top/bottom/random/指定下标） */
     add(cards: (GameCard | General)[], pos: 'top' | 'bottom' | 'random' | number = 'bottom'): void {
         for (const card of cards) {

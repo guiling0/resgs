@@ -3,7 +3,7 @@ import { GameCard } from './GameCard';
 import type { Room } from './Room';
 import { getColorBySuit } from '../utils/CardUtils';
 import { CardColor, CardNumber, CardSuit } from '../types/CardTypes';
-import type { CardAttr } from '../types/CardTypes';
+import type { CardAttr, VirtualCardData } from '../types/CardTypes';
 
 /** 虚拟牌牌面覆盖项（refresh 用，未提供字段按实体牌派生） */
 export interface VirtualCardOverrides {
@@ -15,6 +15,7 @@ export interface VirtualCardOverrides {
 
 /**
  * 虚拟牌——使用/打出的结算对象，链接实体牌（subcards）派生牌面属性。
+ * 仅权威端创建使用（结算瞬态对象），镜像端只消费 toData 导出的 VirtualCardData。
  * 单实体牌继承其花色/点数/属性；多实体牌花色点数取无，颜色按子牌同色判定。
  */
 export class VirtualCard extends ICard {
@@ -22,6 +23,9 @@ export class VirtualCard extends ICard {
     readonly name: string;
     /** 实体牌列表 */
     readonly subcards: GameCard[] = [];
+
+    /** 是否已销毁（销毁后不可再参与结算） */
+    destroyed: boolean = false;
 
     /** 花色 */
     private _suit: CardSuit = CardSuit.None;
@@ -64,6 +68,19 @@ export class VirtualCard extends ICard {
     /** 实体牌 ID 列表 */
     get cardIds(): string[] {
         return this.subcards.map((c) => c.id);
+    }
+
+    /** 导出虚拟牌数据（供权威端发消息，镜像端消费此类型） */
+    toData(): VirtualCardData {
+        return {
+            name: this.name,
+            suit: this.suit,
+            color: this.color,
+            number: this.number,
+            attr: this.attr,
+            subcards: this.cardIds,
+            data: {},
+        };
     }
 
     /** 是否挂有实体牌 */

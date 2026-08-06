@@ -1,9 +1,11 @@
 import { ICard } from './ICard';
 import type { Room } from './Room';
+import { sync } from '../state/decorators';
 import { defaultCardAudio, defaultCardImage } from '../utils/AssetsUtils';
 import type { CardGender } from '../utils/AssetsUtils';
 import type { CardAnimation, CardAssets } from '../types/AssetsTypes';
-import type { CardAttr, CardNumber, CardSuit, GameCardData, GameCardId } from '../types/CardTypes';
+import type { CardAttr, CardNumber, CardSuit, GameCardData, GameCardId, VirtualCardData } from '../types/CardTypes';
+import type { VirtualCard } from './VirtualCard';
 
 /**
  * 实体牌——游戏牌实体，牌面能力继承自 ICard。
@@ -14,12 +16,35 @@ export class GameCard extends ICard {
     readonly room: Room;
     /** 源数据（注册构建的实体牌数据，外部可读；状态效果修正直接改此数据） */
     readonly sourceData: GameCardData;
+    /** 放置方式（true=正面朝上，false=背面朝上）——TODO(R1): 区域管理的放置同步语义细化 */
+    @sync() put: boolean = false;
+    /** 关联虚拟牌（使用/打出结算中的临时关联）——TODO(R1): 区域管理维护 */
+    vcard?: VirtualCard;
 
     constructor(room: Room, data: GameCardData) {
         super();
         this.room = room;
         this.sourceData = { ...data, attr: [...data.attr] };
-        this.room.logger.debug('创建实体牌', { roomId: room.roomId, cardId: this.id });
+        // 登记实体牌索引
+        room.cards.set(this.id, this);
+        // 登记牌名索引（衍生牌不登记，按类别/副类别分组）
+        if (!this.derived && !room.cardNames.includes(this.name)) {
+            room.cardNames.push(this.name);
+            const type = this.type;
+            let byType = room.cardNamesToType.get(type);
+            if (!byType) {
+                byType = new Set();
+                room.cardNamesToType.set(type, byType);
+            }
+            byType.add(this.name);
+            const subtype = this.subtype;
+            let bySubtype = room.cardNamesToSubType.get(subtype);
+            if (!bySubtype) {
+                bySubtype = new Set();
+                room.cardNamesToSubType.set(subtype, bySubtype);
+            }
+            bySubtype.add(this.name);
+        }
     }
 
     /** 实体牌 id */
@@ -50,6 +75,25 @@ export class GameCard extends ICard {
     /** 是否为衍生牌 */
     get derived(): boolean {
         return this.sourceData.derived;
+    }
+
+    /** 设置放置方式（正面/背面） */
+    turnTo(put: boolean): void {
+        if (this.put === put) return;
+        this.put = put;
+    }
+
+    /** 生成以本牌为子牌的虚拟牌数据（判定/展示场景用） */
+    formatVirtualCardData(): VirtualCardData {
+        return {
+            name: this.name,
+            suit: this.suit,
+            color: this.color,
+            number: this.number,
+            attr: this.attr,
+            subcards: [this.id],
+            data: {},
+        };
     }
 
     // ===== 动态资源（按牌名，未配置走默认路径模板） =====

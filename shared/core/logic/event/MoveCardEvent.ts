@@ -1,0 +1,438 @@
+import type { Room } from '../../entity/Room';
+import type { Player } from '../../entity/Player';
+import type { GameCard } from '../../entity/GameCard';
+import type { AreaId } from '../../types/AreaTypes';
+import { AreaType } from '../../types/AreaTypes';
+import type { RichString } from '../../types/RichText';
+import { parseAreaId } from '../../utils/AreaUtils';
+import { EventProcess, createTiming } from './EventProcess';
+import { EventType, TimingName } from '../../types/EventTypes';
+import type { MoveCardData, MoveEventData } from '../../types/EventTypes';
+
+/** 从 AreaId 中解析区域类型 */
+function areaTypeOf(areaId: AreaId): AreaType {
+    return parseAreaId(areaId).type;
+}
+
+/** 从玩家区域 id 中获取所属玩家 */
+function playerOf(areaId: AreaId, room: Room): Player | undefined {
+    const { playerId } = parseAreaId(areaId);
+    return playerId ? room.getPlayer(playerId) : undefined;
+}
+
+/** 获取区域的默认放置方式：手牌区背面朝上(false)，其他正面朝上(true) */
+function getDefaultPut(areaId: AreaId): boolean {
+    return areaTypeOf(areaId) !== AreaType.Hand;
+}
+
+/**
+ * 移动卡牌事件。
+ * 执行流程：MoveCardFixed → Before1 → Before2 → After1（实际移动）→ After2 → MoveCardEnd
+ * 在 MoveCardBefore1/2 期间可调用 cancel()/preventMove() 取消或阻止移动。
+ */
+export class MoveCardEvent extends EventProcess<EventType.Move> {
+    /** 分类后的移动数据 */
+    move_datas: MoveCardData[];
+
+    /** 移动标签生成函数（可由调用方覆盖） */
+    getMoveLabel?: (data: MoveCardData) => RichString = () => '';
+    /** 战报生成函数（可由调用方覆盖） */
+    log?: (data: MoveCardData) => RichString = () => '';
+
+    constructor(room: Room, data: MoveEventData) {
+        super(room, EventType.Move, data);
+        this.move_datas = data.datas ?? [];
+        this.getMoveLabel = data.getMoveLabel;
+        this.log = data.log;
+        this._buildTriggers();
+    }
+
+    // ===== 访问器 =====
+
+    /** eventData.datas 便捷访问 */
+    get datas(): MoveCardData[] {
+        return this.eventData.datas;
+    }
+    set datas(v: MoveCardData[]) {
+        this.eventData.datas = v;
+    }
+
+    // ===== Timing 构建 =====
+
+    private _buildTriggers(): void {
+        this.eventTriggers = [
+            createTiming(TimingName.MoveCardFixed, [
+                this.bindWithMark(this._onMoveCardFixed),
+            ]),
+            createTiming(TimingName.MoveCardBefore1),
+            createTiming(TimingName.MoveCardBefore2),
+            createTiming(TimingName.MoveCardAfter1, [
+                this.bindWithMark(this._onMoveCardAfter1),
+            ]),
+            createTiming(TimingName.MoveCardAfter2),
+        ];
+        this.endTriggers = [createTiming(TimingName.MoveCardEnd)];
+    }
+
+    // ===== 生命周期 =====
+
+    protected async init(): Promise<void> {
+        await super.init();
+        this.classify();
+    }
+
+    check(): boolean {
+        return this.move_datas.length > 0;
+    }
+
+    checkEvent(): boolean {
+        return this.check();
+    }
+
+    // ===== 流程回调 =====
+
+    /** MoveCardFixed: 固定移动（对移动数据做最终校正，子类或外部可覆写） */
+    private async _onMoveCardFixed(_room: Room, _data: MoveEventData): Promise<void> {
+        // 默认空实现，预留扩展点
+    }
+
+    /** MoveCardAfter1 之前：执行实际卡牌移动 */
+    private async _onMoveCardAfter1(_room: Room, _data: MoveEventData): Promise<void> {
+        for (const data of this.move_datas) {
+            // pos='top' 时反转卡牌顺序，实现「依次放在顶部=最后一张在最上面」
+            if (data.pos === 'top') {
+                data.cards.reverse();
+            }
+
+            for (const card of data.cards) {
+                const fromArea = this.findAreaOf(card);
+                const toArea = this.room.areas.get(data.toArea);
+                if (!fromArea || !toArea) continue;
+                if (fromArea.areaId === toArea.areaId) continue;
+
+                fromArea.remove([card]);
+                toArea.add([card], data.pos ?? 'bottom');
+
+                // 移动到处理区时通知父事件追踪（事件结束后清理）
+                if (this.source && areaTypeOf(toArea.areaId) === AreaType.Processing) {
+                    this.source._trackProcessingCard(card, data.reason || 'put');
+                }
+
+                // 设置放置方式
+                if (data.putType !== undefined) {
+                    card.turnTo(data.putType);
+                }
+
+                // 清空非 @never 标记
+                card.clearMark();
+
+                // 执行移动后处理器
+                if (data.handler) {
+                    await data.handler(card);
+                }
+
+                // 处理虚拟牌关联
+                this.handleVirtualCard(card, fromArea.areaId, toArea.areaId);
+            }
+        }
+        // TODO(R9): 构建移动动画消息广播（card.move）
+
+        this.room.event.insertHistory(this);
+    }
+
+    // ===== 虚拟牌处理 =====
+
+    /** 移动后处理虚拟牌关联 */
+    protected async handleVirtualCard(
+        card: GameCard,
+        _fromArea: AreaId,
+        toArea: AreaId,
+    ): Promise<void> {
+        const vcard = card.vcard;
+        if (!vcard) return;
+
+        const toType = areaTypeOf(toArea);
+        // TODO(R1): 延时锦囊——处理区→判定区重建属性、判定区→判定区转移、移出时销毁
+        // TODO(R1): 装备牌——进入/离开装备区时更新玩家装备记录
+
+        // 虚拟牌移动到非处理区 → 销毁（清子牌链接并标记）
+        if (toType !== AreaType.Processing) {
+            this.room.destroyVirtualCard(vcard);
+            card.vcard = undefined;
+        }
+    }
+
+    // ===== 移动数据操作 =====
+
+    /**
+     * 对移动数据分类赋默认值并归类。
+     * 每条移动数据：填充默认值 → fromArea 自动取牌所在区域 → 相同设置（player/from/to/reason/put 等）合并分组。
+     */
+    public classify(): void {
+        const result: MoveCardData[] = [];
+
+        for (const v of this.move_datas) {
+            if (!v || !v.toArea) continue;
+
+            // 填充默认值
+            v.reason = v.reason ?? 'put';
+            v.putType = v.putType ?? getDefaultPut(v.toArea);
+            v.animation = v.animation ?? true;
+            v.pos = v.pos ?? 'bottom';
+            v.toast = v.toast ?? false;
+
+            // fromArea 未指定时自动赋值为卡牌所在区域；指定时仅保留该区域的牌
+            const effectiveFrom = v.fromArea ?? (v.cards[0] ? this.findAreaOf(v.cards[0])?.areaId : undefined);
+            v.fromArea = v.fromArea ?? effectiveFrom;
+
+            for (const card of v.cards) {
+                if (!card) continue;
+                const fromArea = this.findAreaOf(card)?.areaId;
+                if (!fromArea || fromArea === v.toArea) continue;
+
+                const movetype = v.moveType ?? card.put;
+
+                // 查找相同设置的数据组尝试合并
+                const existing = result.find(
+                    (d) =>
+                        (v.player ? d.player === v.player : true) &&
+                        d.fromArea === fromArea &&
+                        d.toArea === v.toArea &&
+                        d.reason === v.reason &&
+                        d.moveType === movetype &&
+                        d.putType === v.putType &&
+                        d.animation === v.animation &&
+                        d.visiblePlayers === v.visiblePlayers &&
+                        d.cardVisiblePlayers === v.cardVisiblePlayers &&
+                        d.pos === v.pos &&
+                        d.toast === v.toast &&
+                        (!v.handler || v.handler === d.handler),
+                );
+
+                if (existing) {
+                    existing.cards.push(card);
+                } else {
+                    result.push({
+                        player: v.player,
+                        cards: [card],
+                        fromArea,
+                        toArea: v.toArea,
+                        pos: v.pos,
+                        reason: v.reason,
+                        moveType: movetype,
+                        putType: v.putType,
+                        animation: v.animation,
+                        visiblePlayers: v.visiblePlayers,
+                        cardVisiblePlayers: v.cardVisiblePlayers,
+                        label: v.label,
+                        log: v.log,
+                        toast: v.toast,
+                        viewas: v.viewas,
+                        handler: v.handler,
+                        _data: v._data,
+                    });
+                }
+            }
+        }
+
+        this.move_datas = result;
+        this.eventData.datas = result;
+    }
+
+    /** 增加一条移动数据，可选延迟归类（批量添加时最后统一调用 classify） */
+    public add(data: MoveCardData, reclassify: boolean = true): void {
+        this.move_datas.push(data);
+        if (reclassify) this.classify();
+    }
+
+    /**
+     * 修改指定牌的移动数据。
+     * @param cards 要修改的牌
+     * @param newData 新的移动参数，未提供的将沿用原参数
+     */
+    public update(cards: GameCard[], newData: Partial<MoveCardData> = {}): void {
+        const newCards = newData.cards ?? [];
+        for (let i = 0; i < cards.length; i++) {
+            const card = cards[i];
+            if (!card) continue;
+            const old = this.get(card);
+            if (old) {
+                const idx = old.cards.indexOf(card);
+                if (idx >= 0) old.cards.splice(idx, 1);
+            }
+            this.move_datas.push({
+                ...(old ?? {}),
+                ...newData,
+                cards: [newCards[i] ?? card],
+                fromArea: undefined,
+            } as MoveCardData);
+        }
+        this.classify();
+    }
+
+    // ===== 查询方法 =====
+
+    /** 获取本次移动中包含指定牌的 MoveCardData */
+    get(card: GameCard): MoveCardData | undefined {
+        return this.move_datas.find((v) => v.cards.includes(card));
+    }
+
+    /** 本次移动中是否包含指定牌的移动 */
+    has(card: GameCard): boolean {
+        return !!this.get(card);
+    }
+
+    /** 获取本次移动中符合条件的牌 */
+    getCards(filter: (data: MoveCardData, card: GameCard) => boolean = () => true): GameCard[] {
+        const cards: GameCard[] = [];
+        for (const v of this.move_datas) {
+            for (const c of v.cards) {
+                if (filter(v, c)) cards.push(c);
+            }
+        }
+        return cards;
+    }
+
+    /** 获取本次移动中符合条件的牌（返回第一张，短路查找） */
+    getCard(filter: (data: MoveCardData, card: GameCard) => boolean = () => true): GameCard | undefined {
+        for (const d of this.move_datas) {
+            const c = d.cards.find((card) => filter(d, card));
+            if (c) return c;
+        }
+        return undefined;
+    }
+
+    /** 获取符合条件的移动数据 */
+    filter(filter: (data: MoveCardData, card: GameCard) => boolean): MoveCardData[] {
+        return this.move_datas.filter((v) => v.cards.find((c) => filter(v, c)));
+    }
+
+    /** 移动中是否包含符合条件的数据 */
+    has_filter(filter: (data: MoveCardData, card: GameCard) => boolean): boolean {
+        return this.filter(filter).length > 0;
+    }
+
+    /** 获取移动的总牌数 */
+    getMoveCount(): number {
+        return this.move_datas.reduce((total, curr) => total + curr.cards.length, 0);
+    }
+
+    // ===== 按原因分类的查询方法（各操作共享） =====
+
+    /**
+     * 获取某玩家因指定原因会失去的牌的数据。
+     * 失去 = 原区域是该玩家的手牌/装备区，目标区域不是该玩家的手牌/装备区。
+     */
+    getLoseByReason(player: Player, reason: string, pos: string = 'he'): MoveCardData[] {
+        return this.filter((d, _c) => {
+            if (d.reason !== reason) return false;
+            if (!d.fromArea) return false;
+            const fromPlayer = playerOf(d.fromArea, this.room);
+            if (fromPlayer !== player) return false;
+
+            const fromType = areaTypeOf(d.fromArea);
+            const toType = areaTypeOf(d.toArea);
+            const toPlayer = playerOf(d.toArea, this.room);
+
+            if (pos.includes('h') && fromType === AreaType.Hand) {
+                return !((toType === AreaType.Hand || toType === AreaType.Equip) && toPlayer === player);
+            }
+            if (pos.includes('e') && fromType === AreaType.Equip) {
+                return !((toType === AreaType.Hand || toType === AreaType.Equip) && toPlayer === player);
+            }
+            return false;
+        });
+    }
+
+    /** getLoseByReason 的 GameCard[] 版本 */
+    getLoseCardsByReason(player: Player, reason: string, pos: string = 'he'): GameCard[] {
+        const cards: GameCard[] = [];
+        for (const d of this.getLoseByReason(player, reason, pos)) {
+            cards.push(...d.cards);
+        }
+        return cards;
+    }
+
+    /** 是否有因指定原因失去牌的数据 */
+    hasLoseByReason(player: Player, reason: string, pos: string = 'he'): boolean {
+        return this.getLoseByReason(player, reason, pos).length > 0;
+    }
+
+    /**
+     * 获取某玩家因指定原因会获得的牌的数据。
+     * 获得 = 原区域不是该玩家的手牌区，目标区域是该玩家的手牌区。
+     */
+    getObtainByReason(player: Player, reason: string): MoveCardData[] {
+        const handArea = player.getAreaId(AreaType.Hand);
+        return this.filter((d, _c) => {
+            if (d.reason !== reason) return false;
+            if (d.toArea !== handArea) return false;
+            if (!d.fromArea) return true;
+            const fromType = areaTypeOf(d.fromArea);
+            const fromPlayer = playerOf(d.fromArea, this.room);
+            if (fromType === AreaType.Hand && fromPlayer === player) return false;
+            return true;
+        });
+    }
+
+    /** getObtainByReason 的 GameCard[] 版本 */
+    getObtainCardsByReason(player: Player, reason: string): GameCard[] {
+        const cards: GameCard[] = [];
+        for (const d of this.getObtainByReason(player, reason)) {
+            cards.push(...d.cards);
+        }
+        return cards;
+    }
+
+    /** 是否有因指定原因获得牌的数据 */
+    hasObtainByReason(player: Player, reason: string): boolean {
+        return this.getObtainByReason(player, reason).length > 0;
+    }
+
+    // ===== 取消与阻止 =====
+
+    /**
+     * 取消移动（仅在 MoveCardBefore1/2 时机可调用）。
+     * @param cards 要取消移动的牌。不提供则等同于 preventMove()
+     * @param prevent 取消后若所有牌都被取消，是否自动阻止事件
+     */
+    async cancel(cards?: GameCard[], prevent: boolean = true): Promise<this> {
+        if (this.trigger !== TimingName.MoveCardBefore1 && this.trigger !== TimingName.MoveCardBefore2) {
+            return this;
+        }
+
+        if (!cards) {
+            return this.preventMove();
+        }
+
+        const cancelSet = new Set(cards);
+        for (const v of this.move_datas) {
+            v.cards = v.cards.filter((c) => !cancelSet.has(c));
+        }
+        this.move_datas = this.move_datas.filter((v) => v.cards.length > 0);
+
+        if (this.move_datas.length === 0 && prevent) {
+            await this.preventMove();
+        }
+        return this;
+    }
+
+    /** 阻止整个移动事件（仅在 MoveCardBefore1/2 时机可调用） */
+    async preventMove(): Promise<this> {
+        if (this.trigger === TimingName.MoveCardBefore1 || this.trigger === TimingName.MoveCardBefore2) {
+            this.isEnd = true;
+            this.triggerable = false;
+        }
+        return this;
+    }
+
+    // ===== 内部辅助 =====
+
+    /** 在区域集合中查找牌所在区域 */
+    private findAreaOf(card: GameCard) {
+        for (const area of this.room.areas.values()) {
+            if (area.has(card)) return area;
+        }
+        return undefined;
+    }
+}

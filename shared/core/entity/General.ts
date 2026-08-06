@@ -1,5 +1,6 @@
 import { Mark } from './Mark';
 import type { Room } from './Room';
+import { sync } from '../state/decorators';
 import {
     defaultGeneralDeath,
     defaultGeneralImage,
@@ -17,6 +18,8 @@ export class General extends Mark {
     readonly room: Room;
     /** 当前使用的皮肤名（默认取源数据 defaultSkin，可经 setSkin 切换） */
     private _skin: string;
+    /** 放置方式（true=明置，false=暗置）——TODO(R8): 国战明置机制同步语义细化 */
+    @sync() put: boolean = false;
     /** 解析后的源数据（外部可读，状态效果修正直接改此数据） */
     readonly sourceData: {
         id: string;
@@ -71,7 +74,11 @@ export class General extends Mark {
             defaultSkin: data.defaultSkin,
         };
         this._skin = data.defaultSkin ?? 'default';
-        this.room.logger.debug('创建武将', { roomId: room.roomId, general: this.name });
+        // 登记武将索引与真名列表
+        room.generals.set(this.id, this);
+        if (!room.generalNames.includes(this.trueName)) {
+            room.generalNames.push(this.trueName);
+        }
     }
 
     /** 武将 id（即武将名） */
@@ -159,6 +166,12 @@ export class General extends Mark {
     /** 是否为主公 */
     isLord(): boolean {
         return this.lord;
+    }
+
+    /** 设置放置方式（明置/暗置） */
+    turnTo(put: boolean): void {
+        if (this.put === put) return;
+        this.put = put;
     }
 
     // ===== 动态资源（按武将真名共享皮肤，未配置走默认路径模板） =====

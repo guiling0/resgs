@@ -21,6 +21,24 @@ export interface GameCardData {
     derived: boolean;
 }
 
+/** 虚拟牌数据（使用/打出的结算对象数据，subcards 为实体牌 id 列表） */
+export interface VirtualCardData {
+    /** 虚拟牌名 */
+    name: string;
+    /** 花色 */
+    suit: CardSuit;
+    /** 颜色 */
+    color: CardColor;
+    /** 点数 */
+    number: CardNumber;
+    /** 属性列表 */
+    attr: CardAttr[];
+    /** 实体牌 id 列表 */
+    subcards: GameCardId[];
+    /** 自定义数据 */
+    data: Record<string, unknown>;
+}
+
 /** 卡牌定义数据（按牌名注册到 sgs.carddatas，供类别/副类别派生与 UI 展示） */
 export interface CardData {
     /** 卡牌名 */

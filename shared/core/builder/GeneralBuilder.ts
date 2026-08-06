@@ -137,8 +137,11 @@ class _GeneralBuilder implements GeneralBuilder {
     }
 }
 
-/** 全可选字段构建武将数据（sgs.General）——name 必传，内部经 GeneralBuilder 复用默认值 */
+/** 构建并注册武将数据（sgs.General）——name 必传，内部经 GeneralBuilder 复用默认值；已注册则直接返回已有数据 */
 export function General(input: Pick<GeneralData, 'name'> & Partial<GeneralData>): GeneralData {
+    if (sgs.generals.has(input.name)) {
+        return sgs.generals.get(input.name)!;
+    }
     const b = GeneralBuilder(input.name);
     if (input.kingdom !== undefined) b.kingdom(input.kingdom);
     if (input.hp !== undefined) b.hp(input.hp);
@@ -151,5 +154,11 @@ export function General(input: Pick<GeneralData, 'name'> & Partial<GeneralData>)
     if (input.rs !== undefined) b.rs(input.rs);
     if (input.defaultSkin !== undefined) b.defaultSkin(input.defaultSkin);
     if (input.config !== undefined) b.config(input.config);
-    return b.build();
+    const data = b.build();
+    sgs.generals.set(data.name, data);
+    if (data.config) {
+        const trueName = data.name.split('.').at(-1) || data.name;
+        sgs.registerGeneralAssets({ [trueName]: { ...data.config, name: data.name } });
+    }
+    return data;
 }

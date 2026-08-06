@@ -1,10 +1,14 @@
 import { Card as buildCardData, CardBuilder as cardBuilderFactory } from './builder/CardBuilder';
 import { General as buildGeneralData, GeneralBuilder as generalBuilderFactory } from './builder/GeneralBuilder';
+import { Skill as buildSkillData, SkillBuilder as skillBuilderFactory } from './builder/SkillBuilder';
+import { Effect as buildEffectData, EffectBuilder as effectBuilderFactory } from './builder/EffectBuilder';
 import { consoleLogger } from './ConsoleLogger';
 import type { ILogger } from './ILogger';
 import type { CardData, GameCardData } from './types/CardTypes';
 import type { GeneralData } from './types/GeneralTypes';
 import type { CardPackageData, GeneralPackData } from './types/PackageTypes';
+import type { EffectData, SkillData } from './types/SkillTypes';
+import type { CardUseData } from './types/EventTypes';
 import type { CardAssets, GeneralConfig, GeneralInfo, GeneralSkin } from './types/AssetsTypes';
 
 class RESGS {
@@ -61,9 +65,11 @@ class RESGS {
     /** 武将牌（武将数据，武将名 → 数据） */
     public readonly generals: Map<string, GeneralData> = new Map();
     /** 技能 */
-    public readonly skills: Map<string, unknown> = new Map();
+    public readonly skills: Map<string, SkillData> = new Map();
     /** 效果 */
-    public readonly effects: Map<string, unknown> = new Map();
+    public readonly effects: Map<string, EffectData> = new Map();
+    /** 牌的默认使用方式定义（同名多方式以 timing 区分；经 CardUse 注册，开局 initCardUses 拷贝到房间） */
+    public readonly carduses: CardUseData[] = [];
 
     // ===== 动态资源 =====
 
@@ -84,6 +90,32 @@ class RESGS {
     public readonly GeneralBuilder = generalBuilderFactory;
     /** 武将数据构建（name 必传，其余可选，sgs.General({ name: 'caocao' })） */
     public readonly General = buildGeneralData;
+    /** 技能数据构建器（链式，name 必传，sgs.SkillBuilder('jianxiong')） */
+    public readonly SkillBuilder = skillBuilderFactory;
+    /** 技能数据构建（name 必传，其余可选，sgs.Skill({ name: 'jianxiong' })） */
+    public readonly Skill = buildSkillData;
+    /** 效果数据构建器（链式，name 必传，sgs.EffectBuilder('jianxiong.draw')） */
+    public readonly EffectBuilder = effectBuilderFactory;
+    /** 效果数据构建（name 必传，其余可选，sgs.Effect({ name: 'jianxiong.draw' })） */
+    public readonly Effect = buildEffectData;
+
+    /**
+     * 注册牌的默认使用方式（幂等：同名同时机已存在则跳过）。
+     * 使用方式定义牌在出牌/响应阶段的行为（合法目标/距离条件/牌面效果），
+     * 开局经 room.initCardUses 拷贝到房间索引。
+     */
+    public CardUse(data: CardUseData): CardUseData {
+        const exists = this.carduses.some(
+            (c) => c.name === data.name && c.timing === data.timing,
+        );
+        if (exists) {
+            this.logger.warn('卡牌使用方式已存在——跳过', { name: data.name, timing: data.timing });
+            return data;
+        }
+        this.carduses.push(data);
+        this.logger.info('卡牌使用方式注册', { name: data.name, timing: data.timing });
+        return data;
+    }
 
     /**
      * 注册卡牌扩展包：为包内全部实体牌分配 ID（{扩展名}.{扩展内自增序号}）并注册到 sgs.cards。
@@ -243,6 +275,9 @@ class RESGS {
 }
 
 export const sgs = RESGS.getInstance();
+
+// 全局 sgs（持有全部静态数据，扩展代码直接 sgs.xxx 访问）
+globalThis.sgs = sgs;
 
 declare global {
     var sgs: RESGS;

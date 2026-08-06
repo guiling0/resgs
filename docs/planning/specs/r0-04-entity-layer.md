@@ -87,3 +87,4 @@ R0-04 实体层（本增量）
 3. **实体 id**：统一 string
 4. **Player 状态字段**：最小集（R1 够用）——playerId/username/seat/role/kingdom/gender/hp/maxhp/death/phase/inturn + marks/hand
 5. **区域引用**：本期不实现（GameCard 所在区域、Player 手牌/装备/判定区结构留 R1 区域管理）
+6. **能力注入结构（2026-08-05 修订）**：实体类 = 数据 + 派生 getter + 查询 + 能力方法（薄转发 host/view）；非查询能力分 `PlayerHost`（权威端）/`PlayerView`（镜像端）双接口，实现类 `PlayerLogic`（logic/）/`PlayerViewModel`（view/）经实例注入，仅注入其一，运行时注入差异决定行为；查询（getCards 等）直接放实体本体。详见 [ADR 0004](../../decisions/adr/0004-entity-layering.md)
