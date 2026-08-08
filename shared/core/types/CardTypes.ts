@@ -1,9 +1,17 @@
-/** 实体牌 ID——格式：{扩展名}.{自增序号}，保证跨扩展不冲突 */
+/**
+ * 游戏牌ID
+ * @rules terms/value-terms/cardId
+ * @description 实体牌 ID 格式 {扩展名}.{自增序号}，保证跨扩展不冲突
+ */
 export type GameCardId = string;
 /** 虚拟牌 ID */
 export type VirtualCardId = number;
 
-/** 实体牌数据（仅用于 sgs 注册；id 由注册扩展包时分配） */
+/**
+ * 实体牌数据（仅用于 sgs 注册；id 由注册扩展包时分配）
+ * @rules terms/card-terms/GameCard
+ * @description 游戏牌实体数据，除衍生牌外的所有对局牌均为此类
+ */
 export interface GameCardData {
     /** 实体牌 id（注册时分配，构建阶段为空串） */
     id: GameCardId;
@@ -21,7 +29,11 @@ export interface GameCardData {
     derived: boolean;
 }
 
-/** 虚拟牌数据（使用/打出的结算对象数据，subcards 为实体牌 id 列表） */
+/**
+ * 虚拟牌数据（使用/打出的结算对象数据，subcards 为实体牌 id 列表）
+ * @rules terms/card-terms/virtualCard
+ * @description 虚拟牌是使用/打出的结算对象，与被使用/打出的牌对应的实体牌有关联关系
+ */
 export interface VirtualCardData {
     /** 虚拟牌名 */
     name: string;
@@ -85,7 +97,11 @@ export enum CardAttr {
     Aozhan,
 }
 
-/** 卡牌花色 */
+/**
+ * 卡牌花色
+ * @rules terms/card-face-terms/suit
+ * @description 花色标识于游戏牌左上角，分红桃/方片/黑桃/梅花四种
+ */
 export enum CardSuit {
     None = 0,
     /** 黑桃 */
@@ -98,7 +114,11 @@ export enum CardSuit {
     Diamond,
 }
 
-/** 卡牌点数 */
+/**
+ * 卡牌点数初值
+ * @rules terms/card-face-terms/numberInit
+ * @description 点数初值标识于游戏牌左上角，数字 2-10 代表点数 2-10，A/J/Q/K 分别代表 1/11/12/13
+ */
 export enum CardNumber {
     None = -1,
     JOKER_BLACK = 0,
@@ -118,7 +138,11 @@ export enum CardNumber {
     JOKER_RED = 14,
 }
 
-/** 卡牌颜色 */
+/**
+ * 卡牌颜色
+ * @rules terms/card-face-terms/color
+ * @description 游戏牌按颜色分红色、黑色两种：红桃/方片为红，黑桃/梅花为黑
+ */
 export enum CardColor {
     None = 0,
     /** 红色 */
@@ -127,7 +151,13 @@ export enum CardColor {
     Black,
 }
 
-/** 卡牌类别 */
+/**
+ * 卡牌类别
+ * @rules terms/card-terms/Basic
+ * @rules terms/card-terms/Trick
+ * @rules terms/card-terms/Equip
+ * @description 牌类别区分基本牌/锦囊牌/装备牌
+ */
 export enum CardType {
     None = 0,
     /** 基本牌 */
@@ -138,7 +168,13 @@ export enum CardType {
     Equip = 3,
 }
 
-/** 卡牌副类别 */
+/**
+ * 卡牌副类别
+ * @rules terms/card-terms/Basic
+ * @rules terms/card-terms/Trick
+ * @rules terms/card-terms/Equip
+ * @description 牌副类别细分基本牌/延时与非延时锦囊/各类装备
+ */
 export enum CardSubType {
     None = 0,
     /** 基本牌 */
@@ -161,19 +197,47 @@ export enum CardSubType {
     Treasure = 36,
 }
 
-/** 装备牌副类别 */
+/**
+ * 装备牌副类别
+ * @rules terms/card-terms/Equip
+ * @description 装备副类别细分武器/防具/坐骑/宝物
+ */
 export enum EquipSubType {
     None = 0,
-    /** 武器 */
+    /**
+     * 武器
+     * @rules terms/zone-terms/weaponArea
+     * @description 武器区，装备武器牌的区域
+     */
     Weapon = 31,
-    /** 防具 */
+    /**
+     * 防具
+     * @rules terms/zone-terms/armorArea
+     * @description 防具区，装备防具牌的区域
+     */
     Armor = 32,
-    /** 防御坐骑 */
+    /**
+     * 防御坐骑
+     * @rules terms/zone-terms/defenseMountArea
+     * @description 防御坐骑区，装备防御坐骑牌的区域
+     */
     DefensiveMount = 33,
-    /** 进攻坐骑 */
+    /**
+     * 进攻坐骑
+     * @rules terms/zone-terms/attackMountArea
+     * @description 进攻坐骑区，装备进攻坐骑牌的区域
+     */
     OffensiveMount = 34,
-    /** 特殊坐骑 */
+    /**
+     * 特殊坐骑
+     * @rules terms/zone-terms/specialMountArea
+     * @description 特殊坐骑区，装备特殊坐骑牌的区域
+     */
     SpecialMount = 35,
-    /** 宝物 */
+    /**
+     * 宝物
+     * @rules terms/zone-terms/treasureArea
+     * @description 宝物区，装备宝物牌的区域
+     */
     Treasure = 36,
 }

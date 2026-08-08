@@ -8,9 +8,9 @@ import type { DeathEventData, DyingEventData } from '../../types/EventTypes';
 // ===== 濒死事件 =====
 
 /**
- * 濒死事件。
- * 执行流程：DyingEntry → DyingEntryAfter → Dying（求桃）→ DyingEnd
- *   → 若 hp 仍 ≤0 则创建 DeathEvent（含 killer 追溯）
+ * 濒死事件
+ * @rules events/dying
+ * @description 执行流程：DyingEntry → DyingEntryAfter → Dying（求桃）→ DyingEnd；若 hp 仍 ≤0 则创建 DeathEvent（含 killer 追溯）
  */
 export class DyingEvent extends EventProcess<EventType.Dying> {
     constructor(room: Room, data: DyingEventData) {
@@ -24,7 +24,11 @@ export class DyingEvent extends EventProcess<EventType.Dying> {
         return this.eventData.player;
     }
 
-    /** 造成濒死的角色 */
+    /**
+     * 造成濒死的角色
+     * @rules terms/description-terms/killer
+     * @description 若一名角色于其因受到有来源的伤害而进行的濒死结算中死亡，此来源即杀死该角色的角色
+     */
     get killer(): Player | undefined {
         return this.eventData.killer;
     }
@@ -113,7 +117,7 @@ export class DyingEvent extends EventProcess<EventType.Dying> {
      */
     private _findKiller(): Player | undefined {
         const reduceHp = this.source;
-        if (!(reduceHp instanceof ReduceHpEvent) || reduceHp.data.reason !== 'reducehp') return undefined;
+        if (!(reduceHp instanceof ReduceHpEvent) || reduceHp.reason !== 'reducehp') return undefined;
         const damage = reduceHp.source;
         return damage instanceof DamageEvent ? damage.player : undefined;
     }
@@ -122,8 +126,9 @@ export class DyingEvent extends EventProcess<EventType.Dying> {
 // ===== 死亡事件 =====
 
 /**
- * 死亡事件。
- * 执行流程：DeathBefore → DeathConfirmRole（确认死亡）→ Death → DeathAfter（弃牌清标记）→ DeathEnd（移除技能效果）
+ * 死亡事件
+ * @rules events/death
+ * @description 执行流程：DeathBefore → DeathConfirmRole（确认死亡）→ Death → DeathAfter（弃牌清标记）→ DeathEnd（移除技能效果）
  */
 export class DeathEvent extends EventProcess<EventType.Death> {
     constructor(room: Room, data: DeathEventData) {
@@ -137,7 +142,11 @@ export class DeathEvent extends EventProcess<EventType.Death> {
         return this.eventData.player;
     }
 
-    /** 击杀者（优先使用 DyingEvent 传入的值） */
+    /**
+     * 击杀者（优先使用 DyingEvent 传入的值）
+     * @rules terms/description-terms/killer
+     * @description 若一名角色于其因受到有来源的伤害而进行的濒死结算中死亡，此来源即杀死该角色的角色
+     */
     get killer(): Player | undefined {
         return this.eventData.killer;
     }

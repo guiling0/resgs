@@ -214,7 +214,7 @@ class _EffectBuilder<T extends TimingTrigger = TimingTrigger> implements EffectB
     }
 }
 
-/** 构建并注册效果数据（sgs.Effect）——name 必传，内部经 EffectBuilder 复用默认值；已注册则直接返回已有数据 */
+/** 构建并注册效果数据（sgs.createEffect）——name 必传，内部经 EffectBuilder 复用默认值；已注册则直接返回已有数据 */
 export function Effect(input: Pick<EffectData, 'name'> & Partial<EffectData>): EffectData {
     if (sgs.effects.has(input.name)) {
         return sgs.effects.get(input.name)!;

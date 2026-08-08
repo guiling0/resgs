@@ -7,8 +7,9 @@ import type { ChangeMaxHpEventData, RecoverHpEventData } from '../../types/Event
 // ===== 回复体力事件 =====
 
 /**
- * 回复体力事件。
- * 执行流程：RecoverHpStart → RecoverHpAfter（实际回复）→ RecoverHpEnd
+ * 回复体力事件
+ * @rules events/recover-hp
+ * @description 执行流程：RecoverHpStart → RecoverHpAfter（实际回复）→ RecoverHpEnd
  */
 export class RecoverHpEvent extends EventProcess<EventType.RecoverHp> {
     constructor(room: Room, data: RecoverHpEventData) {
@@ -78,9 +79,9 @@ export class RecoverHpEvent extends EventProcess<EventType.RecoverHp> {
 // ===== 体力上限改变事件 =====
 
 /**
- * 体力上限改变事件。
- * 执行流程：ChangeMaxHpStart → ChangeMaxHpAfter（实际修改）→ ChangeMaxHpEnd
- * 上限降至 ≤0 时触发死亡。
+ * 体力上限改变事件（统一处理增加/减少，number 正为加、负为减）
+ * @rules events/change-max-hp
+ * @description 执行流程：ChangeMaxHpStart → ChangeMaxHpAfter（实际修改）→ ChangeMaxHpEnd；上限降至 ≤0 时触发死亡
  */
 export class ChangeMaxHpEvent extends EventProcess<EventType.ChangeMaxHp> {
     constructor(room: Room, data: ChangeMaxHpEventData) {
@@ -105,6 +106,7 @@ export class ChangeMaxHpEvent extends EventProcess<EventType.ChangeMaxHp> {
     private _buildTriggers(): void {
         this.eventTriggers = [
             createTiming(TimingName.ChangeMaxHpStart),
+            createTiming(TimingName.ChangeMaxHp),
             createTiming(TimingName.ChangeMaxHpAfter, [
                 this.bindWithMark(this._onChangeMaxHpAfter),
             ]),

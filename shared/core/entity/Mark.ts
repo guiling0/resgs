@@ -132,7 +132,12 @@ export abstract class Mark extends StateNode {
         return originalKey in this.data;
     }
 
-    /** 删除标记（同原始键的带标签变体） */
+    /**
+     * 弃标记：删除指定标记
+     * @rules terms/card-op-terms/removeMark
+     * @description 弃是失去标记的操作；按原始键删除其全部带标签变体及数据备份
+     * @param rawKey 标记原始键（忽略标签与生命周期）
+     */
     removeMark(rawKey: string): void {
         const { originalKey } = this.parseKey(rawKey);
         const fullKey = this._markKeyMap.get(originalKey);

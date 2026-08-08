@@ -17,6 +17,8 @@ export interface VirtualCardOverrides {
  * 虚拟牌——使用/打出的结算对象，链接实体牌（subcards）派生牌面属性。
  * 仅权威端创建使用（结算瞬态对象），镜像端只消费 toData 导出的 VirtualCardData。
  * 单实体牌继承其花色/点数/属性；多实体牌花色点数取无，颜色按子牌同色判定。
+ * @rules terms/card-terms/virtualCard
+ * @description 虚拟牌实体——使用/打出结算的虚拟牌运行时对象
  */
 export class VirtualCard extends ICard {
     readonly room: Room;
@@ -70,17 +72,38 @@ export class VirtualCard extends ICard {
         return this.subcards.map((c) => c.id);
     }
 
-    /** 导出虚拟牌数据（供权威端发消息，镜像端消费此类型） */
+    /** 导出数据缓存（引用稳定，字段随 refresh 同步更新） */
+    private _data?: VirtualCardData;
+
+    /** 导出虚拟牌数据（供权威端发消息，镜像端消费此类型；返回引用稳定，供装备/判定记录匹配） */
     toData(): VirtualCardData {
-        return {
-            name: this.name,
-            suit: this.suit,
-            color: this.color,
-            number: this.number,
-            attr: this.attr,
-            subcards: this.cardIds,
-            data: {},
-        };
+        if (!this._data) {
+            this._data = {
+                name: this.name,
+                suit: this._suit,
+                color: this._color,
+                number: this._number,
+                attr: this._attr,
+                subcards: this.cardIds,
+                data: {},
+            };
+        }
+        // 同步最新牌面
+        this._data.suit = this._suit;
+        this._data.color = this._color;
+        this._data.number = this._number;
+        this._data.attr = this._attr;
+        this._data.subcards = this.cardIds;
+        return this._data;
+    }
+
+    /**
+     * 重新设置虚拟牌属性
+     * @param overrides 需覆盖的属性（未提供时按实体牌派生）
+     * @param _reset 未提供的属性是否更新为默认值（保留参数，兼容移动转移场景调用）
+     */
+    set(overrides: VirtualCardOverrides = {}, _reset: boolean = true): void {
+        this.refresh(overrides);
     }
 
     /** 是否挂有实体牌 */
@@ -88,23 +111,34 @@ export class VirtualCard extends ICard {
         return this.subcards.length > 0;
     }
 
-    /** 添加实体牌（去重） */
+    /** 添加实体牌：建立子牌与虚拟牌的双向链接 */
     addSubCards(cards: GameCard[]): void {
         for (const card of cards) {
-            if (!this.subcards.includes(card)) this.subcards.push(card);
+            if (card.vcard === this) continue;
+            if (card.vcard) {
+                card.vcard.delSubCard(card);
+            }
+            this.subcards.push(card);
+            card.vcard = this;
         }
         this.room.logger.debug('添加实体牌', { roomId: this.room.roomId, name: this.name, subcards: this.cardIds });
     }
 
-    /** 移除实体牌 */
+    /** 移除实体牌：断开子牌与虚拟牌的链接 */
     delSubCard(card: GameCard): void {
         const idx = this.subcards.indexOf(card);
-        if (idx >= 0) this.subcards.splice(idx, 1);
+        if (idx >= 0) {
+            this.subcards.splice(idx, 1);
+            card.vcard = undefined;
+        }
         this.room.logger.debug('移除实体牌', { roomId: this.room.roomId, name: this.name, subcards: this.cardIds });
     }
 
-    /** 清空实体牌 */
+    /** 清空实体牌：断开全部子牌链接 */
     clearSubCards(): void {
+        for (const card of this.subcards) {
+            card.vcard = undefined;
+        }
         this.subcards.length = 0;
         this.room.logger.debug('清空实体牌', { roomId: this.room.roomId, name: this.name });
     }

@@ -78,9 +78,9 @@ async function main(): Promise<void> {
     const room = newRoom();
     const trace: string[] = [];
 
-    class TraceEvent extends EventProcess<EventType.Ready> {
+    class TraceEvent extends EventProcess<EventType.Move> {
         constructor(r: Room) {
-            super(r, EventType.Ready, {});
+            super(r, EventType.Move, { datas: [] });
             this.eventTriggers = [
                 createTiming(
                     TimingName.GameStart,
@@ -119,7 +119,7 @@ async function main(): Promise<void> {
     const p2 = addPlayer(room, 'p2', 2);
     p2.hp = 4;
 
-    await room.damage({ player: p1, target: p2, number: 1, damageType: DamageType.None });
+    await room.damage(p1, p2, 1, DamageType.None);
     check(p2.hp === 3, `damage(1) → hp=${p2.hp}（期望 3）`);
 }
 
@@ -131,7 +131,7 @@ async function main(): Promise<void> {
     const p2 = addPlayer(room, 'p2', 2);
     p2.hp = 1;
 
-    await room.damage({ player: p1, target: p2, number: 2, damageType: DamageType.None });
+    await room.damage(p1, p2, 2, DamageType.None);
     check(p2.hp === -1, `伤害溢出 → hp=${p2.hp}（期望 -1）`);
     check(p2.death === true, '濒死未救活 → 死亡');
     const death = room.getLastOneHistory<EventProcess & { killer?: Player }>('Death');
@@ -147,7 +147,7 @@ async function main(): Promise<void> {
     const p1 = addPlayer(room, 'p1', 1);
     p1.hp = 2;
 
-    await room.recover({ player: p1, number: 3 });
+    await room.recover(p1, 3);
     check(p1.hp === 4, `recover 裁剪 → hp=${p1.hp}（期望 4 = maxhp）`);
 }
 
@@ -158,7 +158,7 @@ async function main(): Promise<void> {
     const p1 = addPlayer(room, 'p1', 1);
     p1.maxhp = 4;
 
-    await room.changeMaxHp({ player: p1, number: 2 });
+    await room.changeMaxHp(p1, 2);
     check(p1.maxhp === 6, `changeMaxHp(+2) → maxhp=${p1.maxhp}`);
 }
 

@@ -18,9 +18,9 @@ const PREVENT_TIMINGS = new Set<TimingName>([
 ]);
 
 /**
- * 伤害事件。
- * 执行流程：DamageStart → Cause1 → Cause2 → Inflict1 → Inflict2 → Inflict3
- *   → CauseAfter（扣减体力）→ InflictAfter → DamageEnd（复活队列 + 连环传导）
+ * 伤害事件
+ * @rules events/damage
+ * @description 执行流程：DamageStart → Cause1 → Cause2 → Inflict1 → Inflict2 → Inflict3 → CauseAfter（扣减体力）→ InflictAfter → DamageEnd（复活队列 + 连环传导）
  */
 export class DamageEvent extends EventProcess<EventType.Damage> {
     /** 是否触发连环伤害（默认 false；ReduceHpEvent 连环处理时标记） */
@@ -36,7 +36,11 @@ export class DamageEvent extends EventProcess<EventType.Damage> {
 
     // ===== 便捷访问器（委托到 eventData） =====
 
-    /** 伤害来源 */
+    /**
+     * 来源（造成伤害的角色）
+     * @rules terms/description-terms/source
+     * @description 来源是造成伤害的角色；伤害结算中若来源已死亡则视为此伤害没有来源
+     */
     get player(): Player | undefined {
         return this.eventData.player;
     }
@@ -52,6 +56,11 @@ export class DamageEvent extends EventProcess<EventType.Damage> {
         this.eventData.target = v;
     }
 
+    /**
+     * 伤害类型（普通/属性伤害）
+     * @rules terms/description-terms/shuxingshanghai
+     * @description 属性伤害分为具有火焰属性的火焰伤害和具有雷电属性的雷电伤害；普通伤害不具有属性
+     */
     get damageType(): DamageType {
         return this.eventData.damageType;
     }
@@ -67,7 +76,11 @@ export class DamageEvent extends EventProcess<EventType.Damage> {
         this.eventData.number = v;
     }
 
-    /** 伤害渠道（卡牌或效果名） */
+    /**
+     * 渠道（造成伤害的牌/技能）
+     * @rules terms/description-terms/channel
+     * @description 因执行技能/牌的效果而造成伤害，此牌/技能可称为造成此伤害的渠道
+     */
     get channel(): VirtualCard | string | undefined {
         return this.eventData.channel;
     }
@@ -75,7 +88,11 @@ export class DamageEvent extends EventProcess<EventType.Damage> {
         this.eventData.channel = v;
     }
 
-    /** 是否为连环伤害 */
+    /**
+     * 是否为连环伤害
+     * @rules terms/description-terms/lianhuanshanghai
+     * @description 连环伤害是不会触发连环传导的属性伤害；因连环传导或转移连环伤害而造成的伤害是连环伤害
+     */
     get isChain(): boolean {
         return this.eventData.isChain ?? false;
     }
@@ -122,11 +139,29 @@ export class DamageEvent extends EventProcess<EventType.Damage> {
         this.room.event.insertHistory(this);
     }
 
-    /** DamageEnd 之后：处理复活队列 + 连环传导 */
+    /**
+     * DamageEnd 之后：处理复活队列 + 连环伤害传导
+     * @rules terms/resolution-terms/origin
+     * @description 起点是「受到不为连环伤害的属性伤害的处于连环状态的角色即此伤害的起点」；本事件作为起点，伤害结算结束后从当前回合角色开始按逆时针方向向其余处于连环状态的角色传导
+     */
     private async _onDamageEnd(_room: Room, _data: DamageEventData): Promise<void> {
         await this.room.event.drainFuhuos();
         if (!this.triggerChain) return;
-        // TODO(R5): 连环伤害传导——遍历 chained 存活玩家逐一创建新的 DamageEvent
+        // 从当前回合角色开始按逆时针方向，处于连环状态的存活角色依次受到同来源、同渠道、同属性、同伤害值的连环伤害
+        for (const p of this.room.sortResponse([...this.room.players.values()])) {
+            if (!p.alive || !p.chained) continue;
+            await this.room.event.damage({
+                player: this.player,
+                target: p,
+                damageType: this.damageType,
+                channel: this.channel,
+                number: this.number,
+                isChain: true,
+                source: this.source,
+                reason: this.reason,
+                effect: this.effect,
+            });
+        }
     }
 
     // ===== 生命周期 =====
@@ -141,7 +176,11 @@ export class DamageEvent extends EventProcess<EventType.Damage> {
 
     // ===== 操作方法 =====
 
-    /** 防止伤害（仅在防止时机内可调用） */
+    /**
+     * 防止伤害（仅在防止时机内可调用）
+     * @rules terms/resolution-terms/prevent
+     * @description 防止是「终止此伤害流程」的操作，防止后来源未造成过此伤害、目标也未受到过此伤害
+     */
     async prevent(): Promise<this> {
         if (this.trigger && PREVENT_TIMINGS.has(this.trigger)) {
             this.room.logger.info(
@@ -154,7 +193,12 @@ export class DamageEvent extends EventProcess<EventType.Damage> {
         return this;
     }
 
-    /** 转移伤害（仅在防止时机内可调用，目标不能是自身） */
+    /**
+     * 转移伤害（仅在防止时机内可调用，目标不能是自身）
+     * @rules terms/description-terms/zhuanyi
+     * @description 转移是先将承受角色 A 受到的伤害防止，然后对另一名角色 B 造成同来源、同渠道、同属性、同伤害值的伤害
+     * @param to 承受伤害的新角色
+     */
     async transfer(to: Player): Promise<this> {
         if (!this.trigger || !PREVENT_TIMINGS.has(this.trigger)) return this;
         if (to === this.target) return this;
@@ -171,8 +215,8 @@ export class DamageEvent extends EventProcess<EventType.Damage> {
             number: this.number,
             isChain: this.isChain,
             source: this.source,
-            reason: this.data.reason as string | undefined,
-            effect: this.data.effect as Effect | undefined,
+            reason: this.reason,
+            effect: this.effect,
         });
         return this;
     }
@@ -181,8 +225,9 @@ export class DamageEvent extends EventProcess<EventType.Damage> {
 // ===== 失去体力事件 =====
 
 /**
- * 失去体力事件。
- * 执行流程：LoseHpStart → LoseHp（扣减体力）→ LoseHpEnd（复活队列）
+ * 失去体力事件
+ * @rules events/lose-hp
+ * @description 执行流程：LoseHpStart → LoseHp（扣减体力）→ LoseHpEnd（复活队列）
  */
 export class LoseHpEvent extends EventProcess<EventType.LoseHp> {
     constructor(room: Room, data: LoseHpEventData) {
@@ -253,7 +298,11 @@ export class LoseHpEvent extends EventProcess<EventType.LoseHp> {
         return this.player.alive;
     }
 
-    /** 防止失去体力（仅在 LoseHpStart 时机可调用） */
+    /**
+     * 防止失去体力（仅在 LoseHpStart 时机可调用）
+     * @rules terms/resolution-terms/prevent
+     * @description 防止是「终止此失去体力流程」的操作
+     */
     async prevent(): Promise<this> {
         if (this.trigger === TimingName.LoseHpStart) {
             this.isEnd = true;
@@ -266,9 +315,9 @@ export class LoseHpEvent extends EventProcess<EventType.LoseHp> {
 // ===== 扣减体力事件 =====
 
 /**
- * 扣减体力事件。
- * 执行流程：ReduceHpStart → ReduceHp → ReduceHpAfter（实际扣减）→ ReduceHpEnd（濒死检查）
- * 连环处理在 init() 中早于所有时机执行。
+ * 扣减体力事件
+ * @rules events/reduce-hp
+ * @description 执行流程：ReduceHpStart → ReduceHp → ReduceHpAfter（实际扣减）→ ReduceHpEnd（濒死检查）；连环处理在 init() 中早于所有时机执行
  */
 export class ReduceHpEvent extends EventProcess<EventType.ReduceHp> {
     constructor(room: Room, data: ReduceHpEventData) {
@@ -381,7 +430,7 @@ export class ReduceHpEvent extends EventProcess<EventType.ReduceHp> {
 
     /** 获取关联的伤害事件 */
     private _getDamage(): DamageEvent | undefined {
-        if (this.source instanceof DamageEvent && this.data.reason === 'reducehp') {
+        if (this.source instanceof DamageEvent && this.reason === 'reducehp') {
             return this.source;
         }
         return undefined;
@@ -389,7 +438,7 @@ export class ReduceHpEvent extends EventProcess<EventType.ReduceHp> {
 
     /** 获取关联的失去体力事件 */
     private _getLoseHp(): LoseHpEvent | undefined {
-        if (this.source instanceof LoseHpEvent && this.data.reason === 'reducehp') {
+        if (this.source instanceof LoseHpEvent && this.reason === 'reducehp') {
             return this.source;
         }
         return undefined;

@@ -10,6 +10,8 @@ import type { TimingData, TimingTrigger } from '../types/EventTypes';
 /**
  * 触发类效果——响应事件时机的效果。
  * 触发配置执行（can_trigger/choose/cost/effect 回调）与发动行为判定在此类。
+ * @rules terms/card-face-terms/skill
+ * @description 触发类效果类——技能的触发类能力实现
  */
 export class TriggerEffect extends Effect {
     constructor(room: Room, data: EffectData, skill?: Skill, player?: Player, options?: EffectOptions) {

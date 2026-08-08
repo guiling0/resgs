@@ -4,7 +4,9 @@ import type { VirtualCard } from '../../entity/VirtualCard';
 import { AreaType } from '../../types/AreaTypes';
 import { EventProcess, createTiming } from './EventProcess';
 import { EventType, TimingName } from '../../types/EventTypes';
-import type { TargetEntry, UseCardEventData } from '../../types/EventTypes';
+import { CardSubType, CardType } from '../../types/CardTypes';
+import type { MoveCardData, TargetEntry, UseCardEventData } from '../../types/EventTypes';
+import { sgs } from '../../sgs';
 
 /** 目标扩展的四阶段 */
 const TARGET_PHASES = [
@@ -14,13 +16,13 @@ const TARGET_PHASES = [
     TimingName.UseCardBecomeTargetAfter,
 ] as const;
 
+/** 合法性检测的异样规则类型（成为目标的例外条件） */
+export type TargetValidType = 'unlimitedDistance';
+
 /**
- * 牌的使用事件。
- * 目标扩展与使用结算采用**生成式**时序——每个时机完成后根据当前状态即时生成下一个时机。
- * 流程：预结算固定段（Declare → DeclareAfter → ChooseTarget → Used）
- *   → 目标扩展段（逐阶段 × 逐个当前目标）→ Ready（移除死者）
- *   → 结算段（按 effectTimes 轮询：EffectStart → EffectBefore(offset 检查) → Effect → EffectAfter）
- *   → 结束后固定段（End1 → End2 → End3 虚拟牌消失）
+ * 牌的使用事件
+ * @rules events/use-card
+ * @description 采用生成式时序（每个时机完成后根据当前状态即时生成下一个）。三种使用路径：正常使用（完整序列：Declare → DeclareAfter → ChooseTarget → Used → 目标扩展段 → Ready → 结算段 → End）；目标是牌（无目标扩展段）；无使用者直接结算延时锦囊效果（仅结算段）。Ready 移除死者并安置装备/延时锦囊牌
  */
 export class UseCardEvent extends EventProcess<EventType.UseCard> {
     /** 目标自增 id——仅用于同玩家时稳定排序，不回写 */
@@ -57,7 +59,12 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
 
     // ===== 便利访问器 =====
 
-    get player(): Player {
+    /**
+     * 使用者
+     * @rules terms/description-terms/user
+     * @description 使用/打出者即使用/打出此牌的角色
+     */
+    get player(): Player | undefined {
         return this.eventData.player;
     }
 
@@ -69,18 +76,35 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
         return this.eventData.targets;
     }
 
+    /**
+     * 目标列表
+     * @rules terms/description-terms/target
+     * @description 此牌的目标即此牌的目标列表里的所有目标
+     */
     get targetList(): TargetEntry[] {
         return this.eventData.targetList!;
+    }
+
+    /**
+     * 目标对应的角色数
+     * @rules terms/value-terms/targetCount
+     * @description 目标列表中不同角色的数量（按角色去重）
+     */
+    get targetCount(): number {
+        return new Set(this.targetList.map((e) => e.target)).size;
     }
 
     // ===== Timing 预构建（固定段） =====
 
     private _buildTriggers(): void {
         if (this.eventData.responseTo) {
-            // 响应路径（目标是牌）：仅 UseCardUsed（前置 Declare 移动卡牌）
+            // 响应路径（目标是牌）：无目标扩展段（声明使用牌后/选择目标后/指定目标/成为目标及其后置时机不触发）
             this.eventTriggers = [
-                createTiming(TimingName.UseCardUsed, [
+                createTiming(TimingName.UseCardDeclare, [
                     this.bindWithMark(this._onUseCardDeclare),
+                ]),
+                createTiming(TimingName.UseCardUsed, [
+                    this.bindWithMark(this._onUseCardUsed),
                 ]),
             ];
         } else {
@@ -112,14 +136,14 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
     // ===== 生命周期 =====
 
     check(): boolean {
-        if (this.eventData.responseTo) {
+        if (this.eventData.responseTo || this.eventData.directSettle) {
             return !!this.card && !this.card.destroyed;
         }
         return this.targetList.length > 0 && !!this.card && !this.card.destroyed;
     }
 
     checkEvent(): boolean {
-        if (this.eventData.responseTo) return !this.room.isEnding;
+        if (this.eventData.responseTo || this.eventData.directSettle) return !this.room.isEnding;
         return !this.room.isEnding && this.targetList.length > 0;
     }
 
@@ -129,10 +153,21 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
         if (!this.check()) return this;
         await this.init();
 
-        // ===== 响应路径（目标是牌） =====
+        // ===== ③ 无使用者直接结算（延时锦囊效果）：仅结算段时机 =====
+        if (this.eventData.directSettle) {
+            await this._runSettleLoop();
+            return this._finish();
+        }
+
+        // ===== ② 响应路径（目标是牌）：无目标扩展段 =====
         if (this.eventData.responseTo) {
             await this._runFixedTriggers();
             if (this.isEnd || this.isComplete) return this._finish();
+            await this._runReady();
+            if (this.isEnd || this.isComplete || this.targetList.length === 0) {
+                return this._finish();
+            }
+            await this._runSettleLoop();
             await this._applyResponse();
             return this._finish();
         }
@@ -145,11 +180,7 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
         await this._runTargetPhases();
 
         // Ready
-        await this._runTiming(
-            createTiming(TimingName.UseCardReady, [
-                this.bindWithMark(this._onUseCardReady),
-            ]),
-        );
+        await this._runReady();
         if (this.isEnd || this.isComplete || this.targetList.length === 0) {
             return this._finish();
         }
@@ -179,6 +210,15 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
     private async _runTiming(timing: ReturnType<typeof createTiming>): Promise<void> {
         if (this.isComplete || this.room.isEnding) return;
         await this.triggerFunc(timing);
+    }
+
+    /** 执行 Ready 时机：移除死者、重排序、安置装备/延时锦囊 */
+    private async _runReady(): Promise<void> {
+        await this._runTiming(
+            createTiming(TimingName.UseCardReady, [
+                this.bindWithMark(this._onUseCardReady),
+            ]),
+        );
     }
 
     /** 完成事件：执行 endTriggers + processCompleted */
@@ -339,12 +379,69 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
         // 定型逻辑由统一入口处理
     });
 
-    /** UseCardReady 之前：移除死者并重排序 */
+    /** UseCardReady 之前：移除死者、重排序；装备牌/延时锦囊牌安置后结束 */
     private async _onUseCardReady(_room: Room, _data: UseCardEventData): Promise<void> {
+        // 移除已死亡目标并重排序，形成最终目标列表
         this.eventData.targetList = this.targetList.filter((e) => e.target.alive);
         if (this.targetList.length > 0) {
             this._sortTargets();
         }
+        // 目标列表没有任何角色：使用事件结束
+        if (this.targetList.length === 0) {
+            await this.end();
+            return;
+        }
+        // 装备牌：实体牌置入第一个目标的装备区后结束
+        if (this.card.type === CardType.Equip) {
+            await this._equipToFirstTarget();
+            await this.end();
+            return;
+        }
+        // 延时锦囊牌：实体牌置入第一个目标的判定区（或同名牌时结束）
+        if (this.card.subtype === CardSubType.DelayedScroll) {
+            await this._delayedScrollToFirstTarget();
+            await this.end();
+            return;
+        }
+        // 基本牌/非延时锦囊：继续后续结算流程
+    }
+
+    /** 装备牌：将实体牌置入第一个目标的装备区（同栏已有装备一并弃置，经一个移动事件处理） */
+    private async _equipToFirstTarget(): Promise<void> {
+        const target = this.targetList[0].target;
+        const cards = [...this.card.subcards];
+        if (cards.length === 0) return;
+        const datas: MoveCardData[] = [];
+        // 目标装备区有已记录的同类型装备：将其实体牌置入弃牌堆
+        const subtype = sgs.carddatas.get(this.card.name)?.subtype;
+        const oldEquip =
+            subtype !== undefined
+                ? target.equips.find((e) => sgs.carddatas.get(e.name)?.subtype === subtype)
+                : undefined;
+        if (oldEquip) {
+            const oldCards = this.room.getCards(oldEquip.subcards);
+            if (oldCards.length > 0) {
+                datas.push({ cards: oldCards, toArea: AreaType.Discard, reason: 'equip' });
+            }
+        }
+        // 新装备实体牌置入目标装备区
+        datas.push({ cards, toArea: target.getAreaId(AreaType.Equip), reason: 'equip' });
+        await this.room.event.moveCards(datas, { source: this });
+    }
+
+    /** 延时锦囊牌：目标判定区无同名牌时置入判定区；有同名牌则结束（实体牌经处理区清理时消失） */
+    private async _delayedScrollToFirstTarget(): Promise<void> {
+        const target = this.targetList[0].target;
+        // 目标判定区已有同名牌：使用事件结束，虚拟牌经处理区清理时消失
+        if (target.judgeCards.some((j) => j.name === this.card.name)) {
+            return;
+        }
+        const cards = [...this.card.subcards];
+        if (cards.length === 0) return;
+        await this.room.event.moveCards(
+            [{ cards, toArea: target.getAreaId(AreaType.Judge), reason: 'use' }],
+            { source: this },
+        );
     }
 
     /** 响应路径：对被响应的牌设置 offset */
@@ -355,7 +452,7 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
             if (ev instanceof UseCardEvent && ev !== this && ev.card === responseTo) {
                 const settlingTarget = (ev as unknown as { _settlingTarget?: Player })._settlingTarget;
                 if (settlingTarget) {
-                    ev.offsetTarget(settlingTarget, this);
+                    ev.offset(settlingTarget, this);
                 }
                 return;
             }
@@ -370,12 +467,13 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
         }
     }
 
-    /** UseCardEnd3 之后：虚拟牌消失 */
+    /** UseCardEnd3 之后：虚拟牌消失（装备牌与延时锦囊牌的虚拟牌由移动事件安置，不销毁） */
     private async _onUseCardEnd3(_room: Room, _data: UseCardEventData): Promise<void> {
         const card = this.card;
-        if (card) {
-            this.room.destroyVirtualCard(card);
-        }
+        if (!card) return;
+        if (card.type === CardType.Equip) return;
+        if (card.subtype === CardSubType.DelayedScroll) return;
+        this.room.destroyVirtualCard(card);
     }
 
     // ===== 目标列表管理 =====
@@ -410,8 +508,14 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
         });
     }
 
-    /** 转移目标：替换目标玩家 + 重排序 */
-    changeTarget(oldTarget: Player, newTarget: Player): void {
+    /**
+     * 转移目标：取消此目标并生成与角色 B 具有对应关系的新的目标加入目标列表 + 重排序
+     * @rules terms/description-terms/zhuanyi
+     * @description 转移目标即取消原目标，并将此牌的目标改为另一名角色
+     * @param oldTarget 原目标角色
+     * @param newTarget 新目标角色
+     */
+    transfer(oldTarget: Player, newTarget: Player): void {
         const entry = this.targetList.find((e) => e.target === oldTarget);
         if (!entry) return;
         entry.target = newTarget;
@@ -434,23 +538,61 @@ export class UseCardEvent extends EventProcess<EventType.UseCard> {
         return entry;
     }
 
-    /** 取消目标：移出列表 + 终止当前时机 */
-    cancelTarget(target: Player): void {
+    /**
+     * 也成为目标：将玩家列表作为此牌的合法目标加入目标列表
+     * @rules terms/description-terms/yechengweimubiao
+     * @description 对玩家列表进行此牌的合法性检测（距离条件可经 type 豁免），通过检测且不在当前目标列表中的玩家以 addTarget 加入
+     * @param players 新目标玩家列表
+     * @param type 合法性检测的异样规则类型（如无视距离限制）
+     */
+    becomeTarget(players: Player[], type?: TargetValidType): void {
+        const cardUse = this.room.carduses.get(this.card.name);
+        if (!cardUse || !this.player) return;
+        const validTargets = cardUse.target(this.room, this.player, this.card);
+        for (const p of players) {
+            // 合法性检测：非此牌的合法目标不能成为目标
+            if (!validTargets.includes(p)) continue;
+            // 距离条件检测（异样规则类型可豁免）
+            if (
+                type !== 'unlimitedDistance' &&
+                cardUse.distanceCondition &&
+                !cardUse.distanceCondition(this.room, this.player, p, this.card)
+            ) {
+                continue;
+            }
+            // 已在目标列表中不重复加入
+            if (this.targetList.some((e) => e.target === p)) continue;
+            this.addTarget(p);
+        }
+    }
+
+    /**
+     * 取消目标：移出目标列表并终止当前时机
+     * @rules terms/resolution-terms/cancel
+     * @description 取消是「在响应过程中将目标移出目标列表并终止此时机」的操作
+     * @param target 被取消的目标
+     */
+    cancel(target: Player): void {
         const idx = this.targetList.findIndex((e) => e.target === target);
         if (idx < 0) return;
         this.targetList.splice(idx, 1);
         this.triggerable = false;
     }
 
-    /** 标记无效（跳过生效时机） */
-    markInvalid(target: Player): void {
+    /**
+     * 标记无效：此牌对该目标无效（跳过生效时机）
+     * @rules terms/resolution-terms/invalid
+     * @description 无效是「一张牌对一个目标无效，即不会生成对此目标生效的四个时机」的标记
+     * @param target 被标记无效的目标
+     */
+    invalid(target: Player): void {
         const entry = this.targetList.find((e) => e.target === target);
         if (!entry) return;
         entry.invalid = true;
     }
 
     /** 标记被抵消 */
-    offsetTarget(target: Player, offsetEvent: EventProcess): void {
+    offset(target: Player, offsetEvent: EventProcess): void {
         const entry = this.targetList.find((e) => e.target === target);
         if (!entry) return;
         entry.offset = offsetEvent;

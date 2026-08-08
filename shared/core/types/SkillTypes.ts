@@ -3,7 +3,6 @@ import type { Room } from '../entity/Room';
 import type { Skill } from '../entity/Skill';
 import type { Effect } from '../entity/Effect';
 import type { General } from '../entity/General';
-import type { GameCard } from '../entity/GameCard';
 import type { TimingData, TimingTrigger } from './EventTypes';
 import type { ChooseSession } from './ChooseTypes';
 import type { SkillAI } from './AITypes';
@@ -36,21 +35,53 @@ export enum PriorityType {
 /** 技能标签 */
 export enum SkillTag {
     None = 0,
-    /** 锁定技 */
+    /**
+     * 锁定技
+     * @rules terms/description-terms/lock
+     * @description 技能的标签之一，作用是令带有此标签的技能不被克制
+     */
     Lock,
-    /** 主将技 */
+    /**
+     * 主将技
+     * @rules terms/description-terms/head_deputy
+     * @description 若此武将牌为主将，带有此标签的技能才有效
+     */
     Head,
-    /** 副将技 */
+    /**
+     * 副将技
+     * @rules terms/description-terms/head_deputy
+     * @description 若此武将牌为副将，带有此标签的技能才有效
+     */
     Deputy,
-    /** 觉醒技 */
+    /**
+     * 觉醒技
+     * @rules terms/description-terms/awake
+     * @description 技能的标签之一，带有此标签的技能视为附带锁定技和限定技标签
+     */
     Awake,
-    /** 限定技 */
+    /**
+     * 限定技
+     * @rules terms/description-terms/limit
+     * @description 技能的标签之一，带有此标签的技能于一局游戏内发动次数上限为1
+     */
     Limit,
-    /** 主公技/君主技 */
+    /**
+     * 主公技
+     * @rules terms/description-terms/lord
+     * @description 技能的标签之一，只有身份为主公时才能拥有此类技能
+     */
     Lord,
-    /** 阵法技 */
+    /**
+     * 阵法技
+     * @rules terms/description-terms/array
+     * @description 技能的标签之一，触发类必须发动、状态类必须产生影响、角色数小于4时无效、以座次关系为条件
+     */
     Array,
-    /** 奥秘技 */
+    /**
+     * 奥秘技
+     * @rules terms/description-terms/secret
+     * @description 技能的标签之一，发动时不声明发动，直接执行技能的效果
+     */
     Secret,
     /** 持恒技 */
     Eternal,
@@ -87,8 +118,10 @@ export interface AutoRemoveCallback<T extends TimingTrigger, This> {
 
 /** 技能运行时选项 */
 export interface SkillOptions {
-    /** 来源（武将/装备/效果，构造时推断 sourceGeneral/sourceEquip/sourceEffect） */
-    source?: General | GameCard | Effect;
+    /** 来源（武将/效果，构造时推断 sourceGeneral/sourceEffect） */
+    source?: General | Effect;
+    /** 是否来源于装备（装备技能为 true） */
+    fromEquip?: boolean;
     /** 按钮显示方式 */
     showui?: 'none' | 'default' | 'other' | 'mark' | 'card';
     /** 跳过主公检查 */
@@ -113,7 +146,11 @@ export interface EffectOptions {
     refreshs?: Array<TimingCallback<TimingTrigger, Effect>>;
 }
 
-/** 技能定义数据（注册到 sgs.skills，技能全名即 id） */
+/**
+ * 技能定义数据（注册到 sgs.skills，技能全名即 id）
+ * @rules terms/card-face-terms/skill
+ * @description 技能是角色于游戏规则和用语操作规范外拥有的能力或能进行的操作，包括武将技能和装备技能
+ */
 export interface SkillData {
     /** 技能名（等同技能 id） */
     name: string;
@@ -224,7 +261,11 @@ export interface TriggerEffectData<T extends TimingTrigger = TimingTrigger> {
 /** 状态类效果数据（状态回调直接继承） */
 export interface StateEffectData extends Partial<StateCallbackMap> {}
 
-/** 效果定义数据（注册到 sgs.effects） */
+/**
+ * 效果定义数据（注册到 sgs.effects）
+ * @rules terms/card-face-terms/skill
+ * @description 效果是技能的具体实现载体，按类别分为触发类效果与状态类效果
+ */
 export interface EffectData {
     /** 效果全名 */
     name: string;

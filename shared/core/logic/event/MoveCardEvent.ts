@@ -3,6 +3,7 @@ import type { Player } from '../../entity/Player';
 import type { GameCard } from '../../entity/GameCard';
 import type { AreaId } from '../../types/AreaTypes';
 import { AreaType } from '../../types/AreaTypes';
+import { CardSubType, CardType, EquipSubType } from '../../types/CardTypes';
 import type { RichString } from '../../types/RichText';
 import { parseAreaId } from '../../utils/AreaUtils';
 import { EventProcess, createTiming } from './EventProcess';
@@ -26,9 +27,9 @@ function getDefaultPut(areaId: AreaId): boolean {
 }
 
 /**
- * 移动卡牌事件。
- * 执行流程：MoveCardFixed → Before1 → Before2 → After1（实际移动）→ After2 → MoveCardEnd
- * 在 MoveCardBefore1/2 期间可调用 cancel()/preventMove() 取消或阻止移动。
+ * 移动卡牌事件
+ * @rules events/move-card
+ * @description 执行流程：MoveCardFixed → Before1 → Before2 → After1（实际移动）→ After2 → MoveCardEnd；MoveCardBefore1/2 期间可调用 cancel()/preventMove() 取消或阻止移动
  */
 export class MoveCardEvent extends EventProcess<EventType.Move> {
     /** 分类后的移动数据 */
@@ -93,7 +94,41 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
 
     /** MoveCardFixed: 固定移动（对移动数据做最终校正，子类或外部可覆写） */
     private async _onMoveCardFixed(_room: Room, _data: MoveEventData): Promise<void> {
-        // 默认空实现，预留扩展点
+        // 目标区域被废除时：装备牌/判定牌的目标区域改为弃牌堆（置于/入的封印规则统一在移动事件中处理）
+        const result: MoveCardData[] = [];
+        for (const data of this.move_datas) {
+            const toPlayer = playerOf(data.toArea, this.room);
+            const toType = areaTypeOf(data.toArea);
+            if (!toPlayer || (toType !== AreaType.Equip && toType !== AreaType.Judge)) {
+                result.push(data);
+                continue;
+            }
+            const abolished = new Set<EquipSubType | AreaType.Judge>(toPlayer.abolishAreas.toArray());
+            // 按虚拟牌（或实体牌自身）判断是否受废除影响：装备牌按副类别，判定牌按延时锦囊
+            const redirect = data.cards.filter((card) => {
+                const vcard = card.vcard;
+                const src = vcard ?? card;
+                if (toType === AreaType.Equip) {
+                    if (src.type !== CardType.Equip) return false;
+                    return abolished.has(src.subtype as unknown as EquipSubType);
+                }
+                if (toType === AreaType.Judge) {
+                    if (src.subtype !== CardSubType.DelayedScroll) return false;
+                    return abolished.has(AreaType.Judge);
+                }
+                return false;
+            });
+            if (redirect.length === 0) {
+                result.push(data);
+                continue;
+            }
+            // 未受废除影响的牌保留原目标，受影响的牌拆分为独立数据改置弃牌堆
+            const kept = data.cards.filter((c) => !redirect.includes(c));
+            if (kept.length > 0) result.push({ ...data, cards: kept });
+            result.push({ ...data, cards: redirect, toArea: toPlayer.getAreaId(AreaType.Discard) });
+        }
+        this.move_datas = result;
+        this.eventData.datas = result;
     }
 
     /** MoveCardAfter1 之前：执行实际卡牌移动 */
@@ -142,23 +177,69 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
 
     // ===== 虚拟牌处理 =====
 
-    /** 移动后处理虚拟牌关联 */
+    /** 移动后处理虚拟牌及装备牌关联 */
     protected async handleVirtualCard(
         card: GameCard,
-        _fromArea: AreaId,
+        fromArea: AreaId,
         toArea: AreaId,
     ): Promise<void> {
-        const vcard = card.vcard;
+        const fromType = areaTypeOf(fromArea);
+        const toType = areaTypeOf(toArea);
+        const fromPlayer = playerOf(fromArea, this.room);
+        const toPlayer = playerOf(toArea, this.room);
+        let vcard = card.vcard;
+
+        // 装备牌：进入装备区时更新装备记录（无虚拟牌时创建唯一对应该实体牌的虚拟牌）
+        if (card.type === CardType.Equip) {
+            if (toType === AreaType.Equip && toPlayer) {
+                if (!vcard) {
+                    vcard = this.room.createVirtualCard(card);
+                } else if (fromType === AreaType.Processing || fromType === AreaType.Equip) {
+                    // 处理区/装备区 → 装备区：重新设置属性（虚拟牌不消失）
+                    vcard.set();
+                }
+                toPlayer.setEquip(vcard.toData());
+            } else if (fromType === AreaType.Equip && fromPlayer && vcard) {
+                // 离开装备区：删除记录的装备
+                fromPlayer.removeEquip(vcard.toData());
+            }
+            // 移出处理区与装备区：删除虚拟牌
+            if (vcard && toType !== AreaType.Processing && toType !== AreaType.Equip) {
+                this.room.destroyVirtualCard(vcard);
+            }
+            return;
+        }
+
         if (!vcard) return;
 
-        const toType = areaTypeOf(toArea);
-        // TODO(R1): 延时锦囊——处理区→判定区重建属性、判定区→判定区转移、移出时销毁
-        // TODO(R1): 装备牌——进入/离开装备区时更新玩家装备记录
+        // 延时锦囊
+        if (vcard.subtype === CardSubType.DelayedScroll) {
+            // 离开判定区：删除记录的延时锦囊牌
+            if (fromType === AreaType.Judge && fromPlayer) {
+                fromPlayer.removeJudgeCard(vcard.toData());
+            }
+            // 进入判定区：记录延时锦囊牌
+            if (toType === AreaType.Judge && toPlayer) {
+                toPlayer.setJudgeCard(vcard.toData());
+            }
+            // 处理区 → 判定区：重新设置属性
+            if (fromType === AreaType.Processing && toType === AreaType.Judge) {
+                vcard.set();
+            }
+            // 判定区 → 判定区：转移，重新设置属性
+            if (fromType === AreaType.Judge && toType === AreaType.Judge) {
+                vcard.set({}, true);
+            }
+            // 移出处理区和判定区：删除虚拟牌
+            if (toType !== AreaType.Processing && toType !== AreaType.Judge) {
+                this.room.destroyVirtualCard(vcard);
+            }
+            return;
+        }
 
-        // 虚拟牌移动到非处理区 → 销毁（清子牌链接并标记）
+        // 其他虚拟牌：移动到非处理区则销毁（清子牌链接并标记）
         if (toType !== AreaType.Processing) {
             this.room.destroyVirtualCard(vcard);
-            card.vcard = undefined;
         }
     }
 
@@ -320,8 +401,13 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
     // ===== 按原因分类的查询方法（各操作共享） =====
 
     /**
-     * 获取某玩家因指定原因会失去的牌的数据。
-     * 失去 = 原区域是该玩家的手牌/装备区，目标区域不是该玩家的手牌/装备区。
+     * 获取某玩家因指定原因会失去的牌的数据
+     * @rules terms/card-op-terms/lose
+     * @description 失去 = 原区域是该玩家的手牌/装备区，目标区域不是该玩家的手牌/装备区
+     * @param player 失去牌的角色
+     * @param reason 移动原因
+     * @param pos 失去的牌区（h=手牌，e=装备区，默认 'he'）
+     * @returns 符合条件的移动数据
      */
     getLoseByReason(player: Player, reason: string, pos: string = 'he'): MoveCardData[] {
         return this.filter((d, _c) => {
@@ -344,7 +430,15 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
         });
     }
 
-    /** getLoseByReason 的 GameCard[] 版本 */
+    /**
+     * 获取某玩家因指定原因会失去的牌
+     * @rules terms/card-op-terms/lose
+     * @description getLoseByReason 的 GameCard[] 版本
+     * @param player 失去牌的角色
+     * @param reason 移动原因
+     * @param pos 失去的牌区（h=手牌，e=装备区，默认 'he'）
+     * @returns 失去的牌
+     */
     getLoseCardsByReason(player: Player, reason: string, pos: string = 'he'): GameCard[] {
         const cards: GameCard[] = [];
         for (const d of this.getLoseByReason(player, reason, pos)) {
@@ -353,14 +447,26 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
         return cards;
     }
 
-    /** 是否有因指定原因失去牌的数据 */
+    /**
+     * 是否有因指定原因失去牌的数据
+     * @rules terms/card-op-terms/lose
+     * @description 检测是否因指定原因失去牌
+     * @param player 失去牌的角色
+     * @param reason 移动原因
+     * @param pos 失去的牌区（h=手牌，e=装备区，默认 'he'）
+     * @returns 是否有失去
+     */
     hasLoseByReason(player: Player, reason: string, pos: string = 'he'): boolean {
         return this.getLoseByReason(player, reason, pos).length > 0;
     }
 
     /**
-     * 获取某玩家因指定原因会获得的牌的数据。
-     * 获得 = 原区域不是该玩家的手牌区，目标区域是该玩家的手牌区。
+     * 获取某玩家因指定原因会得到的牌的数据
+     * @rules terms/card-op-terms/gain
+     * @description 得到 = 原区域不是该玩家的手牌区，目标区域是该玩家的手牌区
+     * @param player 得到牌的角色
+     * @param reason 移动原因
+     * @returns 符合条件的移动数据
      */
     getObtainByReason(player: Player, reason: string): MoveCardData[] {
         const handArea = player.getAreaId(AreaType.Hand);
@@ -375,7 +481,14 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
         });
     }
 
-    /** getObtainByReason 的 GameCard[] 版本 */
+    /**
+     * 获取某玩家因指定原因会得到的牌
+     * @rules terms/card-op-terms/gain
+     * @description getObtainByReason 的 GameCard[] 版本
+     * @param player 得到牌的角色
+     * @param reason 移动原因
+     * @returns 得到的牌
+     */
     getObtainCardsByReason(player: Player, reason: string): GameCard[] {
         const cards: GameCard[] = [];
         for (const d of this.getObtainByReason(player, reason)) {
@@ -384,7 +497,14 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
         return cards;
     }
 
-    /** 是否有因指定原因获得牌的数据 */
+    /**
+     * 是否有因指定原因得到牌的数据
+     * @rules terms/card-op-terms/gain
+     * @description 检测是否因指定原因得到牌
+     * @param player 得到牌的角色
+     * @param reason 移动原因
+     * @returns 是否有得到
+     */
     hasObtainByReason(player: Player, reason: string): boolean {
         return this.getObtainByReason(player, reason).length > 0;
     }
@@ -392,7 +512,9 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
     // ===== 取消与阻止 =====
 
     /**
-     * 取消移动（仅在 MoveCardBefore1/2 时机可调用）。
+     * 取消移动（仅在 MoveCardBefore1/2 时机可调用）
+     * @rules terms/resolution-terms/cancel
+     * @description 取消是「在响应过程中将部分牌移出此次移动」的操作，被取消的牌不再是此次移动的牌
      * @param cards 要取消移动的牌。不提供则等同于 preventMove()
      * @param prevent 取消后若所有牌都被取消，是否自动阻止事件
      */
@@ -428,11 +550,8 @@ export class MoveCardEvent extends EventProcess<EventType.Move> {
 
     // ===== 内部辅助 =====
 
-    /** 在区域集合中查找牌所在区域 */
+    /** 查询牌所在区域（经 card.area 直接读取） */
     private findAreaOf(card: GameCard) {
-        for (const area of this.room.areas.values()) {
-            if (area.has(card)) return area;
-        }
-        return undefined;
+        return card.area;
     }
 }

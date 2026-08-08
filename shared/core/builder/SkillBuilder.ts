@@ -133,7 +133,7 @@ class _SkillBuilder implements SkillBuilder {
     }
 }
 
-/** 构建并注册技能数据（sgs.Skill）——name 必传，内部经 SkillBuilder 复用默认值并连带注册效果；已注册则直接返回已有数据 */
+/** 构建并注册技能数据（sgs.createSkill）——name 必传，内部经 SkillBuilder 复用默认值并连带注册效果；已注册则直接返回已有数据 */
 export function Skill(input: Pick<SkillData, 'name'> & Partial<SkillData>): SkillData {
     if (sgs.skills.has(input.name)) {
         return sgs.skills.get(input.name)!;

@@ -2,6 +2,7 @@ import { Card as buildCardData, CardBuilder as cardBuilderFactory } from './buil
 import { General as buildGeneralData, GeneralBuilder as generalBuilderFactory } from './builder/GeneralBuilder';
 import { Skill as buildSkillData, SkillBuilder as skillBuilderFactory } from './builder/SkillBuilder';
 import { Effect as buildEffectData, EffectBuilder as effectBuilderFactory } from './builder/EffectBuilder';
+import { Mode as buildModeData, ModeBuilder as modeBuilderFactory } from './builder/ModeBuilder';
 import { consoleLogger } from './ConsoleLogger';
 import type { ILogger } from './ILogger';
 import type { CardData, GameCardData } from './types/CardTypes';
@@ -10,6 +11,28 @@ import type { CardPackageData, GeneralPackData } from './types/PackageTypes';
 import type { EffectData, SkillData } from './types/SkillTypes';
 import type { CardUseData } from './types/EventTypes';
 import type { CardAssets, GeneralConfig, GeneralInfo, GeneralSkin } from './types/AssetsTypes';
+import { TimingName, EventType, DamageType } from './types/EventTypes';
+import { EffectType, PriorityType, SkillTag, StateEffectType } from './types/SkillTypes';
+import { CardAttr, CardSuit, CardNumber, CardColor, CardType, CardSubType, EquipSubType } from './types/CardTypes';
+import { AreaType } from './types/AreaTypes';
+import { Phase } from './types/PlayerTypes';
+import { Gender } from './types/GeneralTypes';
+import { SelectorType, PlayPhaseResult } from './types/ChooseTypes';
+import { StrategyType } from './types/AITypes';
+import { GameState } from './types/GameState';
+import type { GameModeData } from './types/ModeTypes';
+import { GameCard } from './entity/GameCard';
+import { VirtualCard } from './entity/VirtualCard';
+import { General } from './entity/General';
+import { Player } from './entity/Player';
+import { Skill } from './entity/Skill';
+import { Effect } from './entity/Effect';
+import { TriggerEffect } from './entity/TriggerEffect';
+import { StateEffect } from './entity/StateEffect';
+import { Room } from './entity/Room';
+import { Area } from './entity/Area';
+import { ICard } from './entity/ICard';
+import { Mark } from './entity/Mark';
 
 class RESGS {
     private static instance: RESGS;
@@ -53,7 +76,7 @@ class RESGS {
     // ===== 静态数据 =====
 
     /** 游戏模式 */
-    public readonly modes: Map<string, unknown> = new Map();
+    public readonly modes: Map<string, GameModeData> = new Map();
     /** 卡牌扩展包 */
     public readonly cardpacks: Map<string, CardPackageData> = new Map();
     /** 游戏牌（实体牌数据，id → 数据） */
@@ -80,24 +103,98 @@ class RESGS {
     /** 武将皮肤（武将真名 → 皮肤列表，重复注册 push 且皮肤名去重） */
     public readonly generalSkinMap: Map<string, GeneralSkin[]> = new Map();
 
+    // ===== 枚举与实体类（全局注入，扩展经 sgs.xxx 访问） =====
+
+    /** 时机枚举 */
+    public readonly TimingName = TimingName;
+    /** 事件类型枚举 */
+    public readonly EventType = EventType;
+    /** 伤害类型枚举 */
+    public readonly DamageType = DamageType;
+    /** 效果类别枚举 */
+    public readonly EffectType = EffectType;
+    /** 触发优先级枚举 */
+    public readonly PriorityType = PriorityType;
+    /** 技能标签枚举 */
+    public readonly SkillTag = SkillTag;
+    /** 状态效果类型枚举 */
+    public readonly StateEffectType = StateEffectType;
+    /** 卡牌属性枚举 */
+    public readonly CardAttr = CardAttr;
+    /** 卡牌花色枚举 */
+    public readonly CardSuit = CardSuit;
+    /** 卡牌点数枚举 */
+    public readonly CardNumber = CardNumber;
+    /** 卡牌颜色枚举 */
+    public readonly CardColor = CardColor;
+    /** 卡牌类别枚举 */
+    public readonly CardType = CardType;
+    /** 卡牌副类别枚举 */
+    public readonly CardSubType = CardSubType;
+    /** 装备副类别枚举 */
+    public readonly EquipSubType = EquipSubType;
+    /** 区域类型枚举 */
+    public readonly AreaType = AreaType;
+    /** 阶段枚举 */
+    public readonly Phase = Phase;
+    /** 性别枚举 */
+    public readonly Gender = Gender;
+    /** 选择器类型枚举 */
+    public readonly SelectorType = SelectorType;
+    /** 出牌阶段操作枚举 */
+    public readonly PlayPhaseResult = PlayPhaseResult;
+    /** AI 策略类型枚举 */
+    public readonly StrategyType = StrategyType;
+    /** 游戏状态枚举 */
+    public readonly GameState = GameState;
+
+    /** 实体牌类 */
+    public readonly GameCard = GameCard;
+    /** 虚拟牌类 */
+    public readonly VirtualCard = VirtualCard;
+    /** 武将类 */
+    public readonly General = General;
+    /** 玩家类 */
+    public readonly Player = Player;
+    /** 技能类 */
+    public readonly Skill = Skill;
+    /** 效果抽象类 */
+    public readonly Effect = Effect;
+    /** 触发效果类 */
+    public readonly TriggerEffect = TriggerEffect;
+    /** 状态效果类 */
+    public readonly StateEffect = StateEffect;
+    /** 房间类 */
+    public readonly Room = Room;
+    /** 区域类 */
+    public readonly Area = Area;
+    /** 卡牌抽象基类 */
+    public readonly ICard = ICard;
+    /** 标记抽象基类 */
+    public readonly Mark = Mark;
+
     // ===== 卡牌构建与注册 =====
 
     /** 实体牌数据构建器（链式，sgs.CardBuilder('sha')） */
     public readonly CardBuilder = cardBuilderFactory;
-    /** 实体牌数据构建（全可选字段，sgs.Card({ name: 'sha' })） */
-    public readonly Card = buildCardData;
+    /** 实体牌数据构建（全可选字段，sgs.createCard({ name: 'sha' })） */
+    public readonly createCard = buildCardData;
     /** 武将数据构建器（链式，name 必传，sgs.GeneralBuilder('caocao')） */
     public readonly GeneralBuilder = generalBuilderFactory;
-    /** 武将数据构建（name 必传，其余可选，sgs.General({ name: 'caocao' })） */
-    public readonly General = buildGeneralData;
+    /** 武将数据构建（name 必传，其余可选，sgs.createGeneral({ name: 'caocao' })） */
+    public readonly createGeneral = buildGeneralData;
     /** 技能数据构建器（链式，name 必传，sgs.SkillBuilder('jianxiong')） */
     public readonly SkillBuilder = skillBuilderFactory;
-    /** 技能数据构建（name 必传，其余可选，sgs.Skill({ name: 'jianxiong' })） */
-    public readonly Skill = buildSkillData;
+    /** 技能数据构建（name 必传，其余可选，sgs.createSkill({ name: 'jianxiong' })） */
+    public readonly createSkill = buildSkillData;
     /** 效果数据构建器（链式，name 必传，sgs.EffectBuilder('jianxiong.draw')） */
     public readonly EffectBuilder = effectBuilderFactory;
-    /** 效果数据构建（name 必传，其余可选，sgs.Effect({ name: 'jianxiong.draw' })） */
-    public readonly Effect = buildEffectData;
+    /** 效果数据构建（name 必传，其余可选，sgs.createEffect({ name: 'jianxiong.draw' })） */
+    public readonly createEffect = buildEffectData;
+    /** 游戏模式数据构建器（链式，name 必传，sgs.ModeBuilder('standard')） */
+    public readonly ModeBuilder = modeBuilderFactory;
+    /** 游戏模式数据构建（name 必传，其余可选，sgs.createMode({ name: 'standard' })） */
+    public readonly createMode = buildModeData;
 
     /**
      * 注册牌的默认使用方式（幂等：同名同时机已存在则跳过）。

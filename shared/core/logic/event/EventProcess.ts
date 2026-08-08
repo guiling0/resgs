@@ -1,6 +1,7 @@
 import type { Room } from '../../entity/Room';
 import type { Player } from '../../entity/Player';
 import type { GameCard } from '../../entity/GameCard';
+import type { Effect } from '../../entity/Effect';
 import { AreaType } from '../../types/AreaTypes';
 import type { AreaId } from '../../types/AreaTypes';
 import type { EventData, Timing, TimingData, TimingTrigger } from '../../types/EventTypes';
@@ -21,6 +22,8 @@ export function createTiming(
  * 子类在构造函数填充 eventTriggers/endTriggers（Timing[]），
  * exec() 按顺序执行各时机：before → 触发调度（room.event.trigger）→ after。
  * 事件栈、历史、fuhuos/deferredOpens 均经 room.host 运行态访问（镜像端为空）。
+ * @rules terms/resolution-terms/process
+ * @description 事件在合理的时机插入发生后所进行的处理过程
  */
 export abstract class EventProcess<T extends EventType = EventType> {
     /** 所属房间 */
@@ -46,10 +49,44 @@ export abstract class EventProcess<T extends EventType = EventType> {
     triggerable: boolean = true;
     /** 是否跳过触发（业务逻辑跳过，区别于 triggerable） */
     triggerNot: boolean = false;
-    /** 父事件 */
-    source?: EventProcess;
-    /** 运行时自定义数据（effect/reason 等注入） */
+    /** 运行时自定义数据（如 buqu 等结算标记） */
     data: Record<string, unknown> = {};
+
+    /** 源事件（事件栈上层，取自事件数据） */
+    get source(): EventProcess | undefined {
+        return this.eventData.source;
+    }
+    set source(v: EventProcess | undefined) {
+        this.eventData.source = v;
+    }
+
+    /** 触发事件的技能效果（取自事件数据） */
+    get effect(): Effect | undefined {
+        return this.eventData.effect;
+    }
+    set effect(v: Effect | undefined) {
+        this.eventData.effect = v;
+    }
+
+    /** 触发原因（取自事件数据） */
+    get reason(): string | undefined {
+        return this.eventData.reason;
+    }
+    set reason(v: string | undefined) {
+        this.eventData.reason = v;
+    }
+
+    /**
+     * 指令角色（A令B中的A，取自事件数据）
+     * @rules terms/description-terms/cmd
+     * @description A令B执行某操作，指令由A发出、动作由B执行
+     */
+    get cmd(): Player | undefined {
+        return this.eventData.cmd;
+    }
+    set cmd(v: Player | undefined) {
+        this.eventData.cmd = v;
+    }
 
     /** 移动到处理区的牌及其原因（processCompleted 中清理） */
     private _processingCards: { card: GameCard; reason: string }[] = [];
@@ -99,7 +136,11 @@ export abstract class EventProcess<T extends EventType = EventType> {
         );
     }
 
-    /** 主执行循环：eventTriggers → endTriggers → processCompleted */
+    /**
+     * 主执行循环：eventTriggers → endTriggers → processCompleted
+     * @rules terms/resolution-terms/settle
+     * @description 处理一个事件的过程
+     */
     async exec(): Promise<this> {
         if (!this.check() || this.isComplete || this.isEnd) {
             this.room.logger.debug(
@@ -265,9 +306,19 @@ export abstract class EventProcess<T extends EventType = EventType> {
                     const fn = this.room.fuhuos.shift()!;
                     await fn();
                 }
-                while (this.room.deferredOpens.length > 0) {
-                    const open = this.room.deferredOpens.shift()!;
-                    await this.room.event.trigger(TimingName.Open, open);
+                // 取出当前全部延时明置事件，按响应顺序（当前回合角色开始逆时针）排序后依次触发
+                const opens = this.room.deferredOpens.splice(0);
+                const byPlayer = new Map<Player, EventProcess<EventType.Open>[]>();
+                for (const open of opens) {
+                    const list = byPlayer.get(open.eventData.player) || [];
+                    list.push(open);
+                    byPlayer.set(open.eventData.player, list);
+                }
+                for (const player of this.room.sortResponse([...byPlayer.keys()])) {
+                    if (!player.alive) continue;
+                    for (const open of byPlayer.get(player)!) {
+                        await this.room.event.trigger(TimingName.Open, open);
+                    }
                 }
                 this.room.logger.debug(
                     `[cleanup] → AllEventEnd`,
@@ -283,12 +334,11 @@ export abstract class EventProcess<T extends EventType = EventType> {
         }
     }
 
-    /** 在区域集合中查找牌所在区域 */
+    /** 查询牌所在区域（经 card.area 直接读取） */
     findArea(card: GameCard): { type: AreaType; areaId: AreaId } | undefined {
-        for (const area of this.room.areas.values()) {
-            if (area.has(card)) return { type: area.type, areaId: area.areaId };
-        }
-        return undefined;
+        const area = card.area;
+        if (!area) return undefined;
+        return { type: area.type, areaId: area.areaId };
     }
 
     // ===== 工具方法 =====
@@ -381,7 +431,11 @@ export abstract class EventProcess<T extends EventType = EventType> {
         return this;
     }
 
-    /** 强制完成事件 */
+    /**
+     * 强制完成事件（终止流程/回合）
+     * @rules terms/game-flow-terms/complete
+     * @description 终止流程/回合是「结束此时机且不会生成此后直至结束的所有时机」的操作
+     */
     async complete(): Promise<this> {
         await this.end();
         this.isComplete = true;

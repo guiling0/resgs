@@ -2,15 +2,18 @@ import { Mark } from './Mark';
 import type { Room } from './Room';
 import type { Player } from './Player';
 import { General } from './General';
-import { GameCard } from './GameCard';
 import { Effect } from './Effect';
 import { sync, syncArray } from '../state/decorators';
 import { StateArray } from '../state/StateArray';
+import { CardSubType } from '../types/CardTypes';
+import { sgs } from '../sgs';
 import type { SkillOptions, SkillData } from '../types/SkillTypes';
 
 /**
  * 技能——继承 Mark 具备标记能力。
  * 同步字段仅运行时变化项（preshow/showui/invalids）；固定数据经创建消息传递。
+ * @rules terms/card-face-terms/skill
+ * @description 技能类——角色拥有的技能包括其武将技能和装备技能
  */
 export class Skill extends Mark {
     readonly room: Room;
@@ -22,8 +25,8 @@ export class Skill extends Mark {
     player?: Player;
     /** 来源武将（装备技能为空） */
     sourceGeneral?: General;
-    /** 来源装备牌（武将技能为空） */
-    sourceEquip?: GameCard;
+    /** 是否来源于装备（装备技能为 true） */
+    fromEquip: boolean = false;
     /** 来源效果（化身等技能派生） */
     sourceEffect?: Effect;
     /** 失效原因列表（非空即失效） */
@@ -51,11 +54,11 @@ export class Skill extends Mark {
         this.data = { ...options.data };
         this.id = ++room.skillIds;
         this.player = player;
-        // 来源推断（武将/装备/效果）
+        // 来源推断（武将/效果）
         const source = options.source;
         if (source instanceof General) this.sourceGeneral = source;
-        else if (source instanceof GameCard) this.sourceEquip = source;
         else if (source instanceof Effect) this.sourceEffect = source;
+        this.fromEquip = options.fromEquip ?? false;
         this.showui = options.showui ?? 'none';
         // TODO(R3): refreshs 注册由技能管理器（SkillManager）在宿主注入后执行
         // 登记技能索引与同名集合（两端创建一致，纯内存索引）
@@ -74,7 +77,23 @@ export class Skill extends Mark {
         return this.name.split('.').at(-1) || this.name;
     }
 
-    /** 是否失效 */
+    /** 附加装备牌名（attached_equip，装备技能所属的装备牌） */
+    get attachedEquip(): string | undefined {
+        return this.sourceData.attached_equip;
+    }
+
+    /** 是否为指定副类别装备的技能（如防具技能：isEquipSkill(CardSubType.Armor)） */
+    isEquipSkill(subtype: CardSubType): boolean {
+        const name = this.attachedEquip;
+        if (!name) return false;
+        return sgs.carddatas.get(name)?.subtype === subtype;
+    }
+
+    /**
+     * 是否失效
+     * @rules terms/resolution-terms/invalid
+     * @description A的技能于一个时间段内无效，即所有角色于此时间段内不能发动A的技能且A的技能于此时间段内不能产生影响
+     */
     get isInvalid(): boolean {
         return this.invalids.length > 0;
     }
@@ -84,9 +103,29 @@ export class Skill extends Mark {
         return true;
     }
 
-    /** 技能是否可用：未被禁用且来源正常 */
+    /** 技能是否可用：未被禁用、未被无视且来源正常 */
     check(): boolean {
-        return !this.isInvalid && this.isOpen();
+        return !this.isInvalid && this.isOpen() && !this._isIgnored();
+    }
+
+    /** 是否被无视：存在命中 filter 的无视记录且当前结算由无视者发起 */
+    private _isIgnored(): boolean {
+        if (!this.player) return false;
+        for (const r of this.room.ignoreRecords) {
+            if (r.target !== this.player) continue;
+            if (r.filter && !r.filter(this)) continue;
+            if (this._isInScope(r.source)) return true;
+        }
+        return false;
+    }
+
+    /** 当前结算是否由 source 发起：从事件栈顶向下找最近有发起者的事件 */
+    private _isInScope(source: Player): boolean {
+        for (let i = this.room.eventStack.length - 1; i >= 0; i--) {
+            const owner = (this.room.eventStack[i] as { player?: Player | undefined }).player;
+            if (owner) return owner === source;
+        }
+        return false;
     }
 
     /** 设置失效（同一原因不重复添加） */
@@ -103,8 +142,14 @@ export class Skill extends Mark {
         }
     }
 
-    /** 移除自身（含关联效果）——TODO(R3): 技能管理器（SkillManager）实现后接线 */
+    /**
+     * 移除自身（含关联效果）
+     * @description 从房间技能索引注销并解除所属玩家
+     */
     async removeSelf(_removeSkill: boolean = false): Promise<void> {
-        // TODO(R3): 经 room 技能管理器注销索引与 refreshs
+        // TODO(R3): refreshs 注销与关联效果清理由技能管理器（SkillManager）实现
+        this.room.skills.delete(this.id);
+        this.room.skillsByName.get(this.name)?.delete(this);
+        this.player = undefined;
     }
 }

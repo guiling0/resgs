@@ -6,13 +6,19 @@ import type { VirtualCard } from '../entity/VirtualCard';
 import type { General } from '../entity/General';
 import type { Player } from '../entity/Player';
 import type { Room } from '../entity/Room';
+import type { Effect } from '../entity/Effect';
+import type { EventProcess } from '../logic/event/EventProcess';
 import type { TriggerEffect } from '../entity/TriggerEffect';
 import type { EffectContext } from './SkillTypes';
 import type { Phase } from './PlayerTypes';
 
 // ==================== 时机 ====================
 
-/** 时机枚举——全部触发时机（技能触发/事件调度共用） */
+/**
+ * 时机枚举——全部触发时机（技能触发/事件调度共用）
+ * @rules terms/resolution-terms/timing
+ * @description 时机是一个瞬间，一个事件发生时会产生若干个时机
+ */
 export enum TimingName {
     // ==================== 游戏流程 ====================
     /** 登场前 */
@@ -21,15 +27,15 @@ export enum TimingName {
     GameStage = 'game_stage',
     /** 登场后 */
     GameStageAfter = 'game_stage_after',
-    /** 游戏开始前 */
+    /** @rules events/turn/#游戏开始前 */
     GameStartBefore = 'game_start_before',
-    /** 游戏开始 */
+    /** @rules events/turn/#游戏开始后 */
     GameStart = 'game_start',
-    /** 游戏结束 */
+    /** @rules events/turn/#游戏结束时 */
     GameEnd = 'game_end',
 
     // ==================== 轮次 ====================
-    /** 轮次开始 */
+    /** @rules events/turn/#每轮开始时 */
     RoundStart = 'round_start',
     /** 轮次结束 */
     RoundEnd = 'round_end',
@@ -41,259 +47,259 @@ export enum TimingName {
     RestEnd = 'rest_end',
 
     // ==================== 回合 ====================
-    /** 回合开始前 */
+    /** @rules events/turn/#回合开始前 */
     TurnStartBefore = 'turn_start_before',
-    /** 回合开始 */
+    /** @rules events/turn/#回合开始时 */
     TurnStart = 'turn_start',
-    /** 回合开始后 */
+    /** @rules events/turn/#回合开始后 */
     TurnStartAfter = 'turn_start_after',
-    /** 回合结束 */
+    /** @rules events/turn/#回合结束前 */
     TurnEnd = 'turn_end',
-    /** 回合结束后 */
+    /** @rules events/turn/#回合结束后 */
     TurnEndAfter = 'turn_end_after',
 
     // ==================== 准备阶段 ====================
-    /** 准备阶段开始前 */
+    /** @rules events/phase/#准备阶段开始前 */
     ReadyPhaseStartBefore = 'ready_start_before',
-    /** 准备阶段开始 */
+    /** @rules events/phase/#准备阶段开始时 */
     ReadyPhaseStart = 'ready_start',
-    /** 准备阶段 */
+    /** @rules events/phase/#准备阶段 */
     ReadyPhase = 'ready_phase',
-    /** 准备阶段结束 */
+    /** @rules events/phase/#准备阶段结束时 */
     ReadyPhaseEnd = 'ready_end',
 
     // ==================== 判定阶段 ====================
-    /** 判定阶段开始前 */
+    /** @rules events/phase/#判定阶段开始前 */
     JudgePhaseStartBefore = 'judge_start_before',
-    /** 判定阶段开始 */
+    /** @rules events/phase/#判定阶段开始时 */
     JudgePhaseStart = 'judge_start',
-    /** 判定阶段 */
+    /** @rules events/phase/#判定阶段 */
     JudgePhase = 'judge_phase',
-    /** 判定阶段结束 */
+    /** @rules events/phase/#判定阶段结束时 */
     JudgePhaseEnd = 'judge_phase_end',
 
     // ==================== 摸牌阶段 ====================
-    /** 摸牌阶段开始前 */
+    /** @rules events/phase/#摸牌阶段开始前 */
     DrawPhaseStartBefore = 'draw_start_before',
-    /** 摸牌阶段开始1 */
+    /** @rules events/phase/#摸牌阶段开始时1 */
     DrawPhaseStart1 = 'draw_start1',
-    /** 摸牌阶段开始2 */
+    /** @rules events/phase/#摸牌阶段开始时2 */
     DrawPhaseStart2 = 'draw_start2',
-    /** 摸牌阶段 */
+    /** @rules events/phase/#摸牌阶段 */
     DrawPhase = 'draw_phase',
-    /** 摸牌阶段结束 */
+    /** @rules events/phase/#摸牌阶段结束时 */
     DrawPhaseEnd = 'draw_end',
 
     // ==================== 出牌阶段 ====================
-    /** 出牌阶段开始前 */
+    /** @rules events/phase/#出牌阶段开始前 */
     PlayPhaseStartBefore = 'play_start_before',
-    /** 出牌阶段开始 */
+    /** @rules events/phase/#出牌阶段开始时 */
     PlayPhaseStart = 'play_start',
-    /** 出牌阶段 */
+    /** @rules events/phase/#出牌阶段 */
     PlayPhase = 'play_phase',
-    /** 出牌阶段结束 */
+    /** @rules events/phase/#出牌阶段结束时 */
     PlayPhaseEnd = 'play_end',
 
     // ==================== 弃牌阶段 ====================
-    /** 弃牌阶段开始前 */
+    /** @rules events/phase/#弃牌阶段开始前 */
     DiscardPhaseStartBefore = 'discard_start_before',
-    /** 弃牌阶段开始 */
+    /** @rules events/phase/#弃牌阶段开始时 */
     DiscardPhaseStart = 'discard_start',
-    /** 弃牌阶段 */
+    /** @rules events/phase/#弃牌阶段 */
     DiscardPhase = 'discard_phase',
-    /** 弃牌阶段结束 */
+    /** @rules events/phase/#弃牌阶段结束时 */
     DiscardPhaseEnd = 'discard_end',
 
     // ==================== 结束阶段 ====================
-    /** 结束阶段开始前 */
+    /** @rules events/phase/#结束阶段开始前 */
     EndPhaseStartBefore = 'end_start_before',
-    /** 结束阶段开始 */
+    /** @rules events/phase/#结束阶段开始时 */
     EndPhaseStart = 'end_start',
-    /** 结束阶段 */
+    /** @rules events/phase/#结束阶段 */
     EndPhase = 'end_phase',
-    /** 结束阶段结束 */
+    /** @rules events/phase/#结束阶段结束时 */
     EndPhaseEnd = 'end_end',
 
     // ==================== 移动事件 ====================
-    /** 固定移动牌 */
+    /** @rules events/move-card/#确定移动的牌时 */
     MoveCardFixed = 'movecard_fixed',
-    /** 移动牌前1 */
+    /** @rules events/move-card/#移至目标区域前1 */
     MoveCardBefore1 = 'movecard_before1',
-    /** 移动牌前2 */
+    /** @rules events/move-card/#移至目标区域前2 */
     MoveCardBefore2 = 'movecard_before2',
-    /** 移动牌后1 */
+    /** @rules events/move-card/#移至目标区域后1 */
     MoveCardAfter1 = 'movecard_after1',
-    /** 移动牌后2 */
+    /** @rules events/move-card/#移至目标区域后2 */
     MoveCardAfter2 = 'movecard_after2',
-    /** 移动牌结束 */
+    /** @rules events/move-card/#移动结算结束后 */
     MoveCardEnd = 'movecard_end',
 
     // ==================== 使用牌事件 ====================
-    /** 需要使用牌1 */
+    /** @rules events/use-card/#其需要使用此牌时1 */
     UseCardNeed1 = 'usecard_need1',
-    /** 需要使用牌2 */
+    /** @rules events/use-card/#其需要使用此牌时2 */
     UseCardNeed2 = 'usecard_need2',
-    /** 声明使用牌 */
+    /** @rules events/use-card/#声明使用牌 */
     UseCardDeclare = 'usecard_declare',
-    /** 声明使用牌后 */
+    /** @rules events/use-card/#声明使用牌后 */
     UseCardDeclareAfter = 'usecard_declare_after',
-    /** 选择使用牌目标 */
+    /** @rules events/use-card/#选择目标后 */
     UseCardChooseTarget = 'usecard_choose_target',
-    /** 牌被使用时 */
+    /** @rules events/use-card/#牌被使用时 */
     UseCardUsed = 'usecard_used',
-    /** 指定目标时 */
+    /** @rules events/use-card/#（连续若干个）指定目标时 */
     UseCardAssignTarget = 'usecard_assign_target',
-    /** 成为目标时 */
+    /** @rules events/use-card/#（连续若干个）成为目标时 */
     UseCardBecomeTarget = 'usecard_become_target',
-    /** 指定目标后 */
+    /** @rules events/use-card/#（连续若干个）指定目标后 */
     UseCardAssignTargetAfter = 'usecard_assign_target_after',
-    /** 成为目标后 */
+    /** @rules events/use-card/#（连续若干个）成为目标后 */
     UseCardBecomeTargetAfter = 'usecard_become_target_after',
-    /** 使用结算准备工作结束时 */
+    /** @rules events/use-card/#使用结算准备工作结束时 */
     UseCardReady = 'usecard_ready',
-    /** 对当前目标结算开始时 */
+    /** @rules events/use-card/#对当前目标使用结算开始时 */
     UseCardEffectStart = 'usecard_effect_start',
-    /** 对当前目标生效前 */
+    /** @rules events/use-card/#对当前目标生效前 */
     UseCardEffectBefore = 'usecard_effect_before',
-    /** 被抵消后 */
+    /** @rules events/use-card/#被抵消后 */
     UseCardOffset = 'usecard_offset',
-    /** 对当前目标生效时 */
+    /** @rules events/use-card/#对当前目标生效时 */
     UseCardEffect = 'usecard_effect',
-    /** 对当前目标生效后 */
+    /** @rules events/use-card/#对当前目标生效后 */
     UseCardEffectAfter = 'usecard_effect_after',
-    /** 使用结算结束后1 */
+    /** @rules events/use-card/#使用结算结束后1 */
     UseCardEnd1 = 'usecard_end1',
-    /** 使用结算结束后2 */
+    /** @rules events/use-card/#使用结算结束后2 */
     UseCardEnd2 = 'usecard_end2',
-    /** 使用结算结束后3 */
+    /** @rules events/use-card/#使用结算结束后3 */
     UseCardEnd3 = 'usecard_end3',
 
     // ==================== 打出牌事件 ====================
-    /** 需要打出牌时1 */
+    /** @rules events/drop-card/#其需要打出此牌时1 */
     DropCardNeed1 = 'dropcard_need1',
-    /** 需要打出牌时2 */
+    /** @rules events/drop-card/#其需要打出此牌时2 */
     DropCardNeed2 = 'dropcard_need2',
-    /** 声明打出牌 */
+    /** @rules events/drop-card/#声明打出牌 */
     DropCardDeclare = 'dropcard_declare',
-    /** 打出牌后 */
+    /** @rules events/drop-card/#牌被打出时 */
     DropCardDroped = 'dropcard_droped',
-    /** 打出牌结束 */
+    /** @rules events/drop-card/#打出结算结束后 */
     DropCardEnd = 'dropcard_end',
 
     // ==================== 拼点事件 ====================
-    /** 拼点时 */
+    /** @rules events/pindian/#进行拼点时 */
     Pindian = 'pindian',
-    /** 拼点牌被亮出时 */
+    /** @rules events/pindian/#拼点牌被亮出时 */
     PindianCardShow = 'pindian_card_show',
-    /** 拼点结果确定后 */
+    /** @rules events/pindian/#（连续若干个）拼点结果确定后 */
     PindianResult = 'pindian_result',
-    /** 拼点结算结束后 */
+    /** @rules events/pindian/#拼点结算结束后 */
     PindianEnd = 'pindian_end',
 
     // ==================== 牌状态改变事件 ====================
-    /** 牌状态改变时 */
+    /** @rules events/change-state/#牌状态改变前 */
     ChangeState = 'change_state',
-    /** 牌状态改变后 */
+    /** @rules events/change-state/#牌状态改变后 */
     ChangeStateAfter = 'change_state_after',
-    /** 明置后 */
+    /** @rules events/change-state/#明置后时机 */
     Open = 'open',
 
     // ==================== 判定事件 ====================
-    /** 判定时 */
+    /** @rules events/judge/#判定时 */
     Judge = 'judge',
-    /** 成为判定牌后 */
+    /** @rules events/judge/#成为判定牌后 */
     JudgeCard = 'judge_card',
-    /** 判定结果确定前1 */
+    /** @rules events/judge/#判定结果确定前1 */
     JudgeResult1 = 'judge_result1',
-    /** 判定结果确定前2 */
+    /** @rules events/judge/#判定结果确定前2 */
     JudgeResult2 = 'judge_result2',
-    /** 判定结果确定后1 */
+    /** @rules events/judge/#判定结果确定后1 */
     JudgeResultAfter1 = 'judge_result_after1',
-    /** 判定结果确定后2 */
+    /** @rules events/judge/#判定结果确定后2 */
     JudgeResultAfter2 = 'judge_result_after2',
-    /** 判定结算结束后 */
+    /** @rules events/judge/#判定结算结束后 */
     JudgeEnd = 'judge_end',
 
     // ==================== 伤害事件 ====================
-    /** 伤害开始 */
+    /** @rules events/damage/#伤害结算开始时 */
     DamageStart = 'damage_start',
-    /** 造成伤害时1 */
+    /** @rules events/damage/#造成伤害时1 */
     DamageCause1 = 'damage_cause1',
-    /** 造成伤害时2 */
+    /** @rules events/damage/#造成伤害时2 */
     DamageCause2 = 'damage_cause2',
-    /** 受到伤害时1 */
+    /** @rules events/damage/#受到伤害时1 */
     DamageInflict1 = 'damage_inflict1',
-    /** 受到伤害时2 */
+    /** @rules events/damage/#受到伤害时2 */
     DamageInflict2 = 'damage_inflict2',
-    /** 受到伤害时3 */
+    /** @rules events/damage/#受到伤害时3 */
     DamageInflict3 = 'damage_inflict3',
-    /** 造成伤害后 */
+    /** @rules events/damage/#造成伤害后 */
     DamageCauseAfter = 'damage_cause_after',
-    /** 受到伤害后 */
+    /** @rules events/damage/#受到伤害后 */
     DamageInflictAfter = 'damage_inflict_after',
-    /** 伤害结算结束后 */
+    /** @rules events/damage/#伤害结算结束后 */
     DamageEnd = 'damage_end',
 
     // ==================== 失去体力事件 ====================
-    /** 失去体力开始 */
+    /** @rules events/lose-hp/#失去体力开始 */
     LoseHpStart = 'losehp_start',
-    /** 失去体力时 */
+    /** @rules events/lose-hp/#失去体力时 */
     LoseHp = 'losehp',
-    /** 失去体力后 */
+    /** @rules events/lose-hp */
     LoseHpAfter = 'losehp_after',
-    /** 失去体力结束 */
+    /** @rules events/lose-hp/#失去体力结算结束后 */
     LoseHpEnd = 'losehp_end',
 
     // ==================== 扣减事件 ====================
-    /** 扣减体力开始 */
+    /** @rules events/reduce-hp/#扣减体力开始 */
     ReduceHpStart = 'reducehp_start',
-    /** 扣减体力时 */
+    /** @rules events/reduce-hp/#扣减体力时 */
     ReduceHp = 'reducehp',
-    /** 扣减体力后 */
+    /** @rules events/reduce-hp/#扣减体力后 */
     ReduceHpAfter = 'reducehp_after',
-    /** 扣减体力结束 */
+    /** @rules events/reduce-hp/#扣减体力结算结束后 */
     ReduceHpEnd = 'reducehp_end',
 
     // ==================== 回复体力事件 ====================
-    /** 回复体力开始 */
+    /** @rules events/recover-hp/#回复体力开始 */
     RecoverHpStart = 'recoverhp_start',
-    /** 回复体力时 */
+    /** @rules events/recover-hp */
     RecoverHp = 'recoverhp',
-    /** 回复体力后 */
+    /** @rules events/recover-hp/#回复体力后 */
     RecoverHpAfter = 'recoverhp_after',
-    /** 回复体力结束 */
+    /** @rules events/recover-hp/#回复体力结算结束后 */
     RecoverHpEnd = 'recoverhp_end',
 
     // ==================== 体力上限改变事件 ====================
-    /** 体力上限改变开始 */
+    /** @rules events/change-max-hp/#体力上限改变开始时 */
     ChangeMaxHpStart = 'change_maxhp_start',
-    /** 体力上限改变时 */
+    /** @rules events/change-max-hp/#体力上限改变前 */
     ChangeMaxHp = 'change_maxhp',
-    /** 体力上限改变后 */
+    /** @rules events/change-max-hp/#体力上限改变后 */
     ChangeMaxHpAfter = 'change_maxhp_after',
-    /** 体力上限改变结束 */
+    /** @rules events/change-max-hp/#改变体力上限结算结束后 */
     ChangeMaxHpEnd = 'change_maxhp_end',
 
     // ==================== 濒死事件 ====================
-    /** 进入濒死状态时 */
+    /** @rules events/dying/#进入濒死状态时 */
     DyingEntry = 'dying_entry',
-    /** 进入濒死状态后 */
+    /** @rules events/dying/#进入濒死状态后 */
     DyingEntryAfter = 'dying_entry_after',
-    /** 处于濒死状态时 */
+    /** @rules events/dying/#（连续若干个）处于濒死状态时 */
     Dying = 'dying',
-    /** 濒死结束 */
+    /** @rules events/dying/#濒死结算结束后 */
     DyingEnd = 'dying_end',
 
     // ==================== 死亡事件 ====================
-    /** 死亡前 */
+    /** @rules events/death/#死亡前 */
     DeathBefore = 'death_before',
-    /** 确认死亡角色 */
+    /** @rules events/death/#确认死亡角色 */
     DeathConfirmRole = 'death_confirm_role',
-    /** 死亡时 */
+    /** @rules events/death/#死亡时 */
     Death = 'death',
-    /** 死亡后 */
+    /** @rules events/death/#死亡后 */
     DeathAfter = 'death_after',
-    /** 死亡结束 */
+    /** @rules events/death/#死亡结算结束后 */
     DeathEnd = 'death_end',
 
     // ==================== 技能相关 ====================
@@ -305,9 +311,9 @@ export enum TimingName {
     EffectObtain = 'effect_obtain',
     /** 失去效果时 */
     EffectLose = 'effect_lose',
-    /** 执行消耗后 */
+    /** @rules events/use-skill/#执行消耗后 */
     Cost = 'cost',
-    /** 发动技能后 */
+    /** @rules events/use-skill/#发动技能后 */
     Effect = 'effect',
 
     // ==================== 特殊 ====================
@@ -324,8 +330,6 @@ export type TimingTrigger = TimingName | string;
 
 /** 事件类型 */
 export enum EventType {
-    /** 登场 */
-    Ready = 'Ready',
     /** 回合 */
     Turn = 'Turn',
     /** 阶段 */
@@ -372,9 +376,6 @@ export enum EventType {
 
 // ==================== 事件数据 ====================
 
-/** 登场事件数据 */
-export interface ReadyEventData {}
-
 /** 回合事件数据 */
 export interface TurnEventData {
     /** 回合 id */
@@ -405,7 +406,11 @@ export interface PhaseEventData {
     phase: Phase;
     /** 是否为额外阶段 */
     isExtraPhase: boolean;
-    /** 额定摸牌数 */
+    /**
+     * 额定摸牌数
+     * @rules terms/value-terms/drawCount
+     * @description 摸牌阶段额定获得的手牌数（初值 2）
+     */
     drawCount: number;
 }
 
@@ -499,8 +504,8 @@ export interface TargetEntry {
 
 /** 统一的使用牌事件数据 */
 export interface UseCardEventData {
-    /** 使用者 */
-    player: Player;
+    /** 使用者（无使用者直接结算延时锦囊效果时缺省） */
+    player?: Player;
     /** 目标角色列表 */
     targets: Player[];
     /** 使用的虚拟牌 */
@@ -533,6 +538,8 @@ export interface UseCardEventData {
     responseTo?: VirtualCard;
     /** 当前结算目标索引 */
     settleTarget?: number;
+    /** 无使用者直接结算延时锦囊效果：跳过前置时机，仅结算段 */
+    directSettle?: boolean;
 }
 
 // ==================== 使用牌：CardUse 定义 ====================
@@ -869,9 +876,12 @@ export interface NeedDropCardData {
 
 // ==================== 事件类型 → 数据类型 ====================
 
-/** 事件类型到事件数据的映射 */
+/**
+ * 事件类型到事件数据的映射
+ * @rules terms/resolution-terms/event
+ * @description 事件是若干个相关流程的总和，可能被其他事件响应
+ */
 export interface EventDataMap {
-    [EventType.Ready]: ReadyEventData;
     [EventType.Turn]: TurnEventData;
     [EventType.Phase]: PhaseEventData;
     [EventType.Move]: MoveEventData;
@@ -895,15 +905,39 @@ export interface EventDataMap {
     [EventType.UseSkill]: UseSkillEventData;
 }
 
-/** 事件数据（按事件类型取值） */
-export type EventData<T extends EventType> = EventDataMap[T];
+/** 事件元数据：所有事件数据均携带（全部可选） */
+export interface EventMeta {
+    /** 源事件（事件栈上层） */
+    source?: EventProcess;
+    /** 触发事件的技能效果 */
+    effect?: Effect;
+    /** 触发原因 */
+    reason?: string;
+    /** 指令角色（A令B中的A，大部分时间不传递） */
+    cmd?: Player;
+}
+
+/** 事件自由扩展字段（快捷方法最后一个参数；_data 写入事件自定义数据） */
+export interface EventOpts {
+    /** 源事件（事件栈上层） */
+    source?: EventProcess;
+    /** 触发事件的技能效果 */
+    effect?: Effect;
+    /** 触发原因 */
+    reason?: string;
+    /** 自由扩展字段（写入事件自定义数据） */
+    _data?: Record<string, unknown>;
+}
+
+/** 事件数据（按事件类型取值，均携带事件元数据） */
+export type EventData<T extends EventType> = EventDataMap[T] & EventMeta;
 
 // ==================== 时机 → 所属事件类型 ====================
 
 /** 时机到所属事件类型的映射 */
 export interface TimingEventMap {
-    [TimingName.GameStartBefore]: EventType.Ready;
-    [TimingName.GameStart]: EventType.Ready;
+    [TimingName.GameStartBefore]: EventType.Turn;
+    [TimingName.GameStart]: EventType.Turn;
 
     [TimingName.TurnStartBefore]: EventType.Turn;
     [TimingName.TurnStart]: EventType.Turn;

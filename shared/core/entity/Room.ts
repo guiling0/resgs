@@ -1,7 +1,8 @@
 import type { RoomOptions } from '../types/RoomOptions';
 import { Mark } from './Mark';
-import { sync, syncMap } from '../state/decorators';
+import { sync, syncMap, syncArray } from '../state/decorators';
 import { StateMap } from '../state/StateMap';
+import { StateArray } from '../state/StateArray';
 import { StateStore } from '../state/StateStore';
 import type { ITransport } from '../transport/ITransport';
 import type { ILogger } from '../ILogger';
@@ -18,10 +19,12 @@ import type { StateEffect } from './StateEffect';
 import type { VirtualCard, VirtualCardOverrides } from './VirtualCard';
 import type { AreaId } from '../types/AreaTypes';
 import { AreaType } from '../types/AreaTypes';
-import type { CardSubType, CardType, GameCardId, VirtualCardData } from '../types/CardTypes';
-import type { CardUseData, DamageEventData, DeathEventData, DyingEventData, JudgeEventData, LoseHpEventData, MoveCardData, MoveCardOpts, RecoverHpEventData, ReduceHpEventData, TimingName, ChangeStateData, ChangeMaxHpEventData } from '../types/EventTypes';
+import type { CardSubType, CardType, EquipSubType, GameCardId, VirtualCardData } from '../types/CardTypes';
+import { DamageType } from '../types/EventTypes';
+import type { CardUseData, DamageEventData, DeathEventData, DyingEventData, JudgeEventData, LoseHpEventData, MoveCardData, MoveCardOpts, PindianEventData, RecoverHpEventData, ReduceHpEventData, TimingName, ChangeStateData, ChangeMaxHpEventData, OpenEventData, EventType, EventOpts } from '../types/EventTypes';
 import type { RichString } from '../types/RichText';
 import type { PriorityType, StateEffectType } from '../types/SkillTypes';
+import { Phase } from '../types/PlayerTypes';
 import type { VirtualCardAbility } from '../logic/room/VirtualCardHost';
 import type { RoomHost } from '../logic/room/RoomHost';
 import type { EventManager } from '../logic/event/EventManager';
@@ -35,6 +38,22 @@ import type { DyingEvent, DeathEvent } from '../logic/event/DyingEvent';
 import type { RecoverHpEvent, ChangeMaxHpEvent } from '../logic/event/HpEvent';
 import type { JudgeEvent } from '../logic/event/JudgeEvent';
 import type { ChangeStateEvent } from '../logic/event/ChangeStateEvent';
+import type { PindianEvent } from '../logic/event/PindianEvent';
+
+/** Player 的 number 类型字段名（含 getter）；-? 去除可选属性以避免索引访问产生 undefined */
+type NumberField = { [K in keyof Player]-?: Player[K] extends number ? K : never }[keyof Player];
+
+/**
+ * 围攻关系：围攻角色（上家、下家）+ 被围攻角色
+ * @rules terms/description-terms/siege
+ * @description 围攻角色和被围攻角色处于同一围攻关系
+ */
+export interface SiegeRelation {
+    /** 围攻角色（上家与下家，势力相同） */
+    siegers: Player[];
+    /** 被围攻角色 */
+    target: Player;
+}
 
 /**
  * 房间——状态宿主（StateStore）与传输层（ITransport）的组合根。
@@ -67,12 +86,27 @@ export class Room extends Mark implements VirtualCardAbility {
     /** 总回合数 */
     @sync() turnCount: number = 0;
 
+    /** 当前轮数 */
+    @sync() roundCount: number = 0;
+
+    /** 额外回合队列（权威端运行时维护，不同步） */
+    extraTurns: TurnEvent[] = [];
+
+    /** 本轮起始回合（权威端运行时维护，不同步） */
+    roundStartTurn?: TurnEvent;
+
     /** 当前回合玩家 id */
     @sync() currentPlayerId: string = '';
     // TODO(R1): 回合流程落地后维护该字段
 
     /** 玩家集合（实体段名 player，条目值 Player 实体） */
     @syncMap('player') players: StateMap<string, Player> = new StateMap();
+
+    /** 军令牌堆（可同步，游戏开始时置为 1~6） */
+    @syncArray() commands: StateArray<number> = new StateArray();
+
+    /** 妙计牌堆（可同步，游戏开始时置为 80~91） */
+    @syncArray() miaojis: StateArray<number> = new StateArray();
 
     /** 随机数种子（相同初始种子下，房间内所有随机操作结果一致） */
     randomSeed: number = 1;
@@ -89,6 +123,11 @@ export class Room extends Mark implements VirtualCardAbility {
     /** 游戏状态（waiting/gaming/ending）——TODO(R1): 由游戏流程维护 */
     private _gameState: 'waiting' | 'gaming' | 'ending' = 'waiting';
 
+    /** 设置游戏状态（host 运行时使用） */
+    setGameState(state: 'waiting' | 'gaming' | 'ending'): void {
+        this._gameState = state;
+    }
+
     /** 是否正在游戏中 */
     get isGaming(): boolean {
         return this._gameState === 'gaming';
@@ -104,6 +143,9 @@ export class Room extends Mark implements VirtualCardAbility {
 
     /** 牌的默认使用方式索引（时机 → CardUseData[]） */
     readonly cardusesByTiming: Map<TimingName, CardUseData[]> = new Map();
+
+    /** 无视记录：source 无视 target 的满足 filter 的技能（filter 缺省无视全部技能） */
+    ignoreRecords: Array<{ source: Player; target: Player; filter?: (skill: Skill) => boolean }> = [];
 
     /** 房间主机能力（权威端注入 RoomHost；镜像端未注入，能力调用抛错） */
     host?: RoomHost;
@@ -217,14 +259,99 @@ export class Room extends Mark implements VirtualCardAbility {
         return [...this.players.values()].filter((player) => player.alive);
     }
 
+    /**
+     * 玩家数
+     * @rules terms/value-terms/playerCount
+     * @description 参与一局游戏的玩家数，角色离场不改变玩家数
+     */
+    get playerCount(): number {
+        return this.players.size;
+    }
+
     /** 按条件筛选玩家（includeDead 为 true 时含死亡玩家） */
     filterPlayer(fn: (player: Player) => boolean, includeDead: boolean = false): Player[] {
         return (includeDead ? [...this.players.values()] : this.alives).filter(fn);
     }
 
-    /** 按条件统计玩家数（includeDead 为 true 时含死亡玩家） */
-    countPlayer(fn: (player: Player) => boolean, includeDead: boolean = false): number {
+    /**
+     * 按条件统计角色数
+     * @rules terms/value-terms/kingdomCount
+     * @description 按条件统计玩家数，已死亡的角色默认不参与
+     * @param fn 筛选条件
+     * @param includeDead 是否包含死亡玩家（默认 false）
+     * @returns 符合条件的角色数
+     */
+    getPlayerCount(fn: (player: Player) => boolean, includeDead: boolean = false): number {
         return this.filterPlayer(fn, includeDead).length;
+    }
+
+    /**
+     * 指定势力的角色数
+     * @rules terms/value-terms/kingdomCount
+     * @description 统计指定势力的角色数，已死亡的角色默认不参与
+     * @param kingdom 势力
+     * @param includeWild 是否包含野心家（默认 false，野心家势力独立）
+     * @param includeDead 是否包含死亡角色（默认 false）
+     * @returns 指定势力的角色数
+     */
+    getKingdomCount(kingdom: string, includeWild: boolean = false, includeDead: boolean = false): number {
+        return this.filterPlayer((p) => {
+            if (p.kingdom !== kingdom) return false;
+            // 野心家的势力独立，仅显式要求时计入
+            return includeWild || p.kingdom !== 'wild';
+        }, includeDead).length;
+    }
+
+    /**
+     * 获取当前大势力
+     * @rules terms/description-terms/dashili
+     * @description 大势力是角色数最大且大于1的势力，可能多股并列
+     * @returns 当前大势力数组（无大势力时为空数组）
+     */
+    getBigKingdoms(): string[] {
+        const counts = new Map<string, number>();
+        for (const p of this.alives) {
+            if (!p.kingdom) continue;
+            counts.set(p.kingdom, (counts.get(p.kingdom) ?? 0) + 1);
+        }
+        const max = Math.max(...counts.values(), 0);
+        if (max <= 1) return [];
+        return [...counts.entries()].filter(([, c]) => c === max).map(([k]) => k);
+    }
+
+    /**
+     * 判断一名玩家是否为大势力角色
+     * @rules terms/description-terms/dashili
+     * @description 大势力角色即所属势力为当前大势力的角色
+     * @param player 被判断的角色
+     * @returns 是否为大势力角色
+     */
+    isBigKingdom(player: Player): boolean {
+        return this.getBigKingdoms().includes(player.kingdom);
+    }
+
+    /**
+     * 判断一名玩家是否为小势力角色
+     * @rules terms/description-terms/xiaoshili
+     * @description 小势力角色即有大势力存在时，所属势力不为大势力的角色；无大势力时任何角色均非小势力角色
+     * @param player 被判断的角色
+     * @returns 是否为小势力角色
+     */
+    isSmallKingdom(player: Player): boolean {
+        const bigs = this.getBigKingdoms();
+        return bigs.length > 0 && !bigs.includes(player.kingdom);
+    }
+
+    /**
+     * 判断两名玩家是否相邻
+     * @rules terms/description-terms/xianglin
+     * @description 两名角色间没有其他角色，则称这两名角色相邻
+     * @param a 角色一
+     * @param b 角色二
+     * @returns 是否相邻
+     */
+    isAdjacent(a: Player, b: Player): boolean {
+        return a.next === b || a.prev === b;
     }
 
     /**
@@ -259,6 +386,190 @@ export class Room extends Mark implements VirtualCardAbility {
         const start = this.getPlayer(this.currentPlayerId)
             ?? [...this.players.values()].find((v) => v.seat === 1);
         return this.sortPlayer(players, start, true);
+    }
+
+    // ===== 座次关系（队列/围攻） =====
+
+    /**
+     * 队列：获取与玩家处于同一队列的所有角色
+     * @rules terms/description-terms/queue
+     * @description 两名或两名以上连续相邻且势力相同的角色处于同一队列
+     * @param player 查询角色
+     * @returns 同一队列的所有角色（含 player），仅自身时返回空数组
+     */
+    getSameQueue(player: Player): Player[] {
+        const queue: Player[] = [player];
+        for (let p = player.left; p !== player; p = p.left) {
+            if (p.death) continue;
+            if (p.kingdom && p.kingdom === player.kingdom) queue.push(p);
+            else break;
+        }
+        for (let p = player.right; p !== player; p = p.right) {
+            if (p.death) continue;
+            if (p.kingdom && p.kingdom === player.kingdom) queue.push(p);
+            else break;
+        }
+        return queue.length > 1 ? queue : [];
+    }
+
+    /** 获取全场所有围攻关系 */
+    private _allSiegeRelations(): SiegeRelation[] {
+        const relations: SiegeRelation[] = [];
+        for (const p of this.alives) {
+            const u = p.prev;
+            const d = p.next;
+            if (!u || !d || u.death || d.death) continue;
+            if (!u.kingdom || u.kingdom === p.kingdom) continue;
+            if (d.kingdom === u.kingdom) {
+                relations.push({ siegers: [u, d], target: p });
+            }
+        }
+        return relations;
+    }
+
+    /**
+     * 获取玩家为围攻方的所有围攻关系
+     * @rules terms/description-terms/siege
+     * @description 上家和下家势力相同且与该角色势力不同时，其上家和下家对其围攻，称为围攻角色
+     * @param player 查询角色
+     * @returns 该角色为围攻方的围攻关系列表
+     */
+    getSiegeRelationsBySieger(player: Player): SiegeRelation[] {
+        return this._allSiegeRelations().filter((r) => r.siegers.includes(player));
+    }
+
+    /**
+     * 获取玩家为被围攻方的所有围攻关系
+     * @rules terms/description-terms/siege
+     * @description 上家和下家势力相同且与该角色势力不同时，其被围攻，称为被围攻角色
+     * @param player 查询角色
+     * @returns 该角色为被围攻方的围攻关系列表
+     */
+    getSiegeRelationsByTarget(player: Player): SiegeRelation[] {
+        return this._allSiegeRelations().filter((r) => r.target === player);
+    }
+
+    /**
+     * 获取玩家的所有围攻关系
+     * @rules terms/description-terms/siege
+     * @description 围攻角色和被围攻角色处于同一围攻关系
+     * @param player 查询角色
+     * @returns 该角色参与的全部围攻关系列表
+     */
+    getSiegeRelations(player: Player): SiegeRelation[] {
+        return this._allSiegeRelations().filter(
+            (r) => r.target === player || r.siegers.includes(player),
+        );
+    }
+
+    /**
+     * 判断两名玩家是否处于同一围攻关系且均为围攻方
+     * @rules terms/description-terms/siege
+     * @description 两名围攻角色处于同一围攻关系中
+     * @param player1 玩家一
+     * @param player2 玩家二
+     * @returns 是否在同一围攻关系且均为围攻方
+     */
+    isSameSiegeBothSiegers(player1: Player, player2: Player): boolean {
+        return this._allSiegeRelations().some(
+            (r) => r.siegers.includes(player1) && r.siegers.includes(player2),
+        );
+    }
+
+    /**
+     * 判断两名玩家是否处于同一围攻关系，且第一个为围攻方、第二个为被围攻方
+     * @rules terms/description-terms/siege
+     * @description 围攻角色与被围攻角色处于同一围攻关系中
+     * @param sieger 围攻方
+     * @param target 被围攻方
+     * @returns 是否在同一围攻关系且分别为围攻方与被围攻方
+     */
+    isSameSiegeSiegerTarget(sieger: Player, target: Player): boolean {
+        return this._allSiegeRelations().some(
+            (r) => r.siegers.includes(sieger) && r.target === target,
+        );
+    }
+
+    // ===== 数值计算 =====
+
+    /**
+     * 取某数值最大的玩家
+     * @rules terms/value-terms/maxMin
+     * @description 返回所有玩家中该数值最大的玩家数组，允许并列
+     * @param field 玩家的 number 字段名（含 getter）
+     * @param includeDead 是否包含死亡玩家（默认 false）
+     * @returns 数值最大的玩家数组
+     */
+    getMaxValue(field: NumberField, includeDead: boolean = false): Player[] {
+        const players = includeDead ? [...this.players.values()] : this.alives;
+        if (players.length === 0) return players;
+        const max = Math.max(...players.map((p) => p[field]));
+        return players.filter((p) => p[field] === max);
+    }
+
+    /**
+     * 取某数值最小的玩家
+     * @rules terms/value-terms/maxMin
+     * @description 返回所有玩家中该数值最小的玩家数组，允许并列
+     * @param field 玩家的 number 字段名（含 getter）
+     * @param includeDead 是否包含死亡玩家（默认 false）
+     * @returns 数值最小的玩家数组
+     */
+    getMinValue(field: NumberField, includeDead: boolean = false): Player[] {
+        const players = includeDead ? [...this.players.values()] : this.alives;
+        if (players.length === 0) return players;
+        const min = Math.min(...players.map((p) => p[field]));
+        return players.filter((p) => p[field] === min);
+    }
+
+    /**
+     * 指定玩家是否为该数值最大的玩家
+     * @rules terms/value-terms/maxMin
+     * @description 判断指定玩家是否在数值最大的玩家数组中
+     * @param player 指定玩家
+     * @param field 玩家的 number 字段名（含 getter）
+     * @param includeDead 是否包含死亡玩家（默认 false）
+     * @returns 是否包含指定玩家
+     */
+    hasMaxValue(player: Player, field: NumberField, includeDead: boolean = false): boolean {
+        return this.getMaxValue(field, includeDead).includes(player);
+    }
+
+    /**
+     * 指定玩家是否为该数值最小的玩家
+     * @rules terms/value-terms/maxMin
+     * @description 判断指定玩家是否在数值最小的玩家数组中
+     * @param player 指定玩家
+     * @param field 玩家的 number 字段名（含 getter）
+     * @param includeDead 是否包含死亡玩家（默认 false）
+     * @returns 是否包含指定玩家
+     */
+    hasMinValue(player: Player, field: NumberField, includeDead: boolean = false): boolean {
+        return this.getMinValue(field, includeDead).includes(player);
+    }
+
+    /**
+     * 取一半
+     * @rules terms/value-terms/half
+     * @description X 的一半 = [X/2]，默认向下取整
+     * @param value 数值 X
+     * @param ceil 是否向上取整（默认 false）
+     * @returns X 的一半
+     */
+    half(value: number, ceil: boolean = false): number {
+        return ceil ? Math.ceil(value / 2) : Math.floor(value / 2);
+    }
+
+    /**
+     * 数值之差
+     * @rules terms/value-terms/difference
+     * @description 即 |X-Y|
+     * @param x 数值 X
+     * @param y 数值 Y
+     * @returns |X-Y|
+     */
+    diff(x: number, y: number): number {
+        return Math.abs(x - y);
     }
 
     // ===== 区域快捷访问 =====
@@ -495,7 +806,7 @@ export class Room extends Mark implements VirtualCardAbility {
     }
 
     /** 延迟明置队列（host 运行态） */
-    get deferredOpens(): EventProcess[] {
+    get deferredOpens(): EventProcess<EventType.Open>[] {
         return this.host?.deferredOpens ?? [];
     }
 
@@ -522,100 +833,329 @@ export class Room extends Mark implements VirtualCardAbility {
         return this.host.getLastOneHistory<T>(type, filter);
     }
 
-    // ===== 事件快捷方法（薄转发 host.event） =====
+    // ===== 事件快捷方法（薄转发 host） =====
 
-    /** 造成伤害 */
-    damage(opts: DamageEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<DamageEvent> {
-        return this.event.damage(opts);
+    /**
+     * 造成伤害
+     * @rules terms/description-terms/damage
+     * @description 造成伤害是令目标角色扣减体力的操作；若来源已死亡或未指定来源，则目标受到无来源的伤害
+     * @param player 伤害来源（无来源伤害传 undefined）
+     * @param target 受伤角色
+     * @param number 伤害点数
+     * @param damageType 伤害类型
+     * @param opts 附加选项（渠道/连环/事件元数据/自由扩展字段）
+     * @returns 伤害事件
+     */
+    damage(
+        player: Player | undefined,
+        target: Player,
+        number: number,
+        damageType: DamageType,
+        opts?: EventOpts & Partial<Omit<DamageEventData, 'player' | 'target' | 'number' | 'damageType'>>,
+    ): Promise<DamageEvent> {
+        if (!this.host) return this.failHost();
+        return this.host.damage(player, target, number, damageType, opts);
     }
 
     /** 失去体力 */
-    loseHp(opts: LoseHpEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<LoseHpEvent> {
-        return this.event.loseHp(opts);
+    loseHp(player: Player, number: number, opts?: EventOpts): Promise<LoseHpEvent> {
+        if (!this.host) return this.failHost();
+        return this.host.loseHp(player, number, opts);
     }
 
-    /** 扣减体力 */
-    reduceHp(opts: ReduceHpEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<ReduceHpEvent> {
-        return this.event.reduceHp(opts);
+    /**
+     * 扣减体力
+     * @rules terms/description-terms/reduce_hp
+     * @description 扣减体力是角色的体力被扣除的操作，失去体力和受到伤害均会导致扣减体力
+     * @param player 扣减体力的角色
+     * @param number 扣减点数
+     * @param opts 附加选项（事件元数据/自由扩展字段）
+     * @returns 扣减体力事件
+     */
+    reduceHp(player: Player, number: number, opts?: EventOpts): Promise<ReduceHpEvent> {
+        if (!this.host) return this.failHost();
+        return this.host.reduceHp(player, number, opts);
     }
 
-    /** 回复体力 */
-    recover(opts: RecoverHpEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<RecoverHpEvent> {
-        return this.event.recover(opts);
+    /**
+     * 回复体力
+     * @rules terms/description-terms/recover
+     * @description 回复体力是角色回复X点体力的操作，回复量不会超过已损失体力
+     * @param player 回复体力的角色
+     * @param number 回复点数
+     * @param opts 附加选项（事件元数据/自由扩展字段）
+     * @returns 回复体力事件
+     */
+    recover(player: Player, number: number, opts?: EventOpts): Promise<RecoverHpEvent> {
+        if (!this.host) return this.failHost();
+        return this.host.recover(player, number, opts);
+    }
+
+    /**
+     * 将体力回复至X点
+     * @rules terms/description-terms/recover_to
+     * @description 将体力回复至X点是回复(min{X,体力上限}-体力)点体力的操作；体力不小于X或已达体力上限时不能执行
+     * @param player 回复体力的角色
+     * @param toHp 回复至的体力值 X
+     * @param opts 附加选项（事件元数据/自由扩展字段）
+     * @returns 回复体力事件（不能执行时为 undefined）
+     */
+    recoverTo(player: Player, toHp: number, opts?: EventOpts): Promise<RecoverHpEvent | undefined> {
+        if (!this.host) return this.failHost();
+        return this.host.recoverTo(player, toHp, opts);
     }
 
     /** 改变体力上限 */
-    changeMaxHp(opts: ChangeMaxHpEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<ChangeMaxHpEvent> {
-        return this.event.changeMaxHp(opts);
+    changeMaxHp(player: Player, number: number, opts?: EventOpts): Promise<ChangeMaxHpEvent> {
+        if (!this.host) return this.failHost();
+        return this.host.changeMaxHp(player, number, opts);
     }
 
     /** 进入濒死 */
-    dying(opts: DyingEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<DyingEvent> {
-        return this.event.dying(opts);
+    dying(player: Player, opts?: EventOpts): Promise<DyingEvent> {
+        if (!this.host) return this.failHost();
+        return this.host.dying(player, opts);
     }
 
     /** 死亡 */
-    die(opts: DeathEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<DeathEvent> {
-        return this.event.die(opts);
+    die(player: Player, opts?: EventOpts & Partial<Omit<DeathEventData, 'player'>>): Promise<DeathEvent> {
+        if (!this.host) return this.failHost();
+        return this.host.die(player, opts);
     }
 
-    /** 判定 */
-    judge(opts: JudgeEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<JudgeEvent> {
-        return this.event.judge(opts);
+    /**
+     * 判定：触发一个判定事件
+     * @rules terms/card-op-terms/judge
+     * @description 判定是「触发一个判定事件」的操作，薄转发至房间主机实现
+     * @param player 判定角色
+     * @param opts 判定事件数据（自由扩展字段）
+     * @returns 判定事件
+     */
+    judge(player: Player, opts?: EventOpts & Partial<Omit<JudgeEventData, 'player'>>): Promise<JudgeEvent> {
+        if (!this.host) return this.failHost();
+        return this.host.judge(player, opts);
+    }
+
+    /**
+     * 拼点：触发一个拼点事件
+     * @rules terms/card-op-terms/pindian
+     * @description 拼点是「触发一个拼点事件」的操作，薄转发至房间主机实现
+     * @param player 拼点发起者
+     * @param targets 拼点目标
+     * @param opts 拼点事件数据（自由扩展字段）
+     * @returns 拼点事件
+     */
+    pindian(
+        player: Player,
+        targets: Player[],
+        opts?: EventOpts & Partial<Omit<PindianEventData, 'player' | 'targets'>>,
+    ): Promise<PindianEvent> {
+        if (!this.host) return this.failHost();
+        return this.host.pindian(player, targets, opts);
     }
 
     /** 状态改变（自动检测 Open/Close/Chain/Skip/Change/Remove 子类型） */
     changeState(opts: ChangeStateData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<ChangeStateEvent> {
-        return this.event.changeState(opts);
+        if (!this.host) return this.failHost();
+        return this.host.changeState(opts);
     }
 
-    /** 明置武将 */
+    /**
+     * 明置武将
+     * @rules terms/general-op-terms/open
+     * @description 明置武将，薄转发至房间主机实现
+     * @param player 明置角色
+     * @param generals 被明置的武将牌
+     * @returns 状态改变事件
+     */
     open(player: Player, generals: General[]): Promise<ChangeStateEvent> {
-        return this.event.changeState({ player, generals, toState: true });
+        if (!this.host) return this.failHost();
+        return this.host.open(player, generals);
     }
 
-    /** 暗置武将 */
+    /**
+     * 暗置武将
+     * @rules terms/general-op-terms/close
+     * @description 暗置武将，薄转发至房间主机实现
+     * @param player 暗置角色
+     * @param generals 被暗置的武将牌
+     * @returns 状态改变事件
+     */
     close(player: Player, generals: General[]): Promise<ChangeStateEvent> {
-        return this.event.changeState({ player, generals, toState: false });
+        if (!this.host) return this.failHost();
+        return this.host.close(player, generals);
     }
 
-    /** 横置/重置武将（toState 缺省取当前状态取反） */
-    chain(player: Player, toState?: boolean): Promise<ChangeStateEvent> {
-        return this.event.changeState({ player, toState: toState ?? !player.chained, damageType: undefined });
+    /**
+     * 横置：武将牌竖放的角色将其武将牌横放（进入连环状态）
+     * @rules terms/general-op-terms/chain
+     * @description 横置武将，薄转发至房间主机实现
+     * @param player 横置角色
+     * @returns 状态改变事件
+     */
+    chain(player: Player): Promise<ChangeStateEvent> {
+        if (!this.host) return this.failHost();
+        return this.host.chain(player);
     }
 
-    /** 翻面（toState 缺省取当前状态取反） */
+    /**
+     * 重置：武将牌横放的角色将其武将牌竖放（脱离连环状态）
+     * @rules terms/general-op-terms/reset
+     * @description 重置武将，薄转发至房间主机实现
+     * @param player 重置角色
+     * @param damageType 连环伤害类型（默认 None）
+     * @returns 状态改变事件
+     */
+    reset(player: Player, damageType: DamageType = DamageType.None): Promise<ChangeStateEvent> {
+        if (!this.host) return this.failHost();
+        return this.host.reset(player, damageType);
+    }
+
+    /** 横置/重置：按当前连环状态取反（便捷方法） */
+    chainOrReset(player: Player, damageType: DamageType = DamageType.None): Promise<ChangeStateEvent> {
+        if (!this.host) return this.failHost();
+        return this.host.chainOrReset(player, damageType);
+    }
+
+    /**
+     * 翻面
+     * @rules terms/general-op-terms/skip
+     * @description 翻面，薄转发至房间主机实现
+     * @param player 翻面角色
+     * @param toState 目标状态（缺省取当前状态取反）
+     * @returns 状态改变事件
+     */
     skip(player: Player, toState?: boolean): Promise<ChangeStateEvent> {
-        return this.event.changeState({ player, toState: toState ?? !player.skip });
+        if (!this.host) return this.failHost();
+        return this.host.skip(player, toState);
     }
 
-    /** 变更武将——TODO(R8): 主副将数据就绪后生效 */
+    /**
+     * 叠置：与翻面同一逻辑
+     * @rules terms/general-op-terms/stack
+     * @description 叠置，薄转发至房间主机实现
+     * @param player 叠置角色
+     * @param toState 目标状态（缺省取当前状态取反）
+     * @returns 状态改变事件
+     */
+    stack(player: Player, toState?: boolean): Promise<ChangeStateEvent> {
+        if (!this.host) return this.failHost();
+        return this.host.stack(player, toState);
+    }
+
+    /**
+     * 复原
+     * @rules terms/general-op-terms/restore
+     * @description 复原武将，薄转发至房间主机实现
+     * @param player 复原角色
+     */
+    restore(player: Player): Promise<void> {
+        if (!this.host) return this.failHost();
+        return this.host.restore(player);
+    }
+
+    /**
+     * 变更武将
+     * @rules terms/general-op-terms/change
+     * @description 变更武将，薄转发至房间主机实现——TODO(R8): 主副将数据就绪后生效
+     * @param player 变更角色
+     * @param general 被变更的武将牌（'head'/'deputy' 表示主/副将）
+     * @param toGeneral 变更后的武将牌
+     * @returns 状态改变事件
+     */
     change(player: Player, general: General | 'head' | 'deputy', toGeneral: General): Promise<ChangeStateEvent> {
-        return this.event.changeState({ player, general, toGeneral });
+        if (!this.host) return this.failHost();
+        return this.host.change(player, general, toGeneral);
     }
 
-    /** 移除武将——TODO(R8): 主副将数据就绪后生效 */
+    /**
+     * 移除武将
+     * @rules terms/general-op-terms/remove
+     * @description 移除武将，薄转发至房间主机实现——TODO(R8): 主副将数据就绪后生效
+     * @param player 移除角色
+     * @param general 被移除的武将牌
+     * @returns 状态改变事件
+     */
     remove(player: Player, general: General): Promise<ChangeStateEvent> {
-        return this.event.changeState({ player, general });
+        if (!this.host) return this.failHost();
+        return this.host.remove(player, general);
     }
 
-    /** 移动卡牌（cards 第一参数，toArea 第二参数） */
+    /**
+     * 无视：source 无视 target 的满足 filter 的技能
+     * @rules terms/resolution-terms/ignore
+     * @description 无视是「在 source 对 target 的结算过程中 target 的相关技能无效」的操作，薄转发至房间主机实现
+     * @param source 无视者
+     * @param target 被无视技能的角色
+     * @param filter 技能筛选（缺省无视全部技能）
+     */
+    addIgnore(source: Player, target: Player, filter?: (skill: Skill) => boolean): void {
+        if (!this.host) return this.failHost();
+        this.host.addIgnore(source, target, filter);
+    }
+
+    /**
+     * 移除无视
+     * @rules terms/resolution-terms/ignore
+     * @description 移除 source 对 target 的无视记录，薄转发至房间主机实现
+     * @param source 无视者
+     * @param target 被无视技能的角色
+     * @param filter 匹配的筛选（缺省移除全部）
+     */
+    removeIgnore(source: Player, target: Player, filter?: (skill: Skill) => boolean): void {
+        if (!this.host) return this.failHost();
+        this.host.removeIgnore(source, target, filter);
+    }
+
+    /**
+     * 移至：将牌从另一区域移动到此区域
+     * @rules terms/card-op-terms/moveCards
+     * @description 移至是「将牌从另一个区域移动到此区域」的操作，薄转发至房间主机实现（主机负责预检过滤已在目标区域的牌）
+     * @param cards 被移动的牌
+     * @param toArea 目标区域
+     * @param opts 移动附加选项
+     * @returns 移动事件
+     */
     moveCards(cards: GameCard[], toArea: AreaId, opts?: MoveCardOpts): Promise<MoveCardEvent> {
-        return this.event.moveCards([{ cards, toArea, ...opts }]);
+        if (!this.host) return this.failHost();
+        return this.host.moveCards(cards, toArea, opts);
     }
 
-    /** 移动卡牌（完整数据数组，复杂移动场景用） */
+    /**
+     * 移至：将牌从另一区域移动到此区域（完整数据数组）
+     * @rules terms/card-op-terms/moveCards
+     * @description 移至是「将牌从另一个区域移动到此区域」的操作，薄转发至房间主机实现（主机负责预检过滤已在目标区域的牌）
+     * @param datas 移动数据数组（每条含目标区域）
+     * @param opts 移动标签/战报生成选项
+     * @returns 移动事件
+     */
     moveCardsRaw(datas: MoveCardData[], opts?: { getMoveLabel?: (data: MoveCardData) => RichString; log?: (data: MoveCardData) => RichString }): Promise<MoveCardEvent> {
-        return this.event.moveCards(datas, opts);
+        if (!this.host) return this.failHost();
+        return this.host.moveCardsRaw(datas, opts);
     }
 
-    /** 使用牌（直接触发 UseCardEvent；询问版签名 TODO(R2) 选择系统） */
+    /**
+     * 使用牌：触发牌的使用事件
+     * @rules terms/card-op-terms/useCard
+     * @description 使用是「触发预使用牌事件，然后触发使用事件」的操作，薄转发至房间主机实现
+     * @param player 使用者
+     * @param card 使用的虚拟牌
+     * @param targets 使用目标（缺省为空）
+     * @returns 使用事件（未成功触发时为 null）
+     */
     useCard(player: Player, card: VirtualCard, targets?: Player[]): Promise<UseCardEvent | null> {
         if (!this.host) return this.failHost();
         return this.host.useCard(player, card, targets ?? []);
     }
 
-    /** 打出牌（直接触发 DropCardEvent） */
+    /**
+     * 打出牌：触发牌的打出事件
+     * @rules terms/card-op-terms/dropCard
+     * @description 打出是「触发一个打出事件」的操作，薄转发至房间主机实现
+     * @param player 打出者
+     * @param card 打出的虚拟牌
+     * @returns 打出事件
+     */
     dropCard(player: Player, card: VirtualCard): Promise<DropCardEvent> {
         if (!this.host) return this.failHost();
         return this.host.dropCard(player, card);
@@ -629,60 +1169,214 @@ export class Room extends Mark implements VirtualCardAbility {
         return this.host.getNCards(count, pos);
     }
 
-    /** 洗牌：弃牌堆洗混后置入牌堆底部 */
+    /**
+     * 洗牌：系统将弃牌堆里的所有牌洗混后置入牌堆
+     * @rules terms/card-op-terms/shuffleDiscardToDraw
+     * @description 洗牌是「系统将弃牌堆里的所有牌洗混，然后置入牌堆」的操作，薄转发至房间主机实现
+     */
     shuffleDiscardToDraw(): Promise<void> {
         if (!this.host) return this.failHost();
         return this.host.shuffleDiscardToDraw();
     }
 
-    /** 置于牌：将牌直接移动到目标区域（reason 默认 'put'） */
+    /**
+     * 置于/入：将牌按目标区域默认放置方式移至目标区域
+     * @rules terms/card-op-terms/putTo
+     * @description 置于/入是「将牌按目标区域里牌的放置方式移至目标区域并按该区域默认放置方式放置」的操作，薄转发至房间主机实现
+     * @param cards 被置于的牌
+     * @param toArea 目标区域
+     * @param opts 移动附加选项
+     * @returns 置于移动事件
+     */
     putTo(cards: GameCard[], toArea: AreaId, opts?: MoveCardOpts): Promise<MoveCardEvent> {
-        return this.moveCards(cards, toArea, opts);
+        if (!this.host) return this.failHost();
+        return this.host.putTo(cards, toArea, opts);
     }
 
-    /** 摸牌：从牌堆摸 count 张到玩家手牌 */
+    /**
+     * 扣置于/入：将牌移至目标区域且背面朝上放置
+     * @rules terms/card-op-terms/putFaceDown
+     * @description 扣置于/入是「将牌移至目标区域且背面朝上放置」的操作，薄转发至房间主机实现（强制背面朝上放置）
+     * @param cards 被扣置于的牌
+     * @param toArea 目标区域
+     * @param opts 移动附加选项（putType 不可提供，强制为 false）
+     * @returns 扣置于移动事件
+     */
+    putFaceDown(cards: GameCard[], toArea: AreaId, opts?: MoveCardOpts): Promise<MoveCardEvent> {
+        if (!this.host) return this.failHost();
+        return this.host.putFaceDown(cards, toArea, opts);
+    }
+
+    /**
+     * 摸牌：从牌堆摸 count 张到玩家手牌
+     * @rules terms/card-op-terms/draw
+     * @description 摸牌是获得牌堆顶的牌的操作，薄转发至房间主机实现
+     * @param player 摸牌角色
+     * @param count 摸牌数量（默认 1）
+     * @param pos 从牌堆顶部/底部摸取（默认顶部）
+     * @param opts 移动附加选项
+     * @returns 摸牌结果（移动事件或空）
+     */
     draw(player: Player, count: number = 1, pos: 'top' | 'bottom' = 'top', opts?: MoveCardOpts): Promise<unknown> {
         if (!this.host) return this.failHost();
         return this.host.draw(player, count, pos, opts);
     }
 
-    /** 弃牌：将牌移动到弃牌堆 */
+    /**
+     * 将牌补至X张：手牌数不足 X 时摸（X－手牌数）张牌
+     * @rules terms/card-op-terms/drawTo
+     * @description 将牌补至X张是「若这些牌数小于X，摸（X－这些牌数）张牌；不小于X，没有事发生」的操作，薄转发至房间主机实现
+     * @param player 补牌角色
+     * @param count 补至的牌数 X
+     */
+    drawTo(player: Player, count: number): Promise<void> {
+        if (!this.host) return this.failHost();
+        return this.host.drawTo(player, count);
+    }
+
+    /**
+     * 弃牌：将牌移动到弃牌堆
+     * @rules terms/card-op-terms/discard
+     * @description 弃置是「将牌移至弃牌堆」的操作，薄转发至房间主机实现
+     * @param player 弃牌角色
+     * @param cards 被弃置的牌
+     * @param opts 移动附加选项
+     * @returns 弃牌移动事件
+     */
     discard(player: Player, cards: GameCard[], opts?: MoveCardOpts): Promise<MoveCardEvent> {
         if (!this.host) return this.failHost();
         return this.host.discard(player, cards, opts);
     }
 
-    /** 获得牌：将牌移动到操作者手牌区 */
+    /**
+     * 废除区域：将对应区域（或对应已有装备）里的所有牌置入弃牌堆，并记录废除状态
+     * @rules terms/zone-terms/area
+     * @description 废除装备栏或判定区，薄转发至房间主机实现
+     * @param player 被废除区域的角色
+     * @param target 被废除的装备栏（EquipSubType）或判定区（AreaType.Judge）
+     */
+    abolishArea(player: Player, target: EquipSubType | AreaType.Judge): Promise<void> {
+        if (!this.host) return this.failHost();
+        return this.host.abolishArea(player, target);
+    }
+
+    /**
+     * 恢复区域：删除废除记录
+     * @rules terms/zone-terms/area
+     * @description 恢复装备栏或判定区，薄转发至房间主机实现
+     * @param player 恢复区域的角色
+     * @param target 恢复的装备栏（EquipSubType）或判定区（AreaType.Judge）
+     */
+    restoreArea(player: Player, target: EquipSubType | AreaType.Judge): void {
+        if (!this.host) return this.failHost();
+        this.host.restoreArea(player, target);
+    }
+
+    /**
+     * 将牌弃置至X张：牌数大于 X 时弃置（牌数－X）张牌
+     * @rules terms/card-op-terms/discardTo
+     * @description 将牌弃置至X张是「若这些牌数大于X，弃置（这些牌数－X）张牌；不大于X，没有事发生」的操作，薄转发至房间主机实现（选择询问待实现）
+     * @param player 弃牌角色
+     * @param cards 需要操作的牌数组
+     * @param count 弃置至的牌数 X
+     */
+    discardTo(player: Player, cards: GameCard[], count: number): Promise<void> {
+        if (!this.host) return this.failHost();
+        return this.host.discardTo(player, cards, count);
+    }
+
+    /**
+     * 获得牌：将牌移动到操作者手牌区
+     * @rules terms/card-op-terms/obtain
+     * @description 获得是「一名角色将牌移至其手牌区」的操作，薄转发至房间主机实现
+     * @param player 获得牌的角色
+     * @param cards 被获得的牌
+     * @param opts 移动附加选项
+     * @returns 获得移动事件（无可获得牌时为 undefined）
+     */
     obtain(player: Player, cards: GameCard[], opts?: MoveCardOpts): Promise<MoveCardEvent | undefined> {
         if (!this.host) return this.failHost();
         return this.host.obtain(player, cards, opts);
     }
 
-    /** 交给牌：将 fromPlayer 的牌移动到 toPlayer 手牌区 */
+    /**
+     * 交给牌：将 fromPlayer 的牌移动到 toPlayer 手牌区
+     * @rules terms/card-op-terms/give
+     * @description 交给是「A将牌交给B」的操作（B获得这些牌）；排除接收者手牌区/装备区已拥有的牌，薄转发至房间主机实现
+     * @param fromPlayer 交出的角色
+     * @param toPlayer 接收的角色
+     * @param cards 被交给的牌
+     * @param opts 移动附加选项
+     * @returns 交给移动事件（无可交给牌时为 undefined）
+     */
     give(fromPlayer: Player, toPlayer: Player, cards: GameCard[], opts?: MoveCardOpts): Promise<MoveCardEvent | undefined> {
         if (!this.host) return this.failHost();
         return this.host.give(fromPlayer, toPlayer, cards, opts);
     }
 
-    /** 交换牌：两批牌同时经处理区互换区域 */
+    /**
+     * 交换牌：两批牌同时经处理区互换区域
+     * @rules terms/card-op-terms/swap
+     * @description 交换是「两名角色同时将各自的牌经处理区移至对方区域」的操作，薄转发至房间主机实现
+     * @param cards1 第一批牌
+     * @param toArea1 第一批牌的目标区域
+     * @param cards2 第二批牌
+     * @param toArea2 第二批牌的目标区域
+     * @param opts 移动附加选项
+     * @returns 交换移动事件（无有效牌时为 undefined）
+     */
     swap(cards1: GameCard[], toArea1: AreaId, cards2: GameCard[], toArea2: AreaId, opts?: MoveCardOpts): Promise<MoveCardEvent | undefined> {
         if (!this.host) return this.failHost();
         return this.host.swap(cards1, toArea1, cards2, toArea2, opts);
     }
 
-    /** 重铸：置入弃牌堆后摸等量牌 */
+    /**
+     * 重铸：将牌置入弃牌堆后摸等量牌
+     * @rules terms/card-op-terms/recast
+     * @description 重铸是「角色将此牌置入弃牌堆，然后摸一张牌」的操作，薄转发至房间主机实现
+     * @param player 重铸角色
+     * @param cards 被重铸的牌
+     * @param drawOneAlways 是否无论张数始终摸一张（默认 false）
+     * @param opts 移动附加选项
+     * @returns 重铸结果（移动与摸牌）
+     */
     recast(player: Player, cards: GameCard[], drawOneAlways: boolean = false, opts?: MoveCardOpts): Promise<unknown> {
         if (!this.host) return this.failHost();
         return this.host.recast(player, cards, drawOneAlways, opts);
     }
 
-    /** 展示牌：通知客户端显示卡牌（无实际区域移动）——TODO(R9): 可见性 */
+    /**
+     * 观看：查看相应牌（卡牌或武将牌）的牌面信息的操作
+     * @rules terms/card-op-terms/watch
+     * @description 观看是「查看相应牌的牌面信息」的操作，薄转发至房间主机实现（发送询问与可见性流程待实现）
+     * @param player 观看角色
+     * @param cards 被观看的牌（卡牌或武将牌）
+     */
+    watch(player: Player, cards: (GameCard | General)[]): Promise<void> {
+        if (!this.host) return this.failHost();
+        return this.host.watch(player, cards);
+    }
+
+    /**
+     * 展示牌：将牌翻转至正面朝上展示（无实际区域移动）
+     * @rules terms/card-op-terms/showCards
+     * @description 展示是「将背面朝上的牌翻转至正面朝上」的过程（牌不移动），薄转发至房间主机实现
+     * @param player 展示者（公共展示为 undefined）
+     * @param cards 被展示的牌
+     */
     showCards(player: Player | undefined, cards: GameCard[]): Promise<void> {
         if (!this.host) return this.failHost();
         return this.host.showCards(player, cards);
     }
 
-    /** 亮出牌：牌堆牌移入处理区，其他牌等同展示 */
+    /**
+     * 亮出牌：牌堆牌置入处理区，其他牌等同展示
+     * @rules terms/card-op-terms/flashCards
+     * @description 亮出牌堆顶的牌即置入处理区；亮出牌堆里的一张牌即随机移入处理区；亮出其他背面牌即翻面展示
+     * @param player 亮出者（公共亮出为 undefined）
+     * @param cards 被亮出的牌
+     * @param opts 移动附加选项
+     */
     flashCards(player: Player | undefined, cards: GameCard[], opts?: MoveCardOpts): Promise<unknown> {
         if (!this.host) return this.failHost();
         return this.host.flashCards(player, cards, opts);
@@ -697,6 +1391,205 @@ export class Room extends Mark implements VirtualCardAbility {
     /** 游戏延迟等待（供玩家观察）——TODO(R9): 客户端延时消息 */
     async delay(_seconds: number, _showProgressBar: boolean = false): Promise<void> {
         // TODO(R9): 发送延时消息到客户端
+    }
+
+    /**
+     * 开始游戏
+     * @rules terms/game-flow-terms/turn
+     * @description 开始游戏是「获取游戏模式并执行主流程」的操作，薄转发至房间主机实现
+     */
+    startGame(): Promise<void> {
+        if (!this.host) return this.failHost();
+        return this.host.startGame();
+    }
+
+    /**
+     * 游戏主流程
+     * @rules terms/game-flow-terms/turn
+     * @description 游戏主流程按额定回合与额外回合交替创建并执行回合事件，薄转发至房间主机实现
+     */
+    mainProcess(): Promise<void> {
+        if (!this.host) return this.failHost();
+        return this.host.mainProcess();
+    }
+
+    /**
+     * 依次操作：重复执行操作 X 次（薄转发至房间主机）
+     * @rules terms/description-terms/repeat
+     * @description 依次操作是操作一次后重复（X-1）次此流程
+     * @param times 重复次数 X
+     * @param fn 每次执行的操作
+     */
+    repeat(times: number, fn: () => Promise<unknown>): Promise<void> {
+        if (!this.host) return this.failHost();
+        return this.host.repeat(times, fn);
+    }
+
+    /**
+     * 各执行操作：玩家数组按响应顺序依次执行操作（薄转发至房间主机）
+     * @rules terms/description-terms/for_each
+     * @description 各执行操作是先选择所有符合条件的角色，然后这些角色依次执行此操作
+     * @param players 参与执行的角色数组
+     * @param fn 每个角色执行的操作（参数为当前执行角色）
+     * @param clockwise 是否按顺时针排序（默认 false 逆时针）
+     */
+    forEachPlayer(
+        players: Player[],
+        fn: (player: Player) => Promise<unknown>,
+        clockwise: boolean = false,
+    ): Promise<void> {
+        if (!this.host) return this.failHost();
+        return this.host.forEachPlayer(players, fn, clockwise);
+    }
+
+    /**
+     * 失去所有武将技能（薄转发至房间主机）
+     * @rules terms/description-terms/shiqujineng
+     * @description 失去所有武将技能即移除该角色除规则技能与装备技能外的所有技能
+     * @param player 失去技能的角色
+     */
+    loseGeneralSkills(player: Player): Promise<void> {
+        if (!this.host) return this.failHost();
+        return this.host.loseGeneralSkills(player);
+    }
+
+    /**
+     * 失去所有技能（薄转发至房间主机）
+     * @rules terms/description-terms/shiqujineng
+     * @description 失去所有技能即移除该角色拥有的全部技能（含规则技能与装备技能）
+     * @param player 失去技能的角色
+     */
+    loseAllSkills(player: Player): Promise<void> {
+        if (!this.host) return this.failHost();
+        return this.host.loseAllSkills(player);
+    }
+
+    /**
+     * 失去所有武将牌上的技能（薄转发至房间主机）
+     * @rules terms/description-terms/shiqujineng
+     * @description 失去所有武将牌上的技能即移除该角色由指定武将牌获得的全部技能
+     * @param player 失去技能的角色
+     * @param general 来源武将牌
+     */
+    loseSkillsOfGeneral(player: Player, general: General): Promise<void> {
+        if (!this.host) return this.failHost();
+        return this.host.loseSkillsOfGeneral(player, general);
+    }
+
+    /**
+     * 阵法召唤（薄转发至房间主机）
+     * @rules terms/description-terms/arraycall
+     * @description 阵法召唤是满足五个条件的角色发动的获得同伴明置响应的操作，依据阵法技类型执行对应流程
+     * @param player 发动阵法召唤的角色
+     * @param type 阵法技类型（'queue' 队列 / 'siege' 围攻）
+     */
+    arraycall(player: Player, type: 'queue' | 'siege'): Promise<void> {
+        if (!this.host) return this.failHost();
+        return this.host.arraycall(player, type);
+    }
+
+    /**
+     * 选择：从多个选项中任选其一执行（薄转发至房间主机）
+     * @rules terms/description-terms/choose
+     * @description 选择是拥有选择权的角色从多个选项中选择其中任意一项执行
+     * @param player 拥有选择权的角色
+     * @param options 询问选项（提示/能否取消等）
+     * @param handles 选项列表或选项键映射（值含是否可选与执行回调）
+     * @returns 选中的选项（键名或文本），取消/无可选时返回 false
+     */
+    choose(
+        player: Player,
+        options: {
+            canCancle?: boolean;
+            prompt?: RichString;
+            thinkPrompt?: RichString;
+            toast?: boolean;
+        },
+        handles:
+            | RichString[]
+            | {
+                  [key: string]: {
+                      chooseable?: boolean;
+                      handle?: () => Promise<void>;
+                  };
+              },
+    ): Promise<false | string> {
+        if (!this.host) return this.failHost();
+        return this.host.choose(player, options, handles);
+    }
+
+    /**
+     * 军令：发起者确定军令，执行者选择是否执行并结算（薄转发至房间主机）
+     * @rules terms/description-terms/junling
+     * @description 军令是角色 A 从两项随机操作中选择一项作为军令，令角色 B 选择是否执行
+     * @param from 发起者（A）
+     * @param to 执行者（B）
+     * @param command 指定的军令（不传则随机抽取两张由 A 二选一）
+     */
+    command(from: Player, to: Player, command?: number): Promise<void> {
+        if (!this.host) return this.failHost();
+        return this.host.command(from, to, command);
+    }
+
+    /**
+     * 随机获取军令（薄转发至房间主机）
+     * @param count 获取数量（默认 2）
+     * @returns 获取的军令数组
+     */
+    getCommands(count: number = 2): number[] {
+        if (!this.host) return this.failHost();
+        return this.host.getCommands(count);
+    }
+
+    /** 将军令放回军令牌堆（含去重，薄转发至房间主机） */
+    returnCommand(command: number): void {
+        if (!this.host) return this.failHost();
+        this.host.returnCommand(command);
+    }
+
+    /**
+     * 献策：发起者给执行者献计，执行者选择是否执行并结算（薄转发至房间主机）
+     * @description 献策分为两步：将妙计加入执行者的持有妙计牌堆；执行者选择是否执行，执行完毕将妙计放回妙计牌堆
+     * @param from 发起者
+     * @param to 执行者
+     * @param miaoji 指定的妙计（不传则随机抽取一张）
+     */
+    xiance(from: Player, to: Player, miaoji?: number): Promise<void> {
+        if (!this.host) return this.failHost();
+        return this.host.xiance(from, to, miaoji);
+    }
+
+    /**
+     * 随机获取妙计（薄转发至房间主机）
+     * @param count 获取数量（默认 1）
+     * @returns 获取的妙计数组
+     */
+    getMiaoji(count: number = 1): number[] {
+        if (!this.host) return this.failHost();
+        return this.host.getMiaoji(count);
+    }
+
+    /** 将妙计放回妙计牌堆（含去重，薄转发至房间主机） */
+    returnMiaoji(miaoji: number): void {
+        if (!this.host) return this.failHost();
+        this.host.returnMiaoji(miaoji);
+    }
+
+    /** 标准阶段序列 */
+    static getRatedPhases(): Phase[] {
+        return [Phase.Ready, Phase.Judge, Phase.Draw, Phase.Play, Phase.Drop, Phase.End];
+    }
+
+    /**
+     * 结束游戏：游戏状态置为结束（胜负已定或牌堆耗尽平局）
+     * @rules events/turn/#游戏结束时
+     * @description 将游戏状态从进行中切换为结束；牌堆耗尽且无法洗牌时以平局结束
+     * @param winner 获胜角色列表（未指定时为平局）
+     */
+    async gameOver(winner?: Player[]): Promise<void> {
+        if (this._gameState === 'ending') return;
+        this._gameState = 'ending';
+        this.logger.info('游戏结束', { roomId: this.roomId, event: 'gameOver', winner: winner?.map((p) => p.playerId) ?? [] });
     }
 
     // ===== 事件前置检测（纯查询） =====

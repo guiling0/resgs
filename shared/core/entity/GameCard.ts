@@ -5,15 +5,20 @@ import { defaultCardAudio, defaultCardImage } from '../utils/AssetsUtils';
 import type { CardGender } from '../utils/AssetsUtils';
 import type { CardAnimation, CardAssets } from '../types/AssetsTypes';
 import type { CardAttr, CardNumber, CardSuit, GameCardData, GameCardId, VirtualCardData } from '../types/CardTypes';
+import type { Area } from './Area';
 import type { VirtualCard } from './VirtualCard';
 
 /**
  * 实体牌——游戏牌实体，牌面能力继承自 ICard。
  * 源数据（sourceData）保留并对外可读，属性经 getter 动态暴露。
  * 同步挂载场景属 R1 区域管理。
+ * @rules terms/card-terms/GameCard
+ * @description 游戏牌实体类——对局中每张牌的运行时对象
  */
 export class GameCard extends ICard {
     readonly room: Room;
+    /** 当前所在区域（加入区域时设置，移出时清空） */
+    area?: Area;
     /** 源数据（注册构建的实体牌数据，外部可读；状态效果修正直接改此数据） */
     readonly sourceData: GameCardData;
     /** 放置方式（true=正面朝上，false=背面朝上）——TODO(R1): 区域管理的放置同步语义细化 */
@@ -47,7 +52,11 @@ export class GameCard extends ICard {
         }
     }
 
-    /** 实体牌 id */
+    /**
+     * 实体牌 id
+     * @rules terms/value-terms/cardId
+     * @description 每张游戏牌都有独立的 ID
+     */
     get id(): GameCardId {
         return this.sourceData.id;
     }

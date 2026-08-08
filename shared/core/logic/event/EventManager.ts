@@ -7,6 +7,7 @@ import type { RichString } from '../../types/RichText';
 import { PriorityType } from '../../types/SkillTypes';
 import type { TimingCallback } from '../../types/SkillTypes';
 import { TimingName } from '../../types/EventTypes';
+import type { EventData, EventType } from '../../types/EventTypes';
 import type {
     ChangeMaxHpEventData,
     ChangeStateData,
@@ -16,6 +17,7 @@ import type {
     JudgeEventData,
     LoseHpEventData,
     MoveCardData,
+    PindianEventData,
     RecoverHpEventData,
     ReduceHpEventData,
 } from '../../types/EventTypes';
@@ -27,6 +29,7 @@ import { RecoverHpEvent, ChangeMaxHpEvent } from './HpEvent';
 import { MoveCardEvent } from './MoveCardEvent';
 import { JudgeEvent } from './JudgeEvent';
 import { ChangeStateEvent } from './ChangeStateEvent';
+import { PindianEvent } from './PindianEvent';
 
 /** refreshs 回调条目（fn 已 bind，this 指向 source） */
 export interface RefreshEntry {
@@ -53,20 +56,20 @@ export class EventManager {
     // ===== 事件创建 =====
 
     /**
-     * 泛型事件工厂：创建事件 → 注入元数据（source/effect/reason）→ 执行 → 返回。
-     * 未显式传入 effect/reason 时自动取当前技能上下文（_currentEffect）。
+     * 泛型事件工厂：创建事件 → 补全元数据（effect/reason 未显式传入时取当前技能上下文）→ 执行 → 返回。
+     * source/effect/reason 经事件数据携带，不单独注入。
      */
     create<T extends EventProcess, D>(
         EventClass: new (room: Room, data: D) => T,
         eventData: D,
-        opts: { source?: EventProcess; reason?: string; effect?: Effect } = {},
     ): Promise<T> {
         const event = new EventClass(this.room, eventData);
-        if (opts.source) event.source = opts.source;
-
-        const eff = opts.effect ?? this._currentEffect;
-        if (eff) event.data.effect = eff;
-        event.data.reason = opts.reason ?? eff?.skill?.name ?? event.data.reason;
+        const eff = event.effect ?? this._currentEffect;
+        if (eff) event.effect = eff;
+        if (!event.reason) event.reason = eff?.skill?.name;
+        // 自由扩展字段 _data 写入事件自定义数据
+        const raw = eventData as EventData<EventType> & { _data?: Record<string, unknown> };
+        if (raw._data) Object.assign(event.data, raw._data);
 
         this.room.logger.debug(
             `event:${event.type} id=${event.id} created`,
@@ -77,92 +80,92 @@ export class EventManager {
 
     /** 创建并执行伤害事件 */
     damage(opts: DamageEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<DamageEvent> {
-        const { source, reason, effect, ...data } = opts;
         this.room.logger.info(
-            `damage from=${data.player?.playerId ?? 'none'} to=${data.target?.playerId} n=${data.number}`,
-            { roomId: this.room.roomId, playerId: data.target?.playerId, event: 'damage' },
+            `damage from=${opts.player?.playerId ?? 'none'} to=${opts.target?.playerId} n=${opts.number}`,
+            { roomId: this.room.roomId, playerId: opts.target?.playerId, event: 'damage' },
         );
-        return this.create(DamageEvent, data, { source, reason, effect });
+        return this.create(DamageEvent, opts);
     }
 
     /** 创建并执行失去体力事件 */
     loseHp(opts: LoseHpEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<LoseHpEvent> {
-        const { source, reason, effect, ...data } = opts;
         this.room.logger.info(
-            `loseHp player=${data.player?.playerId} n=${data.number}`,
-            { roomId: this.room.roomId, playerId: data.player?.playerId, event: 'loseHp' },
+            `loseHp player=${opts.player?.playerId} n=${opts.number}`,
+            { roomId: this.room.roomId, playerId: opts.player?.playerId, event: 'loseHp' },
         );
-        return this.create(LoseHpEvent, data, { source, reason, effect });
+        return this.create(LoseHpEvent, opts);
     }
 
     /** 创建并执行扣减体力事件 */
     reduceHp(opts: ReduceHpEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<ReduceHpEvent> {
-        const { source, reason, effect, ...data } = opts;
         this.room.logger.info(
-            `reduceHp player=${data.player?.playerId} n=${data.number}`,
-            { roomId: this.room.roomId, playerId: data.player?.playerId, event: 'reduceHp' },
+            `reduceHp player=${opts.player?.playerId} n=${opts.number}`,
+            { roomId: this.room.roomId, playerId: opts.player?.playerId, event: 'reduceHp' },
         );
-        return this.create(ReduceHpEvent, data, { source, reason, effect });
+        return this.create(ReduceHpEvent, opts);
     }
 
     /** 创建并执行濒死事件 */
     dying(opts: DyingEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<DyingEvent> {
-        const { source, reason, effect, ...data } = opts;
         this.room.logger.info(
-            `dying player=${data.player?.playerId}`,
-            { roomId: this.room.roomId, playerId: data.player?.playerId, event: 'dying' },
+            `dying player=${opts.player?.playerId}`,
+            { roomId: this.room.roomId, playerId: opts.player?.playerId, event: 'dying' },
         );
-        return this.create(DyingEvent, data, { source, reason, effect });
+        return this.create(DyingEvent, opts);
     }
 
     /** 创建并执行死亡事件 */
     die(opts: DeathEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<DeathEvent> {
-        const { source, reason, effect, ...data } = opts;
         this.room.logger.info(
-            `die player=${data.player?.playerId} killer=${data.killer?.playerId ?? 'none'}`,
-            { roomId: this.room.roomId, playerId: data.player?.playerId, event: 'die' },
+            `die player=${opts.player?.playerId} killer=${opts.killer?.playerId ?? 'none'}`,
+            { roomId: this.room.roomId, playerId: opts.player?.playerId, event: 'die' },
         );
-        return this.create(DeathEvent, data, { source, reason, effect });
+        return this.create(DeathEvent, opts);
     }
 
     /** 创建并执行回复体力事件 */
     recover(opts: RecoverHpEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<RecoverHpEvent> {
-        const { source, reason, effect, ...data } = opts;
         this.room.logger.info(
-            `recover player=${data.player?.playerId} n=${data.number}`,
-            { roomId: this.room.roomId, playerId: data.player?.playerId, event: 'recover' },
+            `recover player=${opts.player?.playerId} n=${opts.number}`,
+            { roomId: this.room.roomId, playerId: opts.player?.playerId, event: 'recover' },
         );
-        return this.create(RecoverHpEvent, data, { source, reason, effect });
+        return this.create(RecoverHpEvent, opts);
     }
 
     /** 创建并执行体力上限改变事件 */
     changeMaxHp(opts: ChangeMaxHpEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<ChangeMaxHpEvent> {
-        const { source, reason, effect, ...data } = opts;
         this.room.logger.info(
-            `changeMaxHp player=${data.player?.playerId} n=${data.number}`,
-            { roomId: this.room.roomId, playerId: data.player?.playerId, event: 'changeMaxHp' },
+            `changeMaxHp player=${opts.player?.playerId} n=${opts.number}`,
+            { roomId: this.room.roomId, playerId: opts.player?.playerId, event: 'changeMaxHp' },
         );
-        return this.create(ChangeMaxHpEvent, data, { source, reason, effect });
+        return this.create(ChangeMaxHpEvent, opts);
     }
 
     /** 创建并执行状态改变事件（自动检测 Open/Close/Chain/Skip/Change/Remove 子类型） */
     changeState(opts: ChangeStateData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<ChangeStateEvent> {
-        const { source, reason, effect, ...data } = opts;
         this.room.logger.info(
-            `changeState player=${(data as unknown as { player?: Player }).player?.playerId ?? 'none'}`,
+            `changeState player=${(opts as unknown as { player?: Player }).player?.playerId ?? 'none'}`,
             { roomId: this.room.roomId, event: 'changeState' },
         );
-        return this.create(ChangeStateEvent, data, { source, reason, effect });
+        return this.create(ChangeStateEvent, opts);
     }
 
     /** 创建并执行判定事件 */
     judge(opts: JudgeEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<JudgeEvent> {
-        const { source, reason, effect, ...data } = opts;
         this.room.logger.info(
-            `judge player=${data.player?.playerId}`,
-            { roomId: this.room.roomId, playerId: data.player?.playerId, event: 'judge' },
+            `judge player=${opts.player?.playerId}`,
+            { roomId: this.room.roomId, playerId: opts.player?.playerId, event: 'judge' },
         );
-        return this.create(JudgeEvent, data, { source, reason, effect });
+        return this.create(JudgeEvent, opts);
+    }
+
+    /** 创建并执行拼点事件 */
+    pindian(opts: PindianEventData & { source?: EventProcess; reason?: string; effect?: Effect }): Promise<PindianEvent> {
+        this.room.logger.info(
+            `pindian player=${opts.player?.playerId} targets=${opts.targets?.length ?? 0}`,
+            { roomId: this.room.roomId, playerId: opts.player?.playerId, event: 'pindian' },
+        );
+        return this.create(PindianEvent, opts);
     }
 
     /** 创建并执行移动卡牌事件 */
@@ -182,11 +185,7 @@ export class EventManager {
             `moveCards datas=${datas.length} cards=${cardsTotal}`,
             { roomId: this.room.roomId, event: 'moveCards' },
         );
-        return this.create(
-            MoveCardEvent,
-            { datas, getMoveLabel, log },
-            { source, reason, effect },
-        );
+        return this.create(MoveCardEvent, { datas, getMoveLabel, log, source, reason, effect });
     }
 
     // ===== 历史记录 =====

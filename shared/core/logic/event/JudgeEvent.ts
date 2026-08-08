@@ -8,9 +8,9 @@ import type { JudgeEventData } from '../../types/EventTypes';
 import type { VirtualCardData } from '../../types/CardTypes';
 
 /**
- * 判定事件。
- * 执行流程：Judge（取判定牌）→ JudgeCard（改判）→ JudgeResult1 → JudgeResult2
- *   → JudgeResultAfter1 → JudgeResultAfter2 → JudgeEnd
+ * 判定事件
+ * @rules events/judge
+ * @description 执行流程：Judge（取判定牌）→ JudgeCard（改判）→ JudgeResult1 → JudgeResult2 → JudgeResultAfter1 → JudgeResultAfter2 → JudgeEnd
  */
 export class JudgeEvent extends EventProcess<EventType.Judge> {
     /** 当前判定是否成功（由 setCard/resetSuccess 设置） */

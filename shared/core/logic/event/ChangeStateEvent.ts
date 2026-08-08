@@ -17,12 +17,16 @@ import type {
 // ===== 类型检测 =====
 
 /**
- * 根据数据形状推断 ChangeState 的子类型。
+ * 根据数据形状推断 ChangeState 的子类型
+ * @rules events/change-state
+ * @description 数据形状与子类型的对应关系：
  * - `toGeneral` 存在 → Change
  * - `general` 存在 → Remove
  * - `damageType` 存在 → Chain
  * - `toState` + `generals` → Open/Close（toState=true→Open, false→Close）
  * - `toState` 单独存在 → Skip
+ * @param data ChangeState 联合事件数据
+ * @returns 推断出的 ChangeState 子类型
  */
 export function detectChangeStateType(data: ChangeStateData): ChangeStateType {
     if ('toGeneral' in data) return EventType.Change;
@@ -35,10 +39,9 @@ export function detectChangeStateType(data: ChangeStateData): ChangeStateType {
 }
 
 /**
- * 武将牌状态改变事件。统一处理 6 种状态变更：
- *   Open（明置）、Close（暗置）、Chain（连环）、Skip（翻面）、Change（变更）、Remove（移除）
- * 执行流程：ChangeState → ChangeStateAfter（执行实际变更）→ ChangeStateEnd（公共）
- * Open 额外在 ChangeStateAfter 中将事件推入 deferredOpens（明置时机延后分发）。
+ * 武将牌状态改变事件，统一处理 6 种状态变更（明置/暗置/连环/翻面/变更/移除）
+ * @rules events/change-state
+ * @description 执行流程：ChangeState → ChangeStateAfter（执行实际变更）→ ChangeStateEnd（公共）；Open 额外在 ChangeStateAfter 中将事件推入 deferredOpens
  */
 export class ChangeStateEvent extends EventProcess<ChangeStateType> {
     constructor(room: Room, data: ChangeStateData & { _type?: ChangeStateType }) {
@@ -122,7 +125,7 @@ export class ChangeStateEvent extends EventProcess<ChangeStateType> {
     private _applyOpen(): void {
         const d = this.eventData as unknown as OpenEventData;
         for (const g of d.generals) g.turnTo(true);
-        this.room.deferredOpens.push(this);
+        this.room.deferredOpens.push(this as unknown as EventProcess<EventType.Open>);
     }
 
     private _applyClose(): void {

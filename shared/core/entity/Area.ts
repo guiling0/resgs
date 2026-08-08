@@ -72,11 +72,12 @@ export class Area {
         return this.isPrivate && [AreaType.Hand, AreaType.Equip, AreaType.Judge].includes(this.type);
     }
 
-    /** 向区域加入牌（默认置底；top/bottom/random/指定下标） */
+    /** 向区域加入牌（默认置底；top/bottom/random/指定下标），并记录牌所在区域 */
     add(cards: (GameCard | General)[], pos: 'top' | 'bottom' | 'random' | number = 'bottom'): void {
         for (const card of cards) {
             if (card instanceof GameCard) this.pushOne(this._cards, card, pos);
             else this.pushOne(this._generals, card, pos);
+            card.area = this;
         }
     }
 
@@ -93,11 +94,12 @@ export class Area {
         }
     }
 
-    /** 从区域移除牌 */
+    /** 从区域移除牌（同时清空牌所在区域记录） */
     remove(cards: (GameCard | General)[]): void {
         for (const card of cards) {
             if (card instanceof GameCard) this.removeOne(this._cards, card);
             else this.removeOne(this._generals, card);
+            card.area = undefined;
         }
     }
 

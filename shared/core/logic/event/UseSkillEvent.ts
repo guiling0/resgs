@@ -9,9 +9,9 @@ import type { EffectContext } from '../../types/SkillTypes';
 import { SkillTag } from '../../types/SkillTypes';
 
 /**
- * 技能使用事件——技能发动流程编排（不使用时序驱动，重写 exec()）。
- * 流程：排序目标 → choose → 明置武将 → 历史 → limit/awake 标记
- *   → cost → Cost 时机 → effect → Effect 时机
+ * 技能使用事件
+ * @rules events/use-skill
+ * @description 技能发动流程编排（不使用时序驱动，重写 exec()）：排序目标 → choose → 明置武将 → 历史 → limit/awake 标记 → cost → Cost 时机 → effect → Effect 时机
  */
 export class UseSkillEvent extends EventProcess<EventType.UseSkill> {
     constructor(room: Room, data: UseSkillEventData) {

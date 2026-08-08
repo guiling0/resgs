@@ -8,9 +8,9 @@ import { Phase } from '../../types/PlayerTypes';
 // ===== 回合事件 =====
 
 /**
- * 回合事件。
- * 执行流程：TurnStartBefore（休整/翻面处理）→ TurnStart → TurnStartAfter（生成阶段）
- *   → [各阶段 PhaseEvent 依次执行] → TurnEnd（清 inturn/酒状态）→ TurnEndAfter
+ * 回合事件
+ * @rules events/turn
+ * @description 执行流程：TurnStartBefore（休整/翻面处理）→ TurnStart → TurnStartAfter（生成阶段）→ [各阶段 PhaseEvent 依次执行] → TurnEnd（清 inturn/酒状态）→ TurnEndAfter
  */
 export class TurnEvent extends EventProcess<EventType.Turn> {
     constructor(room: Room, data: TurnEventData) {
@@ -188,7 +188,11 @@ export class TurnEvent extends EventProcess<EventType.Turn> {
         }
     }
 
-    /** 结束当前回合（含跳过剩余阶段） */
+    /**
+     * 结束回合
+     * @rules terms/game-flow-terms/end
+     * @description 结束回合是停止当前回合、结束整个回合流程的操作
+     */
     async end(): Promise<this> {
         await super.end();
         await this.skipPhase();
@@ -215,9 +219,9 @@ export class TurnEvent extends EventProcess<EventType.Turn> {
 // ===== 阶段事件 =====
 
 /**
- * 阶段事件。
- * 每个阶段 3 个 eventTriggers + 1 个 endTrigger：{Phase}StartBefore → {Phase}Start → {Phase} → {Phase}End
- * 摸牌阶段的 DrawPhaseStart1/Start2 提供两次修正摸牌数的时机。
+ * 阶段事件
+ * @rules terms/game-flow-terms/phase
+ * @description 每名角色的回合分为准备、判定、摸牌、出牌、弃牌、结束六个阶段。每个阶段时机序列：{Phase}StartBefore → {Phase}Start → {Phase} → {Phase}End；摸牌阶段的 DrawPhaseStart1/Start2 提供两次修正摸牌数的时机
  */
 export class PhaseEvent extends EventProcess<EventType.Phase> {
     /** draw_start1 归零后锁定，阻止 draw_start2 再修改 */
@@ -348,6 +352,15 @@ export class PhaseEvent extends EventProcess<EventType.Phase> {
 
     isExecutor(player: Player, phase: Phase = this.phase): boolean {
         return this.player === player && this.phase === phase;
+    }
+
+    /**
+     * 结束阶段
+     * @rules terms/game-flow-terms/end
+     * @description 结束阶段是停止当前阶段、结束整个阶段流程的操作
+     */
+    async end(): Promise<this> {
+        return super.end();
     }
 
     // ===== 流程回调（摸牌阶段） =====

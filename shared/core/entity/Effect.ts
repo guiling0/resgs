@@ -8,6 +8,8 @@ import type { EffectOptions, EffectData } from '../types/SkillTypes';
 /**
  * 效果——继承 Mark 具备标记能力，按类别派生 TriggerEffect/StateEffect。
  * 固定数据（id/name/来源引用）经创建消息传递，无运行时同步字段。
+ * @rules terms/card-face-terms/skill
+ * @description 效果类——技能能力的运行时载体
  */
 export abstract class Effect extends Mark {
     readonly room: Room;
@@ -68,7 +70,11 @@ export abstract class Effect extends Mark {
 
     // ===== 行为判定 =====
 
-    /** 是否失效（仅效果自身失效状态；源技能失效由所属技能判定） */
+    /**
+     * 是否失效（仅效果自身失效状态；源技能失效由所属技能判定）
+     * @rules terms/resolution-terms/invalid
+     * @description 技能/效果无效，即所有角色于此时间段内不能发动且不能产生影响
+     */
     get isInvalid(): boolean {
         // TODO(R3): 效果自身 invalids 独立失效状态实现（暂始终有效）
         return false;

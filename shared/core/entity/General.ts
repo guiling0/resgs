@@ -9,13 +9,18 @@ import {
 } from '../utils/AssetsUtils';
 import type { GeneralSkin } from '../types/AssetsTypes';
 import type { Gender, GeneralData } from '../types/GeneralTypes';
+import type { Area } from './Area';
 
 /**
  * 武将——继承 Mark 具备标记能力。
  * 源数据（sourceData）在构造时解析（hp 数组展开/多势力分割/trueName），属性经 getter 动态暴露。
+ * @rules terms/card-terms/GeneralCard
+ * @description 武将牌实体——角色武将牌的运行时对象
  */
 export class General extends Mark {
     readonly room: Room;
+    /** 当前所在区域（加入区域时设置，移出时清空） */
+    area?: Area;
     /** 当前使用的皮肤名（默认取源数据 defaultSkin，可经 setSkin 切换） */
     private _skin: string;
     /** 放置方式（true=明置，false=暗置）——TODO(R8): 国战明置机制同步语义细化 */

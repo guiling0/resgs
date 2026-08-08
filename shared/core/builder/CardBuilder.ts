@@ -79,7 +79,7 @@ class _CardBuilder implements CardBuilder {
     }
 }
 
-/** 全可选字段构建实体牌数据（sgs.Card）——内部经 CardBuilder 复用默认值与派生逻辑 */
+/** 全可选字段构建实体牌数据（sgs.createCard）——内部经 CardBuilder 复用默认值与派生逻辑 */
 export function Card(input: Partial<GameCardData> = {}): GameCardData {
     const b = CardBuilder(input.name ?? '');
     if (input.suit !== undefined) b.suit(input.suit);

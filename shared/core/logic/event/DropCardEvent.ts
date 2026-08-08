@@ -7,8 +7,9 @@ import { EventType, TimingName } from '../../types/EventTypes';
 import type { DropCardEventData } from '../../types/EventTypes';
 
 /**
- * 打出牌事件（无目标、固定时序）。
- * 执行流程：Declare（before: 实体牌移入处理区）→ Droped → End（after: 虚拟牌消失）
+ * 打出牌事件
+ * @rules events/drop-card
+ * @description 执行流程：Declare（实体牌移入处理区）→ Droped → End（虚拟牌消失）
  */
 export class DropCardEvent extends EventProcess<EventType.DropCard> {
     constructor(room: Room, data: DropCardEventData) {
@@ -18,6 +19,11 @@ export class DropCardEvent extends EventProcess<EventType.DropCard> {
 
     // ===== 便捷访问器 =====
 
+    /**
+     * 打出者
+     * @rules terms/description-terms/user
+     * @description 使用/打出者即使用/打出此牌的角色
+     */
     get player(): Player {
         return this.eventData.player;
     }

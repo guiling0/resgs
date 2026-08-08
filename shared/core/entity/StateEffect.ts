@@ -7,6 +7,8 @@ import type { EffectOptions, EffectData, StateEffectType } from '../types/SkillT
 
 /**
  * 状态类效果——持续生效的修正效果，状态回调由 state 配置承载。
+ * @rules terms/card-face-terms/skill
+ * @description 状态类效果类——技能的状态类能力实现
  */
 export class StateEffect extends Effect {
     constructor(room: Room, data: EffectData, skill?: Skill, player?: Player, options?: EffectOptions) {

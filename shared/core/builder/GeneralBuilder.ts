@@ -137,7 +137,7 @@ class _GeneralBuilder implements GeneralBuilder {
     }
 }
 
-/** 构建并注册武将数据（sgs.General）——name 必传，内部经 GeneralBuilder 复用默认值；已注册则直接返回已有数据 */
+/** 构建并注册武将数据（sgs.createGeneral）——name 必传，内部经 GeneralBuilder 复用默认值；已注册则直接返回已有数据 */
 export function General(input: Pick<GeneralData, 'name'> & Partial<GeneralData>): GeneralData {
     if (sgs.generals.has(input.name)) {
         return sgs.generals.get(input.name)!;

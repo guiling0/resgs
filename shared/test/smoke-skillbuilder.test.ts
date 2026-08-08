@@ -16,7 +16,7 @@ function check(cond: boolean, msg: string): void {
 // ===== 1. Effect data 方式（无前缀） =====
 
 {
-    const e = sgs.Effect({
+    const e = sgs.createEffect({
         name: 'ce_e1',
         data: { x: 1 },
         trigger: {
@@ -56,11 +56,11 @@ function check(cond: boolean, msg: string): void {
 // ===== 4. Effect 幂等：已注册直接返回已有 =====
 
 {
-    const e1 = sgs.Effect({
+    const e1 = sgs.createEffect({
         name: 'ce_e4',
         trigger: { priority: 1, trigger: TimingName.GameStart, effect: async () => {} },
     });
-    const e2 = sgs.Effect({
+    const e2 = sgs.createEffect({
         name: 'ce_e4',
         trigger: { priority: 2, trigger: TimingName.GameStart, effect: async () => {} },
     });
@@ -71,7 +71,7 @@ function check(cond: boolean, msg: string): void {
 
 {
     try {
-        sgs.Effect({ name: 'ce_empty' });
+        sgs.createEffect({ name: 'ce_empty' });
         check(false, 'Effect(data) 无触发/状态应报错');
     } catch (e) {
         check(String(e).includes('至少其一'), 'Effect(data) 无触发/状态报错');
@@ -82,7 +82,7 @@ function check(cond: boolean, msg: string): void {
 
 {
     try {
-        sgs.Effect({
+        sgs.createEffect({
             name: 'ce_mix',
             trigger: { priority: 1, trigger: TimingName.GameStart, effect: async () => {} },
             state: { dist: () => true },
@@ -96,14 +96,14 @@ function check(cond: boolean, msg: string): void {
 // ===== 7. Skill data 方式：effects 前缀补齐与保留 =====
 
 {
-    const sk = sgs.Skill({
+    const sk = sgs.createSkill({
         name: 'ce_sk6',
         effects: [
-            sgs.Effect({
+            sgs.createEffect({
                 name: 'e_a',
                 trigger: { priority: 1, trigger: TimingName.GameStart, effect: async () => {} },
             }),
-            sgs.Effect({
+            sgs.createEffect({
                 name: 'ce_sk6.e_b',
                 trigger: { priority: 2, trigger: TimingName.GameStart, effect: async () => {} },
             }),
