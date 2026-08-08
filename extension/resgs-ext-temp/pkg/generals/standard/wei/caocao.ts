@@ -11,7 +11,7 @@ sgs.EffectBuilder('jianxiong')
         return;
     });
 
-export const caocao = sgs.General({
+export const caocao = sgs.createGeneral({
     name: 'caocao',
     kingdom: 'wei',
     hp: 4,

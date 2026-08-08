@@ -23,7 +23,7 @@ writeFileSync(TMP_CONFIG, JSON.stringify({
     compilerOptions: {
         target: 'ESNext', module: 'nodenext', moduleResolution: 'nodenext',
         strict: false, esModuleInterop: true, experimentalDecorators: true,
-        skipLibCheck: true, declaration: true, emitDeclarationOnly: true,
+        useDefineForClassFields: false, skipLibCheck: true, declaration: true, emitDeclarationOnly: true,
         outDir: TMP_OUT, rootDir: 'shared',
         paths: {
             '@shared/*': ['./shared/*'],
@@ -91,22 +91,26 @@ for (const f of dtsFiles) {
 
 // ===== 步骤 5：追加 sgs 全局声明 =====
 
-import { TimingName, EventType, DamageType } from '../shared/core/event/EventTypes';
-import { PriorityType, SkillTag, StateEffectType } from '../shared/core/skill/SkillTypes';
+import { TimingName, EventType, DamageType } from '../shared/core/types/EventTypes';
+import { EffectType, PriorityType, SkillTag, StateEffectType } from '../shared/core/types/SkillTypes';
 import {
     CardAttr, CardSuit, CardNumber, CardColor,
-    CardType, CardSubType, EquipSubType, AreaType,
-} from '../shared/core/card/CardTypes';
-import { Phase } from '../shared/core/player/PlayerTypes';
-import { SelectorType, PlayPhaseResult } from '../shared/core/select/SelectTypes';
-import { Gender } from '../shared/core/general/GeneralType';
+    CardType, CardSubType, EquipSubType,
+} from '../shared/core/types/CardTypes';
+import { AreaType } from '../shared/core/types/AreaTypes';
+import { Phase } from '../shared/core/types/PlayerTypes';
+import { SelectorType, PlayPhaseResult } from '../shared/core/types/ChooseTypes';
+import { Gender } from '../shared/core/types/GeneralTypes';
+import { StrategyType } from '../shared/core/types/AITypes';
+import { GameState } from '../shared/core/types/GameState';
 
 const enumNames = [
     'TimingName', 'EventType', 'DamageType',
-    'PriorityType', 'SkillTag', 'StateEffectType',
+    'EffectType', 'PriorityType', 'SkillTag', 'StateEffectType',
     'CardAttr', 'CardSuit', 'CardNumber', 'CardColor',
     'CardType', 'CardSubType', 'EquipSubType', 'AreaType',
-    'Phase', 'SelectorType', 'PlayPhaseResult', 'Gender',
+    'Phase', 'Gender', 'SelectorType', 'PlayPhaseResult',
+    'StrategyType', 'GameState',
 ];
 
 const sgsBlock: string[] = [
@@ -117,37 +121,44 @@ const sgsBlock: string[] = [
 ];
 for (const name of enumNames) sgsBlock.push(`    ${name}: typeof ${name};`);
 sgsBlock.push(
+    '    CardBuilder: typeof CardBuilder;',
+    '    GeneralBuilder: typeof GeneralBuilder;',
     '    SkillBuilder: typeof SkillBuilder;',
     '    EffectBuilder: typeof EffectBuilder;',
-    '    GeneralBuilder: typeof GeneralBuilder;',
-    '    CardBuilder: typeof CardBuilder;',
-    '    ModeBuilder: typeof ModeBuilder;',
-    '    General: typeof General;',
-    '    CardConfig: typeof CardConfig;',
+    '    createCard: (input?: any) => any;',
+    '    createGeneral: (input: any) => any;',
+    '    createSkill: (input: any) => any;',
+    '    createEffect: (input: any) => any;',
     '    GameCard: typeof GameCard;',
-    '    GameMode: typeof GameMode;',
+    '    VirtualCard: typeof VirtualCard;',
+    '    General: typeof General;',
+    '    Player: typeof Player;',
     '    Skill: typeof Skill;',
     '    Effect: typeof Effect;',
-    '    CardPackage: typeof CardPackage;',
-    '    GeneralPackage: typeof GeneralPackage;',
-    '    registerCards: typeof registerCards;',
-    '    setExtensionContext: typeof setExtensionContext;',
+    '    TriggerEffect: typeof TriggerEffect;',
+    '    StateEffect: typeof StateEffect;',
+    '    Room: typeof Room;',
+    '    Area: typeof Area;',
+    '    ICard: typeof ICard;',
+    '    Mark: typeof Mark;',
     '',
-    '    skills: Map<string, any>; effects: Map<string, any>;',
-    '    generals: Map<string, any>; generalAssets: Map<string, any>;',
+    '    modes: Map<string, GameModeData>; cardpacks: Map<string, any>;',
     '    cards: Map<string, any>; carddatas: Map<string, any>;',
-    '    cardpacks: Map<string, any>; generalpacks: Map<string, any>;',
-    '    modes: Map<string, any>; selectors: Map<string, any>;',
-    '    carduses: Map<string, any>; skillsAssets: Map<string, any>;',
+    '    generalpacks: Map<string, any>; generals: Map<string, any>;',
+    '    skills: Map<string, any>; effects: Map<string, any>;',
+    '    cardAssets: Map<string, any>; generalInfoMap: Map<string, any>;',
+    '    generalSkinMap: Map<string, any>;',
+    '    carduses: CardUseData[];',
     '    translations: Record<string, Record<string, string>>;',
+    '    concept: Record<string, Record<string, string>>;',
     '};',
     '',
 );
 
 writeFileSync(OUT_FILE, [...header, ...body, ...sgsBlock].join('\n'), 'utf-8');
 
-// ===== 清理 =====
-rmSync(TMP_OUT, { recursive: true });
-rmSync(TMP_CONFIG);
+// ===== 清理（rmSync recursive 在部分 Windows 环境不可靠，失败则残留，create-ext 会排除 .dts-tmp） =====
+try { rmSync(TMP_OUT, { recursive: true, force: true }); } catch { /* 忽略 */ }
+try { rmSync(TMP_CONFIG); } catch { /* 忽略 */ }
 
 console.log(`[build-types] ✅ global.d.ts → ${OUT_FILE}  (${dtsFiles.length} 个源文件)`);

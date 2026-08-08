@@ -10,25 +10,20 @@ cd my-extension
 npm install
 ```
 
-### 与 AI Agent 协作
+### 通过知识库协作
 
-模板内置 `.agent/` 目录，Agent 会自动按需读取：
+扩展编写依据项目知识库（`knowledge/`，位于主项目 resgs），AI 按需读取：
 
-```bash
-.agent/
-  SKILL.md                 ← AI 技能入口（文件结构、API 速查、技能模式）
-  references/              ← 游戏权威定义（时机、术语、规则集）
-    authority-timing.md    ← 完整时机序列
-    authority-definitions.md ← 技能六要素 + 优先级规则
-    state-callbacks.md     ← 40+ 状态回调签名
-    ...                    ← 共 9 份参考文档
-```
+- 游戏规则与时机：`knowledge/rules/`（事件时机、词条，带 `id`）
+- 项目 API：`knowledge/project-api/`（自动生成，含源码锚点）
+- 扩展文档与归档流程：`knowledge/extensions/`（含「扩展完成后归档流程」）
+- 编写指南：`knowledge/guide/`
 
 **开始一段对话：**
 
-> 使用 `sgs-extension` 技能。我要实现……
+> 依据知识库 `knowledge/rules/` 与 `knowledge/project-api/`。我要实现……
 
-Agent 会自行阅读 `SKILL.md` 进入扩展编写模式，并按需查阅 `references/` 下的规则定义。
+Agent 按需查阅知识库中的规则定义与 API 文档后进入扩展编写模式。
 
 ## 目录结构
 
@@ -45,9 +40,6 @@ my-extension/
           caocao.ts            ← 一个武将 = 一个文件
   types/
     global.d.ts                ← sgs 全局类型声明
-  .agent/
-    SKILL.md                   ← AI 技能入口
-    references/                ← 游戏权威定义（时机、术语、规则集）
 ```
 
 ## 编写扩展

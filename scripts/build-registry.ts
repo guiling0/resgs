@@ -11,12 +11,16 @@ import { join } from 'path';
 const EXTENSION_DIR = join(__dirname, '..', 'extension');
 const OUTPUT = join(EXTENSION_DIR, 'registry.ts');
 
+// 模板项目不参与注册（仅作新建扩展的复制源）
+const TEMPLATE_EXTS = ['resgs-ext-temp'];
+
 // ===== 扫描扩展目录 =====
 const entries = readdirSync(EXTENSION_DIR, { withFileTypes: true });
 const extensions: string[] = [];
 
 for (const entry of entries) {
     if (!entry.isDirectory()) continue;
+    if (TEMPLATE_EXTS.includes(entry.name)) continue;
     const indexPath = join(EXTENSION_DIR, entry.name, 'index.ts');
     try {
         // 检查 index.ts 是否存在

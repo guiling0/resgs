@@ -11,6 +11,9 @@ memory/
 .vscode/
 client/.trae/
 
+# ===== Obsidian 本地配置（视图层，不入库） =====
+.obsidian/
+
 # ===== 历史项目（Phase 8-9 移植完成后删除） =====
 old/
 
@@ -28,6 +31,7 @@ build/
 # ===== 类型生成临时文件 =====
 .tmp-dts-out/
 .tsconfig.build-types.json
+.dts-tmp/
 
 # ===== OS =====
 .DS_Store
