@@ -1,0 +1,17 @@
+{
+    "name": "resgs-ext-test",
+    "version": "0.1.0",
+    "description": "RESGS 扩展模板——从零编写三国杀武将、卡牌、模式扩展",
+    "type": "module",
+    "scripts": {
+        "typecheck": "tsc --noEmit",
+        "build": "rollup --config"
+    },
+    "devDependencies": {
+        "typescript": "^5.4.0",
+        "rollup": "^4.0.0",
+        "@rollup/plugin-typescript": "^12.0.0",
+        "@rollup/plugin-node-resolve": "^16.0.0",
+        "@rollup/plugin-commonjs": "^28.0.0"
+    }
+}
