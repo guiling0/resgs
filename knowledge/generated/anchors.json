@@ -1,0 +1,1262 @@
+[
+  {
+    "name": "CardBuilder",
+    "kind": "interface",
+    "file": "shared/core/builder/CardBuilder.ts",
+    "line": 6
+  },
+  {
+    "name": "CardBuilder",
+    "kind": "function",
+    "file": "shared/core/builder/CardBuilder.ts",
+    "line": 23
+  },
+  {
+    "name": "Card",
+    "kind": "function",
+    "file": "shared/core/builder/CardBuilder.ts",
+    "line": 83
+  },
+  {
+    "name": "EffectBuilder",
+    "kind": "interface",
+    "file": "shared/core/builder/EffectBuilder.ts",
+    "line": 19
+  },
+  {
+    "name": "EffectBuilder",
+    "kind": "function",
+    "file": "shared/core/builder/EffectBuilder.ts",
+    "line": 59
+  },
+  {
+    "name": "Effect",
+    "kind": "function",
+    "file": "shared/core/builder/EffectBuilder.ts",
+    "line": 218
+  },
+  {
+    "name": "GeneralBuilder",
+    "kind": "interface",
+    "file": "shared/core/builder/GeneralBuilder.ts",
+    "line": 5
+  },
+  {
+    "name": "GeneralBuilder",
+    "kind": "function",
+    "file": "shared/core/builder/GeneralBuilder.ts",
+    "line": 34
+  },
+  {
+    "name": "General",
+    "kind": "function",
+    "file": "shared/core/builder/GeneralBuilder.ts",
+    "line": 141
+  },
+  {
+    "name": "ModeBuilder",
+    "kind": "interface",
+    "file": "shared/core/builder/ModeBuilder.ts",
+    "line": 6
+  },
+  {
+    "name": "ModeBuilder",
+    "kind": "function",
+    "file": "shared/core/builder/ModeBuilder.ts",
+    "line": 27
+  },
+  {
+    "name": "Mode",
+    "kind": "function",
+    "file": "shared/core/builder/ModeBuilder.ts",
+    "line": 103
+  },
+  {
+    "name": "SkillBuilder",
+    "kind": "interface",
+    "file": "shared/core/builder/SkillBuilder.ts",
+    "line": 10
+  },
+  {
+    "name": "SkillBuilder",
+    "kind": "function",
+    "file": "shared/core/builder/SkillBuilder.ts",
+    "line": 42
+  },
+  {
+    "name": "Skill",
+    "kind": "function",
+    "file": "shared/core/builder/SkillBuilder.ts",
+    "line": 137
+  },
+  {
+    "name": "Area",
+    "kind": "class",
+    "file": "shared/core/entity/Area.ts",
+    "line": 12
+  },
+  {
+    "name": "Effect",
+    "kind": "class",
+    "file": "shared/core/entity/Effect.ts",
+    "line": 14
+  },
+  {
+    "name": "GameCard",
+    "kind": "class",
+    "file": "shared/core/entity/GameCard.ts",
+    "line": 18
+  },
+  {
+    "name": "General",
+    "kind": "class",
+    "file": "shared/core/entity/General.ts",
+    "line": 20
+  },
+  {
+    "name": "ICard",
+    "kind": "class",
+    "file": "shared/core/entity/ICard.ts",
+    "line": 10
+  },
+  {
+    "name": "MarkTag",
+    "kind": "interface",
+    "file": "shared/core/entity/Mark.ts",
+    "line": 6
+  },
+  {
+    "name": "MarkLife",
+    "kind": "interface",
+    "file": "shared/core/entity/Mark.ts",
+    "line": 12
+  },
+  {
+    "name": "ParsedMarkKey",
+    "kind": "interface",
+    "file": "shared/core/entity/Mark.ts",
+    "line": 19
+  },
+  {
+    "name": "parseMarkKey",
+    "kind": "function",
+    "file": "shared/core/entity/Mark.ts",
+    "line": 35
+  },
+  {
+    "name": "Mark",
+    "kind": "class",
+    "file": "shared/core/entity/Mark.ts",
+    "line": 65
+  },
+  {
+    "name": "Player",
+    "kind": "class",
+    "file": "shared/core/entity/Player.ts",
+    "line": 34
+  },
+  {
+    "name": "SiegeRelation",
+    "kind": "interface",
+    "file": "shared/core/entity/Room.ts",
+    "line": 51
+  },
+  {
+    "name": "Room",
+    "kind": "class",
+    "file": "shared/core/entity/Room.ts",
+    "line": 62
+  },
+  {
+    "name": "Skill",
+    "kind": "class",
+    "file": "shared/core/entity/Skill.ts",
+    "line": 18
+  },
+  {
+    "name": "StateEffect",
+    "kind": "class",
+    "file": "shared/core/entity/StateEffect.ts",
+    "line": 13
+  },
+  {
+    "name": "TriggerEffect",
+    "kind": "class",
+    "file": "shared/core/entity/TriggerEffect.ts",
+    "line": 16
+  },
+  {
+    "name": "VirtualCardOverrides",
+    "kind": "interface",
+    "file": "shared/core/entity/VirtualCard.ts",
+    "line": 9
+  },
+  {
+    "name": "VirtualCard",
+    "kind": "class",
+    "file": "shared/core/entity/VirtualCard.ts",
+    "line": 23
+  },
+  {
+    "name": "detectChangeStateType",
+    "kind": "function",
+    "file": "shared/core/logic/event/ChangeStateEvent.ts",
+    "line": 31
+  },
+  {
+    "name": "ChangeStateEvent",
+    "kind": "class",
+    "file": "shared/core/logic/event/ChangeStateEvent.ts",
+    "line": 46
+  },
+  {
+    "name": "DamageEvent",
+    "kind": "class",
+    "file": "shared/core/logic/event/DamageEvent.ts",
+    "line": 25
+  },
+  {
+    "name": "LoseHpEvent",
+    "kind": "class",
+    "file": "shared/core/logic/event/DamageEvent.ts",
+    "line": 232
+  },
+  {
+    "name": "ReduceHpEvent",
+    "kind": "class",
+    "file": "shared/core/logic/event/DamageEvent.ts",
+    "line": 322
+  },
+  {
+    "name": "DropCardEvent",
+    "kind": "class",
+    "file": "shared/core/logic/event/DropCardEvent.ts",
+    "line": 14
+  },
+  {
+    "name": "DyingEvent",
+    "kind": "class",
+    "file": "shared/core/logic/event/DyingEvent.ts",
+    "line": 15
+  },
+  {
+    "name": "DeathEvent",
+    "kind": "class",
+    "file": "shared/core/logic/event/DyingEvent.ts",
+    "line": 133
+  },
+  {
+    "name": "RefreshEntry",
+    "kind": "interface",
+    "file": "shared/core/logic/event/EventManager.ts",
+    "line": 35
+  },
+  {
+    "name": "EventManager",
+    "kind": "class",
+    "file": "shared/core/logic/event/EventManager.ts",
+    "line": 44
+  },
+  {
+    "name": "createTiming",
+    "kind": "function",
+    "file": "shared/core/logic/event/EventProcess.ts",
+    "line": 12
+  },
+  {
+    "name": "EventProcess",
+    "kind": "class",
+    "file": "shared/core/logic/event/EventProcess.ts",
+    "line": 28
+  },
+  {
+    "name": "RecoverHpEvent",
+    "kind": "class",
+    "file": "shared/core/logic/event/HpEvent.ts",
+    "line": 14
+  },
+  {
+    "name": "ChangeMaxHpEvent",
+    "kind": "class",
+    "file": "shared/core/logic/event/HpEvent.ts",
+    "line": 86
+  },
+  {
+    "name": "JudgeEvent",
+    "kind": "class",
+    "file": "shared/core/logic/event/JudgeEvent.ts",
+    "line": 15
+  },
+  {
+    "name": "MoveCardEvent",
+    "kind": "class",
+    "file": "shared/core/logic/event/MoveCardEvent.ts",
+    "line": 34
+  },
+  {
+    "name": "PindianEvent",
+    "kind": "class",
+    "file": "shared/core/logic/event/PindianEvent.ts",
+    "line": 14
+  },
+  {
+    "name": "TurnEvent",
+    "kind": "class",
+    "file": "shared/core/logic/event/TurnEvent.ts",
+    "line": 15
+  },
+  {
+    "name": "PhaseEvent",
+    "kind": "class",
+    "file": "shared/core/logic/event/TurnEvent.ts",
+    "line": 226
+  },
+  {
+    "name": "TargetValidType",
+    "kind": "type",
+    "file": "shared/core/logic/event/UseCardEvent.ts",
+    "line": 20
+  },
+  {
+    "name": "UseCardEvent",
+    "kind": "class",
+    "file": "shared/core/logic/event/UseCardEvent.ts",
+    "line": 27
+  },
+  {
+    "name": "UseSkillEvent",
+    "kind": "class",
+    "file": "shared/core/logic/event/UseSkillEvent.ts",
+    "line": 16
+  },
+  {
+    "name": "RoomHost",
+    "kind": "class",
+    "file": "shared/core/logic/room/RoomHost.ts",
+    "line": 41
+  },
+  {
+    "name": "VirtualCardAbility",
+    "kind": "interface",
+    "file": "shared/core/logic/room/VirtualCardHost.ts",
+    "line": 8
+  },
+  {
+    "name": "VirtualCardHost",
+    "kind": "class",
+    "file": "shared/core/logic/room/VirtualCardHost.ts",
+    "line": 22
+  },
+  {
+    "name": "StateArray",
+    "kind": "class",
+    "file": "shared/core/state/StateArray.ts",
+    "line": 9
+  },
+  {
+    "name": "StateMap",
+    "kind": "class",
+    "file": "shared/core/state/StateMap.ts",
+    "line": 8
+  },
+  {
+    "name": "StateNode",
+    "kind": "class",
+    "file": "shared/core/state/StateNode.ts",
+    "line": 4
+  },
+  {
+    "name": "StateStore",
+    "kind": "class",
+    "file": "shared/core/state/StateStore.ts",
+    "line": 11
+  },
+  {
+    "name": "Primitive",
+    "kind": "type",
+    "file": "shared/core/state/StateTypes.ts",
+    "line": 9
+  },
+  {
+    "name": "SyncValue",
+    "kind": "type",
+    "file": "shared/core/state/StateTypes.ts",
+    "line": 12
+  },
+  {
+    "name": "StatePatch",
+    "kind": "type",
+    "file": "shared/core/state/StateTypes.ts",
+    "line": 15
+  },
+  {
+    "name": "SyncFieldMeta",
+    "kind": "interface",
+    "file": "shared/core/state/StateTypes.ts",
+    "line": 24
+  },
+  {
+    "name": "StateStoreHost",
+    "kind": "interface",
+    "file": "shared/core/state/StateTypes.ts",
+    "line": 32
+  },
+  {
+    "name": "joinPath",
+    "kind": "function",
+    "file": "shared/core/state/StateTypes.ts",
+    "line": 40
+  },
+  {
+    "name": "isSyncNode",
+    "kind": "function",
+    "file": "shared/core/state/StateTypes.ts",
+    "line": 45
+  },
+  {
+    "name": "collectSyncMeta",
+    "kind": "function",
+    "file": "shared/core/state/StateTypes.ts",
+    "line": 50
+  },
+  {
+    "name": "toSyncValue",
+    "kind": "function",
+    "file": "shared/core/state/StateTypes.ts",
+    "line": 62
+  },
+  {
+    "name": "applyPatches",
+    "kind": "function",
+    "file": "shared/core/state/applyPatches.ts",
+    "line": 53
+  },
+  {
+    "name": "sync",
+    "kind": "function",
+    "file": "shared/core/state/decorators.ts",
+    "line": 24
+  },
+  {
+    "name": "syncMap",
+    "kind": "function",
+    "file": "shared/core/state/decorators.ts",
+    "line": 81
+  },
+  {
+    "name": "syncArray",
+    "kind": "function",
+    "file": "shared/core/state/decorators.ts",
+    "line": 89
+  },
+  {
+    "name": "IPlayerInput",
+    "kind": "interface",
+    "file": "shared/core/transport/IPlayerInput.ts",
+    "line": 7
+  },
+  {
+    "name": "ITransport",
+    "kind": "class",
+    "file": "shared/core/transport/ITransport.ts",
+    "line": 12
+  },
+  {
+    "name": "LocalTransport",
+    "kind": "class",
+    "file": "shared/core/transport/LocalTransport.ts",
+    "line": 13
+  },
+  {
+    "name": "serialize",
+    "kind": "function",
+    "file": "shared/core/transport/codec.ts",
+    "line": 4
+  },
+  {
+    "name": "deserialize",
+    "kind": "function",
+    "file": "shared/core/transport/codec.ts",
+    "line": 9
+  },
+  {
+    "name": "MessageType",
+    "kind": "enum",
+    "file": "shared/core/transport/messages.ts",
+    "line": 4
+  },
+  {
+    "name": "EnvelopePayload",
+    "kind": "type",
+    "file": "shared/core/transport/messages.ts",
+    "line": 9
+  },
+  {
+    "name": "Envelope",
+    "kind": "interface",
+    "file": "shared/core/transport/messages.ts",
+    "line": 13
+  },
+  {
+    "name": "Message",
+    "kind": "type",
+    "file": "shared/core/transport/messages.ts",
+    "line": 26
+  },
+  {
+    "name": "StrategyType",
+    "kind": "enum",
+    "file": "shared/core/types/AITypes.ts",
+    "line": 6
+  },
+  {
+    "name": "AIContext",
+    "kind": "interface",
+    "file": "shared/core/types/AITypes.ts",
+    "line": 28
+  },
+  {
+    "name": "SkillAI",
+    "kind": "interface",
+    "file": "shared/core/types/AITypes.ts",
+    "line": 40
+  },
+  {
+    "name": "AreaId",
+    "kind": "type",
+    "file": "shared/core/types/AreaTypes.ts",
+    "line": 2
+  },
+  {
+    "name": "CardPut",
+    "kind": "type",
+    "file": "shared/core/types/AreaTypes.ts",
+    "line": 5
+  },
+  {
+    "name": "AreaType",
+    "kind": "enum",
+    "file": "shared/core/types/AreaTypes.ts",
+    "line": 12
+  },
+  {
+    "name": "CardAnimation",
+    "kind": "interface",
+    "file": "shared/core/types/AssetsTypes.ts",
+    "line": 2
+  },
+  {
+    "name": "CardAssets",
+    "kind": "interface",
+    "file": "shared/core/types/AssetsTypes.ts",
+    "line": 14
+  },
+  {
+    "name": "AudioData",
+    "kind": "interface",
+    "file": "shared/core/types/AssetsTypes.ts",
+    "line": 22
+  },
+  {
+    "name": "SkillTranslation",
+    "kind": "interface",
+    "file": "shared/core/types/AssetsTypes.ts",
+    "line": 30
+  },
+  {
+    "name": "GeneralSkin",
+    "kind": "interface",
+    "file": "shared/core/types/AssetsTypes.ts",
+    "line": 40
+  },
+  {
+    "name": "GeneralInfo",
+    "kind": "interface",
+    "file": "shared/core/types/AssetsTypes.ts",
+    "line": 54
+  },
+  {
+    "name": "GeneralConfig",
+    "kind": "interface",
+    "file": "shared/core/types/AssetsTypes.ts",
+    "line": 70
+  },
+  {
+    "name": "GameCardId",
+    "kind": "type",
+    "file": "shared/core/types/CardTypes.ts",
+    "line": 6
+  },
+  {
+    "name": "VirtualCardId",
+    "kind": "type",
+    "file": "shared/core/types/CardTypes.ts",
+    "line": 8
+  },
+  {
+    "name": "GameCardData",
+    "kind": "interface",
+    "file": "shared/core/types/CardTypes.ts",
+    "line": 15
+  },
+  {
+    "name": "VirtualCardData",
+    "kind": "interface",
+    "file": "shared/core/types/CardTypes.ts",
+    "line": 37
+  },
+  {
+    "name": "CardData",
+    "kind": "interface",
+    "file": "shared/core/types/CardTypes.ts",
+    "line": 55
+  },
+  {
+    "name": "CardAttr",
+    "kind": "enum",
+    "file": "shared/core/types/CardTypes.ts",
+    "line": 85
+  },
+  {
+    "name": "CardSuit",
+    "kind": "enum",
+    "file": "shared/core/types/CardTypes.ts",
+    "line": 105
+  },
+  {
+    "name": "CardNumber",
+    "kind": "enum",
+    "file": "shared/core/types/CardTypes.ts",
+    "line": 122
+  },
+  {
+    "name": "CardColor",
+    "kind": "enum",
+    "file": "shared/core/types/CardTypes.ts",
+    "line": 146
+  },
+  {
+    "name": "CardType",
+    "kind": "enum",
+    "file": "shared/core/types/CardTypes.ts",
+    "line": 161
+  },
+  {
+    "name": "CardSubType",
+    "kind": "enum",
+    "file": "shared/core/types/CardTypes.ts",
+    "line": 178
+  },
+  {
+    "name": "EquipSubType",
+    "kind": "enum",
+    "file": "shared/core/types/CardTypes.ts",
+    "line": 205
+  },
+  {
+    "name": "ChooseCount",
+    "kind": "type",
+    "file": "shared/core/types/ChooseTypes.ts",
+    "line": 7
+  },
+  {
+    "name": "SelectorType",
+    "kind": "enum",
+    "file": "shared/core/types/ChooseTypes.ts",
+    "line": 10
+  },
+  {
+    "name": "SelectorConfig",
+    "kind": "interface",
+    "file": "shared/core/types/ChooseTypes.ts",
+    "line": 26
+  },
+  {
+    "name": "SelectorLifecycle",
+    "kind": "interface",
+    "file": "shared/core/types/ChooseTypes.ts",
+    "line": 46
+  },
+  {
+    "name": "SelectorWindow",
+    "kind": "interface",
+    "file": "shared/core/types/ChooseTypes.ts",
+    "line": 58
+  },
+  {
+    "name": "SelectorContext",
+    "kind": "interface",
+    "file": "shared/core/types/ChooseTypes.ts",
+    "line": 70
+  },
+  {
+    "name": "ChooseData",
+    "kind": "interface",
+    "file": "shared/core/types/ChooseTypes.ts",
+    "line": 87
+  },
+  {
+    "name": "ChooseSession",
+    "kind": "interface",
+    "file": "shared/core/types/ChooseTypes.ts",
+    "line": 93
+  },
+  {
+    "name": "ChooseResult",
+    "kind": "interface",
+    "file": "shared/core/types/ChooseTypes.ts",
+    "line": 130
+  },
+  {
+    "name": "PlayPhaseResult",
+    "kind": "enum",
+    "file": "shared/core/types/ChooseTypes.ts",
+    "line": 152
+  },
+  {
+    "name": "TimingName",
+    "kind": "enum",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 22
+  },
+  {
+    "name": "TimingTrigger",
+    "kind": "type",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 327
+  },
+  {
+    "name": "EventType",
+    "kind": "enum",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 332
+  },
+  {
+    "name": "TurnEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 380
+  },
+  {
+    "name": "PhaseEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 400
+  },
+  {
+    "name": "MoveCardData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 418
+  },
+  {
+    "name": "MoveCardOpts",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 456
+  },
+  {
+    "name": "MoveEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 474
+  },
+  {
+    "name": "TargetEntry",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 486
+  },
+  {
+    "name": "UseCardEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 506
+  },
+  {
+    "name": "CardUseData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 548
+  },
+  {
+    "name": "UseModifiers",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 575
+  },
+  {
+    "name": "DropCardEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 591
+  },
+  {
+    "name": "PindianEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 603
+  },
+  {
+    "name": "OpenEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 633
+  },
+  {
+    "name": "CloseEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 643
+  },
+  {
+    "name": "ChainEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 653
+  },
+  {
+    "name": "SkipEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 663
+  },
+  {
+    "name": "ChangeEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 671
+  },
+  {
+    "name": "RemoveEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 681
+  },
+  {
+    "name": "ChangeStateType",
+    "kind": "type",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 689
+  },
+  {
+    "name": "ChangeStateData",
+    "kind": "type",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 698
+  },
+  {
+    "name": "JudgeEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 709
+  },
+  {
+    "name": "DamageEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 723
+  },
+  {
+    "name": "LoseHpEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 739
+  },
+  {
+    "name": "ReduceHpEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 747
+  },
+  {
+    "name": "RecoverHpEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 755
+  },
+  {
+    "name": "ChangeMaxHpEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 763
+  },
+  {
+    "name": "DyingEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 773
+  },
+  {
+    "name": "DeathEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 781
+  },
+  {
+    "name": "UseSkillEventData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 791
+  },
+  {
+    "name": "StageData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 803
+  },
+  {
+    "name": "NeedUseCardData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 811
+  },
+  {
+    "name": "NeedDropCardData",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 853
+  },
+  {
+    "name": "EventDataMap",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 884
+  },
+  {
+    "name": "EventMeta",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 909
+  },
+  {
+    "name": "EventOpts",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 921
+  },
+  {
+    "name": "EventData",
+    "kind": "type",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 933
+  },
+  {
+    "name": "TimingEventMap",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 938
+  },
+  {
+    "name": "TimingDataMap",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 1078
+  },
+  {
+    "name": "TimingData",
+    "kind": "type",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 1102
+  },
+  {
+    "name": "Timing",
+    "kind": "interface",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 1111
+  },
+  {
+    "name": "DamageType",
+    "kind": "enum",
+    "file": "shared/core/types/EventTypes.ts",
+    "line": 1123
+  },
+  {
+    "name": "GameState",
+    "kind": "enum",
+    "file": "shared/core/types/GameState.ts",
+    "line": 2
+  },
+  {
+    "name": "GeneralId",
+    "kind": "type",
+    "file": "shared/core/types/GeneralTypes.ts",
+    "line": 4
+  },
+  {
+    "name": "GeneralKingdom",
+    "kind": "type",
+    "file": "shared/core/types/GeneralTypes.ts",
+    "line": 10
+  },
+  {
+    "name": "GeneralHp",
+    "kind": "type",
+    "file": "shared/core/types/GeneralTypes.ts",
+    "line": 12
+  },
+  {
+    "name": "Gender",
+    "kind": "enum",
+    "file": "shared/core/types/GeneralTypes.ts",
+    "line": 19
+  },
+  {
+    "name": "GeneralData",
+    "kind": "interface",
+    "file": "shared/core/types/GeneralTypes.ts",
+    "line": 35
+  },
+  {
+    "name": "GameModeData",
+    "kind": "interface",
+    "file": "shared/core/types/ModeTypes.ts",
+    "line": 5
+  },
+  {
+    "name": "CardPackageData",
+    "kind": "interface",
+    "file": "shared/core/types/PackageTypes.ts",
+    "line": 5
+  },
+  {
+    "name": "GeneralPackData",
+    "kind": "interface",
+    "file": "shared/core/types/PackageTypes.ts",
+    "line": 13
+  },
+  {
+    "name": "Phase",
+    "kind": "enum",
+    "file": "shared/core/types/PlayerTypes.ts",
+    "line": 2
+  },
+  {
+    "name": "RichString",
+    "kind": "type",
+    "file": "shared/core/types/RichText.ts",
+    "line": 4
+  },
+  {
+    "name": "RichStringValue",
+    "kind": "type",
+    "file": "shared/core/types/RichText.ts",
+    "line": 9
+  },
+  {
+    "name": "RoomOptions",
+    "kind": "interface",
+    "file": "shared/core/types/RoomOptions.ts",
+    "line": 1
+  },
+  {
+    "name": "SkillId",
+    "kind": "type",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 11
+  },
+  {
+    "name": "EffectId",
+    "kind": "type",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 13
+  },
+  {
+    "name": "EffectType",
+    "kind": "enum",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 16
+  },
+  {
+    "name": "PriorityType",
+    "kind": "enum",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 24
+  },
+  {
+    "name": "SkillTag",
+    "kind": "enum",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 36
+  },
+  {
+    "name": "StateEffectType",
+    "kind": "enum",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 97
+  },
+  {
+    "name": "TimingCallback",
+    "kind": "interface",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 100
+  },
+  {
+    "name": "AutoRemoveCallback",
+    "kind": "interface",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 110
+  },
+  {
+    "name": "SkillOptions",
+    "kind": "interface",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 120
+  },
+  {
+    "name": "EffectOptions",
+    "kind": "interface",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 140
+  },
+  {
+    "name": "SkillData",
+    "kind": "interface",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 154
+  },
+  {
+    "name": "EffectSettings",
+    "kind": "interface",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 182
+  },
+  {
+    "name": "EffectContext",
+    "kind": "interface",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 212
+  },
+  {
+    "name": "TriggerEffectData",
+    "kind": "interface",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 225
+  },
+  {
+    "name": "StateEffectData",
+    "kind": "interface",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 262
+  },
+  {
+    "name": "EffectData",
+    "kind": "interface",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 269
+  },
+  {
+    "name": "StateCallbackMap",
+    "kind": "interface",
+    "file": "shared/core/types/SkillTypes.ts",
+    "line": 292
+  },
+  {
+    "name": "parseAreaId",
+    "kind": "function",
+    "file": "shared/core/utils/AreaUtils.ts",
+    "line": 5
+  },
+  {
+    "name": "CardGender",
+    "kind": "type",
+    "file": "shared/core/utils/AssetsUtils.ts",
+    "line": 2
+  },
+  {
+    "name": "defaultCardImage",
+    "kind": "function",
+    "file": "shared/core/utils/AssetsUtils.ts",
+    "line": 5
+  },
+  {
+    "name": "defaultCardAudio",
+    "kind": "function",
+    "file": "shared/core/utils/AssetsUtils.ts",
+    "line": 10
+  },
+  {
+    "name": "defaultGeneralImage",
+    "kind": "function",
+    "file": "shared/core/utils/AssetsUtils.ts",
+    "line": 15
+  },
+  {
+    "name": "defaultGeneralImageDual",
+    "kind": "function",
+    "file": "shared/core/utils/AssetsUtils.ts",
+    "line": 20
+  },
+  {
+    "name": "defaultGeneralImageDualSelf",
+    "kind": "function",
+    "file": "shared/core/utils/AssetsUtils.ts",
+    "line": 25
+  },
+  {
+    "name": "defaultGeneralDeath",
+    "kind": "function",
+    "file": "shared/core/utils/AssetsUtils.ts",
+    "line": 30
+  },
+  {
+    "name": "defaultSkillAudio",
+    "kind": "function",
+    "file": "shared/core/utils/AssetsUtils.ts",
+    "line": 35
+  },
+  {
+    "name": "getColorBySuit",
+    "kind": "function",
+    "file": "shared/core/utils/CardUtils.ts",
+    "line": 4
+  },
+  {
+    "name": "createRandom",
+    "kind": "function",
+    "file": "shared/core/utils/Random.ts",
+    "line": 5
+  },
+  {
+    "name": "shuffle",
+    "kind": "function",
+    "file": "shared/core/utils/Random.ts",
+    "line": 17
+  },
+  {
+    "name": "randomInt",
+    "kind": "function",
+    "file": "shared/core/utils/Random.ts",
+    "line": 27
+  },
+  {
+    "name": "ConsoleLogger",
+    "kind": "class",
+    "file": "shared/core/ConsoleLogger.ts",
+    "line": 55
+  },
+  {
+    "name": "consoleLogger",
+    "kind": "const",
+    "file": "shared/core/ConsoleLogger.ts",
+    "line": 74
+  },
+  {
+    "name": "LogMeta",
+    "kind": "interface",
+    "file": "shared/core/ILogger.ts",
+    "line": 4
+  },
+  {
+    "name": "ILogger",
+    "kind": "interface",
+    "file": "shared/core/ILogger.ts",
+    "line": 12
+  },
+  {
+    "name": "sgs",
+    "kind": "const",
+    "file": "shared/core/sgs.ts",
+    "line": 374
+  }
+]

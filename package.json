@@ -20,9 +20,18 @@
         "test": "bash scripts/test-all.sh",
         "test:file": "npx tsx",
         "build:types": "npx tsx scripts/build-types.ts",
+        "create:ext": "npx tsx scripts/create-ext.ts",
         "build:registry": "npx tsx scripts/build-registry.ts",
         "build:extension": "npx tsx scripts/build-extension.ts",
-        "publish:extension": "npx tsx scripts/publish-extension.ts"
+        "publish:extension": "npx tsx scripts/publish-extension.ts",
+        "kb:init": "node scripts/kb-init.cjs",
+        "kb:api": "node scripts/kb-api.cjs",
+        "kb:links": "node scripts/kb-links.cjs",
+        "kb:refs": "node scripts/kb-refs.cjs",
+        "kb:mapping": "node scripts/kb-mapping.cjs",
+        "kb:index": "node scripts/kb-index.cjs",
+        "kb:check": "node scripts/kb-check.cjs",
+        "kb:build": "node scripts/kb-build.cjs"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^29.0.3",

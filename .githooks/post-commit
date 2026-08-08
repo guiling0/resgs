@@ -1,0 +1,3 @@
+#!/bin/sh
+# 知识库重建：git 提交后自动执行 kb:build（失败不阻断提交，提示手动重跑）
+npm run kb:build >/dev/null 2>&1 || echo "[kb] 知识库重建失败，请运行 npm run kb:build 查看详情"
